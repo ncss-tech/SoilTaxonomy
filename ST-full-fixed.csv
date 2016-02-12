@@ -1,0 +1,2669 @@
+tax_order,tax_suborder,tax_greatgroup,tax_subgroup
+alfisols,aqualfs,albaqualfs,typic albaqualfs
+alfisols,aqualfs,albaqualfs,udollic albaqualfs
+alfisols,aqualfs,albaqualfs,umbric albaqualfs
+alfisols,aqualfs,albaqualfs,vertic albaqualfs
+alfisols,aqualfs,albaqualfs,mollic albaqualfs
+alfisols,aqualfs,albaqualfs,arenic albaqualfs
+alfisols,aqualfs,albaqualfs,chromic vertic albaqualfs
+alfisols,aqualfs,albaqualfs,aeric albaqualfs
+alfisols,aqualfs,albaqualfs,aeric vertic albaqualfs
+alfisols,aqualfs,albaqualfs,aquandic albaqualfs
+alfisols,aqualfs,cryaqualfs,typic cryaqualfs
+alfisols,aqualfs,duraqualfs,typic duraqualfs
+alfisols,aqualfs,endoaqualfs,typic endoaqualfs
+alfisols,aqualfs,endoaqualfs,udollic endoaqualfs
+alfisols,aqualfs,endoaqualfs,umbric endoaqualfs
+alfisols,aqualfs,endoaqualfs,vertic endoaqualfs
+alfisols,aqualfs,endoaqualfs,grossarenic endoaqualfs
+alfisols,aqualfs,endoaqualfs,mollic endoaqualfs
+alfisols,aqualfs,endoaqualfs,arenic endoaqualfs
+alfisols,aqualfs,endoaqualfs,chromic vertic endoaqualfs
+alfisols,aqualfs,endoaqualfs,fragic endoaqualfs
+alfisols,aqualfs,endoaqualfs,aeric endoaqualfs
+alfisols,aqualfs,endoaqualfs,aeric fragic endoaqualfs
+alfisols,aqualfs,endoaqualfs,aeric umbric endoaqualfs
+alfisols,aqualfs,endoaqualfs,aquandic endoaqualfs
+alfisols,aqualfs,epiaqualfs,typic epiaqualfs
+alfisols,aqualfs,epiaqualfs,udollic epiaqualfs
+alfisols,aqualfs,epiaqualfs,umbric epiaqualfs
+alfisols,aqualfs,epiaqualfs,vertic epiaqualfs
+alfisols,aqualfs,epiaqualfs,grossarenic epiaqualfs
+alfisols,aqualfs,epiaqualfs,mollic epiaqualfs
+alfisols,aqualfs,epiaqualfs,arenic epiaqualfs
+alfisols,aqualfs,epiaqualfs,chromic vertic epiaqualfs
+alfisols,aqualfs,epiaqualfs,fragic epiaqualfs
+alfisols,aqualfs,epiaqualfs,aeric chromic vertic epiaqualfs
+alfisols,aqualfs,epiaqualfs,aeric epiaqualfs
+alfisols,aqualfs,epiaqualfs,aeric fragic epiaqualfs
+alfisols,aqualfs,epiaqualfs,aeric umbric epiaqualfs
+alfisols,aqualfs,epiaqualfs,aeric vertic epiaqualfs
+alfisols,aqualfs,epiaqualfs,aquandic epiaqualfs
+alfisols,aqualfs,fragiaqualfs,typic fragiaqualfs
+alfisols,aqualfs,fragiaqualfs,vermic fragiaqualfs
+alfisols,aqualfs,fragiaqualfs,plinthic fragiaqualfs
+alfisols,aqualfs,fragiaqualfs,humic fragiaqualfs
+alfisols,aqualfs,fragiaqualfs,aeric fragiaqualfs
+alfisols,aqualfs,glossaqualfs,typic glossaqualfs
+alfisols,aqualfs,glossaqualfs,mollic glossaqualfs
+alfisols,aqualfs,glossaqualfs,arenic glossaqualfs
+alfisols,aqualfs,glossaqualfs,fragic glossaqualfs
+alfisols,aqualfs,glossaqualfs,histic glossaqualfs
+alfisols,aqualfs,glossaqualfs,aeric fragic glossaqualfs
+alfisols,aqualfs,glossaqualfs,aeric glossaqualfs
+alfisols,aqualfs,kandiaqualfs,typic kandiaqualfs
+alfisols,aqualfs,kandiaqualfs,umbric kandiaqualfs
+alfisols,aqualfs,kandiaqualfs,grossarenic kandiaqualfs
+alfisols,aqualfs,kandiaqualfs,plinthic kandiaqualfs
+alfisols,aqualfs,kandiaqualfs,arenic kandiaqualfs
+alfisols,aqualfs,kandiaqualfs,aeric kandiaqualfs
+alfisols,aqualfs,kandiaqualfs,aeric umbric kandiaqualfs
+alfisols,aqualfs,natraqualfs,typic natraqualfs
+alfisols,aqualfs,natraqualfs,vermic natraqualfs
+alfisols,aqualfs,natraqualfs,vertic natraqualfs
+alfisols,aqualfs,natraqualfs,glossic natraqualfs
+alfisols,aqualfs,natraqualfs,mollic natraqualfs
+alfisols,aqualfs,natraqualfs,albic glossic natraqualfs
+alfisols,aqualfs,natraqualfs,albic natraqualfs
+alfisols,aqualfs,plinthaqualfs,typic plinthaqualfs
+alfisols,aqualfs,vermaqualfs,typic vermaqualfs
+alfisols,aqualfs,vermaqualfs,natric vermaqualfs
+alfisols,cryalfs,glossocryalfs,typic glossocryalfs
+alfisols,cryalfs,glossocryalfs,umbric glossocryalfs
+alfisols,cryalfs,glossocryalfs,umbric xeric glossocryalfs
+alfisols,cryalfs,glossocryalfs,ustic glossocryalfs
+alfisols,cryalfs,glossocryalfs,ustollic glossocryalfs
+alfisols,cryalfs,glossocryalfs,vertic glossocryalfs
+alfisols,cryalfs,glossocryalfs,vitrandic glossocryalfs
+alfisols,cryalfs,glossocryalfs,lithic glossocryalfs
+alfisols,cryalfs,glossocryalfs,mollic glossocryalfs
+alfisols,cryalfs,glossocryalfs,oxyaquic glossocryalfs
+alfisols,cryalfs,glossocryalfs,aquic glossocryalfs
+alfisols,cryalfs,glossocryalfs,eutric glossocryalfs
+alfisols,cryalfs,glossocryalfs,fragic glossocryalfs
+alfisols,cryalfs,glossocryalfs,xeric glossocryalfs
+alfisols,cryalfs,glossocryalfs,xerollic glossocryalfs
+alfisols,cryalfs,glossocryalfs,andic glossocryalfs
+alfisols,cryalfs,haplocryalfs,typic haplocryalfs
+alfisols,cryalfs,haplocryalfs,umbric haplocryalfs
+alfisols,cryalfs,haplocryalfs,umbric xeric haplocryalfs
+alfisols,cryalfs,haplocryalfs,ustic haplocryalfs
+alfisols,cryalfs,haplocryalfs,ustollic haplocryalfs
+alfisols,cryalfs,haplocryalfs,vertic haplocryalfs
+alfisols,cryalfs,haplocryalfs,vitrandic haplocryalfs
+alfisols,cryalfs,haplocryalfs,lithic haplocryalfs
+alfisols,cryalfs,haplocryalfs,mollic haplocryalfs
+alfisols,cryalfs,haplocryalfs,oxyaquic haplocryalfs
+alfisols,cryalfs,haplocryalfs,psammentic haplocryalfs
+alfisols,cryalfs,haplocryalfs,aquic haplocryalfs
+alfisols,cryalfs,haplocryalfs,eutric haplocryalfs
+alfisols,cryalfs,haplocryalfs,xeric haplocryalfs
+alfisols,cryalfs,haplocryalfs,xerollic haplocryalfs
+alfisols,cryalfs,haplocryalfs,inceptic haplocryalfs
+alfisols,cryalfs,haplocryalfs,lamellic haplocryalfs
+alfisols,cryalfs,haplocryalfs,andic haplocryalfs
+alfisols,cryalfs,palecryalfs,typic palecryalfs
+alfisols,cryalfs,palecryalfs,umbric palecryalfs
+alfisols,cryalfs,palecryalfs,ustic palecryalfs
+alfisols,cryalfs,palecryalfs,vitrandic palecryalfs
+alfisols,cryalfs,palecryalfs,mollic palecryalfs
+alfisols,cryalfs,palecryalfs,oxyaquic palecryalfs
+alfisols,cryalfs,palecryalfs,aquic palecryalfs
+alfisols,cryalfs,palecryalfs,xeric palecryalfs
+alfisols,cryalfs,palecryalfs,andic palecryalfs
+alfisols,udalfs,ferrudalfs,typic ferrudalfs
+alfisols,udalfs,ferrudalfs,aquic ferrudalfs
+alfisols,udalfs,fragiudalfs,typic fragiudalfs
+alfisols,udalfs,fragiudalfs,vitrandic fragiudalfs
+alfisols,udalfs,fragiudalfs,oxyaquic fragiudalfs
+alfisols,udalfs,fragiudalfs,aquic fragiudalfs
+alfisols,udalfs,fragiudalfs,andic fragiudalfs
+alfisols,udalfs,fraglossudalfs,typic fraglossudalfs
+alfisols,udalfs,fraglossudalfs,vitrandic fraglossudalfs
+alfisols,udalfs,fraglossudalfs,oxyaquic fraglossudalfs
+alfisols,udalfs,fraglossudalfs,aquic fraglossudalfs
+alfisols,udalfs,fraglossudalfs,andic fraglossudalfs
+alfisols,udalfs,glossudalfs,typic glossudalfs
+alfisols,udalfs,glossudalfs,vertic glossudalfs
+alfisols,udalfs,glossudalfs,vitrandic glossudalfs
+alfisols,udalfs,glossudalfs,haplic glossudalfs
+alfisols,udalfs,glossudalfs,oxyaquic glossudalfs
+alfisols,udalfs,glossudalfs,oxyaquic vertic glossudalfs
+alfisols,udalfs,glossudalfs,aquic glossudalfs
+alfisols,udalfs,glossudalfs,arenic glossudalfs
+alfisols,udalfs,glossudalfs,arenic oxyaquic glossudalfs
+alfisols,udalfs,glossudalfs,fragiaquic glossudalfs
+alfisols,udalfs,glossudalfs,fragic glossudalfs
+alfisols,udalfs,glossudalfs,andic glossudalfs
+alfisols,udalfs,glossudalfs,aquandic glossudalfs
+alfisols,udalfs,glossudalfs,aquertic glossudalfs
+alfisols,udalfs,glossudalfs,aquic arenic glossudalfs
+alfisols,udalfs,hapludalfs,typic hapludalfs
+alfisols,udalfs,hapludalfs,ultic hapludalfs
+alfisols,udalfs,hapludalfs,vertic hapludalfs
+alfisols,udalfs,hapludalfs,vitrandic hapludalfs
+alfisols,udalfs,hapludalfs,glossic hapludalfs
+alfisols,udalfs,hapludalfs,lithic hapludalfs
+alfisols,udalfs,hapludalfs,mollic hapludalfs
+alfisols,udalfs,hapludalfs,mollic oxyaquic hapludalfs
+alfisols,udalfs,hapludalfs,oxyaquic hapludalfs
+alfisols,udalfs,hapludalfs,oxyaquic vertic hapludalfs
+alfisols,udalfs,hapludalfs,psammentic hapludalfs
+alfisols,udalfs,hapludalfs,aquic hapludalfs
+alfisols,udalfs,hapludalfs,aquollic hapludalfs
+alfisols,udalfs,hapludalfs,aquultic hapludalfs
+alfisols,udalfs,hapludalfs,arenic hapludalfs
+alfisols,udalfs,hapludalfs,arenic oxyaquic hapludalfs
+alfisols,udalfs,hapludalfs,chromic vertic hapludalfs
+alfisols,udalfs,hapludalfs,fragiaquic hapludalfs
+alfisols,udalfs,hapludalfs,fragic hapludalfs
+alfisols,udalfs,hapludalfs,fragic oxyaquic hapludalfs
+alfisols,udalfs,hapludalfs,glossaquic hapludalfs
+alfisols,udalfs,hapludalfs,inceptic hapludalfs
+alfisols,udalfs,hapludalfs,lamellic hapludalfs
+alfisols,udalfs,hapludalfs,albaquic hapludalfs
+alfisols,udalfs,hapludalfs,albaquultic hapludalfs
+alfisols,udalfs,hapludalfs,andic hapludalfs
+alfisols,udalfs,hapludalfs,anthraquic hapludalfs
+alfisols,udalfs,hapludalfs,aquertic chromic hapludalfs
+alfisols,udalfs,hapludalfs,aquertic hapludalfs
+alfisols,udalfs,hapludalfs,aquic arenic hapludalfs
+alfisols,udalfs,kandiudalfs,typic kandiudalfs
+alfisols,udalfs,kandiudalfs,grossarenic kandiudalfs
+alfisols,udalfs,kandiudalfs,grossarenic plinthic kandiudalfs
+alfisols,udalfs,kandiudalfs,mollic kandiudalfs
+alfisols,udalfs,kandiudalfs,oxyaquic kandiudalfs
+alfisols,udalfs,kandiudalfs,plinthaquic kandiudalfs
+alfisols,udalfs,kandiudalfs,plinthic kandiudalfs
+alfisols,udalfs,kandiudalfs,rhodic kandiudalfs
+alfisols,udalfs,kandiudalfs,aquic kandiudalfs
+alfisols,udalfs,kandiudalfs,arenic kandiudalfs
+alfisols,udalfs,kandiudalfs,arenic plinthic kandiudalfs
+alfisols,udalfs,kanhapludalfs,typic kanhapludalfs
+alfisols,udalfs,kanhapludalfs,lithic kanhapludalfs
+alfisols,udalfs,kanhapludalfs,oxyaquic kanhapludalfs
+alfisols,udalfs,kanhapludalfs,rhodic kanhapludalfs
+alfisols,udalfs,kanhapludalfs,aquic kanhapludalfs
+alfisols,udalfs,natrudalfs,typic natrudalfs
+alfisols,udalfs,natrudalfs,vertic natrudalfs
+alfisols,udalfs,natrudalfs,aquic natrudalfs
+alfisols,udalfs,natrudalfs,glossaquic natrudalfs
+alfisols,udalfs,paleudalfs,typic paleudalfs
+alfisols,udalfs,paleudalfs,vertic paleudalfs
+alfisols,udalfs,paleudalfs,vitrandic paleudalfs
+alfisols,udalfs,paleudalfs,glossic paleudalfs
+alfisols,udalfs,paleudalfs,grossarenic paleudalfs
+alfisols,udalfs,paleudalfs,grossarenic plinthic paleudalfs
+alfisols,udalfs,paleudalfs,mollic paleudalfs
+alfisols,udalfs,paleudalfs,oxyaquic paleudalfs
+alfisols,udalfs,paleudalfs,plinthaquic paleudalfs
+alfisols,udalfs,paleudalfs,plinthic paleudalfs
+alfisols,udalfs,paleudalfs,psammentic paleudalfs
+alfisols,udalfs,paleudalfs,rhodic paleudalfs
+alfisols,udalfs,paleudalfs,aquic paleudalfs
+alfisols,udalfs,paleudalfs,arenic paleudalfs
+alfisols,udalfs,paleudalfs,arenic plinthic paleudalfs
+alfisols,udalfs,paleudalfs,fragiaquic paleudalfs
+alfisols,udalfs,paleudalfs,fragic paleudalfs
+alfisols,udalfs,paleudalfs,glossaquic paleudalfs
+alfisols,udalfs,paleudalfs,lamellic paleudalfs
+alfisols,udalfs,paleudalfs,albaquic paleudalfs
+alfisols,udalfs,paleudalfs,andic paleudalfs
+alfisols,udalfs,paleudalfs,anthraquic paleudalfs
+alfisols,udalfs,rhodudalfs,typic rhodudalfs
+alfisols,ustalfs,durustalfs,typic durustalfs
+alfisols,ustalfs,haplustalfs,torrertic haplustalfs
+alfisols,ustalfs,haplustalfs,typic haplustalfs
+alfisols,ustalfs,haplustalfs,udertic haplustalfs
+alfisols,ustalfs,haplustalfs,udic haplustalfs
+alfisols,ustalfs,haplustalfs,ultic haplustalfs
+alfisols,ustalfs,haplustalfs,vertic haplustalfs
+alfisols,ustalfs,haplustalfs,vitrandic haplustalfs
+alfisols,ustalfs,haplustalfs,lithic haplustalfs
+alfisols,ustalfs,haplustalfs,oxyaquic haplustalfs
+alfisols,ustalfs,haplustalfs,oxyaquic vertic haplustalfs
+alfisols,ustalfs,haplustalfs,psammentic haplustalfs
+alfisols,ustalfs,haplustalfs,aquic haplustalfs
+alfisols,ustalfs,haplustalfs,aquultic haplustalfs
+alfisols,ustalfs,haplustalfs,arenic aridic haplustalfs
+alfisols,ustalfs,haplustalfs,arenic haplustalfs
+alfisols,ustalfs,haplustalfs,aridic haplustalfs
+alfisols,ustalfs,haplustalfs,calcic haplustalfs
+alfisols,ustalfs,haplustalfs,calcic udic haplustalfs
+alfisols,ustalfs,haplustalfs,calcidic haplustalfs
+alfisols,ustalfs,haplustalfs,inceptic haplustalfs
+alfisols,ustalfs,haplustalfs,kanhaplic haplustalfs
+alfisols,ustalfs,haplustalfs,lamellic haplustalfs
+alfisols,ustalfs,haplustalfs,aquertic haplustalfs
+alfisols,ustalfs,haplustalfs,aquic arenic haplustalfs
+alfisols,ustalfs,kandiustalfs,typic kandiustalfs
+alfisols,ustalfs,kandiustalfs,udic kandiustalfs
+alfisols,ustalfs,kandiustalfs,grossarenic kandiustalfs
+alfisols,ustalfs,kandiustalfs,plinthic kandiustalfs
+alfisols,ustalfs,kandiustalfs,rhodic kandiustalfs
+alfisols,ustalfs,kandiustalfs,aquic kandiustalfs
+alfisols,ustalfs,kandiustalfs,arenic aridic kandiustalfs
+alfisols,ustalfs,kandiustalfs,arenic kandiustalfs
+alfisols,ustalfs,kandiustalfs,aridic kandiustalfs
+alfisols,ustalfs,kandiustalfs,aquic arenic kandiustalfs
+alfisols,ustalfs,kanhaplustalfs,typic kanhaplustalfs
+alfisols,ustalfs,kanhaplustalfs,udic kanhaplustalfs
+alfisols,ustalfs,kanhaplustalfs,lithic kanhaplustalfs
+alfisols,ustalfs,kanhaplustalfs,rhodic kanhaplustalfs
+alfisols,ustalfs,kanhaplustalfs,aquic kanhaplustalfs
+alfisols,ustalfs,kanhaplustalfs,aridic kanhaplustalfs
+alfisols,ustalfs,natrustalfs,torrertic natrustalfs
+alfisols,ustalfs,natrustalfs,typic natrustalfs
+alfisols,ustalfs,natrustalfs,vertic natrustalfs
+alfisols,ustalfs,natrustalfs,haplargidic natrustalfs
+alfisols,ustalfs,natrustalfs,mollic natrustalfs
+alfisols,ustalfs,natrustalfs,petrocalcic natrustalfs
+alfisols,ustalfs,natrustalfs,salidic natrustalfs
+alfisols,ustalfs,natrustalfs,aquic natrustalfs
+alfisols,ustalfs,natrustalfs,arenic natrustalfs
+alfisols,ustalfs,natrustalfs,aridic glossic natrustalfs
+alfisols,ustalfs,natrustalfs,aridic leptic natrustalfs
+alfisols,ustalfs,natrustalfs,aridic natrustalfs
+alfisols,ustalfs,natrustalfs,leptic natrustalfs
+alfisols,ustalfs,natrustalfs,leptic torrertic natrustalfs
+alfisols,ustalfs,natrustalfs,aquertic natrustalfs
+alfisols,ustalfs,natrustalfs,aquic arenic natrustalfs
+alfisols,ustalfs,paleustalfs,typic paleustalfs
+alfisols,ustalfs,paleustalfs,udertic paleustalfs
+alfisols,ustalfs,paleustalfs,udic paleustalfs
+alfisols,ustalfs,paleustalfs,ultic paleustalfs
+alfisols,ustalfs,paleustalfs,vertic paleustalfs
+alfisols,ustalfs,paleustalfs,grossarenic paleustalfs
+alfisols,ustalfs,paleustalfs,oxyaquic paleustalfs
+alfisols,ustalfs,paleustalfs,oxyaquic vertic paleustalfs
+alfisols,ustalfs,paleustalfs,petrocalcic paleustalfs
+alfisols,ustalfs,paleustalfs,plinthic paleustalfs
+alfisols,ustalfs,paleustalfs,psammentic paleustalfs
+alfisols,ustalfs,paleustalfs,rhodic paleustalfs
+alfisols,ustalfs,paleustalfs,aquic paleustalfs
+alfisols,ustalfs,paleustalfs,arenic aridic paleustalfs
+alfisols,ustalfs,paleustalfs,arenic paleustalfs
+alfisols,ustalfs,paleustalfs,aridic paleustalfs
+alfisols,ustalfs,paleustalfs,calcidic paleustalfs
+alfisols,ustalfs,paleustalfs,kandic paleustalfs
+alfisols,ustalfs,paleustalfs,lamellic paleustalfs
+alfisols,ustalfs,paleustalfs,aquertic paleustalfs
+alfisols,ustalfs,paleustalfs,aquic arenic paleustalfs
+alfisols,ustalfs,plinthustalfs,typic plinthustalfs
+alfisols,ustalfs,rhodustalfs,typic rhodustalfs
+alfisols,ustalfs,rhodustalfs,udic rhodustalfs
+alfisols,ustalfs,rhodustalfs,lithic rhodustalfs
+alfisols,ustalfs,rhodustalfs,kanhaplic rhodustalfs
+alfisols,xeralfs,durixeralfs,typic durixeralfs
+alfisols,xeralfs,durixeralfs,vertic durixeralfs
+alfisols,xeralfs,durixeralfs,haplic durixeralfs
+alfisols,xeralfs,durixeralfs,natric durixeralfs
+alfisols,xeralfs,durixeralfs,abruptic durixeralfs
+alfisols,xeralfs,durixeralfs,abruptic haplic durixeralfs
+alfisols,xeralfs,durixeralfs,aquic durixeralfs
+alfisols,xeralfs,fragixeralfs,typic fragixeralfs
+alfisols,xeralfs,fragixeralfs,vitrandic fragixeralfs
+alfisols,xeralfs,fragixeralfs,mollic fragixeralfs
+alfisols,xeralfs,fragixeralfs,aquic fragixeralfs
+alfisols,xeralfs,fragixeralfs,inceptic fragixeralfs
+alfisols,xeralfs,fragixeralfs,andic fragixeralfs
+alfisols,xeralfs,haploxeralfs,typic haploxeralfs
+alfisols,xeralfs,haploxeralfs,ultic haploxeralfs
+alfisols,xeralfs,haploxeralfs,vertic haploxeralfs
+alfisols,xeralfs,haploxeralfs,vitrandic haploxeralfs
+alfisols,xeralfs,haploxeralfs,lithic haploxeralfs
+alfisols,xeralfs,haploxeralfs,lithic mollic haploxeralfs
+alfisols,xeralfs,haploxeralfs,lithic ruptic-inceptic haploxeralfs
+alfisols,xeralfs,haploxeralfs,mollic haploxeralfs
+alfisols,xeralfs,haploxeralfs,natric haploxeralfs
+alfisols,xeralfs,haploxeralfs,plinthic haploxeralfs
+alfisols,xeralfs,haploxeralfs,psammentic haploxeralfs
+alfisols,xeralfs,haploxeralfs,aquic haploxeralfs
+alfisols,xeralfs,haploxeralfs,aquultic haploxeralfs
+alfisols,xeralfs,haploxeralfs,calcic haploxeralfs
+alfisols,xeralfs,haploxeralfs,fragiaquic haploxeralfs
+alfisols,xeralfs,haploxeralfs,fragic haploxeralfs
+alfisols,xeralfs,haploxeralfs,inceptic haploxeralfs
+alfisols,xeralfs,haploxeralfs,lamellic haploxeralfs
+alfisols,xeralfs,haploxeralfs,andic haploxeralfs
+alfisols,xeralfs,haploxeralfs,aquandic haploxeralfs
+alfisols,xeralfs,natrixeralfs,typic natrixeralfs
+alfisols,xeralfs,natrixeralfs,vertic natrixeralfs
+alfisols,xeralfs,natrixeralfs,aquic natrixeralfs
+alfisols,xeralfs,palexeralfs,typic palexeralfs
+alfisols,xeralfs,palexeralfs,ultic palexeralfs
+alfisols,xeralfs,palexeralfs,vertic palexeralfs
+alfisols,xeralfs,palexeralfs,vitrandic palexeralfs
+alfisols,xeralfs,palexeralfs,mollic palexeralfs
+alfisols,xeralfs,palexeralfs,natric palexeralfs
+alfisols,xeralfs,palexeralfs,petrocalcic palexeralfs
+alfisols,xeralfs,palexeralfs,plinthic palexeralfs
+alfisols,xeralfs,palexeralfs,psammentic palexeralfs
+alfisols,xeralfs,palexeralfs,aquic palexeralfs
+alfisols,xeralfs,palexeralfs,arenic palexeralfs
+alfisols,xeralfs,palexeralfs,calcic palexeralfs
+alfisols,xeralfs,palexeralfs,fragiaquic palexeralfs
+alfisols,xeralfs,palexeralfs,fragic palexeralfs
+alfisols,xeralfs,palexeralfs,haplic palexeralfs
+alfisols,xeralfs,palexeralfs,lamellic palexeralfs
+alfisols,xeralfs,palexeralfs,andic palexeralfs
+alfisols,xeralfs,palexeralfs,aquandic palexeralfs
+alfisols,xeralfs,plinthoxeralfs,typic plinthoxeralfs
+alfisols,xeralfs,rhodoxeralfs,typic rhodoxeralfs
+alfisols,xeralfs,rhodoxeralfs,vertic rhodoxeralfs
+alfisols,xeralfs,rhodoxeralfs,lithic rhodoxeralfs
+alfisols,xeralfs,rhodoxeralfs,petrocalcic rhodoxeralfs
+alfisols,xeralfs,rhodoxeralfs,calcic rhodoxeralfs
+alfisols,xeralfs,rhodoxeralfs,inceptic rhodoxeralfs
+andisols,aquands,cryaquands,typic cryaquands
+andisols,aquands,cryaquands,lithic cryaquands
+andisols,aquands,cryaquands,histic cryaquands
+andisols,aquands,cryaquands,thaptic cryaquands
+andisols,aquands,duraquands,typic duraquands
+andisols,aquands,duraquands,histic duraquands
+andisols,aquands,duraquands,acraquoxic duraquands
+andisols,aquands,duraquands,thaptic duraquands
+andisols,aquands,endoaquands,typic endoaquands
+andisols,aquands,endoaquands,lithic endoaquands
+andisols,aquands,endoaquands,duric endoaquands
+andisols,aquands,endoaquands,histic endoaquands
+andisols,aquands,endoaquands,hydric endoaquands
+andisols,aquands,endoaquands,alic endoaquands
+andisols,aquands,endoaquands,thaptic endoaquands
+andisols,aquands,epiaquands,typic epiaquands
+andisols,aquands,epiaquands,duric epiaquands
+andisols,aquands,epiaquands,histic epiaquands
+andisols,aquands,epiaquands,hydric epiaquands
+andisols,aquands,epiaquands,alic epiaquands
+andisols,aquands,epiaquands,thaptic epiaquands
+andisols,aquands,gelaquands,turbic gelaquands
+andisols,aquands,gelaquands,typic gelaquands
+andisols,aquands,gelaquands,histic gelaquands
+andisols,aquands,gelaquands,thaptic gelaquands
+andisols,aquands,melanaquands,typic melanaquands
+andisols,aquands,melanaquands,lithic melanaquands
+andisols,aquands,melanaquands,pachic melanaquands
+andisols,aquands,melanaquands,hydric melanaquands
+andisols,aquands,melanaquands,hydric pachic melanaquands
+andisols,aquands,melanaquands,acraquoxic melanaquands
+andisols,aquands,melanaquands,thaptic melanaquands
+andisols,aquands,placaquands,typic placaquands
+andisols,aquands,placaquands,lithic placaquands
+andisols,aquands,placaquands,duric histic placaquands
+andisols,aquands,placaquands,duric placaquands
+andisols,aquands,placaquands,histic placaquands
+andisols,aquands,placaquands,thaptic placaquands
+andisols,aquands,vitraquands,typic vitraquands
+andisols,aquands,vitraquands,lithic vitraquands
+andisols,aquands,vitraquands,duric vitraquands
+andisols,aquands,vitraquands,histic vitraquands
+andisols,aquands,vitraquands,thaptic vitraquands
+andisols,cryands,duricryands,typic duricryands
+andisols,cryands,duricryands,oxyaquic duricryands
+andisols,cryands,duricryands,eutric duricryands
+andisols,cryands,duricryands,eutric oxyaquic duricryands
+andisols,cryands,duricryands,aquic duricryands
+andisols,cryands,fulvicryands,typic fulvicryands
+andisols,cryands,fulvicryands,vitric fulvicryands
+andisols,cryands,fulvicryands,lithic fulvicryands
+andisols,cryands,fulvicryands,pachic fulvicryands
+andisols,cryands,fulvicryands,eutric fulvicryands
+andisols,cryands,fulvicryands,eutric pachic fulvicryands
+andisols,cryands,fulvicryands,folistic fulvicryands
+andisols,cryands,haplocryands,typic haplocryands
+andisols,cryands,haplocryands,vitric haplocryands
+andisols,cryands,haplocryands,lithic haplocryands
+andisols,cryands,haplocryands,oxyaquic haplocryands
+andisols,cryands,haplocryands,aquic haplocryands
+andisols,cryands,haplocryands,folistic haplocryands
+andisols,cryands,haplocryands,xeric haplocryands
+andisols,cryands,haplocryands,acrudoxic haplocryands
+andisols,cryands,haplocryands,alic haplocryands
+andisols,cryands,haplocryands,spodic haplocryands
+andisols,cryands,haplocryands,thaptic haplocryands
+andisols,cryands,hydrocryands,typic hydrocryands
+andisols,cryands,hydrocryands,lithic hydrocryands
+andisols,cryands,hydrocryands,placic hydrocryands
+andisols,cryands,hydrocryands,aquic hydrocryands
+andisols,cryands,hydrocryands,thaptic hydrocryands
+andisols,cryands,melanocryands,typic melanocryands
+andisols,cryands,melanocryands,vitric melanocryands
+andisols,cryands,melanocryands,lithic melanocryands
+andisols,cryands,vitricryands,typic vitricryands
+andisols,cryands,vitricryands,ultic vitricryands
+andisols,cryands,vitricryands,lithic vitricryands
+andisols,cryands,vitricryands,oxyaquic vitricryands
+andisols,cryands,vitricryands,aquic vitricryands
+andisols,cryands,vitricryands,folistic vitricryands
+andisols,cryands,vitricryands,xeric vitricryands
+andisols,cryands,vitricryands,humic vitricryands
+andisols,cryands,vitricryands,humic xeric vitricryands
+andisols,cryands,vitricryands,alfic vitricryands
+andisols,cryands,vitricryands,spodic vitricryands
+andisols,cryands,vitricryands,thaptic vitricryands
+andisols,gelands,vitrigelands,turbic vitrigelands
+andisols,gelands,vitrigelands,typic vitrigelands
+andisols,gelands,vitrigelands,humic vitrigelands
+andisols,torrands,duritorrands,typic duritorrands
+andisols,torrands,duritorrands,vitric duritorrands
+andisols,torrands,duritorrands,petrocalcic duritorrands
+andisols,torrands,haplotorrands,typic haplotorrands
+andisols,torrands,haplotorrands,lithic haplotorrands
+andisols,torrands,haplotorrands,calcic haplotorrands
+andisols,torrands,haplotorrands,duric haplotorrands
+andisols,torrands,vitritorrands,typic vitritorrands
+andisols,torrands,vitritorrands,lithic vitritorrands
+andisols,torrands,vitritorrands,aquic vitritorrands
+andisols,torrands,vitritorrands,calcic vitritorrands
+andisols,torrands,vitritorrands,duric vitritorrands
+andisols,udands,durudands,typic durudands
+andisols,udands,durudands,pachic durudands
+andisols,udands,durudands,aquic durudands
+andisols,udands,durudands,eutric durudands
+andisols,udands,durudands,hydric durudands
+andisols,udands,durudands,acrudoxic durudands
+andisols,udands,fulvudands,typic fulvudands
+andisols,udands,fulvudands,ultic fulvudands
+andisols,udands,fulvudands,lithic fulvudands
+andisols,udands,fulvudands,oxyaquic fulvudands
+andisols,udands,fulvudands,pachic fulvudands
+andisols,udands,fulvudands,aquic fulvudands
+andisols,udands,fulvudands,eutric fulvudands
+andisols,udands,fulvudands,eutric lithic fulvudands
+andisols,udands,fulvudands,eutric pachic fulvudands
+andisols,udands,fulvudands,hydric fulvudands
+andisols,udands,fulvudands,acrudoxic fulvudands
+andisols,udands,fulvudands,thaptic fulvudands
+andisols,udands,hapludands,typic hapludands
+andisols,udands,hapludands,ultic hapludands
+andisols,udands,hapludands,vitric hapludands
+andisols,udands,hapludands,lithic hapludands
+andisols,udands,hapludands,oxic hapludands
+andisols,udands,hapludands,oxyaquic hapludands
+andisols,udands,hapludands,aquic hapludands
+andisols,udands,hapludands,duric hapludands
+andisols,udands,hapludands,eutric hapludands
+andisols,udands,hapludands,eutric thaptic hapludands
+andisols,udands,hapludands,hydric hapludands
+andisols,udands,hapludands,hydric thaptic hapludands
+andisols,udands,hapludands,acrudoxic hapludands
+andisols,udands,hapludands,acrudoxic hydric hapludands
+andisols,udands,hapludands,acrudoxic thaptic hapludands
+andisols,udands,hapludands,acrudoxic ultic hapludands
+andisols,udands,hapludands,alfic hapludands
+andisols,udands,hapludands,alic hapludands
+andisols,udands,hapludands,anthraquic hapludands
+andisols,udands,hapludands,aquic duric hapludands
+andisols,udands,hapludands,thaptic hapludands
+andisols,udands,hydrudands,typic hydrudands
+andisols,udands,hydrudands,ultic hydrudands
+andisols,udands,hydrudands,lithic hydrudands
+andisols,udands,hydrudands,aquic hydrudands
+andisols,udands,hydrudands,eutric hydrudands
+andisols,udands,hydrudands,acrudoxic hydrudands
+andisols,udands,hydrudands,acrudoxic thaptic hydrudands
+andisols,udands,hydrudands,thaptic hydrudands
+andisols,udands,melanudands,typic melanudands
+andisols,udands,melanudands,ultic melanudands
+andisols,udands,melanudands,vitric melanudands
+andisols,udands,melanudands,lithic melanudands
+andisols,udands,melanudands,pachic melanudands
+andisols,udands,melanudands,pachic vitric melanudands
+andisols,udands,melanudands,aquic melanudands
+andisols,udands,melanudands,eutric melanudands
+andisols,udands,melanudands,hydric melanudands
+andisols,udands,melanudands,hydric pachic melanudands
+andisols,udands,melanudands,acrudoxic hydric melanudands
+andisols,udands,melanudands,acrudoxic melanudands
+andisols,udands,melanudands,acrudoxic vitric melanudands
+andisols,udands,melanudands,anthraquic melanudands
+andisols,udands,melanudands,thaptic melanudands
+andisols,udands,placudands,typic placudands
+andisols,udands,placudands,lithic placudands
+andisols,udands,placudands,aquic placudands
+andisols,udands,placudands,hydric pachic placudands
+andisols,udands,placudands,hydric placudands
+andisols,udands,placudands,acrudoxic placudands
+andisols,ustands,durustands,typic durustands
+andisols,ustands,durustands,aquic durustands
+andisols,ustands,durustands,humic durustands
+andisols,ustands,durustands,thaptic durustands
+andisols,ustands,haplustands,typic haplustands
+andisols,ustands,haplustands,ultic haplustands
+andisols,ustands,haplustands,vitric haplustands
+andisols,ustands,haplustands,lithic haplustands
+andisols,ustands,haplustands,oxic haplustands
+andisols,ustands,haplustands,pachic haplustands
+andisols,ustands,haplustands,aquic haplustands
+andisols,ustands,haplustands,calcic haplustands
+andisols,ustands,haplustands,dystric haplustands
+andisols,ustands,haplustands,dystric vitric haplustands
+andisols,ustands,haplustands,humic haplustands
+andisols,ustands,haplustands,alfic haplustands
+andisols,ustands,haplustands,thaptic haplustands
+andisols,vitrands,udivitrands,typic udivitrands
+andisols,vitrands,udivitrands,ultic udivitrands
+andisols,vitrands,udivitrands,lithic udivitrands
+andisols,vitrands,udivitrands,oxyaquic udivitrands
+andisols,vitrands,udivitrands,aquic udivitrands
+andisols,vitrands,udivitrands,humic udivitrands
+andisols,vitrands,udivitrands,alfic udivitrands
+andisols,vitrands,udivitrands,thaptic udivitrands
+andisols,vitrands,ustivitrands,typic ustivitrands
+andisols,vitrands,ustivitrands,lithic ustivitrands
+andisols,vitrands,ustivitrands,aquic ustivitrands
+andisols,vitrands,ustivitrands,calcic ustivitrands
+andisols,vitrands,ustivitrands,humic ustivitrands
+andisols,vitrands,ustivitrands,thaptic ustivitrands
+andisols,xerands,haploxerands,typic haploxerands
+andisols,xerands,haploxerands,ultic haploxerands
+andisols,xerands,haploxerands,lithic haploxerands
+andisols,xerands,haploxerands,aquic haploxerands
+andisols,xerands,haploxerands,calcic haploxerands
+andisols,xerands,haploxerands,humic haploxerands
+andisols,xerands,haploxerands,alfic haploxerands
+andisols,xerands,haploxerands,alfic humic haploxerands
+andisols,xerands,haploxerands,thaptic haploxerands
+andisols,xerands,melanoxerands,typic melanoxerands
+andisols,xerands,melanoxerands,pachic melanoxerands
+andisols,xerands,vitrixerands,typic vitrixerands
+andisols,xerands,vitrixerands,ultic vitrixerands
+andisols,xerands,vitrixerands,lithic vitrixerands
+andisols,xerands,vitrixerands,aquic vitrixerands
+andisols,xerands,vitrixerands,humic vitrixerands
+andisols,xerands,vitrixerands,alfic humic vitrixerands
+andisols,xerands,vitrixerands,alfic vitrixerands
+andisols,xerands,vitrixerands,thaptic vitrixerands
+aridisols,argids,calciargids,typic calciargids
+aridisols,argids,calciargids,ustertic calciargids
+aridisols,argids,calciargids,ustic calciargids
+aridisols,argids,calciargids,vertic calciargids
+aridisols,argids,calciargids,vitrandic calciargids
+aridisols,argids,calciargids,vitrixerandic calciargids
+aridisols,argids,calciargids,petronodic calciargids
+aridisols,argids,calciargids,petronodic ustic calciargids
+aridisols,argids,calciargids,petronodic xeric calciargids
+aridisols,argids,calciargids,arenic calciargids
+aridisols,argids,calciargids,arenic ustic calciargids
+aridisols,argids,calciargids,durinodic calciargids
+aridisols,argids,calciargids,durinodic xeric calciargids
+aridisols,argids,calciargids,xerertic calciargids
+aridisols,argids,calciargids,xeric calciargids
+aridisols,argids,calciargids,lithic calciargids
+aridisols,argids,calciargids,aquic calciargids
+aridisols,argids,gypsiargids,typic gypsiargids
+aridisols,argids,gypsiargids,ustic gypsiargids
+aridisols,argids,gypsiargids,vitrandic gypsiargids
+aridisols,argids,gypsiargids,vitrixerandic gypsiargids
+aridisols,argids,gypsiargids,aquic gypsiargids
+aridisols,argids,gypsiargids,durinodic gypsiargids
+aridisols,argids,gypsiargids,xeric gypsiargids
+aridisols,argids,haplargids,typic haplargids
+aridisols,argids,haplargids,ustertic haplargids
+aridisols,argids,haplargids,ustic haplargids
+aridisols,argids,haplargids,vertic haplargids
+aridisols,argids,haplargids,vitrandic haplargids
+aridisols,argids,haplargids,vitrixerandic haplargids
+aridisols,argids,haplargids,lithic haplargids
+aridisols,argids,haplargids,lithic ruptic-entic haplargids
+aridisols,argids,haplargids,lithic ustic haplargids
+aridisols,argids,haplargids,lithic xeric haplargids
+aridisols,argids,haplargids,petronodic haplargids
+aridisols,argids,haplargids,petronodic ustic haplargids
+aridisols,argids,haplargids,aquic haplargids
+aridisols,argids,haplargids,arenic haplargids
+aridisols,argids,haplargids,arenic ustic haplargids
+aridisols,argids,haplargids,durinodic haplargids
+aridisols,argids,haplargids,durinodic xeric haplargids
+aridisols,argids,haplargids,xerertic haplargids
+aridisols,argids,haplargids,xeric haplargids
+aridisols,argids,natrargids,typic natrargids
+aridisols,argids,natrargids,ustertic natrargids
+aridisols,argids,natrargids,ustic natrargids
+aridisols,argids,natrargids,vertic natrargids
+aridisols,argids,natrargids,vitrandic natrargids
+aridisols,argids,natrargids,glossic natrargids
+aridisols,argids,natrargids,glossic ustic natrargids
+aridisols,argids,natrargids,lithic natrargids
+aridisols,argids,natrargids,lithic ustic natrargids
+aridisols,argids,natrargids,lithic xeric natrargids
+aridisols,argids,natrargids,petronodic natrargids
+aridisols,argids,natrargids,aquic natrargids
+aridisols,argids,natrargids,durinodic natrargids
+aridisols,argids,natrargids,durinodic xeric natrargids
+aridisols,argids,natrargids,vitrixerandic natrargids
+aridisols,argids,natrargids,xerertic natrargids
+aridisols,argids,natrargids,xeric natrargids
+aridisols,argids,natrargids,haplic natrargids
+aridisols,argids,natrargids,haplic ustic natrargids
+aridisols,argids,natrargids,haploxeralfic natrargids
+aridisols,argids,paleargids,typic paleargids
+aridisols,argids,paleargids,ustic paleargids
+aridisols,argids,paleargids,vertic paleargids
+aridisols,argids,paleargids,vitrandic paleargids
+aridisols,argids,paleargids,petronodic paleargids
+aridisols,argids,paleargids,petronodic ustic paleargids
+aridisols,argids,paleargids,aquic paleargids
+aridisols,argids,paleargids,arenic paleargids
+aridisols,argids,paleargids,arenic ustic paleargids
+aridisols,argids,paleargids,calcic paleargids
+aridisols,argids,paleargids,durinodic paleargids
+aridisols,argids,paleargids,durinodic xeric paleargids
+aridisols,argids,paleargids,vitrixerandic paleargids
+aridisols,argids,paleargids,xeric paleargids
+aridisols,argids,petroargids,typic petroargids
+aridisols,argids,petroargids,ustic petroargids
+aridisols,argids,petroargids,natric petroargids
+aridisols,argids,petroargids,petrogypsic petroargids
+aridisols,argids,petroargids,petrogypsic ustic petroargids
+aridisols,argids,petroargids,duric petroargids
+aridisols,argids,petroargids,duric xeric petroargids
+aridisols,argids,petroargids,xeric petroargids
+aridisols,calcids,haplocalcids,typic haplocalcids
+aridisols,calcids,haplocalcids,ustic haplocalcids
+aridisols,calcids,haplocalcids,vertic haplocalcids
+aridisols,calcids,haplocalcids,vitrandic haplocalcids
+aridisols,calcids,haplocalcids,vitrixerandic haplocalcids
+aridisols,calcids,haplocalcids,lithic haplocalcids
+aridisols,calcids,haplocalcids,lithic ustic haplocalcids
+aridisols,calcids,haplocalcids,lithic xeric haplocalcids
+aridisols,calcids,haplocalcids,petronodic haplocalcids
+aridisols,calcids,haplocalcids,petronodic ustic haplocalcids
+aridisols,calcids,haplocalcids,petronodic xeric haplocalcids
+aridisols,calcids,haplocalcids,sodic haplocalcids
+aridisols,calcids,haplocalcids,sodic ustic haplocalcids
+aridisols,calcids,haplocalcids,sodic xeric haplocalcids
+aridisols,calcids,haplocalcids,aquic haplocalcids
+aridisols,calcids,haplocalcids,duric haplocalcids
+aridisols,calcids,haplocalcids,duric xeric haplocalcids
+aridisols,calcids,haplocalcids,durinodic haplocalcids
+aridisols,calcids,haplocalcids,durinodic xeric haplocalcids
+aridisols,calcids,haplocalcids,xeric haplocalcids
+aridisols,calcids,haplocalcids,aquic durinodic haplocalcids
+aridisols,calcids,petrocalcids,typic petrocalcids
+aridisols,calcids,petrocalcids,ustalfic petrocalcids
+aridisols,calcids,petrocalcids,ustic petrocalcids
+aridisols,calcids,petrocalcids,natric petrocalcids
+aridisols,calcids,petrocalcids,aquic petrocalcids
+aridisols,calcids,petrocalcids,argic petrocalcids
+aridisols,calcids,petrocalcids,calcic lithic petrocalcids
+aridisols,calcids,petrocalcids,calcic petrocalcids
+aridisols,calcids,petrocalcids,xeralfic petrocalcids
+aridisols,calcids,petrocalcids,xeric petrocalcids
+aridisols,cambids,aquicambids,typic aquicambids
+aridisols,cambids,aquicambids,ustic aquicambids
+aridisols,cambids,aquicambids,vitrandic aquicambids
+aridisols,cambids,aquicambids,vitrixerandic aquicambids
+aridisols,cambids,aquicambids,petronodic aquicambids
+aridisols,cambids,aquicambids,sodic aquicambids
+aridisols,cambids,aquicambids,durinodic aquicambids
+aridisols,cambids,aquicambids,durinodic xeric aquicambids
+aridisols,cambids,aquicambids,fluventic aquicambids
+aridisols,cambids,aquicambids,xeric aquicambids
+aridisols,cambids,haplocambids,typic haplocambids
+aridisols,cambids,haplocambids,ustertic haplocambids
+aridisols,cambids,haplocambids,ustic haplocambids
+aridisols,cambids,haplocambids,ustifluventic haplocambids
+aridisols,cambids,haplocambids,vertic haplocambids
+aridisols,cambids,haplocambids,vitrandic haplocambids
+aridisols,cambids,haplocambids,vitrixerandic haplocambids
+aridisols,cambids,haplocambids,lithic haplocambids
+aridisols,cambids,haplocambids,lithic ustic haplocambids
+aridisols,cambids,haplocambids,lithic xeric haplocambids
+aridisols,cambids,haplocambids,petronodic haplocambids
+aridisols,cambids,haplocambids,petronodic ustic haplocambids
+aridisols,cambids,haplocambids,petronodic xeric haplocambids
+aridisols,cambids,haplocambids,sodic haplocambids
+aridisols,cambids,haplocambids,sodic ustic haplocambids
+aridisols,cambids,haplocambids,sodic xeric haplocambids
+aridisols,cambids,haplocambids,durinodic haplocambids
+aridisols,cambids,haplocambids,durinodic xeric haplocambids
+aridisols,cambids,haplocambids,fluventic haplocambids
+aridisols,cambids,haplocambids,xerertic haplocambids
+aridisols,cambids,haplocambids,xeric haplocambids
+aridisols,cambids,haplocambids,xerofluventic haplocambids
+aridisols,cambids,haplocambids,anthropic haplocambids
+aridisols,cambids,petrocambids,typic petrocambids
+aridisols,cambids,petrocambids,ustic petrocambids
+aridisols,cambids,petrocambids,vitrandic petrocambids
+aridisols,cambids,petrocambids,sodic petrocambids
+aridisols,cambids,petrocambids,vitrixerandic petrocambids
+aridisols,cambids,petrocambids,xeric petrocambids
+aridisols,cryids,argicryids,typic argicryids
+aridisols,cryids,argicryids,ustic argicryids
+aridisols,cryids,argicryids,vertic argicryids
+aridisols,cryids,argicryids,vitrandic argicryids
+aridisols,cryids,argicryids,vitrixerandic argicryids
+aridisols,cryids,argicryids,natric argicryids
+aridisols,cryids,argicryids,xeric argicryids
+aridisols,cryids,argicryids,lithic argicryids
+aridisols,cryids,calcicryids,typic calcicryids
+aridisols,cryids,calcicryids,ustic calcicryids
+aridisols,cryids,calcicryids,vitrandic calcicryids
+aridisols,cryids,calcicryids,vitrixerandic calcicryids
+aridisols,cryids,calcicryids,xeric calcicryids
+aridisols,cryids,calcicryids,lithic calcicryids
+aridisols,cryids,gypsicryids,typic gypsicryids
+aridisols,cryids,gypsicryids,vitrandic gypsicryids
+aridisols,cryids,gypsicryids,vitrixerandic gypsicryids
+aridisols,cryids,gypsicryids,calcic gypsicryids
+aridisols,cryids,haplocryids,typic haplocryids
+aridisols,cryids,haplocryids,ustic haplocryids
+aridisols,cryids,haplocryids,vertic haplocryids
+aridisols,cryids,haplocryids,vitrandic haplocryids
+aridisols,cryids,haplocryids,vitrixerandic haplocryids
+aridisols,cryids,haplocryids,lithic haplocryids
+aridisols,cryids,haplocryids,xeric haplocryids
+aridisols,cryids,petrocryids,typic petrocryids
+aridisols,cryids,petrocryids,ustic petrocryids
+aridisols,cryids,petrocryids,petrogypsic petrocryids
+aridisols,cryids,petrocryids,duric petrocryids
+aridisols,cryids,petrocryids,duric xeric petrocryids
+aridisols,cryids,petrocryids,xereptic petrocryids
+aridisols,cryids,petrocryids,xeric petrocryids
+aridisols,cryids,salicryids,typic salicryids
+aridisols,cryids,salicryids,aquic salicryids
+aridisols,durids,argidurids,typic argidurids
+aridisols,durids,argidurids,ustic argidurids
+aridisols,durids,argidurids,vertic argidurids
+aridisols,durids,argidurids,vitrandic argidurids
+aridisols,durids,argidurids,vitrixerandic argidurids
+aridisols,durids,argidurids,argidic argidurids
+aridisols,durids,argidurids,xeric argidurids
+aridisols,durids,argidurids,haploxeralfic argidurids
+aridisols,durids,argidurids,abruptic argidurids
+aridisols,durids,argidurids,abruptic xeric argidurids
+aridisols,durids,argidurids,aquic argidurids
+aridisols,durids,haplodurids,typic haplodurids
+aridisols,durids,haplodurids,ustic haplodurids
+aridisols,durids,haplodurids,vitrandic haplodurids
+aridisols,durids,haplodurids,aquic haplodurids
+aridisols,durids,haplodurids,aquicambidic haplodurids
+aridisols,durids,haplodurids,cambidic haplodurids
+aridisols,durids,haplodurids,vitrixerandic haplodurids
+aridisols,durids,haplodurids,xereptic haplodurids
+aridisols,durids,haplodurids,xeric haplodurids
+aridisols,durids,natridurids,typic natridurids
+aridisols,durids,natridurids,vertic natridurids
+aridisols,durids,natridurids,vitrandic natridurids
+aridisols,durids,natridurids,natrargidic natridurids
+aridisols,durids,natridurids,natrixeralfic natridurids
+aridisols,durids,natridurids,aquic natrargidic natridurids
+aridisols,durids,natridurids,aquic natridurids
+aridisols,durids,natridurids,vitrixerandic natridurids
+aridisols,durids,natridurids,xeric natridurids
+aridisols,gypsids,argigypsids,typic argigypsids
+aridisols,gypsids,argigypsids,ustic argigypsids
+aridisols,gypsids,argigypsids,vertic argigypsids
+aridisols,gypsids,argigypsids,vitrandic argigypsids
+aridisols,gypsids,argigypsids,vitrixerandic argigypsids
+aridisols,gypsids,argigypsids,petronodic argigypsids
+aridisols,gypsids,argigypsids,calcic argigypsids
+aridisols,gypsids,argigypsids,xeric argigypsids
+aridisols,gypsids,argigypsids,lithic argigypsids
+aridisols,gypsids,calcigypsids,typic calcigypsids
+aridisols,gypsids,calcigypsids,ustic calcigypsids
+aridisols,gypsids,calcigypsids,vitrandic calcigypsids
+aridisols,gypsids,calcigypsids,vitrixerandic calcigypsids
+aridisols,gypsids,calcigypsids,petronodic calcigypsids
+aridisols,gypsids,calcigypsids,xeric calcigypsids
+aridisols,gypsids,calcigypsids,lithic calcigypsids
+aridisols,gypsids,haplogypsids,typic haplogypsids
+aridisols,gypsids,haplogypsids,ustic haplogypsids
+aridisols,gypsids,haplogypsids,vitrandic haplogypsids
+aridisols,gypsids,haplogypsids,lithic haplogypsids
+aridisols,gypsids,haplogypsids,petronodic haplogypsids
+aridisols,gypsids,haplogypsids,sodic haplogypsids
+aridisols,gypsids,haplogypsids,vitrixerandic haplogypsids
+aridisols,gypsids,haplogypsids,xeric haplogypsids
+aridisols,gypsids,haplogypsids,leptic haplogypsids
+aridisols,gypsids,natrigypsids,typic natrigypsids
+aridisols,gypsids,natrigypsids,ustic natrigypsids
+aridisols,gypsids,natrigypsids,vertic natrigypsids
+aridisols,gypsids,natrigypsids,vitrandic natrigypsids
+aridisols,gypsids,natrigypsids,lithic natrigypsids
+aridisols,gypsids,natrigypsids,petronodic natrigypsids
+aridisols,gypsids,natrigypsids,vitrixerandic natrigypsids
+aridisols,gypsids,natrigypsids,xeric natrigypsids
+aridisols,gypsids,petrogypsids,typic petrogypsids
+aridisols,gypsids,petrogypsids,ustic petrogypsids
+aridisols,gypsids,petrogypsids,vitrandic petrogypsids
+aridisols,gypsids,petrogypsids,petrocalcic petrogypsids
+aridisols,gypsids,petrogypsids,calcic petrogypsids
+aridisols,gypsids,petrogypsids,vitrixerandic petrogypsids
+aridisols,gypsids,petrogypsids,xeric petrogypsids
+aridisols,salids,aquisalids,typic aquisalids
+aridisols,salids,aquisalids,gypsic aquisalids
+aridisols,salids,aquisalids,calcic aquisalids
+aridisols,salids,aquisalids,anhydritic aquisalids
+aridisols,salids,haplosalids,typic haplosalids
+aridisols,salids,haplosalids,gypsic haplosalids
+aridisols,salids,haplosalids,petrogypsic haplosalids
+aridisols,salids,haplosalids,calcic haplosalids
+aridisols,salids,haplosalids,duric haplosalids
+aridisols,salids,haplosalids,anhydritic haplosalids
+entisols,aquents,cryaquents,typic cryaquents
+entisols,aquents,cryaquents,aquandic cryaquents
+entisols,aquents,endoaquents,typic endoaquents
+entisols,aquents,endoaquents,lithic endoaquents
+entisols,aquents,endoaquents,mollic endoaquents
+entisols,aquents,endoaquents,sodic endoaquents
+entisols,aquents,endoaquents,humaqueptic endoaquents
+entisols,aquents,endoaquents,aeric endoaquents
+entisols,aquents,endoaquents,sulfic endoaquents
+entisols,aquents,epiaquents,typic epiaquents
+entisols,aquents,epiaquents,mollic epiaquents
+entisols,aquents,epiaquents,humaqueptic epiaquents
+entisols,aquents,epiaquents,aeric epiaquents
+entisols,aquents,fluvaquents,typic fluvaquents
+entisols,aquents,fluvaquents,vertic fluvaquents
+entisols,aquents,fluvaquents,mollic fluvaquents
+entisols,aquents,fluvaquents,humaqueptic fluvaquents
+entisols,aquents,fluvaquents,aeric fluvaquents
+entisols,aquents,fluvaquents,aquandic fluvaquents
+entisols,aquents,fluvaquents,sulfic fluvaquents
+entisols,aquents,fluvaquents,thapto-histic fluvaquents
+entisols,aquents,gelaquents,typic gelaquents
+entisols,aquents,hydraquents,thapto-histic hydraquents
+entisols,aquents,hydraquents,typic hydraquents
+entisols,aquents,hydraquents,sodic hydraquents
+entisols,aquents,hydraquents,sulfic hydraquents
+entisols,aquents,psammaquents,typic psammaquents
+entisols,aquents,psammaquents,lithic psammaquents
+entisols,aquents,psammaquents,mollic psammaquents
+entisols,aquents,psammaquents,sodic psammaquents
+entisols,aquents,psammaquents,humaqueptic psammaquents
+entisols,aquents,psammaquents,spodic psammaquents
+entisols,aquents,sulfaquents,thapto-histic sulfaquents
+entisols,aquents,sulfaquents,typic sulfaquents
+entisols,aquents,sulfaquents,haplic sulfaquents
+entisols,aquents,sulfaquents,histic sulfaquents
+entisols,fluvents,cryofluvents,typic cryofluvents
+entisols,fluvents,cryofluvents,vitrandic cryofluvents
+entisols,fluvents,cryofluvents,mollic cryofluvents
+entisols,fluvents,cryofluvents,oxyaquic cryofluvents
+entisols,fluvents,cryofluvents,andic cryofluvents
+entisols,fluvents,cryofluvents,aquic cryofluvents
+entisols,fluvents,gelifluvents,typic gelifluvents
+entisols,fluvents,gelifluvents,aquic gelifluvents
+entisols,fluvents,torrifluvents,typic torrifluvents
+entisols,fluvents,torrifluvents,ustertic torrifluvents
+entisols,fluvents,torrifluvents,ustic torrifluvents
+entisols,fluvents,torrifluvents,vertic torrifluvents
+entisols,fluvents,torrifluvents,vitrandic torrifluvents
+entisols,fluvents,torrifluvents,oxyaquic torrifluvents
+entisols,fluvents,torrifluvents,aquic torrifluvents
+entisols,fluvents,torrifluvents,duric torrifluvents
+entisols,fluvents,torrifluvents,duric xeric torrifluvents
+entisols,fluvents,torrifluvents,vitrixerandic torrifluvents
+entisols,fluvents,torrifluvents,xeric torrifluvents
+entisols,fluvents,torrifluvents,anthropic torrifluvents
+entisols,fluvents,udifluvents,typic udifluvents
+entisols,fluvents,udifluvents,vertic udifluvents
+entisols,fluvents,udifluvents,vitrandic udifluvents
+entisols,fluvents,udifluvents,mollic udifluvents
+entisols,fluvents,udifluvents,oxyaquic udifluvents
+entisols,fluvents,udifluvents,aquic udifluvents
+entisols,fluvents,udifluvents,andic udifluvents
+entisols,fluvents,udifluvents,aquertic udifluvents
+entisols,fluvents,ustifluvents,torrertic ustifluvents
+entisols,fluvents,ustifluvents,typic ustifluvents
+entisols,fluvents,ustifluvents,udic ustifluvents
+entisols,fluvents,ustifluvents,vertic ustifluvents
+entisols,fluvents,ustifluvents,mollic ustifluvents
+entisols,fluvents,ustifluvents,oxyaquic ustifluvents
+entisols,fluvents,ustifluvents,aquic ustifluvents
+entisols,fluvents,ustifluvents,aridic ustifluvents
+entisols,fluvents,ustifluvents,anthraquic ustifluvents
+entisols,fluvents,ustifluvents,aquertic ustifluvents
+entisols,fluvents,xerofluvents,typic xerofluvents
+entisols,fluvents,xerofluvents,vertic xerofluvents
+entisols,fluvents,xerofluvents,vitrandic xerofluvents
+entisols,fluvents,xerofluvents,mollic xerofluvents
+entisols,fluvents,xerofluvents,oxyaquic xerofluvents
+entisols,fluvents,xerofluvents,aquic xerofluvents
+entisols,fluvents,xerofluvents,durinodic xerofluvents
+entisols,fluvents,xerofluvents,andic xerofluvents
+entisols,fluvents,xerofluvents,aquandic xerofluvents
+entisols,orthents,cryorthents,typic cryorthents
+entisols,orthents,cryorthents,vitrandic cryorthents
+entisols,orthents,cryorthents,lithic cryorthents
+entisols,orthents,cryorthents,oxyaquic cryorthents
+entisols,orthents,cryorthents,lamellic cryorthents
+entisols,orthents,cryorthents,aquic cryorthents
+entisols,orthents,gelorthents,typic gelorthents
+entisols,orthents,gelorthents,oxyaquic gelorthents
+entisols,orthents,gelorthents,aquic gelorthents
+entisols,orthents,torriorthents,typic torriorthents
+entisols,orthents,torriorthents,ustertic torriorthents
+entisols,orthents,torriorthents,ustic torriorthents
+entisols,orthents,torriorthents,vertic torriorthents
+entisols,orthents,torriorthents,vitrandic torriorthents
+entisols,orthents,torriorthents,lithic torriorthents
+entisols,orthents,torriorthents,lithic ustic torriorthents
+entisols,orthents,torriorthents,lithic xeric torriorthents
+entisols,orthents,torriorthents,oxyaquic torriorthents
+entisols,orthents,torriorthents,aquic torriorthents
+entisols,orthents,torriorthents,duric torriorthents
+entisols,orthents,torriorthents,xerertic torriorthents
+entisols,orthents,torriorthents,xeric torriorthents
+entisols,orthents,torriorthents,anthraltic torriorthents
+entisols,orthents,udorthents,typic udorthents
+entisols,orthents,udorthents,vermic udorthents
+entisols,orthents,udorthents,vitrandic udorthents
+entisols,orthents,udorthents,lithic udorthents
+entisols,orthents,udorthents,oxyaquic udorthents
+entisols,orthents,udorthents,aquic udorthents
+entisols,orthents,udorthents,anthrodensic sodic udorthents
+entisols,orthents,udorthents,anthrodensic udorthents
+entisols,orthents,udorthents,anthroportic udorthents
+entisols,orthents,udorthents,anthropic udorthents
+entisols,orthents,ustorthents,torrertic ustorthents
+entisols,orthents,ustorthents,typic ustorthents
+entisols,orthents,ustorthents,udic ustorthents
+entisols,orthents,ustorthents,vermic ustorthents
+entisols,orthents,ustorthents,vertic ustorthents
+entisols,orthents,ustorthents,vitrandic ustorthents
+entisols,orthents,ustorthents,vitritorrandic ustorthents
+entisols,orthents,ustorthents,lithic ustorthents
+entisols,orthents,ustorthents,oxyaquic ustorthents
+entisols,orthents,ustorthents,aquic ustorthents
+entisols,orthents,ustorthents,aridic lithic ustorthents
+entisols,orthents,ustorthents,aridic ustorthents
+entisols,orthents,ustorthents,durinodic ustorthents
+entisols,orthents,ustorthents,anthraquic ustorthents
+entisols,orthents,ustorthents,anthrodensic ustorthents
+entisols,orthents,ustorthents,anthroportic ustorthents
+entisols,orthents,xerorthents,typic xerorthents
+entisols,orthents,xerorthents,vitrandic xerorthents
+entisols,orthents,xerorthents,lithic xerorthents
+entisols,orthents,xerorthents,oxyaquic xerorthents
+entisols,orthents,xerorthents,aquic xerorthents
+entisols,orthents,xerorthents,durinodic xerorthents
+entisols,orthents,xerorthents,dystric xerorthents
+entisols,orthents,xerorthents,anthraltic sodic xerorthents
+entisols,orthents,xerorthents,anthraltic xerorthents
+entisols,psamments,cryopsamments,typic cryopsamments
+entisols,psamments,cryopsamments,vitrandic cryopsamments
+entisols,psamments,cryopsamments,lithic cryopsamments
+entisols,psamments,cryopsamments,oxyaquic cryopsamments
+entisols,psamments,cryopsamments,spodic cryopsamments
+entisols,psamments,cryopsamments,lamellic cryopsamments
+entisols,psamments,cryopsamments,aquic cryopsamments
+entisols,psamments,quartzipsamments,typic quartzipsamments
+entisols,psamments,quartzipsamments,udoxic quartzipsamments
+entisols,psamments,quartzipsamments,ustic quartzipsamments
+entisols,psamments,quartzipsamments,ustoxic quartzipsamments
+entisols,psamments,quartzipsamments,lithic quartzipsamments
+entisols,psamments,quartzipsamments,oxyaquic quartzipsamments
+entisols,psamments,quartzipsamments,plinthic quartzipsamments
+entisols,psamments,quartzipsamments,aquic quartzipsamments
+entisols,psamments,quartzipsamments,aquodic quartzipsamments
+entisols,psamments,quartzipsamments,xeric quartzipsamments
+entisols,psamments,quartzipsamments,lamellic quartzipsamments
+entisols,psamments,quartzipsamments,lamellic ustic quartzipsamments
+entisols,psamments,quartzipsamments,spodic quartzipsamments
+entisols,psamments,torripsamments,typic torripsamments
+entisols,psamments,torripsamments,ustic torripsamments
+entisols,psamments,torripsamments,vitrandic torripsamments
+entisols,psamments,torripsamments,lithic torripsamments
+entisols,psamments,torripsamments,oxyaquic torripsamments
+entisols,psamments,torripsamments,rhodic torripsamments
+entisols,psamments,torripsamments,xeric torripsamments
+entisols,psamments,torripsamments,haploduridic torripsamments
+entisols,psamments,udipsamments,typic udipsamments
+entisols,psamments,udipsamments,lithic udipsamments
+entisols,psamments,udipsamments,oxyaquic udipsamments
+entisols,psamments,udipsamments,aquic udipsamments
+entisols,psamments,udipsamments,lamellic udipsamments
+entisols,psamments,udipsamments,spodic udipsamments
+entisols,psamments,udipsamments,haploplaggic udipsamments
+entisols,psamments,ustipsamments,typic ustipsamments
+entisols,psamments,ustipsamments,lithic ustipsamments
+entisols,psamments,ustipsamments,oxyaquic ustipsamments
+entisols,psamments,ustipsamments,rhodic ustipsamments
+entisols,psamments,ustipsamments,aquic ustipsamments
+entisols,psamments,ustipsamments,aridic ustipsamments
+entisols,psamments,ustipsamments,lamellic ustipsamments
+entisols,psamments,xeropsamments,typic xeropsamments
+entisols,psamments,xeropsamments,vitrandic xeropsamments
+entisols,psamments,xeropsamments,lithic xeropsamments
+entisols,psamments,xeropsamments,oxyaquic xeropsamments
+entisols,psamments,xeropsamments,aquic xeropsamments
+entisols,psamments,xeropsamments,durinodic xeropsamments
+entisols,psamments,xeropsamments,dystric xeropsamments
+entisols,psamments,xeropsamments,lamellic xeropsamments
+entisols,psamments,xeropsamments,aquic durinodic xeropsamments
+entisols,wassents,fluviwassents,typic fluviwassents
+entisols,wassents,fluviwassents,lithic fluviwassents
+entisols,wassents,fluviwassents,aeric fluviwassents
+entisols,wassents,fluviwassents,sulfic fluviwassents
+entisols,wassents,fluviwassents,thapto-histic fluviwassents
+entisols,wassents,frasiwassents,thapto-histic frasiwassents
+entisols,wassents,frasiwassents,typic frasiwassents
+entisols,wassents,frasiwassents,lithic frasiwassents
+entisols,wassents,frasiwassents,psammentic frasiwassents
+entisols,wassents,frasiwassents,fluventic frasiwassents
+entisols,wassents,frasiwassents,hydric frasiwassents
+entisols,wassents,frasiwassents,aeric frasiwassents
+entisols,wassents,haplowassents,typic haplowassents
+entisols,wassents,haplowassents,lithic haplowassents
+entisols,wassents,haplowassents,aeric haplowassents
+entisols,wassents,haplowassents,sulfic haplowassents
+entisols,wassents,hydrowassents,thapto-histic hydrowassents
+entisols,wassents,hydrowassents,typic hydrowassents
+entisols,wassents,hydrowassents,grossic hydrowassents
+entisols,wassents,hydrowassents,lithic hydrowassents
+entisols,wassents,hydrowassents,sulfic hydrowassents
+entisols,wassents,psammowassents,typic psammowassents
+entisols,wassents,psammowassents,lithic psammowassents
+entisols,wassents,psammowassents,fluventic psammowassents
+entisols,wassents,psammowassents,aeric psammowassents
+entisols,wassents,psammowassents,sulfic psammowassents
+entisols,wassents,sulfiwassents,thapto-histic sulfiwassents
+entisols,wassents,sulfiwassents,typic sulfiwassents
+entisols,wassents,sulfiwassents,lithic sulfiwassents
+entisols,wassents,sulfiwassents,fluventic sulfiwassents
+entisols,wassents,sulfiwassents,haplic sulfiwassents
+entisols,wassents,sulfiwassents,aeric sulfiwassents
+gelisols,fibrists,fibristels,typic fibristels
+gelisols,fibrists,fibristels,lithic fibristels
+gelisols,fibrists,fibristels,sphagnic fibristels
+gelisols,fibrists,fibristels,fluvaquentic fibristels
+gelisols,fibrists,fibristels,terric fibristels
+gelisols,histels,folistels,typic folistels
+gelisols,histels,folistels,lithic folistels
+gelisols,histels,folistels,glacic folistels
+gelisols,histels,hemistels,typic hemistels
+gelisols,histels,hemistels,lithic hemistels
+gelisols,histels,hemistels,fluvaquentic hemistels
+gelisols,histels,hemistels,terric hemistels
+gelisols,histels,glacistels,typic glacistels
+gelisols,histels,glacistels,sapric glacistels
+gelisols,histels,glacistels,hemic glacistels
+gelisols,orthels,anhyorthels,typic anhyorthels
+gelisols,orthels,anhyorthels,gypsic anhyorthels
+gelisols,orthels,anhyorthels,nitric anhyorthels
+gelisols,orthels,anhyorthels,petrogypsic anhyorthels
+gelisols,orthels,anhyorthels,salic anhyorthels
+gelisols,orthels,anhyorthels,calcic anhyorthels
+gelisols,orthels,anhyorthels,glacic anhyorthels
+gelisols,orthels,anhyorthels,lithic anhyorthels
+gelisols,orthels,aquorthels,typic aquorthels
+gelisols,orthels,aquorthels,vitrandic aquorthels
+gelisols,orthels,aquorthels,psammentic aquorthels
+gelisols,orthels,aquorthels,ruptic-histic aquorthels
+gelisols,orthels,aquorthels,salic aquorthels
+gelisols,orthels,aquorthels,fluvaquentic aquorthels
+gelisols,orthels,aquorthels,glacic aquorthels
+gelisols,orthels,aquorthels,lithic aquorthels
+gelisols,orthels,aquorthels,andic aquorthels
+gelisols,orthels,aquorthels,sulfuric aquorthels
+gelisols,orthels,argiorthels,typic argiorthels
+gelisols,orthels,argiorthels,natric argiorthels
+gelisols,orthels,argiorthels,glacic argiorthels
+gelisols,orthels,argiorthels,lithic argiorthels
+gelisols,orthels,haplorthels,typic haplorthels
+gelisols,orthels,haplorthels,lithic haplorthels
+gelisols,orthels,haplorthels,aquic haplorthels
+gelisols,orthels,haplorthels,fluvaquentic haplorthels
+gelisols,orthels,haplorthels,fluventic haplorthels
+gelisols,orthels,haplorthels,folistic haplorthels
+gelisols,orthels,haplorthels,glacic haplorthels
+gelisols,orthels,historthels,typic historthels
+gelisols,orthels,historthels,lithic historthels
+gelisols,orthels,historthels,ruptic historthels
+gelisols,orthels,historthels,fluvaquentic historthels
+gelisols,orthels,historthels,fluventic historthels
+gelisols,orthels,historthels,glacic historthels
+gelisols,orthels,mollorthels,typic mollorthels
+gelisols,orthels,mollorthels,vertic mollorthels
+gelisols,orthels,mollorthels,vitrandic mollorthels
+gelisols,orthels,mollorthels,lithic mollorthels
+gelisols,orthels,mollorthels,aquic mollorthels
+gelisols,orthels,mollorthels,cumulic mollorthels
+gelisols,orthels,mollorthels,folistic mollorthels
+gelisols,orthels,mollorthels,glacic mollorthels
+gelisols,orthels,mollorthels,andic mollorthels
+gelisols,orthels,psammorthels,typic psammorthels
+gelisols,orthels,psammorthels,lithic psammorthels
+gelisols,orthels,psammorthels,glacic psammorthels
+gelisols,orthels,psammorthels,spodic psammorthels
+gelisols,orthels,umbrorthels,typic umbrorthels
+gelisols,orthels,umbrorthels,vertic umbrorthels
+gelisols,orthels,umbrorthels,vitrandic umbrorthels
+gelisols,orthels,umbrorthels,lithic umbrorthels
+gelisols,orthels,umbrorthels,aquic umbrorthels
+gelisols,orthels,umbrorthels,cumulic umbrorthels
+gelisols,orthels,umbrorthels,folistic umbrorthels
+gelisols,orthels,umbrorthels,glacic umbrorthels
+gelisols,orthels,umbrorthels,andic umbrorthels
+gelisols,saprists,sapristels,typic sapristels
+gelisols,saprists,sapristels,lithic sapristels
+gelisols,saprists,sapristels,fluvaquentic sapristels
+gelisols,saprists,sapristels,terric sapristels
+gelisols,turbels,anhyturbels,typic anhyturbels
+gelisols,turbels,anhyturbels,gypsic anhyturbels
+gelisols,turbels,anhyturbels,nitric anhyturbels
+gelisols,turbels,anhyturbels,petrogypsic anhyturbels
+gelisols,turbels,anhyturbels,salic anhyturbels
+gelisols,turbels,anhyturbels,calcic anhyturbels
+gelisols,turbels,anhyturbels,glacic anhyturbels
+gelisols,turbels,anhyturbels,lithic anhyturbels
+gelisols,turbels,aquiturbels,typic aquiturbels
+gelisols,turbels,aquiturbels,psammentic aquiturbels
+gelisols,turbels,aquiturbels,ruptic-histic aquiturbels
+gelisols,turbels,aquiturbels,glacic aquiturbels
+gelisols,turbels,aquiturbels,lithic aquiturbels
+gelisols,turbels,aquiturbels,sulfuric aquiturbels
+gelisols,turbels,haploturbels,typic haploturbels
+gelisols,turbels,haploturbels,lithic haploturbels
+gelisols,turbels,haploturbels,aquic haploturbels
+gelisols,turbels,haploturbels,folistic haploturbels
+gelisols,turbels,haploturbels,glacic haploturbels
+gelisols,turbels,histoturbels,typic histoturbels
+gelisols,turbels,histoturbels,lithic histoturbels
+gelisols,turbels,histoturbels,ruptic histoturbels
+gelisols,turbels,histoturbels,glacic histoturbels
+gelisols,turbels,molliturbels,typic molliturbels
+gelisols,turbels,molliturbels,vertic molliturbels
+gelisols,turbels,molliturbels,vitrandic molliturbels
+gelisols,turbels,molliturbels,lithic molliturbels
+gelisols,turbels,molliturbels,aquic molliturbels
+gelisols,turbels,molliturbels,cumulic molliturbels
+gelisols,turbels,molliturbels,folistic molliturbels
+gelisols,turbels,molliturbels,glacic molliturbels
+gelisols,turbels,molliturbels,andic molliturbels
+gelisols,turbels,psammoturbels,typic psammoturbels
+gelisols,turbels,psammoturbels,lithic psammoturbels
+gelisols,turbels,psammoturbels,glacic psammoturbels
+gelisols,turbels,psammoturbels,spodic psammoturbels
+gelisols,turbels,umbriturbels,typic umbriturbels
+gelisols,turbels,umbriturbels,vertic umbriturbels
+gelisols,turbels,umbriturbels,vitrandic umbriturbels
+gelisols,turbels,umbriturbels,lithic umbriturbels
+gelisols,turbels,umbriturbels,aquic umbriturbels
+gelisols,turbels,umbriturbels,cumulic umbriturbels
+gelisols,turbels,umbriturbels,folistic umbriturbels
+gelisols,turbels,umbriturbels,glacic umbriturbels
+gelisols,turbels,umbriturbels,andic umbriturbels
+histosols,fibrists,cryofibrists,typic cryofibrists
+histosols,fibrists,cryofibrists,lithic cryofibrists
+histosols,fibrists,cryofibrists,sphagnic cryofibrists
+histosols,fibrists,cryofibrists,fluvaquentic cryofibrists
+histosols,fibrists,cryofibrists,hydric cryofibrists
+histosols,fibrists,cryofibrists,terric cryofibrists
+histosols,fibrists,haplofibrists,typic haplofibrists
+histosols,fibrists,haplofibrists,lithic haplofibrists
+histosols,fibrists,haplofibrists,fluvaquentic haplofibrists
+histosols,fibrists,haplofibrists,hemic haplofibrists
+histosols,fibrists,haplofibrists,hydric haplofibrists
+histosols,fibrists,haplofibrists,limnic haplofibrists
+histosols,fibrists,haplofibrists,terric haplofibrists
+histosols,fibrists,sphagnofibrists,typic sphagnofibrists
+histosols,fibrists,sphagnofibrists,lithic sphagnofibrists
+histosols,fibrists,sphagnofibrists,fluvaquentic sphagnofibrists
+histosols,fibrists,sphagnofibrists,hemic sphagnofibrists
+histosols,fibrists,sphagnofibrists,hydric sphagnofibrists
+histosols,fibrists,sphagnofibrists,limnic sphagnofibrists
+histosols,fibrists,sphagnofibrists,terric sphagnofibrists
+histosols,folists,cryofolists,typic cryofolists
+histosols,folists,cryofolists,lithic cryofolists
+histosols,folists,torrifolists,typic torrifolists
+histosols,folists,torrifolists,lithic torrifolists
+histosols,folists,udifolists,typic udifolists
+histosols,folists,udifolists,lithic udifolists
+histosols,folists,ustifolists,typic ustifolists
+histosols,folists,ustifolists,lithic ustifolists
+histosols,hemists,cryohemists,typic cryohemists
+histosols,hemists,cryohemists,lithic cryohemists
+histosols,hemists,cryohemists,fluvaquentic cryohemists
+histosols,hemists,cryohemists,hydric cryohemists
+histosols,hemists,cryohemists,terric cryohemists
+histosols,hemists,haplohemists,typic haplohemists
+histosols,hemists,haplohemists,lithic haplohemists
+histosols,hemists,haplohemists,sapric haplohemists
+histosols,hemists,haplohemists,fibric haplohemists
+histosols,hemists,haplohemists,fluvaquentic haplohemists
+histosols,hemists,haplohemists,hydric haplohemists
+histosols,hemists,haplohemists,limnic haplohemists
+histosols,hemists,haplohemists,terric haplohemists
+histosols,hemists,luvihemists,typic luvihemists
+histosols,hemists,sulfihemists,typic sulfihemists
+histosols,hemists,sulfihemists,terric sulfihemists
+histosols,hemists,sulfohemists,typic sulfohemists
+histosols,saprists,cryosaprists,typic cryosaprists
+histosols,saprists,cryosaprists,lithic cryosaprists
+histosols,saprists,cryosaprists,fluvaquentic cryosaprists
+histosols,saprists,cryosaprists,limnic cryosaprists
+histosols,saprists,cryosaprists,terric cryosaprists
+histosols,saprists,haplosaprists,typic haplosaprists
+histosols,saprists,haplosaprists,halic haplosaprists
+histosols,saprists,haplosaprists,halic terric haplosaprists
+histosols,saprists,haplosaprists,lithic haplosaprists
+histosols,saprists,haplosaprists,fluvaquentic haplosaprists
+histosols,saprists,haplosaprists,hemic haplosaprists
+histosols,saprists,haplosaprists,limnic haplosaprists
+histosols,saprists,haplosaprists,terric haplosaprists
+histosols,saprists,sulfisaprists,typic sulfisaprists
+histosols,saprists,sulfisaprists,terric sulfisaprists
+histosols,saprists,sulfosaprists,typic sulfosaprists
+histosols,wassists,frasiwassists,typic frasiwassists
+histosols,wassists,frasiwassists,sapric frasiwassists
+histosols,wassists,frasiwassists,fibric frasiwassists
+histosols,wassists,haplowassists,typic haplowassists
+histosols,wassists,haplowassists,sapric haplowassists
+histosols,wassists,haplowassists,fibric haplowassists
+histosols,wassists,haplowassists,sulfic haplowassists
+histosols,wassists,sulfiwassists,typic sulfiwassists
+histosols,wassists,sulfiwassists,sapric sulfiwassists
+histosols,wassists,sulfiwassists,fibric sulfiwassists
+inceptisols,aquepts,cryaquepts,typic cryaquepts
+inceptisols,aquepts,cryaquepts,vertic cryaquepts
+inceptisols,aquepts,cryaquepts,lithic cryaquepts
+inceptisols,aquepts,cryaquepts,fluvaquentic cryaquepts
+inceptisols,aquepts,cryaquepts,histic cryaquepts
+inceptisols,aquepts,cryaquepts,histic lithic cryaquepts
+inceptisols,aquepts,cryaquepts,humic cryaquepts
+inceptisols,aquepts,cryaquepts,aeric cryaquepts
+inceptisols,aquepts,cryaquepts,aeric humic cryaquepts
+inceptisols,aquepts,cryaquepts,aquandic cryaquepts
+inceptisols,aquepts,cryaquepts,sulfic cryaquepts
+inceptisols,aquepts,endoaquepts,typic endoaquepts
+inceptisols,aquepts,endoaquepts,vertic endoaquepts
+inceptisols,aquepts,endoaquepts,lithic endoaquepts
+inceptisols,aquepts,endoaquepts,mollic endoaquepts
+inceptisols,aquepts,endoaquepts,fluvaquentic endoaquepts
+inceptisols,aquepts,endoaquepts,fluventic endoaquepts
+inceptisols,aquepts,endoaquepts,fragic endoaquepts
+inceptisols,aquepts,endoaquepts,humic endoaquepts
+inceptisols,aquepts,endoaquepts,aeric endoaquepts
+inceptisols,aquepts,endoaquepts,aquandic endoaquepts
+inceptisols,aquepts,endoaquepts,sulfic endoaquepts
+inceptisols,aquepts,epiaquepts,typic epiaquepts
+inceptisols,aquepts,epiaquepts,vertic epiaquepts
+inceptisols,aquepts,epiaquepts,mollic epiaquepts
+inceptisols,aquepts,epiaquepts,fluvaquentic epiaquepts
+inceptisols,aquepts,epiaquepts,fragic epiaquepts
+inceptisols,aquepts,epiaquepts,humic epiaquepts
+inceptisols,aquepts,epiaquepts,aeric epiaquepts
+inceptisols,aquepts,epiaquepts,aquandic epiaquepts
+inceptisols,aquepts,fragiaquepts,typic fragiaquepts
+inceptisols,aquepts,fragiaquepts,humic fragiaquepts
+inceptisols,aquepts,fragiaquepts,aeric fragiaquepts
+inceptisols,aquepts,gelaquepts,turbic gelaquepts
+inceptisols,aquepts,gelaquepts,typic gelaquepts
+inceptisols,aquepts,gelaquepts,lithic gelaquepts
+inceptisols,aquepts,gelaquepts,fluvaquentic gelaquepts
+inceptisols,aquepts,gelaquepts,histic gelaquepts
+inceptisols,aquepts,gelaquepts,humic gelaquepts
+inceptisols,aquepts,gelaquepts,aquandic gelaquepts
+inceptisols,aquepts,halaquepts,typic halaquepts
+inceptisols,aquepts,halaquepts,vertic halaquepts
+inceptisols,aquepts,halaquepts,duric halaquepts
+inceptisols,aquepts,halaquepts,aeric halaquepts
+inceptisols,aquepts,halaquepts,aquandic halaquepts
+inceptisols,aquepts,humaquepts,typic humaquepts
+inceptisols,aquepts,humaquepts,cumulic humaquepts
+inceptisols,aquepts,humaquepts,fluvaquentic humaquepts
+inceptisols,aquepts,humaquepts,histic humaquepts
+inceptisols,aquepts,humaquepts,hydraquentic humaquepts
+inceptisols,aquepts,humaquepts,aeric humaquepts
+inceptisols,aquepts,humaquepts,aquandic humaquepts
+inceptisols,aquepts,petraquepts,typic petraquepts
+inceptisols,aquepts,petraquepts,placic petraquepts
+inceptisols,aquepts,petraquepts,plinthic petraquepts
+inceptisols,aquepts,petraquepts,histic placic petraquepts
+inceptisols,aquepts,sulfaquepts,typic sulfaquepts
+inceptisols,aquepts,sulfaquepts,salidic sulfaquepts
+inceptisols,aquepts,sulfaquepts,hydraquentic sulfaquepts
+inceptisols,aquepts,vermaquepts,typic vermaquepts
+inceptisols,aquepts,vermaquepts,sodic vermaquepts
+inceptisols,cryepts,calcicryepts,typic calcicryepts
+inceptisols,cryepts,calcicryepts,ustic calcicryepts
+inceptisols,cryepts,calcicryepts,oxyaquic calcicryepts
+inceptisols,cryepts,calcicryepts,xeric calcicryepts
+inceptisols,cryepts,calcicryepts,lithic calcicryepts
+inceptisols,cryepts,dystrocryepts,typic dystrocryepts
+inceptisols,cryepts,dystrocryepts,ustic dystrocryepts
+inceptisols,cryepts,dystrocryepts,vitrandic dystrocryepts
+inceptisols,cryepts,dystrocryepts,vitrixerandic dystrocryepts
+inceptisols,cryepts,dystrocryepts,lithic dystrocryepts
+inceptisols,cryepts,dystrocryepts,oxyaquic dystrocryepts
+inceptisols,cryepts,dystrocryepts,spodic dystrocryepts
+inceptisols,cryepts,dystrocryepts,aquic dystrocryepts
+inceptisols,cryepts,dystrocryepts,eutric dystrocryepts
+inceptisols,cryepts,dystrocryepts,fluvaquentic dystrocryepts
+inceptisols,cryepts,dystrocryepts,fluventic dystrocryepts
+inceptisols,cryepts,dystrocryepts,folistic dystrocryepts
+inceptisols,cryepts,dystrocryepts,xeric dystrocryepts
+inceptisols,cryepts,dystrocryepts,haploxerandic dystrocryepts
+inceptisols,cryepts,dystrocryepts,lamellic dystrocryepts
+inceptisols,cryepts,dystrocryepts,andic dystrocryepts
+inceptisols,cryepts,dystrocryepts,aquandic dystrocryepts
+inceptisols,cryepts,haplocryepts,typic haplocryepts
+inceptisols,cryepts,haplocryepts,ustic haplocryepts
+inceptisols,cryepts,haplocryepts,ustivitrandic haplocryepts
+inceptisols,cryepts,haplocryepts,vitrandic haplocryepts
+inceptisols,cryepts,haplocryepts,vitrixerandic haplocryepts
+inceptisols,cryepts,haplocryepts,lithic haplocryepts
+inceptisols,cryepts,haplocryepts,oxyaquic haplocryepts
+inceptisols,cryepts,haplocryepts,aquic haplocryepts
+inceptisols,cryepts,haplocryepts,calcic haplocryepts
+inceptisols,cryepts,haplocryepts,fluvaquentic haplocryepts
+inceptisols,cryepts,haplocryepts,fluventic haplocryepts
+inceptisols,cryepts,haplocryepts,xeric haplocryepts
+inceptisols,cryepts,haplocryepts,haploxerandic haplocryepts
+inceptisols,cryepts,haplocryepts,haplustandic haplocryepts
+inceptisols,cryepts,haplocryepts,lamellic haplocryepts
+inceptisols,cryepts,haplocryepts,andic haplocryepts
+inceptisols,cryepts,haplocryepts,aquandic haplocryepts
+inceptisols,cryepts,humicryepts,typic humicryepts
+inceptisols,cryepts,humicryepts,vitrandic humicryepts
+inceptisols,cryepts,humicryepts,lithic humicryepts
+inceptisols,cryepts,humicryepts,oxyaquic humicryepts
+inceptisols,cryepts,humicryepts,aquic humicryepts
+inceptisols,cryepts,humicryepts,eutric humicryepts
+inceptisols,cryepts,humicryepts,fluvaquentic humicryepts
+inceptisols,cryepts,humicryepts,fluventic humicryepts
+inceptisols,cryepts,humicryepts,vitrixerandic humicryepts
+inceptisols,cryepts,humicryepts,xeric humicryepts
+inceptisols,cryepts,humicryepts,haploxerandic humicryepts
+inceptisols,cryepts,humicryepts,lamellic humicryepts
+inceptisols,cryepts,humicryepts,andic humicryepts
+inceptisols,cryepts,humicryepts,aquandic humicryepts
+inceptisols,cryepts,humicryepts,spodic humicryepts
+inceptisols,gelepts,dystrogelepts,turbic dystrogelepts
+inceptisols,gelepts,dystrogelepts,typic dystrogelepts
+inceptisols,gelepts,dystrogelepts,lithic dystrogelepts
+inceptisols,gelepts,dystrogelepts,aquic dystrogelepts
+inceptisols,gelepts,dystrogelepts,fluventic dystrogelepts
+inceptisols,gelepts,dystrogelepts,andic dystrogelepts
+inceptisols,gelepts,haplogelepts,turbic haplogelepts
+inceptisols,gelepts,haplogelepts,typic haplogelepts
+inceptisols,gelepts,haplogelepts,lithic haplogelepts
+inceptisols,gelepts,haplogelepts,aquic haplogelepts
+inceptisols,gelepts,haplogelepts,fluventic haplogelepts
+inceptisols,gelepts,haplogelepts,andic haplogelepts
+inceptisols,gelepts,humigelepts,turbic humigelepts
+inceptisols,gelepts,humigelepts,typic humigelepts
+inceptisols,gelepts,humigelepts,lithic humigelepts
+inceptisols,gelepts,humigelepts,oxyaquic humigelepts
+inceptisols,gelepts,humigelepts,aquic humigelepts
+inceptisols,gelepts,humigelepts,eutric humigelepts
+inceptisols,gelepts,humigelepts,fluventic humigelepts
+inceptisols,gelepts,humigelepts,andic humigelepts
+inceptisols,udepts,durudepts,typic durudepts
+inceptisols,udepts,durudepts,vitrandic durudepts
+inceptisols,udepts,durudepts,aquic durudepts
+inceptisols,udepts,durudepts,andic durudepts
+inceptisols,udepts,durudepts,aquandic durudepts
+inceptisols,udepts,dystrudepts,typic dystrudepts
+inceptisols,udepts,dystrudepts,vertic dystrudepts
+inceptisols,udepts,dystrudepts,vitrandic dystrudepts
+inceptisols,udepts,dystrudepts,lithic dystrudepts
+inceptisols,udepts,dystrudepts,oxic dystrudepts
+inceptisols,udepts,dystrudepts,oxyaquic dystrudepts
+inceptisols,udepts,dystrudepts,ruptic-alfic dystrudepts
+inceptisols,udepts,dystrudepts,ruptic-ultic dystrudepts
+inceptisols,udepts,dystrudepts,aquic dystrudepts
+inceptisols,udepts,dystrudepts,aquic humic dystrudepts
+inceptisols,udepts,dystrudepts,fluvaquentic dystrudepts
+inceptisols,udepts,dystrudepts,fluventic dystrudepts
+inceptisols,udepts,dystrudepts,fluventic humic dystrudepts
+inceptisols,udepts,dystrudepts,fragiaquic dystrudepts
+inceptisols,udepts,dystrudepts,fragic dystrudepts
+inceptisols,udepts,dystrudepts,humic dystrudepts
+inceptisols,udepts,dystrudepts,humic lithic dystrudepts
+inceptisols,udepts,dystrudepts,humic psammentic dystrudepts
+inceptisols,udepts,dystrudepts,lamellic dystrudepts
+inceptisols,udepts,dystrudepts,andic dystrudepts
+inceptisols,udepts,dystrudepts,andic oxyaquic dystrudepts
+inceptisols,udepts,dystrudepts,aquandic dystrudepts
+inceptisols,udepts,dystrudepts,spodic dystrudepts
+inceptisols,udepts,eutrudepts,typic eutrudepts
+inceptisols,udepts,eutrudepts,vertic eutrudepts
+inceptisols,udepts,eutrudepts,vitrandic eutrudepts
+inceptisols,udepts,eutrudepts,lithic eutrudepts
+inceptisols,udepts,eutrudepts,oxyaquic eutrudepts
+inceptisols,udepts,eutrudepts,rendollic eutrudepts
+inceptisols,udepts,eutrudepts,ruptic-alfic eutrudepts
+inceptisols,udepts,eutrudepts,aquic dystric eutrudepts
+inceptisols,udepts,eutrudepts,aquic eutrudepts
+inceptisols,udepts,eutrudepts,arenic eutrudepts
+inceptisols,udepts,eutrudepts,dystric eutrudepts
+inceptisols,udepts,eutrudepts,dystric fluventic eutrudepts
+inceptisols,udepts,eutrudepts,fluvaquentic eutrudepts
+inceptisols,udepts,eutrudepts,fluventic eutrudepts
+inceptisols,udepts,eutrudepts,fragiaquic eutrudepts
+inceptisols,udepts,eutrudepts,fragic eutrudepts
+inceptisols,udepts,eutrudepts,humic eutrudepts
+inceptisols,udepts,eutrudepts,humic lithic eutrudepts
+inceptisols,udepts,eutrudepts,lamellic eutrudepts
+inceptisols,udepts,eutrudepts,andic eutrudepts
+inceptisols,udepts,eutrudepts,anthraquic eutrudepts
+inceptisols,udepts,eutrudepts,aquertic eutrudepts
+inceptisols,udepts,fragiudepts,typic fragiudepts
+inceptisols,udepts,fragiudepts,vitrandic fragiudepts
+inceptisols,udepts,fragiudepts,aquic fragiudepts
+inceptisols,udepts,fragiudepts,humic fragiudepts
+inceptisols,udepts,fragiudepts,andic fragiudepts
+inceptisols,udepts,humudepts,typic humudepts
+inceptisols,udepts,humudepts,vertic humudepts
+inceptisols,udepts,humudepts,vitrandic humudepts
+inceptisols,udepts,humudepts,lithic humudepts
+inceptisols,udepts,humudepts,oxic humudepts
+inceptisols,udepts,humudepts,oxyaquic humudepts
+inceptisols,udepts,humudepts,pachic humudepts
+inceptisols,udepts,humudepts,psammentic humudepts
+inceptisols,udepts,humudepts,aquic humudepts
+inceptisols,udepts,humudepts,cumulic humudepts
+inceptisols,udepts,humudepts,entic humudepts
+inceptisols,udepts,humudepts,eutric humudepts
+inceptisols,udepts,humudepts,fluvaquentic humudepts
+inceptisols,udepts,humudepts,fluventic humudepts
+inceptisols,udepts,humudepts,andic humudepts
+inceptisols,udepts,humudepts,andic oxyaquic humudepts
+inceptisols,udepts,humudepts,aquandic humudepts
+inceptisols,udepts,sulfudepts,typic sulfudepts
+inceptisols,ustepts,calciustepts,torrertic calciustepts
+inceptisols,ustepts,calciustepts,typic calciustepts
+inceptisols,ustepts,calciustepts,udic calciustepts
+inceptisols,ustepts,calciustepts,vertic calciustepts
+inceptisols,ustepts,calciustepts,gypsic calciustepts
+inceptisols,ustepts,calciustepts,lithic petrocalcic calciustepts
+inceptisols,ustepts,calciustepts,petrocalcic calciustepts
+inceptisols,ustepts,calciustepts,aridic calciustepts
+inceptisols,ustepts,calciustepts,lithic calciustepts
+inceptisols,ustepts,calciustepts,aquic calciustepts
+inceptisols,ustepts,durustepts,typic durustepts
+inceptisols,ustepts,dystrustepts,torrertic dystrustepts
+inceptisols,ustepts,dystrustepts,typic dystrustepts
+inceptisols,ustepts,dystrustepts,vertic dystrustepts
+inceptisols,ustepts,dystrustepts,vitrandic dystrustepts
+inceptisols,ustepts,dystrustepts,lithic dystrustepts
+inceptisols,ustepts,dystrustepts,oxic dystrustepts
+inceptisols,ustepts,dystrustepts,aquic dystrustepts
+inceptisols,ustepts,dystrustepts,aridic dystrustepts
+inceptisols,ustepts,dystrustepts,fluventic dystrustepts
+inceptisols,ustepts,dystrustepts,humic dystrustepts
+inceptisols,ustepts,dystrustepts,andic dystrustepts
+inceptisols,ustepts,haplustepts,torrertic haplustepts
+inceptisols,ustepts,haplustepts,torrifluventic haplustepts
+inceptisols,ustepts,haplustepts,typic haplustepts
+inceptisols,ustepts,haplustepts,udertic haplustepts
+inceptisols,ustepts,haplustepts,udic haplustepts
+inceptisols,ustepts,haplustepts,udifluventic haplustepts
+inceptisols,ustepts,haplustepts,vertic haplustepts
+inceptisols,ustepts,haplustepts,vitrandic haplustepts
+inceptisols,ustepts,haplustepts,gypsic haplustepts
+inceptisols,ustepts,haplustepts,lithic haplustepts
+inceptisols,ustepts,haplustepts,oxic haplustepts
+inceptisols,ustepts,haplustepts,oxyaquic haplustepts
+inceptisols,ustepts,haplustepts,aquic haplustepts
+inceptisols,ustepts,haplustepts,aridic haplustepts
+inceptisols,ustepts,haplustepts,aridic lithic haplustepts
+inceptisols,ustepts,haplustepts,calcic haplustepts
+inceptisols,ustepts,haplustepts,calcic udic haplustepts
+inceptisols,ustepts,haplustepts,dystric haplustepts
+inceptisols,ustepts,haplustepts,fluventic haplustepts
+inceptisols,ustepts,haplustepts,haplocalcidic haplustepts
+inceptisols,ustepts,haplustepts,lamellic haplustepts
+inceptisols,ustepts,haplustepts,andic haplustepts
+inceptisols,ustepts,haplustepts,anthraquic haplustepts
+inceptisols,ustepts,humustepts,typic humustepts
+inceptisols,ustepts,humustepts,vitrandic humustepts
+inceptisols,ustepts,humustepts,lithic humustepts
+inceptisols,ustepts,humustepts,oxic humustepts
+inceptisols,ustepts,humustepts,oxyaquic humustepts
+inceptisols,ustepts,humustepts,aridic humustepts
+inceptisols,ustepts,humustepts,andic humustepts
+inceptisols,xerepts,calcixerepts,typic calcixerepts
+inceptisols,xerepts,calcixerepts,vertic calcixerepts
+inceptisols,xerepts,calcixerepts,vitrandic calcixerepts
+inceptisols,xerepts,calcixerepts,petrocalcic calcixerepts
+inceptisols,xerepts,calcixerepts,sodic calcixerepts
+inceptisols,xerepts,calcixerepts,lithic calcixerepts
+inceptisols,xerepts,calcixerepts,aquic calcixerepts
+inceptisols,xerepts,durixerepts,typic durixerepts
+inceptisols,xerepts,durixerepts,vitrandic durixerepts
+inceptisols,xerepts,durixerepts,entic durixerepts
+inceptisols,xerepts,durixerepts,andic durixerepts
+inceptisols,xerepts,durixerepts,aquandic durixerepts
+inceptisols,xerepts,durixerepts,aquic durixerepts
+inceptisols,xerepts,dystroxerepts,typic dystroxerepts
+inceptisols,xerepts,dystroxerepts,vitrandic dystroxerepts
+inceptisols,xerepts,dystroxerepts,lithic dystroxerepts
+inceptisols,xerepts,dystroxerepts,oxyaquic dystroxerepts
+inceptisols,xerepts,dystroxerepts,aquic dystroxerepts
+inceptisols,xerepts,dystroxerepts,fluvaquentic dystroxerepts
+inceptisols,xerepts,dystroxerepts,fluventic dystroxerepts
+inceptisols,xerepts,dystroxerepts,fluventic humic dystroxerepts
+inceptisols,xerepts,dystroxerepts,fragiaquic dystroxerepts
+inceptisols,xerepts,dystroxerepts,fragic dystroxerepts
+inceptisols,xerepts,dystroxerepts,humic dystroxerepts
+inceptisols,xerepts,dystroxerepts,humic lithic dystroxerepts
+inceptisols,xerepts,dystroxerepts,andic dystroxerepts
+inceptisols,xerepts,dystroxerepts,aquandic dystroxerepts
+inceptisols,xerepts,fragixerepts,typic fragixerepts
+inceptisols,xerepts,fragixerepts,vitrandic fragixerepts
+inceptisols,xerepts,fragixerepts,aquic fragixerepts
+inceptisols,xerepts,fragixerepts,humic fragixerepts
+inceptisols,xerepts,fragixerepts,andic fragixerepts
+inceptisols,xerepts,haploxerepts,typic haploxerepts
+inceptisols,xerepts,haploxerepts,vertic haploxerepts
+inceptisols,xerepts,haploxerepts,vitrandic haploxerepts
+inceptisols,xerepts,haploxerepts,gypsic haploxerepts
+inceptisols,xerepts,haploxerepts,lithic haploxerepts
+inceptisols,xerepts,haploxerepts,oxyaquic haploxerepts
+inceptisols,xerepts,haploxerepts,oxyaquic vitrandic haploxerepts
+inceptisols,xerepts,haploxerepts,aquic haploxerepts
+inceptisols,xerepts,haploxerepts,calcic haploxerepts
+inceptisols,xerepts,haploxerepts,fluventic haploxerepts
+inceptisols,xerepts,haploxerepts,fragic haploxerepts
+inceptisols,xerepts,haploxerepts,humic haploxerepts
+inceptisols,xerepts,haploxerepts,humic lithic haploxerepts
+inceptisols,xerepts,haploxerepts,lamellic haploxerepts
+inceptisols,xerepts,haploxerepts,andic haploxerepts
+inceptisols,xerepts,haploxerepts,andic oxyaquic haploxerepts
+inceptisols,xerepts,haploxerepts,aquandic haploxerepts
+inceptisols,xerepts,humixerepts,typic humixerepts
+inceptisols,xerepts,humixerepts,vitrandic humixerepts
+inceptisols,xerepts,humixerepts,lithic humixerepts
+inceptisols,xerepts,humixerepts,oxyaquic humixerepts
+inceptisols,xerepts,humixerepts,pachic humixerepts
+inceptisols,xerepts,humixerepts,aquic humixerepts
+inceptisols,xerepts,humixerepts,cumulic humixerepts
+inceptisols,xerepts,humixerepts,entic humixerepts
+inceptisols,xerepts,humixerepts,fluventic humixerepts
+inceptisols,xerepts,humixerepts,andic humixerepts
+inceptisols,xerepts,humixerepts,aquandic humixerepts
+mollisols,albolls,argialbolls,typic argialbolls
+mollisols,albolls,argialbolls,vertic argialbolls
+mollisols,albolls,argialbolls,argiaquic argialbolls
+mollisols,albolls,argialbolls,argiaquic xeric argialbolls
+mollisols,albolls,argialbolls,xerertic argialbolls
+mollisols,albolls,argialbolls,xeric argialbolls
+mollisols,albolls,argialbolls,aquandic argialbolls
+mollisols,albolls,natralbolls,typic natralbolls
+mollisols,albolls,natralbolls,leptic natralbolls
+mollisols,aquolls,argiaquolls,typic argiaquolls
+mollisols,aquolls,argiaquolls,vertic argiaquolls
+mollisols,aquolls,argiaquolls,grossarenic argiaquolls
+mollisols,aquolls,argiaquolls,arenic argiaquolls
+mollisols,aquolls,argiaquolls,abruptic argiaquolls
+mollisols,aquolls,calciaquolls,typic calciaquolls
+mollisols,aquolls,calciaquolls,petrocalcic calciaquolls
+mollisols,aquolls,calciaquolls,aeric calciaquolls
+mollisols,aquolls,cryaquolls,typic cryaquolls
+mollisols,aquolls,cryaquolls,vertic cryaquolls
+mollisols,aquolls,cryaquolls,argic cryaquolls
+mollisols,aquolls,cryaquolls,calcic cryaquolls
+mollisols,aquolls,cryaquolls,cumulic cryaquolls
+mollisols,aquolls,cryaquolls,histic cryaquolls
+mollisols,aquolls,cryaquolls,aquandic cryaquolls
+mollisols,aquolls,cryaquolls,thapto-histic cryaquolls
+mollisols,aquolls,duraquolls,typic duraquolls
+mollisols,aquolls,duraquolls,vertic duraquolls
+mollisols,aquolls,duraquolls,natric duraquolls
+mollisols,aquolls,duraquolls,argic duraquolls
+mollisols,aquolls,endoaquolls,typic endoaquolls
+mollisols,aquolls,endoaquolls,vertic endoaquolls
+mollisols,aquolls,endoaquolls,lithic endoaquolls
+mollisols,aquolls,endoaquolls,cumulic endoaquolls
+mollisols,aquolls,endoaquolls,cumulic vertic endoaquolls
+mollisols,aquolls,endoaquolls,duric endoaquolls
+mollisols,aquolls,endoaquolls,fluvaquentic endoaquolls
+mollisols,aquolls,endoaquolls,fluvaquentic vertic endoaquolls
+mollisols,aquolls,endoaquolls,histic endoaquolls
+mollisols,aquolls,endoaquolls,aquandic endoaquolls
+mollisols,aquolls,endoaquolls,thapto-histic endoaquolls
+mollisols,aquolls,epiaquolls,typic epiaquolls
+mollisols,aquolls,epiaquolls,vertic epiaquolls
+mollisols,aquolls,epiaquolls,cumulic epiaquolls
+mollisols,aquolls,epiaquolls,cumulic vertic epiaquolls
+mollisols,aquolls,epiaquolls,duric epiaquolls
+mollisols,aquolls,epiaquolls,fluvaquentic epiaquolls
+mollisols,aquolls,epiaquolls,fluvaquentic vertic epiaquolls
+mollisols,aquolls,epiaquolls,histic epiaquolls
+mollisols,aquolls,epiaquolls,aquandic epiaquolls
+mollisols,aquolls,epiaquolls,thapto-histic epiaquolls
+mollisols,aquolls,natraquolls,typic natraquolls
+mollisols,aquolls,natraquolls,vertic natraquolls
+mollisols,aquolls,natraquolls,glossic natraquolls
+mollisols,aquolls,natraquolls,petrocalcic natraquolls
+mollisols,cryolls,argicryolls,typic argicryolls
+mollisols,cryolls,argicryolls,ustic argicryolls
+mollisols,cryolls,argicryolls,vertic argicryolls
+mollisols,cryolls,argicryolls,vitrandic argicryolls
+mollisols,cryolls,argicryolls,oxyaquic argicryolls
+mollisols,cryolls,argicryolls,pachic argicryolls
+mollisols,cryolls,argicryolls,calcic argicryolls
+mollisols,cryolls,argicryolls,calcic pachic argicryolls
+mollisols,cryolls,argicryolls,xeric argicryolls
+mollisols,cryolls,argicryolls,lithic argicryolls
+mollisols,cryolls,argicryolls,abruptic argicryolls
+mollisols,cryolls,argicryolls,alfic argicryolls
+mollisols,cryolls,argicryolls,andic argicryolls
+mollisols,cryolls,argicryolls,aquic argicryolls
+mollisols,cryolls,calcicryolls,typic calcicryolls
+mollisols,cryolls,calcicryolls,ustic calcicryolls
+mollisols,cryolls,calcicryolls,vitrandic calcicryolls
+mollisols,cryolls,calcicryolls,pachic calcicryolls
+mollisols,cryolls,calcicryolls,petrocalcic calcicryolls
+mollisols,cryolls,calcicryolls,xeric calcicryolls
+mollisols,cryolls,calcicryolls,lithic calcicryolls
+mollisols,cryolls,duricryolls,typic duricryolls
+mollisols,cryolls,duricryolls,argic duricryolls
+mollisols,cryolls,duricryolls,calcic duricryolls
+mollisols,cryolls,haplocryolls,typic haplocryolls
+mollisols,cryolls,haplocryolls,ustic haplocryolls
+mollisols,cryolls,haplocryolls,vertic haplocryolls
+mollisols,cryolls,haplocryolls,vitrandic haplocryolls
+mollisols,cryolls,haplocryolls,lithic haplocryolls
+mollisols,cryolls,haplocryolls,oxyaquic haplocryolls
+mollisols,cryolls,haplocryolls,pachic haplocryolls
+mollisols,cryolls,haplocryolls,aquic haplocryolls
+mollisols,cryolls,haplocryolls,calcic haplocryolls
+mollisols,cryolls,haplocryolls,calcic pachic haplocryolls
+mollisols,cryolls,haplocryolls,cumulic haplocryolls
+mollisols,cryolls,haplocryolls,fluvaquentic haplocryolls
+mollisols,cryolls,haplocryolls,fluventic haplocryolls
+mollisols,cryolls,haplocryolls,xeric haplocryolls
+mollisols,cryolls,haplocryolls,andic haplocryolls
+mollisols,cryolls,haplocryolls,aquic cumulic haplocryolls
+mollisols,cryolls,natricryolls,typic natricryolls
+mollisols,cryolls,palecryolls,typic palecryolls
+mollisols,cryolls,palecryolls,ustic palecryolls
+mollisols,cryolls,palecryolls,oxyaquic palecryolls
+mollisols,cryolls,palecryolls,pachic palecryolls
+mollisols,cryolls,palecryolls,aquic palecryolls
+mollisols,cryolls,palecryolls,xeric palecryolls
+mollisols,cryolls,palecryolls,abruptic palecryolls
+mollisols,gelolls,haplogelolls,turbic haplogelolls
+mollisols,gelolls,haplogelolls,typic haplogelolls
+mollisols,gelolls,haplogelolls,lithic haplogelolls
+mollisols,gelolls,haplogelolls,oxyaquic haplogelolls
+mollisols,gelolls,haplogelolls,aquic haplogelolls
+mollisols,gelolls,haplogelolls,cumulic haplogelolls
+mollisols,gelolls,haplogelolls,andic haplogelolls
+mollisols,rendolls,cryrendolls,typic cryrendolls
+mollisols,rendolls,cryrendolls,lithic cryrendolls
+mollisols,rendolls,haprendolls,typic haprendolls
+mollisols,rendolls,haprendolls,vertic haprendolls
+mollisols,rendolls,haprendolls,lithic haprendolls
+mollisols,rendolls,haprendolls,entic haprendolls
+mollisols,rendolls,haprendolls,inceptic haprendolls
+mollisols,udolls,argiudolls,typic argiudolls
+mollisols,udolls,argiudolls,vertic argiudolls
+mollisols,udolls,argiudolls,vitrandic argiudolls
+mollisols,udolls,argiudolls,oxic argiudolls
+mollisols,udolls,argiudolls,oxyaquic argiudolls
+mollisols,udolls,argiudolls,oxyaquic vertic argiudolls
+mollisols,udolls,argiudolls,pachic argiudolls
+mollisols,udolls,argiudolls,pachic vertic argiudolls
+mollisols,udolls,argiudolls,psammentic argiudolls
+mollisols,udolls,argiudolls,aquic pachic argiudolls
+mollisols,udolls,argiudolls,arenic argiudolls
+mollisols,udolls,argiudolls,calcic argiudolls
+mollisols,udolls,argiudolls,lamellic argiudolls
+mollisols,udolls,argiudolls,lithic argiudolls
+mollisols,udolls,argiudolls,abruptic argiudolls
+mollisols,udolls,argiudolls,alfic argiudolls
+mollisols,udolls,argiudolls,alfic vertic argiudolls
+mollisols,udolls,argiudolls,andic argiudolls
+mollisols,udolls,argiudolls,aquertic argiudolls
+mollisols,udolls,argiudolls,aquic argiudolls
+mollisols,udolls,argiudolls,petrocalcic argiudolls
+mollisols,udolls,calciudolls,typic calciudolls
+mollisols,udolls,calciudolls,vertic calciudolls
+mollisols,udolls,calciudolls,fluventic calciudolls
+mollisols,udolls,calciudolls,lithic calciudolls
+mollisols,udolls,calciudolls,aquic calciudolls
+mollisols,udolls,calciudolls,anthropic petrocalcic calciudolls
+mollisols,udolls,hapludolls,typic hapludolls
+mollisols,udolls,hapludolls,vermic hapludolls
+mollisols,udolls,hapludolls,vertic hapludolls
+mollisols,udolls,hapludolls,vitrandic hapludolls
+mollisols,udolls,hapludolls,lithic hapludolls
+mollisols,udolls,hapludolls,oxyaquic hapludolls
+mollisols,udolls,hapludolls,pachic hapludolls
+mollisols,udolls,hapludolls,pachic vertic hapludolls
+mollisols,udolls,hapludolls,aquic hapludolls
+mollisols,udolls,hapludolls,aquic pachic hapludolls
+mollisols,udolls,hapludolls,calcic hapludolls
+mollisols,udolls,hapludolls,cumulic hapludolls
+mollisols,udolls,hapludolls,entic hapludolls
+mollisols,udolls,hapludolls,fluvaquentic hapludolls
+mollisols,udolls,hapludolls,fluventic hapludolls
+mollisols,udolls,hapludolls,andic hapludolls
+mollisols,udolls,hapludolls,aquertic hapludolls
+mollisols,udolls,hapludolls,aquic cumulic hapludolls
+mollisols,udolls,hapludolls,petrocalcic hapludolls
+mollisols,udolls,natrudolls,typic natrudolls
+mollisols,udolls,natrudolls,vertic natrudolls
+mollisols,udolls,natrudolls,glossic natrudolls
+mollisols,udolls,natrudolls,glossic vertic natrudolls
+mollisols,udolls,natrudolls,petrocalcic natrudolls
+mollisols,udolls,natrudolls,calcic natrudolls
+mollisols,udolls,natrudolls,leptic natrudolls
+mollisols,udolls,natrudolls,leptic vertic natrudolls
+mollisols,udolls,natrudolls,abruptic natrudolls
+mollisols,udolls,paleudolls,typic paleudolls
+mollisols,udolls,paleudolls,vertic paleudolls
+mollisols,udolls,paleudolls,oxyaquic paleudolls
+mollisols,udolls,paleudolls,pachic paleudolls
+mollisols,udolls,paleudolls,aquic pachic paleudolls
+mollisols,udolls,paleudolls,aquic paleudolls
+mollisols,udolls,paleudolls,calcic paleudolls
+mollisols,udolls,vermudolls,typic vermudolls
+mollisols,udolls,vermudolls,lithic vermudolls
+mollisols,udolls,vermudolls,haplic vermudolls
+mollisols,ustolls,argiustolls,torrertic argiustolls
+mollisols,ustolls,argiustolls,typic argiustolls
+mollisols,ustolls,argiustolls,udertic argiustolls
+mollisols,ustolls,argiustolls,udic argiustolls
+mollisols,ustolls,argiustolls,vertic argiustolls
+mollisols,ustolls,argiustolls,vitrandic argiustolls
+mollisols,ustolls,argiustolls,vitritorrandic argiustolls
+mollisols,ustolls,argiustolls,oxyaquic argiustolls
+mollisols,ustolls,argiustolls,pachic argiustolls
+mollisols,ustolls,argiustolls,pachic udertic argiustolls
+mollisols,ustolls,argiustolls,pachic vertic argiustolls
+mollisols,ustolls,argiustolls,aridic argiustolls
+mollisols,ustolls,argiustolls,aridic lithic argiustolls
+mollisols,ustolls,argiustolls,calcidic argiustolls
+mollisols,ustolls,argiustolls,duric argiustolls
+mollisols,ustolls,argiustolls,lithic argiustolls
+mollisols,ustolls,argiustolls,alfic argiustolls
+mollisols,ustolls,argiustolls,alfic lithic argiustolls
+mollisols,ustolls,argiustolls,andic argiustolls
+mollisols,ustolls,argiustolls,aquertic argiustolls
+mollisols,ustolls,argiustolls,aquic argiustolls
+mollisols,ustolls,calciustolls,torrertic calciustolls
+mollisols,ustolls,calciustolls,typic calciustolls
+mollisols,ustolls,calciustolls,udertic calciustolls
+mollisols,ustolls,calciustolls,udic calciustolls
+mollisols,ustolls,calciustolls,vertic calciustolls
+mollisols,ustolls,calciustolls,gypsic calciustolls
+mollisols,ustolls,calciustolls,lithic petrocalcic calciustolls
+mollisols,ustolls,calciustolls,oxyaquic calciustolls
+mollisols,ustolls,calciustolls,pachic calciustolls
+mollisols,ustolls,calciustolls,petrocalcic calciustolls
+mollisols,ustolls,calciustolls,salidic calciustolls
+mollisols,ustolls,calciustolls,aridic calciustolls
+mollisols,ustolls,calciustolls,lithic calciustolls
+mollisols,ustolls,calciustolls,aquic calciustolls
+mollisols,ustolls,durustolls,typic durustolls
+mollisols,ustolls,durustolls,haplic durustolls
+mollisols,ustolls,durustolls,natric durustolls
+mollisols,ustolls,durustolls,argiduridic durustolls
+mollisols,ustolls,durustolls,entic durustolls
+mollisols,ustolls,durustolls,haploduridic durustolls
+mollisols,ustolls,haplustolls,torrertic haplustolls
+mollisols,ustolls,haplustolls,torrifluventic haplustolls
+mollisols,ustolls,haplustolls,torriorthentic haplustolls
+mollisols,ustolls,haplustolls,torroxic haplustolls
+mollisols,ustolls,haplustolls,typic haplustolls
+mollisols,ustolls,haplustolls,udertic haplustolls
+mollisols,ustolls,haplustolls,udic haplustolls
+mollisols,ustolls,haplustolls,udorthentic haplustolls
+mollisols,ustolls,haplustolls,vertic haplustolls
+mollisols,ustolls,haplustolls,vitrandic haplustolls
+mollisols,ustolls,haplustolls,vitritorrandic haplustolls
+mollisols,ustolls,haplustolls,lithic haplustolls
+mollisols,ustolls,haplustolls,oxic haplustolls
+mollisols,ustolls,haplustolls,oxyaquic haplustolls
+mollisols,ustolls,haplustolls,pachic haplustolls
+mollisols,ustolls,haplustolls,pachic udertic haplustolls
+mollisols,ustolls,haplustolls,pachic vertic haplustolls
+mollisols,ustolls,haplustolls,ruptic-lithic haplustolls
+mollisols,ustolls,haplustolls,salidic haplustolls
+mollisols,ustolls,haplustolls,aquic haplustolls
+mollisols,ustolls,haplustolls,aridic haplustolls
+mollisols,ustolls,haplustolls,aridic lithic haplustolls
+mollisols,ustolls,haplustolls,cumulic haplustolls
+mollisols,ustolls,haplustolls,duric haplustolls
+mollisols,ustolls,haplustolls,entic haplustolls
+mollisols,ustolls,haplustolls,fluvaquentic haplustolls
+mollisols,ustolls,haplustolls,fluventic haplustolls
+mollisols,ustolls,haplustolls,andic haplustolls
+mollisols,ustolls,haplustolls,anthraquic haplustolls
+mollisols,ustolls,haplustolls,aquertic haplustolls
+mollisols,ustolls,haplustolls,aquic cumulic haplustolls
+mollisols,ustolls,natrustolls,torrertic natrustolls
+mollisols,ustolls,natrustolls,typic natrustolls
+mollisols,ustolls,natrustolls,vertic natrustolls
+mollisols,ustolls,natrustolls,glossic natrustolls
+mollisols,ustolls,natrustolls,glossic vertic natrustolls
+mollisols,ustolls,natrustolls,aquic natrustolls
+mollisols,ustolls,natrustolls,aridic leptic natrustolls
+mollisols,ustolls,natrustolls,aridic natrustolls
+mollisols,ustolls,natrustolls,duric natrustolls
+mollisols,ustolls,natrustolls,leptic natrustolls
+mollisols,ustolls,natrustolls,leptic torrertic natrustolls
+mollisols,ustolls,natrustolls,leptic vertic natrustolls
+mollisols,ustolls,paleustolls,torrertic paleustolls
+mollisols,ustolls,paleustolls,typic paleustolls
+mollisols,ustolls,paleustolls,udertic paleustolls
+mollisols,ustolls,paleustolls,udic paleustolls
+mollisols,ustolls,paleustolls,vertic paleustolls
+mollisols,ustolls,paleustolls,pachic paleustolls
+mollisols,ustolls,paleustolls,petrocalcic paleustolls
+mollisols,ustolls,paleustolls,aquic paleustolls
+mollisols,ustolls,paleustolls,aridic paleustolls
+mollisols,ustolls,paleustolls,calcic paleustolls
+mollisols,ustolls,paleustolls,calcidic paleustolls
+mollisols,ustolls,paleustolls,entic paleustolls
+mollisols,ustolls,paleustolls,andic paleustolls
+mollisols,ustolls,vermustolls,typic vermustolls
+mollisols,ustolls,vermustolls,lithic vermustolls
+mollisols,ustolls,vermustolls,pachic vermustolls
+mollisols,ustolls,vermustolls,aquic vermustolls
+mollisols,ustolls,vermustolls,entic vermustolls
+mollisols,xerolls,argixerolls,torrertic argixerolls
+mollisols,xerolls,argixerolls,typic argixerolls
+mollisols,xerolls,argixerolls,ultic argixerolls
+mollisols,xerolls,argixerolls,vertic argixerolls
+mollisols,xerolls,argixerolls,vitrandic argixerolls
+mollisols,xerolls,argixerolls,vitritorrandic argixerolls
+mollisols,xerolls,argixerolls,lithic ultic argixerolls
+mollisols,xerolls,argixerolls,oxyaquic argixerolls
+mollisols,xerolls,argixerolls,pachic argixerolls
+mollisols,xerolls,argixerolls,pachic ultic argixerolls
+mollisols,xerolls,argixerolls,aquultic argixerolls
+mollisols,xerolls,argixerolls,argiduridic argixerolls
+mollisols,xerolls,argixerolls,aridic argixerolls
+mollisols,xerolls,argixerolls,aridic lithic argixerolls
+mollisols,xerolls,argixerolls,calciargidic argixerolls
+mollisols,xerolls,argixerolls,calcic argixerolls
+mollisols,xerolls,argixerolls,calcic pachic argixerolls
+mollisols,xerolls,argixerolls,duric argixerolls
+mollisols,xerolls,argixerolls,lithic argixerolls
+mollisols,xerolls,argixerolls,alfic argixerolls
+mollisols,xerolls,argixerolls,andic argixerolls
+mollisols,xerolls,argixerolls,aquic argixerolls
+mollisols,xerolls,calcixerolls,typic calcixerolls
+mollisols,xerolls,calcixerolls,vermic calcixerolls
+mollisols,xerolls,calcixerolls,vertic calcixerolls
+mollisols,xerolls,calcixerolls,vitrandic calcixerolls
+mollisols,xerolls,calcixerolls,lithic calcixerolls
+mollisols,xerolls,calcixerolls,oxyaquic calcixerolls
+mollisols,xerolls,calcixerolls,pachic calcixerolls
+mollisols,xerolls,calcixerolls,aridic calcixerolls
+mollisols,xerolls,calcixerolls,aridic lithic calcixerolls
+mollisols,xerolls,calcixerolls,aquic calcixerolls
+mollisols,xerolls,durixerolls,typic durixerolls
+mollisols,xerolls,durixerolls,vertic durixerolls
+mollisols,xerolls,durixerolls,vitrandic durixerolls
+mollisols,xerolls,durixerolls,vitritorrandic durixerolls
+mollisols,xerolls,durixerolls,haplic durixerolls
+mollisols,xerolls,durixerolls,paleargidic durixerolls
+mollisols,xerolls,durixerolls,palexerollic durixerolls
+mollisols,xerolls,durixerolls,argidic durixerolls
+mollisols,xerolls,durixerolls,argiduridic durixerolls
+mollisols,xerolls,durixerolls,cambidic durixerolls
+mollisols,xerolls,durixerolls,haplic haploxerollic durixerolls
+mollisols,xerolls,durixerolls,haplic palexerollic durixerolls
+mollisols,xerolls,durixerolls,haploduridic durixerolls
+mollisols,xerolls,durixerolls,haploxerollic durixerolls
+mollisols,xerolls,durixerolls,abruptic argiduridic durixerolls
+mollisols,xerolls,durixerolls,aquic durixerolls
+mollisols,xerolls,haploxerolls,torrertic haploxerolls
+mollisols,xerolls,haploxerolls,torrifluventic haploxerolls
+mollisols,xerolls,haploxerolls,torriorthentic haploxerolls
+mollisols,xerolls,haploxerolls,torripsammentic haploxerolls
+mollisols,xerolls,haploxerolls,typic haploxerolls
+mollisols,xerolls,haploxerolls,ultic haploxerolls
+mollisols,xerolls,haploxerolls,vermic haploxerolls
+mollisols,xerolls,haploxerolls,vertic haploxerolls
+mollisols,xerolls,haploxerolls,vitrandic haploxerolls
+mollisols,xerolls,haploxerolls,vitritorrandic haploxerolls
+mollisols,xerolls,haploxerolls,lithic haploxerolls
+mollisols,xerolls,haploxerolls,lithic ultic haploxerolls
+mollisols,xerolls,haploxerolls,oxyaquic haploxerolls
+mollisols,xerolls,haploxerolls,pachic haploxerolls
+mollisols,xerolls,haploxerolls,pachic ultic haploxerolls
+mollisols,xerolls,haploxerolls,psammentic haploxerolls
+mollisols,xerolls,haploxerolls,aquic haploxerolls
+mollisols,xerolls,haploxerolls,aquultic haploxerolls
+mollisols,xerolls,haploxerolls,aridic haploxerolls
+mollisols,xerolls,haploxerolls,aridic lithic haploxerolls
+mollisols,xerolls,haploxerolls,calcic haploxerolls
+mollisols,xerolls,haploxerolls,calcic pachic haploxerolls
+mollisols,xerolls,haploxerolls,calcidic haploxerolls
+mollisols,xerolls,haploxerolls,cumulic haploxerolls
+mollisols,xerolls,haploxerolls,cumulic ultic haploxerolls
+mollisols,xerolls,haploxerolls,duric haploxerolls
+mollisols,xerolls,haploxerolls,duridic haploxerolls
+mollisols,xerolls,haploxerolls,entic haploxerolls
+mollisols,xerolls,haploxerolls,entic ultic haploxerolls
+mollisols,xerolls,haploxerolls,fluvaquentic haploxerolls
+mollisols,xerolls,haploxerolls,fluventic haploxerolls
+mollisols,xerolls,haploxerolls,andic haploxerolls
+mollisols,xerolls,haploxerolls,aquic cumulic haploxerolls
+mollisols,xerolls,haploxerolls,aquic duric haploxerolls
+mollisols,xerolls,natrixerolls,typic natrixerolls
+mollisols,xerolls,natrixerolls,vertic natrixerolls
+mollisols,xerolls,natrixerolls,aquic natrixerolls
+mollisols,xerolls,natrixerolls,aridic natrixerolls
+mollisols,xerolls,natrixerolls,duric natrixerolls
+mollisols,xerolls,natrixerolls,aquic duric natrixerolls
+mollisols,xerolls,palexerolls,typic palexerolls
+mollisols,xerolls,palexerolls,ultic palexerolls
+mollisols,xerolls,palexerolls,vertic palexerolls
+mollisols,xerolls,palexerolls,vitrandic palexerolls
+mollisols,xerolls,palexerolls,pachic palexerolls
+mollisols,xerolls,palexerolls,petrocalcic palexerolls
+mollisols,xerolls,palexerolls,petrocalcidic palexerolls
+mollisols,xerolls,palexerolls,aquic palexerolls
+mollisols,xerolls,palexerolls,aridic palexerolls
+mollisols,xerolls,palexerolls,duric palexerolls
+mollisols,xerolls,palexerolls,haplic palexerolls
+oxisols,aquox,acraquox,typic acraquox
+oxisols,aquox,acraquox,plinthic acraquox
+oxisols,aquox,acraquox,aeric acraquox
+oxisols,aquox,eutraquox,typic eutraquox
+oxisols,aquox,eutraquox,plinthic eutraquox
+oxisols,aquox,eutraquox,histic eutraquox
+oxisols,aquox,eutraquox,humic eutraquox
+oxisols,aquox,eutraquox,aeric eutraquox
+oxisols,aquox,haplaquox,typic haplaquox
+oxisols,aquox,haplaquox,plinthic haplaquox
+oxisols,aquox,haplaquox,histic haplaquox
+oxisols,aquox,haplaquox,humic haplaquox
+oxisols,aquox,haplaquox,aeric haplaquox
+oxisols,aquox,plinthaquox,typic plinthaquox
+oxisols,aquox,plinthaquox,aeric plinthaquox
+oxisols,perox,acroperox,typic acroperox
+oxisols,perox,acroperox,petroferric acroperox
+oxisols,perox,acroperox,plinthic acroperox
+oxisols,perox,acroperox,rhodic acroperox
+oxisols,perox,acroperox,aquic lithic acroperox
+oxisols,perox,acroperox,aquic petroferric acroperox
+oxisols,perox,acroperox,xanthic acroperox
+oxisols,perox,acroperox,humic acroperox
+oxisols,perox,acroperox,humic rhodic acroperox
+oxisols,perox,acroperox,humic xanthic acroperox
+oxisols,perox,acroperox,lithic acroperox
+oxisols,perox,acroperox,anionic acroperox
+oxisols,perox,acroperox,aquic acroperox
+oxisols,perox,eutroperox,typic eutroperox
+oxisols,perox,eutroperox,lithic eutroperox
+oxisols,perox,eutroperox,petroferric eutroperox
+oxisols,perox,eutroperox,plinthaquic eutroperox
+oxisols,perox,eutroperox,plinthic eutroperox
+oxisols,perox,eutroperox,rhodic eutroperox
+oxisols,perox,eutroperox,aquic eutroperox
+oxisols,perox,eutroperox,aquic lithic eutroperox
+oxisols,perox,eutroperox,aquic petroferric eutroperox
+oxisols,perox,eutroperox,xanthic eutroperox
+oxisols,perox,eutroperox,humic eutroperox
+oxisols,perox,eutroperox,humic inceptic eutroperox
+oxisols,perox,eutroperox,humic rhodic eutroperox
+oxisols,perox,eutroperox,humic xanthic eutroperox
+oxisols,perox,eutroperox,inceptic eutroperox
+oxisols,perox,eutroperox,kandiudalfic eutroperox
+oxisols,perox,haploperox,typic haploperox
+oxisols,perox,haploperox,lithic haploperox
+oxisols,perox,haploperox,petroferric haploperox
+oxisols,perox,haploperox,plinthaquic haploperox
+oxisols,perox,haploperox,plinthic haploperox
+oxisols,perox,haploperox,rhodic haploperox
+oxisols,perox,haploperox,aquic haploperox
+oxisols,perox,haploperox,aquic lithic haploperox
+oxisols,perox,haploperox,aquic petroferric haploperox
+oxisols,perox,haploperox,xanthic haploperox
+oxisols,perox,haploperox,humic haploperox
+oxisols,perox,haploperox,humic rhodic haploperox
+oxisols,perox,haploperox,humic xanthic haploperox
+oxisols,perox,haploperox,andic haploperox
+oxisols,perox,kandiperox,typic kandiperox
+oxisols,perox,kandiperox,lithic kandiperox
+oxisols,perox,kandiperox,petroferric kandiperox
+oxisols,perox,kandiperox,plinthaquic kandiperox
+oxisols,perox,kandiperox,plinthic kandiperox
+oxisols,perox,kandiperox,rhodic kandiperox
+oxisols,perox,kandiperox,aquic kandiperox
+oxisols,perox,kandiperox,aquic lithic kandiperox
+oxisols,perox,kandiperox,aquic petroferric kandiperox
+oxisols,perox,kandiperox,xanthic kandiperox
+oxisols,perox,kandiperox,humic kandiperox
+oxisols,perox,kandiperox,humic rhodic kandiperox
+oxisols,perox,kandiperox,humic xanthic kandiperox
+oxisols,perox,kandiperox,andic kandiperox
+oxisols,perox,sombriperox,typic sombriperox
+oxisols,perox,sombriperox,lithic sombriperox
+oxisols,perox,sombriperox,petroferric sombriperox
+oxisols,perox,sombriperox,humic sombriperox
+oxisols,torrox,acrotorrox,typic acrotorrox
+oxisols,torrox,acrotorrox,petroferric acrotorrox
+oxisols,torrox,acrotorrox,lithic acrotorrox
+oxisols,torrox,eutrotorrox,typic eutrotorrox
+oxisols,torrox,eutrotorrox,lithic eutrotorrox
+oxisols,torrox,eutrotorrox,petroferric eutrotorrox
+oxisols,torrox,haplotorrox,typic haplotorrox
+oxisols,torrox,haplotorrox,lithic haplotorrox
+oxisols,torrox,haplotorrox,petroferric haplotorrox
+oxisols,udox,acrudox,typic acrudox
+oxisols,udox,acrudox,petroferric acrudox
+oxisols,udox,acrudox,plinthic acrudox
+oxisols,udox,acrudox,rhodic acrudox
+oxisols,udox,acrudox,aquic lithic acrudox
+oxisols,udox,acrudox,aquic petroferric acrudox
+oxisols,udox,acrudox,eutric acrudox
+oxisols,udox,acrudox,xanthic acrudox
+oxisols,udox,acrudox,humic acrudox
+oxisols,udox,acrudox,humic rhodic acrudox
+oxisols,udox,acrudox,humic xanthic acrudox
+oxisols,udox,acrudox,lithic acrudox
+oxisols,udox,acrudox,anionic acrudox
+oxisols,udox,acrudox,anionic aquic acrudox
+oxisols,udox,acrudox,aquic acrudox
+oxisols,udox,eutrudox,typic eutrudox
+oxisols,udox,eutrudox,lithic eutrudox
+oxisols,udox,eutrudox,petroferric eutrudox
+oxisols,udox,eutrudox,plinthaquic eutrudox
+oxisols,udox,eutrudox,plinthic eutrudox
+oxisols,udox,eutrudox,rhodic eutrudox
+oxisols,udox,eutrudox,aquic eutrudox
+oxisols,udox,eutrudox,aquic lithic eutrudox
+oxisols,udox,eutrudox,aquic petroferric eutrudox
+oxisols,udox,eutrudox,xanthic eutrudox
+oxisols,udox,eutrudox,humic eutrudox
+oxisols,udox,eutrudox,humic inceptic eutrudox
+oxisols,udox,eutrudox,humic rhodic eutrudox
+oxisols,udox,eutrudox,humic xanthic eutrudox
+oxisols,udox,eutrudox,inceptic eutrudox
+oxisols,udox,eutrudox,kandiudalfic eutrudox
+oxisols,udox,hapludox,typic hapludox
+oxisols,udox,hapludox,lithic hapludox
+oxisols,udox,hapludox,petroferric hapludox
+oxisols,udox,hapludox,plinthaquic hapludox
+oxisols,udox,hapludox,plinthic hapludox
+oxisols,udox,hapludox,rhodic hapludox
+oxisols,udox,hapludox,aquic hapludox
+oxisols,udox,hapludox,aquic lithic hapludox
+oxisols,udox,hapludox,aquic petroferric hapludox
+oxisols,udox,hapludox,xanthic hapludox
+oxisols,udox,hapludox,humic hapludox
+oxisols,udox,hapludox,humic rhodic hapludox
+oxisols,udox,hapludox,humic xanthic hapludox
+oxisols,udox,hapludox,inceptic hapludox
+oxisols,udox,hapludox,andic hapludox
+oxisols,udox,kandiudox,typic kandiudox
+oxisols,udox,kandiudox,lithic kandiudox
+oxisols,udox,kandiudox,petroferric kandiudox
+oxisols,udox,kandiudox,plinthaquic kandiudox
+oxisols,udox,kandiudox,plinthic kandiudox
+oxisols,udox,kandiudox,rhodic kandiudox
+oxisols,udox,kandiudox,aquic kandiudox
+oxisols,udox,kandiudox,aquic lithic kandiudox
+oxisols,udox,kandiudox,aquic petroferric kandiudox
+oxisols,udox,kandiudox,xanthic kandiudox
+oxisols,udox,kandiudox,humic kandiudox
+oxisols,udox,kandiudox,humic rhodic kandiudox
+oxisols,udox,kandiudox,humic xanthic kandiudox
+oxisols,udox,kandiudox,andic kandiudox
+oxisols,udox,sombriudox,typic sombriudox
+oxisols,udox,sombriudox,lithic sombriudox
+oxisols,udox,sombriudox,petroferric sombriudox
+oxisols,udox,sombriudox,humic sombriudox
+oxisols,ustox,acrustox,typic acrustox
+oxisols,ustox,acrustox,petroferric acrustox
+oxisols,ustox,acrustox,plinthic acrustox
+oxisols,ustox,acrustox,rhodic acrustox
+oxisols,ustox,acrustox,aquic lithic acrustox
+oxisols,ustox,acrustox,aquic petroferric acrustox
+oxisols,ustox,acrustox,eutric acrustox
+oxisols,ustox,acrustox,xanthic acrustox
+oxisols,ustox,acrustox,humic acrustox
+oxisols,ustox,acrustox,humic rhodic acrustox
+oxisols,ustox,acrustox,humic xanthic acrustox
+oxisols,ustox,acrustox,lithic acrustox
+oxisols,ustox,acrustox,anionic acrustox
+oxisols,ustox,acrustox,anionic aquic acrustox
+oxisols,ustox,acrustox,aquic acrustox
+oxisols,ustox,eutrustox,typic eutrustox
+oxisols,ustox,eutrustox,lithic eutrustox
+oxisols,ustox,eutrustox,petroferric eutrustox
+oxisols,ustox,eutrustox,plinthaquic eutrustox
+oxisols,ustox,eutrustox,plinthic eutrustox
+oxisols,ustox,eutrustox,rhodic eutrustox
+oxisols,ustox,eutrustox,aquic eutrustox
+oxisols,ustox,eutrustox,aquic lithic eutrustox
+oxisols,ustox,eutrustox,aquic petroferric eutrustox
+oxisols,ustox,eutrustox,xanthic eutrustox
+oxisols,ustox,eutrustox,humic eutrustox
+oxisols,ustox,eutrustox,humic inceptic eutrustox
+oxisols,ustox,eutrustox,humic rhodic eutrustox
+oxisols,ustox,eutrustox,humic xanthic eutrustox
+oxisols,ustox,eutrustox,inceptic eutrustox
+oxisols,ustox,eutrustox,kandiustalfic eutrustox
+oxisols,ustox,haplustox,typic haplustox
+oxisols,ustox,haplustox,lithic haplustox
+oxisols,ustox,haplustox,oxyaquic haplustox
+oxisols,ustox,haplustox,petroferric haplustox
+oxisols,ustox,haplustox,plinthaquic haplustox
+oxisols,ustox,haplustox,plinthic haplustox
+oxisols,ustox,haplustox,rhodic haplustox
+oxisols,ustox,haplustox,aquic haplustox
+oxisols,ustox,haplustox,aquic lithic haplustox
+oxisols,ustox,haplustox,aquic petroferric haplustox
+oxisols,ustox,haplustox,xanthic haplustox
+oxisols,ustox,haplustox,humic haplustox
+oxisols,ustox,haplustox,humic rhodic haplustox
+oxisols,ustox,haplustox,humic xanthic haplustox
+oxisols,ustox,haplustox,inceptic haplustox
+oxisols,ustox,haplustox,aqueptic haplustox
+oxisols,ustox,kandiustox,typic kandiustox
+oxisols,ustox,kandiustox,lithic kandiustox
+oxisols,ustox,kandiustox,petroferric kandiustox
+oxisols,ustox,kandiustox,plinthaquic kandiustox
+oxisols,ustox,kandiustox,plinthic kandiustox
+oxisols,ustox,kandiustox,rhodic kandiustox
+oxisols,ustox,kandiustox,aquic kandiustox
+oxisols,ustox,kandiustox,aquic lithic kandiustox
+oxisols,ustox,kandiustox,aquic petroferric kandiustox
+oxisols,ustox,kandiustox,xanthic kandiustox
+oxisols,ustox,kandiustox,humic kandiustox
+oxisols,ustox,kandiustox,humic rhodic kandiustox
+oxisols,ustox,kandiustox,humic xanthic kandiustox
+oxisols,ustox,sombriustox,typic sombriustox
+oxisols,ustox,sombriustox,lithic sombriustox
+oxisols,ustox,sombriustox,petroferric sombriustox
+oxisols,ustox,sombriustox,humic sombriustox
+spodosols,aquods,alaquods,typic alaquods
+spodosols,aquods,alaquods,ultic alaquods
+spodosols,aquods,alaquods,grossarenic alaquods
+spodosols,aquods,alaquods,arenic alaquods
+spodosols,aquods,alaquods,arenic ultic alaquods
+spodosols,aquods,alaquods,arenic umbric alaquods
+spodosols,aquods,alaquods,duric alaquods
+spodosols,aquods,alaquods,histic alaquods
+spodosols,aquods,alaquods,lithic alaquods
+spodosols,aquods,alaquods,aeric alaquods
+spodosols,aquods,alaquods,alfic alaquods
+spodosols,aquods,alaquods,alfic arenic alaquods
+spodosols,aquods,cryaquods,typic cryaquods
+spodosols,aquods,cryaquods,lithic cryaquods
+spodosols,aquods,cryaquods,placic cryaquods
+spodosols,aquods,cryaquods,duric cryaquods
+spodosols,aquods,cryaquods,entic cryaquods
+spodosols,aquods,cryaquods,andic cryaquods
+spodosols,aquods,duraquods,typic duraquods
+spodosols,aquods,duraquods,histic duraquods
+spodosols,aquods,duraquods,andic duraquods
+spodosols,aquods,endoaquods,typic endoaquods
+spodosols,aquods,endoaquods,umbric endoaquods
+spodosols,aquods,endoaquods,lithic endoaquods
+spodosols,aquods,endoaquods,argic endoaquods
+spodosols,aquods,endoaquods,histic endoaquods
+spodosols,aquods,endoaquods,andic endoaquods
+spodosols,aquods,epiaquods,typic epiaquods
+spodosols,aquods,epiaquods,ultic epiaquods
+spodosols,aquods,epiaquods,umbric epiaquods
+spodosols,aquods,epiaquods,lithic epiaquods
+spodosols,aquods,epiaquods,histic epiaquods
+spodosols,aquods,epiaquods,alfic epiaquods
+spodosols,aquods,epiaquods,andic epiaquods
+spodosols,aquods,fragiaquods,typic fragiaquods
+spodosols,aquods,fragiaquods,argic fragiaquods
+spodosols,aquods,fragiaquods,histic fragiaquods
+spodosols,aquods,fragiaquods,haploplaggic fragiaquods
+spodosols,aquods,placaquods,typic placaquods
+spodosols,aquods,placaquods,andic placaquods
+spodosols,cryods,duricryods,typic duricryods
+spodosols,cryods,duricryods,oxyaquic duricryods
+spodosols,cryods,duricryods,humic duricryods
+spodosols,cryods,duricryods,andic duricryods
+spodosols,cryods,duricryods,aquandic duricryods
+spodosols,cryods,duricryods,aquic duricryods
+spodosols,cryods,haplocryods,typic haplocryods
+spodosols,cryods,haplocryods,lithic haplocryods
+spodosols,cryods,haplocryods,oxyaquic haplocryods
+spodosols,cryods,haplocryods,aquic haplocryods
+spodosols,cryods,haplocryods,entic haplocryods
+spodosols,cryods,haplocryods,folistic haplocryods
+spodosols,cryods,haplocryods,andic haplocryods
+spodosols,cryods,haplocryods,aquandic haplocryods
+spodosols,cryods,humicryods,typic humicryods
+spodosols,cryods,humicryods,lithic humicryods
+spodosols,cryods,humicryods,oxyaquic humicryods
+spodosols,cryods,humicryods,aquic humicryods
+spodosols,cryods,humicryods,folistic humicryods
+spodosols,cryods,humicryods,andic humicryods
+spodosols,cryods,humicryods,aquandic humicryods
+spodosols,cryods,placocryods,typic placocryods
+spodosols,cryods,placocryods,humic placocryods
+spodosols,cryods,placocryods,andic placocryods
+spodosols,gelods,haplogelods,turbic haplogelods
+spodosols,gelods,haplogelods,typic haplogelods
+spodosols,gelods,haplogelods,lithic haplogelods
+spodosols,gelods,haplogelods,aquic haplogelods
+spodosols,gelods,haplogelods,andic haplogelods
+spodosols,gelods,humigelods,turbic humigelods
+spodosols,gelods,humigelods,typic humigelods
+spodosols,gelods,humigelods,lithic humigelods
+spodosols,gelods,humigelods,aquic humigelods
+spodosols,gelods,humigelods,andic humigelods
+spodosols,humods,durihumods,typic durihumods
+spodosols,humods,durihumods,andic durihumods
+spodosols,humods,fragihumods,typic fragihumods
+spodosols,humods,haplohumods,typic haplohumods
+spodosols,humods,haplohumods,lithic haplohumods
+spodosols,humods,haplohumods,andic haplohumods
+spodosols,humods,haplohumods,haploplaggic haplohumods
+spodosols,humods,placohumods,typic placohumods
+spodosols,humods,placohumods,andic placohumods
+spodosols,orthods,alorthods,typic alorthods
+spodosols,orthods,alorthods,ultic alorthods
+spodosols,orthods,alorthods,grossarenic alorthods
+spodosols,orthods,alorthods,oxyaquic alorthods
+spodosols,orthods,alorthods,arenic alorthods
+spodosols,orthods,alorthods,arenic ultic alorthods
+spodosols,orthods,alorthods,entic alorthods
+spodosols,orthods,alorthods,entic grossarenic alorthods
+spodosols,orthods,alorthods,alfic alorthods
+spodosols,orthods,alorthods,haploplaggic alorthods
+spodosols,orthods,durorthods,typic durorthods
+spodosols,orthods,durorthods,andic durorthods
+spodosols,orthods,fragiorthods,typic fragiorthods
+spodosols,orthods,fragiorthods,ultic fragiorthods
+spodosols,orthods,fragiorthods,oxyaquic fragiorthods
+spodosols,orthods,fragiorthods,aquic fragiorthods
+spodosols,orthods,fragiorthods,entic fragiorthods
+spodosols,orthods,fragiorthods,alfic fragiorthods
+spodosols,orthods,fragiorthods,alfic oxyaquic fragiorthods
+spodosols,orthods,fragiorthods,haploplaggic fragiorthods
+spodosols,orthods,haplorthods,typic haplorthods
+spodosols,orthods,haplorthods,ultic haplorthods
+spodosols,orthods,haplorthods,lithic haplorthods
+spodosols,orthods,haplorthods,oxyaquic haplorthods
+spodosols,orthods,haplorthods,oxyaquic ultic haplorthods
+spodosols,orthods,haplorthods,aquic haplorthods
+spodosols,orthods,haplorthods,entic haplorthods
+spodosols,orthods,haplorthods,entic lithic haplorthods
+spodosols,orthods,haplorthods,fragiaquic haplorthods
+spodosols,orthods,haplorthods,fragic haplorthods
+spodosols,orthods,haplorthods,lamellic haplorthods
+spodosols,orthods,haplorthods,lamellic oxyaquic haplorthods
+spodosols,orthods,haplorthods,alfic haplorthods
+spodosols,orthods,haplorthods,alfic oxyaquic haplorthods
+spodosols,orthods,haplorthods,andic haplorthods
+spodosols,orthods,haplorthods,aqualfic haplorthods
+spodosols,orthods,haplorthods,aquentic haplorthods
+spodosols,orthods,placorthods,typic placorthods
+ultisols,aquults,albaquults,typic albaquults
+ultisols,aquults,albaquults,vertic albaquults
+ultisols,aquults,albaquults,kandic albaquults
+ultisols,aquults,albaquults,aeric albaquults
+ultisols,aquults,endoaquults,typic endoaquults
+ultisols,aquults,endoaquults,grossarenic endoaquults
+ultisols,aquults,endoaquults,arenic endoaquults
+ultisols,aquults,endoaquults,aeric endoaquults
+ultisols,aquults,epiaquults,typic epiaquults
+ultisols,aquults,epiaquults,vertic epiaquults
+ultisols,aquults,epiaquults,grossarenic epiaquults
+ultisols,aquults,epiaquults,arenic epiaquults
+ultisols,aquults,epiaquults,fragic epiaquults
+ultisols,aquults,epiaquults,aeric epiaquults
+ultisols,aquults,epiaquults,aeric fragic epiaquults
+ultisols,aquults,fragiaquults,typic fragiaquults
+ultisols,aquults,fragiaquults,umbric fragiaquults
+ultisols,aquults,fragiaquults,plinthic fragiaquults
+ultisols,aquults,fragiaquults,aeric fragiaquults
+ultisols,aquults,kandiaquults,typic kandiaquults
+ultisols,aquults,kandiaquults,umbric kandiaquults
+ultisols,aquults,kandiaquults,grossarenic kandiaquults
+ultisols,aquults,kandiaquults,plinthic kandiaquults
+ultisols,aquults,kandiaquults,arenic kandiaquults
+ultisols,aquults,kandiaquults,arenic plinthic kandiaquults
+ultisols,aquults,kandiaquults,arenic umbric kandiaquults
+ultisols,aquults,kandiaquults,acraquoxic kandiaquults
+ultisols,aquults,kandiaquults,aeric kandiaquults
+ultisols,aquults,kanhaplaquults,typic kanhaplaquults
+ultisols,aquults,kanhaplaquults,umbric kanhaplaquults
+ultisols,aquults,kanhaplaquults,plinthic kanhaplaquults
+ultisols,aquults,kanhaplaquults,aeric kanhaplaquults
+ultisols,aquults,kanhaplaquults,aeric umbric kanhaplaquults
+ultisols,aquults,kanhaplaquults,aquandic kanhaplaquults
+ultisols,aquults,paleaquults,typic paleaquults
+ultisols,aquults,paleaquults,umbric paleaquults
+ultisols,aquults,paleaquults,vertic paleaquults
+ultisols,aquults,paleaquults,grossarenic paleaquults
+ultisols,aquults,paleaquults,plinthic paleaquults
+ultisols,aquults,paleaquults,arenic paleaquults
+ultisols,aquults,paleaquults,arenic plinthic paleaquults
+ultisols,aquults,paleaquults,arenic umbric paleaquults
+ultisols,aquults,paleaquults,aeric paleaquults
+ultisols,aquults,plinthaquults,typic plinthaquults
+ultisols,aquults,plinthaquults,kandic plinthaquults
+ultisols,aquults,umbraquults,typic umbraquults
+ultisols,aquults,umbraquults,plinthic umbraquults
+ultisols,humults,haplohumults,typic haplohumults
+ultisols,humults,haplohumults,ustic haplohumults
+ultisols,humults,haplohumults,lithic haplohumults
+ultisols,humults,haplohumults,oxyaquic haplohumults
+ultisols,humults,haplohumults,plinthic haplohumults
+ultisols,humults,haplohumults,aquic haplohumults
+ultisols,humults,haplohumults,xeric haplohumults
+ultisols,humults,haplohumults,andic haplohumults
+ultisols,humults,haplohumults,aquandic haplohumults
+ultisols,humults,kandihumults,typic kandihumults
+ultisols,humults,kandihumults,ustandic kandihumults
+ultisols,humults,kandihumults,ustic kandihumults
+ultisols,humults,kandihumults,ombroaquic kandihumults
+ultisols,humults,kandihumults,plinthic kandihumults
+ultisols,humults,kandihumults,aquic kandihumults
+ultisols,humults,kandihumults,xeric kandihumults
+ultisols,humults,kandihumults,andic kandihumults
+ultisols,humults,kandihumults,andic ombroaquic kandihumults
+ultisols,humults,kandihumults,anthropic kandihumults
+ultisols,humults,kanhaplohumults,typic kanhaplohumults
+ultisols,humults,kanhaplohumults,ustandic kanhaplohumults
+ultisols,humults,kanhaplohumults,ustic kanhaplohumults
+ultisols,humults,kanhaplohumults,lithic kanhaplohumults
+ultisols,humults,kanhaplohumults,ombroaquic kanhaplohumults
+ultisols,humults,kanhaplohumults,aquic kanhaplohumults
+ultisols,humults,kanhaplohumults,xeric kanhaplohumults
+ultisols,humults,kanhaplohumults,andic kanhaplohumults
+ultisols,humults,kanhaplohumults,anthropic kanhaplohumults
+ultisols,humults,palehumults,typic palehumults
+ultisols,humults,palehumults,ustic palehumults
+ultisols,humults,palehumults,oxyaquic palehumults
+ultisols,humults,palehumults,plinthic palehumults
+ultisols,humults,palehumults,aquic palehumults
+ultisols,humults,palehumults,xeric palehumults
+ultisols,humults,palehumults,andic palehumults
+ultisols,humults,palehumults,aquandic palehumults
+ultisols,humults,plinthohumults,typic plinthohumults
+ultisols,humults,sombrihumults,typic sombrihumults
+ultisols,udults,fragiudults,typic fragiudults
+ultisols,udults,fragiudults,glossic fragiudults
+ultisols,udults,fragiudults,plinthaquic fragiudults
+ultisols,udults,fragiudults,plinthic fragiudults
+ultisols,udults,fragiudults,aquic fragiudults
+ultisols,udults,fragiudults,arenic fragiudults
+ultisols,udults,fragiudults,glossaquic fragiudults
+ultisols,udults,fragiudults,humic fragiudults
+ultisols,udults,hapludults,typic hapludults
+ultisols,udults,hapludults,vertic hapludults
+ultisols,udults,hapludults,grossarenic hapludults
+ultisols,udults,hapludults,lithic hapludults
+ultisols,udults,hapludults,lithic-ruptic-entic hapludults
+ultisols,udults,hapludults,oxyaquic hapludults
+ultisols,udults,hapludults,psammentic hapludults
+ultisols,udults,hapludults,aquic hapludults
+ultisols,udults,hapludults,arenic hapludults
+ultisols,udults,hapludults,fragiaquic hapludults
+ultisols,udults,hapludults,fragic hapludults
+ultisols,udults,hapludults,humic hapludults
+ultisols,udults,hapludults,inceptic hapludults
+ultisols,udults,hapludults,lamellic hapludults
+ultisols,udults,hapludults,aquic arenic hapludults
+ultisols,udults,kandiudults,typic kandiudults
+ultisols,udults,kandiudults,grossarenic kandiudults
+ultisols,udults,kandiudults,grossarenic plinthic kandiudults
+ultisols,udults,kandiudults,ombroaquic kandiudults
+ultisols,udults,kandiudults,oxyaquic kandiudults
+ultisols,udults,kandiudults,plinthaquic kandiudults
+ultisols,udults,kandiudults,plinthic kandiudults
+ultisols,udults,kandiudults,rhodic kandiudults
+ultisols,udults,kandiudults,sombric kandiudults
+ultisols,udults,kandiudults,aquic kandiudults
+ultisols,udults,kandiudults,arenic kandiudults
+ultisols,udults,kandiudults,arenic plinthaquic kandiudults
+ultisols,udults,kandiudults,arenic plinthic kandiudults
+ultisols,udults,kandiudults,arenic rhodic kandiudults
+ultisols,udults,kandiudults,acrudoxic kandiudults
+ultisols,udults,kandiudults,acrudoxic plinthic kandiudults
+ultisols,udults,kandiudults,andic kandiudults
+ultisols,udults,kandiudults,aquandic kandiudults
+ultisols,udults,kandiudults,aquic arenic kandiudults
+ultisols,udults,kanhapludults,typic kanhapludults
+ultisols,udults,kanhapludults,lithic kanhapludults
+ultisols,udults,kanhapludults,ombroaquic kanhapludults
+ultisols,udults,kanhapludults,oxyaquic kanhapludults
+ultisols,udults,kanhapludults,plinthaquic kanhapludults
+ultisols,udults,kanhapludults,plinthic kanhapludults
+ultisols,udults,kanhapludults,rhodic kanhapludults
+ultisols,udults,kanhapludults,aquic kanhapludults
+ultisols,udults,kanhapludults,arenic kanhapludults
+ultisols,udults,kanhapludults,arenic plinthic kanhapludults
+ultisols,udults,kanhapludults,fragiaquic kanhapludults
+ultisols,udults,kanhapludults,fragic kanhapludults
+ultisols,udults,kanhapludults,acrudoxic kanhapludults
+ultisols,udults,kanhapludults,andic kanhapludults
+ultisols,udults,paleudults,typic paleudults
+ultisols,udults,paleudults,vertic paleudults
+ultisols,udults,paleudults,grossarenic paleudults
+ultisols,udults,paleudults,grossarenic plinthic paleudults
+ultisols,udults,paleudults,oxyaquic paleudults
+ultisols,udults,paleudults,plinthaquic paleudults
+ultisols,udults,paleudults,plinthic paleudults
+ultisols,udults,paleudults,psammentic paleudults
+ultisols,udults,paleudults,rhodic paleudults
+ultisols,udults,paleudults,aquic paleudults
+ultisols,udults,paleudults,arenic paleudults
+ultisols,udults,paleudults,arenic plinthaquic paleudults
+ultisols,udults,paleudults,arenic plinthic paleudults
+ultisols,udults,paleudults,arenic rhodic paleudults
+ultisols,udults,paleudults,fragiaquic paleudults
+ultisols,udults,paleudults,fragic paleudults
+ultisols,udults,paleudults,lamellic paleudults
+ultisols,udults,paleudults,anthraquic paleudults
+ultisols,udults,paleudults,aquic arenic paleudults
+ultisols,udults,paleudults,spodic paleudults
+ultisols,udults,plinthudults,typic plinthudults
+ultisols,udults,rhodudults,typic rhodudults
+ultisols,udults,rhodudults,lithic rhodudults
+ultisols,udults,rhodudults,psammentic rhodudults
+ultisols,ustults,haplustults,typic haplustults
+ultisols,ustults,haplustults,lithic haplustults
+ultisols,ustults,haplustults,ombroaquic haplustults
+ultisols,ustults,haplustults,petroferric haplustults
+ultisols,ustults,haplustults,plinthic haplustults
+ultisols,ustults,haplustults,aquic haplustults
+ultisols,ustults,haplustults,arenic haplustults
+ultisols,ustults,haplustults,kanhaplic haplustults
+ultisols,ustults,kandiustults,typic kandiustults
+ultisols,ustults,kandiustults,udandic kandiustults
+ultisols,ustults,kandiustults,udic kandiustults
+ultisols,ustults,kandiustults,plinthic kandiustults
+ultisols,ustults,kandiustults,rhodic kandiustults
+ultisols,ustults,kandiustults,aquic kandiustults
+ultisols,ustults,kandiustults,arenic kandiustults
+ultisols,ustults,kandiustults,arenic plinthic kandiustults
+ultisols,ustults,kandiustults,aridic kandiustults
+ultisols,ustults,kandiustults,acrustoxic kandiustults
+ultisols,ustults,kandiustults,andic kandiustults
+ultisols,ustults,kanhaplustults,typic kanhaplustults
+ultisols,ustults,kanhaplustults,udandic kanhaplustults
+ultisols,ustults,kanhaplustults,udic kanhaplustults
+ultisols,ustults,kanhaplustults,lithic kanhaplustults
+ultisols,ustults,kanhaplustults,ombroaquic kanhaplustults
+ultisols,ustults,kanhaplustults,plinthic kanhaplustults
+ultisols,ustults,kanhaplustults,rhodic kanhaplustults
+ultisols,ustults,kanhaplustults,aquic kanhaplustults
+ultisols,ustults,kanhaplustults,arenic kanhaplustults
+ultisols,ustults,kanhaplustults,aridic kanhaplustults
+ultisols,ustults,kanhaplustults,acrustoxic kanhaplustults
+ultisols,ustults,kanhaplustults,andic kanhaplustults
+ultisols,ustults,paleustults,typic paleustults
+ultisols,ustults,plinthustults,typic plinthustults
+ultisols,ustults,plinthustults,haplic plinthustults
+ultisols,ustults,rhodustults,typic rhodustults
+ultisols,ustults,rhodustults,lithic rhodustults
+ultisols,ustults,rhodustults,psammentic rhodustults
+ultisols,xerults,haploxerults,typic haploxerults
+ultisols,xerults,haploxerults,grossarenic haploxerults
+ultisols,xerults,haploxerults,lithic haploxerults
+ultisols,xerults,haploxerults,lithic ruptic-inceptic haploxerults
+ultisols,xerults,haploxerults,psammentic haploxerults
+ultisols,xerults,haploxerults,aquic haploxerults
+ultisols,xerults,haploxerults,arenic haploxerults
+ultisols,xerults,haploxerults,lamellic haploxerults
+ultisols,xerults,haploxerults,andic haploxerults
+ultisols,xerults,palexerults,typic palexerults
+ultisols,xerults,palexerults,aquic palexerults
+ultisols,xerults,palexerults,andic palexerults
+ultisols,xerults,palexerults,aquandic palexerults
+vertisols,aquerts,calciaquerts,typic calciaquerts
+vertisols,aquerts,calciaquerts,aeric calciaquerts
+vertisols,aquerts,duraquerts,typic duraquerts
+vertisols,aquerts,duraquerts,ustic duraquerts
+vertisols,aquerts,duraquerts,aridic duraquerts
+vertisols,aquerts,duraquerts,chromic duraquerts
+vertisols,aquerts,duraquerts,xeric duraquerts
+vertisols,aquerts,duraquerts,aeric duraquerts
+vertisols,aquerts,dystraquerts,typic dystraquerts
+vertisols,aquerts,dystraquerts,ustic dystraquerts
+vertisols,aquerts,dystraquerts,aridic dystraquerts
+vertisols,aquerts,dystraquerts,chromic dystraquerts
+vertisols,aquerts,dystraquerts,entic dystraquerts
+vertisols,aquerts,dystraquerts,leptic dystraquerts
+vertisols,aquerts,dystraquerts,aeric dystraquerts
+vertisols,aquerts,dystraquerts,sulfaqueptic dystraquerts
+vertisols,aquerts,endoaquerts,typic endoaquerts
+vertisols,aquerts,endoaquerts,ustic endoaquerts
+vertisols,aquerts,endoaquerts,halic endoaquerts
+vertisols,aquerts,endoaquerts,sodic endoaquerts
+vertisols,aquerts,endoaquerts,aridic endoaquerts
+vertisols,aquerts,endoaquerts,chromic endoaquerts
+vertisols,aquerts,endoaquerts,entic endoaquerts
+vertisols,aquerts,endoaquerts,xeric endoaquerts
+vertisols,aquerts,endoaquerts,leptic endoaquerts
+vertisols,aquerts,endoaquerts,aeric endoaquerts
+vertisols,aquerts,epiaquerts,typic epiaquerts
+vertisols,aquerts,epiaquerts,ustic epiaquerts
+vertisols,aquerts,epiaquerts,halic epiaquerts
+vertisols,aquerts,epiaquerts,sodic epiaquerts
+vertisols,aquerts,epiaquerts,aridic epiaquerts
+vertisols,aquerts,epiaquerts,chromic epiaquerts
+vertisols,aquerts,epiaquerts,entic epiaquerts
+vertisols,aquerts,epiaquerts,xeric epiaquerts
+vertisols,aquerts,epiaquerts,leptic epiaquerts
+vertisols,aquerts,epiaquerts,aeric epiaquerts
+vertisols,aquerts,natraquerts,typic natraquerts
+vertisols,aquerts,salaquerts,typic salaquerts
+vertisols,aquerts,salaquerts,ustic salaquerts
+vertisols,aquerts,salaquerts,aridic salaquerts
+vertisols,aquerts,salaquerts,chromic salaquerts
+vertisols,aquerts,salaquerts,entic salaquerts
+vertisols,aquerts,salaquerts,leptic salaquerts
+vertisols,aquerts,sulfaquerts,typic sulfaquerts
+vertisols,aquerts,sulfaquerts,salic sulfaquerts
+vertisols,aquerts,sulfaquerts,sulfic sulfaquerts
+vertisols,cryerts,haplocryerts,typic haplocryerts
+vertisols,cryerts,haplocryerts,sodic haplocryerts
+vertisols,cryerts,haplocryerts,chromic haplocryerts
+vertisols,cryerts,humicryerts,typic humicryerts
+vertisols,cryerts,humicryerts,sodic humicryerts
+vertisols,torrerts,calcitorrerts,typic calcitorrerts
+vertisols,torrerts,calcitorrerts,petrocalcic calcitorrerts
+vertisols,torrerts,calcitorrerts,chromic calcitorrerts
+vertisols,torrerts,calcitorrerts,entic calcitorrerts
+vertisols,torrerts,calcitorrerts,leptic calcitorrerts
+vertisols,torrerts,gypsitorrerts,typic gypsitorrerts
+vertisols,torrerts,gypsitorrerts,chromic gypsitorrerts
+vertisols,torrerts,haplotorrerts,typic haplotorrerts
+vertisols,torrerts,haplotorrerts,halic haplotorrerts
+vertisols,torrerts,haplotorrerts,sodic haplotorrerts
+vertisols,torrerts,haplotorrerts,chromic haplotorrerts
+vertisols,torrerts,haplotorrerts,entic haplotorrerts
+vertisols,torrerts,haplotorrerts,leptic haplotorrerts
+vertisols,torrerts,salitorrerts,typic salitorrerts
+vertisols,torrerts,salitorrerts,aquic salitorrerts
+vertisols,torrerts,salitorrerts,chromic salitorrerts
+vertisols,torrerts,salitorrerts,entic salitorrerts
+vertisols,torrerts,salitorrerts,leptic salitorrerts
+vertisols,uderts,dystruderts,typic dystruderts
+vertisols,uderts,dystruderts,oxyaquic dystruderts
+vertisols,uderts,dystruderts,aquic dystruderts
+vertisols,uderts,dystruderts,chromic dystruderts
+vertisols,uderts,dystruderts,entic dystruderts
+vertisols,uderts,dystruderts,leptic dystruderts
+vertisols,uderts,hapluderts,typic hapluderts
+vertisols,uderts,hapluderts,lithic hapluderts
+vertisols,uderts,hapluderts,oxyaquic hapluderts
+vertisols,uderts,hapluderts,aquic hapluderts
+vertisols,uderts,hapluderts,chromic hapluderts
+vertisols,uderts,hapluderts,entic hapluderts
+vertisols,uderts,hapluderts,leptic hapluderts
+vertisols,usterts,calciusterts,typic calciusterts
+vertisols,usterts,calciusterts,udic calciusterts
+vertisols,usterts,calciusterts,halic calciusterts
+vertisols,usterts,calciusterts,petrocalcic calciusterts
+vertisols,usterts,calciusterts,sodic calciusterts
+vertisols,usterts,calciusterts,aridic calciusterts
+vertisols,usterts,calciusterts,chromic calciusterts
+vertisols,usterts,calciusterts,entic calciusterts
+vertisols,usterts,calciusterts,leptic calciusterts
+vertisols,usterts,calciusterts,lithic calciusterts
+vertisols,usterts,dystrusterts,typic dystrusterts
+vertisols,usterts,dystrusterts,udic dystrusterts
+vertisols,usterts,dystrusterts,lithic dystrusterts
+vertisols,usterts,dystrusterts,aquic dystrusterts
+vertisols,usterts,dystrusterts,aridic dystrusterts
+vertisols,usterts,dystrusterts,chromic dystrusterts
+vertisols,usterts,dystrusterts,entic dystrusterts
+vertisols,usterts,dystrusterts,leptic dystrusterts
+vertisols,usterts,gypsiusterts,typic gypsiusterts
+vertisols,usterts,gypsiusterts,udic gypsiusterts
+vertisols,usterts,gypsiusterts,halic gypsiusterts
+vertisols,usterts,gypsiusterts,lithic gypsiusterts
+vertisols,usterts,gypsiusterts,sodic gypsiusterts
+vertisols,usterts,gypsiusterts,aridic gypsiusterts
+vertisols,usterts,gypsiusterts,chromic gypsiusterts
+vertisols,usterts,gypsiusterts,entic gypsiusterts
+vertisols,usterts,gypsiusterts,leptic gypsiusterts
+vertisols,usterts,haplusterts,typic haplusterts
+vertisols,usterts,haplusterts,udic haplusterts
+vertisols,usterts,haplusterts,gypsic haplusterts
+vertisols,usterts,haplusterts,halic haplusterts
+vertisols,usterts,haplusterts,lithic haplusterts
+vertisols,usterts,haplusterts,petrocalcic haplusterts
+vertisols,usterts,haplusterts,sodic haplusterts
+vertisols,usterts,haplusterts,aridic haplusterts
+vertisols,usterts,haplusterts,aridic leptic haplusterts
+vertisols,usterts,haplusterts,calcic haplusterts
+vertisols,usterts,haplusterts,chromic haplusterts
+vertisols,usterts,haplusterts,chromic udic haplusterts
+vertisols,usterts,haplusterts,entic haplusterts
+vertisols,usterts,haplusterts,entic udic haplusterts
+vertisols,usterts,haplusterts,leptic haplusterts
+vertisols,usterts,haplusterts,leptic udic haplusterts
+vertisols,usterts,salusterts,typic salusterts
+vertisols,usterts,salusterts,lithic salusterts
+vertisols,usterts,salusterts,sodic salusterts
+vertisols,usterts,salusterts,aquic salusterts
+vertisols,usterts,salusterts,aridic salusterts
+vertisols,usterts,salusterts,chromic salusterts
+vertisols,usterts,salusterts,entic salusterts
+vertisols,usterts,salusterts,leptic salusterts
+vertisols,xererts,calcixererts,typic calcixererts
+vertisols,xererts,calcixererts,petrocalcic calcixererts
+vertisols,xererts,calcixererts,aridic calcixererts
+vertisols,xererts,calcixererts,chromic calcixererts
+vertisols,xererts,calcixererts,entic calcixererts
+vertisols,xererts,calcixererts,leptic calcixererts
+vertisols,xererts,calcixererts,lithic calcixererts
+vertisols,xererts,durixererts,typic durixererts
+vertisols,xererts,durixererts,udic durixererts
+vertisols,xererts,durixererts,halic durixererts
+vertisols,xererts,durixererts,haplic durixererts
+vertisols,xererts,durixererts,sodic durixererts
+vertisols,xererts,durixererts,aridic durixererts
+vertisols,xererts,durixererts,chromic durixererts
+vertisols,xererts,durixererts,aquic durixererts
+vertisols,xererts,haploxererts,typic haploxererts
+vertisols,xererts,haploxererts,udic haploxererts
+vertisols,xererts,haploxererts,halic haploxererts
+vertisols,xererts,haploxererts,lithic haploxererts
+vertisols,xererts,haploxererts,sodic haploxererts
+vertisols,xererts,haploxererts,aquic haploxererts
+vertisols,xererts,haploxererts,aridic haploxererts
+vertisols,xererts,haploxererts,chromic haploxererts
+vertisols,xererts,haploxererts,entic haploxererts
+vertisols,xererts,haploxererts,leptic haploxererts
