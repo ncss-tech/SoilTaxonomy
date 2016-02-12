@@ -1,10 +1,11 @@
 {
   "taxon": "haploxeralfs",
+  "ac": 10728500,
   "children": [
     {
       "taxon": "typic haploxeralfs",
-      "ac": 1977393,
-      "n_polygons": 34229,
+      "ac": 1977587,
+      "n_polygons": 34243,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "typic haploxeralfs",
@@ -12,8 +13,8 @@
     },
     {
       "taxon": "ultic haploxeralfs",
-      "ac": 4193577,
-      "n_polygons": 47116,
+      "ac": 4194840,
+      "n_polygons": 47145,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "ultic haploxeralfs",
@@ -30,8 +31,8 @@
     },
     {
       "taxon": "vitrandic haploxeralfs",
-      "ac": 588703,
-      "n_polygons": 10636,
+      "ac": 588744,
+      "n_polygons": 10625,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "vitrandic haploxeralfs",
@@ -39,8 +40,8 @@
     },
     {
       "taxon": "lithic haploxeralfs",
-      "ac": 222337,
-      "n_polygons": 1954,
+      "ac": 222443,
+      "n_polygons": 1967,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "lithic haploxeralfs",
@@ -48,8 +49,8 @@
     },
     {
       "taxon": "lithic mollic haploxeralfs",
-      "ac": 581244,
-      "n_polygons": 3138,
+      "ac": 580959,
+      "n_polygons": 3120,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "lithic mollic haploxeralfs",
@@ -57,8 +58,8 @@
     },
     {
       "taxon": "lithic ruptic-inceptic haploxeralfs",
-      "ac": 153797,
-      "n_polygons": 2042,
+      "ac": 152066,
+      "n_polygons": 2044,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "lithic ruptic-inceptic haploxeralfs",
@@ -66,8 +67,8 @@
     },
     {
       "taxon": "mollic haploxeralfs",
-      "ac": 2294796,
-      "n_polygons": 31346,
+      "ac": 2299134,
+      "n_polygons": 31935,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "mollic haploxeralfs",
@@ -110,8 +111,8 @@
     },
     {
       "taxon": "aquultic haploxeralfs",
-      "ac": 142741,
-      "n_polygons": 6348,
+      "ac": 143091,
+      "n_polygons": 6370,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "aquultic haploxeralfs",
@@ -137,8 +138,8 @@
     },
     {
       "taxon": "fragic haploxeralfs",
-      "ac": 1416,
-      "n_polygons": 48,
+      "ac": 1431,
+      "n_polygons": 51,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "fragic haploxeralfs",
@@ -155,8 +156,8 @@
     },
     {
       "taxon": "lamellic haploxeralfs",
-      "ac": 13086,
-      "n_polygons": 306,
+      "ac": 13177,
+      "n_polygons": 311,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "lamellic haploxeralfs",
@@ -164,8 +165,8 @@
     },
     {
       "taxon": "andic haploxeralfs",
-      "ac": 293636,
-      "n_polygons": 3635,
+      "ac": 304536,
+      "n_polygons": 4350,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
       "tax_subgroup": "andic haploxeralfs",

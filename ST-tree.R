@@ -47,10 +47,12 @@ v.ac <- V(g)$ac
 V(g)$size <- ifelse(v.ac == 0, 4, log(v.ac, base=10))
 V(g)$color <- ifelse(v.ac == 0, 'orange', 'lightblue')
 
+png(file='xeralfs-graph.png', width=1000, height=1000, type='cairo', antialias = 'subpixel')
 par(mar=c(1,1,1,1))
-plot(g, edge.arrow.size=0.15, vertex.label.cex=0.5, layout=layout_with_fr, vertex.label.family='sans', vertex.label.color='black')
+plot(g, edge.arrow.size=0.15, vertex.label.cex=0.85, layout=layout_with_fr, vertex.label.family='sans', vertex.label.color='black')
+legend('bottomright', legend=c('No Acres Mapped'), pch=21, pt.bg='orange', bty='n')
 # plot(g, edge.arrow.size=0.15, vertex.label.cex=0.5, layout=layout_with_lgl, vertex.label.family='sans', vertex.label.color='black')
-
+dev.off()
 
 ### wow !!!
 ## use D3
@@ -58,7 +60,11 @@ net <- ToDataFrameNetwork(n$alfisols$xeralfs)
 simpleNetwork(net, fontSize = 12)
 
 useRtreeList <- ToListExplicit(n$alfisols$xeralfs, unname = TRUE)
-radialNetwork( useRtreeList)
+res <- radialNetwork( useRtreeList)
+# save to file
+saveNetwork(res, 'D3-radial-network-example.html', selfcontained = TRUE)
+
+
 
 
 ## this needs some tinkering
