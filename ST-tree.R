@@ -22,7 +22,7 @@ sg.ac$tax_subgroup <- tolower(sg.ac$tax_subgroup)
 ST.clean <- join(ST.clean, sg.ac)
 
 # set NA acreage to 0
-ST.clean$ac[which(is.na(ST.clean$ac))] <-0
+ST.clean$ac[which(is.na(ST.clean$ac))] <- 0
 
 # setup tree path, note that there has to be a "parent" level that sits above orders
 ST.clean$pathString <- paste('ST', ST.clean$tax_order, ST.clean$tax_suborder, ST.clean$tax_greatgroup, ST.clean$tax_subgroup, sep='/')
