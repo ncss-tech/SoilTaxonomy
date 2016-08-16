@@ -2,12 +2,12 @@ library(data.tree)
 library(jsonlite)
 library(plyr)
 library(igraph)
-library(networkD3)
+# library(networkD3)
 
 # https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html
 # https://cran.r-project.org/web/packages/data.tree/vignettes/applications.html
 
-# this is the manually corrected version
+## this is the manually corrected version
 ST.clean <- read.csv('ST-full-fixed.csv', stringsAsFactors = FALSE)
 
 ## this is the most detailed acreage accounting
@@ -75,6 +75,7 @@ alf.list <- ToListExplicit(n$alfisols$xeralfs$haploxeralfs, unname = TRUE, nameN
 alf.json <- toJSON(alf.list, pretty = TRUE, auto_unbox = TRUE)
 
 cat(alf.json, file = 'haploxeralfs.json')
+
 
 
 

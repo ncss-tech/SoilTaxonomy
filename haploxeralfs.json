@@ -1,9 +1,8 @@
 {
-  "taxon": "haploxeralfs",
-  "ac": 10728500,
+  "name": "haploxeralfs",
   "children": [
     {
-      "taxon": "typic haploxeralfs",
+      "name": "typic haploxeralfs",
       "ac": 1977587,
       "n_polygons": 34243,
       "tax_greatgroup": "haploxeralfs",
@@ -12,7 +11,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "ultic haploxeralfs",
+      "name": "ultic haploxeralfs",
       "ac": 4194840,
       "n_polygons": 47145,
       "tax_greatgroup": "haploxeralfs",
@@ -21,7 +20,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "vertic haploxeralfs",
+      "name": "vertic haploxeralfs",
       "ac": 5921,
       "n_polygons": 76,
       "tax_greatgroup": "haploxeralfs",
@@ -30,7 +29,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "vitrandic haploxeralfs",
+      "name": "vitrandic haploxeralfs",
       "ac": 588744,
       "n_polygons": 10625,
       "tax_greatgroup": "haploxeralfs",
@@ -39,7 +38,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "lithic haploxeralfs",
+      "name": "lithic haploxeralfs",
       "ac": 222443,
       "n_polygons": 1967,
       "tax_greatgroup": "haploxeralfs",
@@ -48,7 +47,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "lithic mollic haploxeralfs",
+      "name": "lithic mollic haploxeralfs",
       "ac": 580959,
       "n_polygons": 3120,
       "tax_greatgroup": "haploxeralfs",
@@ -57,7 +56,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "lithic ruptic-inceptic haploxeralfs",
+      "name": "lithic ruptic-inceptic haploxeralfs",
       "ac": 152066,
       "n_polygons": 2044,
       "tax_greatgroup": "haploxeralfs",
@@ -66,7 +65,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "mollic haploxeralfs",
+      "name": "mollic haploxeralfs",
       "ac": 2299134,
       "n_polygons": 31935,
       "tax_greatgroup": "haploxeralfs",
@@ -75,7 +74,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "natric haploxeralfs",
+      "name": "natric haploxeralfs",
       "ac": 96026,
       "n_polygons": 2161,
       "tax_greatgroup": "haploxeralfs",
@@ -84,7 +83,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "plinthic haploxeralfs",
+      "name": "plinthic haploxeralfs",
       "ac": 0,
       "tax_greatgroup": "haploxeralfs",
       "tax_order": "alfisols",
@@ -92,7 +91,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "psammentic haploxeralfs",
+      "name": "psammentic haploxeralfs",
       "ac": 16987,
       "n_polygons": 176,
       "tax_greatgroup": "haploxeralfs",
@@ -101,7 +100,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "aquic haploxeralfs",
+      "name": "aquic haploxeralfs",
       "ac": 78388,
       "n_polygons": 1134,
       "tax_greatgroup": "haploxeralfs",
@@ -110,7 +109,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "aquultic haploxeralfs",
+      "name": "aquultic haploxeralfs",
       "ac": 143091,
       "n_polygons": 6370,
       "tax_greatgroup": "haploxeralfs",
@@ -119,7 +118,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "calcic haploxeralfs",
+      "name": "calcic haploxeralfs",
       "ac": 22991,
       "n_polygons": 190,
       "tax_greatgroup": "haploxeralfs",
@@ -128,7 +127,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "fragiaquic haploxeralfs",
+      "name": "fragiaquic haploxeralfs",
       "ac": 1350,
       "n_polygons": 177,
       "tax_greatgroup": "haploxeralfs",
@@ -137,7 +136,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "fragic haploxeralfs",
+      "name": "fragic haploxeralfs",
       "ac": 1431,
       "n_polygons": 51,
       "tax_greatgroup": "haploxeralfs",
@@ -146,7 +145,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "inceptic haploxeralfs",
+      "name": "inceptic haploxeralfs",
       "ac": 1392,
       "n_polygons": 12,
       "tax_greatgroup": "haploxeralfs",
@@ -155,7 +154,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "lamellic haploxeralfs",
+      "name": "lamellic haploxeralfs",
       "ac": 13177,
       "n_polygons": 311,
       "tax_greatgroup": "haploxeralfs",
@@ -164,7 +163,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "andic haploxeralfs",
+      "name": "andic haploxeralfs",
       "ac": 304536,
       "n_polygons": 4350,
       "tax_greatgroup": "haploxeralfs",
@@ -173,7 +172,7 @@
       "tax_suborder": "xeralfs"
     },
     {
-      "taxon": "aquandic haploxeralfs",
+      "name": "aquandic haploxeralfs",
       "ac": 27437,
       "n_polygons": 616,
       "tax_greatgroup": "haploxeralfs",
