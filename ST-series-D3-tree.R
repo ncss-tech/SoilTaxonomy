@@ -3,11 +3,11 @@ library(jsonlite)
 library(plyr)
 
 ## application:
-# http://soilmap2-1.lawr.ucdavis.edu/dylan/seriesTree/index.php?series=sierra
+# http://soilmap2-1.lawr.ucdavis.edu/seriesTree/index.php?series=sierra
 
 ## other ideas:
-# http://soilmap2-1.lawr.ucdavis.edu/dylan/seriesTree/index.html
-# http://soilmap2-1.lawr.ucdavis.edu/dylan/seriesTree/search.html
+# http://soilmap2-1.lawr.ucdavis.edu/dylan/seriesTree/dev/index.html
+# http://soilmap2-1.lawr.ucdavis.edu/dylan/seriesTree/dev/search.html
 
 
 ## inspiration
