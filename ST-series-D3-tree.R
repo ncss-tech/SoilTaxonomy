@@ -39,15 +39,16 @@ d_ply(s, 'tax_subgrp', .progress='text', .fun=function(s.sub) {
   s.sub$tax_ceactcl[is.na(s.sub$tax_ceactcl)] <- '(CEC activity class)'
   s.sub$tax_tempcl[is.na(s.sub$tax_tempcl)] <- '(STR)'
   s.sub$tax_reaction[is.na(s.sub$tax_reaction)] <- '(reaction class)'
+  s.sub$tax_minclass[is.na(s.sub$tax_minclass)] <- '(mineralogy class)'
   
   # setup tree path, note that there has to be a "parent" level that sits above orders
-  s.sub$pathString <- paste(sgrp, s.sub$tax_partsize, s.sub$tax_ceactcl, s.sub$tax_tempcl, s.sub$soilseriesname, sep='/')
+  s.sub$pathString <- paste(sgrp, s.sub$tax_partsize, s.sub$tax_minclass, s.sub$tax_ceactcl, s.sub$tax_tempcl, s.sub$soilseriesname, sep='/')
   
   # add URL to SDE
   s.sub$url <- paste0('http://casoilresource.lawr.ucdavis.edu/sde/?series=', sapply(s.sub$soilseriesname, URLdecode))
   
   # init data.tree object with following attributes
-  n <- as.Node(s.sub[, c('pathString', 'taxclname', 'mlraoffice', 'series_status', 'url')])
+  n <- as.Node(s.sub[, c('pathString', 'taxclname', 'mlra', 'series_status', 'url')])
   
   ## note arguments for D3 JSON compatibility
   ST.list <- ToListExplicit(n, unname = TRUE, nameName = "name", childrenName = "children")
