@@ -7,6 +7,15 @@ library(igraph)
 # https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html
 # https://cran.r-project.org/web/packages/data.tree/vignettes/applications.html
 
+## don't need this
+# # recursive function for tabulating acreage
+# sum_ac <- function(node) {
+#   result <- node$ac
+#   if(length(result) == 0) result <- sum(sapply(node$children, sum_ac))
+#   return (result)
+# }
+# 
+
 ## this is the manually corrected version
 ST.clean <- read.csv('ST-full-fixed.csv', stringsAsFactors = FALSE)
 
@@ -33,11 +42,10 @@ print(n, 'ac', pruneMethod = "dist", limit = 20)
 alf <- n$alfisols$xeralfs
 print(alf, 'ac')
 
-# aggregate acreage to parent nodes
-alf$Do(function(node) node$ac <- NULL, filterFun = isNotLeaf)
-Aggregate(alf, attribute = "ac", aggFun = sum, cacheAttribute = "ac") 
+# compute acreage for parent nodes
+alf$Do(function(node) node$ac <- Aggregate(node, attribute = "ac", aggFun = sum), traversal = "post-order")
 
-# works
+# check: OK
 print(alf, 'ac')
 
 ## this only works for small-ish graphs
@@ -75,12 +83,4 @@ alf.list <- ToListExplicit(n$alfisols$xeralfs$haploxeralfs, unname = TRUE, nameN
 alf.json <- toJSON(alf.list, pretty = TRUE, auto_unbox = TRUE)
 
 cat(alf.json, file = 'haploxeralfs.json')
-
-
-
-
-
-## make interactive by converting to JS: https://gist.github.com/mbostock/1093025
-## http://bost.ocks.org/mike/treemap/
-## https://developers.google.com/chart/interactive/docs/gallery/treemap?hl=en
 
