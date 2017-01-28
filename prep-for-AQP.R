@@ -18,8 +18,8 @@ ST.clean <- read.csv('https://raw.githubusercontent.com/dylanbeaudette/SoilTaxon
 # # subgroup acreages from SoilWeb / SSURGO
 # # script to compute is at:
 # # S:\NRCS\Archive_Dylan_Beaudette\Soil-Taxonomy\series-area-taxonomy-treemaps\
-# sg.ac <- read.table(file='https://raw.githubusercontent.com/dylanbeaudette/SoilTaxonomyReboot/master/taxsubgrp-stats.txt', header = FALSE, sep="|", stringsAsFactors = FALSE)
-# names(sg.ac) <- c('tax_subgroup', 'ac', 'n_polygons')
+sg.ac <- read.table(file='https://raw.githubusercontent.com/dylanbeaudette/SoilTaxonomyReboot/master/taxsubgrp-stats.txt', header = FALSE, sep="|", stringsAsFactors = FALSE)
+names(sg.ac) <- c('tax_subgroup', 'ac', 'n_polygons')
 
 # normalize names
 sg.ac$tax_subgroup <- tolower(sg.ac$tax_subgroup)
@@ -43,6 +43,6 @@ ST.clean <- join(ST.clean, SC)
 ST.clean$pathString <- paste('ST', ST.clean$tax_order, ST.clean$tax_suborder, ST.clean$tax_greatgroup, ST.clean$tax_subgroup, ST.clean$family, ST.clean$series, sep='/')
 
 
-# fragipans at the GG level
+# just alfisols
 ST <- as.Node(ST.clean[which(ST.clean$tax_order == 'alfisols'), ])
 

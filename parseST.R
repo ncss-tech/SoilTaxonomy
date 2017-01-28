@@ -88,10 +88,10 @@ ST$tax_order[grep('erts$', ST$tax_subgroup)] <- 'vertisols'
 ST <- ST[order(ST$tax_order, ST$tax_suborder, ST$tax_greatgroup), ]
 
 ## will have to manually edit here
-write.csv(ST, file='ST-full.csv', row.names=FALSE)
+write.csv(ST, file='ST-full.csv', row.names=FALSE, quote = FALSE)
 
 
-
+## how to locate errors?
 
 
 

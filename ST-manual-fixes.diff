@@ -1,0 +1,23 @@
+--- ST-full.csv	Fri Jan 27 16:25:59 2017
++++ ST-full-fixed.csv	Thu Jan 14 14:22:37 2016
+@@ -1071,13 +1071,13 @@
+ gelisols,fibrists,fibristels,sphagnic fibristels
+ gelisols,fibrists,fibristels,fluvaquentic fibristels
+ gelisols,fibrists,fibristels,terric fibristels
+-gelisols,folists,folistels,typic folistels
+-gelisols,folists,folistels,lithic folistels
+-gelisols,folists,folistels,glacic folistels
+-gelisols,hemists,hemistels,typic hemistels
+-gelisols,hemists,hemistels,lithic hemistels
+-gelisols,hemists,hemistels,fluvaquentic hemistels
+-gelisols,hemists,hemistels,terric hemistels
++gelisols,histels,folistels,typic folistels
++gelisols,histels,folistels,lithic folistels
++gelisols,histels,folistels,glacic folistels
++gelisols,histels,hemistels,typic hemistels
++gelisols,histels,hemistels,lithic hemistels
++gelisols,histels,hemistels,fluvaquentic hemistels
++gelisols,histels,hemistels,terric hemistels
+ gelisols,histels,glacistels,typic glacistels
+ gelisols,histels,glacistels,sapric glacistels
+ gelisols,histels,glacistels,hemic glacistels
