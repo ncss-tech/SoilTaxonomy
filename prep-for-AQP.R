@@ -12,20 +12,20 @@ SC$tax_subgroup <- tolower(SC$tax_subgroup)
 # series.stats <- ddply(SC, 'tax_subgroup', .fun=summarize, n_series=length(unique(series)), n_family=length(unique(family)))
 
 # this is the manually corrected version
-ST.clean <- read.csv('https://raw.githubusercontent.com/dylanbeaudette/SoilTaxonomyReboot/master/ST-full-fixed.csv', stringsAsFactors = FALSE)
+ST.clean <- read.csv('https://raw.githubusercontent.com/ncss-tech/SoilTaxonomy/master/ST-full-fixed.csv', stringsAsFactors = FALSE)
 
 # ## this is the most detailed acreage accounting
 # # subgroup acreages from SoilWeb / SSURGO
 # # script to compute is at:
 # # S:\NRCS\Archive_Dylan_Beaudette\Soil-Taxonomy\series-area-taxonomy-treemaps\
-sg.ac <- read.table(file='https://raw.githubusercontent.com/dylanbeaudette/SoilTaxonomyReboot/master/taxsubgrp-stats.txt', header = FALSE, sep="|", stringsAsFactors = FALSE)
+sg.ac <- read.table(file='taxsubgrp-stats.txt', header = FALSE, sep="|", stringsAsFactors = FALSE)
 names(sg.ac) <- c('tax_subgroup', 'ac', 'n_polygons')
 
 # normalize names
 sg.ac$tax_subgroup <- tolower(sg.ac$tax_subgroup)
 
 # join tree to series
-ST.clean <- join(ST.clean, SC)
+ST.clean <- join(ST.clean, sg.ac)
 
 # # join tree to acreage
 # ST.clean <- join(ST.clean, sg.ac)
