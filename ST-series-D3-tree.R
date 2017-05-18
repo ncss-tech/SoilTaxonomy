@@ -24,6 +24,19 @@ library(plyr)
 ## soil series DB
 s <- read.csv('SC-database.csv.gz', stringsAsFactors = FALSE)
 
+## approximate MLRA overlap by series
+mlra_ov <- read.csv('series-mlra-overlap.csv.gz', stringsAsFactors = FALSE)
+
+# flatten MLRA entries into single record / series, sorted by score DESC
+mlra_ov.flat <- ddply(mlra_ov, 'series', .fun=function(i) {
+  paste(i$mlra[order(i$score, decreasing = TRUE)], collapse = '|')
+})
+names(mlra_ov.flat) <- c('soilseriesname', 'mlra')
+
+# combine with SC
+s <- join(s, mlra_ov.flat, by='soilseriesname', type='left')
+
+
 # iterate over all subgroups (1712) and save JSON to files
 d_ply(s, 'tax_subgrp', .progress='text', .fun=function(s.sub) {
   
