@@ -18,7 +18,7 @@ ST.clean <- read.csv('https://raw.githubusercontent.com/ncss-tech/SoilTaxonomy/m
 # # subgroup acreages from SoilWeb / SSURGO
 # # script to compute is at:
 # # S:\NRCS\Archive_Dylan_Beaudette\Soil-Taxonomy\series-area-taxonomy-treemaps\
-sg.ac <- read.table(file='taxsubgrp-stats.txt', header = FALSE, sep="|", stringsAsFactors = FALSE)
+sg.ac <- read.table(file='taxsubgrp-stats.txt.gz', header = FALSE, sep="|", stringsAsFactors = FALSE)
 names(sg.ac) <- c('tax_subgroup', 'ac', 'n_polygons')
 
 # normalize names
