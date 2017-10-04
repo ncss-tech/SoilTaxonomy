@@ -51,7 +51,7 @@ ST.clean$pathString <- paste('ST', ST.clean$tax_order, ST.clean$tax_suborder, ST
 ST <- as.Node(ST.clean[which(ST.clean$tax_order == 'alfisols'), ])
 
 
-# experimental
+# doesn't work...
 # interactive D3 treemap
 # https://github.com/ncss-tech/SoilTaxonomy/issues/2
 
@@ -59,7 +59,7 @@ library("magrittr")
 library("D3partitionR")
 
 D3partitionR() %>%
-  add_data(ST.clean[which(ST.clean$tax_order == 'alfisols'), ], steps=c('tax_order','tax_suborder','tax_greatgroup','tax_subgroup', 'family', 'series'), count='ac') %>%
+  add_data(ST.clean[which(ST.clean$tax_suborder == 'xeralfs'), ], steps=c('tax_order','tax_suborder','tax_greatgroup','tax_subgroup'), count='ac', color='name') %>%
   add_title('Soil Taxonomy') %>%
   plot()
 
