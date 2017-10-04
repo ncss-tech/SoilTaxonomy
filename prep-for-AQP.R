@@ -59,7 +59,7 @@ library("magrittr")
 library("D3partitionR")
 
 D3partitionR() %>%
-  add_data(ST.clean, steps=c('tax_order','tax_suborder','tax_greatgroup','tax_subgroup', 'family', 'series'), count='ac') %>%
+  add_data(ST.clean[which(ST.clean$tax_order == 'alfisols'), ], steps=c('tax_order','tax_suborder','tax_greatgroup','tax_subgroup', 'family', 'series'), count='ac') %>%
   add_title('Soil Taxonomy') %>%
   plot()
 
