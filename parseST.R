@@ -1,3 +1,9 @@
+##
+## using the NASIS domains for ST, re-construct the ST hierarchy from order / suborder / great group / subgroup taxa
+## result is 99% accurate, see ST-manual-fixes.diff for manual edits required
+##
+
+
 library(RODBC)
 library(stringdist)
 
@@ -87,7 +93,7 @@ ST$tax_order[grep('erts$', ST$tax_subgroup)] <- 'vertisols'
 # re-order
 ST <- ST[order(ST$tax_order, ST$tax_suborder, ST$tax_greatgroup), ]
 
-## will have to manually edit here
+## will have to manually edit from here
 write.csv(ST, file='ST-full.csv', row.names=FALSE, quote = FALSE)
 
 

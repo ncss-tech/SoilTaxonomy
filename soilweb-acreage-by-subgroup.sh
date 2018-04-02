@@ -1,4 +1,4 @@
-## compute acreage according to great groups for ST task force
+## compute acreage according to subgroup for ST task force
 ## NOTE: there can be errors in component taxa population, therefore we are tabulating at the lowest level
 
 
@@ -46,4 +46,11 @@ echo "select DISTINCT taxsubgrp from soilweb.comp_data_subgroup" | psql -U postg
 # note special syntax for accommodating spaces in subgroup names
 # http://www.gnu.org/software/parallel/man.html#QUOTING
 cat taxsubgrp-list-for-stats | parallel --eta --progress -q bash -c "echo \"SELECT taxsubgrp, ROUND((SUM(pct * ST_Area(wkb_geometry::geography)) * 0.000247105)::numeric)::bigint AS ac, COUNT(wkb_geometry) as n_polygons FROM ssurgo.mapunit_poly JOIN soilweb.comp_data_subgroup USING (mukey) WHERE comp_data_subgroup.taxsubgrp = '{}' GROUP BY taxsubgrp\" | psql -U postgres ssurgo_combined -t -A >> taxsubgrp-stats.txt"
+
+# compress
+gzip taxsubgrp-stats.txt
+
+# cleanup
+echo "DROP TABLE soilweb.comp_data_subgroup;" | psql -U postgres ssurgo_combined
+
 

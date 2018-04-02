@@ -1,3 +1,8 @@
+##
+## establish very simple distances based only on relative position within ST hierarchy
+##
+
+
 library(cluster)
 
 # this is the manually corrected version
@@ -19,3 +24,7 @@ d <- daisy(ST.sub[, 1:2], metric = 'gower')
 table(d)
 
 plot(as.dendrogram(diana(d)))
+
+
+## TODO: full distance to family level
+
