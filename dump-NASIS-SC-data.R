@@ -6,14 +6,12 @@
 ##
 
 
-
-
 library(RODBC)
 library(RPostgreSQL)
 library(plyr)
 
 q.series <- "SELECT soilseriesname, soiltaxclasslastupdated, mlraoffice, ss.ChoiceName as series_status, taxclname, tord.ChoiceName as tax_order, tso.ChoiceName as tax_suborder, tgg.ChoiceName as tax_grtgroup, ts.ChoiceName as tax_subgrp, ps.ChoiceName as tax_partsize, psm.ChoiceName as tax_partsizemod, ta.ChoiceName as tax_ceactcl, tr.ChoiceName as tax_reaction, tt.ChoiceName as tax_tempcl, originyear, establishedyear, descriptiondateinitial, descriptiondateupdated, benchmarksoilflag, statsgoflag, objwlupdated,  recwlupdated, typelocstareaiidref, typelocstareatypeiidref, soilseriesiid, soilseriesdbiidref, grpiidref 
-	FROM 
+FROM 
 soilseries
 
 LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 127) AS ps ON soilseries.taxpartsize = ps.ChoiceValue
@@ -42,20 +40,12 @@ FROM soilseriestaxmineralogy
 LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 126) as a ON soilseriestaxmineralogy.taxminalogy = a.ChoiceValue ;"
 
 
-## TODO: where does this come from?
-# MLRAs where used, possible to have > 1 / series
-q.mlra <- "SELECT soilseriesiidref AS soilseriesiid, areasymbol as mlra
-FROM soilseriesmlrasusing
-INNER JOIN area ON soilseriesmlrasusing.mlraareaiidref = area.areaiid ;"
-
-
 # setup connection to our pedon database 
 channel <- odbcConnect('nasis_local', uid='NasisSqlRO', pwd='nasisRe@d0n1y')
 
 # exec queries
 d.series <- sqlQuery(channel, q.series, stringsAsFactors=FALSE)
 d.min <- sqlQuery(channel, q.min, stringsAsFactors=FALSE)
-d.mlra <- sqlQuery(channel, q.mlra, stringsAsFactors=FALSE)
 
 # close connection
 odbcClose(channel)
@@ -66,22 +56,20 @@ d.min.flat <- ddply(d.min, 'soilseriesiid', .fun=function(i) {
 })
 names(d.min.flat) <- c('soilseriesiid', 'tax_minclass')
 
-# flatten MLRA  into single record / series
-d.mlra.flat <- ddply(d.mlra, 'soilseriesiid', .fun=function(i) {
-  paste(i$mlra, collapse = '|')
-})
-names(d.mlra.flat) <- c('soilseriesiid', 'mlra')
 
 
 ## join elements together
 d <- join(d.series, d.min.flat, by='soilseriesiid', type='left')
-d <- join(d, d.mlra.flat, by='soilseriesiid', type='left')
 
 
 write.csv(d, file=gzfile('SC-database.csv.gz'), row.names=FALSE)
 
 # create intial Postgresql table defs-- modify accordingly
 cat(postgresqlBuildTableDefinition(PostgreSQL(), name='taxa', obj=d[1, ], row.names=FALSE))
+
+
+
+
 
 # 
 # # fun stuff
