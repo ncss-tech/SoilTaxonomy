@@ -41,7 +41,7 @@ LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomain
 
 
 # setup connection to our pedon database 
-channel <- odbcConnect('nasis_local', uid='NasisSqlRO', pwd='nasisRe@d0n1y')
+channel <- odbcConnect('nasis_local', uid='NasisSqlRO', pwd='nasisRe@d0n1y365')
 
 # exec queries
 d.series <- sqlQuery(channel, q.series, stringsAsFactors=FALSE)
@@ -62,7 +62,7 @@ names(d.min.flat) <- c('soilseriesiid', 'tax_minclass')
 d <- join(d.series, d.min.flat, by='soilseriesiid', type='left')
 
 
-write.csv(d, file=gzfile('SC-database.csv.gz'), row.names=FALSE)
+write.csv(d, file=gzfile('databases/SC-database.csv.gz'), row.names=FALSE)
 
 # create intial Postgresql table defs-- modify accordingly
 cat(postgresqlBuildTableDefinition(PostgreSQL(), name='taxa', obj=d[1, ], row.names=FALSE))
