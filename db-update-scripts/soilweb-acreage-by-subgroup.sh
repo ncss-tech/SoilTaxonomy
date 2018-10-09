@@ -51,6 +51,6 @@ cat taxsubgrp-list-for-stats | parallel --eta --progress -q bash -c "echo \"SELE
 gzip taxsubgrp-stats.txt && mv taxsubgrp-stats.txt.gz ../databases/
 
 # cleanup
-echo "DROP TABLE soilweb.comp_data_subgroup;" | psql -U postgres ssurgo_combined
+echo "DROP TABLE IF EXISTS soilweb.comp_data_subgroup;" | psql -U postgres ssurgo_combined
 
 
