@@ -7,10 +7,10 @@
 # pre-filter component data, requires about 40 seconds
 psql -U postgres ssurgo_combined <<EOF
 SET work_mem to '512MB';
-SET search_path to soilweb,public;
+SET search_path to soilweb, public;
 
 -- make a temp table with component information and indices
-DROP TABLE soilweb.comp_data_subgroup;
+DROP TABLE IF EXISTS soilweb.comp_data_subgroup;
 CREATE TABLE soilweb.comp_data_subgroup AS
 SELECT mukey, 
 taxsubgrp, 
@@ -47,8 +47,8 @@ echo "select DISTINCT taxsubgrp from soilweb.comp_data_subgroup" | psql -U postg
 # http://www.gnu.org/software/parallel/man.html#QUOTING
 cat taxsubgrp-list-for-stats | parallel --eta --progress -q bash -c "echo \"SELECT taxsubgrp, ROUND((SUM(pct * ST_Area(wkb_geometry::geography)) * 0.000247105)::numeric)::bigint AS ac, COUNT(wkb_geometry) as n_polygons FROM ssurgo.mapunit_poly JOIN soilweb.comp_data_subgroup USING (mukey) WHERE comp_data_subgroup.taxsubgrp = '{}' GROUP BY taxsubgrp\" | psql -U postgres ssurgo_combined -t -A >> taxsubgrp-stats.txt"
 
-# compress
-gzip taxsubgrp-stats.txt
+# compress and move
+gzip taxsubgrp-stats.txt && mv taxsubgrp-stats.txt.gz ../databases/
 
 # cleanup
 echo "DROP TABLE soilweb.comp_data_subgroup;" | psql -U postgres ssurgo_combined
