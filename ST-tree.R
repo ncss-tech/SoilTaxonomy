@@ -21,7 +21,7 @@ ST.clean <- read.csv('ST-full-fixed.csv', stringsAsFactors = FALSE)
 
 ## this is the most detailed acreage accounting
 # subgroup acreages from SoilWeb / SSURGO
-sg.ac <- read.table(file='taxsubgrp-stats.txt', header = FALSE, sep="|")
+sg.ac <- read.table(file='databases/taxsubgrp-stats.txt.gz', header = FALSE, sep="|")
 names(sg.ac) <- c('tax_subgroup', 'ac', 'n_polygons')
 
 # normalize names
