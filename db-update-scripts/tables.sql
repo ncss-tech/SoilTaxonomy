@@ -14,3 +14,6 @@
 -- MLRA membership
 \copy soilweb.mlra_overlap to '../databases/series-mlra-overlap.csv' CSV HEADER
 
+-- PRISM climate database: 16MB
+\copy soilweb.series_climate_stats TO '../databases/series_climate_stats.csv' CSV HEADER
+
