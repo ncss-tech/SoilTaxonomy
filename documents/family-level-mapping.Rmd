@@ -1,0 +1,86 @@
+---
+title: "Series used in Family Level Components"
+author: "D.E. Beaudette"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+  mathjax: null
+jquery: null
+smart: no
+---
+  
+  
+```{r setup, echo=FALSE, results='hide', warning=FALSE}
+# setup
+library(knitr, quietly=TRUE)
+opts_chunk$set(message=FALSE, warning=FALSE, background='#F7F7F7', fig.align='center', fig.retina=2, dev='png', tidy=FALSE, verbose=FALSE)
+options(width=100, stringsAsFactors=FALSE)
+```
+
+
+Basic stats on soil series that occur in *family level* components have been tabulated from the FY2019 SSURGO snapshot and posted to the [SoilTaxonomy](https://github.com/ncss-tech/SoilTaxonomy) GH repository. Take a look at the [data](https://github.com/ncss-tech/SoilTaxonomy/raw/master/databases/family_component_stats.csv.gz).
+```{r}
+tf <- tempfile()
+download.file('https://github.com/ncss-tech/SoilTaxonomy/raw/master/databases/family_component_stats.csv.gz', destfile = tf)
+
+# read from temp file
+x <- read.csv(tf, stringsAsFactors = FALSE) 
+```
+
+The table contains series name, number of polygons in which the series is used within a family level component, total area extent, area extent of family level components, and proportion of area within family level components.
+```{r}
+kable(head(x))
+```
+
+
+```{r fig.width=6, fig.height=4}
+hist(x$prop_family, breaks = 50, xlab='Proportion of total Extent in Family Components', las=1, main='Soil Series used in Family Level Mapping\nFY2019 SSURGO')
+mtext(sprintf("%i series", nrow(x)), side = 3, at = 1, adj = 1, font=3)
+```
+
+
+Check some series in MLRA 22A/22B.
+```{r}
+z <- x[x$series %in% c('HOLLAND', 'CHAIX', 'WINTONER', 'WINDY', 'SHAVER', 'AIKEN'), ]
+kable(z, row.names = FALSE, digits = 2)
+```
+
+List top 20 (total area of extent) series with > 50% area fraction as family components.
+```{r}
+z <- x[which(x$prop_family > 0.5), ]
+z <- z[order(z$total_ac, decreasing = TRUE)[1:20], ]
+kable(z, row.names = FALSE, digits = 2)
+```
+
+Map the full extent of these top 20 series with > 50% area fraction as family components.
+```{r, fig.width=8, fig.height=6.5, results='hide'}
+library(scales)
+library(soilDB)
+library(RColorBrewer)
+library(maps)
+
+# define some nice colors
+cols <- brewer.pal('Set1', n=3)
+
+# get list of extents
+l <- lapply(z$series, seriesExtent)
+
+# map of CA
+par(mar=c(1,1,1,1))
+map('state')
+
+# rough estimation of joint density via transparency  / overlay
+lapply(l, function(i) {
+  plot(i, border=NA, col=alpha(cols[2], 0.25), add=TRUE)
+  })
+
+# finish map
+box()
+title(main='20 Most Extensive Series with > 50% Area in Family Components', line=1.25)
+mtext(side=1, text=as.character(Sys.Date()), line=0)
+```
+
+
+----------------------------
+This document is based on `soilDB` version `r utils::packageDescription("soilDB", field="Version")`.
+
