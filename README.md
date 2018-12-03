@@ -5,64 +5,65 @@
 ![alt.text](xeralfs-graph.png)
 
 
+
 ## Examples for storing a digital version of the keys
 
 ### `data.tree`
 <pre>
 1  ST                                                                                                    
-2   °--alfisols                                                                                          
-3       ¦--aqualfs                                                                                       
-4       ¦   ¦--albaqualfs                                                                                
-5       ¦   ¦   ¦--typic albaqualfs                                                                      
-6       ¦   ¦   ¦   ¦--FINE, SMECTITIC, MESIC TYPIC ALBAQUALFS                                           
-7       ¦   ¦   ¦   ¦   ¦--AMES                                                                          
-8       ¦   ¦   ¦   ¦   ¦--LEAKSVILLE                                                                    
-9       ¦   ¦   ¦   ¦   ¦--PIERRON                                                                       
-10      ¦   ¦   ¦   ¦   ¦--RUSHVILLE                                                                     
-11      ¦   ¦   ¦   ¦   ¦--SAPP                                                                          
-12      ¦   ¦   ¦   ¦   ¦--WATCHUNG                                                                      
-13      ¦   ¦   ¦   ¦   ¦--WYNOOSE                                                                       
-14      ¦   ¦   ¦   ¦   °--ZWINGLE                                                                       
-15      ¦   ¦   ¦   ¦--FINE-LOAMY OVER CLAYEY, MIXED OVER SMECTITIC, SUPERACTIVE, FRIGID TYPIC ALBAQUALFS
-16      ¦   ¦   ¦   ¦   °--BEARVILLE                                                                     
-17      ¦   ¦   ¦   ¦--FINE, SMECTITIC, HYPERTHERMIC TYPIC ALBAQUALFS                                    
-18      ¦   ¦   ¦   ¦   ¦--BIVANS                                                                        
-19      ¦   ¦   ¦   ¦   ¦--LEDWITH                                                                       
-20      ¦   ¦   ¦   ¦   °--PAISLEY                                                                       
-21      ¦   ¦   ¦   ¦--FINE-LOAMY, MIXED, SUPERACTIVE, FRIGID TYPIC ALBAQUALFS                           
-22      ¦   ¦   ¦   ¦   °--BOOTLEG                                                                       
-23      ¦   ¦   ¦   ¦--FINE-LOAMY, MIXED, ACTIVE, HYPERTHERMIC TYPIC ALBAQUALFS                          
-24      ¦   ¦   ¦   ¦   °--BORDAS                                                                        
-25      ¦   ¦   ¦   ¦--FINE-LOAMY, MIXED, ACTIVE, ISOHYPERTHERMIC TYPIC ALBAQUALFS                       
-26      ¦   ¦   ¦   ¦   °--CANDELERO                                                                     
-27      ¦   ¦   ¦   ¦--FINE, MIXED, ACTIVE, THERMIC TYPIC ALBAQUALFS                                     
-28      ¦   ¦   ¦   ¦   ¦--CHEROKEE                                                                      
-29      ¦   ¦   ¦   ¦   °--MEGGETT                                                                       
-30      ¦   ¦   ¦   ¦--FINE, SMECTITIC, THERMIC TYPIC ALBAQUALFS                                         
-31      ¦   ¦   ¦   ¦   ¦--CROWLEY                                                                       
-32      ¦   ¦   ¦   ¦   ¦--DEWITT                                                                        
-33      ¦   ¦   ¦   ¦   ¦--KEMAH                                                                         
-34      ¦   ¦   ¦   ¦   °--MEIKLE                                                                        
-35      ¦   ¦   ¦   ¦--FINE, MIXED, ACTIVE, MESIC TYPIC ALBAQUALFS                                       
-36      ¦   ¦   ¦   ¦   °--DEIBLE                                                                        
-37      ¦   ¦   ¦   ¦--FINE, MIXED, SEMIACTIVE, HYPERTHERMIC TYPIC ALBAQUALFS                            
-38      ¦   ¦   ¦   ¦   °--EUREKA                                                                        
-39      ¦   ¦   ¦   ¦--VERY-FINE, SMECTITIC, HYPERTHERMIC TYPIC ALBAQUALFS                               
-40      ¦   ¦   ¦   ¦   °--FLEMINGTON                                                                    
-41      ¦   ¦   ¦   ¦--FINE-LOAMY, SILICEOUS, SEMIACTIVE, THERMIC TYPIC ALBAQUALFS                       
-42      ¦   ¦   ¦   ¦   °--MOUZON                                                                        
-43      ¦   ¦   ¦   ¦--FINE, MIXED, SUPERACTIVE, MESIC TYPIC ALBAQUALFS                                  
-44      ¦   ¦   ¦   ¦   °--MUNSET                                                                        
-45      ¦   ¦   ¦   ¦--FINE, SMECTITIC, FRIGID TYPIC ALBAQUALFS                                          
-46      ¦   ¦   ¦   ¦   °--NISHON                                                                        
-47      ¦   ¦   ¦   ¦--FINE, MIXED, ACTIVE, HYPERTHERMIC TYPIC ALBAQUALFS                                
-48      ¦   ¦   ¦   ¦   °--PAPAGUA                                                                       
-49      ¦   ¦   ¦   ¦--FINE, MIXED, ACTIVE, FRIGID TYPIC ALBAQUALFS                                      
-50      ¦   ¦   ¦   ¦   °--... 1 nodes w/ 0 sub                                                          
-51      ¦   ¦   ¦   °--... 2 nodes w/ 3 sub                                                              
-52      ¦   ¦   °--... 9 nodes w/ 88 sub                                                                 
-53      ¦   °--... 10 nodes w/ 991 sub                                                                   
-54      °--... 4 nodes w/ 6497 sub 
+2   Â°--alfisols                                                                                          
+3       Â¦--aqualfs                                                                                       
+4       Â¦   Â¦--albaqualfs                                                                                
+5       Â¦   Â¦   Â¦--typic albaqualfs                                                                      
+6       Â¦   Â¦   Â¦   Â¦--FINE, SMECTITIC, MESIC TYPIC ALBAQUALFS                                           
+7       Â¦   Â¦   Â¦   Â¦   Â¦--AMES                                                                          
+8       Â¦   Â¦   Â¦   Â¦   Â¦--LEAKSVILLE                                                                    
+9       Â¦   Â¦   Â¦   Â¦   Â¦--PIERRON                                                                       
+10      Â¦   Â¦   Â¦   Â¦   Â¦--RUSHVILLE                                                                     
+11      Â¦   Â¦   Â¦   Â¦   Â¦--SAPP                                                                          
+12      Â¦   Â¦   Â¦   Â¦   Â¦--WATCHUNG                                                                      
+13      Â¦   Â¦   Â¦   Â¦   Â¦--WYNOOSE                                                                       
+14      Â¦   Â¦   Â¦   Â¦   Â°--ZWINGLE                                                                       
+15      Â¦   Â¦   Â¦   Â¦--FINE-LOAMY OVER CLAYEY, MIXED OVER SMECTITIC, SUPERACTIVE, FRIGID TYPIC ALBAQUALFS
+16      Â¦   Â¦   Â¦   Â¦   Â°--BEARVILLE                                                                     
+17      Â¦   Â¦   Â¦   Â¦--FINE, SMECTITIC, HYPERTHERMIC TYPIC ALBAQUALFS                                    
+18      Â¦   Â¦   Â¦   Â¦   Â¦--BIVANS                                                                        
+19      Â¦   Â¦   Â¦   Â¦   Â¦--LEDWITH                                                                       
+20      Â¦   Â¦   Â¦   Â¦   Â°--PAISLEY                                                                       
+21      Â¦   Â¦   Â¦   Â¦--FINE-LOAMY, MIXED, SUPERACTIVE, FRIGID TYPIC ALBAQUALFS                           
+22      Â¦   Â¦   Â¦   Â¦   Â°--BOOTLEG                                                                       
+23      Â¦   Â¦   Â¦   Â¦--FINE-LOAMY, MIXED, ACTIVE, HYPERTHERMIC TYPIC ALBAQUALFS                          
+24      Â¦   Â¦   Â¦   Â¦   Â°--BORDAS                                                                        
+25      Â¦   Â¦   Â¦   Â¦--FINE-LOAMY, MIXED, ACTIVE, ISOHYPERTHERMIC TYPIC ALBAQUALFS                       
+26      Â¦   Â¦   Â¦   Â¦   Â°--CANDELERO                                                                     
+27      Â¦   Â¦   Â¦   Â¦--FINE, MIXED, ACTIVE, THERMIC TYPIC ALBAQUALFS                                     
+28      Â¦   Â¦   Â¦   Â¦   Â¦--CHEROKEE                                                                      
+29      Â¦   Â¦   Â¦   Â¦   Â°--MEGGETT                                                                       
+30      Â¦   Â¦   Â¦   Â¦--FINE, SMECTITIC, THERMIC TYPIC ALBAQUALFS                                         
+31      Â¦   Â¦   Â¦   Â¦   Â¦--CROWLEY                                                                       
+32      Â¦   Â¦   Â¦   Â¦   Â¦--DEWITT                                                                        
+33      Â¦   Â¦   Â¦   Â¦   Â¦--KEMAH                                                                         
+34      Â¦   Â¦   Â¦   Â¦   Â°--MEIKLE                                                                        
+35      Â¦   Â¦   Â¦   Â¦--FINE, MIXED, ACTIVE, MESIC TYPIC ALBAQUALFS                                       
+36      Â¦   Â¦   Â¦   Â¦   Â°--DEIBLE                                                                        
+37      Â¦   Â¦   Â¦   Â¦--FINE, MIXED, SEMIACTIVE, HYPERTHERMIC TYPIC ALBAQUALFS                            
+38      Â¦   Â¦   Â¦   Â¦   Â°--EUREKA                                                                        
+39      Â¦   Â¦   Â¦   Â¦--VERY-FINE, SMECTITIC, HYPERTHERMIC TYPIC ALBAQUALFS                               
+40      Â¦   Â¦   Â¦   Â¦   Â°--FLEMINGTON                                                                    
+41      Â¦   Â¦   Â¦   Â¦--FINE-LOAMY, SILICEOUS, SEMIACTIVE, THERMIC TYPIC ALBAQUALFS                       
+42      Â¦   Â¦   Â¦   Â¦   Â°--MOUZON                                                                        
+43      Â¦   Â¦   Â¦   Â¦--FINE, MIXED, SUPERACTIVE, MESIC TYPIC ALBAQUALFS                                  
+44      Â¦   Â¦   Â¦   Â¦   Â°--MUNSET                                                                        
+45      Â¦   Â¦   Â¦   Â¦--FINE, SMECTITIC, FRIGID TYPIC ALBAQUALFS                                          
+46      Â¦   Â¦   Â¦   Â¦   Â°--NISHON                                                                        
+47      Â¦   Â¦   Â¦   Â¦--FINE, MIXED, ACTIVE, HYPERTHERMIC TYPIC ALBAQUALFS                                
+48      Â¦   Â¦   Â¦   Â¦   Â°--PAPAGUA                                                                       
+49      Â¦   Â¦   Â¦   Â¦--FINE, MIXED, ACTIVE, FRIGID TYPIC ALBAQUALFS                                      
+50      Â¦   Â¦   Â¦   Â¦   Â°--... 1 nodes w/ 0 sub                                                          
+51      Â¦   Â¦   Â¦   Â°--... 2 nodes w/ 3 sub                                                              
+52      Â¦   Â¦   Â°--... 9 nodes w/ 88 sub                                                                 
+53      Â¦   Â°--... 10 nodes w/ 991 sub                                                                   
+54      Â°--... 4 nodes w/ 6497 sub 
 </pre>
 
 
