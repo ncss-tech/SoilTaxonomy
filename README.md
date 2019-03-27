@@ -1,5 +1,10 @@
 ## Code related to Soil Taxonomy Task Force
 
+## Promoting Understanding
+
+![](formative-elements/abruptic-durixeralfs-translation.png)
+
+
 ## Visualization
 
 ![alt.text](xeralfs-graph.png)

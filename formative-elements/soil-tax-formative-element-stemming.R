@@ -82,7 +82,12 @@ taxa.tokens <- unlist(stri_split_fixed(taxa, pattern=' '))
 m <- unlist(stri_match_all(taxa, regex=paste0('^', subgroup.modifiers), opts_regex=list(case_insensitive=TRUE)))
 as.vector(na.omit(m))
 
-# search formative elements
+# search formative elements... need a proper dictionary
+# working on one here...
+# need to finish all of the definitions, surely they are spelled out in one of the ST books
+# why yes they are:
+# tables 7.1 -- 7.6 (pp. 210--222 Soil Genesis and Classification 6th Ed.)
+# https://github.com/ncss-tech/SoilTaxonomy/blob/master/formative-elements/subgroup-modifier-dictionary.csv
 m <- lapply(taxa.tokens, stri_match_all, regex=d$element, opts_regex=list(case_insensitive=TRUE))
 
 lapply(m, function(i) {
