@@ -12,7 +12,7 @@ hunspell_stem('mollic haploxeralfs')
 hunspell:::dicpath()
 
 
-d <- read.csv('formative-elements-corrected.csv', stringsAsFactors = FALSE)
+d <- read.csv('https://raw.githubusercontent.com/ncss-tech/SoilTaxonomy/master/formative-elements/formative-elements-corrected.csv', stringsAsFactors = FALSE)
 
 x <- mapply(pattern=d$element, x='mollic haploxeralfs', FUN = grep, ignore.case=TRUE)
 unlist(x)
@@ -23,6 +23,71 @@ unlist(x)
 x <- mapply(pattern=d$element, x='abruptic durixerolls', FUN = grep, ignore.case=TRUE)
 unlist(x)
 
+x <- mapply(pattern=d$element, x='abruptic durixeralfs', FUN = grep, ignore.case=TRUE)
+unlist(x)
+
 
 z <- aline(rep('abruptic durixeralfs', times=nrow(d)), d$element)
 hist(z)
+
+
+## this is close to what we would like to make
+## ASCII is neat, but a graphic would suffice
+## SVG with selectable / linkable text?
+
+# abruptic durixeralfs
+#    |      |   |  |
+#    |      |   |  |
+#  an abrupt change in texture
+#           |   |  |
+#       presence of a silica-cemented, sub-surface horizon
+#               |  |
+#            cool, wet winters and hot, dry summers
+#                  |
+#     an alfisol: sub-surface accumulation of clay, nutrient-rich
+           
+
+# another approach
+
+library(stringi)
+library(purrr)
+
+# get ST down to the subgroup level
+x <- read.csv('https://raw.githubusercontent.com/ncss-tech/SoilTaxonomy/master/ST-full-fixed.csv', stringsAsFactors = FALSE)
+
+# split into tokens
+z <- stri_split_fixed(x$tax_subgroup, pattern=' ')
+
+# there should be 2--4
+range(sapply(z, length))
+
+# unique set of sub group modifiers
+subgroup.modifiers <- unique(unlist(z))
+
+# remove great group labels
+subgroup.modifiers <- sort(setdiff(subgroup.modifiers, x$tax_greatgroup))
+
+# only 163 ! I can work with that
+length(subgroup.modifiers)
+
+
+# save these for later
+write.csv(data.frame(sgm=subgroup.modifiers, text=''), file='subgroup-modifier-dictionary.csv', row.names = FALSE)
+
+
+taxa <- 'abruptic durixeralfs'
+taxa.tokens <- unlist(stri_split_fixed(taxa, pattern=' '))
+
+# search subgroup pieces
+m <- unlist(stri_match_all(taxa, regex=paste0('^', subgroup.modifiers), opts_regex=list(case_insensitive=TRUE)))
+as.vector(na.omit(m))
+
+# search formative elements
+m <- lapply(taxa.tokens, stri_match_all, regex=d$element, opts_regex=list(case_insensitive=TRUE))
+
+lapply(m, function(i) {
+  unique(as.vector(na.omit(unlist(i))))
+})
+
+
+
