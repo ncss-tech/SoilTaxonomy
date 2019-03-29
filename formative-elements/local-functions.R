@@ -395,7 +395,7 @@ prettyPrintST <- function(x) {
   
   ex[[5]] <- .soilOrderLines(x.o)
   
-  res <- unlist(ex, recursive = TRUE)
+  res <- paste(unlist(ex, recursive = TRUE), collapse='\n')
   
   return(res)
 }

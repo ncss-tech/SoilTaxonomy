@@ -2,6 +2,9 @@ library(stringi)
 library(purrr)
 library(stringdist)
 
+## TODO: there are many subgroup formative elements missing from the dictionary, e.g. "xerollic"
+
+
 # ST to the subgroup level
 # this will eventually be placed into an R package data/ dir
 ST <- read.csv('../ST-full-fixed.csv', stringsAsFactors = FALSE)
@@ -33,3 +36,4 @@ cat(prettyPrintST('aeric umbric endoaqualfs'), sep='\n')
 
 cat(prettyPrintST('typic endoaqualfs'), sep = '\n')
 
+cat(prettyPrintST(ST$tax_subgroup[200]), sep = '\n')
