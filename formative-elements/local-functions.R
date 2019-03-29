@@ -182,6 +182,59 @@ parseGreatGroup <- function(x) {
 }
 
 
+parseSubGroup <- function(x) {
+  # load dictionary
+  lut <- ST.formative_elements$subgroup
+  pattern <- lut$element
+  
+  # parity with other functions
+  needle <- x
+  
+  # remove any that aren't valid subgroups
+  needle.check <- isValidST(needle, level='tax_subgroup')
+  invalid.idx <- which(!needle.check)
+  if(length(invalid.idx) > 0) {
+    needle[invalid.idx] <- NA
+  }
+  
+  # lookup greatgroup
+  needle.greatgroup <- sapply(needle, matchParentTaxa, unique(ST$tax_greatgroup), USE.NAMES=FALSE)
+  
+  # remove greatgoup
+  needle.sgpart <- stri_replace_last_fixed(needle, replacement = '', pattern=needle.greatgroup)
+  
+  # trim trailing whitespace
+  needle.sgpart <- stri_trim_right(needle.sgpart)
+  
+  # split into tokens
+  # there may be multiple subgroup formative elements
+  tok <- tokenizeST(needle.sgpart)
+  
+  # match formative elements from subgroup dictionary
+  idx <- lapply(tok, match, table=pattern)
+  
+  # extract corrosponding definitions
+  # keep as a list
+  defs <- lapply(idx, function(i) {
+    lut[i, ]
+  })
+  
+  # search for all formative elements within subgroup parts
+  # TODO: is this robust
+  # a for-loop is the safest here
+  loc <- list()
+  for(i in seq_along(x)) {
+    loc[[i]] <- stri_locate_last_regex(x[i], tok[[i]], opts_regex=list(case_insensitive=TRUE))
+  }
+  
+  # get the starting character position
+  # keep as a list
+  loc.start <- map(loc, function(i) {i[, 1]})
+  
+  return(list(defs=defs, char.index=loc.start))
+}
+
+
 
 isValidST <- function(needle, level) {
   haystack <- unique(ST[[level]])
@@ -257,8 +310,94 @@ makeBars <- function(width=100, pos) {
 }
 
 
+
+.soilOrderLines <- function(o) {
+  txt <- list()
+  
+  txt[[1]] <- makeBars(pos=o$char.index)
+  txt[[2]] <- printExplanation(pos = o$char.index, txt = o$defs$connotation)
+  
+  return(txt)
+}
+
+.subOrderLines <- function(o, so) {
+  txt <- list()
+  
+  txt[[1]] <- makeBars(pos=c(so$char.index, o$char.index))
+  txt[[2]] <- printExplanation(pos = so$char.index, txt = so$defs$connotation)
+  
+  return(txt)
+}
+
+.greatGroupLines <- function(o, so, gg) {
+  txt <- list()
+  
+  txt[[1]] <- makeBars(pos=c(gg$char.index, so$char.index, o$char.index))
+  txt[[2]] <- printExplanation(pos = gg$char.index, txt = gg$defs$connotation)
+  
+  return(txt)
+}
+
+# 
+# sg: list of lists
+.subGroupLines <- function(o, so, gg, sg) {
+  txt <- list()
+  
+  # extract parts
+  sg.pos <- unlist(sg$char.index, unlist)
+  sg.defs <- sg$defs[[1]]$connotation
+  
+  # counters
+  i <- 1
+  j <- 1
+  # local copy of positions
+  sg.pos.temp <- sg.pos
+  
+  # iterate over parts
+  while(i < length(sg.pos)+1) {
+    
+    # add all bars
+    txt[[j]] <- makeBars(pos=c(sg.pos.temp, gg$char.index, so$char.index, o$char.index))
+    txt[[j+1]] <- printExplanation(pos = sg.pos.temp[1], txt = sg.defs[1])
+    
+    # nibble vectors
+    sg.pos.temp <- sg.pos.temp[-1]
+    sg.defs <- sg.defs[-1]
+    
+    # increment vars
+    j <- j+2
+    i <- i+1
+  }
+  
+  return(txt)
+}
+
+
+
+
+
 prettyPrintST <- function(x) {
   
+  x.o <- parseOrder(x)
+  x.so <- parseSubOrder(x)
+  x.gg <- parseGreatGroup(x)
+  x.sg <- parseSubGroup(x)
+  
+  ex <- list()
+  # the taxon to explain, usually a subgroup
+  ex[[1]] <- x
+  
+  ex[[2]] <- .subGroupLines(x.o, x.so, x.gg, x.sg)
+  
+  ex[[3]] <- .greatGroupLines(x.o, x.so, x.gg)
+  
+  ex[[4]] <- .subOrderLines(x.o, x.so)
+  
+  ex[[5]] <- .soilOrderLines(x.o)
+  
+  res <- unlist(ex, recursive = TRUE)
+  
+  return(res)
 }
 
 

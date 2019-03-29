@@ -9,37 +9,27 @@ ST <- read.csv('../ST-full-fixed.csv', stringsAsFactors = FALSE)
 # formative elements
 load('formative-elements.rda')
 
-
-
-
+source('local-functions.R')
 
 # sample taxa
-x <- c('fluvaquentic haplofibrists', 'abruptic durixeralfs', 'typic haploxerolls', 'aquic cumulic hapludolls', 'argic borfundgus', 'barfic ustox', 'typic ustorthents')
+x <- c('fluvaquentic haplofibrists', 'abruptic durixeralfs', 'typic haploxerolls', 'aquic cumulic hapludolls', 'argic borfundgus', 'barfic ustox', 'typic ustorthents', 'aridic lithic argixerolls', 'petroferric sombriudox')
 
-parseOrder(x)
-parseSubOrder(x)
-parseGreatGroup(x)
-
-x <- x[4]
-x.p1 <- parseOrder(x)
-x.p2 <- parseSubOrder(x)
-x.p3 <- parseGreatGroup(x)
+# parseOrder(x)
+# parseSubOrder(x)
+# parseGreatGroup(x)
+# parseSubGroup(x)
 
 
-txt <- list()
-txt[[1]] <- x
 
-txt[[3]] <- makeBars(pos=c(x.p3$char.index, x.p2$char.index, x.p1$char.index))
+cat(prettyPrintST(x[9]), sep = '\n')
 
-txt[[4]] <- printExplanation(pos = x.p3$char.index, txt = x.p3$defs$connotation)
+cat(prettyPrintST(x[8]), sep = '\n')
 
-txt[[5]] <- makeBars(pos=c(x.p2$char.index, x.p1$char.index))
 
-txt[[6]] <- printExplanation(pos = x.p2$char.index, txt = x.p2$defs$connotation)
+cat(prettyPrintST(x[1]), sep = '\n')
 
-txt[[7]] <- makeBars(pos=x.p1$char.index)
 
-txt[[9]] <- printExplanation(pos = x.p1$char.index, txt = x.p1$defs$connotation)
+cat(prettyPrintST('aeric umbric endoaqualfs'), sep='\n')
 
-cat(unlist(txt), sep = '\n')
+cat(prettyPrintST('typic endoaqualfs'), sep = '\n')
 
