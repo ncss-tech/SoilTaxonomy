@@ -19,7 +19,9 @@ Give it a try.
 library(SoilTaxonomy)
 
 # label formative elements in the hierarchy with brief explanations
-cat(explainST('typic endoaqualfs'), sep = '\n')
+cat(explainST('typic endoaqualfs'))
+
+cat(explainST('abruptic haplic durixeralfs'))
 ```
 
 ```
@@ -32,10 +34,23 @@ central theme of subgroup concept
           characteristics associated with wetness                                                   
              |                                                                                      
              soils with an argillic, kandic, or natric horizon
+             
+abruptic haplic durixeralfs
+|        |      |   |  |                                                                            
+abrupt textural change                                                                              
+         |      |   |  |                                                                            
+         central theme of subgroup concept                                                          
+                |   |  |                                                                            
+                presence of a duripan                                                               
+                    |  |                                                                            
+                    xeric SMR                                                                       
+                       |                                                                            
+                       soils with an argillic, kandic, or natric horizon                            
 ```
 
+
 Using `data.tree` to work with the hierarchy.
-<pre style="font-size: 75%;">
+<pre style="font-size: 10em;">
                                   levelName       ac
 1  xeralfs                                     16554816
 2   ¦--durixeralfs                              1704451
