@@ -104,7 +104,7 @@ OrderFormativeElements <- function(x) {
 
 
 # note: there is overlap in suborder | greatgroup formative elements
-#' @importFrom purrr map2_chr map_int map
+#' @importFrom purrr map2_chr map_int map pluck
 #' @importFrom stringi stri_match_last_regex stri_locate_last_regex
 #' @export
 SubOrderFormativeElements <- function(x) {
@@ -130,7 +130,7 @@ SubOrderFormativeElements <- function(x) {
   
   # extract the last token
   # these will be searched
-  needle <- purrr::map2_chr(tok, tok.len, pluck)
+  needle <- purrr::map2_chr(tok, tok.len, purrr::pluck)
   
   # remove any that aren't valid great groups
   needle.check <- isValidST(needle, level='tax_greatgroup')
@@ -140,7 +140,8 @@ SubOrderFormativeElements <- function(x) {
   }
   
   # convert greatgroup to suborder
-  needle.suborder <- sapply(needle, matchParentTaxa, ST_unique_list$tax_suborder, USE.NAMES=FALSE)
+  needle.suborder <- suppressMessages(sapply(needle, matchParentTaxa, ST_unique_list$tax_suborder, USE.NAMES=FALSE))
+  
   
   # find the last occurence of formative elements
   # rows: possible matches in formative elements
@@ -151,21 +152,90 @@ SubOrderFormativeElements <- function(x) {
   idx <- lapply(m, match, table=haystack, nomatch=NA)
   
   # remove all non-matching, retain single NA if no matching
-  # result is a vector
-  idx <- purrr::map_int(idx, .safelyPickNotNA)
+  # result is a list
+  idx <- purrr::map(idx, .safelyPickNotNA)
+  
+  # test for multiple matches / taxa
+  # this is common when formative elements are shortened
+  # 'argi' and 'ar' can be confounded in 'calciargids'
+  # 'hist' and 'ist' are confounded in 'folistels'
+  multiple.matches <- sapply(idx, function(i) length(i) > 1)
+  
+  # TODO: use map_if() to safely traverse NA
+  if(any(multiple.matches)) {
+    
+    # iterate over taxa
+    for(i in seq_along(x)) {
+      # current taxa / index to matches
+      this.idx <- idx[[i]]
+      
+      # safely skip NA
+      if(any(is.na(this.idx))) {
+        next
+      }
+      
+      # skip single matches
+      if(length(this.idx) < 2) {
+        next
+      }
+      
+      # colliding elements
+      elems <- lut$element[this.idx]
+      # search for each in the original taxa
+      m.i <- sapply(elems, grepl, x[i], ignore.case=TRUE, simplify = TRUE)
+      m.idx <- which(m.i)
+      
+      # two possible outcomes:
+      # multiple matches, use the longest (calciargids)
+      if(length(m.idx) > 1) {
+        chars <- nchar(elems)
+        # replace in original set of indexes matches
+        idx[[i]] <- this.idx[which.max(chars)]
+        
+      } else {
+        # single match, use that one (folistels)
+        idx[[i]] <- this.idx[m.idx]
+      }
+      
+    }
+    
+  } 
+  
+  # now safe to unlist
+  idx <- unlist(idx)
   
   # keep corrosponding definitions
   defs <- lut[idx, ]
   
+  ## second half: starting character
   
-  # search for suborder starting character within original search
-  # there is only a single formative element for the suborder
-  # TODO: is this robust?
-  loc <- lapply(x, FUN = stringi::stri_locate_last_regex, pattern=ST_unique_list$tax_suborder, opts_regex=list(case_insensitive=TRUE))
+  # search for suborder starting character within greatgroup or lower
+  # this is the characer position within greatgroup or lower
+  loc <- lapply(needle, FUN = stringi::stri_locate_last_regex, pattern=ST_unique_list$tax_suborder, opts_regex=list(case_insensitive=TRUE))
   
   # get the starting character position
   loc.start <- map(loc, function(i) {i[, 1]})
   loc.start <- map_int(loc.start, .safelyPickNotNA)
+  
+  # sum lengths of subgroup and lower
+  # 0 if missing
+  .notsingleton <- function(i) {length(i) > 1}
+  .zero <- function(i) {0L}
+  subgroup.chars <- map_if(tok, .p = .notsingleton, .else = .zero, .f = function(i) {
+    # there may be more than 1 subgroup token
+    tok.len <- length(i)
+    # don't forget white space
+    white.space <- tok.len - 1
+    # sum characters for all but last token
+    tok.idx <- seq(from=1, to=tok.len - 1)
+    # add white space
+    res <- sum(nchar(i[tok.idx])) + white.space
+    return(res)
+  })
+  
+  # combine with locations found above
+  subgroup.chars <- unlist(subgroup.chars)
+  loc.start <- subgroup.chars + loc.start
   
   # propagate NA based on invalid taxa
   if(length(invalid.idx) > 0) {

@@ -22,8 +22,10 @@ cat(explainST(x[8]), sep = '\n')
 cat(explainST(x[1]), sep = '\n')
 
 
-cat(explainST('aeric umbric endoaqualfs'), sep='\n')
+cat(explainST('aeric umbric endoaqualfs'))
 
-cat(explainST('typic endoaqualfs'), sep = '\n')
+cat(explainST('typic endoaqualfs'))
 
-cat(explainST(ST$tax_subgroup[200]), sep = '\n')
+# cat(explainST(ST$tax_subgroup[200]))
+
+cat(explainST('acrustoxic kanhaplustults'))
