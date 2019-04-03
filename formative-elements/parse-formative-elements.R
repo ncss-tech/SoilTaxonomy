@@ -1,6 +1,7 @@
 library(stringi)
 library(purrr)
 library(stringdist)
+library(SoilTaxonomy)
 
 ## TODO: there are many subgroup formative elements missing from the dictionary, e.g. "xerollic"
 
@@ -12,28 +13,27 @@ ST <- read.csv('../ST-full-fixed.csv', stringsAsFactors = FALSE)
 # formative elements
 load('formative-elements.rda')
 
-source('local-functions.R')
 
 # sample taxa
 x <- c('fluvaquentic haplofibrists', 'abruptic durixeralfs', 'typic haploxerolls', 'aquic cumulic hapludolls', 'argic borfundgus', 'barfic ustox', 'typic ustorthents', 'aridic lithic argixerolls', 'petroferric sombriudox')
 
-# parseOrder(x)
-# parseSubOrder(x)
-# parseGreatGroup(x)
-# parseSubGroup(x)
+# OrderFormativeElements(x)
+# SubOrderFormativeElements(x)
+# GreatGroupFormativeElements(x)
+# SubGroupFormativeElements(x)
 
 
 
-cat(prettyPrintST(x[9]), sep = '\n')
+cat(explainST(x[9]), sep = '\n')
 
-cat(prettyPrintST(x[8]), sep = '\n')
-
-
-cat(prettyPrintST(x[1]), sep = '\n')
+cat(explainST(x[8]), sep = '\n')
 
 
-cat(prettyPrintST('aeric umbric endoaqualfs'), sep='\n')
+cat(explainST(x[1]), sep = '\n')
 
-cat(prettyPrintST('typic endoaqualfs'), sep = '\n')
 
-cat(prettyPrintST(ST$tax_subgroup[200]), sep = '\n')
+cat(explainST('aeric umbric endoaqualfs'), sep='\n')
+
+cat(explainST('typic endoaqualfs'), sep = '\n')
+
+cat(explainST(ST$tax_subgroup[200]), sep = '\n')

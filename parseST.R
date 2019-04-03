@@ -6,6 +6,8 @@
 
 library(RODBC)
 library(stringdist)
+library(SoilTaxonomy)
+
 
 channel <- RODBC::odbcDriverConnect(connection="DSN=nasis_local;UID=NasisSqlRO;PWD=nasisRe@d0n1y")
 
