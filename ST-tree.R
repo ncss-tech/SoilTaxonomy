@@ -1,23 +1,16 @@
 library(data.tree)
 library(jsonlite)
-library(plyr)
 library(igraph)
-# library(networkD3)
 
+library(SoilTaxonomy)
+
+
+## further ideas
 # https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html
 # https://cran.r-project.org/web/packages/data.tree/vignettes/applications.html
 
-## don't need this
-# # recursive function for tabulating acreage
-# sum_ac <- function(node) {
-#   result <- node$ac
-#   if(length(result) == 0) result <- sum(sapply(node$children, sum_ac))
-#   return (result)
-# }
-# 
-
-## this is the manually corrected version
-ST.clean <- read.csv('ST-full-fixed.csv', stringsAsFactors = FALSE)
+# load de-normalized version of the current edition, to the subgroup level
+data('ST', package = 'SoilTaxonomy')
 
 ## this is the most detailed acreage accounting
 # subgroup acreages from SoilWeb / SSURGO
@@ -27,16 +20,17 @@ names(sg.ac) <- c('tax_subgroup', 'ac', 'n_polygons')
 # normalize names
 sg.ac$tax_subgroup <- tolower(sg.ac$tax_subgroup)
 
-# join tree to acreage
-ST.clean <- join(ST.clean, sg.ac)
+# LEFT JOIN to acreage
+ST <- merge(ST, sg.ac, by='tax_subgroup', all.x=TRUE)
 
 # set NA acreage to 0
-ST.clean$ac[which(is.na(ST.clean$ac))] <- 0
+ST$ac[which(is.na(ST$ac))] <- 0
 
 # setup tree path, note that there has to be a "parent" level that sits above orders
-ST.clean$pathString <- paste('ST', ST.clean$tax_order, ST.clean$tax_suborder, ST.clean$tax_greatgroup, ST.clean$tax_subgroup, sep='/')
+ST$pathString <- paste('ST', ST$tax_order, ST$tax_suborder, ST$tax_greatgroup, ST$tax_subgroup, sep='/')
 
-n <- as.Node(ST.clean[,])
+# init data.tree object, rather large
+n <- as.Node(ST)
 print(n, 'ac', pruneMethod = "dist", limit = 20)
 
 alf <- n$alfisols$xeralfs

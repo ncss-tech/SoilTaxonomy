@@ -112,6 +112,9 @@ SubOrderFormativeElements <- function(x) {
   # load local copy of formative elements
   load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
   
+  # load unique taxa
+  load(system.file("data/ST_unique_list.rda", package="SoilTaxonomy")[1])
+  
   # load dictionary
   lut <- ST_formative_elements$suborder
   haystack <- lut$element
@@ -137,7 +140,7 @@ SubOrderFormativeElements <- function(x) {
   }
   
   # convert greatgroup to suborder
-  needle.suborder <- sapply(needle, matchParentTaxa, unique(ST$tax_suborder), USE.NAMES=FALSE)
+  needle.suborder <- sapply(needle, matchParentTaxa, ST_unique_list$tax_suborder, USE.NAMES=FALSE)
   
   # find the last occurence of formative elements
   # rows: possible matches in formative elements
@@ -158,7 +161,7 @@ SubOrderFormativeElements <- function(x) {
   # search for suborder starting character within original search
   # there is only a single formative element for the suborder
   # TODO: is this robust?
-  loc <- lapply(x, FUN = stringi::stri_locate_last_regex, pattern=unique(ST$tax_suborder), opts_regex=list(case_insensitive=TRUE))
+  loc <- lapply(x, FUN = stringi::stri_locate_last_regex, pattern=ST_unique_list$tax_suborder, opts_regex=list(case_insensitive=TRUE))
   
   # get the starting character position
   loc.start <- map(loc, function(i) {i[, 1]})
@@ -180,6 +183,9 @@ GreatGroupFormativeElements <- function(x) {
   
   # load local copy of formative elements
   load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
+  
+  # load unique taxa
+  load(system.file("data/ST_unique_list.rda", package="SoilTaxonomy")[1])
   
   # load dictionary
   lut <- ST_formative_elements$greatgroup
@@ -206,7 +212,7 @@ GreatGroupFormativeElements <- function(x) {
   }
   
   # lookup suborder
-  needle.suborder <- sapply(needle, matchParentTaxa, unique(ST$tax_suborder), USE.NAMES=FALSE)
+  needle.suborder <- sapply(needle, matchParentTaxa, ST_unique_list$tax_suborder, USE.NAMES=FALSE)
   
   # remove suborder
   needle.ggpart <- stringi::stri_replace_last_fixed(needle, replacement = '', pattern=needle.suborder)
@@ -221,7 +227,7 @@ GreatGroupFormativeElements <- function(x) {
   # search for greatgroup starting character within original search
   # there is only a single formative element for the greatgroup
   # TODO: is this robust?
-  loc <- lapply(x, FUN = stringi::stri_locate_last_regex, pattern=unique(ST$tax_greatgroup), opts_regex=list(case_insensitive=TRUE))
+  loc <- lapply(x, FUN = stringi::stri_locate_last_regex, pattern=ST_unique_list$tax_greatgroup, opts_regex=list(case_insensitive=TRUE))
   
   # get the starting character position
   loc.start <- purrr::map(loc, function(i) {i[, 1]})
@@ -244,6 +250,9 @@ SubGroupFormativeElements <- function(x) {
   # load local copy of formative elements
   load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
   
+  # load unique taxa
+  load(system.file("data/ST_unique_list.rda", package="SoilTaxonomy")[1])
+  
   # load dictionary
   lut <- ST_formative_elements$subgroup
   pattern <- lut$element
@@ -259,7 +268,7 @@ SubGroupFormativeElements <- function(x) {
   }
   
   # lookup greatgroup
-  needle.greatgroup <- sapply(needle, matchParentTaxa, unique(ST$tax_greatgroup), USE.NAMES=FALSE)
+  needle.greatgroup <- sapply(needle, matchParentTaxa, ST_unique_list$tax_greatgroup, USE.NAMES=FALSE)
   
   # remove greatgoup
   needle.sgpart <- stringi::stri_replace_last_fixed(needle, replacement = '', pattern=needle.greatgroup)
