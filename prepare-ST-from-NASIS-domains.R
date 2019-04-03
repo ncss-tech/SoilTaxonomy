@@ -1,11 +1,13 @@
-##
-## using the NASIS domains for ST, re-construct the ST hierarchy from order / suborder / great group / subgroup taxa
-## result is 99% accurate, see ST-manual-fixes.diff for manual edits required
+## 2019-04-02
+## D.E. Beaudette
+## Prepare 99.9% of the Soil Taxonomy hierarchy from NASIS domains, current ST edition
 ##
 
+
+# using the NASIS domains for ST, re-construct the ST hierarchy from order / suborder / great group / subgroup taxa
+# result is 99% accurate, see ST-manual-fixes.diff for manual edits required
 
 library(RODBC)
-library(stringdist)
 library(SoilTaxonomy)
 
 
@@ -29,13 +31,6 @@ ST <- data.frame(tax_order=NA, tax_suborder=NA, tax_greatgroup=NA, tax_subgroup=
 ## tinkering
 # http://www.joyofdata.de/blog/comparison-of-string-distance-algorithms/
 # http://stats.stackexchange.com/questions/3425/how-to-quasi-match-two-vectors-of-strings-in-r
-
-# # not quite right
-# adist(ST$tax_greatgroup[1], ST.suborders$tax_suborder, partial = TRUE, ignore.case=TRUE)
-# adist(ST$tax_greatgroup[1], ST.orders$tax_order, partial = TRUE, ignore.case=TRUE)
-# 
-
-## TODO: wrap in a function and stored data in aqp and vectorize
 
 
 
@@ -66,11 +61,9 @@ ST$tax_order[grep('erts$', ST$tax_subgroup)] <- 'vertisols'
 # re-order
 ST <- ST[order(ST$tax_order, ST$tax_suborder, ST$tax_greatgroup), ]
 
-## will have to manually edit from here
-write.csv(ST, file='ST-full.csv', row.names=FALSE, quote = FALSE)
+## manually edit from here
+write.csv(ST, file='ST-data/ST-full.csv', row.names=FALSE, quote = FALSE)
 
-
-## how to locate errors?
 
 
 
