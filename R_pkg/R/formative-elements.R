@@ -27,12 +27,15 @@
 #' 
 #' @return logical vector, same lenght as needle
 isValidST <- function(needle, level) {
-  # TODO this is currently an object in the parent environment
-  #      should be stored in the package somewhere
-  haystack <- unique(ST[[level]])
+  # load local copy of unique taxa
+  load(system.file("data/ST_unique_list.rda", package="SoilTaxonomy")[1])
+  
+  haystack <- ST_unique_list[[level]]
+  
   # matching is done in lower case
   needle <- tolower(needle)
   res <- match(needle, haystack)
+  
   res <- ! sapply(res, is.na)
   return(res)
 }

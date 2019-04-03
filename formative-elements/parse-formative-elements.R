@@ -6,9 +6,7 @@ library(SoilTaxonomy)
 ## TODO: there are many subgroup formative elements missing from the dictionary, e.g. "xerollic"
 
 
-# ST to the subgroup level
-# this will eventually be placed into an R package data/ dir
-ST <- read.csv('../ST-full-fixed.csv', stringsAsFactors = FALSE)
+
 
 # formative elements
 load('formative-elements.rda')
