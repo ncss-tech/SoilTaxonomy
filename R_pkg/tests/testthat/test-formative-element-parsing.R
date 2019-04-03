@@ -69,6 +69,11 @@ test_that("suborder formative elements", {
   expect_equal(x$defs$element, 'ust')
   expect_equal(x$char.index, 19L)
   
+  # multiple subgroup elements
+  x <- SubOrderFormativeElements('aridic lithic argixerolls')
+  expect_equal(x$defs$element, 'xer')
+  expect_equal(x$char.index, 19L)
+  
 })
 
 

@@ -14,12 +14,12 @@ SubGroupFormativeElements(x)
 
 
 
-cat(explainST(x[9]), sep = '\n')
+cat(explainST(x[9]))
 
-cat(explainST(x[8]), sep = '\n')
+cat(explainST(x[8]))
 
 
-cat(explainST(x[1]), sep = '\n')
+cat(explainST(x[1]))
 
 
 cat(explainST('aeric umbric endoaqualfs'))
