@@ -1,10 +1,9 @@
-
-
-##
-## The current version is in soilweb svn
-##
+## 2019-04-02
+## D.E. Beaudette
+## Export the current SC database from local NASIS DB
 ##
 
+# TODO: remove plyr dependency
 
 library(RODBC)
 library(RPostgreSQL)
@@ -57,15 +56,12 @@ d.min.flat <- ddply(d.min, 'soilseriesiid', .fun=function(i) {
 names(d.min.flat) <- c('soilseriesiid', 'tax_minclass')
 
 
-
-## join elements together
+# join elements together
 d <- join(d.series, d.min.flat, by='soilseriesiid', type='left')
 
+# save to local repo
+write.csv(d, file=gzfile('databases/SC-database.csv.gz'), row.names=FALSE)
 
-write.csv(d, file=gzfile('../databases/SC-database.csv.gz'), row.names=FALSE)
-
-# create intial Postgresql table defs-- modify accordingly
-# cat(postgresqlBuildTableDefinition(PostgreSQL(), name='taxa', obj=d[1, ], row.names=FALSE))
 
 
 
