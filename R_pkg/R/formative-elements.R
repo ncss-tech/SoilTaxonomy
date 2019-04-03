@@ -16,11 +16,22 @@
   }
 }
 
-# check for a valid order | suborder | greatgroup | subgroup
+#' Check for valid order | suborder | greatgroup | subgroup.
+#' 
+#' This function can be used to quickly test for valid levels within the 
+#' Soil Taxonomy hierarchy, a defined within the 13th edition of The Keys to Soil Taxonomy.
+#' Matches are case insensitive.
+#' 
+#' @param needle vector of taxa
+#' @param level single level of Soil Taxonomy hierarchy: order, suborder, greatgroup, subgroup
+#' 
+#' @return logical vector, same lenght as needle
 isValidST <- function(needle, level) {
   # TODO this is currently an object in the parent environment
   #      should be stored in the package somewhere
   haystack <- unique(ST[[level]])
+  # matching is done in lower case
+  needle <- tolower(needle)
   res <- match(needle, haystack)
   res <- ! sapply(res, is.na)
   return(res)
