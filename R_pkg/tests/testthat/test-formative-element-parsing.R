@@ -89,6 +89,10 @@ test_that("greatgroup formative elements", {
   expect_equal(x$defs$element, 'argi')
   expect_equal(x$char.index, 15)
   
+  x <- GreatGroupFormativeElements('alfic humic vitrixerands')
+  expect_equal(x$defs$element, 'vitri')
+  expect_equal(x$char.index, 13)
+  
   ## TODO: https://github.com/ncss-tech/SoilTaxonomy/issues/7  
   # # multiple occurence of formative elements
   # x <- GreatGroupFormativeElements('acrustoxic kanhaplustults')

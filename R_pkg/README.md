@@ -22,6 +22,8 @@ library(SoilTaxonomy)
 cat(explainST('typic endoaqualfs'))
 
 cat(explainST('abruptic haplic durixeralfs'))
+
+cat(explainST('aeric umbric endoaqualfs'))
 ```
 
 ```
@@ -35,6 +37,7 @@ central theme of subgroup concept
              |                                                                                      
              soils with an argillic, kandic, or natric horizon
              
+
 abruptic haplic durixeralfs
 |        |      |   |  |                                                                            
 abrupt textural change                                                                              
@@ -45,7 +48,20 @@ abrupt textural change
                     |  |                                                                            
                     xeric SMR                                                                       
                        |                                                                            
-                       soils with an argillic, kandic, or natric horizon                            
+                       soils with an argillic, kandic, or natric horizon                  
+
+                       
+aeric umbric endoaqualfs
+|     |      |   |  |                                                                               
+more aeration than typic subgroup                                                                   
+      |      |   |  |                                                                               
+      presence of an umbric epipedon                                                                
+             |   |  |                                                                               
+             ground water table                                                                     
+                 |  |                                                                               
+                 characteristics associated with wetness                                            
+                    |                                                                               
+                    soils with an argillic, kandic, or natric horizon   
 ```
 
 

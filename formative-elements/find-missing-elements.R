@@ -1,7 +1,8 @@
 library(SoilTaxonomy)
 library(purrr)
 
-data("ST_unique_list")
+data('ST_unique_list', package = 'SoilTaxonomy')
+
 
 # formative element parsing requires taxa one level higher
 x <- OrderFormativeElements(ST_unique_list$tax_suborder)
@@ -64,5 +65,38 @@ names(s.test$error[idx])
 x <- c('argixerolls', 'acrustoxic kanhaplustults')
 SubOrderFormativeElements(x)
 
+
+
+
+##
+## look for missing subgroup formative elements
+##
+
+data('ST_formative_elements', package = 'SoilTaxonomy')
+
+# all subgroups
+s <- ST_unique_list$tax_subgroup
+
+# tokenize via whitespace
+tok <- SoilTaxonomy:::.tokenizeST(s)
+
+# extract all but last token
+tok.sg <- sapply(tok, function(i) {
+  len <- length(i)
+  idx <- seq(from=1, to=len - 1)
+  return(i[idx])
+})
+
+# unique vector of subgroup formative elements
+tok.sg <- unique(unlist(tok.sg))
+
+# find those missing in the dictionary
+missing.in.dictionary <- sort(setdiff(tok.sg, ST_formative_elements$subgroup$element))
+
+# find those missing in actual use
+missing.in.ST <- sort(setdiff(ST_formative_elements$subgroup$element, tok.sg))
+
+# save for later... need to define these
+cat(missing.in.dictionary, sep='\n')
 
 
