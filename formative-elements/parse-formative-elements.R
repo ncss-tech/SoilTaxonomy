@@ -22,10 +22,20 @@ cat(explainST(x[8]))
 cat(explainST(x[1]))
 
 
+cat(explainST('aquic cumulic hapludolls'))
+
 cat(explainST('aeric umbric endoaqualfs'))
 
 cat(explainST('typic endoaqualfs'))
 
-# cat(explainST(ST$tax_subgroup[200]))
-
+# dang it, this doesn't work
 cat(explainST('acrustoxic kanhaplustults'))
+
+# OK
+OrderFormativeElements('acrustoxic kanhaplustults')
+# OK
+SubOrderFormativeElements('acrustoxic kanhaplustults')
+# crap: https://github.com/ncss-tech/SoilTaxonomy/issues/7
+GreatGroupFormativeElements('acrustoxic kanhaplustults')
+# OK
+SubGroupFormativeElements('acrustoxic kanhaplustults')

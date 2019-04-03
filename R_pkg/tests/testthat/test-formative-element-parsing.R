@@ -77,4 +77,22 @@ test_that("suborder formative elements", {
 })
 
 
-
+test_that("greatgroup formative elements", {
+  
+  # full subgroup
+  x <- GreatGroupFormativeElements('typic haploxerolls')
+  expect_equal(x$defs$element, 'haplo')
+  expect_equal(x$char.index, 7L)
+  
+  # more complex example
+  x <- GreatGroupFormativeElements('aridic lithic argixerolls')
+  expect_equal(x$defs$element, 'argi')
+  expect_equal(x$char.index, 15)
+  
+  ## TODO: https://github.com/ncss-tech/SoilTaxonomy/issues/7  
+  # # multiple occurence of formative elements
+  # x <- GreatGroupFormativeElements('acrustoxic kanhaplustults')
+  # expect_equal(x$defs$element, 'ust')
+  # expect_equal(x$char.index, 19L)
+  
+})

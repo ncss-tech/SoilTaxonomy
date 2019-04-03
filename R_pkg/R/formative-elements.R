@@ -104,7 +104,7 @@ OrderFormativeElements <- function(x) {
 
 
 # note: there is overlap in suborder | greatgroup formative elements
-#' @importFrom purrr map2_chr map_int map pluck
+#' @importFrom purrr map2_chr map_int map pluck map_if
 #' @importFrom stringi stri_match_last_regex stri_locate_last_regex
 #' @export
 SubOrderFormativeElements <- function(x) {
@@ -294,9 +294,11 @@ GreatGroupFormativeElements <- function(x) {
   # keep corrosponding definitions
   defs <- lut[idx, ]
   
+  ## TODO: this is not robust to multiple matches
+  ## https://github.com/ncss-tech/SoilTaxonomy/issues/7
+  
   # search for greatgroup starting character within original search
   # there is only a single formative element for the greatgroup
-  # TODO: is this robust?
   loc <- lapply(x, FUN = stringi::stri_locate_last_regex, pattern=ST_unique_list$tax_greatgroup, opts_regex=list(case_insensitive=TRUE))
   
   # get the starting character position
