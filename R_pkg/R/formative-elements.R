@@ -26,6 +26,8 @@
 #' @param level single level of Soil Taxonomy hierarchy: order, suborder, greatgroup, subgroup
 #' 
 #' @return logical vector, same lenght as needle
+#' 
+#' @export
 isValidST <- function(needle, level) {
   
   # sanity check
@@ -47,12 +49,17 @@ isValidST <- function(needle, level) {
 }
 
 # determine soil order and index to character position
-# relies on ST.formative_elements
-#' @importFrom purrr map2_chr map_int map
+# relies on ST_formative_elements
+#' @importFrom purrr map2_chr map_int map pluck
 #' @importFrom stringi stri_match_last_regex stri_locate_last_regex
+#' @export
 OrderFormativeElements <- function(x) {
+  
+  # load local copy of formative elements
+  load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
+  
   # load dictionary
-  lut <- ST.formative_elements$soilorder
+  lut <- ST_formative_elements$soilorder
   haystack <- lut$element
   
   # soil order is always encoded at the end
@@ -66,7 +73,7 @@ OrderFormativeElements <- function(x) {
   
   # extract the last token
   # these will be searched
-  needle <- purrr::map2_chr(tok, tok.len, pluck)
+  needle <- purrr::map2_chr(tok, tok.len, purrr::pluck)
   
   # find the last occurence of formative elements
   # rows: possible matches in formative elements
@@ -99,9 +106,14 @@ OrderFormativeElements <- function(x) {
 # note: there is overlap in suborder | greatgroup formative elements
 #' @importFrom purrr map2_chr map_int map
 #' @importFrom stringi stri_match_last_regex stri_locate_last_regex
+#' @export
 SubOrderFormativeElements <- function(x) {
+  
+  # load local copy of formative elements
+  load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
+  
   # load dictionary
-  lut <- ST.formative_elements$suborder
+  lut <- ST_formative_elements$suborder
   haystack <- lut$element
   
   # suborder is within the greatgroup
@@ -163,9 +175,14 @@ SubOrderFormativeElements <- function(x) {
 
 #' @importFrom purrr map2_chr map_int map
 #' @importFrom stringi stri_replace_last_fixed stri_locate_last_regex
+#' @export
 GreatGroupFormativeElements <- function(x) {
+  
+  # load local copy of formative elements
+  load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
+  
   # load dictionary
-  lut <- ST.formative_elements$greatgroup
+  lut <- ST_formative_elements$greatgroup
   haystack <- lut$element
   
   # suborder is within the greatgroup
@@ -221,9 +238,14 @@ GreatGroupFormativeElements <- function(x) {
 
 #' @importFrom purrr map
 #' @importFrom stringi stri_replace_last_fixed stri_trim_right stri_locate_last_regex
+#' @export
 SubGroupFormativeElements <- function(x) {
+  
+  # load local copy of formative elements
+  load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
+  
   # load dictionary
-  lut <- ST.formative_elements$subgroup
+  lut <- ST_formative_elements$subgroup
   pattern <- lut$element
   
   # parity with other functions

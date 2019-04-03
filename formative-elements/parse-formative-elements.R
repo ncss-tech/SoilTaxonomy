@@ -1,15 +1,6 @@
-library(stringi)
-library(purrr)
-library(stringdist)
 library(SoilTaxonomy)
 
 ## TODO: there are many subgroup formative elements missing from the dictionary, e.g. "xerollic"
-
-
-
-
-# formative elements
-load('formative-elements.rda')
 
 
 # sample taxa

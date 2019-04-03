@@ -1,4 +1,6 @@
 
+
+#' @export
 explainST <- function(x) {
   
   x.o <- OrderFormativeElements(x)
