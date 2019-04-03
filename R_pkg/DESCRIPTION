@@ -1,9 +1,21 @@
 Package: SoilTaxonomy
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Title: US Soil Taxonomy
 Description: What the package does (one paragraph).
+Version: 0.0.0.9000
+Authors@R: c(person(given="Dylan", family="Beaudette", role = c("aut", "cre"), email = "dylan.beaudette@ca.usda.gov"))
+Author: Dylan Beaudette [aut, cre]
+Maintainer: Dylan Beaudette <dylan.beaudette@ca.usda.gov>
 Depends: R (>= 3.4.1)
-License: What license is it under?
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
+Repository: CRAN
+URL: https://github.com/ncss-tech/SoilTaxonomy
+BugReports: https://github.com/ncss-tech/SoilTaxonomyissues
+Imports: 
+    stringdist,
+    purrr,
+    stringi,
+    data.tree
+Suggests: 
+    testthat
