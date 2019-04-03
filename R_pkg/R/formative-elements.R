@@ -27,9 +27,15 @@
 #' 
 #' @return logical vector, same lenght as needle
 isValidST <- function(needle, level) {
+  
+  # sanity check
+  if(any(! level %in% c('tax_order', 'tax_suborder', 'tax_greatgroup', 'tax_subgroup')))
+    stop('level must be in `tax_order`, `tax_suborder`, `tax_greatgroup`, `tax_subgroup`', call. = FALSE)
+  
   # load local copy of unique taxa
   load(system.file("data/ST_unique_list.rda", package="SoilTaxonomy")[1])
   
+  # load required elements
   haystack <- ST_unique_list[[level]]
   
   # matching is done in lower case
