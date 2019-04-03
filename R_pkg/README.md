@@ -18,6 +18,13 @@ Give it a try.
 ```r
 library(SoilTaxonomy)
 
+# unique taxa
+data("ST_unique_list", package = 'SoilTaxonomy')
+
+# formative element dictionaries
+data('ST_formative_elements', package = 'SoilTaxonomy')
+
+
 # label formative elements in the hierarchy with brief explanations
 cat(explainST('typic endoaqualfs'))
 
