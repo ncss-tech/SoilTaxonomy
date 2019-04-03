@@ -1,3 +1,5 @@
+## TODO: streamline this, consider using something other than XLSX
+
 library(xlsx)
 library(jsonlite)
 

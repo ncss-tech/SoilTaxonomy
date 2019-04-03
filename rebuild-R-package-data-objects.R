@@ -26,3 +26,5 @@ load('formative-elements/formative-elements.rda')
 ST_formative_elements <- ST.formative_elements
 
 save(ST_formative_elements, file='R_pkg/data/ST_formative_elements.rda')
+
+

@@ -1,7 +1,17 @@
 
-
+#' Explain a subgroup level taxa from Soil Taxaonomy
+#'
+#' @param x a single subgroup, matching is exact and case insensitive
+#' 
+#' @return a block of text, suitable for display in fixed-width font
+#' 
+#' @note This function currently accepts only subgroup taxa. There are plans to extend to arbitrary levels of the heirarchy.
+#' 
 #' @export
 explainST <- function(x) {
+  
+  # matching is done in lower case
+  x <- tolower(x)
   
   x.o <- OrderFormativeElements(x)
   x.so <- SubOrderFormativeElements(x)

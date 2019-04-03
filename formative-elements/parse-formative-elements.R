@@ -6,10 +6,11 @@ library(SoilTaxonomy)
 # sample taxa
 x <- c('fluvaquentic haplofibrists', 'abruptic durixeralfs', 'typic haploxerolls', 'aquic cumulic hapludolls', 'argic borfundgus', 'barfic ustox', 'typic ustorthents', 'aridic lithic argixerolls', 'petroferric sombriudox')
 
-# OrderFormativeElements(x)
-# SubOrderFormativeElements(x)
-# GreatGroupFormativeElements(x)
-# SubGroupFormativeElements(x)
+# the hard work is done by these functions
+OrderFormativeElements(x)
+SubOrderFormativeElements(x)
+GreatGroupFormativeElements(x)
+SubGroupFormativeElements(x)
 
 
 
