@@ -39,6 +39,14 @@ SubOrderFormativeElements(x)
 x <- 'folistels'
 SubOrderFormativeElements(x)
 
+# missing subgroup formative elements: petrosalic
+x <- 'petrosalic anhyturbels'
+OrderFormativeElements(x)
+SubOrderFormativeElements(x)
+GreatGroupFormativeElements(x)
+SubGroupFormativeElements(x)
+
+
 # hmm
 x <- c('argixerolls', 'folistels', 'calciargids', 'fartyblogfish')
 SubOrderFormativeElements(x)

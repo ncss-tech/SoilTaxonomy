@@ -30,7 +30,10 @@ explainST <- function(x) {
   
   ex[[5]] <- .soilOrderLines(x.o)
   
-  res <- paste(unlist(ex, recursive = TRUE), collapse='\n')
+  # flatten to char vector
+  ex.char <- unlist(ex, recursive = TRUE)
+  # collapse to single character
+  res <- paste(ex.char, collapse='\n')
   
   return(res)
 }
@@ -84,6 +87,17 @@ explainST <- function(x) {
 .greatGroupLines <- function(o, so, gg) {
   txt <- list()
   
+  # short-circut: no greatgroup formative element positions found
+  if(is.na(gg$char.index)) {
+    # start at the first character
+    gg$char.index <- 1
+  }
+  
+  # short-circut: no subgroup formative elements found
+  if(is.na(gg$defs$connotation)) {
+    # let user know we have no idea
+    gg$defs$connotation <- '?'
+  }
   txt[[1]] <- .makeBars(pos=c(gg$char.index, so$char.index, o$char.index))
   txt[[2]] <- .printExplanation(pos = gg$char.index, txt = gg$defs$connotation)
   
@@ -96,8 +110,20 @@ explainST <- function(x) {
   txt <- list()
   
   # extract parts
-  sg.pos <- unlist(sg$char.index, unlist)
+  sg.pos <- unlist(sg$char.index)
   sg.defs <- sg$defs[[1]]$connotation
+  
+  # short-circut: no subgroup formative element positions found
+  if(all(is.na(sg.pos))) {
+    # start at the first character
+    sg.pos <- 1
+  }
+  
+  # short-circut: no subgroup formative elements found
+  if(all(is.na(sg.defs))) {
+    # let user know we have no idea
+    sg.defs <- '?'
+  }
   
   # counters
   i <- 1

@@ -22,6 +22,9 @@ cat(explainST(x[8]))
 cat(explainST(x[1]))
 
 
+cat(explainST('petrosalic anhyturbels'))
+
+
 cat(explainST('aquic cumulic hapludolls'))
 
 cat(explainST('aeric umbric endoaqualfs'))
