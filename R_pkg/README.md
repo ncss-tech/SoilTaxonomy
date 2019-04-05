@@ -18,6 +18,9 @@ Give it a try.
 ```r
 library(SoilTaxonomy)
 
+# hierarchy to the subgroup
+data("ST", package = 'SoilTaxonomy')
+
 # unique taxa
 data("ST_unique_list", package = 'SoilTaxonomy')
 

@@ -56,6 +56,25 @@ legend('bottomright', legend=c('No Acres Mapped'), pch=21, pt.bg='orange', bty='
 # plot(g, edge.arrow.size=0.15, vertex.label.cex=0.5, layout=layout_with_lgl, vertex.label.family='sans', vertex.label.color='black')
 dev.off()
 
+
+
+# https://cran.r-project.org/web/packages/data.tree/vignettes/applications.html
+
+## learn more about setting graph style attributes
+n.sub <- n$`22AA (Sierra Alpine)`
+# n.sub <- n$`22AB (Southern Sierra Subalpine)`
+
+# this doesn't work in the presence of NA
+# GetNodeShape <- function(node) switch(node$Geology, granitic = "box", granite = "circle", alluvium = "none")
+
+SetNodeStyle(n.sub, fontsize=10, fontname = 'helvetica', shape='none')
+SetGraphStyle(n.sub, rankdir='LR', inherit=TRUE)
+
+plot(n.sub)
+
+
+
+
 ### wow !!!
 ## use D3
 net <- ToDataFrameNetwork(n$alfisols$xeralfs)
