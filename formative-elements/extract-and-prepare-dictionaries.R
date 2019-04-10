@@ -1,25 +1,20 @@
-## TODO: streamline this, consider using something other than XLSX
 
-library(xlsx)
 library(jsonlite)
 
-# keeping track of the source data in XLSX for now, will eventially switch to JSON
-f <- 'formative-elements.xlsx'
-
 # order
-soilorder <- read.xlsx(f, sheetName = 'order', stringsAsFactors=FALSE)
+soilorder <- read.csv('dictionaries/order.csv', stringsAsFactors=FALSE)
 str(soilorder)
 
 # suborder
-suborder <- read.xlsx(f, sheetName = 'suborder', stringsAsFactors=FALSE)
+suborder <- read.csv('dictionaries/suborder.csv', stringsAsFactors=FALSE)
 str(suborder)
 
 # greatgroup
-greatgroup <- read.xlsx(f, sheetName = 'greatgroup', stringsAsFactors=FALSE)
+greatgroup <- read.csv('dictionaries/greatgroup.csv', stringsAsFactors=FALSE)
 str(greatgroup)
 
 # subgroup
-subgroup <- read.xlsx(f, sheetName = 'subgroup', stringsAsFactors=FALSE)
+subgroup <- read.csv('dictionaries/subgroup.csv', stringsAsFactors=FALSE)
 str(subgroup)
 
 

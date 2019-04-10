@@ -1,0 +1,13 @@
+order,element,derivation,connotation,simplified,link
+alfisols,alfs,none,"soils with an argillic, kandic, or natric horizon",,
+andisols,ands,black soil,soils with andic soils properties in 1/2 or more of the upper 60cm,,
+aridisols,ids,dry,soils with some diagnostic horizons and an aridic SMR,,
+entisols,ents,none,other soils,,
+gelisols,els,to freeze,soils with permafrost or gelic material within 100cm,,
+histosols,ists,tissue,soils with more than 30% organic matter content to a depth of 40cm or more,,
+inceptisols,epts,beginning,"soils with an umbric, mollic, or plaggen epipedon, or cambic horizon",,
+mollisols,olls,soft,soils with a mollic epipedon and base saturation at pH 7 >=50% in all depths above 180cm,,
+oxisols,ox,oxide,"soils with an oxic horizon, or >40% clay in the surface 18cm and a kandic horizon with < 10%  weatherable minerals",,
+spodosols,ods,wood ash,soils with a spodic horizon within a depth of 200cm,,
+ultisols,ults,last,soils with an argillic or kandic horizon and a base saturation at pH 8.2 <35% at a depth of 180cm,,
+vertisols,erts,turn,soils containing >30% clay in all horizons and cracks that open and close periodically,,
