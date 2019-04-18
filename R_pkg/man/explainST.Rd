@@ -4,7 +4,7 @@
 \alias{explainST}
 \title{Explain a subgroup level taxa from Soil Taxaonomy}
 \usage{
-explainST(x)
+explainST(x, format = "text")
 }
 \arguments{
 \item{x}{a single subgroup, matching is exact and case insensitive}

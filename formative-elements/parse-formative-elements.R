@@ -58,6 +58,13 @@ GreatGroupFormativeElements('acrustoxic kanhaplustults')
 SubGroupFormativeElements('acrustoxic kanhaplustults')
 
 
+# HTML: sends to viewer panel, invisibly returns HTML text blob
+cat(explainST('entic haplustolls'))
+explainST('entic haplustolls', format = 'html')
+
+
+
+
 # image, but why?
 img.width <- 5
 scaling.factor <- 1.5
