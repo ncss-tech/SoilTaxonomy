@@ -74,6 +74,67 @@ more aeration than typic subgroup
                     soils with an argillic, kandic, or natric horizon   
 ```
 
+Inverted hierarchy
+```r
+# load the full hierarchy at the subgroup level
+data("ST", package = 'SoilTaxonomy')
+
+# pick 10 taxa
+x <- ST[sample(1:nrow(ST), size = 10), ]
+
+# construct path
+# note: must include a top-level ("ST") in the hierarchy
+path <- with(x, paste('ST', tax_subgroup, tax_greatgroup, tax_suborder, tax_order, sep = '/'))
+
+# convert to data.tree object
+n <- as.Node(data.frame(pathString=path), pathDelimiter = '/')
+
+# print
+print(n, limit=NULL)
+```
+<pre style="font-size: 10em;">
+1  ST                           
+2   ¦--humic inceptic eutroperox
+3   ¦   °--eutroperox           
+4   ¦       °--perox            
+5   ¦           °--oxisols      
+6   ¦--xeric calcigypsids       
+7   ¦   °--calcigypsids         
+8   ¦       °--gypsids          
+9   ¦           °--aridisols    
+10  ¦--hydric melanaquands      
+11  ¦   °--melanaquands         
+12  ¦       °--aquands          
+13  ¦           °--andisols     
+14  ¦--aquic humicryods         
+15  ¦   °--humicryods           
+16  ¦       °--cryods           
+17  ¦           °--spodosols    
+18  ¦--aquic pachic hapludolls  
+19  ¦   °--hapludolls           
+20  ¦       °--udolls           
+21  ¦           °--mollisols    
+22  ¦--alfic haplustands        
+23  ¦   °--haplustands          
+24  ¦       °--ustands          
+25  ¦           °--andisols     
+26  ¦--humic sombriperox        
+27  ¦   °--sombriperox          
+28  ¦       °--perox            
+29  ¦           °--oxisols      
+30  ¦--grossarenic endoaquults  
+31  ¦   °--endoaquults          
+32  ¦       °--aquults          
+33  ¦           °--ultisols     
+34  ¦--ustic gypsiargids        
+35  ¦   °--gypsiargids          
+36  ¦       °--argids           
+37  ¦           °--aridisols    
+38  °--fibric haplohemists      
+39      °--haplohemists         
+40          °--hemists          
+41              °--histosols
+</pre>
 
 Using `data.tree` to work with the hierarchy.
 <pre style="font-size: 10em;">
