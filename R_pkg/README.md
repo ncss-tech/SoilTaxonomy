@@ -14,7 +14,7 @@ Get the development version from Github. The latest this will require the latest
 remotes::install_github("ncss-tech/SoilTaxonomy/R_pkg", dependencies=FALSE, upgrade=FALSE, build=FALSE)
 ```
 
-Give it a try.
+## Basic Usage
 ```r
 library(SoilTaxonomy)
 
@@ -73,6 +73,8 @@ more aeration than typic subgroup
                     |                                                                               
                     soils with an argillic, kandic, or natric horizon   
 ```
+
+## data.tree
 
 Inverted hierarchy
 ```r
@@ -136,7 +138,7 @@ print(n, limit=NULL)
 41              °--histosols
 </pre>
 
-Using `data.tree` to work with the hierarchy.
+(pending) Examples related to linked external data.
 <pre style="font-size: 10em;">
                                   levelName       ac
 1  xeralfs                                     16554816
