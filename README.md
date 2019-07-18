@@ -7,7 +7,7 @@
 
 ## Visualization
 
-[Family differentiae by subgroup](https://casoilresource.lawr.ucdavis.edu/seriesTree/?subgroup=humic%20dystroxerepts), must edit URL manual for now.
+[Family differentia by subgroup](https://casoilresource.lawr.ucdavis.edu/seriesTree/?subgroup=humic%20dystroxerepts), must edit URL manual for now.
 
 ![alt.text](xeralfs-graph.png)
 
