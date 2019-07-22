@@ -1,0 +1,161 @@
+---
+title: "Exploring Soil Taxonomy I"
+author: "D.E. Beaudette"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+  mathjax: null
+jquery: null
+smart: no
+---
+  
+  
+```{r setup, echo=FALSE, results='hide', warning=FALSE}
+# setup
+library(knitr, quietly=TRUE)
+opts_chunk$set(message=FALSE, warning=FALSE, background='#F7F7F7', fig.align='center', fig.retina=2, dev='png', tidy=FALSE, verbose=FALSE)
+options(width=100, stringsAsFactors=FALSE)
+```
+
+## A Simple Example
+
+Question: *"how common is the 'frag' formative element at the subgroup level of Soil Taxonomy?"*.
+
+Not that common, as of FY2019: 
+
+   * 4,434,873 acres mapped 
+   * 391,543 delineations
+   * 43 families
+   * 57 series
+
+
+### Annotated Code / Discussion
+
+Load required packages. `{SoilTaxonomy}` is availble via [GitHub](https://github.com/ncss-tech/SoilTaxonomy/tree/master/R_pkg).
+```{r}
+library(data.tree)
+library(igraph)
+library(SoilTaxonomy)
+library(plyr)
+```
+
+Get the current Soil Classification database snapshot, c/o SoilWeb.
+```{r}
+tf <- tempfile()
+download.file('https://github.com/ncss-tech/SoilTaxonomy/raw/master/databases/SC-database.csv.gz', destfile = tf)
+SC <- read.csv(gzfile(tf), stringsAsFactors = FALSE)
+
+# keep specific columns
+SC <- SC[, c('soilseriesname', 'taxclname', 'tax_grtgroup', 'tax_subgrp')]
+
+# re-name and normalize
+names(SC) <- c('series', 'family', 'tax_greatgroup', 'tax_subgroup')
+SC$tax_subgroup <- tolower(SC$tax_subgroup)
+```
+
+Get the current subgroup acreage database snapshot, derived from SSURGO, c/o SoilWeb.
+```{r}
+tf <- tempfile()
+download.file('https://github.com/ncss-tech/SoilTaxonomy/raw/master/databases/taxsubgrp-stats.txt.gz', destfile = tf)
+sg.ac <- read.table(gzfile(tf), header = FALSE, stringsAsFactors = FALSE, sep='|')
+names(sg.ac) <- c('tax_subgroup', 'ac', 'n_polygons')
+
+# normalize names
+sg.ac$tax_subgroup <- tolower(sg.ac$tax_subgroup)
+```
+
+Load the current edition of Soil Taxonomy, hierarchy to the subgroup level. This is part of the `{SoilTaxonomy}` package.
+```{r}
+# ST to the subgroup level
+data(ST)
+
+# tabulate number of series / family per subgroup
+series.stats <- ddply(SC, 'tax_subgroup', .fun=summarize, n_series=length(unique(series)), n_family=length(unique(family)))
+```
+
+Combine data sources and replace NA with 0.
+```{r}
+# join {ST} to {acreage by subgroup}
+ST <- merge(ST, sg.ac, by='tax_subgroup', all.x=TRUE)
+
+# join {ST + subgroup acreage} to {series stats}
+ST <- merge(ST, series.stats, by='tax_subgroup', all.x=TRUE)
+
+# set NA acreage, n_series, n_family to 0
+ST$ac[which(is.na(ST$ac))] <- 0
+ST$n_polygons[which(is.na(ST$n_polygons))] <- 0
+ST$n_series[which(is.na(ST$n_series))] <- 0
+ST$n_family[which(is.na(ST$n_family))] <- 0
+```
+
+
+Select taxa with *frag* in the subgroup label and initialize a [`data.tree` object](https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html) to describe the hierarchy.
+```{r}
+# setup tree path, note that there has to be a "parent" level that sits above orders
+ST$pathString <- paste('ST', ST$tax_order, ST$tax_suborder, ST$tax_greatgroup, ST$tax_subgroup, sep='/')
+
+# index to 'frag' at GG level
+gg.idx <- grep('frag', ST$tax_greatgroup, ignore.case = TRUE)
+
+# index to 'frag' at SG level
+sg.idx <- grep('frag', ST$tax_subgroup, ignore.case = TRUE)
+
+# exclude 'frag' at the GG level
+idx <- setdiff(sg.idx, gg.idx)
+
+# convert selected taxa to data.tree object
+f.sg <- as.Node(ST[idx, ])
+```
+
+
+Modfy the hierachy by creating running sums of area, number of delineations, number of soil series, and number of family taxa. Sort the hierarcy by area.
+```{r}
+# tabulate acreage, polygons, num series, num families
+f.sg$Do(function(node) node$ac <- Aggregate(node, attribute = "ac", aggFun = sum), traversal = "post-order")
+
+f.sg$Do(function(node) node$n_polygons <- Aggregate(node, attribute = "n_polygons", aggFun = sum), traversal = "post-order")
+
+f.sg$Do(function(node) node$n_series <- Aggregate(node, attribute = "n_series", aggFun = sum), traversal = "post-order")
+
+f.sg$Do(function(node) node$n_family <- Aggregate(node, attribute = "n_family", aggFun = sum), traversal = "post-order")
+
+# sort by acreage
+Sort(f.sg, attribute = 'ac', decreasing = TRUE, recursive = TRUE)
+```
+
+Results. Subgroup taxa without any associated soil series are defined in the Keys but have not (yet) been mapped in the detailed soil survey (SSURGO).
+```{r eval=FALSE}
+print(f.sg, 'ac', 'n_family', 'n_series')
+```
+
+<pre>
+```{r results='asis', echo=FALSE}
+print(f.sg, 'ac', 'n_family', 'n_series')
+```
+</pre>
+
+
+Graphical representation, symbol size is proportional to areal extent.
+```{r fig.width=15, fig.height=15}
+# convert data.tree to igraph object
+g <- as.igraph(f.sg, directed = TRUE, direction = "climb", vertexAttributes='ac')
+
+# extract area
+v.ac <- V(g)$ac
+
+# representat area with vertex size and color
+V(g)$size <- ifelse(v.ac == 0, 4, log(sqrt(v.ac)))
+V(g)$color <- ifelse(v.ac == 0, 'orange', 'lightblue')
+
+par(mar=c(1,1,1,1))
+plot(g, edge.arrow.size=0.15, vertex.label.cex=0.85, layout=layout_with_fr, vertex.label.family='sans', vertex.label.color='black')
+
+legend('bottomright', legend=c('No Acres Mapped'), pch=21, pt.bg='orange', bty='n', cex=1.5)
+```
+
+
+To be continued.
+
+----------------------------
+This document is based on `SoilTaxonomy` version `r utils::packageDescription("SoilTaxonomy", field="Version")`.
+
