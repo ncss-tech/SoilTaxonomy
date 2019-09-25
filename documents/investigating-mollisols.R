@@ -10,6 +10,16 @@ library(colorspace)
 
 options(stringsAsFactors = FALSE)
 
+soilPalette <- function(colors, lab, ...) {
+  # basic plot
+  swatchplot(colors, ...)
+  # annotation
+  nx <- length(colors)
+  x.pos <- seq(from = 0, to = 1, by = 1/nx)[1:nx]
+  y.pos <- rep(0.01, times = nx)
+  text(x.pos, y.pos, labels = lab, col = "white", font = 2, adj = c(-0.125, -0.33))
+}
+
 
 # set search_path to osd, public;
 # 
@@ -22,35 +32,80 @@ options(stringsAsFactors = FALSE)
 # 
 # \copy mmm to 'mollisol-osds.csv' CSV HEADER
 
+
+# series stats from SoilWeb
+tf <- tempfile()
+download.file('https://github.com/ncss-tech/SoilTaxonomy/raw/master/databases/series_stats.csv.gz', destfile = tf)
+sc.ac <- read.csv(gzfile(tf), stringsAsFactors = FALSE)
+
+# custom output from SQL: series that are mollisols
 x <- read.csv('mollisol-osds.csv.gz')
+
+# combine
+x <- merge(x, sc.ac, by='series', all.x=TRUE)
+
+# init color
 x$soil_color <- munsell2rgb(x$matrix_wet_color_hue, x$matrix_wet_color_value, x$matrix_wet_color_chroma)
 
+# init SPC
 depths(x) <- series ~ top + bottom
+site(x) <- ~ ac + n_polygons
 
+# fake genhz for selecting A horizons
 x$genhz <- rep(NA, times=nrow(x))
 x$genhz[grep('A', x$hzname)] <- 'A Horizons'
 
-a <- aggregateColor(x, groups = 'genhz', col = 'soil_color', k = 8)
+# < 1 second
+system.time(a <- aggregateColor(x, groups = 'genhz', col = 'soil_color'))
 aggregateColorPlot(a)
 
-soilPalette <- function(colors, lab, ...) {
-  # basic plot
-  swatchplot(colors, ...)
-  # annotation
-  nx <- length(colors)
-  x.pos <- seq(from = 0, to = 1, by = 1/nx)[1:nx]
-  y.pos <- rep(0.01, times = nx)
-  text(x.pos, y.pos, labels = lab, col = "white", font = 2, adj = c(-0.125, -0.33))
-}
+tab <- a$scaled.data$`A Horizons`
+tab <- tab[tab$weight > 0.01, ]
 
 # hack!
 # get the labels about right
-lab <- sprintf("%s\n      %i%%", a$scaled.data$`A Horizons`$munsell, round(a$scaled.data$`A Horizons`$weight * 100))
+lab <- sprintf("%s (%i%%)", tab$munsell, round(tab$weight * 100))
 
 par(mar=c(2,0,2,0))
-soilPalette(a$scaled.data$`A Horizons`$soil_color, lab = lab)
+soilPalette(tab$soil_color, lab = lab)
 title(main='Moist Soil Colors for Mollisols')
 mtext('Source: Official Series Descriptions', side = 1, font=2)
+
+
+# < 1 second
+system.time(a2 <- aggregateColor(x, groups = 'genhz', col = 'soil_color', k = 8))
+aggregateColorPlot(a2)
+
+tab <- a2$scaled.data$`A Horizons`
+tab <- tab[tab$weight > 0.005, ]
+
+# hack!
+# get the labels about right
+lab <- sprintf("%s (%i%%)", tab$munsell, round(tab$weight * 100))
+
+par(mar=c(2,0,2,0))
+soilPalette(tab$soil_color, lab = lab)
+title(main='Moist Soil Colors for Mollisols')
+mtext('Source: Official Series Descriptions', side = 1, font=2)
+
+
+
+# < 1 second
+system.time(a3 <- aggregateColor(x, groups = 'genhz', col = 'soil_color', profile_wt = 'ac'))
+
+tab <- a3$scaled.data$`A Horizons`
+tab <- tab[tab$weight > 0.01, ]
+
+# hack!
+# get the labels about right
+lab <- sprintf("%s (%i%%)", tab$munsell, round(tab$weight * 100))
+
+par(mar=c(2,0,2,0))
+soilPalette(tab$soil_color, lab = lab)
+title(main='Moist Soil Colors for Mollisols')
+mtext('Source: Official Series Descriptions', side = 1, font=2)
+
+
 
 ## not so useful here
 cq <- colorQuantiles(x$soil_color[which(x$genhz == 'A Horizons')])
