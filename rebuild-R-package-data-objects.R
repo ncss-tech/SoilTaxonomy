@@ -28,3 +28,8 @@ ST_formative_elements <- ST.formative_elements
 save(ST_formative_elements, file='R_pkg/data/ST_formative_elements.rda')
 
 
+## differences post-fixes
+library(diffobj)
+sink('ST-data/ST-manual-fixes.diff')
+diffFile('ST-data/ST-full.csv', 'ST-data/ST-full-fixed.csv', mode='unified', format='raw')
+sink()
