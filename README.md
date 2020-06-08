@@ -1,3 +1,10 @@
+## Previous Work
+
+   * [An Expert System for Soil Taxonomy (Galbraith et al., 1998)](https://journals.lww.com/soilsci/Fulltext/1998/09000/AN_EXPERT_SYSTEM_FOR_SOIL_TAXONOMY.8.aspx)
+   * [A Functional Analysis of Soil Taxonomy in Relation to Expert System Techniques (Galbraith and Bryant, 1998)](https://journals.lww.com/soilsci/Fulltext/1998/09000/A_FUNCTIONAL_ANALYSIS_OF_SOIL_TAXONOMY_IN_RELATION.7.aspx)
+
+
+
 ## Code related to Soil Taxonomy
 
 ## Promoting Understanding
