@@ -30,5 +30,8 @@ m.dist <- as.dist(m)
 str(m.dist)
 
 # not too bad!
-m['typic haploxeralfs', c('typic durixeralfs', 'abruptic durixeralfs', 'mollic haploxeralfs', 'typic duraqualfs')]
+m['typic haploxeralfs', c('typic durixeralfs', 'abruptic durixeralfs', 'mollic haploxeralfs', 'typic duraqualfs', 'lithic argiudolls')]
+
+# how does this compare with distances computed from unordered factor levels of hierarchy?
+
 
