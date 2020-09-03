@@ -1,11 +1,8 @@
 library(stringdist)
 library(SoilTaxonomy)
-
-
-x <- explainST('typic haploxeralfs', format = 'text')
-cat(x)
-
-
+library(reshape2)
+library(cluster)
+library(ape)
 
 # hierarchy to the subgroup
 data("ST", package = 'SoilTaxonomy')
@@ -15,6 +12,51 @@ data("ST_unique_list", package = 'SoilTaxonomy')
 
 # formative element dictionaries
 data('ST_formative_elements', package = 'SoilTaxonomy')
+
+
+x <- explainST('typic haploxeralfs', format = 'text')
+cat(x)
+
+# extract formative elements for a single subgroup
+# not vectorized
+sgfe <- function(x) {
+  fm <- SubGroupFormativeElements(x)
+  e <- fm$defs[[1]][['element']]
+  # keep track of each taxon
+  res <- data.frame(taxa = x, elements = e, stringsAsFactors = FALSE)
+  return(res)
+}
+
+# iterate over all subgroup
+taxa.fm <- lapply(ST$tax_subgroup[ST$tax_suborder == 'xeralfs'], sgfe)
+taxa.fm <- do.call('rbind', taxa.fm)
+
+# fake column for marking membership
+taxa.fm$bool <- TRUE
+
+# ok
+str(taxa.fm)
+
+# long -> wide
+z <- dcast(taxa.fm, taxa ~ elements, value.var = 'bool', fill = FALSE)
+
+# check: ok
+z[1:10, ]
+
+row.names(z) <- z$taxa
+d <- daisy(z[, -1])
+h <- diana(d)
+h <- as.phylo(as.hclust(h))
+
+
+## hmm... not that interesting
+par(mar = c(1,1,1,1))
+plot(h, cex = 0.5, label.offset = 0.1)
+
+
+## TODO: combine formative elements + taxonomic hierarchy -> distance matrix
+
+
 
 stringdist('typic haploxeralfs', 'typic xerorthents', method='qgram', q=4, nthread = 1)
 
