@@ -17,11 +17,23 @@ tf <- tempfile()
 download.file('https://github.com/ncss-tech/SoilTaxonomy/raw/master/databases/series_stats.csv.gz', destfile = tf)
 ss <- read.csv(tf, stringsAsFactors = FALSE)
 
+## KSSL / series
+tf <- tempfile()
+download.file('https://github.com/ncss-tech/SoilTaxonomy/raw/master/databases/kssl-records-per-series.csv.gz', destfile = tf)
+sl <- read.csv(tf, stringsAsFactors = FALSE)
+
+
 
 ## check
 head(sc)
 head(mlra)
 head(ss)
+head(sl)
 
 kable(mlra[mlra$series == 'SIERRA', ], row.names = FALSE)
 kable(mlra[mlra$series == 'MAGNOR', ], row.names = FALSE)
+
+kable(sl[sl$series == 'SIERRA', ], row.names = FALSE)
+
+
+
