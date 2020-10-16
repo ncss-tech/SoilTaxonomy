@@ -1,11 +1,11 @@
 Package: SoilTaxonomy
 Title: US Soil Taxonomy
-Description: What the package does (one paragraph).
+Description: Data dictionaries, formative element lists, and functions related to the maintenance and development of US Soil Taxonomy.
 Version: 0.0.0.9000
-Authors@R: c(person(given="Dylan", family="Beaudette", role = c("aut", "cre"), email = "dylan.beaudette@ca.usda.gov"))
+Authors@R: c(person(given="Dylan", family="Beaudette", role = c("aut", "cre"), email = "dylan.beaudette@usda.gov"), person(given="Andrew", family="Brown", email="andrew.g.brown@usda.gov", role = c("aut", "ctb")))
 Author: Dylan Beaudette [aut, cre]
-Maintainer: Dylan Beaudette <dylan.beaudette@ca.usda.gov>
-Depends: R (>= 3.4.1)
+Maintainer: Dylan Beaudette <dylan.beaudette@usda.gov>
+Depends: R (>= 3.5)
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyLoad: yes
@@ -19,4 +19,4 @@ Imports:
     data.tree
 Suggests: 
     testthat
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1

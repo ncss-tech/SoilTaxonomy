@@ -3,7 +3,18 @@
 # great group -> sub order
 # TODO: not reliable for sub order -> order, use manual matching
 # TODO: not robust to errors
-matchParentTaxa <- function(needle, haystack, qgram.size=4) {
+
+
+#' @title Match Parent Taxon / Taxa
+#' 
+#' @description Match the parent taxa (multiple) or taxon (single) via string distance computed from formative element lists.
+#' 
+#' @param needle search term, usually something like 'xeralfs'
+#' @param haystack word list
+#' @param qgram.size size of the q-gram, passed to \code{stringdist::stringdist()}
+#' @return first match
+#' 
+matchParentTaxa <- function(needle, haystack, qgram.size = 4) {
   # work with the unique set of things to find
   haystack <- unique(haystack)
   

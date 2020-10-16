@@ -5,16 +5,23 @@
 #' Matches are case insensitive.
 #' 
 #' @param needle vector of taxa
-#' @param level single level of Soil Taxonomy hierarchy: order, suborder, greatgroup, subgroup
+#' @param level single level of Soil Taxonomy hierarchy: tax_order, tax_suborder, tax_greatgroup, tax_subgroup
 #' 
 #' @return logical vector, same lenght as needle
 #' 
+#' @examples
+#' 
+#' # note specfifcation of taxonomic level
+#' isValidST('typic haploxeralfs', level = 'tax_subgroup')
+#' 
 #' @export
-isValidST <- function(needle, level) {
+isValidST <- function(needle, level = c('tax_order', 'tax_suborder', 'tax_greatgroup', 'tax_subgroup')) {
   
-  # sanity check
-  if(any(! level %in% c('tax_order', 'tax_suborder', 'tax_greatgroup', 'tax_subgroup')))
-    stop('level must be in `tax_order`, `tax_suborder`, `tax_greatgroup`, `tax_subgroup`', call. = FALSE)
+  # safely match level
+  level <- match.arg(level)
+  
+  # for R CMD check
+  ST_unique_list <- NULL
   
   # load local copy of unique taxa
   load(system.file("data/ST_unique_list.rda", package="SoilTaxonomy")[1])
@@ -29,3 +36,4 @@ isValidST <- function(needle, level) {
   res <- ! sapply(res, is.na)
   return(res)
 }
+

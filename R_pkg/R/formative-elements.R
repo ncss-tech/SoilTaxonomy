@@ -6,6 +6,7 @@
 }
 
 # safely extract elements from a list, filling with NA when list element is empty
+#' @importFrom stats na.omit
 .safelyPickNotNA <- function(i) {
   
   if(all(is.na(i))) {
@@ -16,44 +17,23 @@
   }
 }
 
-#' Check for valid order | suborder | greatgroup | subgroup.
-#' 
-#' This function can be used to quickly test for valid levels within the 
-#' Soil Taxonomy hierarchy, a defined within the 13th edition of The Keys to Soil Taxonomy.
-#' Matches are case insensitive.
-#' 
-#' @param needle vector of taxa
-#' @param level single level of Soil Taxonomy hierarchy: order, suborder, greatgroup, subgroup
-#' 
-#' @return logical vector, same lenght as needle
-#' 
-#' @export
-isValidST <- function(needle, level) {
-  
-  # sanity check
-  if(any(! level %in% c('tax_order', 'tax_suborder', 'tax_greatgroup', 'tax_subgroup')))
-    stop('level must be in `tax_order`, `tax_suborder`, `tax_greatgroup`, `tax_subgroup`', call. = FALSE)
-  
-  # load local copy of unique taxa
-  load(system.file("data/ST_unique_list.rda", package="SoilTaxonomy")[1])
-  
-  # load required elements
-  haystack <- ST_unique_list[[level]]
-  
-  # matching is done in lower case
-  needle <- tolower(needle)
-  res <- match(needle, haystack)
-  
-  res <- ! sapply(res, is.na)
-  return(res)
-}
+
 
 # determine soil order and index to character position
 # relies on ST_formative_elements
 #' @importFrom purrr map2_chr map_int map pluck
 #' @importFrom stringi stri_match_last_regex stri_locate_last_regex
 #' @export
+#' 
+#' @title Extract Soil Order Formative Elements
+#' @author D.E. Beaudette
+#' 
+#' @param x vector of soil order taxa
+#' @return a \code{list}
 OrderFormativeElements <- function(x) {
+  
+  # for R CMD check
+  ST_formative_elements <- NULL
   
   # load local copy of formative elements
   load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
@@ -107,7 +87,17 @@ OrderFormativeElements <- function(x) {
 #' @importFrom purrr map2_chr map_int map pluck map_if
 #' @importFrom stringi stri_match_last_regex stri_locate_last_regex
 #' @export
+#' 
+#' @title Extract Suborder Formative Elements
+#' @author D.E. Beaudette
+#' 
+#' @param x vector of suborder taxa
+#' @return a \code{list}
 SubOrderFormativeElements <- function(x) {
+  
+  # for R CMD check
+  ST_unique_list <- NULL
+  ST_formative_elements <- NULL
   
   # load local copy of formative elements
   load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
@@ -249,7 +239,17 @@ SubOrderFormativeElements <- function(x) {
 #' @importFrom purrr map2_chr map_int map
 #' @importFrom stringi stri_replace_last_fixed stri_locate_last_regex
 #' @export
+#' 
+#' @title Extract Greatgroup Formative Elements
+#' @author D.E. Beaudette
+#' 
+#' @param x vector of greatgroup taxa
+#' @return a \code{list}
 GreatGroupFormativeElements <- function(x) {
+  
+  # for R CMD check
+  ST_unique_list <- NULL
+  ST_formative_elements <- NULL
   
   # load local copy of formative elements
   load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
@@ -317,7 +317,17 @@ GreatGroupFormativeElements <- function(x) {
 #' @importFrom purrr map
 #' @importFrom stringi stri_replace_last_fixed stri_trim_right stri_locate_last_regex
 #' @export
+#' 
+#' @title Extract Subgroup Formative Elements
+#' @author D.E. Beaudette
+#' 
+#' @param x vector of subgroup taxa
+#' @return a \code{list}
 SubGroupFormativeElements <- function(x) {
+  
+  # for R CMD check
+  ST_unique_list <- NULL
+  ST_formative_elements <- NULL
   
   # load local copy of formative elements
   load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
