@@ -1,6 +1,6 @@
-#' Decompose Soil Taxonomy Taxon Letter Code to a list of Parent Codes
+#' Decompose Soil Taxonomy Taxon Letter Codes to a list of Parent Codes
 #' 
-#' @description Uses standard rules: Code "ABC" returns "A", "AB", "ABC". Also, accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character positon." Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}) or other sources of taxon names. This is the "logic" that underlies the \href{https://brownag.shinyapps.io/kstlookup/}{KSTLookup} app.
+#' @description Uses standard rules: Code "ABC" returns "A", "AB", "ABC". Also, accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character positon." Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the "logic" that underlies the \href{https://brownag.shinyapps.io/kstlookup/}{KSTLookup} app.
 #' 
 #' @param codes A character vector of taxon codes to decompose.
 #'
@@ -103,7 +103,7 @@ taxon_code_to_taxon <- function(code) {
   # for R CMD check
   ST_higher_taxa_codes_12th <- NULL
   
-  # load local copy of formative elements
+  # load local copy of taxon code lookup table
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
   # return matches
@@ -126,7 +126,7 @@ taxon_to_taxon_code <- function(taxon) {
   # for R CMD check
   ST_higher_taxa_codes_12th <- NULL
   
-  # load local copy of formative elements
+  # load local copy of taxon code lookup table
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
   # return matches
