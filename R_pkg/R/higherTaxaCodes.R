@@ -117,7 +117,7 @@ taxon_code_to_taxon <- function(code) {
 #' @return A character vector of matching Taxon Codes
 #' @export
 #' 
-#' @seealso \code{\link{decompose_taxon_code}}, \code{\link{preceding_taxon_codes}, \code{\link{taxon_code_to_taxon}}}
+#' @seealso \code{\link{decompose_taxon_code}}, \code{\link{preceding_taxon_codes}}, \code{\link{taxon_code_to_taxon}}
 #'
 #' @examples
 #' taxon_to_taxon_code("Anhyturbels")

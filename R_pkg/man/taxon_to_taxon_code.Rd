@@ -19,5 +19,5 @@ Convert Taxon to Taxon Code
 taxon_to_taxon_code("Anhyturbels")
 }
 \seealso{
-\code{\link{decompose_taxon_code}}, \code{\link{preceding_taxon_codes}, \code{\link{taxon_code_to_taxon}}}
+\code{\link{decompose_taxon_code}}, \code{\link{preceding_taxon_codes}}, \code{\link{taxon_code_to_taxon}}
 }
