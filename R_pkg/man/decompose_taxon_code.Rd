@@ -16,8 +16,9 @@ A list with equal length to input vector and multiple values per element.
 Uses standard rules: Code "ABC" returns "A", "AB", "ABC". Also, accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character positon." Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the "logic" that underlies the \href{https://brownag.shinyapps.io/kstlookup/}{KSTLookup} app.
 }
 \examples{
-decompose_taxon_code("ABC")
-decompose_taxon_code(c("ABCDe","BCDEf"))
+
+decompose_taxon_code(c("ABC","ABCDe","BCDEf"))
+
 }
 \seealso{
 \code{\link{preceding_taxon_codes}}, \code{\link{taxon_code_to_taxon}}, \code{\link{taxon_to_taxon_code}}

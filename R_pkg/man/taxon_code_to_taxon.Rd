@@ -16,7 +16,9 @@ A character vector of matching Taxon Names
 Convert Taxon Code to Taxon
 }
 \examples{
-taxon_code_to_taxon("ABC")
+
+taxon_code_to_taxon(c("ABC","XYZ","DAB",NA))
+
 }
 \seealso{
 \code{\link{decompose_taxon_code}}, \code{\link{preceding_taxon_codes}}, \code{\link{taxon_to_taxon_code}}

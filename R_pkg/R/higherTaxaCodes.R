@@ -11,8 +11,9 @@
 #' @export
 #'
 #' @examples
-#' decompose_taxon_code("ABC")
-#' decompose_taxon_code(c("ABCDe","BCDEf"))
+#' 
+#' decompose_taxon_code(c("ABC","ABCDe","BCDEf"))
+#' 
 decompose_taxon_code <- function(codes) {
   clevels <- sapply(codes, function(cr) strsplit(cr, character(0)))
   clevel.sub <- lapply(clevels, function(cl) grepl("[a-z]", cl[length(cl)]))
@@ -46,7 +47,9 @@ decompose_taxon_code <- function(codes) {
 #' @seealso \code{\link{decompose_taxon_code}}, \code{\link{taxon_code_to_taxon}}, \code{\link{taxon_to_taxon_code}}
 #'
 #' @examples
+#' 
 #' preceding_taxon_codes(c("ABCDe","BCDEf"))
+#' 
 preceding_taxon_codes <- function(codes) {
   lapply(codes, function(i) {
     out <- vector(mode = 'list',
@@ -97,7 +100,9 @@ preceding_taxon_codes <- function(codes) {
 #' @seealso \code{\link{decompose_taxon_code}}, \code{\link{preceding_taxon_codes}}, \code{\link{taxon_to_taxon_code}}
 #'
 #' @examples
-#' taxon_code_to_taxon("ABC")
+#' 
+#' taxon_code_to_taxon(c("ABC","XYZ","DAB",NA))
+#' 
 taxon_code_to_taxon <- function(code) {
   
   # for R CMD check
@@ -107,7 +112,11 @@ taxon_code_to_taxon <- function(code) {
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
   # return matches
-  return(ST_higher_taxa_codes_12th[which(ST_higher_taxa_codes_12th$code == code), 'taxon'])
+  idx <- code %in% ST_higher_taxa_codes_12th$code 
+  res <- vector("character", length(idx))
+  res[!idx] <- NA
+  res[idx] <- ST_higher_taxa_codes_12th[which(ST_higher_taxa_codes_12th$code %in% code), 'taxon']
+  return(res)
 }
 
 #' Convert Taxon to Taxon Code
@@ -120,7 +129,9 @@ taxon_code_to_taxon <- function(code) {
 #' @seealso \code{\link{decompose_taxon_code}}, \code{\link{preceding_taxon_codes}}, \code{\link{taxon_code_to_taxon}}
 #'
 #' @examples
-#' taxon_to_taxon_code("Anhyturbels")
+#' 
+#' taxon_to_taxon_code(c("Anhyturbels","foo","Cryaquands",NA))
+#' 
 taxon_to_taxon_code <- function(taxon) {
   
   # for R CMD check
@@ -130,6 +141,52 @@ taxon_to_taxon_code <- function(taxon) {
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
   # return matches
-  return(ST_higher_taxa_codes_12th[which(ST_higher_taxa_codes_12th$taxon == taxon), 'code'])
+  idx <- taxon %in% ST_higher_taxa_codes_12th$taxon 
+  res <- vector("character", length(idx))
+  res[!idx] <- NA
+  res[idx] <- ST_higher_taxa_codes_12th[which(ST_higher_taxa_codes_12th$taxon %in% taxon), 'code']
+  return(res)
+}
+
+#' Determine Relative Position of Taxon within Existing Keys 
+#'
+#' @description The relative position of a taxon is `[number of preceding Key steps] + 1`, or `NA` if it does not exist in the lookup table.
+#' 
+#' @param code A character vector of taxon codes to determine the relative position of.
+#'
+#' @return A numeric vector with the relative position of each code with respect to their individual Keys.
+#' 
+#' @export
+#'
+#' @examples
+#' 
+#' # "ABCD" -> "Gypsic Anhyturbels", relative position 7
+#' # "WXYZa" does not exist, theoretical position is 97
+#' # "BAD" -> "Udifolists", relative position is 5
+#' 
+#' relative_taxon_code_position(c("ABCD", "WXYZa", "BAD"))
+#' 
+#' # [1]  7 NA  5
+#' 
+relative_taxon_code_position <- function(code) {
+  
+  # calculate theoretical positions for each code
+  res <- sapply(preceding_taxon_codes(code), function(x) {
+    return(length(x) + 1)
+  })
+  
+  # non-existent codes return NA
+  tst <- vapply(taxon_code_to_taxon(code), FUN.VALUE = logical(1), is.na)
+  bad_idx <- which(tst)
+  
+  if (length(tst) == 0) { 
+    return(NA)
+  } else if (length(tst) > 0 & 
+             length(bad_idx) == 0) {
+    return(res)
+  } 
+  
+  res[bad_idx] <- NA
+  return(res)
 }
 
