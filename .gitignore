@@ -1,2 +1,5 @@
 *.json
 subgroups.tgz
+.Rproj.user
+.Rhistory
+*.Rproj
