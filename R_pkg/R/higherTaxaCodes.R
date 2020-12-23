@@ -1,10 +1,12 @@
-#' Decompose Soil Taxonomy Taxon Letter Codes to a list of Parent Codes
+#' Decompose Soil Taxonomy Taxon Letter Codes to Parent Codes
 #' 
-#' @description Uses standard rules: Code "ABC" returns "A", "AB", "ABC". Also, accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character positon." Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the "logic" that underlies the \href{https://brownag.shinyapps.io/kstlookup/}{KSTLookup} app.
+#' @description Find all codes that logically comprise the specified codes. For instance, code "ABC" ("Anhyturbels") returns "A" ("Gelisols"), "AB" ("Turbels"), "ABC" ("Anhyturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the "logic" that underlies the \href{https://brownag.shinyapps.io/kstlookup/}{KSTLookup} app.
 #' 
-#' @param codes A character vector of taxon codes to decompose.
+#' @details Accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character position." 
+#' 
+#' @param codes A character vector of taxon codes to "decompose"
 #'
-#' @return A list with equal length to input vector and multiple values per element.
+#' @return A list with equal length to input vector; one character vector per element
 #' 
 #' @seealso \code{\link{preceding_taxon_codes}}, \code{\link{taxon_code_to_taxon}}, \code{\link{taxon_to_taxon_code}}
 #'
@@ -12,7 +14,7 @@
 #'
 #' @examples
 #' 
-#' decompose_taxon_code(c("ABC","ABCDe","BCDEf"))
+#' decompose_taxon_code(c("ABC", "ABCDe", "BCDEf"))
 #' 
 decompose_taxon_code <- function(codes) {
   clevels <- sapply(codes, function(cr) strsplit(cr, character(0)))
@@ -37,18 +39,20 @@ decompose_taxon_code <- function(codes) {
 
 #' Identify Taxon Codes of Logically Preceding Taxa
 #'
-#' @description Find all codes that logically precede the specified codes. Also, accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character positon." Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the logic that fundamentally underlies the \href{https://brownag.shinyapps.io/kstpreceding/}{KSTPreceding} app.
+#' @description Find all codes that logically precede the specified codes. For instance, code "ABC" ("Anhyturbels") returns "AA"  ("Histels") "ABA" ("Histoturbels") and "ABB" ("Aquiturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the logic that underlies the \href{https://brownag.shinyapps.io/kstpreceding/}{KSTPreceding} app.
 #' 
-#' @param codes A character vector of codes to identify preceding codes for.
+#' @details  Accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character position."
+#' 
+#' @param codes A character vector of codes to calculate preceding codes for
 #'
-#' @return A list with equal length to input vector and multiple values per element.
+#' @return A list with equal length to input vector; one character vector per element
 #' @export
 #' 
 #' @seealso \code{\link{decompose_taxon_code}}, \code{\link{taxon_code_to_taxon}}, \code{\link{taxon_to_taxon_code}}
 #'
 #' @examples
 #' 
-#' preceding_taxon_codes(c("ABCDe","BCDEf"))
+#' preceding_taxon_codes(c("ABCDe", "BCDEf"))
 #' 
 preceding_taxon_codes <- function(codes) {
   lapply(codes, function(i) {
@@ -101,7 +105,7 @@ preceding_taxon_codes <- function(codes) {
 #'
 #' @examples
 #' 
-#' taxon_code_to_taxon(c("ABC","XYZ","DAB",NA))
+#' taxon_code_to_taxon(c("ABC", "XYZ", "DAB", NA))
 #' 
 taxon_code_to_taxon <- function(code) {
   
@@ -124,13 +128,14 @@ taxon_code_to_taxon <- function(code) {
 #' @param taxon A character vector of Taxon Names
 #'
 #' @return A character vector of matching Taxon Codes
+#' 
 #' @export
 #' 
 #' @seealso \code{\link{decompose_taxon_code}}, \code{\link{preceding_taxon_codes}}, \code{\link{taxon_code_to_taxon}}
 #'
 #' @examples
 #' 
-#' taxon_to_taxon_code(c("Anhyturbels","foo","Cryaquands",NA))
+#' taxon_to_taxon_code(c("Anhyturbels", "foo", "Cryaquands", NA))
 #' 
 taxon_to_taxon_code <- function(taxon) {
   

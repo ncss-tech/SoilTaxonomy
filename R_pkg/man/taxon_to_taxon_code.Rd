@@ -17,7 +17,7 @@ Convert Taxon to Taxon Code
 }
 \examples{
 
-taxon_to_taxon_code(c("Anhyturbels","foo","Cryaquands",NA))
+taxon_to_taxon_code(c("Anhyturbels", "foo", "Cryaquands", NA))
 
 }
 \seealso{

@@ -2,22 +2,25 @@
 % Please edit documentation in R/higherTaxaCodes.R
 \name{decompose_taxon_code}
 \alias{decompose_taxon_code}
-\title{Decompose Soil Taxonomy Taxon Letter Codes to a list of Parent Codes}
+\title{Decompose Soil Taxonomy Taxon Letter Codes to Parent Codes}
 \usage{
 decompose_taxon_code(codes)
 }
 \arguments{
-\item{codes}{A character vector of taxon codes to decompose.}
+\item{codes}{A character vector of taxon codes to "decompose"}
 }
 \value{
-A list with equal length to input vector and multiple values per element.
+A list with equal length to input vector; one character vector per element
 }
 \description{
-Uses standard rules: Code "ABC" returns "A", "AB", "ABC". Also, accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character positon." Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the "logic" that underlies the \href{https://brownag.shinyapps.io/kstlookup/}{KSTLookup} app.
+Find all codes that logically comprise the specified codes. For instance, code "ABC" ("Anhyturbels") returns "A" ("Gelisols"), "AB" ("Turbels"), "ABC" ("Anhyturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the "logic" that underlies the \href{https://brownag.shinyapps.io/kstlookup/}{KSTLookup} app.
+}
+\details{
+Accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character position."
 }
 \examples{
 
-decompose_taxon_code(c("ABC","ABCDe","BCDEf"))
+decompose_taxon_code(c("ABC", "ABCDe", "BCDEf"))
 
 }
 \seealso{

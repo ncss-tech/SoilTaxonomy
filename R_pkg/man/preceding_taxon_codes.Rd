@@ -7,17 +7,20 @@
 preceding_taxon_codes(codes)
 }
 \arguments{
-\item{codes}{A character vector of codes to identify preceding codes for.}
+\item{codes}{A character vector of codes to calculate preceding codes for}
 }
 \value{
-A list with equal length to input vector and multiple values per element.
+A list with equal length to input vector; one character vector per element
 }
 \description{
-Find all codes that logically precede the specified codes. Also, accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character positon." Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the logic that fundamentally underlies the \href{https://brownag.shinyapps.io/kstpreceding/}{KSTPreceding} app.
+Find all codes that logically precede the specified codes. For instance, code "ABC" ("Anhyturbels") returns "AA"  ("Histels") "ABA" ("Histoturbels") and "ABB" ("Aquiturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the logic that underlies the \href{https://brownag.shinyapps.io/kstpreceding/}{KSTPreceding} app.
+}
+\details{
+Accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character position."
 }
 \examples{
 
-preceding_taxon_codes(c("ABCDe","BCDEf"))
+preceding_taxon_codes(c("ABCDe", "BCDEf"))
 
 }
 \seealso{

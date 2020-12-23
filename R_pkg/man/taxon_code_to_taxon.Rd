@@ -17,7 +17,7 @@ Convert Taxon Code to Taxon
 }
 \examples{
 
-taxon_code_to_taxon(c("ABC","XYZ","DAB",NA))
+taxon_code_to_taxon(c("ABC", "XYZ", "DAB", NA))
 
 }
 \seealso{
