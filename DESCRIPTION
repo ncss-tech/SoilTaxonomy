@@ -1,0 +1,16 @@
+Package: SoilTaxonomy
+Title: US Soil Taxonomy
+Description: Data dictionaries, formative element lists, and functions related to the maintenance and development of US Soil Taxonomy.
+Version: 0.0.0.9001
+Authors@R: c(person(given="Dylan", family="Beaudette", role = c("aut"), email = "dylan.beaudette@usda.gov"), person(given="Andrew", family="Brown", email="andrew.g.brown@usda.gov", role = c("aut", "cre")))
+Maintainer: Andrew Gene Brown <andrew.g.brown@usda.gov>
+Depends: R (>= 3.5)
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyLoad: yes
+Repository: CRAN
+URL: https://github.com/ncss-tech/SoilTaxonomy
+BugReports: https://github.com/ncss-tech/SoilTaxonomyissues
+Imports: stringr
+Suggests: testthat
+RoxygenNote: 7.1.1

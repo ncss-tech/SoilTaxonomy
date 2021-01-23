@@ -4,7 +4,7 @@
 #' 
 #' @details Accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character position." 
 #' 
-#' @param codes A character vector of taxon codes to "decompose"
+#' @param codes A character vector of taxon codes to "decompose" -- case sensitive
 #'
 #' @return A list with equal length to input vector; one character vector per element
 #' 
@@ -17,29 +17,39 @@
 #' decompose_taxon_code(c("ABC", "ABCDe", "BCDEf"))
 #' 
 decompose_taxon_code <- function(codes) {
-  clevels <- sapply(codes, function(cr) strsplit(cr, character(0)))
-  clevel.sub <- lapply(clevels, function(cl) grepl("[a-z]", cl[length(cl)]))
-  inter <- lapply(clevels, function(l) {
-    res <- vector("list", length(l))
-    for (i in 1:length(l)) {
-      res[i] <- paste0(l[1:i], collapse = "")
-    }
-    return(res)
-  })
-  out <- lapply(1:length(inter), function(j) {
-    res <- inter[j][[1]]
-    if (clevel.sub[[names(inter[j])]]) {
-      res[length(res) - 1] <- NULL
-    }
-    return(res)
-  })
-  names(out) <- codes
-  return(out)
+  na.mask <- is.na(codes)
+  fin <- vector(mode = 'list', length = length(na.mask))
+  fin[na.mask] <- NA 
+  codes.nona <- codes[!na.mask]
+  
+  if(any(!na.mask)) {
+    clevels <- sapply(codes.nona, function(cr) strsplit(cr, character(0)))
+    clevel.sub <- lapply(clevels, function(cl) grepl("[a-z]", cl[length(cl)]))
+    
+    inter <- lapply(clevels, function(l) {
+      res <- vector("list", length(l))
+      for (i in 1:length(l)) {
+        res[i] <- paste0(l[1:i], collapse = "")
+      }
+      return(res)
+    })
+    
+    out <- lapply(1:length(inter), function(j) {
+      res <- inter[j][[1]]
+      if (clevel.sub[[names(inter[j])]]) {
+        res[length(res) - 1] <- NULL
+      }
+      return(res)
+    })
+    fin[!na.mask] <- out
+  }
+  names(fin) <- codes
+  return(fin)
 }
 
 #' Identify Taxon Codes of Logically Preceding Taxa
 #'
-#' @description Find all codes that logically precede the specified codes. For instance, code "ABC" ("Anhyturbels") returns "AA"  ("Histels") "ABA" ("Histoturbels") and "ABB" ("Aquiturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the logic that underlies the \href{https://brownag.shinyapps.io/kstpreceding/}{KSTPreceding} app.
+#' @description Find all codes that logically precede the specified codes. For instance, code "ABC" ("Anhyturbels") returns "AA" ("Histels") "ABA" ("Histoturbels") and "ABB" ("Aquiturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). This is the logic that underlies the \href{https://brownag.shinyapps.io/kstpreceding/}{KSTPreceding} app.
 #' 
 #' @details  Accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character position."
 #' 
@@ -125,7 +135,7 @@ taxon_code_to_taxon <- function(code) {
 
 #' Convert Taxon to Taxon Code
 #'
-#' @param taxon A character vector of Taxon Names
+#' @param taxon A character vector of Taxon Names -- case insensitive
 #'
 #' @return A character vector of matching Taxon Codes
 #' 
@@ -146,10 +156,10 @@ taxon_to_taxon_code <- function(taxon) {
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
   # return matches
-  idx <- taxon %in% ST_higher_taxa_codes_12th$taxon 
+  idx <- tolower(taxon) %in% tolower(ST_higher_taxa_codes_12th$taxon)
   res <- vector("character", length(idx))
   res[!idx] <- NA
-  res[idx] <- ST_higher_taxa_codes_12th[which(ST_higher_taxa_codes_12th$taxon %in% taxon), 'code']
+  res[idx] <- ST_higher_taxa_codes_12th[which(tolower(ST_higher_taxa_codes_12th$taxon) %in% tolower(taxon)), 'code']
   return(res)
 }
 
