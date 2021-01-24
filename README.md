@@ -4,6 +4,12 @@
 
 # SoilTaxonomy
 
+Tools for understanding and interacting with concepts in the U.S. Soil Taxonomic System. Most of the current utilities are for working with taxonomic concepts at the "higher" taxonomic levels: **Order**, **Suborder**, **Great Group**, and **Subgroup**. 
+
+The **R** package is still in early stages of development, but is entering an "active testing" phase as the scope and application of these tools has become refined over time.
+
+The `./inst/extdata` folder (formerly `./databases`) of this repository contains a variety of assets related to taxonomic and map unit concepts within the U.S. Soil Survey Geographic Database (SSURGO). See "_Static Databases_" below for more.
+
 ## Installation
 
 Get the development version from Github. 
@@ -12,131 +18,209 @@ Get the development version from Github.
 remotes::install_github("ncss-tech/SoilTaxonomy")
 ```
 
-## Basic Usage
-```r
+``` r
 library(SoilTaxonomy)
+```
 
-# hierarchy to the subgroup
-data("ST", package = 'SoilTaxonomy')
+### Soil Taxonomy "Data Dictionaries" 
 
-# unique taxa
-data("ST_unique_list", package = 'SoilTaxonomy')
+``` r
+# hierarchy: order to subgroup
+data('ST', package = 'SoilTaxonomy')
 
-# formative element dictionaries
+# unique taxa: just the names
+data('ST_unique_list', package = 'SoilTaxonomy')
+
+# formative element dictionary
 data('ST_formative_elements', package = 'SoilTaxonomy')
 
-# label formative elements in the hierarchy with brief explanations
+# codes denoting higher taxonomic parent-child relationships (12th Edition Keys to Soil Taxonomy)
+data('ST_higher_taxa_codes_12th', package = 'SoilTaxonomy')
+```
+
+### Functions
+
+#### `getTaxonAtLevel`: Get taxonomic levels within higher taxonomic groups
+
+##### HHCH = _Acrudoxic Plinthic Kandiudults_
+
+``` r
+getTaxonAtLevel('acrudoxic plinthic kandiudults') # level = "order" # default
+#>       HCCH 
+#> "ultisols"
+
+getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "suborder")
+#>     HCCH 
+#> "udults"
+
+getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "greatgroup")
+#>          HCCH 
+#> "kandiudults"
+
+getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "subgroup")
+#>                             HCCH 
+#> "acrudoxic plinthic kandiudults"
+```
+
+#### BA = _Folists_
+
+```r
+getTaxonAtLevel('folists')
+#>          BA 
+#> "histosols"
+
+getTaxonAtLevel('folists', level = "suborder")
+#>        BA 
+#> "folists"
+
+getTaxonAtLevel('folists', level = "greatgroup")
+#> $BA
+#> NULL
+
+getTaxonAtLevel('folists', level = "subgroup")
+#> $BA
+#> NULL
+
+```
+
+#### `explainST`: Label formative elements with brief explanations
+
+``` r
 cat(explainST('typic endoaqualfs'))
+#> typic endoaqualfs
+#> |     |   |  |                                                                                      
+#> central theme of subgroup concept                                                                   
+#>       |   |  |                                                                                      
+#>       ground water table                                                                            
+#>           |  |                                                                                      
+#>           characteristics associated with wetness                                                   
+#>              |                                                                                      
+#>              soils with an argillic, kandic, or natric horizon
 
 cat(explainST('abruptic haplic durixeralfs'))
+#> abruptic haplic durixeralfs
+#>          |      |   |  |                                                                            
+#>          abrupt textural change                                                                     
+#>                 |   |  |                                                                            
+#>                 presence of a duripan                                                               
+#>                     |  |                                                                            
+#>                     xeric SMR                                                                       
+#>                        |                                                                            
+#>                        soils with an argillic, kandic, or natric horizon
 
-cat(explainST('aeric umbric endoaqualfs'))
+# convert "taxon code" to taxon name (subgroup)
+cat(explainST(taxon_code_to_taxon("ABCD"))) # ABCD = gypsic anhyturbels
+#> gypsic anhyturbels
+#> |      |   |   |                                                                                    
+#> presence of gypsic horizon                                                                          
+#>        |   |   |                                                                                    
+#>        very dry                                                                                     
+#>            |   |                                                                                    
+#>            presence of cryoturbation                                                                
+#>                |                                                                                    
+#>                soils with permafrost or gelic material within 100cm
 ```
 
-```
-typic endoaqualfs
-|     |   |  |                                                                                      
-central theme of subgroup concept                                                                   
-      |   |  |                                                                                      
-      ground water table                                                                            
-          |  |                                                                                      
-          characteristics associated with wetness                                                   
-             |                                                                                      
-             soils with an argillic, kandic, or natric horizon
-             
+## Static Databases
 
-abruptic haplic durixeralfs
-|        |      |   |  |                                                                            
-abrupt textural change                                                                              
-         |      |   |  |                                                                            
-         central theme of subgroup concept                                                          
-                |   |  |                                                                            
-                presence of a duripan                                                               
-                    |  |                                                                            
-                    xeric SMR                                                                       
-                       |                                                                            
-                       soils with an argillic, kandic, or natric horizon                  
+The static data products in this repository include: 
 
-                       
-aeric umbric endoaqualfs
-|     |      |   |  |                                                                               
-more aeration than typic subgroup                                                                   
-      |      |   |  |                                                                               
-      presence of an umbric epipedon                                                                
-             |   |  |                                                                               
-             ground water table                                                                     
-                 |  |                                                                               
-                 characteristics associated with wetness                                            
-                    |                                                                               
-                    soils with an argillic, kandic, or natric horizon   
-```
+ - Statistics on: taxonomic subgroups, family-level components, and soil series. 
+ - MLRA Overlap tables: for series, national map unit symbols and map unit keys. 
+ - Summaries of: KSSL records per series as well as geomorphic position, parent material origin and kind.
+ 
+**NOTICE:** In the near future, these products may (depending on their data requirements) be:
 
-## data.tree
+ 1. Converted to internal (R package) data sets in `SoilTaxonomy`, or possibly a new "data" package
+ 2. Routinely generated and provided via [SoilKnowledgeBase](https://github.com/ncss-tech/SoilKnowledgeBase) 
+ 3. Provided via a new API (from SoilWeb or ?)
 
-Inverted hierarchy
-```r
+They will after that point be removed from this repository.
+
+## Visualize and Extend with `data.tree`
+
+Static data sets in this R package can be readily visualized with the `data.tree` package.
+
+
+### Example: show "parent" taxa (Subgroup -> Great Group -> Suborder -> Order)
+
+``` r
+library(SoilTaxonomy)
+library(data.tree)
+
 # load the full hierarchy at the subgroup level
 data("ST", package = 'SoilTaxonomy')
 
 # pick 10 taxa
-x <- ST[sample(1:nrow(ST), size = 10), ]
+x <- ST[sample(1:nrow(ST), size = 10),]
 
 # construct path
 # note: must include a top-level ("ST") in the hierarchy
-path <- with(x, paste('ST', tax_subgroup, tax_greatgroup, tax_suborder, tax_order, sep = '/'))
+path <- with(x, paste('ST', tax_subgroup,
+                      tax_greatgroup,
+                      tax_suborder,
+                      tax_order,
+                      sep = '/'
+))
 
 # convert to data.tree object
-n <- as.Node(data.frame(pathString=path), pathDelimiter = '/')
+n <- as.Node(data.frame(pathString = path), pathDelimiter = '/')
 
 # print
-print(n, limit=NULL)
+print(n, limit = NULL)
 ```
-<pre style="font-size: 10em;">
-1  ST                           
-2   ¦--humic inceptic eutroperox
-3   ¦   °--eutroperox           
-4   ¦       °--perox            
-5   ¦           °--oxisols      
-6   ¦--xeric calcigypsids       
-7   ¦   °--calcigypsids         
-8   ¦       °--gypsids          
-9   ¦           °--aridisols    
-10  ¦--hydric melanaquands      
-11  ¦   °--melanaquands         
-12  ¦       °--aquands          
-13  ¦           °--andisols     
-14  ¦--aquic humicryods         
-15  ¦   °--humicryods           
-16  ¦       °--cryods           
-17  ¦           °--spodosols    
-18  ¦--aquic pachic hapludolls  
-19  ¦   °--hapludolls           
-20  ¦       °--udolls           
-21  ¦           °--mollisols    
-22  ¦--alfic haplustands        
-23  ¦   °--haplustands          
-24  ¦       °--ustands          
-25  ¦           °--andisols     
-26  ¦--humic sombriperox        
-27  ¦   °--sombriperox          
-28  ¦       °--perox            
-29  ¦           °--oxisols      
-30  ¦--grossarenic endoaquults  
-31  ¦   °--endoaquults          
-32  ¦       °--aquults          
-33  ¦           °--ultisols     
-34  ¦--ustic gypsiargids        
-35  ¦   °--gypsiargids          
-36  ¦       °--argids           
-37  ¦           °--aridisols    
-38  °--fibric haplohemists      
-39      °--haplohemists         
-40          °--hemists          
-41              °--histosols
-</pre>
 
-(pending) Examples related to linked external data.
-<pre style="font-size: 10em;">
+``` r
+#>                      levelName
+#> 1  ST                         
+#> 2   ¦--andic haplocryods      
+#> 3   ¦   °--haplocryods        
+#> 4   ¦       °--cryods         
+#> 5   ¦           °--spodosols  
+#> 6   ¦--xeric vitricryands     
+#> 7   ¦   °--vitricryands       
+#> 8   ¦       °--cryands        
+#> 9   ¦           °--andisols   
+#> 10  ¦--lithic natrargids      
+#> 11  ¦   °--natrargids         
+#> 12  ¦       °--argids         
+#> 13  ¦           °--aridisols  
+#> 14  ¦--vertic haplocambids    
+#> 15  ¦   °--haplocambids       
+#> 16  ¦       °--cambids        
+#> 17  ¦           °--aridisols  
+#> 18  ¦--natric vermaqualfs     
+#> 19  ¦   °--vermaqualfs        
+#> 20  ¦       °--aqualfs        
+#> 21  ¦           °--alfisols   
+#> 22  ¦--entic calcitorrerts    
+#> 23  ¦   °--calcitorrerts      
+#> 24  ¦       °--torrerts       
+#> 25  ¦           °--vertisols  
+#> 26  ¦--petrogypsic anhyorthels
+#> 27  ¦   °--anhyorthels        
+#> 28  ¦       °--orthels        
+#> 29  ¦           °--gelisols   
+#> 30  ¦--typic anhyorthels      
+#> 31  ¦   °--anhyorthels        
+#> 32  ¦       °--orthels        
+#> 33  ¦           °--gelisols   
+#> 34  ¦--aeric haplowassents    
+#> 35  ¦   °--haplowassents      
+#> 36  ¦       °--wassents       
+#> 37  ¦           °--entisols   
+#> 38  °--humaqueptic epiaquents 
+#> 39      °--epiaquents         
+#> 40          °--aquents        
+#> 41              °--entisols
+```
+
+### More examples coming soon!
+
+<!--
+
+### Example: Acres by Suborder, Great Group and Subgroup
+```
                                   levelName       ac
 1  xeralfs                                     16554816
 2   ¦--durixeralfs                              1704451
@@ -207,6 +291,5 @@ print(n, limit=NULL)
 67  ¦   °--vertic rhodoxeralfs                     2431
 68  °--plinthoxeralfs                                 0
 69      °--typic plinthoxeralfs                       0
-</pre>
-
-
+```
+-->
