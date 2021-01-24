@@ -99,14 +99,16 @@ cat(explainST('typic endoaqualfs'))
 
 cat(explainST('abruptic haplic durixeralfs'))
 #> abruptic haplic durixeralfs
+#> |        |      |   |  |                                                                            
+#> abrupt textural change                                                                              
 #>          |      |   |  |                                                                            
-#>          abrupt textural change                                                                     
+#>          central theme of subgroup concept                                                          
 #>                 |   |  |                                                                            
 #>                 presence of a duripan                                                               
 #>                     |  |                                                                            
 #>                     xeric SMR                                                                       
 #>                        |                                                                            
-#>                        soils with an argillic, kandic, or natric horizon
+#>                        soils with an argillic, kandic, or natric horizon    
 
 # convert "taxon code" to taxon name (subgroup)
 cat(explainST(taxon_code_to_taxon("ABCD"))) # ABCD = gypsic anhyturbels

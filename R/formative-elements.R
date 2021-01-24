@@ -84,8 +84,17 @@ FormativeElements <- function(x, level = c("soilorder","suborder","greatgroup","
   rownames(defs) <- NULL
   
   loc.start <- do.call('rbind', sapply(m, function(mm) stringr::str_locate_all(x, mm)))
-  cidx <- suppressWarnings(max(loc.start[, 1], na.rm = TRUE))
-  if(is.nan(cidx)) cidx <- NA
+  
+  if(level != "subgroup") {
+    cidx <- suppressWarnings(max(loc.start[, 1], na.rm = TRUE))
+  } else {
+    cidx <- loc.start[, 1]
+  }
+  
+  if(any(is.nan(cidx))) {
+    cidx[is.nan(cidx)] <- NA
+  }
+  
   return(list(defs = defs, char.index = cidx))
 }
 
