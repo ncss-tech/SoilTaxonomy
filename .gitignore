@@ -1,5 +1,5 @@
-*.json
-subgroups.tgz
+*.Rproj
 .Rproj.user
 .Rhistory
-*.Rproj
+.RData
+.Ruserdata

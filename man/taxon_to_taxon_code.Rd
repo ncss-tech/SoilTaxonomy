@@ -7,7 +7,7 @@
 taxon_to_taxon_code(taxon)
 }
 \arguments{
-\item{taxon}{A character vector of Taxon Names}
+\item{taxon}{A character vector of Taxon Names -- case insensitive}
 }
 \value{
 A character vector of matching Taxon Codes

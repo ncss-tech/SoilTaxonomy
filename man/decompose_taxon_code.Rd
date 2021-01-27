@@ -7,7 +7,7 @@
 decompose_taxon_code(codes)
 }
 \arguments{
-\item{codes}{A character vector of taxon codes to "decompose"}
+\item{codes}{A character vector of taxon codes to "decompose" -- case sensitive}
 }
 \value{
 A list with equal length to input vector; one character vector per element
