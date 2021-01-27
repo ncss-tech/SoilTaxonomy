@@ -24,10 +24,10 @@ SubGroupFormativeElements(x)
 \arguments{
 \item{x}{A character vector containing subgroup-level taxonomic names}
 
-\item{level}{one of `c("soilorder","suborder","greatgroup","subgroup")`}
+\item{level}{one of \code{c("soilorder","suborder","greatgroup","subgroup")}}
 }
 \value{
-A list containing `$defs`: a `data.frame` containing taxonomic elements, derivations, connotations and links. And `$char.index`: a numeric denoting the position where the formative element occurs in the search text `x`
+A list containing \verb{$defs}: a \code{data.frame} containing taxonomic elements, derivations, connotations and links. And \verb{$char.index}: a numeric denoting the position where the formative element occurs in the search text \code{x}
 }
 \description{
 Identify formative elements in Soil Taxonomic Order, Suborder, Great Group or Subgroup Level

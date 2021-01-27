@@ -12,7 +12,7 @@ getTaxonAtLevel(
 \arguments{
 \item{x}{A character vector containing subgroup-level taxonomic names}
 
-\item{level}{one of `c("soilorder","suborder","greatgroup","subgroup")`}
+\item{level}{one of \code{c("soilorder","suborder","greatgroup","subgroup")}}
 }
 \value{
 A named character vector of taxa at specifired level, where names are the internal Soil Taxonomy letter codes.

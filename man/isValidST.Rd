@@ -18,7 +18,7 @@ isValidST(
 logical vector, same lenght as needle
 }
 \description{
-This function can be used to quickly test for valid levels within the 
+This function can be used to quickly test for valid levels within the
 Soil Taxonomy hierarchy, a defined within the 13th edition of The Keys to Soil Taxonomy.
 Matches are case insensitive.
 }

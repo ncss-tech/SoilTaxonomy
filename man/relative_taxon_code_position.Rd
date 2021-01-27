@@ -13,7 +13,7 @@ relative_taxon_code_position(code)
 A numeric vector with the relative position of each code with respect to their individual Keys.
 }
 \description{
-The relative position of a taxon is `[number of preceding Key steps] + 1`, or `NA` if it does not exist in the lookup table.
+The relative position of a taxon is \verb{[number of preceding Key steps] + 1}, or \code{NA} if it does not exist in the lookup table.
 }
 \examples{
 
