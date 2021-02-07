@@ -23,6 +23,11 @@ Must specify either \code{taxon} or \code{code}. \code{taxon} is used if both ar
 
 getParentTaxa("ultic haploxeralfs")
 
-getParentTaxa("folists")
+getParentTaxa(code = c("ABCD", "DABC"))
 
+getParentTaxa("folists", convert = FALSE)
+
+}
+\author{
+Andrew G. Brown
 }
