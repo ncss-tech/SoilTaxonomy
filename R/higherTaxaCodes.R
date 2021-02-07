@@ -126,10 +126,10 @@ taxon_code_to_taxon <- function(code) {
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
   # return matches
-  idx <- code %in% ST_higher_taxa_codes_12th$code 
-  res <- vector("character", length(idx))
-  res[!idx] <- NA
-  res[idx] <- ST_higher_taxa_codes_12th[which(ST_higher_taxa_codes_12th$code %in% code), 'taxon']
+  idx <- match(code, ST_higher_taxa_codes_12th$code)
+  res <- vector("character", length(code))
+  res[order(idx, na.last = NA)] <- ST_higher_taxa_codes_12th[which(ST_higher_taxa_codes_12th$code%in% code), 'taxon']
+  res[res == ""] <- NA
   return(res)
 }
 
@@ -156,10 +156,10 @@ taxon_to_taxon_code <- function(taxon) {
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
   # return matches
-  idx <- tolower(taxon) %in% tolower(ST_higher_taxa_codes_12th$taxon)
-  res <- vector("character", length(idx))
-  res[!idx] <- NA
-  res[idx] <- ST_higher_taxa_codes_12th[which(tolower(ST_higher_taxa_codes_12th$taxon) %in% tolower(taxon)), 'code']
+  idx <- match(tolower(taxon), tolower(ST_higher_taxa_codes_12th$taxon))
+  res <- vector("character", length(taxon))
+  res[order(idx, na.last = NA)] <- ST_higher_taxa_codes_12th[which(tolower(ST_higher_taxa_codes_12th$taxon) %in% tolower(taxon)), 'code']
+  res[res == ""] <- NA
   return(res)
 }
 

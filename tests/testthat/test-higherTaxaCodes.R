@@ -19,13 +19,12 @@ test_that("preceding_taxon_codes works", {
 })
 
 # CODE -> TAXON
-test_that("taxon_code_to_taxon works", {
-  expect_equal(taxon_code_to_taxon(c("ABC","XYZ","DAB",NA)),c("Cryaquands", NA, "Anhyturbels", NA))
-})
+test_that("taxon_code_to_taxon & taxon_to_taxon_code works", {
+  res1 <- taxon_code_to_taxon(c("ABC","XYZ","DAB",NA))
+  expect_equal(res1, c("Anhyturbels", NA, "Cryaquands", NA))
 
 # TAXON -> CODE
-test_that("taxon_to_taxon_code works", {
-  expect_equal(taxon_to_taxon_code(c("Anhyturbels","foo","Cryaquands",NA)), c("DAB", NA, "ABC", NA))
+  expect_equal(taxon_to_taxon_code(res1), c("ABC", NA, "DAB", NA))
 })
 
 # RELATIVE POSITION OF CODES
