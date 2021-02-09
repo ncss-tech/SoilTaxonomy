@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>MollicEpipedonThickness.utf8</title>
+    <meta charset="utf-8" />
+    <link href="MollicEpipedonThickness_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="MollicEpipedonThickness_files/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link href="MollicEpipedonThickness_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="MollicEpipedonThickness_files/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="theme.css" type="text/css" />
+    <link rel="stylesheet" href="theme-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: titleSlide
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.pull-left[
+  ## Mollic Thickness Requirement
+  ### An investigation of representative ("RV") SSURGO component pedons 
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  #### 2021-02-08
+]
+
+.right[.large[&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+              Andrew G. Brown &lt;br&gt;
+              &lt;a href="mailto:andrew.g.brown@usda.gov"&gt;<i class="fas  fa-mail-bulk "></i>&amp;nbsp;andrew.g.brown@usda.gov&lt;/a&gt;
+              &lt;br&gt;&lt;br&gt;
+]]
+
+---
+class: bodySlideNOBR
+&lt;br&gt;
+
+#### Abstract
+
+&lt;small&gt;
+There have been calls for 20 or 25 cm as the minimum thickness threshold for the mollic epipedon. 
+
+My analysis based on component representative pedons shows that the impact, or "workload" for re-correlation, would be lower by a factor of ~3x for a change to a static 20 cm threshold rather than 25 cm. This is assuming that the workload scales approximately linearly with the number of unique components affected, which is not necessarily the case.  
+
+A non-sliding scale thickness may be "good" for the Mollisols concept--making it more "exclusive" in most cases. This is highlighted in this presentation by the relatively large proportion of non-Mollisols who would no longer meet mollic criteria for e.g. moist color by moving from e.g. 18 cm to 20 cm.
+
+In this document I use _moist color_ as a surrogate/sample property for comparison of effects of changing the mollic thickness requirement. This is an incomplete, single-dimensional view of what makes up a "Mollisol" or a "Mollic epipedon" but strikes a balance of data availability and conceptual utility across the continental United States.
+&lt;/small&gt;
+---
+class: bodySlide
+&lt;br&gt;
+
+## Mollic Epipedon Thickness
+
+&lt;small&gt;
+##### 7. The _minimum thickness_ of the epipedon is as follows:
+
+  a. _25 cm_: If the materials have a texture of loamy fine sand or coarser throughout; or
+  
+  b. _10 cm_: If the materials directly overlie a densic, lithic or paralithic contact, a petrocalcic horizon, or a duripan; and, when mixed, do not have a texture of loamy fine sand or coarser; or
+  
+  c. _Between 18 and 25 cm_: If any of the following diagnostic features are present, the minimum thickness is one-third of the distance from the mineral soil surface to the depth specified in 1) or 2) below resulting in the thickest requirement.
+    
+    1. The upper boundary of: 
+     - identifiable secondary carbonates
+     - a calcic or petrocalcic horizon
+     - a duripan or fragipan; and/or
+     
+    2. The lower boundary of: 
+     - an argillic, cambic, natric, oxic or spodic horizon
+  
+  d. _25 cm_: If none of the diagnostic features above are present, and organic carbon content of underlying materials decreases irregularly with increasing depth; or
+  
+  e. _18 cm_: If none of the above conditions apply; 
+&lt;/small&gt;
+
+---
+class: bodySlide
+&lt;br&gt;
+
+## Mollic Thickness Criteria Classes
+
+_Minimum_ thickness classes are as follows:
+
+1. _10 cm_: shallow soils with mollic soil materials directly overlying bedrock
+
+2. _25 cm_: sandy soils, or soils that have an irregular decrease in organic carbon content and an absence of select diagnostic boundaries*
+
+3. _Between 18 to 25 cm_: soils with select diagnostic boundaries* at specific depths (54 - 75 cm)
+
+4. _18 cm_: all other cases
+
+
+&lt;small&gt;*The upper boundary of: identifiable secondary carbonates, a calcic or petrocalcic horizon, a duripan or fragipan; and/or the lower boundary of: an argillic, cambic, natric, oxic or spodic horizon&lt;/small&gt;
+  
+---
+class: bodySlide
+&lt;br&gt;
+
+## Methods: Use {aqp}
+
+ - Get Component Pedons (RV) as `soilDB::fetchNASIS`-style result
+
+ - Estimate Component Pedon Mollic Thickness Requirement using `aqp::mollic.thickness.requirement`
+ 
+   - Uses horizon designations and textures to determine which criterion of 4 apply: 10cm, 18cm, 25cm or 18 to 25cm.
+   
+ - Calculate Moist Color Depth Meeting "5-3-3" for all Component Pedons
+ 
+ - Tabulate Results, View CONUS Maps, Split by Taxon and Region
+
+---
+class: bodySlide
+&lt;br&gt;
+
+## Thickness Criterion by Moisture Class
+
+Generally the 18 cm thickness requirement is the most prevalent criterion. 
+
+
+Table: Quantiles of Thickness Requirement (cm) by Moisture Regime
+
+|                | 0%| 25%| 50%|   75%| 100%|
+|:---------------|--:|---:|---:|-----:|----:|
+|Aquic           | 18|  18|  18| 18.00|   25|
+|Aridic (torric) | 10|  18|  18| 20.42|   25|
+|Peraquic        | 18|  18|  25| 25.00|   25|
+|Perudic         | 10|  18|  18| 23.67|   25|
+|Udic            | 10|  18|  18| 25.00|   25|
+|Ustic           | 10|  18|  18| 25.00|   25|
+|Xeric           | 10|  18|  18| 25.00|   25|
+
+---
+class: bodySlide
+&lt;br&gt;
+
+## Moist Color by Moisture Class
+
+Typical thicknesses of "dark surface" colors varies systematically when binned into important groups such as _Moisture Class_.
+
+
+Table: Quantiles of 3-3 Moist Color Darkness Depth (cm) by Moisture Class
+
+|                | 0%| 25%|  50%|    75%| 100%|
+|:---------------|--:|---:|----:|------:|----:|
+|Aquic           |  0|   0| 18.0|  41.00|  254|
+|Aridic (torric) |  0|   0|  0.0|   3.00|  203|
+|Peraquic        |  0|   0| 26.5| 111.50|  252|
+|Perudic         |  0|   0|  8.0|  22.25|  101|
+|Udic            |  0|   0|  5.0|  23.00|  244|
+|Ustic           |  0|   0| 20.0|  38.00|  203|
+|Xeric           |  0|  10| 30.0|  55.00|  240|
+
+
+---
+class: bodySlideNOBR
+&lt;br&gt;
+
+## Moist Color Meets Current Criteria
+These are all "RV" Component Pedons. Most are not Mollisols or their moist colors do not meet the standard "3-3" requirement.
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-3-1.png" width="720" style="display: block; margin: auto;" /&gt;
+
+---
+class: bodySlideNOBR
+&lt;br&gt;
+
+## Moist Color Meets 25 cm Criterion
+If we subset just those that previously met the thickness criterion, then see if they would also meet a _static_ 25 cm requirement.
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-4-1.png" width="720" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: bodySlideNOBR
+&lt;br&gt;
+## Moist Color Meets 20 cm Criterion
+A 20 cm _static_ requirement seems to work in the broadest number of cases, even many of those in the "shallow soil" / 10 cm case.
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-5-1.png" width="720" style="display: block; margin: auto;" /&gt;
+
+---
+class: bodySlideNOBR
+&lt;br&gt;
+## Moist Color Meets 30 cm Criterion
+We can compare our calculated thicknesses based on moist color against a hypothetical 30 cm requirement, too.
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-6-1.png" width="720" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: bodySlide
+&lt;br&gt;
+
+
+
+A total of 638 out of 10535 pedons (6%) change if we go to a static 20 cm requirement.
+
+That is, they previously met their (estimated) requirement and do not meet a static 20 cm requirement. In comparison, 1875 do not meet 25 cm and 3225 do not meet 30 cm. 
+
+---
+class: bodySlide
+&lt;br&gt;
+
+Let's assume we take the 20 cm criterion. 
+
+What is the taxonomic breakdown of the soils that no longer "make it?" If we see Mollisols, that is "bad" and we will need to investigate why their component pedons changed. Where they are not Mollisols (or soils with Mollic/Umbric epipedons) that is "good" - we will further separate those soils by changing the requirement.
+.pull-left[
+
+Table: Taxonomic Order, frequency
+
+|Order       | Freq|
+|:-----------|----:|
+|Mollisols   | 0.38|
+|Alfisols    | 0.17|
+|Entisols    | 0.16|
+|Inceptisols | 0.15|
+|Ultisols    | 0.05|
+|Aridisols   | 0.03|
+|Andisols    | 0.03|
+|Spodosols   | 0.02|
+|Histosols   | 0.01|
+|Gelisols    | 0.00|
+|Vertisols   | 0.00|
+]
+.pull-right[
+
+Table: Taxonomic Suborder [top 10], frequency
+
+|Suborder  | Freq|
+|:---------|----:|
+|Ustolls   | 0.15|
+|Orthents  | 0.09|
+|Udalfs    | 0.09|
+|Xerolls   | 0.08|
+|Udolls    | 0.07|
+|Udepts    | 0.06|
+|Psamments | 0.05|
+|Aqualfs   | 0.04|
+|Aquepts   | 0.04|
+|Aquolls   | 0.03|
+]
+
+---
+class: bodySlide
+&lt;br&gt;
+
+## Series Demos
+
+Now I will show several series component pedons alongside their Typical OSD pedon. This is just a sample set of soils that had component pedons in this set. 
+
+The proposed 20 cm threshold is plotted as a red dotted line -- and the profile plots are grouped based on whether each pedon moist color meets or does not meet the 20 cm thickness requirement. In some cases the OSD meets the requirement and some cases it does not!
+
+&lt;!-- autogenerated slides --&gt;
+
+---
+class: bodySlideNOBR
+&lt;br&gt;
+### Buse 
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-10-1.png" width="720" style="display: block; margin: auto;" /&gt;NULL
+---
+class: bodySlideNOBR
+&lt;br&gt;
+### Colvin 
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-10-2.png" width="720" style="display: block; margin: auto;" /&gt;NULL
+---
+class: bodySlideNOBR
+&lt;br&gt;
+### Eckrant 
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-10-3.png" width="720" style="display: block; margin: auto;" /&gt;NULL
+---
+class: bodySlideNOBR
+&lt;br&gt;
+### Hamerly 
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-10-4.png" width="720" style="display: block; margin: auto;" /&gt;NULL
+---
+class: bodySlideNOBR
+&lt;br&gt;
+### Hochheim 
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-10-5.png" width="720" style="display: block; margin: auto;" /&gt;NULL
+---
+class: bodySlideNOBR
+&lt;br&gt;
+### Talihina 
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-10-6.png" width="720" style="display: block; margin: auto;" /&gt;NULL
+---
+class: bodySlideNOBR
+&lt;br&gt;
+### Thurber 
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-10-7.png" width="720" style="display: block; margin: auto;" /&gt;NULL
+---
+class: bodySlideNOBR
+&lt;br&gt;
+### Yolo 
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-10-8.png" width="720" style="display: block; margin: auto;" /&gt;NULL
+---
+class: bodySlideNOBR
+&lt;br&gt;
+### Zell 
+&lt;img src="MollicEpipedonThickness_files/figure-html/unnamed-chunk-10-9.png" width="720" style="display: block; margin: auto;" /&gt;NULL
+
+---
+class: bodySlide
+&lt;br&gt;
+#### Conclusion
+&lt;small&gt;
+_Is 20 cm any "better"?_
+A static threshold minimum thickness for the mollic epipedon of 20 cm would still split series concepts in some cases. This would require some crafty reworking of historic component ranges and concepts, as well as possibly the creation or re-correlation of other concepts. A threshold of 20 cm would be more "permissive" for some soils who currently require up to 25 cm of "mollic materials." 
+
+_"Mollic materials"_
+Too many moving parts in a single proposal hampers both proposer and reviewer ability to evaluate impacts. Simultaneous changes to thickness and materials criteria may dramatically shift concepts in unexpected ways. Criteria changes for "mollic materials"--such as addition of pH measurements as surrogates for ammonium acetate base saturation, or changes to not-commonly-used color criteria, will need more justification. I suggest that all of these "simplifications" be dropped in favor of consistent depth criteria.
+
+_"Mollic materials" v.s. "Umbric materials"_
+Finally, the proposal did not address what, if any, changes would be made to harmonize the proposed Mollic definition with the existing definition of the Umbric. These concepts need to be changed in parallel, which further emphasizes the need to avoid changes to base saturation related criteria at this stage.
+&lt;/small&gt;
+
+---
+class: bodySlide
+&lt;br&gt;
+
+#### Contact
+
+.left-column[
+&lt;br&gt;
+![](https://github.com/brownag.png)
+&lt;br&gt;
+]
+
+.right-column[
+  #### Andrew G. Brown
+
+&lt;a href="mailto:andrew.g.brown@usda.gov"&gt;<i class="fas  fa-mail-bulk "></i>&amp;nbsp;andrew.g.brown@usda.gov&lt;/a&gt;&lt;br&gt;
+
+]
+
+_USDA is an equal opportunity provider, employer, and lender._
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"self_contained": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
