@@ -28,4 +28,4 @@ jobs:
           rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
       - name: Coverage
-        run: bash <(curl -s https://codecov.io/bash)
+        run: curl -s https://codecov.io/bash
