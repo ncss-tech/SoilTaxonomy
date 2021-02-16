@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - master
   pull_request:
     branches:
       - main
-      - master
 
 name: R-CMD-check
 
@@ -28,11 +26,6 @@ jobs:
       - name: Check
         run: |
           rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
-          covr::codecov()
         shell: Rscript {0}
-      - uses: codecov/codecov-action@v1
-        with:
-          flags: unittests 
-          name: codecov-umbrella 
-          fail_ci_if_error: true 
-          verbose: true 
+      - name: Coverage
+        run: bash <(curl -s https://codecov.io/bash)
