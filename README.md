@@ -75,12 +75,12 @@ getTaxonAtLevel('folists', level = "suborder")
 #> "folists"
 
 getTaxonAtLevel('folists', level = "greatgroup")
-#> $BA
-#> NULL
+BA 
+NA 
 
 getTaxonAtLevel('folists', level = "subgroup")
-#> $BA
-#> NULL
+#> BA 
+#> NA 
 
 ```
 
