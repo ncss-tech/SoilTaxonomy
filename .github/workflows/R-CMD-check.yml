@@ -20,17 +20,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
-      - uses: codecov/codecov-action@v1
-        with:
-          flags: unittests 
-          name: codecov-umbrella 
-          fail_ci_if_error: true 
-          verbose: true 
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
-        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+        run: |
+          rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+          covr::codecov()
         shell: Rscript {0}
+      - uses: codecov/codecov-action@v1
+        with:
+          flags: unittests 
+          name: codecov-umbrella 
+          fail_ci_if_error: true 
+          verbose: true 
