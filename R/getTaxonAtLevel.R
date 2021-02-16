@@ -39,6 +39,7 @@ getTaxonAtLevel <- function(x, level = c("soilorder","suborder","greatgroup","su
     if (length(y) >= levelid && nchar(y[[levelid]]) %in% ncharlevel) {
       return(tolower(taxon_code_to_taxon(y[[levelid]])))
     }
+    return(NA)
   })
   if(length(res) > 0)
     return(res)
