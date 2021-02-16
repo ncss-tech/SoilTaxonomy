@@ -3,3 +3,4 @@
 ^misc$
 ^inst$
 ^\.github$
+^codecov\.yml$
