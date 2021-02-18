@@ -150,12 +150,13 @@ explainST <- function(x, format = c('text', 'html')) {
     gg$char.index <- 1
   }
   
-  # short-circuit: no subgroup formative elements found\
+  # short-circuit: no subgroup formative elements found
   nacon <-is.na(gg$defs$connotation)
   if(any(nacon)) {
     # let user know we have no idea
     gg$defs$connotation[nacon] <- '?'
   }
+  
   txt[[1]] <- .makeBars(pos=c(gg$char.index, so$char.index, o$char.index), ws.char=ws)
   txt[[2]] <- .printExplanation(pos = gg$char.index, txt = gg$defs$connotation, ws.char=ws)
   
@@ -171,14 +172,18 @@ explainST <- function(x, format = c('text', 'html')) {
   sg.pos <- unlist(sg$char.index)
   sg.defs <- sg$defs$connotation
   
-  # short-circut: no subgroup formative element positions found
+  # short-circuit: no subgroup formative element positions found
   if(all(is.na(sg.pos))) {
     # start at the first character
     sg.pos <- 1
   }
   
-  # short-circut: no subgroup formative elements found
-  if(all(is.na(sg.defs)) || (length(sg.defs) == 1 &&  nchar(sg.defs[[1]]) == 0)) {
+  ## TODO: all levels should make the distinction: no entry vs. incomplete entries
+  # element-wise flag for no-matching definition (element present in dictionary, but no definition)
+  sg.defs <- ifelse(sg.defs == '', '?', sg.defs)
+  
+  # short-circuit: no subgroup formative elements found
+  if(all(is.na(sg.defs)) | (length(sg.defs) == 1 & nchar(sg.defs[[1]]) == 0)) {
     # let user know we have no idea
     sg.defs <- '?'
   }
