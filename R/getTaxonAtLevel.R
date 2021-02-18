@@ -41,6 +41,7 @@ getTaxonAtLevel <- function(x, level = c("soilorder","suborder","greatgroup","su
     }
     return(NA)
   })
+  names(res) <- names(needle)
   if(length(res) > 0)
     return(res)
   return(NA)

@@ -65,7 +65,9 @@ decompose_taxon_code <- function(codes) {
 #' preceding_taxon_codes(c("ABCDe", "BCDEf"))
 #' 
 preceding_taxon_codes <- function(codes) {
-  lapply(codes, function(i) {
+  res <- lapply(codes, function(i) {
+    if(is.na(nchar(i)))
+      return(NA)
     out <- vector(mode = 'list',
                   length = nchar(i))
     parenttaxon <- character(0)
@@ -92,16 +94,14 @@ preceding_taxon_codes <- function(codes) {
         if (length(parenttaxon) > 0) {
           out[[j]] <- paste0(parenttaxon, previoustaxa)
           parenttaxon <- paste0(parenttaxon, letters[idx.ex[1]])
-        } else {
-          parenttaxon <- letters[idx.ex[1]]
         }
-      } else {
-        out[[j]] <- NA
       }
     }
     
     return(do.call('c', out))
   })
+  names(res) <- codes
+  return(res)
 }
 
 #' Convert Taxon Code to Taxon
@@ -130,6 +130,7 @@ taxon_code_to_taxon <- function(code) {
   res <- vector("character", length(code))
   res[order(idx, na.last = NA)] <- ST_higher_taxa_codes_12th[which(ST_higher_taxa_codes_12th$code%in% code), 'taxon']
   res[res == ""] <- NA
+  names(res) <- as.character(code)
   return(res)
 }
 
@@ -160,6 +161,7 @@ taxon_to_taxon_code <- function(taxon) {
   res <- vector("character", length(taxon))
   res[order(idx, na.last = NA)] <- ST_higher_taxa_codes_12th[which(tolower(ST_higher_taxa_codes_12th$taxon) %in% tolower(taxon)), 'code']
   res[res == ""] <- NA
+  names(res) <- as.character(taxon)
   return(res)
 }
 
@@ -185,6 +187,9 @@ taxon_to_taxon_code <- function(taxon) {
 #' 
 relative_taxon_code_position <- function(code) {
   
+  if(length(code) == 0)
+    return(numeric(0))
+  
   # calculate theoretical positions for each code
   res <- sapply(preceding_taxon_codes(code), function(x) {
     return(length(x) + 1)
@@ -194,14 +199,10 @@ relative_taxon_code_position <- function(code) {
   tst <- vapply(taxon_code_to_taxon(code), FUN.VALUE = logical(1), is.na)
   bad_idx <- which(tst)
   
-  if (length(tst) == 0) { 
-    return(NA)
-  } else if (length(tst) > 0 & 
-             length(bad_idx) == 0) {
-    return(res)
-  } 
+  if(length(bad_idx) > 0) {
+    res[bad_idx] <- NA
+  }
   
-  res[bad_idx] <- NA
   return(res)
 }
 
