@@ -79,6 +79,7 @@ FormativeElements <- function(x, level = c("soilorder","suborder","greatgroup","
     grep(y, x = haystack)[1]
   })
   
+  
   # keep corresponding definitions
   defs <- do.call('rbind', lapply(sprintf("^%s$", names(idx)), function(z) subset(lut, grepl(z, lut$element))))
   rownames(defs) <- NULL
@@ -87,9 +88,15 @@ FormativeElements <- function(x, level = c("soilorder","suborder","greatgroup","
   
   if(level != "subgroup") {
     cidx <- suppressWarnings(max(loc.start[, 1], na.rm = TRUE))
+    
   } else {
     cidx <- loc.start[, 1]
   }
+  
+  # attempt sorting multiple matches
+  cidx.order <- order(cidx)
+  defs <- defs[cidx.order, ]
+  cidx <- cidx[cidx.order]
   
   if(any(is.nan(cidx))) {
     cidx[is.nan(cidx)] <- NA
