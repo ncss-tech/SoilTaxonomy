@@ -46,7 +46,7 @@ data('ST_higher_taxa_codes_12th', package = 'SoilTaxonomy')
 ##### HHCH = _Acrudoxic Plinthic Kandiudults_
 
 ``` r
-getTaxonAtLevel('acrudoxic plinthic kandiudults') # level = "order" # default
+getTaxonAtLevel('acrudoxic plinthic kandiudults') # level = "soilorder" # default
 #>       HCCH 
 #> "ultisols"
 
