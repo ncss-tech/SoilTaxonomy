@@ -2,7 +2,7 @@
 % Please edit documentation in R/explainST.R
 \name{explainST}
 \alias{explainST}
-\title{Explain a subgroup level taxa from Soil Taxaonomy}
+\title{Explain a subgroup level taxa from Soil Taxonomy}
 \usage{
 explainST(x, format = c("text", "html"))
 }
@@ -15,8 +15,8 @@ explainST(x, format = c("text", "html"))
 a block of text, suitable for display in fixed-width font
 }
 \description{
-Explain a subgroup level taxa from Soil Taxaonomy
+Explain a subgroup level taxa from Soil Taxonomy
 }
 \note{
-This function currently accepts only subgroup taxa. There are plans to extend to arbitrary levels of the heirarchy.
+This function currently accepts only subgroup taxa. There are plans to extend to arbitrary levels of the hierarchy.
 }

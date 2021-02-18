@@ -126,30 +126,12 @@ test_that("explainST", {
   # Error in ws[idx] <- txt : replacement has length zero
   
   expect_output(cat(explainST("ultic argixerolls")))
-  expect_output(cat(explainST("folistic haplorthels")))
+  expect_output(cat(explainST("folistic haplorthels", format="html")))
   expect_output(cat(explainST("psammentic paleudalfs")))
   expect_output(cat(explainST("vitrandic humustepts")))
-  # now they work, but their subgroup modifier missing (not in LUT)
-  
-  # TODO: explanations for all of these
-  # subset(ST_formative_elements[["subgroup"]], connotation == "")
-  
-  # second iteration: all these are broken; 2 different errors
-  # 299  JCEC          Aridic Kanhaplustalfs
-  # 1242 AACB              Terric Fibristels
-  # 1248 AAAC                Typic Folistels
-  # 2787 HCCH Acrudoxic Plinthic Kandiudults
-  # 2867 HDCF           Andic Kanhaplustults
-  
-  # Error: Result 1 must be a single integer, not an integer vector of length 2
   expect_output(cat(explainST("aridic kanhaplustalfs")))
-  expect_output(cat(explainST("acrudoxic plinthic kandiudults")))
+  expect_output(cat(explainST("acrudoxic plinthic kandiudults", format="html")))
   expect_output(cat(explainST("andic kanhaplustults")))
-  # now they work, 
-  # TODO: but the acrudoxic plinthic confuses things -- ? in slightly wrong position
-  
-  # Error in seq.default(from = pos, to = pos + (length(txt) - 1)) : 'from' must be a finite number 
   expect_output(cat(explainST("terric fibristels")))
   expect_output(cat(explainST("typic folistels")))
-  # now they work,
 })

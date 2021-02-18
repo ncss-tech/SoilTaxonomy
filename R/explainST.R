@@ -9,6 +9,7 @@
 #' @note This function currently accepts only subgroup taxa. There are plans to extend to arbitrary levels of the hierarchy.
 #' 
 #' @export
+#' @importFrom utils browseURL
 explainST <- function(x, format = c('text', 'html')) {
   
   # safely match argument choices
@@ -77,7 +78,7 @@ explainST <- function(x, format = c('text', 'html')) {
   
   # put HTML output into viewer
   if(format == 'html') {
-    viewer <- getOption("viewer")
+    viewer <- getOption("viewer", default = utils::browseURL)
     tf <- tempfile(fileext=".html")
     cat(res, file=tf)
     viewer(tf)
