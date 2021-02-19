@@ -60,7 +60,7 @@ names(d.min.flat) <- c('soilseriesiid', 'tax_minclass')
 d <- join(d.series, d.min.flat, by='soilseriesiid', type='left')
 
 # save to local repo
-write.csv(d, file=gzfile('databases/SC-database.csv.gz'), row.names=FALSE)
+write.csv(d, file=gzfile('../inst/extdata/SC-database.csv.gz'), row.names=FALSE)
 
 
 
