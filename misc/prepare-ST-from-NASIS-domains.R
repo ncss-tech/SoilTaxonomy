@@ -11,7 +11,7 @@ library(RODBC)
 library(SoilTaxonomy)
 
 
-channel <- RODBC::odbcDriverConnect(connection="DSN=nasis_local;UID=NasisSqlRO;PWD=nasisRe@d0n1y")
+channel <- RODBC::odbcDriverConnect(connection="DSN=nasis_local;UID=NasisSqlRO;PWD=nasisRe@d0n1y365")
 
 ST.orders <- RODBC::sqlQuery(channel, "SELECT ChoiceName as tax_order FROM MetadataDomainDetail WHERE DomainID = 132 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
 ST.suborders <- RODBC::sqlQuery(channel, "SELECT ChoiceName as tax_suborder FROM MetadataDomainDetail WHERE DomainID = 134 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
@@ -31,39 +31,25 @@ ST <- data.frame(tax_order=NA, tax_suborder=NA, tax_greatgroup=NA, tax_subgroup=
 ## tinkering
 # http://www.joyofdata.de/blog/comparison-of-string-distance-algorithms/
 # http://stats.stackexchange.com/questions/3425/how-to-quasi-match-two-vectors-of-strings-in-r
-
-
-
+# 
 ## start at the bottom and work-up
 
 # associate subgroup with parent greatgroup: OK
-for(i in 1:nrow(ST)) ST$tax_greatgroup[i] <- .matchParentTaxa(ST$tax_subgroup[i], ST.greatgroups, qgram.size = 4)
+ST$tax_greatgroup <- getTaxonAtLevel(ST$tax_subgroup, "greatgroup")
 
 # associate great group with parent sub order:
 # mistakes in some gelisols
-for(i in 1:nrow(ST)) ST$tax_suborder[i] <- .matchParentTaxa(ST$tax_greatgroup[i], ST.suborders, qgram.size = 4)
-
-# manually parse soil orders from sub groups
-ST$tax_order[grep('alfs$', ST$tax_subgroup)] <- 'alfisols'
-ST$tax_order[grep('ands$', ST$tax_subgroup)] <- 'andisols'
-ST$tax_order[grep('ids$', ST$tax_subgroup)] <- 'aridisols'
-ST$tax_order[grep('ents$', ST$tax_subgroup)] <- 'entisols'
-ST$tax_order[grep('els$', ST$tax_subgroup)] <- 'gelisols'
-ST$tax_order[grep('ists$', ST$tax_subgroup)] <- 'histosols'
-ST$tax_order[grep('epts$', ST$tax_subgroup)] <- 'inceptisols'
-ST$tax_order[grep('olls$', ST$tax_subgroup)] <- 'mollisols'
-ST$tax_order[grep('ox$', ST$tax_subgroup)] <- 'oxisols'
-ST$tax_order[grep('ods$', ST$tax_subgroup)] <- 'spodosols'
-ST$tax_order[grep('ults$', ST$tax_subgroup)] <- 'ultisols'
-ST$tax_order[grep('erts$', ST$tax_subgroup)] <- 'vertisols'
-
+ST$tax_suborder <- getTaxonAtLevel(ST$tax_subgroup, "suborder")
+ST$tax_order <- getTaxonAtLevel(ST$tax_subgroup, "soilorder")
 
 # re-order
 ST <- ST[order(ST$tax_order, ST$tax_suborder, ST$tax_greatgroup), ]
 
-## manually edit from here
-write.csv(ST, file='ST-data/ST-full.csv', row.names=FALSE, quote = FALSE)
+# drop taxa that do not exist in lookup tables
+ST <- ST[which(complete.cases(ST)),]
 
+## manually edit from here
+write.csv(ST, file='misc/ST-data/ST-full.csv', row.names=FALSE, quote = FALSE)
 
 
 

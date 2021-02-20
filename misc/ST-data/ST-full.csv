@@ -521,7 +521,6 @@ andisols,udands,melanudands,thaptic melanudands
 andisols,udands,placudands,typic placudands
 andisols,udands,placudands,lithic placudands
 andisols,udands,placudands,aquic placudands
-andisols,udands,placudands,hydric pachic placudands
 andisols,udands,placudands,hydric placudands
 andisols,udands,placudands,acrudoxic placudands
 andisols,ustands,durustands,typic durustands
@@ -1066,21 +1065,25 @@ entisols,wassents,sulfiwassents,lithic sulfiwassents
 entisols,wassents,sulfiwassents,fluventic sulfiwassents
 entisols,wassents,sulfiwassents,haplic sulfiwassents
 entisols,wassents,sulfiwassents,aeric sulfiwassents
-gelisols,fibrists,fibristels,typic fibristels
-gelisols,fibrists,fibristels,lithic fibristels
-gelisols,fibrists,fibristels,sphagnic fibristels
-gelisols,fibrists,fibristels,fluvaquentic fibristels
-gelisols,fibrists,fibristels,terric fibristels
-gelisols,folists,folistels,typic folistels
-gelisols,folists,folistels,lithic folistels
-gelisols,folists,folistels,glacic folistels
-gelisols,hemists,hemistels,typic hemistels
-gelisols,hemists,hemistels,lithic hemistels
-gelisols,hemists,hemistels,fluvaquentic hemistels
-gelisols,hemists,hemistels,terric hemistels
+gelisols,histels,fibristels,typic fibristels
+gelisols,histels,fibristels,lithic fibristels
+gelisols,histels,fibristels,sphagnic fibristels
+gelisols,histels,fibristels,fluvaquentic fibristels
+gelisols,histels,fibristels,terric fibristels
+gelisols,histels,folistels,typic folistels
+gelisols,histels,folistels,lithic folistels
+gelisols,histels,folistels,glacic folistels
 gelisols,histels,glacistels,typic glacistels
 gelisols,histels,glacistels,sapric glacistels
 gelisols,histels,glacistels,hemic glacistels
+gelisols,histels,hemistels,typic hemistels
+gelisols,histels,hemistels,lithic hemistels
+gelisols,histels,hemistels,fluvaquentic hemistels
+gelisols,histels,hemistels,terric hemistels
+gelisols,histels,sapristels,typic sapristels
+gelisols,histels,sapristels,lithic sapristels
+gelisols,histels,sapristels,fluvaquentic sapristels
+gelisols,histels,sapristels,terric sapristels
 gelisols,orthels,anhyorthels,typic anhyorthels
 gelisols,orthels,anhyorthels,gypsic anhyorthels
 gelisols,orthels,anhyorthels,nitric anhyorthels
@@ -1138,10 +1141,6 @@ gelisols,orthels,umbrorthels,cumulic umbrorthels
 gelisols,orthels,umbrorthels,folistic umbrorthels
 gelisols,orthels,umbrorthels,glacic umbrorthels
 gelisols,orthels,umbrorthels,andic umbrorthels
-gelisols,saprists,sapristels,typic sapristels
-gelisols,saprists,sapristels,lithic sapristels
-gelisols,saprists,sapristels,fluvaquentic sapristels
-gelisols,saprists,sapristels,terric sapristels
 gelisols,turbels,anhyturbels,typic anhyturbels
 gelisols,turbels,anhyturbels,gypsic anhyturbels
 gelisols,turbels,anhyturbels,nitric anhyturbels
@@ -1555,7 +1554,6 @@ inceptisols,xerepts,haploxerepts,vertic haploxerepts
 inceptisols,xerepts,haploxerepts,vitrandic haploxerepts
 inceptisols,xerepts,haploxerepts,gypsic haploxerepts
 inceptisols,xerepts,haploxerepts,lithic haploxerepts
-inceptisols,xerepts,haploxerepts,oxyaquic haploxerepts
 inceptisols,xerepts,haploxerepts,oxyaquic vitrandic haploxerepts
 inceptisols,xerepts,haploxerepts,aquic haploxerepts
 inceptisols,xerepts,haploxerepts,calcic haploxerepts
@@ -1855,7 +1853,6 @@ mollisols,ustolls,paleustolls,aridic paleustolls
 mollisols,ustolls,paleustolls,calcic paleustolls
 mollisols,ustolls,paleustolls,calcidic paleustolls
 mollisols,ustolls,paleustolls,entic paleustolls
-mollisols,ustolls,paleustolls,andic paleustolls
 mollisols,ustolls,vermustolls,typic vermustolls
 mollisols,ustolls,vermustolls,lithic vermustolls
 mollisols,ustolls,vermustolls,pachic vermustolls
