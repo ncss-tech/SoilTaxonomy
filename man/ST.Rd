@@ -6,7 +6,7 @@
 \alias{ST_unique_list}
 \title{Soil Taxonomy Hierarchy}
 \format{
-An object of class \code{data.frame} with 2668 rows and 4 columns.
+An object of class \code{data.frame} with 2665 rows and 4 columns.
 }
 \usage{
 data(ST)
