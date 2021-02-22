@@ -75,8 +75,8 @@ getTaxonAtLevel('folists', level = "suborder")
 #> "folists"
 
 getTaxonAtLevel('folists', level = "greatgroup")
-BA 
-NA 
+#> BA 
+#> NA 
 
 getTaxonAtLevel('folists', level = "subgroup")
 #> BA 
