@@ -5,23 +5,23 @@ data('ST_unique_list', package = 'SoilTaxonomy')
 
 
 # formative element parsing requires taxa one level higher
-x <- OrderFormativeElements(ST_unique_list$tax_suborder)
+x <- OrderFormativeElements(ST_unique_list$suborder)
 any(is.na(x$defs$order))
 any(is.na(x$char.index))
 
 # formative element parsing requires taxa one level higher
-x <- OrderFormativeElements(ST_unique_list$tax_greatgroup)
+x <- OrderFormativeElements(ST_unique_list$greatgroup)
 any(is.na(x$defs$order))
 
 # formative element parsing requires taxa one level higher
-x <- OrderFormativeElements(ST_unique_list$tax_subgroup)
+x <- OrderFormativeElements(ST_unique_list$subgroup)
 any(is.na(x$defs$order))
 
 
 ##
 
 # formative element parsing requires taxa one level higher
-x <- SubOrderFormativeElements(ST_unique_list$tax_greatgroup)
+x <- SubOrderFormativeElements(ST_unique_list$greatgroup)
 # OK
 any(is.na(x$defs$order))
 # some bugs
@@ -29,7 +29,7 @@ any(is.na(x$char.index))
 
 # "fibristels" "folistels"  "hemistels"  "glacistels" "sapristels"
 idx <- which(is.na(x$char.index))
-ST_unique_list$tax_greatgroup[idx]
+ST_unique_list$greatgroup[idx]
 
 # fixed
 x <- 'calciargids'
@@ -54,12 +54,12 @@ SubOrderFormativeElements(x)
 
 
 # works !
-x <- SubOrderFormativeElements(ST_unique_list$tax_subgroup)
+x <- SubOrderFormativeElements(ST_unique_list$subgroup)
 any(is.na(x$defs$order))
 any(is.na(x$char.index))
 
 # find errors
-s <- ST_unique_list$tax_subgroup
+s <- ST_unique_list$subgroup
 names(s) <- s
 s.test <- map(s, safely(SubOrderFormativeElements))
 s.test <- transpose(s.test)
@@ -83,7 +83,7 @@ SubOrderFormativeElements(x)
 data('ST_formative_elements', package = 'SoilTaxonomy')
 
 # all subgroups
-s <- ST_unique_list$tax_subgroup
+s <- ST_unique_list$subgroup
 
 # tokenize via whitespace
 tok <- SoilTaxonomy:::.tokenizeST(s)

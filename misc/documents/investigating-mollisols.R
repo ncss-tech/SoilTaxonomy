@@ -122,29 +122,29 @@ SC <- read.csv(gzfile(tf), stringsAsFactors = FALSE)
 SC <- SC[, c('soilseriesname', 'taxclname', 'tax_grtgroup', 'tax_subgrp')]
 
 # re-name and normalize
-names(SC) <- c('series', 'family', 'tax_greatgroup', 'tax_subgroup')
-SC$tax_subgroup <- tolower(SC$tax_subgroup)
+names(SC) <- c('series', 'family', 'greatgroup', 'subgroup')
+SC$subgroup <- tolower(SC$subgroup)
 
 
 tf <- tempfile()
 download.file('https://github.com/ncss-tech/SoilTaxonomy/raw/master/databases/taxsubgrp-stats.txt.gz', destfile = tf)
 sg.ac <- read.table(gzfile(tf), header = FALSE, stringsAsFactors = FALSE, sep='|')
-names(sg.ac) <- c('tax_subgroup', 'ac', 'n_polygons')
+names(sg.ac) <- c('subgroup', 'ac', 'n_polygons')
 
 # normalize names
-sg.ac$tax_subgroup <- tolower(sg.ac$tax_subgroup)
+sg.ac$subgroup <- tolower(sg.ac$subgroup)
 
 # ST to the subgroup level
 data(ST)
 
 # tabulate number of series / family per subgroup
-series.stats <- ddply(SC, 'tax_subgroup', .fun=summarize, n_series=length(unique(series)), n_family=length(unique(family)))
+series.stats <- ddply(SC, 'subgroup', .fun=summarize, n_series=length(unique(series)), n_family=length(unique(family)))
 
 # join {ST} to {acreage by subgroup}
-ST <- merge(ST, sg.ac, by='tax_subgroup', all.x=TRUE)
+ST <- merge(ST, sg.ac, by='subgroup', all.x=TRUE)
 
 # join {ST + subgroup acreage} to {series stats}
-ST <- merge(ST, series.stats, by='tax_subgroup', all.x=TRUE)
+ST <- merge(ST, series.stats, by='subgroup', all.x=TRUE)
 
 # set NA acreage, n_series, n_family to 0
 ST$ac[which(is.na(ST$ac))] <- 0
@@ -153,19 +153,19 @@ ST$n_series[which(is.na(ST$n_series))] <- 0
 ST$n_family[which(is.na(ST$n_family))] <- 0
 
 
-ST <- ST[which(ST$tax_order == 'mollisols'), ]
+ST <- ST[which(ST$order == 'mollisols'), ]
 
 str(ST)
 
-length(unique(ST$tax_suborder))
-length(unique(ST$tax_greatgroup))
-length(unique(ST$tax_subgroup))
+length(unique(ST$suborder))
+length(unique(ST$greatgroup))
+length(unique(ST$subgroup))
 
 sum(ST$n_family)
 sum(ST$n_series)
 
 
-so.stats <- ddply(ST, 'tax_suborder', .fun=summarize, ac=sum(ac, na.rm=TRUE))
+so.stats <- ddply(ST, 'suborder', .fun=summarize, ac=sum(ac, na.rm=TRUE))
 
 knitr::kable(so.stats[order(so.stats$ac, decreasing = TRUE), ], row.names = FALSE)
 

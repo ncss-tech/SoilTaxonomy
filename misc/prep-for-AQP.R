@@ -5,11 +5,11 @@ library(plyr)
 # subset down to series, family, suborder
 SC <- read.csv('databases/SC-database.csv.gz', stringsAsFactors = FALSE)
 SC <- SC[, c('soilseriesname', 'taxclname', 'tax_subgrp', 'tax_partsize', 'tax_ceactcl', 'tax_tempcl', 'tax_reaction', 'tax_minclass')]
-names(SC) <- c('series', 'family', 'tax_subgroup', 'tax_partsize', 'tax_ceactcl', 'tax_tempcl', 'tax_reaction', 'tax_minclass')
-SC$tax_subgroup <- tolower(SC$tax_subgroup)
+names(SC) <- c('series', 'family', 'subgroup', 'tax_partsize', 'tax_ceactcl', 'tax_tempcl', 'tax_reaction', 'tax_minclass')
+SC$subgroup <- tolower(SC$subgroup)
 
 # # tabulate number of series / family per subgroup
-# series.stats <- ddply(SC, 'tax_subgroup', .fun=summarize, n_series=length(unique(series)), n_family=length(unique(family)))
+# series.stats <- ddply(SC, 'subgroup', .fun=summarize, n_series=length(unique(series)), n_family=length(unique(family)))
 
 # this is the manually corrected version
 ST.clean <- read.csv('ST-full-fixed.csv', stringsAsFactors = FALSE)
@@ -44,10 +44,10 @@ ST.clean$tax_minclass[is.na(ST.clean$tax_minclass)] <- '(mineralogy class)'
 ## init data.tree representation
 
 # setup tree path, note that there has to be a "parent" level that sits above orders
-ST.clean$pathString <- paste('ST', ST.clean$tax_order, ST.clean$tax_suborder, ST.clean$tax_greatgroup, ST.clean$tax_subgroup,  ST.clean$tax_partsize, ST.clean$tax_minclass, ST.clean$tax_ceactcl, ST.clean$tax_tempcl, ST.clean$series, sep='/')
+ST.clean$pathString <- paste('ST', ST.clean$order, ST.clean$suborder, ST.clean$greatgroup, ST.clean$subgroup,  ST.clean$tax_partsize, ST.clean$tax_minclass, ST.clean$tax_ceactcl, ST.clean$tax_tempcl, ST.clean$series, sep='/')
 
 # just alfisols for now
-n <- as.Node(ST.clean[which(ST.clean$tax_suborder == 'xeralfs'), ])
+n <- as.Node(ST.clean[which(ST.clean$suborder == 'xeralfs'), ])
 
 ## pruning
 # missing series

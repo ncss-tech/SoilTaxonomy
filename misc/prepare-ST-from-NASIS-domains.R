@@ -13,19 +13,19 @@ library(SoilTaxonomy)
 
 channel <- RODBC::odbcDriverConnect(connection="DSN=nasis_local;UID=NasisSqlRO;PWD=nasisRe@d0n1y365")
 
-ST.orders <- RODBC::sqlQuery(channel, "SELECT ChoiceName as tax_order FROM MetadataDomainDetail WHERE DomainID = 132 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
-ST.suborders <- RODBC::sqlQuery(channel, "SELECT ChoiceName as tax_suborder FROM MetadataDomainDetail WHERE DomainID = 134 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
-ST.greatgroups <- RODBC::sqlQuery(channel, "SELECT ChoiceName as tax_greatgroup FROM MetadataDomainDetail WHERE DomainID = 130 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
-ST.subgroups <- RODBC::sqlQuery(channel, "SELECT ChoiceName as tax_subgroup FROM MetadataDomainDetail WHERE DomainID = 187 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
+ST.orders <- RODBC::sqlQuery(channel, "SELECT ChoiceName as soilorder FROM MetadataDomainDetail WHERE DomainID = 132 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
+ST.suborders <- RODBC::sqlQuery(channel, "SELECT ChoiceName as suborder FROM MetadataDomainDetail WHERE DomainID = 134 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
+ST.greatgroups <- RODBC::sqlQuery(channel, "SELECT ChoiceName as greatgroup FROM MetadataDomainDetail WHERE DomainID = 130 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
+ST.subgroups <- RODBC::sqlQuery(channel, "SELECT ChoiceName as subgroup FROM MetadataDomainDetail WHERE DomainID = 187 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
 
 # convert to vectors
-ST.orders <- ST.orders$tax_order
-ST.suborders <- ST.suborders$tax_suborder
-ST.greatgroups <- ST.greatgroups$tax_greatgroup
-ST.subgroups <- ST.subgroups$tax_subgroup
+ST.orders <- ST.orders$soilorder
+ST.suborders <- ST.suborders$suborder
+ST.greatgroups <- ST.greatgroups$greatgroup
+ST.subgroups <- ST.subgroups$subgroup
 
 # compose into single DF, populate with subgroups as starting point
-ST <- data.frame(tax_order=NA, tax_suborder=NA, tax_greatgroup=NA, tax_subgroup=ST.subgroups, stringsAsFactors = FALSE)
+ST <- data.frame(order=NA, suborder=NA, greatgroup=NA, subgroup=ST.subgroups, stringsAsFactors = FALSE)
 
 
 ## tinkering
@@ -35,15 +35,15 @@ ST <- data.frame(tax_order=NA, tax_suborder=NA, tax_greatgroup=NA, tax_subgroup=
 ## start at the bottom and work-up
 
 # associate subgroup with parent greatgroup: OK
-ST$tax_greatgroup <- getTaxonAtLevel(ST$tax_subgroup, "greatgroup")
+ST$greatgroup <- getTaxonAtLevel(ST$subgroup, "greatgroup")
 
 # associate great group with parent sub order:
 # mistakes in some gelisols
-ST$tax_suborder <- getTaxonAtLevel(ST$tax_subgroup, "suborder")
-ST$tax_order <- getTaxonAtLevel(ST$tax_subgroup, "soilorder")
+ST$suborder <- getTaxonAtLevel(ST$subgroup, "suborder")
+ST$order <- getTaxonAtLevel(ST$subgroup, "order")
 
 # re-order
-ST <- ST[order(ST$tax_order, ST$tax_suborder, ST$tax_greatgroup), ]
+ST <- ST[order(ST$order, ST$suborder, ST$greatgroup), ]
 
 # drop taxa that do not exist in lookup tables
 ST <- ST[which(complete.cases(ST)),]

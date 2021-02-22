@@ -22,19 +22,19 @@ test_that("soil order formative elements", {
   
   # apply to all suborders
   # NA = parsing failure
-  x <- OrderFormativeElements(ST_unique_list$tax_suborder)
+  x <- OrderFormativeElements(ST_unique_list$suborder)
   expect_false(any(is.na(x$defs$order)))
   expect_false(any(is.na(x$char.index)))
   
   # apply to all greatgroups
   # NA = parsing failure
-  x <- OrderFormativeElements(ST_unique_list$tax_greatgroup)
+  x <- OrderFormativeElements(ST_unique_list$greatgroup)
   expect_false(any(is.na(x$defs$order)))
   expect_false(any(is.na(x$char.index)))
   
   # apply to all subgroups
   # NA = parsing failure
-  x <- OrderFormativeElements(ST_unique_list$tax_subgroup)
+  x <- OrderFormativeElements(ST_unique_list$subgroup)
   expect_false(any(is.na(x$defs$order)))
   expect_false(any(is.na(x$char.index)))
   

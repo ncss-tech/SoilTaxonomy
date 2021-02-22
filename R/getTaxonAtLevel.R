@@ -1,16 +1,16 @@
 #' Get the Taxon Name at the Soil Taxonomic Order, Suborder, Great Group or Subgroup Level
 #'
 #' @param x A character vector containing subgroup-level taxonomic names
-#' @param level one of `c("soilorder","suborder","greatgroup","subgroup")`
+#' @param level one of `c("order","suborder","greatgroup","subgroup")`
 #'
-#' @return A named character vector of taxa at specifired level, where names are the internal Soil Taxonomy letter codes.
+#' @return A named character vector of taxa at specified level, where names are the internal Soil Taxonomy letter codes.
 #' @author A.G. Brown
 #' @export
 #'
 #' @examples
 #' 
-#' # default gets the soil order (kindof convenient!)
-#' getTaxonAtLevel(c("typic haplargids", "typic glacistels"))
+#' # default gets the soil order 
+#' getTaxonAtLevel(c("typic haplargids", "typic glacistels")) #, level = "order")
 #' 
 #' # specify alternate levels
 #' getTaxonAtLevel("humic haploxerands", level = "greatgroup")
@@ -21,9 +21,9 @@
 #' # but can do parents of children
 #' getTaxonAtLevel("udifolists", level = "suborder")
 #' 
-getTaxonAtLevel <- function(x, level = c("soilorder","suborder","greatgroup","subgroup")) {
+getTaxonAtLevel <- function(x, level = c("order","suborder","greatgroup","subgroup")) {
   
-  level.names <- c("soilorder","suborder","greatgroup","subgroup")
+  level.names <- c("order","suborder","greatgroup","subgroup")
   
   level = match.arg(level, choices = level.names)
   level.lut <- 1:4

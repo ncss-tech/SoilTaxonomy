@@ -4,20 +4,20 @@ context("Soil Taxonomy element validation")
 test_that("isValidST functions as expected", {
   
   # soil order
-  expect_true(isValidST('alfisols', 'tax_order'))
-  expect_false(isValidST('barfisols', 'tax_order'))
+  expect_true(isValidST('alfisols', 'order'))
+  expect_false(isValidST('barfisols', 'order'))
   
   # suborder
-  expect_true(isValidST('xeralfs', 'tax_suborder'))
-  expect_false(isValidST('xerbarfs', 'tax_suborder'))
+  expect_true(isValidST('xeralfs', 'suborder'))
+  expect_false(isValidST('xerbarfs', 'suborder'))
   
   # greatgroup
-  expect_true(isValidST('durixeralfs', 'tax_greatgroup'))
-  expect_false(isValidST('crumicxerbarfs', 'tax_greatgroup'))
+  expect_true(isValidST('durixeralfs', 'greatgroup'))
+  expect_false(isValidST('crumicxerbarfs', 'greatgroup'))
   
   # subgroup
-  expect_true(isValidST('abruptic durixeralfs', 'tax_subgroup'))
-  expect_false(isValidST('fartic crumicxerbarfs', 'tax_subgroup'))
+  expect_true(isValidST('abruptic durixeralfs', 'subgroup'))
+  expect_false(isValidST('fartic crumicxerbarfs', 'subgroup'))
   
   # error condition
   expect_error(isValidST('alfisols', 'nothing'))

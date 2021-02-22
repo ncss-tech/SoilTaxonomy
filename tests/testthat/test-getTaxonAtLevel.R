@@ -12,7 +12,7 @@ test_that("getTaxonAtLevel works", {
   expect_equal(getTaxonAtLevel("udifolists", level = "suborder"), 
                c(BAD = "folists"))
   
-  # default is level="soilorder"
+  # default is level="order"
   expect_equal(getTaxonAtLevel("udolls"), 
                c(IH = "mollisols"))
   

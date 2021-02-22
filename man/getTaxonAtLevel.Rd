@@ -4,26 +4,23 @@
 \alias{getTaxonAtLevel}
 \title{Get the Taxon Name at the Soil Taxonomic Order, Suborder, Great Group or Subgroup Level}
 \usage{
-getTaxonAtLevel(
-  x,
-  level = c("soilorder", "suborder", "greatgroup", "subgroup")
-)
+getTaxonAtLevel(x, level = c("order", "suborder", "greatgroup", "subgroup"))
 }
 \arguments{
 \item{x}{A character vector containing subgroup-level taxonomic names}
 
-\item{level}{one of \code{c("soilorder","suborder","greatgroup","subgroup")}}
+\item{level}{one of \code{c("order","suborder","greatgroup","subgroup")}}
 }
 \value{
-A named character vector of taxa at specifired level, where names are the internal Soil Taxonomy letter codes.
+A named character vector of taxa at specified level, where names are the internal Soil Taxonomy letter codes.
 }
 \description{
 Get the Taxon Name at the Soil Taxonomic Order, Suborder, Great Group or Subgroup Level
 }
 \examples{
 
-# default gets the soil order (kindof convenient!)
-getTaxonAtLevel(c("typic haplargids", "typic glacistels"))
+# default gets the soil order 
+getTaxonAtLevel(c("typic haplargids", "typic glacistels")) #, level = "order")
 
 # specify alternate levels
 getTaxonAtLevel("humic haploxerands", level = "greatgroup")

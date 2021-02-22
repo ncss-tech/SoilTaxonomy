@@ -11,10 +11,10 @@ save(ST, file='data/ST.rda')
 
 ## extract unique levels and save to a list
 ST_unique_list <- list()
-ST_unique_list$tax_order <- unique(ST$tax_order)
-ST_unique_list$tax_suborder <- unique(ST$tax_suborder)
-ST_unique_list$tax_greatgroup <- unique(ST$tax_greatgroup)
-ST_unique_list$tax_subgroup <- unique(ST$tax_subgroup)
+ST_unique_list$order <- unique(ST$order)
+ST_unique_list$suborder <- unique(ST$suborder)
+ST_unique_list$greatgroup <- unique(ST$greatgroup)
+ST_unique_list$subgroup <- unique(ST$subgroup)
 
 save(ST_unique_list, file='data/ST_unique_list.rda')
 
@@ -23,6 +23,7 @@ save(ST_unique_list, file='data/ST_unique_list.rda')
 # TODO: streamline this
 load('misc/formative-elements/formative-elements.rda')
 ST_formative_elements <- ST.formative_elements
+names(ST_formative_elements) <- c("order","suborder","greatgroup","subgroup")
 
 save(ST_formative_elements, file='data/ST_formative_elements.rda')
 

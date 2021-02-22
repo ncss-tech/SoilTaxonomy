@@ -4,15 +4,12 @@
 \alias{isValidST}
 \title{Check for valid order | suborder | greatgroup | subgroup.}
 \usage{
-isValidST(
-  needle,
-  level = c("tax_order", "tax_suborder", "tax_greatgroup", "tax_subgroup")
-)
+isValidST(needle, level = c("order", "suborder", "greatgroup", "subgroup"))
 }
 \arguments{
 \item{needle}{vector of taxa}
 
-\item{level}{single level of Soil Taxonomy hierarchy: tax_order, tax_suborder, tax_greatgroup, tax_subgroup}
+\item{level}{single level of Soil Taxonomy hierarchy: order, suborder, greatgroup, subgroup}
 }
 \value{
 logical vector, same lenght as needle
@@ -25,6 +22,6 @@ Matches are case insensitive.
 \examples{
 
 # note specfifcation of taxonomic level
-isValidST('typic haploxeralfs', level = 'tax_subgroup')
+isValidST('typic haploxeralfs', level = 'subgroup')
 
 }

@@ -1,28 +1,30 @@
 #' Identify formative elements in Soil Taxonomic Order, Suborder, Great Group or Subgroup Level
 #'
 #' @param x A character vector containing subgroup-level taxonomic names
-#' @param level one of `c("soilorder","suborder","greatgroup","subgroup")`
+#' @param level one of `c("order","suborder","greatgroup","subgroup")`
 #'
 #' @return A list containing `$defs`: a `data.frame` containing taxonomic elements, derivations, connotations and links. And `$char.index`: a numeric denoting the position where the formative element occurs in the search text `x`
 #' @export
 #' @author D.E. Beaudette, A.G. Brown
 #' @rdname FormativeElements
 #' @examples
-#' FormativeElements("acrudoxic plinthic kandiudults", level="subgroup")
+#' 
+#' FormativeElements("acrudoxic plinthic kandiudults", level = "subgroup")
 #' SubGroupFormativeElements("acrudoxic plinthic kandiudults")
 #' 
-#' FormativeElements("acrudoxic plinthic kandiudults", level="greatgroup")
+#' FormativeElements("acrudoxic plinthic kandiudults", level = "greatgroup")
 #' GreatGroupFormativeElements("acrudoxic plinthic kandiudults")
 #' 
-#' FormativeElements("acrudoxic plinthic kandiudults", level="suborder")
+#' FormativeElements("acrudoxic plinthic kandiudults", level = "suborder")
 #' SubOrderFormativeElements("acrudoxic plinthic kandiudults")
 #' 
-#' FormativeElements("acrudoxic plinthic kandiudults", level="soilorder")
+#' FormativeElements("acrudoxic plinthic kandiudults", level = "order")
 #' OrderFormativeElements("acrudoxic plinthic kandiudults")
+#' 
 #' @importFrom stringr str_locate_all
-FormativeElements <- function(x, level = c("soilorder","suborder","greatgroup","subgroup")) {
+FormativeElements <- function(x, level = c("order","suborder","greatgroup","subgroup")) {
   
-  level = match.arg(level, choices = c("soilorder","suborder","greatgroup","subgroup"))
+  level = match.arg(level, choices = c("order","suborder","greatgroup","subgroup"))
   
   # for R CMD check
   ST_formative_elements <- NULL
@@ -35,7 +37,7 @@ FormativeElements <- function(x, level = c("soilorder","suborder","greatgroup","
   haystack <- lut$element
   pattern <- haystack
   
-  if (level == "soilorder") {
+  if (level == "order") {
     # soil order is always encoded at the end
     pattern <- paste0(haystack, '$')
     tok <- strsplit(x, " ", fixed=TRUE)  
@@ -108,7 +110,7 @@ FormativeElements <- function(x, level = c("soilorder","suborder","greatgroup","
 #' @export
 #' @rdname FormativeElements
 OrderFormativeElements <- function(x) {
-  FormativeElements(x, level = "soilorder")
+  FormativeElements(x, level = "order")
 }
 
 #' @export

@@ -50,10 +50,10 @@ x <- ST[sample(1:nrow(ST), size = 10),]
 
 # construct path
 # note: must include a top-level ("ST") in the hierarchy
-path <- with(x, paste('ST', tax_subgroup,
-                      tax_greatgroup,
-                      tax_suborder,
-                      tax_order,
+path <- with(x, paste('ST', subgroup,
+                      greatgroup,
+                      suborder,
+                      order,
                       sep = '/'
 ))
 

@@ -9,7 +9,7 @@ library(RODBC)
 library(RPostgreSQL)
 library(plyr)
 
-q.series <- "SELECT soilseriesname, soiltaxclasslastupdated, mlraoffice, ss.ChoiceName as series_status, taxclname, tord.ChoiceName as tax_order, tso.ChoiceName as tax_suborder, tgg.ChoiceName as tax_grtgroup, ts.ChoiceName as tax_subgrp, ps.ChoiceName as tax_partsize, psm.ChoiceName as tax_partsizemod, ta.ChoiceName as tax_ceactcl, tr.ChoiceName as tax_reaction, tt.ChoiceName as tax_tempcl, originyear, establishedyear, descriptiondateinitial, descriptiondateupdated, benchmarksoilflag, statsgoflag, objwlupdated,  recwlupdated, typelocstareaiidref, typelocstareatypeiidref, soilseriesiid, soilseriesdbiidref, grpiidref 
+q.series <- "SELECT soilseriesname, soiltaxclasslastupdated, mlraoffice, ss.ChoiceName as series_status, taxclname, tord.ChoiceName as order, tso.ChoiceName as suborder, tgg.ChoiceName as tax_grtgroup, ts.ChoiceName as tax_subgrp, ps.ChoiceName as tax_partsize, psm.ChoiceName as tax_partsizemod, ta.ChoiceName as tax_ceactcl, tr.ChoiceName as tax_reaction, tt.ChoiceName as tax_tempcl, originyear, establishedyear, descriptiondateinitial, descriptiondateupdated, benchmarksoilflag, statsgoflag, objwlupdated,  recwlupdated, typelocstareaiidref, typelocstareatypeiidref, soilseriesiid, soilseriesdbiidref, grpiidref 
 FROM 
 soilseries
 

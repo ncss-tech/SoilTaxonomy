@@ -28,7 +28,7 @@ sgfe <- function(x) {
 }
 
 # iterate over all subgroup
-taxa.fm <- lapply(ST$tax_subgroup[ST$tax_suborder == 'xeralfs'], sgfe)
+taxa.fm <- lapply(ST$subgroup[ST$suborder == 'xeralfs'], sgfe)
 taxa.fm <- do.call('rbind', taxa.fm)
 
 # fake column for marking membership
@@ -64,7 +64,7 @@ stringdist('typic haploxeralfs', c('typic durixeralfs', 'abruptic durixeralfs', 
 
 
 ## compare a single SG taxa to all others
-z <- ST$tax_subgroup[ST$tax_greatgroup == 'haploxeralfs']
+z <- ST$subgroup[ST$greatgroup == 'haploxeralfs']
 d <- stringdist('typic haploxeralfs', z, method='qgram', q=4, nthread = 1)
 
 # prepare for simple viz
@@ -78,7 +78,7 @@ dotchart(d)
 
 ## another idea
 ## compare a single SG taxa to all others
-z <- ST$tax_subgroup[ST$tax_greatgroup == 'haploxerolls']
+z <- ST$subgroup[ST$greatgroup == 'haploxerolls']
 d <- stringdist('typic haploxeralfs', z, method='qgram', q=4, nthread = 1)
 
 # prepare for simple viz
@@ -91,15 +91,15 @@ dotchart(d)
 ## formative elements would be more consistent
 
 
-n <- length(ST$tax_subgroup)
+n <- length(ST$subgroup)
 
-g <- expand.grid(A = ST$tax_subgroup, B = ST$tax_subgroup, sstringsAsFactors = FALSE)
+g <- expand.grid(A = ST$subgroup, B = ST$subgroup, sstringsAsFactors = FALSE)
 
 d <- stringdist(g$A, g$B, method='qgram', q=4, nthread = 6)
 
 m <- matrix(d, ncol = n, nrow = n)
-dimnames(m)[[1]] <- ST$tax_subgroup
-dimnames(m)[[2]] <- ST$tax_subgroup
+dimnames(m)[[1]] <- ST$subgroup
+dimnames(m)[[2]] <- ST$subgroup
 
 m.dist <- as.dist(m)
 str(m.dist)

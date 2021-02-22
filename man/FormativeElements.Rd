@@ -8,10 +8,7 @@
 \alias{SubGroupFormativeElements}
 \title{Identify formative elements in Soil Taxonomic Order, Suborder, Great Group or Subgroup Level}
 \usage{
-FormativeElements(
-  x,
-  level = c("soilorder", "suborder", "greatgroup", "subgroup")
-)
+FormativeElements(x, level = c("order", "suborder", "greatgroup", "subgroup"))
 
 OrderFormativeElements(x)
 
@@ -24,7 +21,7 @@ SubGroupFormativeElements(x)
 \arguments{
 \item{x}{A character vector containing subgroup-level taxonomic names}
 
-\item{level}{one of \code{c("soilorder","suborder","greatgroup","subgroup")}}
+\item{level}{one of \code{c("order","suborder","greatgroup","subgroup")}}
 }
 \value{
 A list containing \verb{$defs}: a \code{data.frame} containing taxonomic elements, derivations, connotations and links. And \verb{$char.index}: a numeric denoting the position where the formative element occurs in the search text \code{x}
@@ -33,17 +30,19 @@ A list containing \verb{$defs}: a \code{data.frame} containing taxonomic element
 Identify formative elements in Soil Taxonomic Order, Suborder, Great Group or Subgroup Level
 }
 \examples{
-FormativeElements("acrudoxic plinthic kandiudults", level="subgroup")
+
+FormativeElements("acrudoxic plinthic kandiudults", level = "subgroup")
 SubGroupFormativeElements("acrudoxic plinthic kandiudults")
 
-FormativeElements("acrudoxic plinthic kandiudults", level="greatgroup")
+FormativeElements("acrudoxic plinthic kandiudults", level = "greatgroup")
 GreatGroupFormativeElements("acrudoxic plinthic kandiudults")
 
-FormativeElements("acrudoxic plinthic kandiudults", level="suborder")
+FormativeElements("acrudoxic plinthic kandiudults", level = "suborder")
 SubOrderFormativeElements("acrudoxic plinthic kandiudults")
 
-FormativeElements("acrudoxic plinthic kandiudults", level="soilorder")
+FormativeElements("acrudoxic plinthic kandiudults", level = "order")
 OrderFormativeElements("acrudoxic plinthic kandiudults")
+
 }
 \author{
 D.E. Beaudette, A.G. Brown
