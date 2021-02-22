@@ -4,3 +4,4 @@
 ^inst$
 ^\.github$
 ^codecov\.yml$
+^LICENSE\.md$
