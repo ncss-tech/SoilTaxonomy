@@ -36,7 +36,7 @@
 
 #' @title Letter Code Lookup Table for Position of Taxa within the Keys to Soil Taxonomy (12th Edition)
 #' 
-#' @description A lookup table mapping unique taxonomic Order, Suborder, Great Group and Subgroups to letter codes that denote their logical position within the Keys. This is the lookup table used for the \href{https://brownag.shinyapps.io/kstlookup/}{KSTLookup} and \href{https://brownag.shinyapps.io/KSTPreceding/}{KSTPreceding} apps. 
+#' @description A lookup table mapping unique taxonomic Order, Suborder, Great Group and Subgroups to letter codes that denote their logical position within the Keys. 
 #' 
 #' @details The lookup table has been corrected to reflect errata that were posted after the print publication of the 12th Edition Keys, as well as typos in the Spanish language edition. 
 #' 
