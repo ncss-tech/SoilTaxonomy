@@ -126,12 +126,23 @@ test_that("explainST", {
   # Error in ws[idx] <- txt : replacement has length zero
   
   expect_output(cat(explainST("ultic argixerolls")))
-  expect_output(cat(explainST("folistic haplorthels", format="html")))
   expect_output(cat(explainST("psammentic paleudalfs")))
   expect_output(cat(explainST("vitrandic humustepts")))
   expect_output(cat(explainST("aridic kanhaplustalfs")))
-  expect_output(cat(explainST("acrudoxic plinthic kandiudults", format="html")))
   expect_output(cat(explainST("andic kanhaplustults")))
   expect_output(cat(explainST("terric fibristels")))
   expect_output(cat(explainST("typic folistels")))
+  
+  # opening a browser w/ HTML output is not a good idea on CRAN
+  expect_output(cat(explainST("folistic haplorthels", format = "html", viewer = FALSE)))
+  expect_output(cat(explainST("acrudoxic plinthic kandiudults", format = "html", viewer = FALSE)))
+})
+
+test_that("explainST HTML viewer", {
+  
+  skip_on_cran()
+  
+  # test the utils::browseURL functionality off CRAN
+  expect_output(cat(explainST("folistic haplorthels", format = "html", viewer = TRUE)))
+  expect_output(cat(explainST("acrudoxic plinthic kandiudults", format = "html", viewer = TRUE)))
 })

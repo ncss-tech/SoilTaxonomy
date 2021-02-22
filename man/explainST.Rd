@@ -4,12 +4,14 @@
 \alias{explainST}
 \title{Explain a subgroup level taxa from Soil Taxonomy}
 \usage{
-explainST(x, format = c("text", "html"))
+explainST(x, format = c("text", "html"), viewer = TRUE)
 }
 \arguments{
 \item{x}{a single subgroup, matching is exact and case insensitive}
 
 \item{format}{output format: 'text' | 'html'}
+
+\item{viewer}{show \code{format = 'html'} output in browser? default: \code{TRUE}}
 }
 \value{
 a block of text, suitable for display in fixed-width font

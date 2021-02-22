@@ -3,14 +3,14 @@
 #'
 #' @param x a single subgroup, matching is exact and case insensitive
 #' @param format output format: 'text' | 'html'
-#' 
+#' @param viewer show `format = 'html'` output in browser? default: `TRUE`
 #' @return a block of text, suitable for display in fixed-width font
 #' 
 #' @note This function currently accepts only subgroup taxa. There are plans to extend to arbitrary levels of the hierarchy.
 #' 
 #' @export
 #' @importFrom utils browseURL
-explainST <- function(x, format = c('text', 'html')) {
+explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
   
   # safely match argument choices
   format <- match.arg(format)
@@ -77,7 +77,7 @@ explainST <- function(x, format = c('text', 'html')) {
   res <- paste(ex.char, collapse=newline)
   
   # put HTML output into viewer
-  if(format == 'html') {
+  if(format == 'html' && viewer) {
     viewer <- getOption("viewer", default = utils::browseURL)
     tf <- tempfile(fileext=".html")
     cat(res, file=tf)
