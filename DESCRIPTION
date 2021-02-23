@@ -1,7 +1,7 @@
 Package: SoilTaxonomy
 Title: United States Soil Taxonomy
 Description: Taxonomic dictionaries, formative element lists, and functions related to the maintenance, development and application of U.S. Soil Taxonomy.
-Version: 0.1.0.1000
+Version: 0.1
 Authors@R: c(person(given="Dylan", family="Beaudette", role = c("aut"), email = "dylan.beaudette@usda.gov"), person(given="Andrew", family="Brown", email="andrew.g.brown@usda.gov", role = c("aut", "cre")))
 Maintainer: Andrew Brown <andrew.g.brown@usda.gov>
 Depends: R (>= 3.5)

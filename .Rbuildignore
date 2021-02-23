@@ -5,3 +5,5 @@
 ^\.github$
 ^codecov\.yml$
 ^LICENSE\.md$
+^CRAN-RELEASE$
+^cran-comments\.md$
