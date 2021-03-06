@@ -1,0 +1,23 @@
+"Diagnostic.soil.characteristics","Climate","Organisms","Relief","Parent.material","Time","Humans"
+"Mineral soils",0,0,0,0,0,0
+"Abrupt textural change",0,0,0,2,0,0
+"Albic materials",0,0,1,2,0,0
+"Andic soil properties",0,0,0,2,0,0
+"Anhydrous conditions",2,0,0,0,0,0
+"Coeff. of linear extensibility",0,0,0,2,0,0
+"Durinodes",1,0,0,2,1,0
+"Fragic soil properties",1,1,0,2,0,0
+"Free carbonates",1,0,0,2,0,0
+"Identifiable secondary carbonates",2,0,0,1,0,0
+"Interfingering of albic materials",1,1,0,1,0,0
+"Lamellae",0,0,1,2,0,0
+"Linear extensibility",0,0,0,2,0,0
+"Lithologic discontinuity",0,0,0,2,0,0
+"n value",0,0,0,2,0,0
+"Petroferric contact",1,0,0,2,1,0
+"Plinthite",1,0,1,2,0,0
+"Resistant minerals",1,0,0,2,1,0
+"Slickensides",1,0,0,2,0,0
+"Spodic materials",1,1,0,0,1,0
+"Volcanic glass",0,0,0,2,0,0
+"Weatherable minerals",1,0,0,2,1,0

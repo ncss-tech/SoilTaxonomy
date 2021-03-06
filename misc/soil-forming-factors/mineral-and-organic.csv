@@ -1,0 +1,14 @@
+"Mineral.and.organic.soils","Climate","Organisms","Relief","Parent.material","Time","Humans"
+"Aquic conditions",0,0,2,1,0,0
+"Cryoturbation",2,0,0,0,0,0
+"Densic contact",0,0,0,2,0,0
+"Gelic materials",2,0,0,0,0,0
+"Glacic layer",2,0,0,0,0,0
+"Lithic contact",0,0,0,2,0,0
+"Paralithic contact",0,0,0,2,0,0
+"Paralithic materials",0,0,0,2,0,0
+"Permafrost",2,0,0,0,0,0
+"Soil moisture regime",2,0,0,0,0,0
+"Soil temperature regime",2,0,0,0,0,0
+"Sulfidic materials",0,0,1,2,0,0
+"Sulfuric materials",0,0,1,2,0,0
