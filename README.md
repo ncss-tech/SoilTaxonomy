@@ -14,7 +14,13 @@ The `./inst/extdata` folder (formerly `./databases`) of this repository contains
 
 ## Installation
 
-Get the development version from Github. 
+Get the stable version from CRAN. 
+
+```r
+install.packages("SoilTaxonomy")
+```
+
+Get the development version from GitHub. 
 
 ```r
 remotes::install_github("ncss-tech/SoilTaxonomy")
@@ -24,7 +30,7 @@ remotes::install_github("ncss-tech/SoilTaxonomy")
 library(SoilTaxonomy)
 ```
 
-### Soil Taxonomy "Data Dictionaries" 
+### Soil Taxonomy Dictionaries
 
 ``` r
 # hierarchy: order to subgroup
