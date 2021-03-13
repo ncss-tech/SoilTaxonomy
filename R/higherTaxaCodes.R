@@ -128,7 +128,9 @@ taxon_code_to_taxon <- function(code) {
   # return matches
   idx <- match(code, ST_higher_taxa_codes_12th$code)
   res <- vector("character", length(code))
-  res[order(idx, na.last = NA)] <- ST_higher_taxa_codes_12th[which(ST_higher_taxa_codes_12th$code%in% code), 'taxon']
+  lut.idx <- which(ST_higher_taxa_codes_12th$code %in% code)
+  uidx <- match(code, unique(code))
+  res[order(idx, na.last = NA)] <- na.omit(ST_higher_taxa_codes_12th[lut.idx, 'taxon'][uidx])
   res[res == ""] <- NA
   names(res) <- as.character(code)
   return(res)
