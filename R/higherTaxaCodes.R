@@ -125,15 +125,17 @@ taxon_code_to_taxon <- function(code) {
   # load local copy of taxon code lookup table
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
-  # return matches
-  idx <- match(code, ST_higher_taxa_codes_12th$code)
-  res <- vector("character", length(code))
-  lut.idx <- which(ST_higher_taxa_codes_12th$code %in% code)
-  uidx <- match(code, unique(code))
-  res[order(idx, na.last = NA)] <- na.omit(ST_higher_taxa_codes_12th[lut.idx, 'taxon'][uidx])
-  res[res == ""] <- NA
-  names(res) <- as.character(code)
-  return(res)
+  # LEFT JOIN on code (CASE SENSITIVE)
+  res <- merge(data.frame(code = code), ST_higher_taxa_codes_12th, 
+               by = "code", all.x = "TRUE", incomparables = NA, sort = FALSE)
+  
+  # re-arrange if NA-containing input
+  taxon <- res$taxon[match(code, res$code)]
+  
+  # add input as names
+  names(taxon) <- as.character(code)
+  
+  return(taxon)
 }
 
 #' Convert Taxon to Taxon Code
@@ -159,12 +161,20 @@ taxon_to_taxon_code <- function(taxon) {
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
   # return matches
-  idx <- match(tolower(taxon), tolower(ST_higher_taxa_codes_12th$taxon))
-  res <- vector("character", length(taxon))
-  res[order(idx, na.last = NA)] <- ST_higher_taxa_codes_12th[which(tolower(ST_higher_taxa_codes_12th$taxon) %in% tolower(taxon)), 'code']
-  res[res == ""] <- NA
-  names(res) <- as.character(taxon)
-  return(res)
+  ST_higher_taxa_codes_12th$taxonlow <- tolower(ST_higher_taxa_codes_12th$taxon)
+  
+  # LEFT JOIN on lowercase taxon name
+  res <- merge(data.frame(taxonlow = tolower(taxon), row.names = NULL),
+               ST_higher_taxa_codes_12th, 
+               by = "taxonlow", all.x = "TRUE", incomparables = NA, sort = FALSE)
+  
+  # re-arrange if NA-containing input
+  code <- res$code[match(tolower(taxon), res$taxonlow)]
+  
+  # add input as names
+  names(code) <- as.character(taxon)
+  
+  return(code)
 }
 
 #' Determine Relative Position of Taxon within Existing Keys 

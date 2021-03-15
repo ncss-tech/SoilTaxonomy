@@ -51,6 +51,13 @@ test_that("taxon_code_to_taxon & taxon_to_taxon_code works", {
   expect_true(length(res3) == length(res5) && length(res3) == 0)
   expect_true(is.na(res4[[1]]) == is.na(res6[[1]]) &&
                 is.na(names(res4)[1]) && is.na(names(res6)[1]))
+  
+# DUPLICATES
+  res7 <- taxon_code_to_taxon(c("ABC","ABCD",NA,"DAB","ABC"))
+  expect_equal(names(res7), c("ABC","ABCD",NA,"DAB","ABC"))
+  expect_equal(as.character(res7), 
+               c("Anhyturbels","Gypsic Anhyturbels",NA,"Cryaquands","Anhyturbels"
+  ))
 })
 
 # RELATIVE POSITION OF CODES
