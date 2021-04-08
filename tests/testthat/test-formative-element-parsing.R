@@ -73,6 +73,27 @@ test_that("suborder formative elements", {
   expect_equal(x$defs$element, 'xer')
   expect_equal(x$char.index, 19L)
   
+  # apply to all suborders
+  # NA = parsing failure
+  x <- SubOrderFormativeElements(ST_unique_list$suborder)
+  expect_false(any(is.na(x$defs$suborder)))
+  expect_false(any(is.na(x$char.index)))
+  
+  # apply to all greatgroups
+  # NA = parsing failure
+  x <- SubOrderFormativeElements(ST_unique_list$greatgroup)
+  expect_false(any(is.na(x$defs$suborder)))
+  expect_false(any(is.na(x$char.index)))
+  
+  # apply to all subgroups
+  # NA = parsing failure
+  
+  # skip_on_cran() # too long for routine test
+  # 
+  # x <- SubOrderFormativeElements(ST_unique_list$subgroup)
+  # expect_false(any(is.na(x$defs$suborder)))
+  # expect_false(any(is.na(x$char.index)))
+  
 })
 
 
@@ -95,7 +116,47 @@ test_that("greatgroup formative elements", {
   x <- GreatGroupFormativeElements('acrustoxic kanhaplustults')
   expect_equal(x$defs$element, 'kanhap')
   expect_equal(x$char.index, 12L)
+  
 
+  # apply to all greatgroups
+  # NA = parsing failure
+  x <- GreatGroupFormativeElements(ST_unique_list$greatgroup)
+  expect_false(any(is.na(x$defs$greatgroup)))
+  expect_false(any(is.na(x$char.index)))
+  
+  # apply to all subgroups
+  # NA = parsing failure
+  x <- GreatGroupFormativeElements(ST_unique_list$subgroup)
+  expect_false(any(is.na(x$defs$greatgroup)))
+  expect_false(any(is.na(x$char.index)))
+
+})
+
+test_that("subgroup formative elements", {
+  
+  # full subgroup
+  x <- SubGroupFormativeElements('typic folistels')
+  expect_equal(x$defs$element, 'typic')
+  expect_equal(x$char.index, 1L)
+  
+  # more complex example
+  x <- SubGroupFormativeElements('aridic lithic argixerolls')
+  expect_equal(x$defs$element, c("aridic","lithic"))
+  expect_equal(x$char.index, c(1,8))
+  
+  x <- SubGroupFormativeElements('acrustoxic kanhaplustults')
+  expect_equal(x$defs$element, 'acrustoxic')
+  expect_equal(x$char.index, 1L)
+  
+  # apply to all subgroups
+  # NA = parsing failure
+  # 
+  # skip_on_cran() # too long for routine test
+  # 
+  # x <- SubGroupFormativeElements(ST_unique_list$subgroup)
+  # expect_false(any(is.na(x$defs$subgroup)))
+  # expect_false(any(is.na(x$char.index)))
+  # 
 })
 
 test_that("explainST", {

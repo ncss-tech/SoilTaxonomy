@@ -69,13 +69,13 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
   m <- sapply(seq_along(pattern), FUN = function(i) haystack[i][grep(pattern[i], needle, ignore.case = TRUE)[1]])
   m <- m[which(!is.na(m))]
   
-  # remove any that cannot exist e.g. folistels are histels, but only contain "ist" not "hist"
+  # remove any that do not exist in input x; e.g. folistels are histels, but only contain "ist" not "hist"
   m <- m[sapply(m, function(mm) length(grep(mm, x))> 0)]
   
   # order by number of characters
   mord <- m[order(nchar(m))]
   
-  
+  # calculate number of occurences in matching formative elements; only keep those that aren't repeated
   test <- sapply(mord, function(mm) length(grep(mm, m, ignore.case = TRUE)))
   if(any(test > 1)) {
     m <- m[m %in% mord[test == 1]]
@@ -99,7 +99,7 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
     cidx <- suppressWarnings(max(loc.start[, 1], na.rm = TRUE))
     
   } else {
-    cidx <- loc.start[, 1]
+    cidx <- as.numeric(loc.start[, 1])
   }
   
   # attempt sorting multiple matches
