@@ -24,7 +24,7 @@
 #' @importFrom stringr str_locate_all
 FormativeElements <- function(x, level = c("order","suborder","greatgroup","subgroup")) {
   
-  level = match.arg(level, choices = c("order","suborder","greatgroup","subgroup"))
+  level <- match.arg(level, choices = c("order","suborder","greatgroup","subgroup"))
   
   # for R CMD check
   ST_formative_elements <- NULL
@@ -68,7 +68,14 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
   # find the last occurrence of formative elements
   m <- sapply(seq_along(pattern), FUN = function(i) haystack[i][grep(pattern[i], needle, ignore.case = TRUE)[1]])
   m <- m[which(!is.na(m))]
+  
+  # remove any that cannot exist e.g. folistels are histels, but only contain "ist" not "hist"
+  m <- m[sapply(m, function(mm) length(grep(mm, x))> 0)]
+  
+  # order by number of characters
   mord <- m[order(nchar(m))]
+  
+  
   test <- sapply(mord, function(mm) length(grep(mm, m, ignore.case = TRUE)))
   if(any(test > 1)) {
     m <- m[m %in% mord[test == 1]]

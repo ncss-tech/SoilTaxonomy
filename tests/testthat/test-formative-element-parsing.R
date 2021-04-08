@@ -58,11 +58,10 @@ test_that("suborder formative elements", {
   expect_equal(x$defs$element, 'arg')
   expect_equal(x$char.index, 6L)
   
-  ## TODO: https://github.com/ncss-tech/SoilTaxonomy/issues/6
-  # # histosols are difficult because of truncation: ist | hist
-  # x <- SubOrderFormativeElements('folistels')
-  # expect_equal(x$defs$element, 'ist')
-  # expect_equal(x$char.index, 6L)
+  # # histels are difficult because of truncation: hist -> ist
+  x <- SubOrderFormativeElements('folistels')
+  expect_equal(x$defs$element, 'ist')
+  expect_equal(x$char.index, 4L)
   
   # multiple occurence of formative elements
   x <- SubOrderFormativeElements('acrustoxic kanhaplustults')
@@ -93,12 +92,10 @@ test_that("greatgroup formative elements", {
   expect_equal(x$defs$element, 'vitri')
   expect_equal(x$char.index, 13)
   
-  ## TODO: https://github.com/ncss-tech/SoilTaxonomy/issues/7  
-  # # multiple occurence of formative elements
-  # x <- GreatGroupFormativeElements('acrustoxic kanhaplustults')
-  # expect_equal(x$defs$element, 'ust')
-  # expect_equal(x$char.index, 19L)
-  
+  x <- GreatGroupFormativeElements('acrustoxic kanhaplustults')
+  expect_equal(x$defs$element, 'kanhap')
+  expect_equal(x$char.index, 12L)
+
 })
 
 test_that("explainST", {
