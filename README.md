@@ -93,6 +93,8 @@ getTaxonAtLevel('folists', level = "subgroup")
 
 #### `explainST`: Label formative elements with brief explanations
 
+`explainST` provides simple narrative explanations of the formative elements of taxa at the Order, Suborder, Great Group or Subgroup levels.
+
 ``` r
 cat(explainST('folistels'))
 #> folistels
@@ -102,7 +104,7 @@ cat(explainST('folistels'))
 #>    presence of organic soil materials                                                               
 #>       |                                                                                             
 #>       soils with permafrost or gelic material within 100cm  
-#
+
 cat(explainST('typic endoaqualfs'))
 #> typic endoaqualfs
 #> |     |   |  |                                                                                      
