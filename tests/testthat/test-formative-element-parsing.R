@@ -194,6 +194,9 @@ test_that("explainST", {
   # opening a browser w/ HTML output is not a good idea on CRAN
   expect_output(cat(explainST("folistic haplorthels", format = "html", viewer = FALSE)))
   expect_output(cat(explainST("acrudoxic plinthic kandiudults", format = "html", viewer = FALSE)))
+  
+  # this is not a real taxon, but the great group portion is identifiable/explainable
+  expect_output(cat(explainST("goobery foobery kandiudults", format = 'text', viewer = FALSE)))
 })
 
 test_that("explainST HTML viewer", {
@@ -204,3 +207,6 @@ test_that("explainST HTML viewer", {
   expect_output(cat(explainST("folistic haplorthels", format = "html", viewer = TRUE)))
   expect_output(cat(explainST("acrudoxic plinthic kandiudults", format = "html", viewer = TRUE)))
 })
+
+# a test of explainST for all taxa: 
+# res <- lapply(level_to_taxon(), explainST)

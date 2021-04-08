@@ -46,8 +46,10 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
     pattern <- paste0("\\b",haystack)
     tok <- strsplit(x, " ", fixed=TRUE)
   } else {
-     # split into tokens
-    tok <- strsplit(getTaxonAtLevel(x, level = level), " ", fixed=TRUE)
+    # get the taxonomic name at the specified level (simplifies search/matching)
+    res <- getTaxonAtLevel(x, level = level)
+    # split into tokens
+    tok <- strsplit(res, " ", fixed=TRUE)
   }
   
   tok.len <- sapply(tok, length)
@@ -70,7 +72,12 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
   m <- m[which(!is.na(m))]
   
   # remove any that do not exist in input x; e.g. folistels are histels, but only contain "ist" not "hist"
-  m <- m[sapply(m, function(mm) length(grep(mm, x))> 0)]
+  idx <- sapply(m, function(mm) length(grep(mm, x)) > 0)
+  if (length(idx) == 0)
+    return(list(defs = data.frame(element = "", derivation = "",
+                                  connotation = "", simplified = NA, link = NA), 
+                char.index = 0))
+  m <- m[idx]
   
   # order by number of characters
   mord <- m[order(nchar(m))]

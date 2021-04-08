@@ -13,7 +13,7 @@
 explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
   
   # safely match argument choices
-  format <- match.arg(format)
+  format <- match.arg(format, choices = c('text', 'html'))
   
   # matching is done in lower case
   x <- tolower(x)
@@ -29,6 +29,11 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
   main.style <- 'font-size: 85%; font-weight: bold;'
   sub.style <- 'font-size: 85%; font-style: italic;'
   
+  sg.l <- .subGroupLines(x.o, x.so, x.gg, x.sg, ws = whitespace)
+  gg.l <- .greatGroupLines(x.o, x.so, x.gg, ws = whitespace)
+  so.l <- .subOrderLines(x.o, x.so, ws = whitespace)
+  o.l <- .soilOrderLines(x.o, ws = whitespace)
+  
   # create / mark-up lines
   if(format == 'html') {
     #
@@ -38,17 +43,17 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
                    '</span>'
                    )
     
-    sg.txt <- paste0('<span style="', sub.style, '">', .subGroupLines(x.o, x.so, x.gg, x.sg, ws=whitespace), '</span>')
-    gg.txt <-  paste0('<span style="', sub.style, '">', .greatGroupLines(x.o, x.so, x.gg, ws=whitespace), '</span>')
-    so.txt <- paste0('<span style="', sub.style, '">', .subOrderLines(x.o, x.so, ws=whitespace), '</span>')
-    o.txt <- paste0('<span style="', sub.style, '">', .soilOrderLines(x.o, ws=whitespace), '</span>')
+    sg.txt <- paste0('<span style="', sub.style, '">', sg.l, '</span>')
+    gg.txt <-  paste0('<span style="', sub.style, '">', gg.l, '</span>')
+    so.txt <- paste0('<span style="', sub.style, '">', so.l, '</span>')
+    o.txt <- paste0('<span style="', sub.style, '">', o.l, '</span>')
     
   } else {
     x.txt <- x
-    sg.txt <- .subGroupLines(x.o, x.so, x.gg, x.sg, ws = whitespace)
-    gg.txt <- .greatGroupLines(x.o, x.so, x.gg, ws = whitespace)
-    so.txt <- .subOrderLines(x.o, x.so, ws = whitespace)
-    o.txt <- .soilOrderLines(x.o, ws = whitespace)
+    sg.txt <- sg.l
+    gg.txt <- gg.l
+    so.txt <- so.l
+    o.txt <- o.l
   }
   
   
@@ -58,13 +63,17 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
   # the taxon to explain, usually a subgroup
   ex <- append(ex, x.txt) 
   
-  ex <- append(ex, sg.txt)
+  if (grepl("[A-Za-z?]", sg.l[[2]]))
+    ex <- append(ex, sg.txt)
   
-  ex <- append(ex, gg.txt)
+  if (grepl("[A-Za-z?]", gg.l[[2]]))
+    ex <- append(ex, gg.txt)
   
-  ex <- append(ex, so.txt)
+  if (grepl("[A-Za-z?]", so.l[[2]]))
+    ex <- append(ex, so.txt)
   
-  ex <- append(ex, o.txt)
+  if (grepl("[A-Za-z?]", o.l[[2]]))
+    ex <- append(ex, o.txt)
   
   if(format == 'html') {
     ex <- append(ex, '</div></html>')

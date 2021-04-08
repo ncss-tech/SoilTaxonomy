@@ -39,10 +39,10 @@ getTaxonAtLevel <- function(x, level = c("order","suborder","greatgroup","subgro
     if (length(y) >= levelid && nchar(y[[levelid]]) %in% ncharlevel) {
       return(tolower(taxon_code_to_taxon(y[[levelid]])))
     }
-    return(NA)
+    return(NA_character_)
   })
   names(res) <- names(needle)
   if(length(res) > 0)
     return(res)
-  return(NA)
+  return(NA_character_)
 }

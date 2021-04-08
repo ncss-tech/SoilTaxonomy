@@ -52,7 +52,7 @@ data('ST_higher_taxa_codes_12th', package = 'SoilTaxonomy')
 
 ##### HHCH = _Acrudoxic Plinthic Kandiudults_
 
-``` r
+```r
 getTaxonAtLevel('acrudoxic plinthic kandiudults') # level = "order" # default
 #>       HCCH 
 #> "ultisols"
@@ -94,6 +94,15 @@ getTaxonAtLevel('folists', level = "subgroup")
 #### `explainST`: Label formative elements with brief explanations
 
 ``` r
+cat(explainST('folistels'))
+#> folistels
+#> |  |  |                                                                                             
+#> mass of leaves                                                                                      
+#>    |  |                                                                                             
+#>    presence of organic soil materials                                                               
+#>       |                                                                                             
+#>       soils with permafrost or gelic material within 100cm  
+#
 cat(explainST('typic endoaqualfs'))
 #> typic endoaqualfs
 #> |     |   |  |                                                                                      
