@@ -21,6 +21,20 @@
 "ST"
 
 
+#' @title Epipedons, Diagnostic Horizons, Characteristics and Features used by Soil Taxonomy
+#' 
+#' @description A `data.frame` with columns "group", "name", "chapter", "page", "description", "criteria". Currently page numbers and contents are referenced to 12th Edition Keys to Soil Taxonomy and derived from products in the ncss-tech SoilKnowledgeBase repository (https://github.com/ncss-tech/SoilKnowledgeBase).
+#' 
+#' @references 
+#' Soil Survey Staff. 2014. Keys to Soil Taxonomy, 12th ed. USDA-Natural Resources Conservation Service, Washington, DC.
+#' \url{https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/class/taxonomy/?cid=nrcs142p2_053580}
+#' 
+#' @usage data(ST_features)
+#' 
+#' @keywords datasets
+#' 
+"ST_features"
+
 #' @title Formative Elements used by Soil Taxonomy
 #' 
 #' @description A database of formative elements used by the first 4 levels of US Soil Taxonomy hierarchy (soil order, suborder, greatgroup, subgroup).
