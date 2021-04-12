@@ -1,3 +1,5 @@
+
+
 .match_taxa <- function(pattern) {
   
   # for R CMD check
@@ -124,7 +126,9 @@ load("E:/workspace/ncss-standards/KST/Plumber/plumber/soiltaxonomy_12th_db_HTML_
 res <- do.call('rbind', lapply(paste0('^', subgroup_elements$V1), function(y) {
     res2 <- do.call('rbind', lapply(.match_taxa(y)$code, function(x) {
         if(length(x) == 0) return(NULL)
-        .taxon_criteria(st_db12_html, x) %>% subset(crit == x & logic != "LAST")
+        res3 <- .taxon_criteria(st_db12_html, x) %>% subset(crit == x & logic != "LAST")
+        if (nrow(res3) == 0) return(NULL)
+        data.frame(taxon = as.character(SoilTaxonomy::taxon_code_to_taxon(x)), res3)
       }))
     if (is.null(res2)) return(NULL)
     data.frame(element = y, res2)
@@ -134,4 +138,4 @@ write.csv(res,
           file = "E:/workspace/SoilTaxonomy/misc/formative-elements/subgroup_criteria_unexplained.csv", 
           row.names = FALSE)
 
-knitr::kable(res)
+knitr::kable(res, row.names = FALSE)
