@@ -138,4 +138,4 @@ write.csv(res,
           file = "E:/workspace/SoilTaxonomy/misc/formative-elements/subgroup_criteria_unexplained.csv", 
           row.names = FALSE)
 
-knitr::kable(res, row.names = FALSE)
+DT::datatable(res, escape = FALSE, rownames = FALSE)
