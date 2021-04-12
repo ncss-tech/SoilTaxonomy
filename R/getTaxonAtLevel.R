@@ -26,13 +26,20 @@ getTaxonAtLevel <- function(x, level = c("order","suborder","greatgroup","subgro
   level.names <- c("order","suborder","greatgroup","subgroup")
   
   level = match.arg(level, choices = level.names)
-  level.lut <- 1:4
+  level.lut <- 1:5
   names(level.lut) <- level.names
   
   levelid <- level.lut[level]
   ncharlevel <- levelid
-  if(levelid == 4)
+  
+  if (levelid >= 4)
     ncharlevel <- 4:5
+  
+  # assume "family" has a comma separated list (words separated by commas)
+  #   followed by subgroup (2 or more words without commas)
+  if (any(grepl(",", x))) {
+    x <- gsub(".*, \\b[A-Za-z]+\\b (\\b[^,]*)$", "\\1", x)
+  }
   
   needle <- decompose_taxon_code(taxon_to_taxon_code(x))
   res <- sapply(needle, function(y) {
