@@ -47,6 +47,6 @@ parse_family <- function(family) {
     subgroup = subgroups,
     subgroup_code = taxon_to_taxon_code(subgroups),
     class_string = family_classes,
-    classes_split = I(strsplit(family_classes, ",")))
+    classes_split = I(lapply(strsplit(family_classes, ","), trimws)))
   
 }
