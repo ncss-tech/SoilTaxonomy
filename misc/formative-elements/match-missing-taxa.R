@@ -123,8 +123,8 @@ library(magrittr)
 
 load("E:/workspace/ncss-standards/KST/Plumber/plumber/soiltaxonomy_12th_db_HTML_EN.Rda")
 
-res <- do.call('rbind', lapply(paste0('^', subgroup_elements$V1), function(y) {
-    res2 <- do.call('rbind', lapply(.match_taxa(y)$code, function(x) {
+res <- do.call('rbind', lapply(subgroup_elements$V1, function(y) {
+    res2 <- do.call('rbind', lapply(.match_taxa(paste0('\\b', y))$code, function(x) {
         if(length(x) == 0) return(NULL)
         res3 <- .taxon_criteria(st_db12_html, x) %>% subset(crit == x & logic != "LAST")
         if (nrow(res3) == 0) return(NULL)
