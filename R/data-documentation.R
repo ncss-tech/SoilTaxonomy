@@ -20,6 +20,19 @@
 #'
 "ST"
 
+#' @title Family-level Classes for Soil Taxonomy
+#' 
+#' @description A database of family-level class names for Soil Taxonomy.
+#' 
+#' @references 
+#'  Soil Survey Staff. 2014. Keys to Soil Taxonomy, 12th ed. USDA-Natural Resources Conservation Service, Washington, DC.
+#' \url{https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/class/taxonomy/?cid=nrcs142p2_053580}
+#' 
+#' @usage data(ST_family_classes)
+#' 
+#' @keywords datasets
+#' 
+"ST_family_classes"
 
 #' @title Epipedons, Diagnostic Horizons, Characteristics and Features used by Soil Taxonomy
 #' 

@@ -1,5 +1,5 @@
-## 2019-04-02
-## D.E. Beaudette
+## 2020-04-13
+## D.E. Beaudette, A.G. Brown
 ##
 ## Rebuild copies of data used within the SoilTaxonomy R package
 
@@ -17,6 +17,17 @@ ST_unique_list$greatgroup <- unique(ST$greatgroup)
 ST_unique_list$subgroup <- unique(ST$subgroup)
 
 save(ST_unique_list, file='data/ST_unique_list.rda')
+
+## get NASIS class names (family-level taxonomy)
+ST_family_classes <- read.csv('misc/ST-data/ST-family-classes.csv', 
+                              stringsAsFactors = FALSE)
+
+# Join in chapter and page information from latest Keys
+
+# remove NASIS domain ID?
+ST_family_classes$DomainID <- NULL
+
+save(ST_family_classes, file='data/ST_family_classes.rda')
 
 ## formative element dictionaries
 # TODO: streamline this
