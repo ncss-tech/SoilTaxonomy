@@ -15,3 +15,10 @@ A character vector of taxa at the specified level
 \description{
 Convenience method for getting taxa from \code{ST_unique_list}
 }
+\examples{
+
+# get all order and suborder level taxa
+
+level_to_taxon(level = c("order","suborder"))
+
+}

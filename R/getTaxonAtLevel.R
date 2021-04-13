@@ -31,7 +31,8 @@ getTaxonAtLevel <- function(x, level = c("order","suborder","greatgroup","subgro
   
   levelid <- level.lut[level]
   ncharlevel <- levelid
-  if(levelid == 4)
+  
+  if (levelid == 4)
     ncharlevel <- 4:5
   
   needle <- decompose_taxon_code(taxon_to_taxon_code(x))

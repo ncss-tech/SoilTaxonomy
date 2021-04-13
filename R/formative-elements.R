@@ -38,11 +38,11 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
   pattern <- haystack
   
   if (level == "order") {
-    # soil order is always encoded at the end
+    # soil order is always encoded at the end of last word
     pattern <- paste0(haystack, '$')
     tok <- strsplit(x, " ", fixed=TRUE)  
   } else if (level == "greatgroup") {
-    # soil order is always encoded at the end
+    # soil great group is always the last word
     pattern <- paste0("\\b",haystack)
     tok <- strsplit(x, " ", fixed=TRUE)
   } else {

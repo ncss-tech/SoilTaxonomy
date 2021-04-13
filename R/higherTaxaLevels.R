@@ -1,9 +1,11 @@
 
 #' Determine taxonomic level of specified taxa
 #'
+#' Taxa that resolve to a subgroup level taxon and contain a comma `","` are assumed to be `"family"`-level.
+#'
 #' @param taxon character vector of taxon names at Order, Suborder, Great Group or Subgroup level.
 #'
-#' @return character of taxonomic hierarchy levels (such as "order", "suborder", "greatgroup", "subgroup") for each element of input vector 
+#' @return character of taxonomic hierarchy levels (such as "order", "suborder", "greatgroup", "subgroup", "family") for each element of input vector.
 #' 
 #' @export
 #'
@@ -23,6 +25,9 @@ taxon_to_level <- function(taxon) {
   level[ncode == 2] <- "suborder" # e.g. AB
   level[ncode == 3] <- "greatgroup" # e.g. ABC
   level[ncode >= 4] <- "subgroup" # e.g. ABCD or in large keys ABCDe
+  
+  # if taxon contains commas, taxon_to_taxon_code extracts subgroup
+  level[ncode >= 4 & grepl(",", taxon)] <- "family"
   
   level
 }
