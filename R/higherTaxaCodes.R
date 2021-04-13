@@ -160,6 +160,12 @@ taxon_to_taxon_code <- function(taxon) {
   # load local copy of taxon code lookup table
   load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
+  # assume "family" has a comma separated list (words separated by commas)
+  #   followed by subgroup (2 or more words without commas)
+  if (any(grepl(",", taxon))) {
+    taxon <- gsub(".*, \\b[A-Za-z]+\\b (\\b[^,]*)$", "\\1", taxon)
+  }
+  
   # return matches
   ST_higher_taxa_codes_12th$taxonlow <- tolower(ST_higher_taxa_codes_12th$taxon)
   

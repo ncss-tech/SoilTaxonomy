@@ -10,10 +10,10 @@ taxon_to_level(taxon)
 \item{taxon}{character vector of taxon names at Order, Suborder, Great Group or Subgroup level.}
 }
 \value{
-character of taxonomic hierarchy levels (such as "order", "suborder", "greatgroup", "subgroup") for each element of input vector
+character of taxonomic hierarchy levels (such as "order", "suborder", "greatgroup", "subgroup", "family") for each element of input vector.
 }
 \description{
-Determine taxonomic level of specified taxa
+Taxa that resolve to a subgroup level taxon and contain a comma \code{","} are assumed to be \code{"family"}-level.
 }
 \examples{
 
