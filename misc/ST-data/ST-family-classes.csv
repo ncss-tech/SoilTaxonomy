@@ -180,15 +180,20 @@ DomainID,classname,group
 188,isothermic,temperature regime
 188,mesic,temperature regime
 188,thermic,temperature regime
-5247,araric,human-altered and human transported
-5247,artifactic,human-altered and human transported
-5247,ashifactic,human-altered and human transported
-5247,asphaltic,human-altered and human transported
-5247,combustic,human-altered and human transported
-5247,concretic,human-altered and human transported
-5247,dredgic,human-altered and human transported
-5247,gypsifactic,human-altered and human transported
-5247,methanogenic,human-altered and human transported
-5247,pauciartifactic,human-altered and human transported
-5247,pyrocarbonic,human-altered and human transported
-5247,spolic,human-altered and human transported
+520,not used,activity class
+520,subactive,activity class
+520,semiactive,activity class
+520,active,activity class
+520,superactive,activity class
+5247,araric,human-altered and human transported class
+5247,artifactic,human-altered and human transported class
+5247,ashifactic,human-altered and human transported class
+5247,asphaltic,human-altered and human transported class
+5247,combustic,human-altered and human transported class
+5247,concretic,human-altered and human transported class
+5247,dredgic,human-altered and human transported class
+5247,gypsifactic,human-altered and human transported class
+5247,methanogenic,human-altered and human transported class
+5247,pauciartifactic,human-altered and human transported class
+5247,pyrocarbonic,human-altered and human transported class
+5247,spolic,human-altered and human transported class

@@ -1,11 +1,5 @@
-## 2019-04-02
-## D.E. Beaudette
-## Prepare 99.9% of the Soil Taxonomy hierarchy from NASIS domains, current ST edition
-##
-
-
-# using the NASIS domains for ST, re-construct the ST hierarchy from order / suborder / great group / subgroup taxa
-# result is 99% accurate, see ST-manual-fixes.diff for manual edits required
+## 2021-04-15
+## D.E. Beaudette, A.G. Brown
 
 library(RODBC)
 library(SoilTaxonomy)
@@ -17,7 +11,7 @@ ST.orders <- RODBC::sqlQuery(channel, "SELECT ChoiceName as soilorder FROM Metad
 ST.suborders <- RODBC::sqlQuery(channel, "SELECT ChoiceName as suborder FROM MetadataDomainDetail WHERE DomainID = 134 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
 ST.greatgroups <- RODBC::sqlQuery(channel, "SELECT ChoiceName as greatgroup FROM MetadataDomainDetail WHERE DomainID = 130 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
 ST.subgroups <- RODBC::sqlQuery(channel, "SELECT ChoiceName as subgroup FROM MetadataDomainDetail WHERE DomainID = 187 AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
-ST.family.classes <- RODBC::sqlQuery(channel, "SELECT DomainID, ChoiceName as classname FROM MetadataDomainDetail WHERE DomainID IN ('126','127','128','131','184','185','186','188','5247') AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
+ST.family.classes <- RODBC::sqlQuery(channel, "SELECT DomainID, ChoiceName as classname FROM MetadataDomainDetail WHERE DomainID IN ('126','127','128','131','184','185','186','188','520','5247') AND ChoiceObsolete = 0", stringsAsFactors=FALSE)
 
 ST.family.classes$group <- c(
   `126` = "mineralogy class",
@@ -28,7 +22,8 @@ ST.family.classes$group <- c(
   `185` = "temperature class",
   `186` = "moisture regime",
   `188` = "temperature regime",
-  `5247` = "human-altered and human transported"
+  `520` = "activity class",
+  `5247` = "human-altered and human transported class"
 )[as.character(ST.family.classes$DomainID)]
 
 # convert to vectors
