@@ -101,7 +101,7 @@ test_that("greatgroup formative elements", {
   
   # full subgroup
   x <- GreatGroupFormativeElements('typic haploxerolls')
-  expect_equal(x$defs$element, 'haplo')
+  expect_equal(x$defs$element, 'hap')
   expect_equal(x$char.index, 7L)
   
   # more complex example
@@ -110,7 +110,7 @@ test_that("greatgroup formative elements", {
   expect_equal(x$char.index, 15)
   
   x <- GreatGroupFormativeElements('alfic humic vitrixerands')
-  expect_equal(x$defs$element, 'vitri')
+  expect_equal(x$defs$element, 'vitr')
   expect_equal(x$char.index, 13)
   
   x <- GreatGroupFormativeElements('acrustoxic kanhaplustults')
