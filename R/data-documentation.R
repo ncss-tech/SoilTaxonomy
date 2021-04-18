@@ -20,7 +20,6 @@
 #'
 "ST"
 
-
 #' @title Epipedons, Diagnostic Horizons, Characteristics and Features used by Soil Taxonomy
 #' 
 #' @description A `data.frame` with columns "group", "name", "chapter", "page", "description", "criteria". Currently page numbers and contents are referenced to 12th Edition Keys to Soil Taxonomy and derived from products in the ncss-tech SoilKnowledgeBase repository (https://github.com/ncss-tech/SoilKnowledgeBase).

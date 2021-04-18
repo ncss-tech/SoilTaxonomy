@@ -1,4 +1,4 @@
-#' Get Epipedons, Diagnostic Horizons, Characteristics and Features used by Soil Taxonomy
+#' Get Diagnostic Surface and Subsurface Horizons, Characteristics and Features
 #'
 #' All parameters to this function are optional (default `NULL`). If specified, they are used as filters.
 #' 
@@ -8,8 +8,8 @@
 #' @param chapter optional filtering vector; only chapter `3` currently
 #' @param name optional filtering vector; these are the "names" of features used in headers
 #' @param page optional filtering vector; page number (12th Edition Keys to Soil Taxonomy)
-#' @param multiline_sep Default `"\\n"` returns `criteria` a simple character vector concatenated with `"\\n"` inserted between lines. Use `NULL` for list column result.
-#' @return a data.frame. , for multiline data.
+#' @param multiline_sep default `"\\n"` returns `criteria` column as a character vector concatenated with `"\\n"`. Use `NULL` for list 
+#' @return a data.frame  
 #' @export
 #' @seealso ST_features
 #' @examples 
@@ -24,7 +24,7 @@
 #' get_ST_features(page = 18:20)
 #' 
 #' # get the required characteristics for the mollic epipedon from list column
-#' str(get_ST_features(group = "Surface", name = "Mollic Epipedon")$criteria)
+#' str(get_ST_features(name = "Mollic Epipedon")$criteria)
 #' 
 get_ST_features <- function(group = NULL,
                             chapter = NULL,

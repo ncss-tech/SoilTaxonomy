@@ -1,4 +1,3 @@
-
 #' Determine taxonomic level of specified taxa
 #'
 #' Taxa that resolve to a subgroup level taxon and contain a comma `","` are assumed to be `"family"`-level.

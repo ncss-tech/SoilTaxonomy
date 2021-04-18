@@ -1,17 +1,14 @@
-#' Check for valid order | suborder | greatgroup | subgroup.
+#' Check for valid taxonomic level (Order, Suborder, Great Group, Subgroup)
 #' 
-#' This function can be used to quickly test for valid levels within the 
-#' Soil Taxonomy hierarchy, a defined within the 13th edition of The Keys to Soil Taxonomy.
-#' Matches are case insensitive.
+#' Checks `needle` for matches against a single level of Soil Taxonomy hierarchy: `order`, `suborder`, `greatgroup`, `subgroup`. Matches are case-insensitive.
 #' 
 #' @param needle vector of taxa
-#' @param level single level of Soil Taxonomy hierarchy: order, suborder, greatgroup, subgroup
+#' @param level single level of Soil Taxonomy hierarchy; one of: `"order"`, `"suborder"`, `"greatgroup"`, `"subgroup"`
 #' 
-#' @return logical vector, same lenght as needle
+#' @return `logical` vector, same length as needle
 #' 
 #' @examples
 #' 
-#' # note specfifcation of taxonomic level
 #' isValidST('typic haploxeralfs', level = 'subgroup')
 #' 
 #' @export
@@ -33,7 +30,7 @@ isValidST <- function(needle, level = c('order', 'suborder', 'greatgroup', 'subg
   needle <- tolower(needle)
   res <- match(needle, haystack)
   
-  res <- ! sapply(res, is.na)
+  res <- !sapply(res, is.na)
   return(res)
 }
 

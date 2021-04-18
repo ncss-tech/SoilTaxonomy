@@ -5,7 +5,7 @@
 \alias{ST_features}
 \title{Epipedons, Diagnostic Horizons, Characteristics and Features used by Soil Taxonomy}
 \format{
-An object of class \code{data.frame} with 66 rows and 6 columns.
+An object of class \code{data.frame} with 84 rows and 6 columns.
 }
 \usage{
 data(ST_features)
