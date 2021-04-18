@@ -2,12 +2,12 @@
 % Please edit documentation in R/explainST.R
 \name{explainST}
 \alias{explainST}
-\title{Explain a subgroup level taxa from Soil Taxonomy}
+\title{Explain a taxon from Soil Taxonomy using formative elements}
 \usage{
 explainST(x, format = c("text", "html"), viewer = TRUE)
 }
 \arguments{
-\item{x}{a single subgroup, matching is exact and case insensitive}
+\item{x}{a Subgroup, Great Group, Suborder or Order-level taxonomic name; matching is exact and case-insensitive}
 
 \item{format}{output format: 'text' | 'html'}
 
@@ -17,8 +17,14 @@ explainST(x, format = c("text", "html"), viewer = TRUE)
 a block of text, suitable for display in fixed-width font
 }
 \description{
-Explain a subgroup level taxa from Soil Taxonomy
+Explain a taxon from Soil Taxonomy using formative elements
 }
-\note{
-This function currently accepts only subgroup taxa. There are plans to extend to arbitrary levels of the hierarchy.
+\examples{
+
+cat(explainST("ids"), "\n\n")              #  -ids (order suffix) 
+cat(explainST("aridisols"), "\n\n")        # Aridisols (order name)
+cat(explainST("argids"), "\n\n")           # Arg- (suborder) 
+cat(explainST("haplargids"), "\n\n")       # Hap- (great group)
+cat(explainST("typic haplargids"), "\n\n") # Typic (subgroup)
+
 }

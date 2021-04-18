@@ -24,7 +24,15 @@ load('misc/formative-elements/formative-elements.rda')
 ST_formative_elements <- ST.formative_elements
 names(ST_formative_elements) <- c("order","suborder","greatgroup","subgroup")
 
+# find formative elements in order names and add to table
+y <- ST_formative_elements[["order"]]
+yi <- y[grep(x, y$order),]
+res <- data.frame(y$order, stringr::str_locate(y$order, gsub("(.*)s$","\\1", y$element)))
+colnames(res) <- c("order","element_start","element_end")
+ST_formative_elements[["order"]] <- merge(ST_formative_elements[["order"]], res, by = "order")
+
 save(ST_formative_elements, file='data/ST_formative_elements.rda')
+
 
 ST_feature_SKB <- jsonlite::read_json("https://github.com/ncss-tech/SoilKnowledgeBase/raw/main/inst/extdata/KST/2014_KST_EN_featurelist.json",
                                    simplifyVector = TRUE)
