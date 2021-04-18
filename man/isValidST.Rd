@@ -2,26 +2,23 @@
 % Please edit documentation in R/isValidST.R
 \name{isValidST}
 \alias{isValidST}
-\title{Check for valid order | suborder | greatgroup | subgroup.}
+\title{Check for valid taxonomic level (Order, Suborder, Great Group, Subgroup)}
 \usage{
 isValidST(needle, level = c("order", "suborder", "greatgroup", "subgroup"))
 }
 \arguments{
 \item{needle}{vector of taxa}
 
-\item{level}{single level of Soil Taxonomy hierarchy: order, suborder, greatgroup, subgroup}
+\item{level}{single level of Soil Taxonomy hierarchy; one of: \code{"order"}, \code{"suborder"}, \code{"greatgroup"}, \code{"subgroup"}}
 }
 \value{
-logical vector, same lenght as needle
+\code{logical} vector, same length as needle
 }
 \description{
-This function can be used to quickly test for valid levels within the
-Soil Taxonomy hierarchy, a defined within the 13th edition of The Keys to Soil Taxonomy.
-Matches are case insensitive.
+Checks \code{needle} for matches against a single level of Soil Taxonomy hierarchy: \code{order}, \code{suborder}, \code{greatgroup}, \code{subgroup}. Matches are case-insensitive.
 }
 \examples{
 
-# note specfifcation of taxonomic level
 isValidST('typic haploxeralfs', level = 'subgroup')
 
 }
