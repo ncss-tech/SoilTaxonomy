@@ -1,7 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^misc$
-^inst$
+^docs$
+^inst/extdata$
 ^\.github$
 ^codecov\.yml$
 ^LICENSE\.md$
