@@ -13,6 +13,11 @@ Repository: CRAN
 URL: https://github.com/ncss-tech/SoilTaxonomy
 BugReports: https://github.com/ncss-tech/SoilTaxonomy/issues
 Imports: stringr
-Suggests: testthat, covr
+Suggests: 
+    testthat,
+    covr,
+    knitr,
+    rmarkdown
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
+VignetteBuilder: knitr
