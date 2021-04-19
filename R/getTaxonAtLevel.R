@@ -42,7 +42,7 @@ getTaxonAtLevel <- function(x, level = c("order","suborder","greatgroup","subgro
     }
     return(NA_character_)
   })
-  names(res) <- names(needle)
+  names(res) <- x
   if(length(res) > 0)
     return(res)
   return(NA_character_)
