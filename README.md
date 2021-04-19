@@ -51,19 +51,19 @@ data('ST_higher_taxa_codes_12th', package = 'SoilTaxonomy')
 
 ```r
 getTaxonAtLevel('acrudoxic plinthic kandiudults') # level = "order" # default
-#>       HCCH 
-#> "ultisols"
+#> acrudoxic plinthic kandiudults 
+#>                     "ultisols"
 
 getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "suborder")
-#>     HCCH 
-#> "udults"
+#> acrudoxic plinthic kandiudults 
+#>                       "udults"
 
 getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "greatgroup")
-#>          HCCH 
-#> "kandiudults"
+#> acrudoxic plinthic kandiudults 
+#>                  "kandiudults"
 
 getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "subgroup")
-#>                             HCCH 
+#>   acrudoxic plinthic kandiudults 
 #> "acrudoxic plinthic kandiudults"
 ```
 
@@ -71,20 +71,20 @@ getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "subgroup")
 
 ```r
 getTaxonAtLevel('folists')
-#>          BA 
+#>     folists 
 #> "histosols"
 
 getTaxonAtLevel('folists', level = "suborder")
-#>        BA 
+#>   folists 
 #> "folists"
 
 getTaxonAtLevel('folists', level = "greatgroup")
-#> BA 
-#> NA 
+#> folists 
+#>      NA 
 
 getTaxonAtLevel('folists', level = "subgroup")
-#> BA 
-#> NA 
+#> folists 
+#>      NA 
 
 ```
 
