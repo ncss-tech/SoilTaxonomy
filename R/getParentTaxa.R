@@ -42,9 +42,11 @@ getParentTaxa <- function(taxon = NULL, code = NULL, convert = TRUE) {
   # iterate over list - 1 element/taxon each with composite codes
   res <- lapply(seq_along(dtc), function(i) {
       x <- dtc[[i]]
-      if (all(is.na(x)) | is.na(taxon_to_level(taxon_code_to_taxon(code[i]))))
+      
+      if (all(is.na(x)) || is.na(taxon_to_level(taxon_code_to_taxon(code[i])))) {
         return(NA)
-    
+      }
+      
       # take all codes except last (self) code
       y <- do.call('c', x[1:(length(x) - as.integer(remove_self[i]))])
       
