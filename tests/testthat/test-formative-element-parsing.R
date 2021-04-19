@@ -160,6 +160,10 @@ test_that("subgroup formative elements", {
 })
 
 test_that("explainST", {
+  
+  # explain a formative element position in order name
+  expect_output(cat(explainST("aridisols")))
+  
   data("ST_higher_taxa_codes_12th")
   
   subgroups <- ST_higher_taxa_codes_12th[nchar(ST_higher_taxa_codes_12th$code) >= 4,]
@@ -182,7 +186,6 @@ test_that("explainST", {
   
   # first iteration: all these are broken
   # Error in ws[idx] <- txt : replacement has length zero
-  
   expect_output(cat(explainST("ultic argixerolls")))
   expect_output(cat(explainST("psammentic paleudalfs")))
   expect_output(cat(explainST("vitrandic humustepts")))
