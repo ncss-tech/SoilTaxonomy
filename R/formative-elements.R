@@ -37,19 +37,31 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
   haystack <- lut$element
   pattern <- haystack
   
+  # split into tokens using spaces
+  tok <- strsplit(x, " ", fixed = TRUE)
+  
   if (level == "order") {
     # soil order is always encoded at the end of last word
     pattern <- paste0(haystack, '$')
-    tok <- strsplit(x, " ", fixed=TRUE)  
+
   } else if (level == "greatgroup") {
-    # soil great group is always the last word
-    pattern <- paste0("\\b",haystack)
-    tok <- strsplit(x, " ", fixed=TRUE)
+    # soil great group is preceded by a word boundary
+    pattern <- paste0("\\b", haystack)
+    
   } else {
+    
+    if (level == "suborder") {
+      # Suborder is always followed by a non-"s" character (an order element)
+      #   - this covers the use of *ist* in the suborders of Gelisols
+      #  Great Groups of Histels have formative elements that overlap Suborders of Histosols
+      pattern <- paste0(haystack, '[^s]')  
+    }
+    
     # get the taxonomic name at the specified level (simplifies search/matching)
     res <- getTaxonAtLevel(x, level = level)
-    # split into tokens
-    tok <- strsplit(res, " ", fixed=TRUE)
+    
+    # split into tokens using result
+    tok <- strsplit(res, " ", fixed = TRUE)
   }
   
   tok.len <- sapply(tok, length)
