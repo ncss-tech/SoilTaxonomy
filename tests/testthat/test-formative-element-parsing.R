@@ -164,6 +164,13 @@ test_that("explainST", {
   # explain a formative element position in order name
   expect_output(cat(explainST("aridisols")))
   
+  # explain several challenging suborders and great groups
+  expect_output(cat(explainST("saprists")))
+  expect_output(cat(explainST("sapristels")))
+  
+  expect_output(cat(explainST("folists")))
+  expect_output(cat(explainST("folistels")))
+  
   data("ST_higher_taxa_codes_12th")
   
   subgroups <- ST_higher_taxa_codes_12th[nchar(ST_higher_taxa_codes_12th$code) >= 4,]
