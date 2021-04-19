@@ -30,16 +30,23 @@ getParentTaxa <- function(taxon = NULL, code = NULL, convert = TRUE) {
     if (is.null(code))
       code <- taxon_to_taxon_code(taxon)
   
+  # allow for family-level input
+  remove_self <- rep(TRUE, length(code))
+  if(!is.null(taxon)) {
+    remove_self[which(taxon_to_level(taxon) == "family")] <- FALSE
+  }
+  
   # decompose codes
   dtc <- decompose_taxon_code(code)
   
   # iterate over list - 1 element/taxon each with composite codes
-  lapply(dtc, function(x) {
-      if (all(is.na(x)))
+  res <- lapply(seq_along(dtc), function(i) {
+      x <- dtc[[i]]
+      if (all(is.na(x)) | is.na(taxon_to_level(taxon_code_to_taxon(code[i]))))
         return(NA)
     
       # take all codes except last (self) code
-      y <- do.call('c', x[1:(length(x) - 1)])
+      y <- do.call('c', x[1:(length(x) - as.integer(remove_self[i]))])
       
       # convert code to taxon if needed
       if (convert) 
@@ -47,4 +54,11 @@ getParentTaxa <- function(taxon = NULL, code = NULL, convert = TRUE) {
       
       return(y)
     })
+  
+  # use input (code) as names
+  names(res) <- code
+  if (!is.null(taxon)) {
+    names(res) <- taxon
+  }
+  return(res)
 }
