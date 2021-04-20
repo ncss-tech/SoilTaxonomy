@@ -13,7 +13,7 @@
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="A System of Soil Classification for Making and Interpreting Soil Surveys">
 <meta property="og:description" content="Taxonomic dictionaries, formative element lists, and functions related to the maintenance, development and application of U.S. Soil Taxonomy. 
-   Data and functionality are based on official U.S. Department of Agriculture sources including the latest edition of the Keys to Soil Taxonomy. Descriptions and metadata are obtained from the National Soil Information System (NASIS) or Soil SURvey GeOgraphic (SSURGO) databases, or other sources as referenced in the data documentation. ">
+   Data and functionality are based on official U.S. Department of Agriculture sources including the latest edition of the Keys to Soil Taxonomy. Descriptions and metadata are obtained from the National Soil Information System or Soil Survey Geographic databases. Other sources are referenced in the data documentation. ">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -127,19 +127,19 @@
 </h5>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">'acrudoxic plinthic kandiudults'</span><span class="op">)</span> <span class="co"># level = "order" # default</span>
-<span class="co">#&gt;       HCCH </span>
-<span class="co">#&gt; "ultisols"</span>
+<span class="co">#&gt; acrudoxic plinthic kandiudults </span>
+<span class="co">#&gt;                     "ultisols"</span>
 
 <span class="fu"><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">'acrudoxic plinthic kandiudults'</span>, level <span class="op">=</span> <span class="st">"suborder"</span><span class="op">)</span>
-<span class="co">#&gt;     HCCH </span>
-<span class="co">#&gt; "udults"</span>
+<span class="co">#&gt; acrudoxic plinthic kandiudults </span>
+<span class="co">#&gt;                       "udults"</span>
 
 <span class="fu"><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">'acrudoxic plinthic kandiudults'</span>, level <span class="op">=</span> <span class="st">"greatgroup"</span><span class="op">)</span>
-<span class="co">#&gt;          HCCH </span>
-<span class="co">#&gt; "kandiudults"</span>
+<span class="co">#&gt; acrudoxic plinthic kandiudults </span>
+<span class="co">#&gt;                  "kandiudults"</span>
 
 <span class="fu"><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">'acrudoxic plinthic kandiudults'</span>, level <span class="op">=</span> <span class="st">"subgroup"</span><span class="op">)</span>
-<span class="co">#&gt;                             HCCH </span>
+<span class="co">#&gt;   acrudoxic plinthic kandiudults </span>
 <span class="co">#&gt; "acrudoxic plinthic kandiudults"</span></code></pre></div>
 </div>
 </div>
@@ -149,20 +149,20 @@
 </h4>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">'folists'</span><span class="op">)</span>
-<span class="co">#&gt;          BA </span>
+<span class="co">#&gt;     folists </span>
 <span class="co">#&gt; "histosols"</span>
 
 <span class="fu"><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">'folists'</span>, level <span class="op">=</span> <span class="st">"suborder"</span><span class="op">)</span>
-<span class="co">#&gt;        BA </span>
+<span class="co">#&gt;   folists </span>
 <span class="co">#&gt; "folists"</span>
 
 <span class="fu"><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">'folists'</span>, level <span class="op">=</span> <span class="st">"greatgroup"</span><span class="op">)</span>
-<span class="co">#&gt; BA </span>
-<span class="co">#&gt; NA </span>
+<span class="co">#&gt; folists </span>
+<span class="co">#&gt;      NA </span>
 
 <span class="fu"><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">'folists'</span>, level <span class="op">=</span> <span class="st">"subgroup"</span><span class="op">)</span>
-<span class="co">#&gt; BA </span>
-<span class="co">#&gt; NA </span></code></pre></div>
+<span class="co">#&gt; folists </span>
+<span class="co">#&gt;      NA </span></code></pre></div>
 </div>
 <div id="explainst-label-formative-elements-with-brief-explanations" class="section level4">
 <h4 class="hasAnchor">
@@ -397,6 +397,7 @@
 <li><a href="https://github.com/ncss-tech/SoilTaxonomy/actions"><img src="https://github.com/ncss-tech/SoilTaxonomy/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://codecov.io/gh/ncss-tech/SoilTaxonomy?branch=master"><img src="https://codecov.io/gh/ncss-tech/SoilTaxonomy/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://cran.r-project.org/package=SoilTaxonomy"><img src="https://www.r-pkg.org/badges/version-last-release/SoilTaxonomy" alt="CRAN Status"></a></li>
+<li><a href="https://ncss-tech.github.io/SoilTaxonomy/docs"><img src="https://img.shields.io/badge/docs-HTML-informational" alt="SoilTaxonomy Manual"></a></li>
 </ul>
 </div>
 </div>

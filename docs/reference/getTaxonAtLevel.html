@@ -158,20 +158,20 @@
     <pre class="examples"><div class='input'>
 <span class='co'># default gets the soil order </span>
 <span class='fu'>getTaxonAtLevel</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"typic haplargids"</span>, <span class='st'>"typic glacistels"</span><span class='op'>)</span><span class='op'>)</span> <span class='co'>#, level = "order")</span>
-</div><div class='output co'>#&gt;        GEFS        AABC 
-#&gt; "aridisols"  "gelisols" </div><div class='input'>
+</div><div class='output co'>#&gt; typic haplargids typic glacistels 
+#&gt;      "aridisols"       "gelisols" </div><div class='input'>
 <span class='co'># specify alternate levels</span>
 <span class='fu'>getTaxonAtLevel</span><span class='op'>(</span><span class='st'>"humic haploxerands"</span>, level <span class='op'>=</span> <span class='st'>"greatgroup"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;           DECH 
-#&gt; "haploxerands" </div><div class='input'>
+</div><div class='output co'>#&gt; humic haploxerands 
+#&gt;     "haploxerands" </div><div class='input'>
 <span class='co'># can't get subgroup (child) from great group (parent)</span>
 <span class='fu'>getTaxonAtLevel</span><span class='op'>(</span><span class='st'>"udifolists"</span>, level <span class='op'>=</span> <span class='st'>"subgroup"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; BAD 
-#&gt;  NA </div><div class='input'>
+</div><div class='output co'>#&gt; udifolists 
+#&gt;         NA </div><div class='input'>
 <span class='co'># but can do parents of children</span>
 <span class='fu'>getTaxonAtLevel</span><span class='op'>(</span><span class='st'>"udifolists"</span>, level <span class='op'>=</span> <span class='st'>"suborder"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;       BAD 
-#&gt; "folists" </div><div class='input'>
+</div><div class='output co'>#&gt; udifolists 
+#&gt;  "folists" </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

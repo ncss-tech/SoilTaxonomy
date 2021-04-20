@@ -172,13 +172,13 @@
 <p>Say, you have the above family level taxon and you want to determine the taxonomy at a higher (less detailed) level. You can readily trim off the family and subgroup-level modifiers to get the Great Group using <code><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel(level="greatgroup")</a></code></p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span>, level <span class="op">=</span> <span class="st">"greatgroup"</span><span class="op">)</span>
-<span class="co">#&gt;           JDGR </span>
-<span class="co">#&gt; "haploxeralfs"</span></code></pre></div>
+<span class="co">#&gt; Fine, mixed, semiactive, mesic Ultic Haploxeralfs </span>
+<span class="co">#&gt;                                    "haploxeralfs"</span></code></pre></div>
 <p>If you request a more-detailed taxonomic level, you will get an <code>NA</code> result.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">"Folists"</span>, level <span class="op">=</span> <span class="st">"subgroup"</span><span class="op">)</span>
-<span class="co">#&gt; BA </span>
-<span class="co">#&gt; NA</span></code></pre></div>
+<span class="co">#&gt; Folists </span>
+<span class="co">#&gt;      NA</span></code></pre></div>
 </div>
 <div id="getparenttaxa" class="section level2">
 <h2 class="hasAnchor">
