@@ -2,7 +2,7 @@
 % Please edit documentation in R/higherTaxaCodes.R
 \name{decompose_taxon_code}
 \alias{decompose_taxon_code}
-\title{Decompose Soil Taxonomy Taxon Letter Codes to Parent Codes}
+\title{Decompose taxon letter codes}
 \usage{
 decompose_taxon_code(codes)
 }

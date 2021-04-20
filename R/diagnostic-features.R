@@ -1,4 +1,4 @@
-#' Get Diagnostic Surface and Subsurface Horizons, Characteristics and Features
+#' Get diagnostic horizons, characteristics and features
 #'
 #' All parameters to this function are optional (default `NULL`). If specified, they are used as filters.
 #' 

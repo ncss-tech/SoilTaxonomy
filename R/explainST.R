@@ -1,4 +1,4 @@
-#' Explain a taxon from Soil Taxonomy using formative elements
+#' Explain a taxon name using formative elements
 #'
 #' @param x a Subgroup, Great Group, Suborder or Order-level taxonomic name; matching is exact and case-insensitive
 #' @param format output format: 'text' | 'html'

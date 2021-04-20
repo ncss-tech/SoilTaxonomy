@@ -1,4 +1,4 @@
-#' Identify formative elements in Soil Taxonomic Order, Suborder, Great Group or Subgroup Level
+#' Identify formative elements in taxon names at Soil Order, Suborder, Great Group or Subgroup level
 #'
 #' @param x A character vector containing subgroup-level taxonomic names
 #' @param level one of `c("order","suborder","greatgroup","subgroup")`

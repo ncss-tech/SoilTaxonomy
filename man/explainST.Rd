@@ -2,7 +2,7 @@
 % Please edit documentation in R/explainST.R
 \name{explainST}
 \alias{explainST}
-\title{Explain a taxon from Soil Taxonomy using formative elements}
+\title{Explain a taxon name using formative elements}
 \usage{
 explainST(x, format = c("text", "html"), viewer = TRUE)
 }
@@ -17,7 +17,7 @@ explainST(x, format = c("text", "html"), viewer = TRUE)
 a block of text, suitable for display in fixed-width font
 }
 \description{
-Explain a taxon from Soil Taxonomy using formative elements
+Explain a taxon name using formative elements
 }
 \examples{
 

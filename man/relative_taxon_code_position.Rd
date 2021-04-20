@@ -2,7 +2,7 @@
 % Please edit documentation in R/higherTaxaCodes.R
 \name{relative_taxon_code_position}
 \alias{relative_taxon_code_position}
-\title{Determine Relative Position of Taxon within Existing Keys}
+\title{Determine relative position of taxon within Keys to Soil Taxonomy (Order to Subgroup)}
 \usage{
 relative_taxon_code_position(code)
 }

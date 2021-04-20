@@ -6,7 +6,7 @@
 \alias{SubOrderFormativeElements}
 \alias{GreatGroupFormativeElements}
 \alias{SubGroupFormativeElements}
-\title{Identify formative elements in Soil Taxonomic Order, Suborder, Great Group or Subgroup Level}
+\title{Identify formative elements in taxon names at Soil Order, Suborder, Great Group or Subgroup level}
 \usage{
 FormativeElements(x, level = c("order", "suborder", "greatgroup", "subgroup"))
 
@@ -27,7 +27,7 @@ SubGroupFormativeElements(x)
 A list containing \verb{$defs}: a \code{data.frame} containing taxonomic elements, derivations, connotations and links. And \verb{$char.index}: a numeric denoting the position where the formative element occurs in the search text \code{x}
 }
 \description{
-Identify formative elements in Soil Taxonomic Order, Suborder, Great Group or Subgroup Level
+Identify formative elements in taxon names at Soil Order, Suborder, Great Group or Subgroup level
 }
 \examples{
 

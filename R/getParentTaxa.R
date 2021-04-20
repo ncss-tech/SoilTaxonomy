@@ -1,6 +1,6 @@
 # get parent taxa
 
-#' Get the higher (parent) taxa associated with a taxon or taxon code
+#' Get the higher (parent) taxa for a taxon name or code
 #'
 #' Must specify either `taxon` or `code`. `taxon` is used if both are specified. 
 #' 

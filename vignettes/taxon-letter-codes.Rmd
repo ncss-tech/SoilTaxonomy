@@ -90,9 +90,9 @@ We can infer from the length of the four-letter codes that all of the above are 
 taxon_to_level(c("Hemic Glacistels","Sapric Glacistels","Typic Glacistels"))
 ```
 
-`taxon_to_level` can also identify a fifth, lower-level tier (`level="family"`). Soil family differentia are not handled in the keys, but are defined by concatenating comma-separated class names on to the subgroup. Family classes have their own keys and apply variably depending on the subgroup-level taxonomy.
+`taxon_to_level` can also identify a fifth (lower-level) _family_ tier (`level="family"`). Soil family differentia are not handled in the Order to Subgroup keys. Family names are defined by concatenating comma-separated class names on to the subgroup. Classes used in family names are determined by specific keys and apply variably depending on the subgroup-level taxonomy.
 
-For instance, the soil family `"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"` includes a particle-size class (`"fine"`), a mineralogy class (`"mixed"`), a CEC activity class (`"semiactive"`) and a temperature class (`"mesic"`)
+For instance, the soil family `"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"` includes a particle-size class (`"fine"`), a mineralogy class (`"mixed"`), a cation exchange capacity (CEC) activity class (`"semiactive"`) and a temperature class (`"mesic"`)
 
 ```{r}
 taxon_to_level("Fine, mixed, semiactive, mesic Ultic Haploxeralfs")
@@ -102,14 +102,16 @@ taxon_to_level("Fine, mixed, semiactive, mesic Ultic Haploxeralfs")
 
 A wrapper method around taxon letter code functionality is `getTaxonAtLevel`. 
 
-Say, you have the above family level taxon and you want to determine the taxonomy at a higher (less detailed) level. 
-You can readily trim off the family and subgroup-level modifiers to get the Great Group using `getTaxonAtLevel(level="greatgroup")`
+Say that you have family-level taxon above and you want to determine the taxonomy at a higher (less detailed) level. 
+You can determine what to remove (family and subgroup-level modifiers) to get the Great Group using `getTaxonAtLevel(level="greatgroup")`
 
 ```{r}
 getTaxonAtLevel("Fine, mixed, semiactive, mesic Ultic Haploxeralfs", level = "greatgroup")
 ```
 
-If you request a more-detailed taxonomic level, you will get an `NA` result.
+If you request a more-detailed taxonomic level than what you start with, you will get an `NA` result.
+
+For example, we request the subgroup from suborder (`"Folists"`) level taxon name which is undefined.
 
 ```{r}
 getTaxonAtLevel("Folists", level = "subgroup")
@@ -117,7 +119,7 @@ getTaxonAtLevel("Folists", level = "subgroup")
 
 ## `getParentTaxa`
 
-Another handy wrapper method around taxon letter code functionality is `getParentTaxa`. This function will enumerate the tiers above a particular taxon.
+Another wrapper method around taxon letter code functionality is `getParentTaxa`. This function will enumerate the tiers above a particular taxon.
 
 ```{r}
 getParentTaxa("Fine, mixed, semiactive, mesic Ultic Haploxeralfs")
@@ -143,10 +145,19 @@ For more general cases `decompose_taxon_code` might be useful. This is a functio
 decompose_taxon_code(c("BAA","BAB"))
 ```
 
-## `relative_taxon_code_position`
+## `preceding_taxon_codes` and `relative_taxon_code_position`
 
-Another function that might be useful for comparing relative positions within keys, or the number of steps that it takes to reach a particular taxon, is `relative_taxon_code_positon`.
-This function counts how many taxa key out before a particular taxon along the logical path to that taxon and then adds $1$ to get the taxon position.
+Another pair of functions that might be useful for comparing relative positions within Keys, or the number of "steps" that it takes to reach a particular taxon, is `preceding_taxon_codes` and `relative_taxon_code_positon`.
+
+`preceding_taxon_codes` returns a list of vectors containing all preceding codes. 
+
+For example, the `AA` suborder key precedes `AB`. And within the `AB` key `ABA` and `ABB` precede `ABC`.
+
+```{r}
+preceding_taxon_codes("ABC")
+```
+
+`relative_taxon_code_position` counts how many taxa key out before a taxon plus $1$ (to get _the_ taxon position).
 
 ```{r}
 relative_taxon_code_position(c("A","AA","AAA","AAAA",

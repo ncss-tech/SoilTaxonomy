@@ -158,8 +158,8 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/taxon_to_level.html">taxon_to_level</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Hemic Glacistels"</span>,<span class="st">"Sapric Glacistels"</span>,<span class="st">"Typic Glacistels"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; [1] "subgroup" "subgroup" "subgroup"</span></code></pre></div>
-<p><code>taxon_to_level</code> can also identify a fifth, lower-level tier (<code>level="family"</code>). Soil family differentia are not handled in the keys, but are defined by concatenating comma-separated class names on to the subgroup. Family classes have their own keys and apply variably depending on the subgroup-level taxonomy.</p>
-<p>For instance, the soil family <code>"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</code> includes a particle-size class (<code>"fine"</code>), a mineralogy class (<code>"mixed"</code>), a CEC activity class (<code>"semiactive"</code>) and a temperature class (<code>"mesic"</code>)</p>
+<p><code>taxon_to_level</code> can also identify a fifth (lower-level) <em>family</em> tier (<code>level="family"</code>). Soil family differentia are not handled in the Order to Subgroup keys. Family names are defined by concatenating comma-separated class names on to the subgroup. Classes used in family names are determined by specific keys and apply variably depending on the subgroup-level taxonomy.</p>
+<p>For instance, the soil family <code>"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</code> includes a particle-size class (<code>"fine"</code>), a mineralogy class (<code>"mixed"</code>), a cation exchange capacity (CEC) activity class (<code>"semiactive"</code>) and a temperature class (<code>"mesic"</code>)</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/taxon_to_level.html">taxon_to_level</a></span><span class="op">(</span><span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span><span class="op">)</span>
 <span class="co">#&gt; [1] "family"</span></code></pre></div>
@@ -169,12 +169,13 @@
 <a href="#gettaxonatlevel" class="anchor"></a><code>getTaxonAtLevel</code>
 </h2>
 <p>A wrapper method around taxon letter code functionality is <code>getTaxonAtLevel</code>.</p>
-<p>Say, you have the above family level taxon and you want to determine the taxonomy at a higher (less detailed) level. You can readily trim off the family and subgroup-level modifiers to get the Great Group using <code><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel(level="greatgroup")</a></code></p>
+<p>Say that you have family-level taxon above and you want to determine the taxonomy at a higher (less detailed) level. You can determine what to remove (family and subgroup-level modifiers) to get the Great Group using <code><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel(level="greatgroup")</a></code></p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span>, level <span class="op">=</span> <span class="st">"greatgroup"</span><span class="op">)</span>
 <span class="co">#&gt; Fine, mixed, semiactive, mesic Ultic Haploxeralfs </span>
 <span class="co">#&gt;                                    "haploxeralfs"</span></code></pre></div>
-<p>If you request a more-detailed taxonomic level, you will get an <code>NA</code> result.</p>
+<p>If you request a more-detailed taxonomic level than what you start with, you will get an <code>NA</code> result.</p>
+<p>For example, we request the subgroup from suborder (<code>"Folists"</code>) level taxon name which is undefined.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">"Folists"</span>, level <span class="op">=</span> <span class="st">"subgroup"</span><span class="op">)</span>
 <span class="co">#&gt; Folists </span>
@@ -184,7 +185,7 @@
 <h2 class="hasAnchor">
 <a href="#getparenttaxa" class="anchor"></a><code>getParentTaxa</code>
 </h2>
-<p>Another handy wrapper method around taxon letter code functionality is <code>getParentTaxa</code>. This function will enumerate the tiers above a particular taxon.</p>
+<p>Another wrapper method around taxon letter code functionality is <code>getParentTaxa</code>. This function will enumerate the tiers above a particular taxon.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getParentTaxa.html">getParentTaxa</a></span><span class="op">(</span><span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span><span class="op">)</span>
 <span class="co">#&gt; $`Fine, mixed, semiactive, mesic Ultic Haploxeralfs`</span>
@@ -235,12 +236,19 @@
 <span class="co">#&gt; $BAB[[3]]</span>
 <span class="co">#&gt; [1] "BAB"</span></code></pre></div>
 </div>
-<div id="relative_taxon_code_position" class="section level2">
+<div id="preceding_taxon_codes-and-relative_taxon_code_position" class="section level2">
 <h2 class="hasAnchor">
-<a href="#relative_taxon_code_position" class="anchor"></a><code>relative_taxon_code_position</code>
+<a href="#preceding_taxon_codes-and-relative_taxon_code_position" class="anchor"></a><code>preceding_taxon_codes</code> and <code>relative_taxon_code_position</code>
 </h2>
-<p>Another function that might be useful for comparing relative positions within keys, or the number of steps that it takes to reach a particular taxon, is <code>relative_taxon_code_positon</code>. This function counts how many taxa key out before a particular taxon along the logical path to that taxon and then adds <span class="math inline">\(1\)</span> to get the taxon position.</p>
+<p>Another pair of functions that might be useful for comparing relative positions within Keys, or the number of “steps” that it takes to reach a particular taxon, is <code>preceding_taxon_codes</code> and <code>relative_taxon_code_positon</code>.</p>
+<p><code>preceding_taxon_codes</code> returns a list of vectors containing all preceding codes.</p>
+<p>For example, the <code>AA</code> suborder key precedes <code>AB</code>. And within the <code>AB</code> key <code>ABA</code> and <code>ABB</code> precede <code>ABC</code>.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/preceding_taxon_codes.html">preceding_taxon_codes</a></span><span class="op">(</span><span class="st">"ABC"</span><span class="op">)</span>
+<span class="co">#&gt; $ABC</span>
+<span class="co">#&gt; [1] "AA"  "ABA" "ABB"</span></code></pre></div>
+<p><code>relative_taxon_code_position</code> counts how many taxa key out before a taxon plus <span class="math inline">\(1\)</span> (to get <em>the</em> taxon position).</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/relative_taxon_code_position.html">relative_taxon_code_position</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>,<span class="st">"AA"</span>,<span class="st">"AAA"</span>,<span class="st">"AAAA"</span>,
                                <span class="st">"AB"</span>,<span class="st">"AAB"</span>,<span class="st">"ABA"</span>,<span class="st">"ABC"</span>,
                                <span class="st">"B"</span>,<span class="st">"BA"</span>,<span class="st">"BAA"</span>,<span class="st">"BAB"</span>,

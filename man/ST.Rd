@@ -12,7 +12,7 @@ An object of class \code{data.frame} with 2665 rows and 4 columns.
 data(ST)
 }
 \description{
-The first 4 levels of the US Soil Taxonomy hierarchy (soil order, suborder, greatgroup, subgroup), presented as a \code{data.frame} (de-normalized) and a \code{list} of unique taxa.
+The first 4 levels of the US Soil Taxonomy hierarchy (soil order, suborder, greatgroup, subgroup), presented as a \code{data.frame} (denormalized) and a \code{list} of unique taxa.
 }
 \references{
 Soil Survey Staff. 1999. Soil taxonomy: A basic system of soil classification for making and interpreting soil surveys. 2nd edition. Natural Resources Conservation Service. U.S. Department of Agriculture Handbook 436.

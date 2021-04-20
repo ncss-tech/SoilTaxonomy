@@ -2,7 +2,7 @@
 % Please edit documentation in R/higherTaxaCodes.R
 \name{taxon_code_to_taxon}
 \alias{taxon_code_to_taxon}
-\title{Convert Taxon Code to Taxon}
+\title{Convert taxon code to taxon name}
 \usage{
 taxon_code_to_taxon(code)
 }
@@ -13,7 +13,7 @@ taxon_code_to_taxon(code)
 A character vector of matching Taxon Names
 }
 \description{
-Convert Taxon Code to Taxon
+Convert taxon code to taxon name
 }
 \examples{
 

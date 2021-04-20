@@ -1,4 +1,4 @@
-#' Parse Components of a Family-level Taxon
+#' Parse components of a family-level taxon name
 #'
 #' @param family a character vector containing taxonomic families, e.g. `"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"`
 #'

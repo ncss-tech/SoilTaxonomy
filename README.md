@@ -2,12 +2,15 @@
 [![R-CMD-check](https://github.com/ncss-tech/SoilTaxonomy/workflows/R-CMD-check/badge.svg)](https://github.com/ncss-tech/SoilTaxonomy/actions)
 [![Codecov test coverage](https://codecov.io/gh/ncss-tech/SoilTaxonomy/branch/master/graph/badge.svg)](https://codecov.io/gh/ncss-tech/SoilTaxonomy?branch=master)
 [![CRAN Status](https://www.r-pkg.org/badges/version-last-release/SoilTaxonomy)](https://cran.r-project.org/package=SoilTaxonomy)
-[![SoilTaxonomy Manual](https://img.shields.io/badge/docs-HTML-informational)](https://ncss-tech.github.io/SoilTaxonomy/docs)
+[![SoilTaxonomy Manual](https://img.shields.io/badge/docs-HTML-informational)](https://ncss-tech.github.io/SoilTaxonomy/docs/)
 <!-- badges: end -->
 
 # SoilTaxonomy
+Taxonomic dictionaries, formative element lists, and functions related to the maintenance, development and application of U.S. Soil Taxonomy. 
 
-Tools for understanding and interacting with concepts in the U.S. Soil Taxonomic System. Most of the current utilities are for working with taxonomic concepts at the "higher" taxonomic levels: **Order**, **Suborder**, **Great Group**, and **Subgroup**. 
+   Data and functionality are based on official U.S. Department of Agriculture sources including the latest edition of the Keys to Soil Taxonomy. Descriptions and metadata are obtained from the National Soil Information System or Soil Survey Geographic databases. Other sources are referenced in the data documentation. 
+   
+   Provides tools for understanding and interacting with concepts in the U.S. Soil Taxonomic System. Most of the current utilities are for working with taxonomic concepts at the "higher" taxonomic levels: **Order**, **Suborder**, **Great Group**, and **Subgroup**. 
 
 ## Installation
 
