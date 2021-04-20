@@ -1,15 +1,20 @@
-
-#' Explain a subgroup level taxa from Soil Taxonomy
+#' Explain a taxon name using formative elements
 #'
-#' @param x a single subgroup, matching is exact and case insensitive
+#' @param x a Subgroup, Great Group, Suborder or Order-level taxonomic name; matching is exact and case-insensitive
 #' @param format output format: 'text' | 'html'
 #' @param viewer show `format = 'html'` output in browser? default: `TRUE`
 #' @return a block of text, suitable for display in fixed-width font
 #' 
-#' @note This function currently accepts only subgroup taxa. There are plans to extend to arbitrary levels of the hierarchy.
-#' 
 #' @export
 #' @importFrom utils browseURL
+#' @examples 
+#' 
+#' cat(explainST("ids"), "\n\n")              #  -ids (order suffix) 
+#' cat(explainST("aridisols"), "\n\n")        # Aridisols (order name)
+#' cat(explainST("argids"), "\n\n")           # Arg- (suborder) 
+#' cat(explainST("haplargids"), "\n\n")       # Hap- (great group)
+#' cat(explainST("typic haplargids"), "\n\n") # Typic (subgroup)
+#' 
 explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
   
   # safely match argument choices
@@ -18,10 +23,48 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
   # matching is done in lower case
   x <- tolower(x)
   
-  x.o <- OrderFormativeElements(x)
-  x.so <- SubOrderFormativeElements(x)
-  x.gg <- GreatGroupFormativeElements(x)
-  x.sg <- SubGroupFormativeElements(x)
+  # get taxonomic level of x
+  x.lvl <- taxon_to_level(x)
+  
+  # no-match NULL data object
+  empty <- list(defs = data.frame(element = "", derivation = "", 
+                                  connotation = "", simplified = NA, link = NA), 
+                char.index = 0)
+  
+  if (!is.na(x.lvl) && x.lvl == "order") {
+    # handle input of full order name e.g. "aridisols"
+    ST_formative_elements <- NULL
+    load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
+    
+    y <- ST_formative_elements[["order"]]
+    idx <- which(x == y$order)
+    x.o <- OrderFormativeElements(y$element[idx])
+    
+    # order LUT now contains the positions of each element within full taxon (order) name
+    x.o$char.index <- y$element_start[idx]
+    x.so <- empty
+    
+  } else {
+    # normal handling of orders as suffixes e.g. "-ids"
+    x.o <- OrderFormativeElements(x)
+    x.so <- SubOrderFormativeElements(x)
+  }
+  
+  # only match great group and subgroup if needed
+  # for example: prevent matching "argi-" at GG level and "arg-" at SO level in "argids" 
+  if (!x.lvl %in% c("order","suborder")) {
+    x.gg <- GreatGroupFormativeElements(x)
+  }  else {
+    x.gg <- empty
+  }
+  
+  if (!x.lvl %in% c("order","suborder","greatgroup")) {
+    x.sg <- SubGroupFormativeElements(x)
+  } else {
+    x.sg <- empty
+  }
+   
+  # TODO: family classes
   
   newline <- switch(format, text='\n', html='<br>')
   whitespace <- switch(format, text=' ', html='&nbsp;')
@@ -56,23 +99,22 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
     o.txt <- o.l
   }
   
-  
   # container for lines of text
   ex <- list()
   
   # the taxon to explain, usually a subgroup
   ex <- append(ex, x.txt) 
   
-  if (grepl("[A-Za-z?]", sg.l[[2]]))
+  if (grepl("[A-Za-z?]", gsub("&nbsp;"," ",sg.l[[2]])))
     ex <- append(ex, sg.txt)
   
-  if (grepl("[A-Za-z?]", gg.l[[2]]))
+  if (grepl("[A-Za-z?]", gsub("&nbsp;"," ",gg.l[[2]])))
     ex <- append(ex, gg.txt)
   
-  if (grepl("[A-Za-z?]", so.l[[2]]))
+  if (grepl("[A-Za-z?]", gsub("&nbsp;"," ",so.l[[2]])))
     ex <- append(ex, so.txt)
   
-  if (grepl("[A-Za-z?]", o.l[[2]]))
+  if (grepl("[A-Za-z?]", gsub("&nbsp;"," ",o.l[[2]])))
     ex <- append(ex, o.txt)
   
   if(format == 'html') {
@@ -82,6 +124,7 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
   
   # flatten to char vector
   ex.char <- unlist(ex, recursive = TRUE)
+  
   # collapse to single character
   res <- paste(ex.char, collapse=newline)
   
@@ -154,19 +197,6 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
 .greatGroupLines <- function(o, so, gg, ws) {
   txt <- list()
   
-  # short-circuit: no greatgroup formative element positions found
-  if(is.na(gg$char.index)) {
-    # start at the first character
-    gg$char.index <- 1
-  }
-  
-  # short-circuit: no subgroup formative elements found
-  nacon <-is.na(gg$defs$connotation)
-  if(any(nacon)) {
-    # let user know we have no idea
-    gg$defs$connotation[nacon] <- '?'
-  }
-  
   txt[[1]] <- .makeBars(pos=c(gg$char.index, so$char.index, o$char.index), ws.char=ws)
   txt[[2]] <- .printExplanation(pos = gg$char.index, txt = gg$defs$connotation, ws.char=ws)
   
@@ -182,21 +212,9 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
   sg.pos <- unlist(sg$char.index)
   sg.defs <- sg$defs$connotation
   
-  # short-circuit: no subgroup formative element positions found
-  if(all(is.na(sg.pos))) {
-    # start at the first character
-    sg.pos <- 1
-  }
-  
   ## TODO: all levels should make the distinction: no entry vs. incomplete entries
   # element-wise flag for no-matching definition (element present in dictionary, but no definition)
   sg.defs <- ifelse(sg.defs == '', '?', sg.defs)
-  
-  # short-circuit: no subgroup formative elements found
-  if(all(is.na(sg.defs)) | (length(sg.defs) == 1 & nchar(sg.defs[[1]]) == 0)) {
-    # let user know we have no idea
-    sg.defs <- '?'
-  }
   
   # counters
   i <- 1

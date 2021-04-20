@@ -1,7 +1,7 @@
 #'
 #' @title Soil Taxonomy Hierarchy
 #' 
-#' @description The first 4 levels of the US Soil Taxonomy hierarchy (soil order, suborder, greatgroup, subgroup), presented as a \code{data.frame} (de-normalized) and a \code{list} of unique taxa.
+#' @description The first 4 levels of the US Soil Taxonomy hierarchy (soil order, suborder, greatgroup, subgroup), presented as a \code{data.frame} (denormalized) and a \code{list} of unique taxa.
 #' 
 #' @usage data(ST)
 #' 
@@ -34,7 +34,7 @@
 #' 
 "ST_family_classes"
 
-#' @title Epipedons, Diagnostic Horizons, Characteristics and Features used by Soil Taxonomy
+#' @title Epipedons, Diagnostic Horizons, Characteristics and Features in Soil Taxonomy
 #' 
 #' @description A `data.frame` with columns "group", "name", "chapter", "page", "description", "criteria". Currently page numbers and contents are referenced to 12th Edition Keys to Soil Taxonomy and derived from products in the ncss-tech SoilKnowledgeBase repository (https://github.com/ncss-tech/SoilKnowledgeBase).
 #' 

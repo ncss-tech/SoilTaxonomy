@@ -2,7 +2,7 @@
 % Please edit documentation in R/higherTaxaCodes.R
 \name{preceding_taxon_codes}
 \alias{preceding_taxon_codes}
-\title{Identify Taxon Codes of Logically Preceding Taxa}
+\title{Get taxon codes of preceding taxa}
 \usage{
 preceding_taxon_codes(codes)
 }

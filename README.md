@@ -2,15 +2,15 @@
 [![R-CMD-check](https://github.com/ncss-tech/SoilTaxonomy/workflows/R-CMD-check/badge.svg)](https://github.com/ncss-tech/SoilTaxonomy/actions)
 [![Codecov test coverage](https://codecov.io/gh/ncss-tech/SoilTaxonomy/branch/master/graph/badge.svg)](https://codecov.io/gh/ncss-tech/SoilTaxonomy?branch=master)
 [![CRAN Status](https://www.r-pkg.org/badges/version-last-release/SoilTaxonomy)](https://cran.r-project.org/package=SoilTaxonomy)
+[![SoilTaxonomy Manual](https://img.shields.io/badge/docs-HTML-informational)](https://ncss-tech.github.io/SoilTaxonomy/docs/)
 <!-- badges: end -->
 
 # SoilTaxonomy
+Taxonomic dictionaries, formative element lists, and functions related to the maintenance, development and application of U.S. Soil Taxonomy. 
 
-Tools for understanding and interacting with concepts in the U.S. Soil Taxonomic System. Most of the current utilities are for working with taxonomic concepts at the "higher" taxonomic levels: **Order**, **Suborder**, **Great Group**, and **Subgroup**. 
-
-The **R** package is still in early stages of development, but is entering an "active testing" phase as the scope and application of these tools has become refined over time.
-
-The `./inst/extdata` folder (formerly `./databases`) of this repository contains a variety of assets related to taxonomic and map unit concepts within the U.S. Soil Survey Geographic Database (SSURGO). See "_Static Databases_" below for more.
+   Data and functionality are based on official U.S. Department of Agriculture sources including the latest edition of the Keys to Soil Taxonomy. Descriptions and metadata are obtained from the National Soil Information System or Soil Survey Geographic databases. Other sources are referenced in the data documentation. 
+   
+   Provides tools for understanding and interacting with concepts in the U.S. Soil Taxonomic System. Most of the current utilities are for working with taxonomic concepts at the "higher" taxonomic levels: **Order**, **Suborder**, **Great Group**, and **Subgroup**. 
 
 ## Installation
 
@@ -54,19 +54,19 @@ data('ST_higher_taxa_codes_12th', package = 'SoilTaxonomy')
 
 ```r
 getTaxonAtLevel('acrudoxic plinthic kandiudults') # level = "order" # default
-#>       HCCH 
-#> "ultisols"
+#> acrudoxic plinthic kandiudults 
+#>                     "ultisols"
 
 getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "suborder")
-#>     HCCH 
-#> "udults"
+#> acrudoxic plinthic kandiudults 
+#>                       "udults"
 
 getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "greatgroup")
-#>          HCCH 
-#> "kandiudults"
+#> acrudoxic plinthic kandiudults 
+#>                  "kandiudults"
 
 getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "subgroup")
-#>                             HCCH 
+#>   acrudoxic plinthic kandiudults 
 #> "acrudoxic plinthic kandiudults"
 ```
 
@@ -74,20 +74,20 @@ getTaxonAtLevel('acrudoxic plinthic kandiudults', level = "subgroup")
 
 ```r
 getTaxonAtLevel('folists')
-#>          BA 
+#>     folists 
 #> "histosols"
 
 getTaxonAtLevel('folists', level = "suborder")
-#>        BA 
+#>   folists 
 #> "folists"
 
 getTaxonAtLevel('folists', level = "greatgroup")
-#> BA 
-#> NA 
+#> folists 
+#>      NA 
 
 getTaxonAtLevel('folists', level = "subgroup")
-#> BA 
-#> NA 
+#> folists 
+#>      NA 
 
 ```
 
@@ -140,15 +140,65 @@ cat(explainST(taxon_code_to_taxon("ABCD"))) # ABCD = gypsic anhyturbels
 #>            presence of cryoturbation                                                                
 #>                |                                                                                    
 #>                soils with permafrost or gelic material within 100cm
+
+# all soil orders (LETTERS[1:12]; taxon codes A through L)
+res <- lapply(LETTERS[1:12], function(l) cat(explainST(taxon_code_to_taxon(l)), "\n\n"))
+#> gelisols
+#>  |                                                                                                  
+#>  soils with permafrost or gelic material within 100cm                                                
+#> 
+#> histosols
+#>  |                                                                                                  
+#>  soils with more than 30% organic matter content to a depth of 40cm or more                          
+#> 
+#> spodosols
+#>   |                                                                                                 
+#>   soils with a spodic horizon within a depth of 200cm                                                
+#> 
+#> andisols
+#> |                                                                                                   
+#> soils with andic soils properties in 1/2 or more of the upper 60cm                                   
+#> 
+#> oxisols
+#> |                                                                                                   
+#> soils with an oxic horizon, or >40% clay in the surface 18cm and a kandic horizon with < 10%  weatherable minerals 
+#> 
+#> vertisols
+#>  |                                                                                                  
+#>  soils containing >30% clay in all horizons and cracks that open and close periodically              
+#> 
+#> aridisols
+#>   |                                                                                                 
+#>   soils with some diagnostic horizons and an aridic SMR                                              
+#> 
+#> ultisols
+#> |                                                                                                   
+#> soils with an argillic or kandic horizon and a base saturation at pH 8.2 <35% at a depth of 180cm    
+#> 
+#> mollisols
+#>  |                                                                                                  
+#>  soils with a mollic epipedon and base saturation at pH 7 >=50% in all depths above 180cm            
+#> 
+#> alfisols
+#> |                                                                                                   
+#> soils with an argillic, kandic, or natric horizon                                                    
+#> 
+#> inceptisols
+#>    |                                                                                                
+#>    soils with an umbric, mollic, or plaggen epipedon, or cambic horizon                              
+#> 
+#> entisols
+#> |                                                                                                   
+#> other soils
 ```
 
 ## Static Databases
 
-The static data products in this repository include: 
+The `./inst/extdata` folder (formerly `./databases`) of this repository contains a variety of assets related to taxonomic and map unit concepts within the U.S. Soil Survey Geographic Database (SSURGO). The static data products in this repository include: 
 
- - Statistics on: taxonomic subgroups, family-level components, and soil series. 
- - MLRA Overlap tables: for series, national map unit symbols and map unit keys. 
- - Summaries of: KSSL records per series as well as geomorphic position, parent material origin and kind.
+ - Statistics on taxonomic subgroups, family-level components, and soil series. 
+ - MLRA Overlap tables for series, national map unit symbols and map unit keys. 
+ - Summaries of KSSL records per series as well as geomorphic position, parent material origin and kind.
  
 **NOTICE:** In the near future, these products may (depending on their data requirements) be:
 
@@ -161,7 +211,6 @@ They will after that point be removed from this repository.
 ## Visualize and Extend with `data.tree`
 
 Static data sets in this R package can be readily visualized with the `data.tree` package.
-
 
 ### Example: show "parent" taxa (Subgroup -> Great Group -> Suborder -> Order)
 

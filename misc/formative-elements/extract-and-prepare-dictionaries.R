@@ -2,19 +2,19 @@
 library(jsonlite)
 
 # order
-soilorder <- read.csv('dictionaries/order.csv', stringsAsFactors=FALSE)
+soilorder <- read.csv('misc/formative-elements/dictionaries/order.csv', stringsAsFactors=FALSE)
 str(soilorder)
 
 # suborder
-suborder <- read.csv('dictionaries/suborder.csv', stringsAsFactors=FALSE)
+suborder <- read.csv('misc/formative-elements/dictionaries/suborder.csv', stringsAsFactors=FALSE)
 str(suborder)
 
 # greatgroup
-greatgroup <- read.csv('dictionaries/greatgroup.csv', stringsAsFactors=FALSE)
+greatgroup <- read.csv('misc/formative-elements/dictionaries/greatgroup.csv', stringsAsFactors=FALSE)
 str(greatgroup)
 
 # subgroup
-subgroup <- read.csv('dictionaries/subgroup.csv', stringsAsFactors=FALSE)
+subgroup <- read.csv('misc/formative-elements/dictionaries/subgroup.csv', stringsAsFactors=FALSE)
 str(subgroup)
 
 
@@ -28,7 +28,7 @@ ST.formative_elements <- list(
 
 # try saving as JSON
 ST.json <- toJSON(ST.formative_elements, auto_unbox = TRUE, pretty = TRUE, na='string')
-cat(ST.json, file = 'formative-elements.json')
+cat(ST.json, file = 'misc/formative-elements/formative-elements.json')
 
 # save in compressed format for packaging
-save(ST.formative_elements, file='formative-elements.rda')
+save(ST.formative_elements, file='misc/formative-elements/formative-elements.rda')

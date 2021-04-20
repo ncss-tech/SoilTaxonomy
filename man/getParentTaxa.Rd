@@ -2,7 +2,7 @@
 % Please edit documentation in R/getParentTaxa.R
 \name{getParentTaxa}
 \alias{getParentTaxa}
-\title{Get the higher (parent) taxa associated with a taxon or taxon code}
+\title{Get the higher (parent) taxa for a taxon name or code}
 \usage{
 getParentTaxa(taxon = NULL, code = NULL, convert = TRUE)
 }

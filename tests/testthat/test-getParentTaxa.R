@@ -1,9 +1,15 @@
 test_that("getParentTaxa works", {
   
-  expect_equal(getParentTaxa(c("abruptic durixeralfs","asdgasdg","gypsic anhyturbels")),
-               getParentTaxa(code = c("JDAE", NA, "ABCD")))
+  convert1 <- getParentTaxa(c("abruptic durixeralfs","asdgasdg","gypsic anhyturbels"))
+  convert2 <- getParentTaxa(code = c("JDAE", "asdgasdg", "ABCD"))
+  expect_equal(names(convert1)[2], names(convert2)[2])
+  expect_equal(convert1[[1]], convert2[[1]])
+  expect_equal(convert1[[2]], convert2[[2]])
   
-  expect_equal(getParentTaxa(c("abruptic durixeralfs","asdgasdg","gypsic anhyturbels"), convert = FALSE),
-               getParentTaxa(code = c("JDAE", NA, "ABCD"), convert = FALSE))
+  code1 <- getParentTaxa(c("abruptic durixeralfs","asdgasdg","gypsic anhyturbels"), convert = FALSE)
+  code2 <- getParentTaxa(code = c("JDAE", "asdgasdg", "ABCD"), convert = FALSE)
+  expect_equal(names(code1)[2], names(code2)[2])
+  expect_equal(code1[[1]], code2[[1]])
+  expect_equal(code1[[2]], code2[[2]])
  
 })

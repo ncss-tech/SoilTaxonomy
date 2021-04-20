@@ -1,4 +1,4 @@
-#' Decompose Soil Taxonomy Taxon Letter Codes to Parent Codes
+#' Decompose taxon letter codes
 #' 
 #' @description Find all codes that logically comprise the specified codes. For instance, code "ABC" ("Anhyturbels") returns "A" ("Gelisols"), "AB" ("Turbels"), "ABC" ("Anhyturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). 
 #' 
@@ -47,7 +47,7 @@ decompose_taxon_code <- function(codes) {
   return(fin)
 }
 
-#' Identify Taxon Codes of Logically Preceding Taxa
+#' Get taxon codes of preceding taxa
 #'
 #' @description Find all codes that logically precede the specified codes. For instance, code "ABC" ("Anhyturbels") returns "AA" ("Histels") "ABA" ("Histoturbels") and "ABB" ("Aquiturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see \code{\link{taxon_code_to_taxon}} and \code{\link{taxon_to_taxon_code}}). 
 #' 
@@ -104,7 +104,7 @@ preceding_taxon_codes <- function(codes) {
   return(res)
 }
 
-#' Convert Taxon Code to Taxon
+#' Convert taxon code to taxon name
 #'
 #' @param code A character vector of Taxon Codes
 #'
@@ -138,11 +138,11 @@ taxon_code_to_taxon <- function(code) {
   return(taxon)
 }
 
-#' Convert Taxon to Taxon Code
+#' Convert taxon name to taxon code
 #'
-#' @param taxon A character vector of Taxon Names -- case insensitive
+#' @param taxon A character vector of taxon names, case insensitive
 #'
-#' @return A character vector of matching Taxon Codes
+#' @return A character vector of matching taxon codes
 #' 
 #' @export
 #' 
@@ -183,7 +183,7 @@ taxon_to_taxon_code <- function(taxon) {
   return(code)
 }
 
-#' Determine Relative Position of Taxon within Existing Keys 
+#' Determine relative position of taxon within Keys to Soil Taxonomy (Order to Subgroup) 
 #'
 #' @description The relative position of a taxon is `[number of preceding Key steps] + 1`, or `NA` if it does not exist in the lookup table.
 #' 

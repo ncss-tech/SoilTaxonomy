@@ -2,7 +2,7 @@
 % Please edit documentation in R/parseFamily.R
 \name{parse_family}
 \alias{parse_family}
-\title{Parse Components of a Family-level Taxon}
+\title{Parse components of a family-level taxon name}
 \usage{
 parse_family(family)
 }
@@ -13,7 +13,7 @@ parse_family(family)
 a \code{data.frame} containing column names: \code{"family"} (input), \code{"subgroup"} (parsed taxonomic subgroup), \code{"subgroup_code"} (letter code for subgroup), \code{"class_string"} (comma-separated family classes), \code{"classes_split"} (split class_string vector stored as \code{list} column)
 }
 \description{
-Parse Components of a Family-level Taxon
+Parse components of a family-level taxon name
 }
 \examples{
 

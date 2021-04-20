@@ -1,0 +1,168 @@
+---
+title: "Taxon Letter Codes in Soil Taxonomy"
+output: rmarkdown::html_vignette
+author: Andrew Brown
+date: 2021-04-18
+vignette: >
+  %\VignetteIndexEntry{Taxon Letter Codes in Soil Taxonomy}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+There are four different "levels" of the hierarchy in Soil Taxonomy that are represented by letter codes: 
+
+ - Soil Order 
+ - Suborder
+ - Great Group
+ - Subgroup
+
+In the _SoilTaxonomy_ package the `level` argument is used by some functions to specify output for a target level within the hierarchy. Other functions determine `level` by comparison against known taxa or codes. This vignette covers the basics of how taxon letter code conversion to and from taxonomic names is implemented.
+
+```{r setup}
+library(SoilTaxonomy)
+```
+
+## `taxon_to_taxon_code`
+
+`taxon_to_taxon_code` converts a taxon name (Soil Order, Suborder, Great Group, or Subgroup) to a letter code that corresponds to the logical position of that taxon in the Keys to Soil Taxonomy. 
+
+_Gelisols_ are the first Soil Order to key out and are given letter code "A"
+
+```{r}
+taxon_to_taxon_code("gelisols")
+```
+
+The number of letters in a taxon code corresponds to the `level` of that taxon. 
+_Histels_ are the first Suborder to key out in the _Gelisols_ key (**A**), so they are given two letter code "AA"
+
+```{r}
+taxon_to_taxon_code("histels")
+```
+
+For each "step" in each key, the letter codes are "incremented" by one. 
+
+_Glacistels_ are the <u>second</u> Great Group in the _Histels_ key (**AA**), so they have the three letter code "AAB".  
+
+```{r}
+taxon_to_taxon_code("glacistels")
+```
+
+_Typic_ subgroups, by convention, are the last subgroup to key out in a Great Group. 
+
+```{r}
+taxon_to_taxon_code("typic glacistels")
+```
+
+Since _Typic Glacistels_ have code `"AABC"` we can infer that there are three taxa in the _Glacistels_ key with codes `"AABA"`, `"AABB"` and `"AABC"`
+
+This follows for Great Groups with many more subgroups. In case a Great Group has more than 26 subgroups within it, a fifth lowercase letter code is used to "extend" the ability to increment the code beyond 26. 
+
+An example of where this is needed is in the _Haploxerolls_ key where the _Typic_ subgroup has code `"IFFZh"`.
+
+```{r}
+taxon_to_taxon_code("typic haploxerolls")
+```
+
+From this code we infer that the _Haploxerolls_ key has $26+8=34$ subgroups corresponding to the range from `IFFA` to `IFFZ` _plus_ `IFFZa` to `IFFZh`.
+
+## `taxon_code_to_taxon`
+
+We can use a vector of letter codes to do the inverse operation with `taxon_code_to_taxon `.
+
+Above we determined the _Glacistels_ Key contains three taxa with codes `"AABA"`, `"AABB"` and `"AABC"`. Let's convert those codes to taxon names.
+
+```{r}
+taxon_code_to_taxon(c("AABA", "AABB", "AABC"))
+```
+
+## `taxon_to_level`
+
+We can infer from the length of the four-letter codes that all of the above are subgroup-level taxa. `taxon_to_level` confirms this.
+
+```{r}
+taxon_to_level(c("Hemic Glacistels","Sapric Glacistels","Typic Glacistels"))
+```
+
+`taxon_to_level` can also identify a fifth (lower-level) _family_ tier (`level="family"`). Soil family differentia are not handled in the Order to Subgroup keys. Family names are defined by concatenating comma-separated class names on to the subgroup. Classes used in family names are determined by specific keys and apply variably depending on the subgroup-level taxonomy.
+
+For instance, the soil family `"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"` includes a particle-size class (`"fine"`), a mineralogy class (`"mixed"`), a cation exchange capacity (CEC) activity class (`"semiactive"`) and a temperature class (`"mesic"`)
+
+```{r}
+taxon_to_level("Fine, mixed, semiactive, mesic Ultic Haploxeralfs")
+```
+
+## `getTaxonAtLevel`
+
+A wrapper method around taxon letter code functionality is `getTaxonAtLevel`. 
+
+Say that you have family-level taxon above and you want to determine the taxonomy at a higher (less detailed) level. 
+You can determine what to remove (family and subgroup-level modifiers) to get the Great Group using `getTaxonAtLevel(level="greatgroup")`
+
+```{r}
+getTaxonAtLevel("Fine, mixed, semiactive, mesic Ultic Haploxeralfs", level = "greatgroup")
+```
+
+If you request a more-detailed taxonomic level than what you start with, you will get an `NA` result.
+
+For example, we request the subgroup from suborder (`"Folists"`) level taxon name which is undefined.
+
+```{r}
+getTaxonAtLevel("Folists", level = "subgroup")
+```
+
+## `getParentTaxa`
+
+Another wrapper method around taxon letter code functionality is `getParentTaxa`. This function will enumerate the tiers above a particular taxon.
+
+```{r}
+getParentTaxa("Fine, mixed, semiactive, mesic Ultic Haploxeralfs")
+```
+
+You can alternately specify `code` argument instead of `taxon`.
+
+```{r}
+getParentTaxa(code = "BAB")
+```
+
+And converting the internally used taxon codes to taxon names can be disabled with `convert = FALSE`. This may be useful for certain applications.
+
+```{r}
+getParentTaxa(code = c("BAA","BAB"), convert = FALSE)
+```
+
+## `decompose_taxon_code`
+
+For more general cases `decompose_taxon_code` might be useful. This is a function used by many of the above methods that returns a nested list result containing the letter code hierarchy.
+
+```{r}
+decompose_taxon_code(c("BAA","BAB"))
+```
+
+## `preceding_taxon_codes` and `relative_taxon_code_position`
+
+Another pair of functions that might be useful for comparing relative positions within Keys, or the number of "steps" that it takes to reach a particular taxon, is `preceding_taxon_codes` and `relative_taxon_code_positon`.
+
+`preceding_taxon_codes` returns a list of vectors containing all preceding codes. 
+
+For example, the `AA` suborder key precedes `AB`. And within the `AB` key `ABA` and `ABB` precede `ABC`.
+
+```{r}
+preceding_taxon_codes("ABC")
+```
+
+`relative_taxon_code_position` counts how many taxa key out before a taxon plus $1$ (to get _the_ taxon position).
+
+```{r}
+relative_taxon_code_position(c("A","AA","AAA","AAAA",
+                               "AB","AAB","ABA","ABC",
+                               "B","BA","BAA","BAB",
+                               "BBA","BBB","BBC"))
+```
+

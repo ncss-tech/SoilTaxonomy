@@ -101,7 +101,7 @@ test_that("greatgroup formative elements", {
   
   # full subgroup
   x <- GreatGroupFormativeElements('typic haploxerolls')
-  expect_equal(x$defs$element, 'haplo')
+  expect_equal(x$defs$element, 'hap')
   expect_equal(x$char.index, 7L)
   
   # more complex example
@@ -110,7 +110,7 @@ test_that("greatgroup formative elements", {
   expect_equal(x$char.index, 15)
   
   x <- GreatGroupFormativeElements('alfic humic vitrixerands')
-  expect_equal(x$defs$element, 'vitri')
+  expect_equal(x$defs$element, 'vitr')
   expect_equal(x$char.index, 13)
   
   x <- GreatGroupFormativeElements('acrustoxic kanhaplustults')
@@ -160,6 +160,17 @@ test_that("subgroup formative elements", {
 })
 
 test_that("explainST", {
+  
+  # explain a formative element position in order name
+  expect_output(cat(explainST("aridisols")))
+  
+  # explain several challenging suborders and great groups
+  expect_output(cat(explainST("saprists")))
+  expect_output(cat(explainST("sapristels")))
+  
+  expect_output(cat(explainST("folists")))
+  expect_output(cat(explainST("folistels")))
+  
   data("ST_higher_taxa_codes_12th")
   
   subgroups <- ST_higher_taxa_codes_12th[nchar(ST_higher_taxa_codes_12th$code) >= 4,]
@@ -182,7 +193,6 @@ test_that("explainST", {
   
   # first iteration: all these are broken
   # Error in ws[idx] <- txt : replacement has length zero
-  
   expect_output(cat(explainST("ultic argixerolls")))
   expect_output(cat(explainST("psammentic paleudalfs")))
   expect_output(cat(explainST("vitrandic humustepts")))

@@ -2,18 +2,18 @@
 % Please edit documentation in R/higherTaxaCodes.R
 \name{taxon_to_taxon_code}
 \alias{taxon_to_taxon_code}
-\title{Convert Taxon to Taxon Code}
+\title{Convert taxon name to taxon code}
 \usage{
 taxon_to_taxon_code(taxon)
 }
 \arguments{
-\item{taxon}{A character vector of Taxon Names -- case insensitive}
+\item{taxon}{A character vector of taxon names, case insensitive}
 }
 \value{
-A character vector of matching Taxon Codes
+A character vector of matching taxon codes
 }
 \description{
-Convert Taxon to Taxon Code
+Convert taxon name to taxon code
 }
 \examples{
 

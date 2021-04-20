@@ -2,7 +2,7 @@
 % Please edit documentation in R/diagnostic-features.R
 \name{get_ST_features}
 \alias{get_ST_features}
-\title{Get Epipedons, Diagnostic Horizons, Characteristics and Features used by Soil Taxonomy}
+\title{Get diagnostic horizons, characteristics and features}
 \usage{
 get_ST_features(
   group = NULL,
@@ -21,10 +21,10 @@ get_ST_features(
 
 \item{page}{optional filtering vector; page number (12th Edition Keys to Soil Taxonomy)}
 
-\item{multiline_sep}{Default \code{"\\\\n"} returns \code{criteria} a simple character vector concatenated with \code{"\\\\n"} inserted between lines. Use \code{NULL} for list column result.}
+\item{multiline_sep}{default \code{"\\\\n"} returns \code{criteria} column as a character vector concatenated with \code{"\\\\n"}. Use \code{NULL} for list}
 }
 \value{
-a data.frame. , for multiline data.
+a data.frame
 }
 \description{
 All parameters to this function are optional (default \code{NULL}). If specified, they are used as filters.
@@ -44,7 +44,7 @@ str(get_ST_features(chapter = 3))
 get_ST_features(page = 18:20)
 
 # get the required characteristics for the mollic epipedon from list column
-str(get_ST_features(group = "Surface", name = "Mollic Epipedon")$criteria)
+str(get_ST_features(name = "Mollic Epipedon")$criteria)
 
 }
 \seealso{
