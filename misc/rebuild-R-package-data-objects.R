@@ -103,11 +103,28 @@ ST_family_classes <- read.csv('misc/ST-data/ST-family-classes.csv',
                               stringsAsFactors = FALSE)
 
 # Join in chapter and page information from latest Keys
+# 
+# the logic here is hardcoded for now, and there still may be some missing pieces/bad parsing lurking...
+# 
+# TODO: in long term take these structures and use them to make the keys easier to use/mapping to domains easier
+#       NASIS domains are handy lists but they ignore a lot of the nuance that applies within ST itself in that the
+#       classes from different keys are combined into common drop-downs/domain lists and need to be disaggregated
+
+ST_family_classes$group[ST_family_classes$classname %in% c("euic", "dysic")] <- "organic soil reaction class"
+
+# limnic and terric subgroups
+ST_family_classes$group[ST_family_classes$classname %in% c("coprogenous", "diatomaceous", "marly")] <- "limnic and terric subgroup mineralogy class"
+
+#  terric subgroups only
+ST_family_classes$group[ST_family_classes$classname %in% c("ferrihumic")] <- "terric subgroup mineralogy class"
 
 ST_family_classes$FeatureID <- c(
   "mineralogy class" = 109,
   "particle-size class" = 104,
   "reaction class" = 113,
+  "organic soil reaction class" = 128,
+  "limnic and terric subgroup mineralogy class" = 123,
+  "terric subgroup mineralogy class" = 125,
   # "soil moisture subclass" = TODO,
   # "other family class" = MULTIPLE LOCATIONS,
   "temperature class" = 114,
@@ -116,7 +133,24 @@ ST_family_classes$FeatureID <- c(
   "activity class" = 111,
   "human-altered and human transported class" = 106
 )[as.character(ST_family_classes$group)]
-
+ 
+# [84] "Soil Moisture Regimes"                                     
+# [85] "Soil Moisture Control Section"                             
+# [86] "Classes of Soil Moisture Regimes"                          
+# [87] "Sulfidic Materials"                                        
+# [88] "Sulfuric Horizon"                                          
+# [89] "Characteristics Diagnostic for"                            
+# [90] "Anthropogenic Landforms"                                   
+# [91] "Constructional Anthropogenic Landforms"                    
+# [92] "Destructional Anthropogenic Landforms"                     
+# [93] "Anthropogenic Microfeatures"                               
+# [94] "Constructional Anthropogenic Microfeatures"                
+# [95] "Destructional Anthropogenic Microfeatures"                 
+# [96] "Artifacts"                                                 
+# [97] "Human-Altered Material"                                    
+# [98] "Human-Transported Material"                                
+# [99] "Manufactured Layer"                                        
+# [100] "Manufactured Layer Contact"                                
 # [101] "Subgroups for Human-Altered and Human-"                    
 # [102] "Family Differentiae for Mineral Soils and"                 
 # [103] "Control Section for Particle-Size Classes and Their"       
@@ -129,29 +163,39 @@ ST_family_classes$FeatureID <- c(
 # [110] "Key to Mineralogy Classes"                                 
 # [111] "Cation-Exchange Activity Classes"                          
 # [112] "Key to Cation-Exchange Activity Classes"                   
-# [113] "Reaction Classes"                                          
+# [113] "Calcareous and Reaction Classes of Mineral Soils"          
 # [114] "Soil Temperature Classes"                                  
 # [115] "Soil Depth Classes"                                        
-# [116] "Family Differentiae for Organic Soils"                     
-# [117] "Particle-Size Classes"                                     
-# [118] "Control Section for Particle-Size Classes"                 
-# [119] "Key to Particle-Size Classes of Organic Soils"             
-# [120] "Mineralogy Classes Applied Only to Limnic Subgroups"       
-# [121] "Control Section for the Ferrihumic Mineralogy Class and"   
-# [122] "Mineralogy Classes Applied Only to Terric Subgroups"       
-# [123] "Control Section for Mineralogy Classes Applied Only to"    
-# [124] "Key to Mineralogy Classes"                                 
-# [125] "Reaction Classes"                                          
-# [126] "Soil Temperature Classes"                                  
-# [127] "Soil Depth Classes"                                        
-# [128] "Series Differentiae Within a Family"                       
-# [129] "Control Section for the Differentiation of Series" 
+# [116] "Rupture-Resistance Classes"                                
+# [117] "Classes of Coatings on Sands"                              
+# [118] "Classes of Permanent Cracks"                               
+# [119] "Family Differentiae for Organic Soils"                     
+# [120] "Particle-Size Classes"                                     
+# [121] "Control Section for Particle-Size Classes"                 
+# [122] "Key to Particle-Size Classes of Organic Soils"             
+# [123] "Mineralogy Classes Applied Only to Limnic Subgroups"       
+# [124] "Control Section for the Ferrihumic Mineralogy Class and"   
+# [125] "Mineralogy Classes Applied Only to Terric Subgroups"       
+# [126] "Control Section for Mineralogy Classes Applied Only to"    
+# [127] "Key to Mineralogy Classes"                                 
+# [128] "Reaction Classes"                                          
+# [129] "Soil Temperature Classes"                                  
+# [130] "Soil Depth Classes"                                        
+# [131] "Series Differentiae Within a Family"                       
+# [132] "Control Section for the Differentiation of Series" 
 
 feature_data <- ST_feature_SKB[na.omit(unique(ST_family_classes$FeatureID)),]
+feature_data[6, 'name'] <- "Organic Soil Reaction Classes"
+feature_data[2, 'name'] <- "Limnic and Terric Subgroup Mineralogy Classes"
+feature_data[3, 'name'] <- "Terric Subgroup Mineralogy Classes"
+
 feature_data$FeatureID <- c(
   "Mineralogy Classes" = 109,
   "Key to the Particle-Size and Substitute Classes of Mineral" = 104,
-  "Reaction Classes" = 113,
+  "Calcareous and Reaction Classes of Mineral Soils" = 113,
+  "Organic Soil Reaction Classes" = 128,
+  "Limnic and Terric Subgroup Mineralogy Classes" = 123,
+  "Terric Subgroup Mineralogy Classes" = 125,
   # "soil moisture subclass" = TODO,
   # "other family class" = MULTIPLE LOCATIONS,
   "Soil Temperature Classes" = 114,
@@ -168,5 +212,6 @@ ST_family_classes <- merge(ST_family_classes[,!colnames(ST_family_classes) %in% 
 # remove NASIS domain ID? and internal "feature ID" referencing list from SKB
 ST_family_classes$FeatureID <- NULL
 ST_family_classes$DomainID <- NULL
+
 
 save(ST_family_classes, file='data/ST_family_classes.rda')
