@@ -1,0 +1,199 @@
+DomainID,classname,group
+126,allitic,mineralogy class
+126,amorphic,mineralogy class
+126,carbonatic,mineralogy class
+126,coprogenous,mineralogy class
+126,diatomaceous,mineralogy class
+126,ferrihumic,mineralogy class
+126,ferrihydritic,mineralogy class
+126,ferritic,mineralogy class
+126,ferruginous,mineralogy class
+126,gibbsitic,mineralogy class
+126,glassy,mineralogy class
+126,glauconitic,mineralogy class
+126,gypsic,mineralogy class
+126,halloysitic,mineralogy class
+126,hypergypsic,mineralogy class
+126,illitic,mineralogy class
+126,isotic,mineralogy class
+126,kaolinitic,mineralogy class
+126,magnesic,mineralogy class
+126,marly,mineralogy class
+126,micaceous,mineralogy class
+126,mixed,mineralogy class
+126,not used,mineralogy class
+126,parasesquic,mineralogy class
+126,sesquic,mineralogy class
+126,siliceous,mineralogy class
+126,smectitic,mineralogy class
+126,vermiculitic,mineralogy class
+126,anhydritic,mineralogy class
+127,ashy,particle-size class
+127,ashy over clayey,particle-size class
+127,ashy over clayey-skeletal,particle-size class
+127,ashy over loamy,particle-size class
+127,ashy over loamy-skeletal,particle-size class
+127,ashy over medial,particle-size class
+127,ashy over medial-skeletal,particle-size class
+127,ashy over pumiceous or cindery,particle-size class
+127,ashy over sandy or sandy-skeletal,particle-size class
+127,ashy-pumiceous,particle-size class
+127,ashy-skeletal,particle-size class
+127,ashy-skeletal over clayey,particle-size class
+127,ashy-skeletal over fragmental or cindery,particle-size class
+127,ashy-skeletal over loamy-skeletal,particle-size class
+127,ashy-skeletal over sandy or sandy-skeletal,particle-size class
+127,cindery,particle-size class
+127,cindery over loamy,particle-size class
+127,cindery over medial,particle-size class
+127,cindery over medial-skeletal,particle-size class
+127,clayey,particle-size class
+127,clayey over coarse-gypseous,particle-size class
+127,clayey over fine-gypseous,particle-size class
+127,clayey over fragmental,particle-size class
+127,clayey over gypseous-skeletal,particle-size class
+127,clayey over loamy,particle-size class
+127,clayey over loamy-skeletal,particle-size class
+127,clayey over sandy or sandy-skeletal,particle-size class
+127,clayey-skeletal,particle-size class
+127,clayey-skeletal over sandy or sandy-skeletal,particle-size class
+127,coarse-gypseous,particle-size class
+127,coarse-loamy,particle-size class
+127,coarse-loamy over clayey,particle-size class
+127,coarse-loamy over fragmental,particle-size class
+127,coarse-loamy over sandy or sandy-skeletal,particle-size class
+127,coarse-silty,particle-size class
+127,coarse-silty over clayey,particle-size class
+127,coarse-silty over sandy or sandy-skeletal,particle-size class
+127,fine,particle-size class
+127,fine-gypseous,particle-size class
+127,fine-loamy,particle-size class
+127,fine-loamy over clayey,particle-size class
+127,fine-loamy over fragmental,particle-size class
+127,fine-loamy over sandy or sandy-skeletal,particle-size class
+127,fine-silty,particle-size class
+127,fine-silty over clayey,particle-size class
+127,fine-silty over fragmental,particle-size class
+127,fine-silty over sandy or sandy-skeletal,particle-size class
+127,fragmental,particle-size class
+127,gypseous-skeletal,particle-size class
+127,hydrous,particle-size class
+127,hydrous over clayey,particle-size class
+127,hydrous over clayey-skeletal,particle-size class
+127,hydrous over fragmental,particle-size class
+127,hydrous over loamy,particle-size class
+127,hydrous over loamy-skeletal,particle-size class
+127,hydrous over sandy or sandy-skeletal,particle-size class
+127,hydrous-pumiceous,particle-size class
+127,hydrous-skeletal,particle-size class
+127,loamy,particle-size class
+127,loamy over ashy or ashy-pumiceous,particle-size class
+127,loamy over coarse-gypseous,particle-size class
+127,loamy over fine-gypseous,particle-size class
+127,loamy over pumiceous or cindery,particle-size class
+127,loamy over sandy or sandy-skeletal,particle-size class
+127,loamy-skeletal,particle-size class
+127,loamy-skeletal over cindery,particle-size class
+127,loamy-skeletal over clayey,particle-size class
+127,loamy-skeletal over fragmental,particle-size class
+127,loamy-skeletal over gypseous-skeletal,particle-size class
+127,loamy-skeletal over sandy or sandy-skeletal,particle-size class
+127,medial,particle-size class
+127,medial over ashy,particle-size class
+127,medial over ashy-pumiceous or ashy-skeletal,particle-size class
+127,medial over clayey,particle-size class
+127,medial over clayey-skeletal,particle-size class
+127,medial over fragmental,particle-size class
+127,medial over hydrous,particle-size class
+127,medial over loamy,particle-size class
+127,medial over loamy-skeletal,particle-size class
+127,medial over pumiceous or cindery,particle-size class
+127,medial over sandy or sandy-skeletal,particle-size class
+127,medial-pumiceous,particle-size class
+127,medial-skeletal,particle-size class
+127,medial-skeletal over fragmental or cindery,particle-size class
+127,medial-skeletal over loamy-skeletal,particle-size class
+127,medial-skeletal over sandy or sandy-skeletal,particle-size class
+127,not used,particle-size class
+127,pumiceous,particle-size class
+127,pumiceous or ashy-pumiceous over loamy,particle-size class
+127,pumiceous or ashy-pumiceous over loamy-skeletal,particle-size class
+127,pumiceous or ashy-pumiceous over medial,particle-size class
+127,pumiceous or ashy-pumiceous over medial-skeletal,particle-size class
+127,pumiceous or ashy-pumiceous over sandy or sandy-skeletal,particle-size class
+127,sandy,particle-size class
+127,sandy or sandy-skeletal,particle-size class
+127,sandy over clayey,particle-size class
+127,sandy over loamy,particle-size class
+127,sandy-skeletal,particle-size class
+127,sandy-skeletal over loamy,particle-size class
+127,very-fine,particle-size class
+128,acid,reaction class
+128,allic,reaction class
+128,calcareous,reaction class
+128,dysic,reaction class
+128,euic,reaction class
+128,nonacid,reaction class
+128,not used,reaction class
+131,aeric,soil moisture subclass
+131,anthraquic,soil moisture subclass
+131,aquic,soil moisture subclass
+131,aridic (torric),soil moisture subclass
+131,oxyaquic,soil moisture subclass
+131,typic,soil moisture subclass
+131,udic,soil moisture subclass
+131,ustic,soil moisture subclass
+131,xeric,soil moisture subclass
+184,coated,other family class
+184,cracked,other family class
+184,micro,other family class
+184,not used,other family class
+184,ortstein,other family class
+184,shallow,other family class
+184,uncoated,other family class
+185,frigid,temperature class
+185,hypergelic,temperature class
+185,hyperthermic,temperature class
+185,isofrigid,temperature class
+185,isohyperthermic,temperature class
+185,isomesic,temperature class
+185,isothermic,temperature class
+185,mesic,temperature class
+185,not used,temperature class
+185,pergelic,temperature class
+185,subgelic,temperature class
+185,thermic,temperature class
+186,aquic,moisture regime
+186,aridic (torric),moisture regime
+186,peraquic,moisture regime
+186,perudic,moisture regime
+186,udic,moisture regime
+186,ustic,moisture regime
+186,xeric,moisture regime
+188,cryic,temperature regime
+188,frigid,temperature regime
+188,gelic,temperature regime
+188,hyperthermic,temperature regime
+188,isofrigid,temperature regime
+188,isohyperthermic,temperature regime
+188,isomesic,temperature regime
+188,isothermic,temperature regime
+188,mesic,temperature regime
+188,thermic,temperature regime
+520,not used,activity class
+520,subactive,activity class
+520,semiactive,activity class
+520,active,activity class
+520,superactive,activity class
+5247,araric,human-altered and human transported class
+5247,artifactic,human-altered and human transported class
+5247,ashifactic,human-altered and human transported class
+5247,asphaltic,human-altered and human transported class
+5247,combustic,human-altered and human transported class
+5247,concretic,human-altered and human transported class
+5247,dredgic,human-altered and human transported class
+5247,gypsifactic,human-altered and human transported class
+5247,methanogenic,human-altered and human transported class
+5247,pauciartifactic,human-altered and human transported class
+5247,pyrocarbonic,human-altered and human transported class
+5247,spolic,human-altered and human transported class
