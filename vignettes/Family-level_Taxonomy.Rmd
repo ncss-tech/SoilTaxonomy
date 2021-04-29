@@ -1,0 +1,59 @@
+---
+title: "Family-level Taxonomic Classes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Family-level Taxonomy}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SoilTaxonomy)
+```
+
+## `parse_family`
+
+The function `parse_family` provides a way to separate lower taxonomic levels ("family-level classes") from the higher taxonomic levels (Order, Suborder, Great Group, and Subgroup) in a soil taxon name.
+
+The user provides a vector of family names, and the result is a `data.frame` containing: 
+ - `family` (input)
+ - `subgroup` (taxonomic subgroup)
+ - `subgroup_code` (four or five letter code for subgroup)
+ - `class_string` (comma-separated family-level class string in taxon name)
+ - `classes_split` (list column containing `class_string`; split using `","` as delimiter)
+
+```{r}
+parse_family("fine-loamy, mixed, semiactive, mesic ultic haploxeralfs")
+```
+
+## `ST_family_classes`
+
+The `ST_family_classes` data set provides information on the lower taxonomic class names and the Keys used to determine what, if any, class to use for a particular soil.
+
+This data set is a `data.frame` with the following columns:
+
+ - `classname` (class name used in Soil Taxonomy family name)
+ - `group` (simplified grouping of related classes/keys/criteria)
+ - `name` (name of relevant section from Keys to Soil Taxonomy)
+ - `chapter` (chapter number from Keys to Soil Taxonomy)
+ - `page` ([first] page number from Keys to Soil Taxonomy)
+ - `description` (narrative description of section; may not be present)
+ - `criteria` (criteria listed under "Required Characteristics"; may not be present)
+
+```{r}
+data("ST_family_classes")
+head(ST_family_classes)
+```
+
+```{r}
+afamily_classes <- parse_family("fine-loamy, mixed, semiactive, mesic ultic haploxeralfs")$classes_split[[1]]
+class_descriptions <- subset(ST_family_classes, classname %in% afamily_classes)
+class_descriptions$name[match(afamily_classes, class_descriptions$classname),]
+```
