@@ -122,13 +122,13 @@ ST_family_classes <- subset(ST_family_classes, DomainID != 188)
 ST_family_classes$FeatureID <- c(
   "mineralogy class" = 112,
   "particle-size class" = 106,
-  "reaction class" = 117,
-  "organic soil reaction class" = 132,
-  "limnic subgroup mineralogy class" = 127,
-  "terric subgroup mineralogy class" = 129,
+  "reaction class" = 119,
+  "organic soil reaction class" = 136,
+  "limnic subgroup mineralogy class" = 131,
+  "terric subgroup mineralogy class" = 133,
   # "soil moisture subclass" = TODO,
   # "other family class" = MULTIPLE LOCATIONS,
-  "temperature class" = 118,
+  "temperature class" = 120,
   "moisture regime" = 85,
   # "temperature regime" = TODO,
   "activity class" = 115,
@@ -139,142 +139,6 @@ ST_family_classes$FeatureID[ST_family_classes$DomainID == 131] <- 901
 ST_family_classes$FeatureID[ST_family_classes$DomainID == 184] <- 902
 
 # > ST_feature_SKB$name
-# [1] "Mineral Soil Material"                                                                                 
-# [2] "Organic Soil Material"                                                                                 
-# [3] "Distinction Between Mineral Soils and Organic"                                                         
-# [4] "Soil Surface"                                                                                          
-# [5] "Mineral Soil Surface"                                                                                  
-# [6] "Definition of Mineral Soils"                                                                           
-# [7] "Definition of Organic Soils"                                                                           
-# [8] "Diagnostic Surface Horizons:"                                                                          
-# [9] "Anthropic Epipedon"                                                                                    
-# [10] "Folistic Epipedon"                                                                                     
-# [11] "Histic Epipedon"                                                                                       
-# [12] "Melanic Epipedon"                                                                                      
-# [13] "Mollic Epipedon"                                                                                       
-# [14] "Ochric Epipedon"                                                                                       
-# [15] "Plaggen Epipedon"                                                                                      
-# [16] "Umbric Epipedon"                                                                                       
-# [17] "Diagnostic Subsurface Horizons"                                                                        
-# [18] "Agric Horizon"                                                                                         
-# [19] "Albic Horizon"                                                                                         
-# [20] "Anhydritic Horizon"                                                                                    
-# [21] "Argillic Horizon"                                                                                      
-# [22] "Calcic Horizon"                                                                                        
-# [23] "Cambic Horizon"                                                                                        
-# [24] "Duripan"                                                                                               
-# [25] "Fragipan"                                                                                              
-# [26] "Glossic Horizon"                                                                                       
-# [27] "Gypsic Horizon"                                                                                        
-# [28] "Kandic Horizon"                                                                                        
-# [29] "Natric Horizon"                                                                                        
-# [30] "Ortstein"                                                                                              
-# [31] "Oxic Horizon"                                                                                          
-# [32] "Petrocalcic Horizon"                                                                                   
-# [33] "Petrogypsic Horizon"                                                                                   
-# [34] "Placic Horizon"                                                                                        
-# [35] "Salic Horizon"                                                                                         
-# [36] "Sombric Horizon"                                                                                       
-# [37] "Spodic Horizon"                                                                                        
-# [38] "Diagnostic Soil Characteristics for Mineral"                                                           
-# [39] "Abrupt Textural Change"                                                                                
-# [40] "Albic Materials"                                                                                       
-# [41] "Andic Soil Properties"                                                                                 
-# [42] "Anhydrous Conditions"                                                                                  
-# [43] "Coefficient of Linear Extensibility (COLE)"                                                            
-# [44] "Fragic Soil Properties"                                                                                
-# [45] "Free Carbonates"                                                                                       
-# [46] "Identifiable Secondary Carbonates"                                                                     
-# [47] "Interfingering of Albic Materials"                                                                     
-# [48] "Lamellae"                                                                                              
-# [49] "Linear Extensibility (LE)"                                                                             
-# [50] "Lithologic Discontinuities"                                                                            
-# [51] "n Value"                                                                                               
-# [52] "Petroferric Contact"                                                                                   
-# [53] "Plinthite"                                                                                             
-# [54] "Resistant Minerals"                                                                                    
-# [55] "Slickensides"                                                                                          
-# [56] "Spodic Materials"                                                                                      
-# [57] "Volcanic Glass"                                                                                        
-# [58] "Weatherable Minerals"                                                                                  
-# [59] "Characteristics Diagnostic for Organic Soils"                                                          
-# [60] "Kinds of Organic Soil Materials"                                                                       
-# [61] "Fibers"                                                                                                
-# [62] "Fibric Soil Materials"                                                                                 
-# [63] "Hemic Soil Materials"                                                                                  
-# [64] "Sapric Soil Materials"                                                                                 
-# [65] "Humilluvic Material"                                                                                   
-# [66] "Kinds of Limnic Materials"                                                                             
-# [67] "Coprogenous Earth"                                                                                     
-# [68] "Diatomaceous Earth"                                                                                    
-# [69] "Marl"                                                                                                  
-# [70] "Thickness of Organic Soil Materials"                                                                   
-# [71] "Surface Tier"                                                                                          
-# [72] "Subsurface Tier"                                                                                       
-# [73] "Bottom Tier"                                                                                           
-# [74] "Horizons and Characteristics"                                                                          
-# [75] "Aquic Conditions"                                                                                      
-# [76] "Cryoturbation"                                                                                         
-# [77] "Densic Contact"                                                                                        
-# [78] "Densic Materials"                                                                                      
-# [79] "Gelic Materials"                                                                                       
-# [80] "Glacic Layer"                                                                                          
-# [81] "Lithic Contact"                                                                                        
-# [82] "Paralithic Contact"                                                                                    
-# [83] "Paralithic Materials"                                                                                  
-# [84] "Permafrost"                                                                                            
-# [85] "Soil Moisture Regimes"                                                                                 
-# [86] "Soil Moisture Control Section"                                                                         
-# [87] "Classes of Soil Moisture Regimes"                                                                      
-# [88] "Sulfidic Materials"                                                                                    
-# [89] "Sulfuric Horizon"                                                                                      
-# [90] "Characteristics Diagnostic for Human-Altered and Human-Transported Soils"                              
-# [91] "Anthropogenic Landforms and Microfeatures"                                                             
-# [92] "Anthropogenic Landforms"                                                                               
-# [93] "Constructional Anthropogenic Landforms"                                                                
-# [94] "Destructional Anthropogenic Landforms"                                                                 
-# [95] "Anthropogenic Microfeatures"                                                                           
-# [96] "Constructional Anthropogenic Microfeatures"                                                            
-# [97] "Destructional Anthropogenic Microfeatures"                                                             
-# [98] "Artifacts"                                                                                             
-# [99] "Human-Altered Material"                                                                                
-# [100] "Human-Transported Material"                                                                            
-# [101] "Manufactured Layer"                                                                                    
-# [102] "Manufactured Layer Contact"                                                                            
-# [103] "Subgroups for Human-Altered and Human-Transported Soils"                                               
-# [104] "Family Differentiae for Mineral Soils and Mineral Layers of Some Organic Soils"                        
-# [105] "Control Section for Particle-Size Classes and Their Substitutes in Mineral Soils"                      
-# [106] "Key to the Particle-Size and Substitute Classes of Mineral Soils"                                      
-# [107] "Strongly Contrasting Particle-Size Classes"                                                            
-# [108] "Use of Human-Altered and Human-Transported Material Classes"                                           
-# [109] "Key to Human-Altered and Human-Transported Material Classes"                                           
-# [110] "Key to the Control Section for Human-Altered and Human-Transported Material Classes"                   
-# [111] "Key to Human-Altered and Human-Transported Material Classes"                                           
-# [112] "Mineralogy Classes"                                                                                    
-# [113] "Control Section for Mineralogy Classes"                                                                
-# [114] "Key to Mineralogy Classes"                                                                             
-# [115] "Cation-Exchange Activity Classes"                                                                      
-# [116] "Key to Cation-Exchange Activity Classes"                                                               
-# [117] "Calcareous and Reaction Classes of Mineral Soils"                                                      
-# [118] "Soil Temperature Classes"                                                                              
-# [119] "Soil Depth Classes"                                                                                    
-# [120] "Rupture-Resistance Classes"                                                                            
-# [121] "Classes of Coatings on Sands"                                                                          
-# [122] "Classes of Permanent Cracks"                                                                           
-# [123] "Family Differentiae for Organic Soils"                                                                 
-# [124] "Particle-Size Classes"                                                                                 
-# [125] "Control Section for Particle-Size Classes"                                                             
-# [126] "Key to Particle-Size Classes of Organic Soils"                                                         
-# [127] "Mineralogy Classes Applied Only to Limnic Subgroups"                                                   
-# [128] "Control Section for the Ferrihumic Mineralogy Class and Mineralogy Classes Applied to Limnic Subgroups"
-# [129] "Mineralogy Classes Applied Only to Terric Subgroups"                                                   
-# [130] "Control Section for Mineralogy Classes Applied Only to Terric Subgroups"                               
-# [131] "Key to Mineralogy Classes"                                                                             
-# [132] "Reaction Classes"                                                                                      
-# [133] "Soil Temperature Classes"                                                                              
-# [134] "Soil Depth Classes"                                                                                    
-# [135] "Series Differentiae Within a Family"                                                                   
-# [136] "Control Section for the Differentiation of Series" 
 
 feature_data <- ST_feature_SKB[na.omit(unique(ST_family_classes$FeatureID)),]
 feature_data[6, 'name'] <- "Reaction Classes for Organic Soils"
@@ -282,13 +146,13 @@ feature_data[6, 'name'] <- "Reaction Classes for Organic Soils"
 feature_data$FeatureID <- c(
   "Mineralogy Classes" = 112,
   "Key to the Particle-Size and Substitute Classes of Mineral Soils" = 106,
-  "Calcareous and Reaction Classes of Mineral Soils" = 117,
-  "Reaction Classes for Organic Soils" = 132,
-  "Mineralogy Classes Applied Only to Limnic Subgroups" = 127,
-  "Mineralogy Classes Applied Only to Terric Subgroups" = 129,
+  "Calcareous and Reaction Classes of Mineral Soils" = 119,
+  "Reaction Classes for Organic Soils" = 136,
+  "Mineralogy Classes Applied Only to Limnic Subgroups" = 131,
+  "Mineralogy Classes Applied Only to Terric Subgroups" = 133,
   "soil moisture subclass" = 901, #custom
   "other family class" = 902, #custom
-  "Soil Temperature Classes" = 118,
+  "Soil Temperature Classes" = 120,
   "Soil Moisture Regimes" = 85,
   "Cation-Exchange Activity Classes" = 115,
   "Use of Human-Altered and Human-Transported Material Classes" = 108
