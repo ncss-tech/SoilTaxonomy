@@ -117,7 +117,7 @@ ST_family_classes$group[ST_family_classes$classname %in% c("ferrihumic")] <- "te
 
 # temperature classes
 ST_family_classes$group[ST_family_classes$DomainID == 185] <- "temperature class"
-ST_family_classes <- subset(ST_family_classes, DomainID != 188)
+ST_family_classes$group[ST_family_classes$DomainID == 188] <- "soil moisture class"
 
 ST_family_classes$FeatureID <- c(
   "mineralogy class" = 112,
@@ -130,7 +130,7 @@ ST_family_classes$FeatureID <- c(
   # "other family class" = MULTIPLE LOCATIONS,
   "temperature class" = 120,
   "moisture regime" = 85,
-  # "temperature regime" = TODO,
+  "soil moisture class" = 87,
   "activity class" = 115,
   "human-altered and human transported class" = 108
 )[as.character(ST_family_classes$group)]
@@ -139,7 +139,6 @@ ST_family_classes$FeatureID[ST_family_classes$DomainID == 131] <- 901
 ST_family_classes$FeatureID[ST_family_classes$DomainID == 184] <- 902
 
 # > ST_feature_SKB$name
-
 feature_data <- ST_feature_SKB[na.omit(unique(ST_family_classes$FeatureID)),]
 feature_data[6, 'name'] <- "Reaction Classes for Organic Soils"
 
