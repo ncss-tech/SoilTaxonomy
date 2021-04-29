@@ -55,5 +55,5 @@ head(ST_family_classes)
 ```{r}
 afamily_classes <- parse_family("fine-loamy, mixed, semiactive, mesic ultic haploxeralfs")$classes_split[[1]]
 class_descriptions <- subset(ST_family_classes, classname %in% afamily_classes)
-class_descriptions$name[match(afamily_classes, class_descriptions$classname),]
+class_descriptions[match(afamily_classes, class_descriptions$classname),]
 ```
