@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Determine taxonomic level of specified taxa — taxon_to_level • SoilTaxonomy</title>
+<title>Get last child taxon in Keys at specified taxonomic level — getLastChildTaxon • SoilTaxonomy</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Determine taxonomic level of specified taxa — taxon_to_level" />
-<meta property="og:description" content="Taxa that resolve to a subgroup level taxon and contain a comma &quot;,&quot; are assumed to be &quot;family&quot;-level." />
+<meta property="og:title" content="Get last child taxon in Keys at specified taxonomic level — getLastChildTaxon" />
+<meta property="og:description" content="Get last child taxon in Keys at specified taxonomic level" />
 
 
 
@@ -126,37 +126,40 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Determine taxonomic level of specified taxa</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ncss-tech/SoilTaxonomy/blob/master/R/higherTaxaLevels.R'><code>R/higherTaxaLevels.R</code></a></small>
-    <div class="hidden name"><code>taxon_to_level.Rd</code></div>
+    <h1>Get last child taxon in Keys at specified taxonomic level</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ncss-tech/SoilTaxonomy/blob/master/R/getLastChildTaxon.R'><code>R/getLastChildTaxon.R</code></a></small>
+    <div class="hidden name"><code>getLastChildTaxon.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Taxa that resolve to a subgroup level taxon and contain a comma <code>","</code> are assumed to be <code>"family"</code>-level.</p>
+    <p>Get last child taxon in Keys at specified taxonomic level</p>
     </div>
 
-    <pre class="usage"><span class='fu'>taxon_to_level</span><span class='op'>(</span><span class='va'>taxon</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>getLastChildTaxon</span><span class='op'>(</span>level <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"order"</span>, <span class='st'>"suborder"</span>, <span class='st'>"greatgroup"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>taxon</th>
-      <td><p>character vector of taxon names at Order, Suborder, Great Group or Subgroup level.</p></td>
+      <th>level</th>
+      <td><p>Get child taxa from keys at specified level. One of: <code>"order"</code>, <code>"suborder"</code>, <code>"greatgroup"</code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>character of taxonomic hierarchy levels (such as "order", "suborder", "greatgroup", "subgroup", "family") for each element of input vector.</p>
+    <p>A <code>data.frame</code> containing <code>key</code> (parent key), <code>taxon</code> (last taxon name), <code>code</code> (letter code), <code>position</code> (relative taxon position)</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># get the taxonomic levels for various taxa</span>
+<span class='co'># get last taxa in suborder-level keys</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>getLastChildTaxon</span><span class='op'>(</span>level <span class='op'>=</span> <span class='st'>"suborder"</span><span class='op'>)</span>
 
-<span class='fu'>taxon_to_level</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"gelisols"</span>, <span class='cn'>NA</span>, <span class='st'>"foo"</span>, <span class='st'>"typic folistels"</span>, <span class='st'>"folistels"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "order"      NA           NA           "subgroup"   "greatgroup"</div><div class='input'>
-</div></pre>
+<span class='co'># proportion of keys where last taxon has "Hap" formative element</span>
+<span class='fu'><a href='https://rdrr.io/r/base/proportions.html'>prop.table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/grep.html'>grepl</a></span><span class='op'>(</span><span class='st'>"^Hap"</span>, <span class='va'>x</span><span class='op'>$</span><span class='va'>taxon</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; 
+#&gt; FALSE  TRUE 
+#&gt;  0.25  0.75 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -94,6 +94,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/Family-level_Taxonomy.html">Family-level Taxonomic Classes</a>
+    </li>
+    <li>
       <a href="../articles/taxon-letter-codes.html">Taxon Letter Codes in Soil Taxonomy</a>
     </li>
   </ul>
@@ -126,19 +129,22 @@
       <small>Source: <a href='https://github.com/ncss-tech/SoilTaxonomy/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="soiltaxonomy-012-2021-04-18" class="section level1">
+    <div id="soiltaxonomy-012-2021-04-29" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.2">
-<a href="#soiltaxonomy-012-2021-04-18" class="anchor"></a>SoilTaxonomy 0.1.2 (2021-04-18)<small> Unreleased </small>
+<a href="#soiltaxonomy-012-2021-04-29" class="anchor"></a>SoilTaxonomy 0.1.2 (2021-04-29)<small> Unreleased </small>
 </h1>
 <ul>
-<li>Extend <code>explainST</code> to work on Order, Suborder and Great Group</li>
+<li>Extend <code>explainST</code> to work on Order, Suborder and Great Group taxonomic names</li>
 <li>Add methods <code>level_to_taxon</code> and <code>taxon_to_level</code> to determine where taxa occur in the hierarchy</li>
-<li>Add <code>get_ST_features</code> wrapper method for filtering <code>ST_features</code> data set
+<li>New data sets: <code>ST_features</code>, <code>ST_family_classes</code> for diagnostic horizons/features/properties and family-level class names and related content
 <ul>
-<li>Derived from 12th Edition Keys to Soil Taxonomy definitions and criteria for now</li>
-<li>Data sourced from <a href="https://github.com/ncss-tech/SoilKnowledgeBase/" class="uri">https://github.com/ncss-tech/SoilKnowledgeBase/</a> KST parsing module output)</li>
+<li>Derived from 12th Edition Keys to Soil Taxonomy definitions and criteria until official release of 13th Edition</li>
+<li>Data sourced from <a href="https://github.com/ncss-tech/SoilKnowledgeBase/" class="uri">https://github.com/ncss-tech/SoilKnowledgeBase/</a> <code>create_KST</code> module JSON output</li>
 </ul>
 </li>
+<li>Add <code>parse_family</code> method for separating family-level classes from higher taxonomic names</li>
+<li>Add <code>get_ST_features</code> wrapper method for filtering <code>ST_features</code> data set</li>
+<li>Add <code>getLastChildTaxon</code> method to determine last in Keys at specified <code>level</code> (Order, Suborder, or Great Group)</li>
 </ul>
 </div>
     <div id="soiltaxonomy-011-2021-03-15" class="section level1">
