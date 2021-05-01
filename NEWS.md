@@ -1,3 +1,8 @@
+# SoilTaxonomy 0.1.2.9001 (2021-05-01)
+ * Add `code_to_level` to abstract core from `taxon_to_level` for higher taxa with letter codes
+ * Add `getChildTaxa` counterpart to `getParentTaxa`
+ * `getParentTaxa` can now be filtered with `level` argument
+
 # SoilTaxonomy 0.1.2 (2021-04-29)
  * Extend `explainST` to work on Order, Suborder and Great Group taxonomic names
  * Add methods `level_to_taxon` and `taxon_to_level` to determine where taxa occur in the hierarchy 
