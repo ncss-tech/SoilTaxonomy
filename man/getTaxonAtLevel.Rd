@@ -32,6 +32,3 @@ getTaxonAtLevel("udifolists", level = "subgroup")
 getTaxonAtLevel("udifolists", level = "suborder")
 
 }
-\author{
-A.G. Brown
-}

@@ -4,7 +4,7 @@
 #' @param level one of `c("order","suborder","greatgroup","subgroup")`
 #'
 #' @return A named character vector of taxa at specified level, where names are the internal Soil Taxonomy letter codes.
-#' @author A.G. Brown
+#' 
 #' @export
 #'
 #' @examples

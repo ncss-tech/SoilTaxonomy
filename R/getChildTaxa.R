@@ -13,7 +13,7 @@
 #' # suborder children of "Mollisols"
 #' getChildTaxa("Mollisols", level = "suborder")
 #' 
-#' # all get all siblings within a great group, given a subgroup
+#' # get all siblings within a great group, given a subgroup
 #' getChildTaxa(getTaxonAtLevel("Ultic Haploxeralfs", "greatgroup"))
 #' 
 getChildTaxa <- function(taxon = NULL, code = NULL, convert = TRUE, 
@@ -39,8 +39,9 @@ getChildTaxa <- function(taxon = NULL, code = NULL, convert = TRUE,
     
     if (length(level) < 4) {
       # filter
-      res <- res[taxon_to_level(taxon_code_to_taxon(res)) %in% level]
+      res <- res[code_to_level(res) %in% level]
     }
+    
     if (convert)
       res <- taxon_code_to_taxon(res)
     res

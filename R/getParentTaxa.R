@@ -7,9 +7,9 @@
 #' @param taxon A character vector of taxa (case-insensitive)
 #' @param code A character vector of taxon codes (case sensitive)
 #' @param convert Convert results from taxon codes to taxon names? Default: `TRUE`
-#'
+#' @param level level	Filter results to specific level? Default: `"order"`,`"suborder"`,`"greatgroup"`,`"subgroup"`
+#' 
 #' @return A named list, where names are taxon codes and values are character vectors representing parent taxa
-#' @author Andrew G. Brown
 #' @export
 #'
 #' @examples
@@ -20,7 +20,9 @@
 #' 
 #' getParentTaxa("folists", convert = FALSE)
 #' 
-getParentTaxa <- function(taxon = NULL, code = NULL, convert = TRUE) {
+getParentTaxa <- function(taxon = NULL, code = NULL, convert = TRUE, 
+                          level = c("order","suborder","greatgroup","subgroup")) {
+  level <- match.arg(level, c("order","suborder","greatgroup","subgroup"), several.ok = TRUE)
   
   # take taxon names or codes as input
   stopifnot(!is.null(taxon) | !is.null(code))
@@ -49,6 +51,11 @@ getParentTaxa <- function(taxon = NULL, code = NULL, convert = TRUE) {
       
       # take all codes except last (self) code
       y <- do.call('c', x[1:(length(x) - as.integer(remove_self[i]))])
+      
+      if (length(level) < 4) {
+        # filter
+        y <- y[code_to_level(y) %in% level]
+      }
       
       # convert code to taxon if needed
       if (convert) 
