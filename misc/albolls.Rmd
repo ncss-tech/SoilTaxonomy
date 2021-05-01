@@ -1,0 +1,64 @@
+---
+output: html_document
+---
+
+```{r}
+library(sf)
+library(raster)
+library(soilDB)
+library(SoilTaxonomy)
+
+stopifnot(require(gifski))
+
+explainTaxonPlot <- function(taxon) {
+  
+  x <- soilDB::taxaExtent(taxon, level = SoilTaxonomy::taxon_to_level(taxon))
+  conus <- spData::us_states$geometry
+  conus_aea <- sf::st_transform(conus, raster::crs(x))
+  
+  plot(sf::st_cast(conus_aea, 'MULTILINESTRING'), col = "WHITE")
+  raster::plot(x,
+               add = TRUE,
+               col = "GREEN",
+               legend = FALSE)
+  title(main = paste0(SoilTaxonomy::taxon_to_taxon_code(taxon), ". ", taxon),
+        col.main = "WHITE")
+  
+  explained <- SoilTaxonomy::explainST(taxon)
+  mtext(explained, 1, family="Courier New", cex=0.75, adj=c(0,0))
+
+}
+```
+
+```{r, animation.hook="gifski"}
+par(mar=c(3,1,1,1),
+    fg = 'white',
+    bg = 'black')
+
+explainTaxonPlot("Mollisols")
+explainTaxonPlot("Albolls")
+explainTaxonPlot("Argialbolls")
+explainTaxonPlot("Typic Argialbolls")
+```
+
+```{r, animation.hook="gifski"}
+par(mar=c(3,1,1,1),
+    fg = 'white',
+    bg = 'black')
+
+chl <- getChildTaxa("Argialbolls", level = "subgroup")[[1]]
+
+for(child in chl)
+  try(explainTaxonPlot(child))
+```
+
+```{r, animation.hook="gifski"}
+par(mar=c(3,1,1,1),
+    fg = 'white',
+    bg = 'black')
+
+chl <- getChildTaxa("Mollisols", level = "suborder")[[1]]
+
+for(child in chl)
+  try(explainTaxonPlot(child))
+```
