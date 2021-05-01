@@ -17,17 +17,45 @@
 taxon_to_level <- function(taxon) {
   
   # convert taxon names to codes, then assign levels based on number of code characters
-  ncode <- nchar(taxon_to_taxon_code(taxon))
-  level <- rep(NA_character_, length(ncode))
+  code <- taxon_to_taxon_code(taxon)
   
-  level[ncode == 1] <- "order" # e.g. A
-  level[ncode == 2] <- "suborder" # e.g. AB
-  level[ncode == 3] <- "greatgroup" # e.g. ABC
-  level[ncode >= 4] <- "subgroup" # e.g. ABCD or in large keys ABCDe
+  # used for family check
+  ncode <- nchar(code)
+  
+  level <- code_to_level(code)
   
   # if taxon contains commas, taxon_to_taxon_code extracts subgroup
   level[ncode >= 4 & grepl(",", taxon)] <- "family"
   
+  level
+}
+
+#' Determine taxonomic level of a taxonomic letter code
+#'
+#' @param code A character vector of taxon codes (case sensitive)
+#'
+#' @return A character vector containing `"order"`, `"suborder"`, `"greatgroup"` or `"subgroup"`
+#' @export
+#'
+#' @examples
+#' 
+#' # order level code (1 character)
+#' code_to_level("B")
+#' 
+#' # subgroup level code (4 characters)
+#' code_to_level("ABCD")
+#' 
+#' # subgroup level code (5 characters, 4 uppercase + 1 lowercase)
+#' code_to_level("IFFZh")
+#' 
+code_to_level <-  function(code) {
+  ncode <- nchar(code)
+  level <- rep(NA_character_, length(ncode))
+  level[ncode == 1] <- "order" # e.g. A
+  level[ncode == 2] <- "suborder" # e.g. AB
+  level[ncode == 3] <- "greatgroup" # e.g. ABC
+  level[ncode >= 4] <- "subgroup" # e.g. ABCD or in large keys ABCDe
+  level[ncode > 5] <- NA_character_ # invalid code
   level
 }
 
