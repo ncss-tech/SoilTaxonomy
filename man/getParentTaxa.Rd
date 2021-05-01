@@ -4,7 +4,12 @@
 \alias{getParentTaxa}
 \title{Get the higher (parent) taxa for a taxon name or code}
 \usage{
-getParentTaxa(taxon = NULL, code = NULL, convert = TRUE)
+getParentTaxa(
+  taxon = NULL,
+  code = NULL,
+  convert = TRUE,
+  level = c("order", "suborder", "greatgroup", "subgroup")
+)
 }
 \arguments{
 \item{taxon}{A character vector of taxa (case-insensitive)}
@@ -12,6 +17,8 @@ getParentTaxa(taxon = NULL, code = NULL, convert = TRUE)
 \item{code}{A character vector of taxon codes (case sensitive)}
 
 \item{convert}{Convert results from taxon codes to taxon names? Default: \code{TRUE}}
+
+\item{level}{level    Filter results to specific level? Default: \code{"order"},\code{"suborder"},\code{"greatgroup"},\code{"subgroup"}}
 }
 \value{
 A named list, where names are taxon codes and values are character vectors representing parent taxa
@@ -27,7 +34,4 @@ getParentTaxa(code = c("ABCD", "DABC"))
 
 getParentTaxa("folists", convert = FALSE)
 
-}
-\author{
-Andrew G. Brown
 }

@@ -12,4 +12,7 @@ test_that("getParentTaxa works", {
   expect_equal(code1[[1]], code2[[1]])
   expect_equal(code1[[2]], code2[[2]])
  
+  expect_equal(getParentTaxa("abruptic durixeralfs", level=c("suborder", "greatgroup")),
+               list(`abruptic durixeralfs` = c(JD = "Xeralfs", JDA = "Durixeralfs"
+               )))
 })
