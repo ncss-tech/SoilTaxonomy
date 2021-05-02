@@ -23,6 +23,7 @@ library(SoilTaxonomy)
 The function `parse_family` provides a way to separate lower taxonomic levels ("family-level classes") from the higher taxonomic levels (Order, Suborder, Great Group, and Subgroup) in a soil taxon name.
 
 The user provides a vector of family names, and the result is a `data.frame` containing: 
+
  - `family` (input)
  - `subgroup` (taxonomic subgroup)
  - `subgroup_code` (four or five letter code for subgroup)
