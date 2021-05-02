@@ -42,7 +42,7 @@ parse_family <- function(family) {
   subgroups <- lut[subgroup.idx]
   family_classes <- trimws(substr(family, 0, subgroup.pos - 1))
   
-  data.frame(row.names = NULL,
+  data.frame(row.names = NULL, stringsAsFactors = FALSE,
     family = family,
     subgroup = subgroups,
     subgroup_code = taxon_to_taxon_code(subgroups),
