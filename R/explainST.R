@@ -148,6 +148,10 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
 ## TODO: wrap-text with newline if > width
 
 .printExplanation <- function(pos, txt, width=100, ws.char=' ') {
+  
+  # convert factor to character if txt is factor
+  txt <- as.character(txt)
+  
   if(nchar(txt) > 0 && is.finite(pos)) {
     # split explanation into a vector
     txt <- strsplit(txt, split = '')[[1]]
