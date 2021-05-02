@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Decompose taxon letter codes — decompose_taxon_code • SoilTaxonomy</title>
+<title>Get the lower (child) taxa for a taxon name or code — getChildTaxa • SoilTaxonomy</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Decompose taxon letter codes — decompose_taxon_code" />
-<meta property="og:description" content="Find all codes that logically comprise the specified codes. For instance, code &quot;ABC&quot; (&quot;Anhyturbels&quot;) returns &quot;A&quot; (&quot;Gelisols&quot;), &quot;AB&quot; (&quot;Turbels&quot;), &quot;ABC&quot; (&quot;Anhyturbels&quot;). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see taxon_code_to_taxon and taxon_to_taxon_code)." />
+<meta property="og:title" content="Get the lower (child) taxa for a taxon name or code — getChildTaxa" />
+<meta property="og:description" content="Get the lower (child) taxa for a taxon name or code" />
 
 
 
@@ -126,77 +126,80 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Decompose taxon letter codes</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ncss-tech/SoilTaxonomy/blob/master/R/higherTaxaCodes.R'><code>R/higherTaxaCodes.R</code></a></small>
-    <div class="hidden name"><code>decompose_taxon_code.Rd</code></div>
+    <h1>Get the lower (child) taxa for a taxon name or code</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ncss-tech/SoilTaxonomy/blob/master/R/getChildTaxa.R'><code>R/getChildTaxa.R</code></a></small>
+    <div class="hidden name"><code>getChildTaxa.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Find all codes that logically comprise the specified codes. For instance, code "ABC" ("Anhyturbels") returns "A" ("Gelisols"), "AB" ("Turbels"), "ABC" ("Anhyturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see <code><a href='taxon_code_to_taxon.html'>taxon_code_to_taxon</a></code> and <code><a href='taxon_to_taxon_code.html'>taxon_to_taxon_code</a></code>).</p>
+    <p>Get the lower (child) taxa for a taxon name or code</p>
     </div>
 
-    <pre class="usage"><span class='fu'>decompose_taxon_code</span><span class='op'>(</span><span class='va'>codes</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>getChildTaxa</span><span class='op'>(</span>
+  taxon <span class='op'>=</span> <span class='cn'>NULL</span>,
+  code <span class='op'>=</span> <span class='cn'>NULL</span>,
+  convert <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  level <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"order"</span>, <span class='st'>"suborder"</span>, <span class='st'>"greatgroup"</span>, <span class='st'>"subgroup"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>codes</th>
-      <td><p>A character vector of taxon codes to "decompose" -- case sensitive</p></td>
+      <th>taxon</th>
+      <td><p>A character vector of taxa (case-insensitive)</p></td>
+    </tr>
+    <tr>
+      <th>code</th>
+      <td><p>A character vector of taxon codes (case sensitive)</p></td>
+    </tr>
+    <tr>
+      <th>convert</th>
+      <td><p>Convert results from taxon codes to taxon names? Default: TRUE</p></td>
+    </tr>
+    <tr>
+      <th>level</th>
+      <td><p>Filter results to specific level? Default: <code>"order"</code>,<code>"suborder"</code>,<code>"greatgroup"</code>,<code>"subgroup"</code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list with equal length to input vector; one character vector per element</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character position."</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='preceding_taxon_codes.html'>preceding_taxon_codes</a></code>, <code><a href='taxon_code_to_taxon.html'>taxon_code_to_taxon</a></code>, <code><a href='taxon_to_taxon_code.html'>taxon_to_taxon_code</a></code></p></div>
+    <p>A named list, where names are taxon codes and values are character vectors representing parent taxa</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>decompose_taxon_code</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ABC"</span>, <span class='st'>"ABCDe"</span>, <span class='st'>"BCDEf"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $ABC
-#&gt; $ABC[[1]]
-#&gt; [1] "A"
-#&gt; 
-#&gt; $ABC[[2]]
-#&gt; [1] "AB"
-#&gt; 
-#&gt; $ABC[[3]]
-#&gt; [1] "ABC"
-#&gt; 
-#&gt; 
-#&gt; $ABCDe
-#&gt; $ABCDe[[1]]
-#&gt; [1] "A"
-#&gt; 
-#&gt; $ABCDe[[2]]
-#&gt; [1] "AB"
-#&gt; 
-#&gt; $ABCDe[[3]]
-#&gt; [1] "ABC"
-#&gt; 
-#&gt; $ABCDe[[4]]
-#&gt; [1] "ABCDe"
-#&gt; 
-#&gt; 
-#&gt; $BCDEf
-#&gt; $BCDEf[[1]]
-#&gt; [1] "B"
-#&gt; 
-#&gt; $BCDEf[[2]]
-#&gt; [1] "BC"
-#&gt; 
-#&gt; $BCDEf[[3]]
-#&gt; [1] "BCD"
-#&gt; 
-#&gt; $BCDEf[[4]]
-#&gt; [1] "BCDEf"
-#&gt; 
+<span class='co'># suborder children of "Mollisols"</span>
+<span class='fu'>getChildTaxa</span><span class='op'>(</span><span class='st'>"Mollisols"</span>, level <span class='op'>=</span> <span class='st'>"suborder"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $Mollisols
+#&gt;         IA         IB         IC         ID         IE         IF         IG 
+#&gt;  "Albolls"  "Aquolls" "Rendolls"  "Gelolls"  "Cryolls"  "Xerolls"  "Ustolls" 
+#&gt;         IH 
+#&gt;   "Udolls" 
+#&gt; </div><div class='input'>
+<span class='co'># get all siblings within a great group, given a subgroup</span>
+<span class='fu'>getChildTaxa</span><span class='op'>(</span><span class='fu'><a href='getTaxonAtLevel.html'>getTaxonAtLevel</a></span><span class='op'>(</span><span class='st'>"Ultic Haploxeralfs"</span>, <span class='st'>"greatgroup"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $haploxeralfs
+#&gt;                                  JDGA                                  JDGB 
+#&gt;          "Lithic Mollic Haploxeralfs" "Lithic Ruptic-Inceptic Haploxeralfs" 
+#&gt;                                  JDGC                                  JDGD 
+#&gt;                 "Lithic Haploxeralfs"                 "Vertic Haploxeralfs" 
+#&gt;                                  JDGE                                  JDGF 
+#&gt;               "Aquandic Haploxeralfs"                  "Andic Haploxeralfs" 
+#&gt;                                  JDGG                                  JDGH 
+#&gt;              "Vitrandic Haploxeralfs"             "Fragiaquic Haploxeralfs" 
+#&gt;                                  JDGI                                  JDGJ 
+#&gt;               "Aquultic Haploxeralfs"                  "Aquic Haploxeralfs" 
+#&gt;                                  JDGK                                  JDGL 
+#&gt;                 "Natric Haploxeralfs"                 "Fragic Haploxeralfs" 
+#&gt;                                  JDGM                                  JDGN 
+#&gt;               "Lamellic Haploxeralfs"             "Psammentic Haploxeralfs" 
+#&gt;                                  JDGO                                  JDGP 
+#&gt;               "Plinthic Haploxeralfs"                 "Calcic Haploxeralfs" 
+#&gt;                                  JDGQ                                  JDGR 
+#&gt;               "Inceptic Haploxeralfs"                  "Ultic Haploxeralfs" 
+#&gt;                                  JDGS                                  JDGT 
+#&gt;                 "Mollic Haploxeralfs"                  "Typic Haploxeralfs" 
 #&gt; </div><div class='input'>
 </div></pre>
   </div>

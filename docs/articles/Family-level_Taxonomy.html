@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -102,7 +102,19 @@
 <a href="#parse_family" class="anchor"></a><code>parse_family</code>
 </h2>
 <p>The function <code>parse_family</code> provides a way to separate lower taxonomic levels (“family-level classes”) from the higher taxonomic levels (Order, Suborder, Great Group, and Subgroup) in a soil taxon name.</p>
-<p>The user provides a vector of family names, and the result is a <code>data.frame</code> containing: - <code>family</code> (input) - <code>subgroup</code> (taxonomic subgroup) - <code>subgroup_code</code> (four or five letter code for subgroup) - <code>class_string</code> (comma-separated family-level class string in taxon name) - <code>classes_split</code> (list column containing <code>class_string</code>; split using <code>","</code> as delimiter)</p>
+<p>The user provides a vector of family names, and the result is a <code>data.frame</code> containing:</p>
+<ul>
+<li>
+<code>family</code> (input)</li>
+<li>
+<code>subgroup</code> (taxonomic subgroup)</li>
+<li>
+<code>subgroup_code</code> (four or five letter code for subgroup)</li>
+<li>
+<code>class_string</code> (comma-separated family-level class string in taxon name)</li>
+<li>
+<code>classes_split</code> (list column containing <code>class_string</code>; split using <code>","</code> as delimiter)</li>
+</ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/parse_family.html">parse_family</a></span><span class="op">(</span><span class="st">"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span><span class="op">)</span>
 <span class="co">#&gt;                                                    family           subgroup</span>

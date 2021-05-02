@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Decompose taxon letter codes — decompose_taxon_code • SoilTaxonomy</title>
+<title>Determine taxonomic level of a taxonomic letter code — code_to_level • SoilTaxonomy</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Decompose taxon letter codes — decompose_taxon_code" />
-<meta property="og:description" content="Find all codes that logically comprise the specified codes. For instance, code &quot;ABC&quot; (&quot;Anhyturbels&quot;) returns &quot;A&quot; (&quot;Gelisols&quot;), &quot;AB&quot; (&quot;Turbels&quot;), &quot;ABC&quot; (&quot;Anhyturbels&quot;). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see taxon_code_to_taxon and taxon_to_taxon_code)." />
+<meta property="og:title" content="Determine taxonomic level of a taxonomic letter code — code_to_level" />
+<meta property="og:description" content="Determine taxonomic level of a taxonomic letter code" />
 
 
 
@@ -126,78 +126,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Decompose taxon letter codes</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ncss-tech/SoilTaxonomy/blob/master/R/higherTaxaCodes.R'><code>R/higherTaxaCodes.R</code></a></small>
-    <div class="hidden name"><code>decompose_taxon_code.Rd</code></div>
+    <h1>Determine taxonomic level of a taxonomic letter code</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ncss-tech/SoilTaxonomy/blob/master/R/higherTaxaLevels.R'><code>R/higherTaxaLevels.R</code></a></small>
+    <div class="hidden name"><code>code_to_level.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Find all codes that logically comprise the specified codes. For instance, code "ABC" ("Anhyturbels") returns "A" ("Gelisols"), "AB" ("Turbels"), "ABC" ("Anhyturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see <code><a href='taxon_code_to_taxon.html'>taxon_code_to_taxon</a></code> and <code><a href='taxon_to_taxon_code.html'>taxon_to_taxon_code</a></code>).</p>
+    <p>Determine taxonomic level of a taxonomic letter code</p>
     </div>
 
-    <pre class="usage"><span class='fu'>decompose_taxon_code</span><span class='op'>(</span><span class='va'>codes</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>code_to_level</span><span class='op'>(</span><span class='va'>code</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>codes</th>
-      <td><p>A character vector of taxon codes to "decompose" -- case sensitive</p></td>
+      <th>code</th>
+      <td><p>A character vector of taxon codes (case sensitive)</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list with equal length to input vector; one character vector per element</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Accounts for Keys that run out of capital letters (more than 26 subgroups) and use lowercase letters for a unique subdivision within the "fourth character position."</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='preceding_taxon_codes.html'>preceding_taxon_codes</a></code>, <code><a href='taxon_code_to_taxon.html'>taxon_code_to_taxon</a></code>, <code><a href='taxon_to_taxon_code.html'>taxon_to_taxon_code</a></code></p></div>
+    <p>A character vector containing <code>"order"</code>, <code>"suborder"</code>, <code>"greatgroup"</code> or <code>"subgroup"</code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>decompose_taxon_code</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ABC"</span>, <span class='st'>"ABCDe"</span>, <span class='st'>"BCDEf"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $ABC
-#&gt; $ABC[[1]]
-#&gt; [1] "A"
-#&gt; 
-#&gt; $ABC[[2]]
-#&gt; [1] "AB"
-#&gt; 
-#&gt; $ABC[[3]]
-#&gt; [1] "ABC"
-#&gt; 
-#&gt; 
-#&gt; $ABCDe
-#&gt; $ABCDe[[1]]
-#&gt; [1] "A"
-#&gt; 
-#&gt; $ABCDe[[2]]
-#&gt; [1] "AB"
-#&gt; 
-#&gt; $ABCDe[[3]]
-#&gt; [1] "ABC"
-#&gt; 
-#&gt; $ABCDe[[4]]
-#&gt; [1] "ABCDe"
-#&gt; 
-#&gt; 
-#&gt; $BCDEf
-#&gt; $BCDEf[[1]]
-#&gt; [1] "B"
-#&gt; 
-#&gt; $BCDEf[[2]]
-#&gt; [1] "BC"
-#&gt; 
-#&gt; $BCDEf[[3]]
-#&gt; [1] "BCD"
-#&gt; 
-#&gt; $BCDEf[[4]]
-#&gt; [1] "BCDEf"
-#&gt; 
-#&gt; </div><div class='input'>
+<span class='co'># order level code (1 character)</span>
+<span class='fu'>code_to_level</span><span class='op'>(</span><span class='st'>"B"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "order"</div><div class='input'>
+<span class='co'># subgroup level code (4 characters)</span>
+<span class='fu'>code_to_level</span><span class='op'>(</span><span class='st'>"ABCD"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "subgroup"</div><div class='input'>
+<span class='co'># subgroup level code (5 characters, 4 uppercase + 1 lowercase)</span>
+<span class='fu'>code_to_level</span><span class='op'>(</span><span class='st'>"IFFZh"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "subgroup"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
