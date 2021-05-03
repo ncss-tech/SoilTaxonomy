@@ -40,7 +40,7 @@ fmt_colormatch <- lapply(split(scut, f = scut$element), function(scusub) {
                    if (!is.na(x[1]))# && x[2] - x[1] > 0)
                     list(
                       old = substr(foo, x[1], x[2]),
-                      new = crayon::red(substr(foo, x[1], x[2])))
+                      new = substr(foo, x[1], x[2]))#crayon::red(substr(foo, x[1], x[2])))
                     ))
     if(length(res))
       for(j in 1:length(res)) {
@@ -54,9 +54,11 @@ fmt_colormatch <- lapply(split(scut, f = scut$element), function(scusub) {
   })
 })
 
-foo <- lapply(seq_along(fmt_colormatch), function(i) {cat("## ", names(fmt_colormatch)[i], "\n\n")
-                                                         sapply(fmt_colormatch[[i]], cat, "\n\n")})
-
+foo <- lapply(seq_along(fmt_colormatch)[[6]], function(i) {cat("## ", names(fmt_colormatch)[i], "\n\n")#, 
+                                                          # file = "foo.txt", append = TRUE)
+                                                         sapply(fmt_colormatch[[i]], cat, "\n\n"#,
+                                                                # file = "foo.txt", append = TRUE)
+                                                         )})
 
 a_list <- as.list(rep("",93))
 names(a_list) <- names(fmt_colormatch)
