@@ -1,3 +1,6 @@
+# SoilTaxonomy 0.1.3.9001 (2021-05-03)
+ * Update `ST_formative_elements` / `explainST()` with subgroup-level descriptions for missing taxa
+
 # SoilTaxonomy 0.1.3 (2021-05-02)
  * Add `code_to_level` to abstract core from `taxon_to_level` for higher taxa with letter codes
  * Add `getChildTaxa` counterpart to `getParentTaxa`; `getParentTaxa` can now be filtered with `level` argument
