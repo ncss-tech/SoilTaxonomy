@@ -3,10 +3,12 @@
 ## Export the current SC database from local NASIS DB
 ##
 
+
+## TODO: use soilDB::get_soilseries_from_NASIS() once #188 has been merged
+
+
 library(RODBC)
 library(soilDB)
-
-# TODO: remove plyr dependency
 library(plyr)
 
 q.series <- "SELECT 
