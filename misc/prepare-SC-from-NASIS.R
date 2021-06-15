@@ -3,40 +3,33 @@
 ## Export the current SC database from local NASIS DB
 ##
 
-# TODO: remove plyr dependency
-
 library(RODBC)
-library(RPostgreSQL)
+library(soilDB)
+
+# TODO: remove plyr dependency
 library(plyr)
 
-q.series <- "SELECT soilseriesname, soiltaxclasslastupdated, mlraoffice, ss.ChoiceName as series_status, taxclname, tord.ChoiceName as order, tso.ChoiceName as suborder, tgg.ChoiceName as tax_grtgroup, ts.ChoiceName as tax_subgrp, ps.ChoiceName as tax_partsize, psm.ChoiceName as tax_partsizemod, ta.ChoiceName as tax_ceactcl, tr.ChoiceName as tax_reaction, tt.ChoiceName as tax_tempcl, originyear, establishedyear, descriptiondateinitial, descriptiondateupdated, benchmarksoilflag, statsgoflag, objwlupdated,  recwlupdated, typelocstareaiidref, typelocstareatypeiidref, soilseriesiid, soilseriesdbiidref, grpiidref 
+q.series <- "SELECT 
+soilseriesname, soiltaxclasslastupdated, mlraoffice, 
+soilseriesstatus, 
+taxclname, 
+taxorder, 
+taxsuborder, 
+taxgrtgroup, 
+taxsubgrp, 
+taxpartsize, 
+taxpartsizemod, 
+taxceactcl, 
+taxreaction, 
+taxtempcl, 
+originyear, establishedyear, descriptiondateinitial, descriptiondateupdated, benchmarksoilflag, statsgoflag, objwlupdated,  recwlupdated, typelocstareaiidref, typelocstareatypeiidref, soilseriesiid, soilseriesdbiidref, grpiidref 
 FROM 
 soilseries
+ORDER BY soilseriesname ;"	
 
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 127) AS ps ON soilseries.taxpartsize = ps.ChoiceValue
-
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 521) AS psm ON soilseries.taxpartsizemod = psm.ChoiceValue
-
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 187) AS ts ON soilseries.taxsubgrp = ts.ChoiceValue
-
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 132) AS tord ON soilseries.taxorder = tord.ChoiceValue
-
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 134) AS tso ON soilseries.taxsuborder = tso.ChoiceValue
-
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 4956) AS ss ON soilseries.soilseriesstatus = ss.ChoiceValue
-
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 520) AS ta ON soilseries.taxceactcl = ta.ChoiceValue
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 128) AS tr ON soilseries.taxreaction = tr.ChoiceValue
-
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 185) AS tt ON soilseries.taxtempcl = tt.ChoiceValue
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 130) AS tgg ON soilseries.taxgrtgroup = tgg.ChoiceValue
-
-ORDER BY soilseries.soilseriesname;"	
-
-# minerology, possible to have > 1 / series
-q.min <- "SELECT soilseriesiidref AS soilseriesiid, minorder, a.ChoiceName AS tax_minclass
-FROM soilseriestaxmineralogy
-LEFT OUTER JOIN (SELECT * FROM dbo.MetadataDomainDetail WHERE dbo.MetadataDomainDetail.DomainID = 126) as a ON soilseriestaxmineralogy.taxminalogy = a.ChoiceValue ;"
+# mineralogy, possible to have > 1 / series
+q.min <- "SELECT soilseriesiidref AS soilseriesiid, minorder, taxminalogy
+FROM soilseriestaxmineralogy ;"
 
 
 # setup connection to our pedon database 
@@ -49,11 +42,15 @@ d.min <- sqlQuery(channel, q.min, stringsAsFactors=FALSE)
 # close connection
 odbcClose(channel)
 
+# convert codes -> values
+d.series <- uncode(d.series, stringsAsFactors = FALSE)
+d.min <- uncode(d.min, stringsAsFactors = FALSE)
+
 # flatten mineralogy class into single record / series
 d.min.flat <- ddply(d.min, 'soilseriesiid', .fun=function(i) {
-  paste(i$tax_minclass, collapse = '|')
+  paste(i$taxminalogy, collapse = '|')
 })
-names(d.min.flat) <- c('soilseriesiid', 'tax_minclass')
+names(d.min.flat) <- c('soilseriesiid', 'taxminalogy')
 
 
 # join elements together
