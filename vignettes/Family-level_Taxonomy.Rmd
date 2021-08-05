@@ -53,6 +53,8 @@ data("ST_family_classes")
 head(ST_family_classes)
 ```
 
+Here we determine the family-level classes for a single taxonomic family and match them to the class descriptions stored in `ST_family_classes`.
+
 ```{r}
 afamily_classes <- parse_family("fine-loamy, mixed, semiactive, mesic ultic haploxeralfs")$classes_split[[1]]
 class_descriptions <- subset(ST_family_classes, classname %in% afamily_classes)
