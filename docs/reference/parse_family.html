@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -135,7 +135,7 @@
     <p>Parse components of a family-level taxon name</p>
     </div>
 
-    <pre class="usage"><span class='fu'>parse_family</span><span class='op'>(</span><span class='va'>family</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>parse_family</span>(<span class='kw'>family</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -152,17 +152,17 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='va'>families</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"fine, kaolinitic, thermic typic kanhapludults"</span>,
+<span class='kw'>families</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"fine, kaolinitic, thermic typic kanhapludults"</span>,
               <span class='st'>"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span>,
               <span class='st'>"euic, thermic typic haplosaprists"</span>,
               <span class='st'>"coarse-loamy, mixed, active, mesic aquic dystrudepts"</span>,
               <span class='st'>"fine, kaolinitic, thermic typic kanhapludults"</span>,
               <span class='st'>"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span>,
               <span class='st'>"euic, thermic typic haplosaprists"</span>,
-              <span class='st'>"coarse-loamy, mixed, active, mesic aquic dystrudepts"</span><span class='op'>)</span>
+              <span class='st'>"coarse-loamy, mixed, active, mesic aquic dystrudepts"</span>)
  
 <span class='co'># inspect parsed list result             </span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>parse_family</span><span class='op'>(</span><span class='va'>families</span><span class='op'>)</span><span class='op'>)</span>     
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>parse_family</span>(<span class='kw'>families</span>))     
 </div><div class='output co'>#&gt; 'data.frame':	8 obs. of  5 variables:
 #&gt;  $ family       : chr  "fine, kaolinitic, thermic typic kanhapludults" "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs" "euic, thermic typic haplosaprists" "coarse-loamy, mixed, active, mesic aquic dystrudepts" ...
 #&gt;  $ subgroup     : chr  "typic kanhapludults" "ultic haploxeralfs" "typic haplosaprists" "aquic dystrudepts" ...

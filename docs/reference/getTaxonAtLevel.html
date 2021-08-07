@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -135,7 +135,7 @@
     <p>Get the taxon name the Soil Order, Suborder, Great Group or Subgroup level</p>
     </div>
 
-    <pre class="usage"><span class='fu'>getTaxonAtLevel</span><span class='op'>(</span><span class='va'>x</span>, level <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"order"</span>, <span class='st'>"suborder"</span>, <span class='st'>"greatgroup"</span>, <span class='st'>"subgroup"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>getTaxonAtLevel</span>(<span class='kw'>x</span>, level = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"order"</span>, <span class='st'>"suborder"</span>, <span class='st'>"greatgroup"</span>, <span class='st'>"subgroup"</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -157,19 +157,19 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># default gets the soil order </span>
-<span class='fu'>getTaxonAtLevel</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"typic haplargids"</span>, <span class='st'>"typic glacistels"</span><span class='op'>)</span><span class='op'>)</span> <span class='co'>#, level = "order")</span>
+<span class='fu'>getTaxonAtLevel</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"typic haplargids"</span>, <span class='st'>"typic glacistels"</span>)) <span class='co'>#, level = "order")</span>
 </div><div class='output co'>#&gt; typic haplargids typic glacistels 
 #&gt;      "aridisols"       "gelisols" </div><div class='input'>
 <span class='co'># specify alternate levels</span>
-<span class='fu'>getTaxonAtLevel</span><span class='op'>(</span><span class='st'>"humic haploxerands"</span>, level <span class='op'>=</span> <span class='st'>"greatgroup"</span><span class='op'>)</span>
+<span class='fu'>getTaxonAtLevel</span>(<span class='st'>"humic haploxerands"</span>, level = <span class='st'>"greatgroup"</span>)
 </div><div class='output co'>#&gt; humic haploxerands 
 #&gt;     "haploxerands" </div><div class='input'>
 <span class='co'># can't get subgroup (child) from great group (parent)</span>
-<span class='fu'>getTaxonAtLevel</span><span class='op'>(</span><span class='st'>"udifolists"</span>, level <span class='op'>=</span> <span class='st'>"subgroup"</span><span class='op'>)</span>
+<span class='fu'>getTaxonAtLevel</span>(<span class='st'>"udifolists"</span>, level = <span class='st'>"subgroup"</span>)
 </div><div class='output co'>#&gt; udifolists 
 #&gt;         NA </div><div class='input'>
 <span class='co'># but can do parents of children</span>
-<span class='fu'>getTaxonAtLevel</span><span class='op'>(</span><span class='st'>"udifolists"</span>, level <span class='op'>=</span> <span class='st'>"suborder"</span><span class='op'>)</span>
+<span class='fu'>getTaxonAtLevel</span>(<span class='st'>"udifolists"</span>, level = <span class='st'>"suborder"</span>)
 </div><div class='output co'>#&gt; udifolists 
 #&gt;  "folists" </div><div class='input'>
 </div></pre>

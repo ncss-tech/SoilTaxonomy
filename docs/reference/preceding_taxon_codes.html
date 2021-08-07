@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -135,7 +135,7 @@
     <p>Find all codes that logically precede the specified codes. For instance, code "ABC" ("Anhyturbels") returns "AA" ("Histels") "ABA" ("Histoturbels") and "ABB" ("Aquiturbels"). Use in conjunction with a lookup table that maps Order, Suborder, Great Group and Subgroup taxa to their codes (see <code><a href='taxon_code_to_taxon.html'>taxon_code_to_taxon</a></code> and <code><a href='taxon_to_taxon_code.html'>taxon_to_taxon_code</a></code>).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>preceding_taxon_codes</span><span class='op'>(</span><span class='va'>codes</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>preceding_taxon_codes</span>(<span class='kw'>codes</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -158,7 +158,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>preceding_taxon_codes</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ABCDe"</span>, <span class='st'>"BCDEf"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>preceding_taxon_codes</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"ABCDe"</span>, <span class='st'>"BCDEf"</span>))
 </div><div class='output co'>#&gt; $ABCDe
 #&gt;  [1] "AA"    "ABA"   "ABB"   "ABCA"  "ABCB"  "ABCC"  "ABCD"  "ABCDa" "ABCDb"
 #&gt; [10] "ABCDc" "ABCDd" "ABCDe"

@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -135,13 +135,13 @@
     <p>All parameters to this function are optional (default <code>NULL</code>). If specified, they are used as filters.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_ST_features</span><span class='op'>(</span>
-  group <span class='op'>=</span> <span class='cn'>NULL</span>,
-  chapter <span class='op'>=</span> <span class='cn'>NULL</span>,
-  name <span class='op'>=</span> <span class='cn'>NULL</span>,
-  page <span class='op'>=</span> <span class='cn'>NULL</span>,
-  multiline_sep <span class='op'>=</span> <span class='st'>"\\n"</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get_ST_features</span>(
+  group = <span class='kw'>NULL</span>,
+  chapter = <span class='kw'>NULL</span>,
+  name = <span class='kw'>NULL</span>,
+  page = <span class='kw'>NULL</span>,
+  multiline_sep = <span class='st'>"\\n"</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -181,7 +181,7 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># get all features</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>get_ST_features</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>get_ST_features</span>())
 </div><div class='output co'>#&gt; 'data.frame':	84 obs. of  6 variables:
 #&gt;  $ group      : chr  "Soil Materials" "Soil Materials" "Soil Materials" "Soil Materials" ...
 #&gt;  $ name       : chr  "Mineral Soil Material" "Organic Soil Material" "Distinction Between Mineral Soils and Organic" "Soil Surface" ...
@@ -190,7 +190,7 @@
 #&gt;  $ description: chr  "Mineral soil material (less than 2.0 mm in diameter) either: 1. Is saturated with water for less than 30 days ("| __truncated__ "Soil material that contains more than the amounts of organic carbon described above for mineral soil material i"| __truncated__ "Soils Most soils are dominantly mineral material, but many mineral soils have horizons of organic material. For"| __truncated__ "The term \"soil surface\" is based on the upper limit of soil. The upper limit of soil is the boundary between "| __truncated__ ...
 #&gt;  $ criteria   : chr  "" "" "" "" ...</div><div class='input'>
 <span class='co'># get features in chapter 3</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>get_ST_features</span><span class='op'>(</span>chapter <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>get_ST_features</span>(chapter = <span class='fl'>3</span>))
 </div><div class='output co'>#&gt; 'data.frame':	77 obs. of  6 variables:
 #&gt;  $ group      : chr  "Surface" "Surface" "Surface" "Surface" ...
 #&gt;  $ name       : chr  "Anthropic Epipedon" "Folistic Epipedon" "Histic Epipedon" "Melanic Epipedon" ...
@@ -199,7 +199,7 @@
 #&gt;  $ description: chr  "The anthropic epipedon forms in human-altered or human- transported material (defined below). These epipedons f"| __truncated__ "" "" "" ...
 #&gt;  $ criteria   : chr  "Required Characteristics The anthropic epipedon consists of mineral soil material that shows evidence of the pu"| __truncated__ "Required Characteristics The folistic epipedon is a layer (one or more horizons) that is saturated for less tha"| __truncated__ "Required Characteristics The histic epipedon is a layer (one or more horizons) that is characterized by saturat"| __truncated__ "Required Characteristics The melanic epipedon has both of the following:\\n1. An upper boundary at, or within 3"| __truncated__ ...</div><div class='input'>
 <span class='co'># get features on pages 18, 19, 20</span>
-<span class='fu'>get_ST_features</span><span class='op'>(</span>page <span class='op'>=</span> <span class='fl'>18</span><span class='op'>:</span><span class='fl'>20</span><span class='op'>)</span>
+<span class='fu'>get_ST_features</span>(page = <span class='fl'>18</span><span class='op'>:</span><span class='fl'>20</span>)
 </div><div class='output co'>#&gt;      group                                       name chapter page
 #&gt; 39 Mineral                       Anhydrous Conditions       3   18
 #&gt; 40 Mineral Coefficient of Linear Extensibility (COLE)       3   19
@@ -225,7 +225,7 @@
 #&gt; 44                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Required Characteristics Interfingering of albic materials is recognized if albic materials:\\n1. Penetrate 5 cm or more into an underlying argillic, kandic, or natric horizon; and\\n2. Are 2 mm or more thick between vertical faces of abutting peds; and\\n3. Constitute less than 15 percent (by volume) of the layer that they penetrate.
 #&gt; 45 Required Characteristics A lamella is an illuvial horizon less than 7.5 cm thick formed in unconsolidated regolith more than 50 cm thick. Each lamella contains an accumulation of oriented silicate clay on or bridging the sand and silt grains (and rock fragments if any are present).\\nEach lamella is required to have more silicate clay than the overlying eluvial horizon.\\nLamellae occur in a vertical series of two or more, and each lamella must have an overlying eluvial horizon. (An eluvial horizon is not required above the uppermost lamella if the soil is truncated.)\\nLamellae may meet the requirements for either a cambic or an argillic horizon. A combination of two or more lamellae 15 cm or more thick is a cambic horizon if the texture class is very fine sand, loamy very fine sand, or finer. A combination of two or more lamellae meets the requirements for an argillic horizon if there is 15 cm or more cumulative thickness of lamellae that are 0.5 cm or more thick and that have a clay content of either:\\n1. 3 percent or more (absolute) higher than in the overlying eluvial horizon (e.g., 13 percent versus 10 percent) if any part of the eluvial horizon has less than 15 percent clay in the fine-earth fraction; or\\n2. 20 percent or more (relative) higher than in the overlying eluvial horizon (e.g., 24 percent versus 20 percent) if all parts of the eluvial horizon have more than 15 percent clay in the fine- earth fraction.</div><div class='input'>
 <span class='co'># get the required characteristics for the mollic epipedon from list column</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>get_ST_features</span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>"Mollic Epipedon"</span><span class='op'>)</span><span class='op'>$</span><span class='va'>criteria</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>get_ST_features</span>(name = <span class='st'>"Mollic Epipedon"</span>)<span class='op'>$</span><span class='kw'>criteria</span>)
 </div><div class='output co'>#&gt;  chr "Required Characteristics The mollic epipedon consists of mineral soil material and, after mixing of the upper 1"| __truncated__</div><div class='input'>
 </div></pre>
   </div>
