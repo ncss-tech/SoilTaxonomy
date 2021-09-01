@@ -194,19 +194,14 @@ res <- lapply(LETTERS[1:12], function(l) cat(explainST(taxon_code_to_taxon(l)), 
 
 ## Static Databases
 
-The `./inst/extdata` folder (formerly `./databases`) of this repository contains a variety of assets related to taxonomic and map unit concepts within the U.S. Soil Survey Geographic Database (SSURGO). The static data products in this repository include: 
+The `./inst/extdata` folder (formerly `./databases`) of the GitHub repository formerly contained data tables related to taxonomic and map unit concepts within the U.S. Soil Survey Geographic Database (SSURGO).
 
+Including: 
  - Statistics on taxonomic subgroups, family-level components, and soil series. 
  - MLRA Overlap tables for series, national map unit symbols and map unit keys. 
  - Summaries of KSSL records per series as well as geomorphic position, parent material origin and kind.
  
-**NOTICE:** In the near future, these products may (depending on their data requirements) be:
-
- 1. Converted to internal (R package) data sets in `SoilTaxonomy`, or possibly a new "data" package
- 2. Routinely generated and provided via [SoilKnowledgeBase](https://github.com/ncss-tech/SoilKnowledgeBase) 
- 3. Provided via a new API (from SoilWeb or ?)
-
-They will after that point be removed from this repository.
+These tables have been moved to a dedicated repository called [SoilWeb-data](https://github.com/ncss-tech/SoilWeb-data).
 
 ## Visualize and Extend with `data.tree`
 
