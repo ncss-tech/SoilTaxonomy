@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@
 
       
 
-      </header><script src="taxon-letter-codes_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
+      </header><script src="taxon-letter-codes_files/header-attrs-2.11/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Taxon Letter Codes in Soil Taxonomy</h1>
@@ -105,47 +105,41 @@
 <li>Subgroup</li>
 </ul>
 <p>In the <em>SoilTaxonomy</em> package the <code>level</code> argument is used by some functions to specify output for a target level within the hierarchy. Other functions determine <code>level</code> by comparison against known taxa or codes. This vignette covers the basics of how taxon letter code conversion to and from taxonomic names is implemented.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/ncss-tech/SoilTaxonomy">SoilTaxonomy</a></span>)
-</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ncss-tech/SoilTaxonomy">SoilTaxonomy</a></span><span class="op">)</span></code></pre></div>
 <div id="taxon_to_taxon_code" class="section level2">
 <h2 class="hasAnchor">
 <a href="#taxon_to_taxon_code" class="anchor"></a><code>taxon_to_taxon_code</code>
 </h2>
 <p><code>taxon_to_taxon_code</code> converts a taxon name (Soil Order, Suborder, Great Group, or Subgroup) to a letter code that corresponds to the logical position of that taxon in the Keys to Soil Taxonomy.</p>
 <p><em>Gelisols</em> are the first Soil Order to key out and are given letter code “A”</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span>(<span class="st">"gelisols"</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span><span class="op">(</span><span class="st">"gelisols"</span><span class="op">)</span>
 <span class="co">#&gt; gelisols </span>
-<span class="co">#&gt;      "A"</span>
-</pre></div>
+<span class="co">#&gt;      "A"</span></code></pre></div>
 <p>The number of letters in a taxon code corresponds to the <code>level</code> of that taxon. <em>Histels</em> are the first Suborder to key out in the <em>Gelisols</em> key (<strong>A</strong>), so they are given two letter code “AA”</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span>(<span class="st">"histels"</span>)
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span><span class="op">(</span><span class="st">"histels"</span><span class="op">)</span>
 <span class="co">#&gt; histels </span>
-<span class="co">#&gt;    "AA"</span>
-</pre></div>
+<span class="co">#&gt;    "AA"</span></code></pre></div>
 <p>For each “step” in each key, the letter codes are “incremented” by one.</p>
 <p><em>Glacistels</em> are the <u>second</u> Great Group in the <em>Histels</em> key (<strong>AA</strong>), so they have the three letter code “AAB”.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span>(<span class="st">"glacistels"</span>)
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span><span class="op">(</span><span class="st">"glacistels"</span><span class="op">)</span>
 <span class="co">#&gt; glacistels </span>
-<span class="co">#&gt;      "AAB"</span>
-</pre></div>
+<span class="co">#&gt;      "AAB"</span></code></pre></div>
 <p><em>Typic</em> subgroups, by convention, are the last subgroup to key out in a Great Group.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span>(<span class="st">"typic glacistels"</span>)
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span><span class="op">(</span><span class="st">"typic glacistels"</span><span class="op">)</span>
 <span class="co">#&gt; typic glacistels </span>
-<span class="co">#&gt;           "AABC"</span>
-</pre></div>
+<span class="co">#&gt;           "AABC"</span></code></pre></div>
 <p>Since <em>Typic Glacistels</em> have code <code>"AABC"</code> we can infer that there are three taxa in the <em>Glacistels</em> key with codes <code>"AABA"</code>, <code>"AABB"</code> and <code>"AABC"</code></p>
 <p>This follows for Great Groups with many more subgroups. In case a Great Group has more than 26 subgroups within it, a fifth lowercase letter code is used to “extend” the ability to increment the code beyond 26.</p>
 <p>An example of where this is needed is in the <em>Haploxerolls</em> key where the <em>Typic</em> subgroup has code <code>"IFFZh"</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span>(<span class="st">"typic haploxerolls"</span>)
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/taxon_to_taxon_code.html">taxon_to_taxon_code</a></span><span class="op">(</span><span class="st">"typic haploxerolls"</span><span class="op">)</span>
 <span class="co">#&gt; typic haploxerolls </span>
-<span class="co">#&gt;            "IFFZh"</span>
-</pre></div>
+<span class="co">#&gt;            "IFFZh"</span></code></pre></div>
 <p>From this code we infer that the <em>Haploxerolls</em> key has <span class="math inline">\(26+8=34\)</span> subgroups corresponding to the range from <code>IFFA</code> to <code>IFFZ</code> <em>plus</em> <code>IFFZa</code> to <code>IFFZh</code>.</p>
 </div>
 <div id="taxon_code_to_taxon" class="section level2">
@@ -154,27 +148,24 @@
 </h2>
 <p>We can use a vector of letter codes to do the inverse operation with <code>taxon_code_to_taxon</code>.</p>
 <p>Above we determined the <em>Glacistels</em> Key contains three taxa with codes <code>"AABA"</code>, <code>"AABB"</code> and <code>"AABC"</code>. Let’s convert those codes to taxon names.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="../reference/taxon_code_to_taxon.html">taxon_code_to_taxon</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"AABA"</span>, <span class="st">"AABB"</span>, <span class="st">"AABC"</span>))
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/taxon_code_to_taxon.html">taxon_code_to_taxon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"AABA"</span>, <span class="st">"AABB"</span>, <span class="st">"AABC"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;                AABA                AABB                AABC </span>
-<span class="co">#&gt;  "Hemic Glacistels" "Sapric Glacistels"  "Typic Glacistels"</span>
-</pre></div>
+<span class="co">#&gt;  "Hemic Glacistels" "Sapric Glacistels"  "Typic Glacistels"</span></code></pre></div>
 </div>
 <div id="taxon_to_level" class="section level2">
 <h2 class="hasAnchor">
 <a href="#taxon_to_level" class="anchor"></a><code>taxon_to_level</code>
 </h2>
 <p>We can infer from the length of the four-letter codes that all of the above are subgroup-level taxa. <code>taxon_to_level</code> confirms this.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="fu"><a href="../reference/taxon_to_level.html">taxon_to_level</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Hemic Glacistels"</span>,<span class="st">"Sapric Glacistels"</span>,<span class="st">"Typic Glacistels"</span>))
-<span class="co">#&gt; [1] "subgroup" "subgroup" "subgroup"</span>
-</pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/taxon_to_level.html">taxon_to_level</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Hemic Glacistels"</span>,<span class="st">"Sapric Glacistels"</span>,<span class="st">"Typic Glacistels"</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; [1] "subgroup" "subgroup" "subgroup"</span></code></pre></div>
 <p><code>taxon_to_level</code> can also identify a fifth (lower-level) <em>family</em> tier (<code>level="family"</code>). Soil family differentia are not handled in the Order to Subgroup keys. Family names are defined by concatenating comma-separated class names on to the subgroup. Classes used in family names are determined by specific keys and apply variably depending on the subgroup-level taxonomy.</p>
 <p>For instance, the soil family <code>"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</code> includes a particle-size class (<code>"fine"</code>), a mineralogy class (<code>"mixed"</code>), a cation exchange capacity (CEC) activity class (<code>"semiactive"</code>) and a temperature class (<code>"mesic"</code>)</p>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="fu"><a href="../reference/taxon_to_level.html">taxon_to_level</a></span>(<span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span>)
-<span class="co">#&gt; [1] "family"</span>
-</pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/taxon_to_level.html">taxon_to_level</a></span><span class="op">(</span><span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span><span class="op">)</span>
+<span class="co">#&gt; [1] "family"</span></code></pre></div>
 </div>
 <div id="gettaxonatlevel" class="section level2">
 <h2 class="hasAnchor">
@@ -182,56 +173,51 @@
 </h2>
 <p>A wrapper method around taxon letter code functionality is <code>getTaxonAtLevel</code>.</p>
 <p>Say that you have family-level taxon above and you want to determine the taxonomy at a higher (less detailed) level. You can determine what to remove (family and subgroup-level modifiers) to get the Great Group using <code><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel(level="greatgroup")</a></code></p>
-<div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="fu"><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span>(<span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span>, level = <span class="st">"greatgroup"</span>)
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span>, level <span class="op">=</span> <span class="st">"greatgroup"</span><span class="op">)</span>
 <span class="co">#&gt; Fine, mixed, semiactive, mesic Ultic Haploxeralfs </span>
-<span class="co">#&gt;                                    "haploxeralfs"</span>
-</pre></div>
+<span class="co">#&gt;                                    "haploxeralfs"</span></code></pre></div>
 <p>If you request a more-detailed taxonomic level than what you start with, you will get an <code>NA</code> result.</p>
 <p>For example, we request the subgroup from suborder (<code>"Folists"</code>) level taxon name which is undefined.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="fu"><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span>(<span class="st">"Folists"</span>, level = <span class="st">"subgroup"</span>)
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/getTaxonAtLevel.html">getTaxonAtLevel</a></span><span class="op">(</span><span class="st">"Folists"</span>, level <span class="op">=</span> <span class="st">"subgroup"</span><span class="op">)</span>
 <span class="co">#&gt; Folists </span>
-<span class="co">#&gt;      NA</span>
-</pre></div>
+<span class="co">#&gt;      NA</span></code></pre></div>
 </div>
 <div id="getparenttaxa" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getparenttaxa" class="anchor"></a><code>getParentTaxa</code>
 </h2>
 <p>Another wrapper method around taxon letter code functionality is <code>getParentTaxa</code>. This function will enumerate the tiers above a particular taxon.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit">
-<span class="fu"><a href="../reference/getParentTaxa.html">getParentTaxa</a></span>(<span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span>)
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/getParentTaxa.html">getParentTaxa</a></span><span class="op">(</span><span class="st">"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"</span><span class="op">)</span>
 <span class="co">#&gt; $`Fine, mixed, semiactive, mesic Ultic Haploxeralfs`</span>
 <span class="co">#&gt;                    J                   JD                  JDG </span>
 <span class="co">#&gt;           "Alfisols"            "Xeralfs"       "Haploxeralfs" </span>
 <span class="co">#&gt;                 JDGR </span>
-<span class="co">#&gt; "Ultic Haploxeralfs"</span>
-</pre></div>
+<span class="co">#&gt; "Ultic Haploxeralfs"</span></code></pre></div>
 <p>You can alternately specify <code>code</code> argument instead of <code>taxon</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit">
-<span class="fu"><a href="../reference/getParentTaxa.html">getParentTaxa</a></span>(code = <span class="st">"BAB"</span>)
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/getParentTaxa.html">getParentTaxa</a></span><span class="op">(</span>code <span class="op">=</span> <span class="st">"BAB"</span><span class="op">)</span>
 <span class="co">#&gt; $BAB</span>
 <span class="co">#&gt;           B          BA </span>
-<span class="co">#&gt; "Histosols"   "Folists"</span>
-</pre></div>
+<span class="co">#&gt; "Histosols"   "Folists"</span></code></pre></div>
 <p>And converting the internally used taxon codes to taxon names can be disabled with <code>convert = FALSE</code>. This may be useful for certain applications.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit">
-<span class="fu"><a href="../reference/getParentTaxa.html">getParentTaxa</a></span>(code = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"BAA"</span>,<span class="st">"BAB"</span>), convert = <span class="fl">FALSE</span>)
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/getParentTaxa.html">getParentTaxa</a></span><span class="op">(</span>code <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"BAA"</span>,<span class="st">"BAB"</span><span class="op">)</span>, convert <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; $BAA</span>
 <span class="co">#&gt; [1] "B"  "BA"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $BAB</span>
-<span class="co">#&gt; [1] "B"  "BA"</span>
-</pre></div>
+<span class="co">#&gt; [1] "B"  "BA"</span></code></pre></div>
 </div>
 <div id="decompose_taxon_code" class="section level2">
 <h2 class="hasAnchor">
 <a href="#decompose_taxon_code" class="anchor"></a><code>decompose_taxon_code</code>
 </h2>
 <p>For more general cases <code>decompose_taxon_code</code> might be useful. This is a function used by many of the above methods that returns a nested list result containing the letter code hierarchy.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit">
-<span class="fu"><a href="../reference/decompose_taxon_code.html">decompose_taxon_code</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"BAA"</span>,<span class="st">"BAB"</span>))
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/decompose_taxon_code.html">decompose_taxon_code</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"BAA"</span>,<span class="st">"BAB"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; $BAA</span>
 <span class="co">#&gt; $BAA[[1]]</span>
 <span class="co">#&gt; [1] "B"</span>
@@ -251,8 +237,7 @@
 <span class="co">#&gt; [1] "BA"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $BAB[[3]]</span>
-<span class="co">#&gt; [1] "BAB"</span>
-</pre></div>
+<span class="co">#&gt; [1] "BAB"</span></code></pre></div>
 </div>
 <div id="preceding_taxon_codes-and-relative_taxon_code_position" class="section level2">
 <h2 class="hasAnchor">
@@ -261,20 +246,18 @@
 <p>Another pair of functions that might be useful for comparing relative positions within Keys, or the number of “steps” that it takes to reach a particular taxon, is <code>preceding_taxon_codes</code> and <code>relative_taxon_code_positon</code>.</p>
 <p><code>preceding_taxon_codes</code> returns a list of vectors containing all preceding codes.</p>
 <p>For example, the <code>AA</code> suborder key precedes <code>AB</code>. And within the <code>AB</code> key <code>ABA</code> and <code>ABB</code> precede <code>ABC</code>.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit">
-<span class="fu"><a href="../reference/preceding_taxon_codes.html">preceding_taxon_codes</a></span>(<span class="st">"ABC"</span>)
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/preceding_taxon_codes.html">preceding_taxon_codes</a></span><span class="op">(</span><span class="st">"ABC"</span><span class="op">)</span>
 <span class="co">#&gt; $ABC</span>
-<span class="co">#&gt; [1] "AA"  "ABA" "ABB"</span>
-</pre></div>
+<span class="co">#&gt; [1] "AA"  "ABA" "ABB"</span></code></pre></div>
 <p><code>relative_taxon_code_position</code> counts how many taxa key out before a taxon plus <span class="math inline">\(1\)</span> (to get <em>the</em> taxon position).</p>
-<div class="sourceCode" id="cb17"><pre class="downlit">
-<span class="fu"><a href="../reference/relative_taxon_code_position.html">relative_taxon_code_position</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"A"</span>,<span class="st">"AA"</span>,<span class="st">"AAA"</span>,<span class="st">"AAAA"</span>,
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/relative_taxon_code_position.html">relative_taxon_code_position</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>,<span class="st">"AA"</span>,<span class="st">"AAA"</span>,<span class="st">"AAAA"</span>,
                                <span class="st">"AB"</span>,<span class="st">"AAB"</span>,<span class="st">"ABA"</span>,<span class="st">"ABC"</span>,
                                <span class="st">"B"</span>,<span class="st">"BA"</span>,<span class="st">"BAA"</span>,<span class="st">"BAB"</span>,
-                               <span class="st">"BBA"</span>,<span class="st">"BBB"</span>,<span class="st">"BBC"</span>))
+                               <span class="st">"BBA"</span>,<span class="st">"BBB"</span>,<span class="st">"BBC"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;    A   AA  AAA AAAA   AB  AAB  ABA  ABC    B   BA  BAA  BAB  BBA  BBB  BBC </span>
-<span class="co">#&gt;    1    1    1    1    2    2    2    4    2    2    2    3    3    4    5</span>
-</pre></div>
+<span class="co">#&gt;    1    1    1    1    2    2    2    4    2    2    2    3    3    4    5</span></code></pre></div>
 </div>
   </div>
 
