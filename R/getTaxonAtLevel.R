@@ -1,4 +1,4 @@
-#' Get the taxon name the Soil Order, Suborder, Great Group or Subgroup level
+#' Get the taxon name at the Soil Order, Suborder, Great Group or Subgroup level
 #'
 #' @param x A character vector containing subgroup-level taxonomic names
 #' @param level one of `c("order","suborder","greatgroup","subgroup")`

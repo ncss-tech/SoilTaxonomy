@@ -11,7 +11,7 @@ test_that("taxon_to_level works (family-level taxa)", {
       "Fine-loamy, mixed, active, thermic Ultic Haploxeralfs",
       "Histosols",
       NA,
-      "Thermic Typic Torripsamments"
+      "Thermic Typic Quartzipsamments"
     )
   ), c('family', 'order', NA, 'family'))
 })

@@ -66,13 +66,13 @@ test_that("taxon_to_taxon_code (family-level taxa)", {
       c(
         "Fine-loamy, mixed, active, thermic Ultic Haploxeralfs",
         "Histosols",
-        "Thermic Typic Torripsamments"
+        "Thermic Typic Quartzipsamments"
       )
     ),
     c(
       `Ultic Haploxeralfs` = 'JDGR',
       `Histosols` = 'B',
-      `Typic Torripsamments` = 'LCBH'
+      `Typic Quartzipsamments` = 'LCCM'
     )
   )
 })
