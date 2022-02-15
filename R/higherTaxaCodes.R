@@ -162,8 +162,10 @@ taxon_to_taxon_code <- function(taxon) {
   
   # assume "family" has a comma separated list (words separated by commas)
   #   followed by subgroup (2 or more words without commas)
-  if (any(grepl(",", taxon))) {
-    taxon <- gsub(".*, \\b[A-Za-z]+\\b (\\b[^,]*)$", "\\1", taxon)
+  #   some families only have one class (soil temperature class) before subgroup name
+  ft <- .is_family_taxon(taxon)
+  if (any(ft)) {
+    taxon[ft] <- gsub(".*, \\b[A-Za-z]+\\b (\\b[^,]*)$|^.*\\b(isomesic|isofrigid|isohyperthermic|frigid|hypergelic|hyperthermic|mesic|pergelic|isothermic|thermic|subgelic) (\\b[^,]*)$", "\\1\\3", taxon[ft], ignore.case = TRUE)
   }
   
   # return matches

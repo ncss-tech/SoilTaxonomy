@@ -60,6 +60,23 @@ test_that("taxon_code_to_taxon & taxon_to_taxon_code works", {
   ))
 })
 
+test_that("taxon_to_taxon_code (family-level taxa)", {
+  expect_equal(
+    taxon_to_taxon_code(
+      c(
+        "Fine-loamy, mixed, active, thermic Ultic Haploxeralfs",
+        "Histosols",
+        "Thermic Typic Torripsamments"
+      )
+    ),
+    c(
+      `Ultic Haploxeralfs` = 'JDGR',
+      `Histosols` = 'B',
+      `Typic Torripsamments` = 'LCBH'
+    )
+  )
+})
+
 # RELATIVE POSITION OF CODES
 test_that("relative_taxon_code_position works", {
   expect_equal(relative_taxon_code_position(c("ABCD", "WXYZa","BAD")), 

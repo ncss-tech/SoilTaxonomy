@@ -25,9 +25,14 @@ taxon_to_level <- function(taxon) {
   level <- code_to_level(code)
   
   # if taxon contains commas, taxon_to_taxon_code extracts subgroup
-  level[ncode >= 4 & grepl(",", taxon)] <- "family"
+  # some taxa may have only one family level class (temperature regime) -- search for root words
+  level[ncode >= 4 & .is_family_taxon(taxon)] <- "family"
   
   level
+}
+
+.is_family_taxon <- function(taxon){
+  grepl(",|^(frigid|hypergelic|mesic|pergelic|thermic)", taxon, ignore.case = TRUE)
 }
 
 #' Determine taxonomic level of a taxonomic letter code
