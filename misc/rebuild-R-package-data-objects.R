@@ -5,17 +5,54 @@
 
 ## ST to the subgroup level, simple data.frame
 ST <- read.csv('misc/ST-data/ST-full.csv', stringsAsFactors = FALSE)
-
 save(ST, file='data/ST.rda')
 
-## extract unique levels and save to a list
-ST_unique_list <- list()
-ST_unique_list$order <- unique(ST$order)
-ST_unique_list$suborder <- unique(ST$suborder)
-ST_unique_list$greatgroup <- unique(ST$greatgroup)
-ST_unique_list$subgroup <- unique(ST$subgroup)
 
+## unique taxa, sorted by appearance in the 'Keys 
+## as a list
+ST_unique_list <- list()
+
+# requires codes / taxa list
+load('data/ST_higher_taxa_codes_12th.rda')
+load('data/ST.rda')
+
+
+# re-arrange taxa according to letter codes in the 'Keys
+.uniqueTaxaLogicalOrdering <- function(x) {
+  # find taxa in the letter code LUT
+  idx <- match(tolower(x), tolower(ST_higher_taxa_codes_12th$taxon))
+  
+  # missing taxa
+  if(any(is.na(idx))){
+    message(sprintf('missing: %s', paste(x[which(is.na(idx))], collapse = ',')))
+  }
+  
+  # sort taxa based on letter codes
+  res <- ST_higher_taxa_codes_12th$taxon[idx][order(ST_higher_taxa_codes_12th$code[idx])]
+  
+  return(tolower(res))
+}
+
+
+# TODO: not using current NASIS metadata due to typos at GG and SG
+# x <- subset(soilDB:::.get_NASIS_metadata(), select = ChoiceName, subset = ColumnLogicalName == 'taxonomic_order' & !ChoiceObsolete)
+# x <- subset(soilDB:::.get_NASIS_metadata(), select = ChoiceName, subset = ColumnLogicalName == 'taxonomic_suborder' & !ChoiceObsolete)
+# x <- subset(soilDB:::.get_NASIS_metadata(), select = ChoiceName, subset = ColumnLogicalName == 'taxonomic_great_group' & !ChoiceObsolete)
+# x <- subset(soilDB:::.get_NASIS_metadata(), select = ChoiceName, subset = ColumnLogicalName == 'taxonomic_subgroup' & !ChoiceObsolete)
+
+
+# unique taxa, in 'Keys order
+ST_unique_list$order <- .uniqueTaxaLogicalOrdering(unique(ST$order))
+ST_unique_list$suborder <- .uniqueTaxaLogicalOrdering(unique(ST$suborder))
+ST_unique_list$greatgroup <- .uniqueTaxaLogicalOrdering(unique(ST$greatgroup))
+ST_unique_list$subgroup <- .uniqueTaxaLogicalOrdering(unique(ST$subgroup))
+
+
+# done
 save(ST_unique_list, file='data/ST_unique_list.rda')
+
+
+
 
 ## formative element dictionaries
 load('misc/formative-elements/formative-elements.rda')
