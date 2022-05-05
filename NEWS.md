@@ -1,5 +1,6 @@
 # SoilTaxonomy 0.1.5 (2022-02-15)
  * `taxon_code_to_taxon` and `taxon_to_level` now support family-level taxa with only one class e.g. "Thermic Typic Quartzipsamments"
+ * included data `ST_unique_list` is now sorted according to the order of appearance in the Keys to Soil Taxonomy (12th edition)
  
 # SoilTaxonomy 0.1.4 (2021-08-05)
  * Update `ST_formative_elements` / `explainST()` with subgroup-level descriptions for missing taxa
