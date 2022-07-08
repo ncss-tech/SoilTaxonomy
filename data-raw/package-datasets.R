@@ -1,3 +1,4 @@
+## code to prepare package datasets goes here
 ## 2021-04-15
 ## D.E. Beaudette, A.G. Brown
 ##
@@ -5,8 +6,7 @@
 
 ## ST to the subgroup level, simple data.frame
 ST <- read.csv('misc/ST-data/ST-full.csv', stringsAsFactors = FALSE)
-save(ST, file = 'data/ST.rda')
-
+usethis::use_data(ST, overwrite = TRUE)
 
 ## unique taxa, sorted by appearance in the 'Keys
 ## as a list
@@ -40,7 +40,7 @@ ST_unique_list$greatgroup <- .uniqueTaxaLogicalOrdering(unique(ST$greatgroup))
 ST_unique_list$subgroup <- .uniqueTaxaLogicalOrdering(unique(ST$subgroup))
 
 # done
-save(ST_unique_list, file = 'data/ST_unique_list.rda')
+usethis::use_data(ST_unique_list, overwrite = TRUE)
 
 ## formative element dictionaries
 load('misc/formative-elements/formative-elements.rda')
@@ -53,10 +53,10 @@ res <- data.frame(y$order, stringr::str_locate(y$order, gsub("(.*)s$","\\1", y$e
 colnames(res) <- c("order","element_start","element_end")
 ST_formative_elements[["order"]] <- merge(ST_formative_elements[["order"]], res, by = "order")
 
-save(ST_formative_elements, file = 'data/ST_formative_elements.rda')
+usethis::use_data(ST_formative_elements, overwrite = TRUE)
 
 ST_feature_SKB <- jsonlite::read_json("https://github.com/ncss-tech/SoilKnowledgeBase/raw/main/inst/extdata/KST/2014_KST_EN_featurelist.json",
-                                   simplifyVector = TRUE)
+                                      simplifyVector = TRUE)
 
 # handle marked UTF8 strings
 ST_feature_SKB$description <- sapply(ST_feature_SKB$description, stringi::stri_enc_toascii)
@@ -119,7 +119,7 @@ ST_features <- list(
 
 ST_features <- do.call('rbind', ST_features)
 rownames(ST_features) <- NULL
-save(ST_features, file = 'data/ST_features.rda')
+usethis::use_data(ST_features, overwrite = TRUE)
 
 ## get NASIS class names (family-level taxonomy)
 ST_family_classes <- read.csv('misc/ST-data/ST-family-classes.csv', stringsAsFactors = FALSE)
@@ -192,11 +192,17 @@ fmsubcl <- data.frame(group = "Mineral or Organic", name = "Other Family Classes
 feature_data <- rbind(feature_data, smsubcl, fmsubcl)
 
 ST_family_classes_before <- ST_family_classes
-ST_family_classes <- merge(ST_family_classes[,!colnames(ST_family_classes) %in% c("group","name")],
-                           feature_data, by="FeatureID", all.x=TRUE, sort=FALSE, incomparables = NA)
+ST_family_classes <- merge(
+  ST_family_classes[, !colnames(ST_family_classes) %in% c("group", "name")],
+  feature_data,
+  by = "FeatureID",
+  all.x = TRUE,
+  sort = FALSE,
+  incomparables = NA
+)
 
 # remove NASIS domain ID? and internal "feature ID" referencing list from SKB
 ST_family_classes$FeatureID <- NULL
 ST_family_classes$DomainID <- NULL
 
-save(ST_family_classes, file='data/ST_family_classes.rda')
+usethis::use_data(ST_family_classes, overwrite = TRUE)
