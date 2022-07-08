@@ -13,7 +13,7 @@ LazyLoad: yes
 Repository: CRAN
 URL: https://github.com/ncss-tech/SoilTaxonomy, https://ncss-tech.github.io/SoilTaxonomy
 BugReports: https://github.com/ncss-tech/SoilTaxonomy/issues
-Imports: stringr, data.table
+Imports: stringr
 Suggests: 
     testthat,
     covr,

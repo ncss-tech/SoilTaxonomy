@@ -13,11 +13,6 @@ parse_family(family, column_metadata = FALSE)
 }
 \value{
 a \code{data.frame} containing column names: \code{"family"} (input), \code{"subgroup"} (parsed taxonomic subgroup), \code{"subgroup_code"} (letter code for subgroup), \code{"class_string"} (comma-separated family classes), \code{"classes_split"} (split class_string vector stored as \code{list} column).
-
-In addition, the following column names are identified and returned based on NASIS (National Soil Information System) metadata (via soilDB package):
-\itemize{
-\item \code{"taxpartsize"}, \code{"taxpartsizemod"}, \code{"taxminalogy"}, \code{"taxceactcl"}, \code{"taxreaction"}, \code{"taxtempcl"}, \code{"taxsubgroup"}, \code{"taxgreatgroup"}, \code{"taxsuborder"}, \code{"taxorder"}
-}
 }
 \description{
 Parse components of a family-level taxon name
