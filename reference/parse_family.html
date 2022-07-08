@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
       </span>
     </div>
 
@@ -69,7 +69,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">parse_family</span><span class="op">(</span><span class="va">family</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">parse_family</span><span class="op">(</span><span class="va">family</span>, column_metadata <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -77,13 +77,20 @@
     <dl><dt>family</dt>
 <dd><p>a character vector containing taxonomic families, e.g. <code>"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</code></p></dd>
 
+
+<dt>column_metadata</dt>
+<dd><p>include parsed NASIS physical column names and values from family taxon components? Default: <code>FALSE</code>. <code>TRUE</code> requires soilDB package.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
     
 
-<p>a <code>data.frame</code> containing column names: <code>"family"</code> (input), <code>"subgroup"</code> (parsed taxonomic subgroup), <code>"subgroup_code"</code> (letter code for subgroup), <code>"class_string"</code> (comma-separated family classes), <code>"classes_split"</code> (split class_string vector stored as <code>list</code> column)</p>
-    </div>
+<p>a <code>data.frame</code> containing column names: <code>"family"</code> (input), <code>"subgroup"</code> (parsed taxonomic subgroup), <code>"subgroup_code"</code> (letter code for subgroup), <code>"class_string"</code> (comma-separated family classes), <code>"classes_split"</code> (split class_string vector stored as <code>list</code> column).</p>
+
+
+<p>In addition, the following column names are identified and returned based on NASIS (National Soil Information System) metadata (via soilDB package):</p><ul><li><p><code>"taxpartsize"</code>, <code>"taxpartsizemod"</code>, <code>"taxminalogy"</code>, <code>"taxceactcl"</code>, <code>"taxreaction"</code>, <code>"taxtempcl"</code>, <code>"taxsubgroup"</code>, <code>"taxgreatgroup"</code>, <code>"taxsuborder"</code>, <code>"taxorder"</code></p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
@@ -91,24 +98,16 @@
 <span class="r-in"><span><span class="va">families</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"fine, kaolinitic, thermic typic kanhapludults"</span>,</span></span>
 <span class="r-in"><span>              <span class="st">"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span>,</span></span>
 <span class="r-in"><span>              <span class="st">"euic, thermic typic haplosaprists"</span>,</span></span>
-<span class="r-in"><span>              <span class="st">"coarse-loamy, mixed, active, mesic aquic dystrudepts"</span>,</span></span>
-<span class="r-in"><span>              <span class="st">"fine, kaolinitic, thermic typic kanhapludults"</span>,</span></span>
-<span class="r-in"><span>              <span class="st">"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span>,</span></span>
-<span class="r-in"><span>              <span class="st">"euic, thermic typic haplosaprists"</span>,</span></span>
 <span class="r-in"><span>              <span class="st">"coarse-loamy, mixed, active, mesic aquic dystrudepts"</span><span class="op">)</span></span></span>
-<span class="r-in"><span> </span></span>
-<span class="r-in"><span><span class="co"># inspect parsed list result             </span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">parse_family</span><span class="op">(</span><span class="va">families</span><span class="op">)</span><span class="op">)</span>     </span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 'data.frame':	8 obs. of  5 variables:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ family       : chr  "fine, kaolinitic, thermic typic kanhapludults" "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs" "euic, thermic typic haplosaprists" "coarse-loamy, mixed, active, mesic aquic dystrudepts" ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ subgroup     : chr  "typic kanhapludults" "ultic haploxeralfs" "typic haplosaprists" "aquic dystrudepts" ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ subgroup_code: chr  "HCDN" "JDGR" "BDDH" "KFFK" ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ class_string : chr  "fine, kaolinitic, thermic" "fine-loamy, mixed, semiactive, mesic" "euic, thermic" "coarse-loamy, mixed, active, mesic" ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ classes_split:List of 8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ : chr  "fine" "kaolinitic" "thermic"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ : chr  "fine-loamy" "mixed" "semiactive" "mesic"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ : chr  "euic" "thermic"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ : chr  "coarse-loamy" "mixed" "active" "mesic"</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># inspect parsed list result</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">parse_family</span><span class="op">(</span><span class="va">families</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 'data.frame':	4 obs. of  5 variables:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ family       : chr  "fine, kaolinitic, thermic typic kanhapludults" "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs" "euic, thermic typic haplosaprists" "coarse-loamy, mixed, active, mesic aquic dystrudepts"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ subgroup     : chr  "typic kanhapludults" "ultic haploxeralfs" "typic haplosaprists" "aquic dystrudepts"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ subgroup_code: chr  "HCDN" "JDGR" "BDDH" "KFFK"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ class_string : chr  "fine, kaolinitic, thermic" "fine-loamy, mixed, semiactive, mesic" "euic, thermic" "coarse-loamy, mixed, active, mesic"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ classes_split:List of 4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ : chr  "fine" "kaolinitic" "thermic"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ : chr  "fine-loamy" "mixed" "semiactive" "mesic"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ : chr  "euic" "thermic"</span>
@@ -125,7 +124,7 @@
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Dylan Beaudette, Andrew Brown.</p>
+  <p></p><p>Developed by Andrew Brown, Dylan Beaudette.</p>
 </div>
 
 <div class="pkgdown">

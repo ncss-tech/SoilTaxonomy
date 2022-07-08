@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
       </span>
     </div>
 
@@ -167,7 +167,7 @@
 <span><span class="co">#&gt; 4         </span></span>
 <span><span class="co">#&gt; 5         </span></span>
 <span><span class="co">#&gt; 6</span></span></code></pre></div>
-<p>Here we determine the family-level classes for a single taxonomic family and match them to the class descriptions stored in <code>ST_family_classes</code>.</p>
+<p>Here we determine the family-level classes for a single taxonomic family and match them to the class descriptions stored in <code>ST_family_classes</code>. Here we set <code>column_metadata=FALSE</code> to not attempt to parse the family class components into their corresponding NASIS domains (requires soilDB).</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">afamily_classes</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/parse_family.html">parse_family</a></span><span class="op">(</span><span class="st">"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span><span class="op">)</span><span class="op">$</span><span class="va">classes_split</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="va">class_descriptions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">ST_family_classes</span>, <span class="va">classname</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">afamily_classes</span><span class="op">)</span></span>
@@ -212,7 +212,7 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Dylan Beaudette, Andrew Brown.</p>
+<p>Developed by Andrew Brown, Dylan Beaudette.</p>
 </div>
 
 <div class="pkgdown">
