@@ -4,12 +4,12 @@
 \alias{parse_family}
 \title{Parse components of a family-level taxon name}
 \usage{
-parse_family(family, column_metadata = TRUE)
+parse_family(family, column_metadata = FALSE)
 }
 \arguments{
 \item{family}{a character vector containing taxonomic families, e.g. \code{"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"}}
 
-\item{column_metadata}{include parsed NASIS physical column names and values from family taxon components? Default: \code{TRUE} requires soilDB package.}
+\item{column_metadata}{include parsed NASIS physical column names and values from family taxon components? Default: \code{FALSE}. \code{TRUE} requires soilDB package.}
 }
 \value{
 a \code{data.frame} containing column names: \code{"family"} (input), \code{"subgroup"} (parsed taxonomic subgroup), \code{"subgroup_code"} (letter code for subgroup), \code{"class_string"} (comma-separated family classes), \code{"classes_split"} (split class_string vector stored as \code{list} column).

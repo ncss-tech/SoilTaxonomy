@@ -1,7 +1,7 @@
 #' Parse components of a family-level taxon name
 #'
 #' @param family a character vector containing taxonomic families, e.g. `"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"`
-#' @param column_metadata include parsed NASIS physical column names and values from family taxon components? Default: `TRUE` requires soilDB package.
+#' @param column_metadata include parsed NASIS physical column names and values from family taxon components? Default: `FALSE`. `TRUE` requires soilDB package.
 #'
 #' @return a `data.frame` containing column names: `"family"` (input), `"subgroup"` (parsed taxonomic subgroup), `"subgroup_code"` (letter code for subgroup), `"class_string"` (comma-separated family classes), `"classes_split"` (split class_string vector stored as `list` column).
 #'
@@ -21,7 +21,7 @@
 #' str(parse_family(families))
 #'
 #' @importFrom stringr str_locate
-parse_family <- function(family, column_metadata = TRUE) {
+parse_family <- function(family, column_metadata = FALSE) {
 
   # for R CMD check
   ST_unique_list <- NULL
