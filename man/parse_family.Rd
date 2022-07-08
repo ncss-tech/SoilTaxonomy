@@ -4,13 +4,20 @@
 \alias{parse_family}
 \title{Parse components of a family-level taxon name}
 \usage{
-parse_family(family)
+parse_family(family, column_metadata = TRUE)
 }
 \arguments{
 \item{family}{a character vector containing taxonomic families, e.g. \code{"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"}}
+
+\item{column_metadata}{include parsed NASIS physical column names and values from family taxon components? Default: \code{TRUE} requires soilDB package.}
 }
 \value{
-a \code{data.frame} containing column names: \code{"family"} (input), \code{"subgroup"} (parsed taxonomic subgroup), \code{"subgroup_code"} (letter code for subgroup), \code{"class_string"} (comma-separated family classes), \code{"classes_split"} (split class_string vector stored as \code{list} column)
+a \code{data.frame} containing column names: \code{"family"} (input), \code{"subgroup"} (parsed taxonomic subgroup), \code{"subgroup_code"} (letter code for subgroup), \code{"class_string"} (comma-separated family classes), \code{"classes_split"} (split class_string vector stored as \code{list} column).
+
+In addition, the following column names are identified and returned based on NASIS (National Soil Information System) metadata (via soilDB package):
+\itemize{
+\item \code{"taxpartsize"}, \code{"taxpartsizemod"}, \code{"taxminalogy"}, \code{"taxceactcl"}, \code{"taxreaction"}, \code{"taxtempcl"}, \code{"taxsubgroup"}, \code{"taxgreatgroup"}, \code{"taxsuborder"}, \code{"taxorder"}
+}
 }
 \description{
 Parse components of a family-level taxon name
@@ -20,13 +27,9 @@ Parse components of a family-level taxon name
 families <- c("fine, kaolinitic, thermic typic kanhapludults",
               "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
               "euic, thermic typic haplosaprists",
-              "coarse-loamy, mixed, active, mesic aquic dystrudepts",
-              "fine, kaolinitic, thermic typic kanhapludults",
-              "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
-              "euic, thermic typic haplosaprists",
               "coarse-loamy, mixed, active, mesic aquic dystrudepts")
- 
-# inspect parsed list result             
-str(parse_family(families))     
+
+# inspect parsed list result
+str(parse_family(families))
 
 }
