@@ -11,7 +11,7 @@ License: GPL (>= 3)
 Encoding: UTF-8
 LazyLoad: yes
 Repository: CRAN
-URL: https://github.com/ncss-tech/SoilTaxonomy
+URL: https://github.com/ncss-tech/SoilTaxonomy, https://ncss-tech.github.io/SoilTaxonomy
 BugReports: https://github.com/ncss-tech/SoilTaxonomy/issues
 Imports: stringr
 Suggests: 
