@@ -2,7 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ncss-tech/SoilTaxonomy/workflows/R-CMD-check/badge.svg)](https://github.com/ncss-tech/SoilTaxonomy/actions)
+[![R-CMD-check](https://github.com/ncss-tech/SoilTaxonomy/workflows/R-CMD-check/badge.svg)](https://github.com/ncss-tech/SoilTaxonomy/actions/workflows/R-CMD-check.yml)
 [![Codecov test
 coverage](https://codecov.io/gh/ncss-tech/SoilTaxonomy/branch/master/graph/badge.svg)](https://codecov.io/gh/ncss-tech/SoilTaxonomy?branch=master)
 [![CRAN
@@ -80,7 +80,7 @@ functionality:
     Characteristics](https://ncss-tech.github.io/SoilTaxonomy/articles/diagnostics.html)
 
 -   [Family-level Taxonomic
-    Classes](https://ncss-tech.github.io/SoilTaxonomy/articles/family-level_Taxonomy.html)
+    Classes](https://ncss-tech.github.io/SoilTaxonomy/articles/family-level_taxonomy.html)
 
 ### Featured Functions
 
