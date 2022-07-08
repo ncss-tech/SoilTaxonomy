@@ -1,3 +1,9 @@
+# SoilTaxonomy 0.2.0 (2022-07-08)
+ * `parse_family()` now returns additional columns reflecting NASIS physical column names corresponding to components of the family-level taxonomy
+  * This routine uses the NASIS metadata that is cached in the {soilDB} package (or local NASIS if available)
+  
+ * New vignette related to soil diagnostic features and characteristics `get_ST_features()`
+ 
 # SoilTaxonomy 0.1.5 (2022-02-15)
  * `taxon_code_to_taxon` and `taxon_to_level` now support family-level taxa with only one class e.g. "Thermic Typic Quartzipsamments"
  * included data `ST_unique_list` is now sorted according to the order of appearance in the Keys to Soil Taxonomy (12th edition)
