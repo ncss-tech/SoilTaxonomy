@@ -1,0 +1,80 @@
+---
+title: "Soil Diagnostic Features & Characteristics"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Soil Diagnostic Features & Characteristics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SoilTaxonomy)
+```
+
+Data from the latest version of the Keys to Soil Taxonomy related to diagnostic features and characteristics are stored in the package dataset `ST_features`. 
+
+You can load the full supporting data directly with:
+
+```r
+data(ST_features, package = "SoilTaxonomy")
+```
+
+A helpful wrapper function is provided, `get_ST_features()` that helps with obtaining information of interest to specific features or groups of features.
+
+We will inspect the "Mollic Epipedon" information to see the structure of the `ST_features` _data.frame_.
+
+We can use `get_ST_features(name=...)` to get features by name (case-insensitive)
+
+```{r}
+str(get_ST_features(name = "mollic epipedon"))
+```
+
+Columns included in the `ST_features`, and usable for filtering as arguments to `get_ST_features()` include: 
+
+ - `group` - Diagnostic feature or characteristic group name
+ - `name` - Diagnostic feature or characteristic name
+ - `chapter` - Chapter number in Keys to Soil Taxonomy (latest edition)
+ - `page` - Page number in Keys to Soil Taxonomy (latest edition)
+ - `description` - Narrative description (may not be present for all features)
+ - `criteria` - "Key" to identifying the feature; logical criteria separated by and/or
+
+Say we are interested in finding criteria to distinguish the epipedons (surface diagnostic horizons).
+
+We can use the `group=...` argument to get all of the "surface" features as a data.frame.
+
+```{r}
+epipedons <- get_ST_features(group = "surface")
+```
+
+There are `r nrow(epipedons)` features in this result set.
+
+```{r}
+str(epipedons)
+```
+
+We can then select specific items by name, such as the `"description"` and `"criteria"`:
+
+```{r}
+subset(epipedons, name == "Anthropic Epipedon")$description
+```
+
+```{r}
+subset(epipedons, name == "Anthropic Epipedon")$criteria
+```
+
+If we want to compare the basic definitions in Chapter 2 with the features in Chapter 3, we can subset ST_features using the chapter (or page!) numbers.
+
+```{r}
+get_ST_features(chapter = 2)$name
+```
+
+```{r}
+get_ST_features(chapter = 3)$name
+```
