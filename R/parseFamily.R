@@ -55,11 +55,15 @@ parse_family <- function(family, column_metadata = TRUE) {
 }
 
 #' @import data.table
+#' @importFrom utils packageVersion
 .get_family_differentia <- function(res) {
 
-  if (!requireNamespace("soilDB")) {
-    stop("package `soilDB` is required to lookup NASIS column metadata correponding to taxonomic classes", call. = FALSE)
+  if (!requireNamespace("soilDB") || utils::packageVersion("soilDB") < "2.7.3") {
+    stop("package `soilDB` >=2.7.3 is required to lookup NASIS column metadata correponding to taxonomic classes", call. = FALSE)
+  } else {
+    metadata <- soilDB::get_NASIS_metadata()
   }
+
   ST_family_classes <- NULL
   load(system.file("data/ST_family_classes.rda", package = "SoilTaxonomy")[1])
 
@@ -69,7 +73,7 @@ parse_family <- function(family, column_metadata = TRUE) {
   })
 
   # lookup classname -> (possible) NASIS domain ID
-  nasis_family_classes <- soilDB::get_NASIS_metadata()[c("ChoiceName", "DomainID")]
+  nasis_family_classes <- metadata[c("ChoiceName", "DomainID")]
   colnames(nasis_family_classes) <- c("classname", "DomainID")
 
   # combine KST and NASIS LUT
