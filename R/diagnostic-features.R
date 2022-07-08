@@ -56,10 +56,10 @@ get_ST_features <- function(group = NULL,
   
   # list of logical vector matching argument criteria
   filtres <- sapply(paste0(names(filtargs)[filtargs]), 
-                    function(x) eval(parse(text = x), res) %in% eval(parse(text = x)))
+                    function(x) tolower(eval(parse(text = x), res)) %in% tolower(eval(parse(text = x))))
   
   # reduce if needed
-  if (ncol(filtres) > 1){
+  if (ncol(filtres) > 1) {
       filtres <- (rowSums(filtres) == ncol(filtres))  
   }
   
