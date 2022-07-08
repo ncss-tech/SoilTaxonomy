@@ -2,7 +2,7 @@
 % Please edit documentation in R/getTaxonAtLevel.R
 \name{getTaxonAtLevel}
 \alias{getTaxonAtLevel}
-\title{Get the taxon name the Soil Order, Suborder, Great Group or Subgroup level}
+\title{Get the taxon name at the Soil Order, Suborder, Great Group or Subgroup level}
 \usage{
 getTaxonAtLevel(x, level = c("order", "suborder", "greatgroup", "subgroup"))
 }
@@ -15,7 +15,7 @@ getTaxonAtLevel(x, level = c("order", "suborder", "greatgroup", "subgroup"))
 A named character vector of taxa at specified level, where names are the internal Soil Taxonomy letter codes.
 }
 \description{
-Get the taxon name the Soil Order, Suborder, Great Group or Subgroup level
+Get the taxon name at the Soil Order, Suborder, Great Group or Subgroup level
 }
 \examples{
 
