@@ -35,18 +35,10 @@ ST.subgroups <- ST.subgroups$subgroup
 # compose into single DF, populate with subgroups as starting point
 ST <- data.frame(order=NA, suborder=NA, greatgroup=NA, subgroup=ST.subgroups, stringsAsFactors = FALSE)
 
-
-## tinkering
-# http://www.joyofdata.de/blog/comparison-of-string-distance-algorithms/
-# http://stats.stackexchange.com/questions/3425/how-to-quasi-match-two-vectors-of-strings-in-r
-# 
-## start at the bottom and work-up
-
 # associate subgroup with parent greatgroup: OK
 ST$greatgroup <- getTaxonAtLevel(ST$subgroup, "greatgroup")
 
 # associate great group with parent sub order:
-# mistakes in some gelisols
 ST$suborder <- getTaxonAtLevel(ST$subgroup, "suborder")
 ST$order <- getTaxonAtLevel(ST$subgroup, "order")
 
@@ -56,7 +48,6 @@ ST <- ST[order(ST$order, ST$suborder, ST$greatgroup), ]
 # drop taxa that do not exist in lookup tables
 ST <- ST[which(complete.cases(ST)),]
 
-## manually edit from here
 write.csv(ST, file='misc/ST-data/ST-full.csv', row.names=FALSE, quote = FALSE)
 
 write.csv(ST.family.classes, file='misc/ST-data/ST-family-classes.csv', row.names=FALSE, quote = FALSE)

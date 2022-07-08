@@ -4,7 +4,7 @@ Description: Taxonomic dictionaries, formative element lists, and functions rela
    Data and functionality are based on official U.S. Department of Agriculture sources including the latest edition of the Keys to Soil Taxonomy. Descriptions and metadata are obtained from the National Soil Information System or Soil Survey Geographic databases. Other sources are referenced in the data documentation. 
    Provides tools for understanding and interacting with concepts in the U.S. Soil Taxonomic System. Most of the current utilities are for working with taxonomic concepts at the "higher" taxonomic levels: Order, Suborder, Great Group, and Subgroup.
 Version: 0.1.5
-Authors@R: c(person(given="Dylan", family="Beaudette", role = c("aut"), email = "dylan.beaudette@usda.gov"), person(given="Andrew", family="Brown", email="andrew.g.brown@usda.gov", role = c("aut", "cre")))
+Authors@R: c(person(given="Andrew", family="Brown", email="andrew.g.brown@usda.gov", role = c("aut", "cre")), person(given="Dylan", family="Beaudette", role = c("aut"), email = "dylan.beaudette@usda.gov"))
 Maintainer: Andrew Brown <andrew.g.brown@usda.gov>
 Depends: R (>= 3.5)
 License: GPL (>= 3)
