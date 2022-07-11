@@ -71,11 +71,6 @@ jobs:
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
-      - name: Install aqp+soilDB off GitHub (devel only)
-        if: matrix.config.r == 'devel'
-        run: remotes::install_github(c("ncss-tech/aqp", "ncss-tech/soilDB"), dependencies = FALSE, build = FALSE)
-        shell: Rscript {0}
-
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
