@@ -55,11 +55,11 @@ parse_family <- function(family, column_metadata = TRUE) {
 }
 
 #' @import data.table
-#' @importFrom utils packageVersion
 .get_family_differentia <- function(res) {
 
-  if (!requireNamespace("soilDB") || utils::packageVersion("soilDB") < "2.7.3") {
-    stop("package `soilDB` >=2.7.3 is required to lookup NASIS column metadata correponding to taxonomic classes", call. = FALSE)
+  if (!.soilDB_metadata_available()) {
+    message("package `soilDB` >=2.7.3 is required to lookup NASIS column metadata correponding to taxonomic classes", call. = FALSE)
+    return(data.frame())
   } else {
     metadata <- soilDB::get_NASIS_metadata()
   }
