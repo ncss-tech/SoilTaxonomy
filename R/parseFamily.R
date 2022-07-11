@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#'
+#' \dontrun{
 #' families <- c("fine, kaolinitic, thermic typic kanhapludults",
 #'               "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
 #'               "euic, thermic typic haplosaprists",
@@ -19,7 +19,7 @@
 #'
 #' # inspect parsed list result
 #' str(parse_family(families))
-#'
+#' }
 #' @importFrom stringr str_locate
 parse_family <- function(family, column_metadata = TRUE) {
 

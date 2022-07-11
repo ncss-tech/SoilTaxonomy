@@ -18,7 +18,7 @@ a \code{data.frame} containing column names: \code{"family"} (input), \code{"sub
 Parse components of a family-level taxon name
 }
 \examples{
-
+\dontrun{
 families <- c("fine, kaolinitic, thermic typic kanhapludults",
               "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
               "euic, thermic typic haplosaprists",
@@ -26,5 +26,5 @@ families <- c("fine, kaolinitic, thermic typic kanhapludults",
 
 # inspect parsed list result
 str(parse_family(families))
-
+}
 }
