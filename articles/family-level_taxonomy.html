@@ -98,9 +98,9 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ncss-tech/SoilTaxonomy" class="external-link">SoilTaxonomy</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="parse_family">
-<code>parse_family</code><a class="anchor" aria-label="anchor" href="#parse_family"></a>
+<code>parse_family()</code><a class="anchor" aria-label="anchor" href="#parse_family"></a>
 </h2>
-<p>The function <code>parse_family</code> provides a way to separate lower taxonomic levels (“family-level classes”) from the higher taxonomic levels (Order, Suborder, Great Group, and Subgroup) in a soil taxon name.</p>
+<p>The function <code><a href="../reference/parse_family.html">parse_family()</a></code> provides a way to separate lower taxonomic levels (“family-level classes”) from the higher taxonomic levels (Order, Suborder, Great Group, and Subgroup) in a soil taxon name.</p>
 <p>The user provides a vector of family names, and the result is a <code>data.frame</code> containing:</p>
 <ul>
 <li>
@@ -171,7 +171,7 @@
 <span><span class="co">#&gt; 4         </span></span>
 <span><span class="co">#&gt; 5         </span></span>
 <span><span class="co">#&gt; 6</span></span></code></pre></div>
-<p>Here we determine the family-level classes for a single taxonomic family and match them to the class descriptions stored in <code>ST_family_classes</code>. Here we set <code>column_metadata=FALSE</code> to not attempt to parse the family class components into their corresponding NASIS domains (requires soilDB).</p>
+<p>Here we determine the family-level classes for a single taxonomic family and match them to the class descriptions stored in <code>ST_family_classes</code>. Here we set <code>parse_family(..., column_metadata=FALSE)</code> to <em>not</em> parse family components into corresponding NASIS domains (requires soilDB).</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">afamily_classes</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/parse_family.html">parse_family</a></span><span class="op">(</span><span class="st">"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span>, column_metadata <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">$</span><span class="va">classes_split</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="va">class_descriptions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">ST_family_classes</span>, <span class="va">classname</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">afamily_classes</span><span class="op">)</span></span>
