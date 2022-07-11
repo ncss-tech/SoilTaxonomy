@@ -6,7 +6,7 @@
 #' @return a `data.frame` containing column names: `"family"` (input), `"subgroup"` (parsed taxonomic subgroup), `"subgroup_code"` (letter code for subgroup), `"class_string"` (comma-separated family classes), `"classes_split"` (split class_string vector stored as `list` column).
 #'
 #' In addition, the following column names are identified and returned based on NASIS (National Soil Information System) metadata (via soilDB package):
-#'  - `"taxpartsize"`, `"taxpartsizemod"`, `"taxminalogy"`, `"taxceactcl"`, `"taxreaction"`, `"taxtempcl"`, `"taxsubgroup"`, `"taxgreatgroup"`, `"taxsuborder"`, `"taxorder"`
+#'  - `"taxpartsize"`, `"taxpartsizemod"`, `"taxminalogy"`, `"taxceactcl"`, `"taxreaction"`, `"taxtempcl"`, `"taxsubgrp"`, `"taxgreatgroup"`, `"taxsuborder"`, `"taxorder"`
 #'
 #' @export
 #'
@@ -110,7 +110,7 @@ parse_family <- function(family, column_metadata = TRUE) {
   basetbl <- as.data.frame(`names<-`(rep(list(numeric(0)), 10), c("taxpartsize", "taxpartsizemod",
                                                                   "taxminalogy", "taxceactcl",
                                                                   "taxreaction", "taxtempcl",
-                                                                  "taxsubgroup", "taxgreatgroup",
+                                                                  "taxsubgrp", "taxgrtgroup",
                                                                   "taxsuborder", "taxorder")),
                            stringsAsFactors = FALSE)
   as.data.frame(data.table::rbindlist(c(list(basetbl), res4), fill = TRUE),
