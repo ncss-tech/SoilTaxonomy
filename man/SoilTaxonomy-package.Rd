@@ -12,7 +12,7 @@ Taxonomic dictionaries, formative element lists, and functions related to the ma
 Useful links:
 \itemize{
   \item \url{https://github.com/ncss-tech/SoilTaxonomy}
-  \item \url{https://ncss-tech.github.io/SoilTaxonomy}
+  \item \url{https://ncss-tech.github.io/SoilTaxonomy/}
   \item Report bugs at \url{https://github.com/ncss-tech/SoilTaxonomy/issues}
 }
 
