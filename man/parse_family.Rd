@@ -23,13 +23,13 @@ In addition, the following column names are identified and returned based on NAS
 Parse Components of a "Family-level" Taxon Name
 }
 \examples{
-\dontrun{
-families <- c("fine, kaolinitic, thermic typic kanhapludults",
-              "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
-              "euic, thermic typic haplosaprists",
-              "coarse-loamy, mixed, active, mesic aquic dystrudepts")
+if (!requireNamespace('soilDB')) {
+  families <- c("fine, kaolinitic, thermic typic kanhapludults",
+                "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
+                "euic, thermic typic haplosaprists",
+                "coarse-loamy, mixed, active, mesic aquic dystrudepts")
 
-# inspect parsed list result
-str(parse_family(families))
+  # inspect parsed list result
+  str(parse_family(families))
 }
 }
