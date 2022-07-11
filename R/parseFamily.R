@@ -101,7 +101,8 @@ parse_family <- function(family, column_metadata = TRUE) {
 
     res5 <- unique(data.frame(
       classname = x$classname,
-      ColumnPhysicalName = md$ColumnPhysicalName[match(x$classname, md$ChoiceName)]
+      ColumnPhysicalName = md$ColumnPhysicalName[match(x$classname, md$ChoiceName)],
+      stringsAsFactors = FALSE
     ))
     cbind(`colnames<-`(as.data.frame(t(res5[[1]]), stringsAsFactors = FALSE), res5[[2]]), taxsub[i, ])
   })
