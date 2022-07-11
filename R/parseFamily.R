@@ -57,11 +57,13 @@ parse_family <- function(family, column_metadata = TRUE) {
 #' @import data.table
 .get_family_differentia <- function(res) {
 
-  if (!.soilDB_metadata_available()) {
-    message("package `soilDB` >=2.7.3 is required to lookup NASIS column metadata correponding to taxonomic classes", call. = FALSE)
-    return(data.frame())
+  metadata <- NULL
+  if (!requireNamespace("soilDB")) {
+    message("package `soilDB` is required to lookup NASIS column metadata correponding to taxonomic classes", call. = FALSE)
+    return(res[, 0, drop = FALSE])
   } else {
-    metadata <- soilDB::get_NASIS_metadata()
+    # soilDB::get_NASIS_metadata() # 2.7.3+
+    load(system.file("data/metadata.rda", package = "soilDB")[1])
   }
 
   ST_family_classes <- NULL
@@ -89,7 +91,8 @@ parse_family <- function(family, column_metadata = TRUE) {
 
   res4 <- lapply(seq_along(res2), function(i) {
     x <- res2[[i]]
-    md <- soilDB::get_NASIS_column_metadata(x$DomainID, "DomainID")
+    # md <- soilDB::get_NASIS_column_metadata(x$DomainID, "DomainID")
+    md <- metadata[x$DomainID == metadata$DomainID, ]
 
     # omitting the "duplicate" "osdtax..." columns within single domain
     # also taxtempcl used over taxtempregime (which has identical levels)
