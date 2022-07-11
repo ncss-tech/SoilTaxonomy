@@ -13,13 +13,14 @@ LazyLoad: yes
 Repository: CRAN
 URL: https://github.com/ncss-tech/SoilTaxonomy, https://ncss-tech.github.io/SoilTaxonomy
 BugReports: https://github.com/ncss-tech/SoilTaxonomy/issues
-Imports: stringr
+Imports: stringr, data.table
 Suggests: 
     testthat,
     covr,
     knitr,
     rmarkdown,
-    markdown
+    markdown,
+    soilDB
 RoxygenNote: 7.2.0
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr

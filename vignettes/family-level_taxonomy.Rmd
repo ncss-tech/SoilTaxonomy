@@ -9,6 +9,7 @@ vignette: >
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
+  eval = SoilTaxonomy:::.soilDB_metadata_available(min_version = "2.0.0"),
   collapse = TRUE,
   comment = "#>"
 )
@@ -56,7 +57,7 @@ head(ST_family_classes)
 Here we determine the family-level classes for a single taxonomic family and match them to the class descriptions stored in `ST_family_classes`. Here we set `column_metadata=FALSE` to not attempt to parse the family class components into their corresponding NASIS domains (requires soilDB).
 
 ```{r}
-afamily_classes <- parse_family("fine-loamy, mixed, semiactive, mesic ultic haploxeralfs")$classes_split[[1]]
+afamily_classes <- parse_family("fine-loamy, mixed, semiactive, mesic ultic haploxeralfs", column_metadata = FALSE)$classes_split[[1]]
 class_descriptions <- subset(ST_family_classes, classname %in% afamily_classes)
 class_descriptions[match(afamily_classes, class_descriptions$classname),]
 ```
