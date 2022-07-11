@@ -18,6 +18,7 @@ NULL
   invisible(requireNamespace(
     package = 'soilDB',
     versionCheck = list(op = ">=", version = package_version(min_version, strict = strict)),
-    quietly = quietly
+    quietly = quietly,
+    ...
   ))
 }
