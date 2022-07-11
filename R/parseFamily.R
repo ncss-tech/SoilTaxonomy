@@ -85,7 +85,8 @@ parse_family <- function(family, column_metadata = TRUE) {
     res3
   })
 
-  taxsub <- as.data.frame(do.call('rbind', lapply(decompose_taxon_code(res$subgroup_code), function(x) taxon_code_to_taxon(as.character(rev(x))))))
+  taxsub <- as.data.frame(do.call('rbind', lapply(decompose_taxon_code(res$subgroup_code), function(x) taxon_code_to_taxon(as.character(rev(x))))),
+                          stringsAsFactors = FALSE)
   colnames(taxsub) <- rev(c("taxorder", "taxsuborder", "taxgrtgroup", "taxsubgrp"))
   rownames(taxsub) <- NULL
 
@@ -102,12 +103,17 @@ parse_family <- function(family, column_metadata = TRUE) {
       classname = x$classname,
       ColumnPhysicalName = md$ColumnPhysicalName[match(x$classname, md$ChoiceName)]
     ))
-    cbind(`colnames<-`(as.data.frame(t(res5[[1]])), res5[[2]]), taxsub[i, ])
+    cbind(`colnames<-`(as.data.frame(t(res5[[1]]), stringsAsFactors = FALSE), res5[[2]]), taxsub[i, ])
   })
 
-  basetbl <- as.data.frame(`names<-`(rep(list(numeric(0)), 10), c("taxpartsize", "taxpartsizemod", "taxminalogy", "taxceactcl", "taxreaction", "taxtempcl", "taxsubgroup", "taxgreatgroup",
-                                                                  "taxsuborder", "taxorder")))
-  as.data.frame(data.table::rbindlist(c(list(basetbl), res4), fill = TRUE))
+  basetbl <- as.data.frame(`names<-`(rep(list(numeric(0)), 10), c("taxpartsize", "taxpartsizemod",
+                                                                  "taxminalogy", "taxceactcl",
+                                                                  "taxreaction", "taxtempcl",
+                                                                  "taxsubgroup", "taxgreatgroup",
+                                                                  "taxsuborder", "taxorder")),
+                           stringsAsFactors = FALSE)
+  as.data.frame(data.table::rbindlist(c(list(basetbl), res4), fill = TRUE),
+                stringsAsFactors = FALSE)
 }
 
 
