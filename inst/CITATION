@@ -1,0 +1,11 @@
+citHeader("To cite SoilTaxonomy in publications use:")
+
+citEntry(
+  entry = "Manual",
+  title = "SoilTaxonomy: A System of Soil Classification for Making and Interpreting Soil Surveys",
+  author = "Andrew Brown and Dylan Beaudette",
+  note = "R package version 0.2.0",
+  url = "https://CRAN.R-project.org/package=SoilTaxonomy",
+  year = "2022",
+  textVersion = "Brown, A., Beaudette, D.(2022). SoilTaxonomy: A System of Soil Classification for Making and Interpreting Soil Surveys. R package version 0.2.0. <https://CRAN.R-project.org/package=SoilTaxonomy>"
+)
