@@ -2,7 +2,7 @@
 % Please edit documentation in R/parseFamily.R
 \name{parse_family}
 \alias{parse_family}
-\title{Parse components of a family-level taxon name}
+\title{Parse Components of a "Family-level" Taxon Name}
 \usage{
 parse_family(family, column_metadata = TRUE)
 }
@@ -20,7 +20,7 @@ In addition, the following column names are identified and returned based on NAS
 }
 }
 \description{
-Parse components of a family-level taxon name
+Parse Components of a "Family-level" Taxon Name
 }
 \examples{
 \dontrun{

@@ -1,4 +1,4 @@
-#' Parse components of a family-level taxon name
+#' Parse Components of a "Family-level" Taxon Name
 #'
 #' @param family a character vector containing taxonomic families, e.g. `"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"`
 #' @param column_metadata include parsed NASIS physical column names and values from family taxon components? Default: `TRUE` requires soilDB package.
@@ -11,14 +11,14 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' families <- c("fine, kaolinitic, thermic typic kanhapludults",
-#'               "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
-#'               "euic, thermic typic haplosaprists",
-#'               "coarse-loamy, mixed, active, mesic aquic dystrudepts")
+#' if (!requireNamespace('soilDB')) {
+#'   families <- c("fine, kaolinitic, thermic typic kanhapludults",
+#'                 "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
+#'                 "euic, thermic typic haplosaprists",
+#'                 "coarse-loamy, mixed, active, mesic aquic dystrudepts")
 #'
-#' # inspect parsed list result
-#' str(parse_family(families))
+#'   # inspect parsed list result
+#'   str(parse_family(families))
 #' }
 #' @importFrom stringr str_locate
 parse_family <- function(family, column_metadata = TRUE) {
@@ -93,7 +93,7 @@ parse_family <- function(family, column_metadata = TRUE) {
   res4 <- lapply(seq_along(res2), function(i) {
     x <- res2[[i]]
     # md <- soilDB::get_NASIS_column_metadata(x$DomainID, "DomainID")
-    md <- metadata[x$DomainID == metadata$DomainID, ]
+    md <- metadata[metadata$DomainID %in% x$DomainID, ]
 
     # omitting the "duplicate" "osdtax..." columns within single domain
     # also taxtempcl used over taxtempregime (which has identical levels)
