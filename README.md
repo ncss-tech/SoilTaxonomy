@@ -4,7 +4,7 @@
 
 [![R-CMD-check](https://github.com/ncss-tech/SoilTaxonomy/workflows/R-CMD-check/badge.svg)](https://github.com/ncss-tech/SoilTaxonomy/actions/workflows/R-CMD-check.yml)
 [![Codecov test
-coverage](https://codecov.io/gh/ncss-tech/SoilTaxonomy/branch/master/graph/badge.svg)](https://codecov.io/gh/ncss-tech/SoilTaxonomy?branch=master)
+coverage](https://codecov.io/gh/ncss-tech/SoilTaxonomy/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ncss-tech/SoilTaxonomy?branch=master)
 [![CRAN
 Status](https://www.r-pkg.org/badges/version-last-release/SoilTaxonomy)](https://cran.r-project.org/package=SoilTaxonomy)
 [![runiverse-SoilTaxonomy](https://ncss-tech.r-universe.dev/badges/SoilTaxonomy)](https://github.com/ncss-tech/SoilTaxonomy)
