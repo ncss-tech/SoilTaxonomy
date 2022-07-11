@@ -33,3 +33,25 @@ test_that("parse_family(..., column_metadata = TRUE) works", {
                c("HCDN", "JDGR", "BDDH", "KFFK",
                  "HCDN", "JDGR", "BDDH", "KFFK"))
 })
+
+test_that("complex or uncommon family classes", {
+
+  # mapping of "diatomaceous" mineralogy class -> "diatomaceous earth" choicename for taxminalogy
+  x <- parse_family("DIATOMACEOUS, EUIC, FRIGID LIMNIC HAPLOHEMISTS")
+  expect_true(x$taxminalogy == "diatomaceous earth" && x$taxreaction == "euic")
+
+  # in domain order ortstein is a featkind and reskind (and several other things) before it is taxfamother
+  x <- parse_family("MEDIAL-SKELETAL, AMORPHIC, FRIGID, ORTSTEIN ANDIC DURIHUMODS")
+  expect_true(x$taxminalogy == "amorphic" && x$taxfamother == "ortstein")
+
+  # compound family classes such as "amorphic over isotic" for strongly contrasting control section
+  # cannot be looked up in the nasis domains (return NA), BUT they are still in $classes_split list column
+  x <- parse_family("MEDIAL-SKELETAL OVER LOAMY, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS")
+  expect_true(is.na(x$taxminalogy) && x$classes_split[[1]][2] == "AMORPHIC OVER ISOTIC")
+
+  # however, cases where more than one class return comma separated
+  x <- parse_family("SANDY, ISOTIC, FRIGID, SHALLOW, ORTSTEIN TYPIC DURORTHODS")
+  expect_equal(x$taxfamother, "shallow, ortstein")
+
+  # TODO: should there be a consistent list column interface that returns values 1:1 with domains?
+})
