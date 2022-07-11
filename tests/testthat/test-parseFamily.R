@@ -18,8 +18,6 @@ test_that("parse_family(..., column_metadata = FALSE) works", {
 
 test_that("parse_family(..., column_metadata = TRUE) works", {
 
-  skip_if_not_installed("soilDB", "2.7.3")
-
   families <- c("fine, kaolinitic, thermic typic kanhapludults",
                 "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
                 "euic, thermic typic haplosaprists",
