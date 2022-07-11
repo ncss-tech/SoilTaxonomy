@@ -20,7 +20,7 @@
 #'   # inspect parsed list result
 #'   str(parse_family(families))
 #' }
-#' @importFrom stringr str_locate
+#' @importFrom stringr str_locate fixed
 parse_family <- function(family, column_metadata = TRUE) {
 
   # for R CMD check
@@ -33,7 +33,7 @@ parse_family <- function(family, column_metadata = TRUE) {
 
   # lookup table sorted from largest to smallest (most specific to least)
   lut <- lut[order(nchar(lut), decreasing = TRUE)]
-  res <- lapply(tolower(family), function(x) stringr::str_locate(string = x, pattern = lut))
+  res <- lapply(tolower(family), function(x) stringr::str_locate(string = x, pattern = stringr::fixed(lut)))
 
   # take the first match (in SORTED lut)
   subgroup.idx <- sapply(res, function(x) which(!is.na(x[,1]))[1])
