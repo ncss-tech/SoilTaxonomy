@@ -19,7 +19,8 @@ Suggests:
     covr,
     knitr,
     rmarkdown,
-    markdown
+    markdown,
+    soilDB
 RoxygenNote: 7.2.0
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr
