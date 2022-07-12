@@ -2,7 +2,7 @@
 % Please edit documentation in R/diagnostic-features.R
 \name{get_ST_features}
 \alias{get_ST_features}
-\title{Get diagnostic horizons, characteristics and features}
+\title{Get soil diagnostic horizons, characteristics and features}
 \usage{
 get_ST_features(
   group = NULL,

@@ -45,15 +45,16 @@ test_that("complex or uncommon family classes", {
   expect_true(x$taxminalogy == "amorphic" && x$taxfamother == "ortstein")
 
   # compound family classes such as "amorphic over isotic" for strongly contrasting control section
-  # cannot be looked up in the nasis domains (return NA), BUT they are still in $classes_split list column
   x <- parse_family("MEDIAL-SKELETAL OVER LOAMY-SKELETAL, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS")
-  expect_true(is.na(x$taxminalogy) &&
+  expect_true(x$taxminalogy == "amorphic, isotic" &&
                 x$taxpartsize == "medial-skeletal over loamy-skeletal",
                 x$classes_split[[1]][2] == "AMORPHIC OVER ISOTIC")
+
+  # test flat=FALSE (returns list columns)
+  x <- parse_family("MEDIAL-SKELETAL OVER LOAMY-SKELETAL, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS", flat = FALSE)
+  expect_equal(x$taxminalogy, I(list(c(taxminalogy1="amorphic", taxminalogy2="isotic"))))
 
   # however, cases where more than one class return comma separated
   x <- parse_family("SANDY, ISOTIC, FRIGID, SHALLOW, ORTSTEIN TYPIC DURORTHODS")
   expect_equal(x$taxfamother, "shallow, ortstein")
-
-  # TODO: should there be a consistent list column interface that returns values 1:1 with domains?
 })

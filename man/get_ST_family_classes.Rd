@@ -2,7 +2,7 @@
 % Please edit documentation in R/family-classes.R
 \name{get_ST_family_classes}
 \alias{get_ST_family_classes}
-\title{Get Family and Series Differentiae and Names}
+\title{Get soil family / series differentiae and class names}
 \usage{
 get_ST_family_classes(
   classname = NULL,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/family-classes.R
 \name{parse_family}
 \alias{parse_family}
-\title{Parse Components of a "Family-level" Taxon Name}
+\title{Parse components of a "family-level" taxon name}
 \usage{
 parse_family(family, column_metadata = TRUE, flat = TRUE)
 }
@@ -22,10 +22,10 @@ In addition, the following column names are identified and returned based on NAS
 }
 }
 \description{
-Parse Components of a "Family-level" Taxon Name
+Parse components of a "family-level" taxon name
 }
 \examples{
-if (!requireNamespace('soilDB')) {
+if (requireNamespace('soilDB')) {
   families <- c("fine, kaolinitic, thermic typic kanhapludults",
                 "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs",
                 "euic, thermic typic haplosaprists",
