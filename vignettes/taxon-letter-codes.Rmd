@@ -1,8 +1,6 @@
 ---
 title: "Taxon Letter Codes in Soil Taxonomy"
 output: rmarkdown::html_vignette
-author: Andrew Brown
-date: 2021-04-18
 vignette: >
   %\VignetteIndexEntry{Taxon Letter Codes in Soil Taxonomy}
   %\VignetteEngine{knitr::rmarkdown}
@@ -147,7 +145,7 @@ decompose_taxon_code(c("BAA","BAB"))
 
 ## `preceding_taxon_codes()` and `relative_taxon_code_position()`
 
-Other unctions useful for comparing relative positions within Keys, or the number of "steps" that it takes to reach a particular taxon, are `preceding_taxon_codes()` and `relative_taxon_code_positon()`.
+Other functions useful for comparing relative positions within Keys, or the number of "steps" that it takes to reach a particular taxon, are `preceding_taxon_codes()` and `relative_taxon_code_position()`.
 
 `preceding_taxon_codes()` returns a list of vectors containing all preceding codes. 
 
