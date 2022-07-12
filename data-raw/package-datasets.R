@@ -155,7 +155,7 @@ ST_family_classes$FeatureID <- c(
   # "other family class" = MULTIPLE LOCATIONS,
   "temperature class" = 120,
   "moisture regime" = 85,
-  "soil moisture class" = 87,
+  # "soil moisture class" = 87,
   "activity class" = 115,
   "human-altered and human transported class" = 108
 )[as.character(ST_family_classes$group)]
@@ -189,20 +189,22 @@ smsubcl <- data.frame(group = "Mineral or Organic", name = "Soil Moisture Subcla
 fmsubcl <- data.frame(group = "Mineral or Organic", name = "Other Family Classes",
                       chapter = NA, page = NA, description = "These are 'other' family-level differentiae as described in Soil Taxonomy.", criteria = "", FeatureID = 902)
 
-feature_data <- rbind(feature_data, smsubcl, fmsubcl)
+feature_data <- rbind(subset(feature_data, !is.na(group)), smsubcl, fmsubcl)
 
 ST_family_classes_before <- ST_family_classes
 ST_family_classes <- merge(
   ST_family_classes[, !colnames(ST_family_classes) %in% c("group", "name")],
-  feature_data,
+  subset(feature_data, !is.na(FeatureID)),
   by = "FeatureID",
   all.x = TRUE,
   sort = FALSE,
   incomparables = NA
 )
 
-# remove NASIS domain ID? and internal "feature ID" referencing list from SKB
+# ignore soil temperature class
+ST_family_classes <- subset(ST_family_classes, DomainID != 188)
+
+# remove internal "feature ID" referencing list from SKB
 ST_family_classes$FeatureID <- NULL
-ST_family_classes$DomainID <- NULL
 
 usethis::use_data(ST_family_classes, overwrite = TRUE)

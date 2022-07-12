@@ -57,7 +57,8 @@ head(ST_family_classes)
 Here we determine the family-level classes for a single taxonomic family and match them to the class descriptions stored in `ST_family_classes` using `get_ST_family_classes()`. Here we set `parse_family(..., column_metadata=FALSE)` to _not_ parse family components into corresponding NASIS domains (requires soilDB).
 
 ```{r}
-family_classes <- parse_family("fine-loamy, mixed, semiactive, mesic ultic haploxeralfs", column_metadata = FALSE)$classes_split[[1]]
+f <- "fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"
+family_classes <- parse_family(f, column_metadata = FALSE)$classes_split[[1]]
 
 get_ST_family_classes(classname = family_classes)
 ```

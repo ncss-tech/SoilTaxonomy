@@ -1,7 +1,8 @@
 #' Parse Components of a "Family-level" Taxon Name
 #'
-#' @param family a character vector containing taxonomic families, e.g. `"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"`
-#' @param column_metadata include parsed NASIS physical column names and values from family taxon components? Default: `TRUE` requires soilDB package.
+#' @param family character. vector of taxonomic families, e.g. `"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"`
+#' @param column_metadata logical. include parsed NASIS physical column names and values from family taxon components? Default: `TRUE` requires soilDB package.
+#' @param flat logical Default: `TRUE` to return concatenated family-level classes for `"taxminalogy"` and `"taxfamother"`? Alternately, if `FALSE`, list columns are returned.
 #'
 #' @return a `data.frame` containing column names: `"family"` (input), `"subgroup"` (parsed taxonomic subgroup), `"subgroup_code"` (letter code for subgroup), `"class_string"` (comma-separated family classes), `"classes_split"` (split class_string vector stored as `list` column).
 #'
@@ -21,7 +22,7 @@
 #'   str(parse_family(families))
 #' }
 #' @importFrom stringr str_locate fixed
-parse_family <- function(family, column_metadata = TRUE) {
+parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
 
   # for R CMD check
   ST_unique_list <- NULL
@@ -56,7 +57,7 @@ parse_family <- function(family, column_metadata = TRUE) {
 
 #' @import data.table
 #' @importFrom utils type.convert
-.get_family_differentiae <- function(res) {
+.get_family_differentiae <- function(res, flat = TRUE) {
 
   metadata <- NULL
   if (!requireNamespace("soilDB")) {
@@ -126,10 +127,14 @@ parse_family <- function(family, column_metadata = TRUE) {
   #  many:1, since we know these were previously comma-separated we re-concatenate with comma
   #  TODO: the algorithm does not currently try to separate and re-parse " over " type logic
   multi.names <- c("taxminalogy", "taxfamother")
+  .FUN <- function(x) strsplit(x, " over ", fixed = TRUE)
+  .flat_FUN <- function(x) paste0(x, collapse = ", ")
+  if (flat) {
+    .FUN <- .flat_FUN
+  }
   res5[multi.names] <- lapply(multi.names, function(n) {
-    apply(res5[colnames(res5) %in% n], 1, paste0, collapse = ", ")
+    apply(res5[colnames(res5) %in% n], 1, .FUN)
   })
-
   res5 <- type.convert(res5[allowed.names], as.is = TRUE)
   res5
 }
@@ -166,7 +171,7 @@ parse_family <- function(family, column_metadata = TRUE) {
 #' get_ST_family_classes(page = 322:323)
 #'
 #' # get the required characteristics for the mollic epipedon from list column
-#' str(get_ST_family_classes(name = "mesic")$criteria)
+#' str(get_ST_family_classes(classname = "mesic")$description)
 #'
 get_ST_family_classes <- function(classname = NULL,
                                 group = NULL,

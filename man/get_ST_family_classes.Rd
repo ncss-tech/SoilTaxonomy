@@ -52,7 +52,7 @@ str(get_ST_family_classes(chapter = 17))
 get_ST_family_classes(page = 322:323)
 
 # get the required characteristics for the mollic epipedon from list column
-str(get_ST_family_classes(name = "mesic")$criteria)
+str(get_ST_family_classes(classname = "mesic")$description)
 
 }
 \seealso{

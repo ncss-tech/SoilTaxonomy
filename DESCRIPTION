@@ -24,3 +24,4 @@ Suggests:
 RoxygenNote: 7.2.0
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr
+LazyData: false
