@@ -14,17 +14,17 @@ get_ST_features(
 )
 }
 \arguments{
-\item{group}{optional filtering vector; one of: "Surface", "Subsurface", "Mineral", "Organic", "Mineral or Organic"}
+\item{group}{optional filtering vector; one of: \code{"Surface"}, \code{"Subsurface"}, \code{"Mineral"}, \code{"Organic"}, \code{"Mineral or Organic"}}
 
-\item{chapter}{optional filtering vector; only chapter \code{3} currently}
+\item{chapter}{optional filtering vector for chapter number}
 
 \item{name}{optional filtering vector; these are the "names" of features used in headers}
 
 \item{page}{optional filtering vector; page number (12th Edition Keys to Soil Taxonomy)}
 
-\item{multiline_sep}{default \code{"\\n"} returns \code{multiline_col} column as a character vector concatenated with \code{"\\\\n"}. Use \code{NULL} for list}
+\item{multiline_sep}{default \code{"\\n"} returns \code{multiline_col} column as a character vector concatenated with \code{"\\n"}. Use \code{NULL} for list}
 
-\item{multiline_col}{character. vector of "multiline" column names to concatenate. Default: \code{"criteria"}; use \code{NULL} for no concatenation.}
+\item{multiline_col}{character. vector of "multi-line" column names to concatenate. Default: \code{"criteria"}; use \code{NULL} for no concatenation.}
 }
 \value{
 a subset of \code{ST_features} \emph{data.frame}
@@ -51,5 +51,5 @@ str(get_ST_features(name = "Mollic Epipedon")$criteria)
 
 }
 \seealso{
-\code{ST_features}
+\code{ST_features} \code{ST_family_classes} \code{get_ST_family_classes()}
 }

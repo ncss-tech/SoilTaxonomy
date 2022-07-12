@@ -25,36 +25,33 @@ get_ST_family_classes(
 
 \item{page}{optional filtering vector; page number (12th Edition Keys to Soil Taxonomy)}
 
-\item{multiline_sep}{default \code{"\\n"} returns \code{criteria} column as a character vector concatenated with \code{"\\\\n"}. Use \code{NULL} for list}
+\item{multiline_sep}{default \code{"\\n"} returns \code{multiline_col} column as a character vector concatenated with \code{"\\n"}. Use \code{NULL} for list}
 
-\item{multiline_col}{character. vector of "multiline" column names to concatenate. Default: \code{"criteria"}; use \code{NULL} for no concatenation.}
+\item{multiline_col}{character. vector of "multi-line" column names to concatenate. Default: \code{"criteria"}; use \code{NULL} for no concatenation.}
 }
 \value{
-a data.frame
+a \emph{data.frame}
 
-a subset of \code{ST_family_class} \emph{data.frame}
+a subset of \code{ST_family_classes} \emph{data.frame}
 }
 \description{
 All parameters to this function are optional (default \code{NULL}). If specified, they are used as filters.
 }
 \details{
-This is a wrapper method around the package data set \code{ST_features}.
+This is a wrapper method around the package data set \code{ST_family_classes}.
 }
 \examples{
 
-# get all features
-str(get_ST_family_classes())
-
-# get features in chapter 17
+# get classes in chapter 17
 str(get_ST_family_classes(chapter = 17))
 
-# get features on pages 322:323
-get_ST_family_classes(page = 322:323)
+# get classes on page 323
+get_ST_family_classes(page = 323)
 
-# get the required characteristics for the mollic epipedon from list column
+# get the description for the mesic temperature class from list column
 str(get_ST_family_classes(classname = "mesic")$description)
 
 }
 \seealso{
-\code{ST_family_class}
+\code{ST_family_classes} \code{ST_features} \code{get_ST_features()}
 }

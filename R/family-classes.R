@@ -143,34 +143,31 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
 #'
 #' All parameters to this function are optional (default `NULL`). If specified, they are used as filters.
 #'
-#' This is a wrapper method around the package data set `ST_features`.
+#' This is a wrapper method around the package data set `ST_family_classes`.
 #'
 #' @param classname optional filtering vector; levels of `ChoiceName` column from NASIS metadata
 #' @param group optional filtering vector; one or more of: `"Mineral Family"`, `"Organic Family"`, `"Mineral or Organic"`
 #' @param chapter optional filtering vector for chapter number
 #' @param name optional filtering vector; one or more of: `"Mineralogy Classes"`, `"Mineralogy Classes Applied Only to Limnic Subgroups"`, `"Mineralogy Classes Applied Only to Terric Subgroups"`, `"Key to the Particle-Size and Substitute Classes of Mineral Soils"`, `"Calcareous and Reaction Classes of Mineral Soils"`, `"Reaction Classes for Organic Soils"`, `"Soil Moisture Subclasses"`, `"Other Family Classes"`, `"Soil Temperature Classes"`, `"Soil Moisture Regimes"`, `"Cation-Exchange Activity Classes"`, `"Use of Human-Altered and Human-Transported Material Classes"`
 #' @param page optional filtering vector; page number (12th Edition Keys to Soil Taxonomy)
-#' @param multiline_sep default `"\n"` returns `criteria` column as a character vector concatenated with `"\\n"`. Use `NULL` for list
-#' @param multiline_col character. vector of "multiline" column names to concatenate. Default: `"criteria"`; use `NULL` for no concatenation.
-#' @return a data.frame
+#' @param multiline_sep default `"\n"` returns `multiline_col` column as a character vector concatenated with `"\n"`. Use `NULL` for list
+#' @param multiline_col character. vector of "multi-line" column names to concatenate. Default: `"criteria"`; use `NULL` for no concatenation.
+#' @return a _data.frame_
 #' @export
-#' @seealso `ST_family_class`
+#' @seealso `ST_family_classes` `ST_features` `get_ST_features()`
 #'
-#' @return a subset of `ST_family_class` _data.frame_
+#' @return a subset of `ST_family_classes` _data.frame_
 #' @export
 #'
 #' @examples
 #'
-#' # get all features
-#' str(get_ST_family_classes())
-#'
-#' # get features in chapter 17
+#' # get classes in chapter 17
 #' str(get_ST_family_classes(chapter = 17))
 #'
-#' # get features on pages 322:323
-#' get_ST_family_classes(page = 322:323)
+#' # get classes on page 323
+#' get_ST_family_classes(page = 323)
 #'
-#' # get the required characteristics for the mollic epipedon from list column
+#' # get the description for the mesic temperature class from list column
 #' str(get_ST_family_classes(classname = "mesic")$description)
 #'
 get_ST_family_classes <- function(classname = NULL,

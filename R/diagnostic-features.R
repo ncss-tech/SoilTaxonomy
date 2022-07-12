@@ -4,15 +4,15 @@
 #'
 #' This is a wrapper method around the package data set `ST_features`.
 #'
-#' @param group optional filtering vector; one of: "Surface", "Subsurface", "Mineral", "Organic", "Mineral or Organic"
-#' @param chapter optional filtering vector; only chapter `3` currently
+#' @param group optional filtering vector; one of: `"Surface"`, `"Subsurface"`, `"Mineral"`, `"Organic"`, `"Mineral or Organic"`
+#' @param chapter optional filtering vector for chapter number
 #' @param name optional filtering vector; these are the "names" of features used in headers
 #' @param page optional filtering vector; page number (12th Edition Keys to Soil Taxonomy)
-#' @param multiline_sep default `"\n"` returns `multiline_col` column as a character vector concatenated with `"\\n"`. Use `NULL` for list
-#' @param multiline_col character. vector of "multiline" column names to concatenate. Default: `"criteria"`; use `NULL` for no concatenation.
+#' @param multiline_sep default `"\n"` returns `multiline_col` column as a character vector concatenated with `"\n"`. Use `NULL` for list
+#' @param multiline_col character. vector of "multi-line" column names to concatenate. Default: `"criteria"`; use `NULL` for no concatenation.
 #' @return a subset of `ST_features` _data.frame_
 #' @export
-#' @seealso `ST_features`
+#' @seealso `ST_features` `ST_family_classes` `get_ST_family_classes()`
 #' @examples
 #'
 #' # get all features
