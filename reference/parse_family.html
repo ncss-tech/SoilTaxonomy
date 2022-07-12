@@ -69,17 +69,21 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">parse_family</span><span class="op">(</span><span class="va">family</span>, column_metadata <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">parse_family</span><span class="op">(</span><span class="va">family</span>, column_metadata <span class="op">=</span> <span class="cn">TRUE</span>, flat <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>family</dt>
-<dd><p>a character vector containing taxonomic families, e.g. <code>"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</code></p></dd>
+<dd><p>character. vector of taxonomic families, e.g. <code>"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</code></p></dd>
 
 
 <dt>column_metadata</dt>
-<dd><p>include parsed NASIS physical column names and values from family taxon components? Default: <code>TRUE</code> requires soilDB package.</p></dd>
+<dd><p>logical. include parsed NASIS physical column names and values from family taxon components? Default: <code>TRUE</code> requires soilDB package.</p></dd>
+
+
+<dt>flat</dt>
+<dd><p>logical Default: <code>TRUE</code> to return concatenated family-level classes for <code>"taxminalogy"</code> and <code>"taxfamother"</code>? Alternately, if <code>FALSE</code>, list columns are returned.</p></dd>
 
 </dl></div>
     <div id="value">
