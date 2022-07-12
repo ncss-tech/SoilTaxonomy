@@ -60,6 +60,20 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
 #' @importFrom stats setNames na.omit
 .get_family_differentiae <- function(res, flat = TRUE) {
 
+  .DOMAINS <- c(
+    `126` = "mineralogy class",
+    `127` = "particle-size class",
+    `128` = "reaction class",
+    `131` = "soil moisture subclass",
+    `184` = "other family class",
+    `185` = "temperature class",
+    `186` = "moisture regime",
+    `188` = "temperature regime",
+    `520` = "activity class",
+    `521` = "particle-size modifier",
+    `5247` = "human-altered and human transported class"
+  )
+
   metadata <- NULL
   if (!requireNamespace("soilDB")) {
     message("package `soilDB` is required to lookup NASIS column metadata correponding to taxonomic classes", call. = FALSE)
@@ -75,6 +89,12 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
   # lookup classes in KST definitions
   kst_lookup <- lapply(res$classes_split, function(x) {
       x <- tolower(x)
+
+      ###: CHOICE LIST PATCHES
+      # mapping of "diatomaceous" mineralogy class -> "diatomaceous earth" choicename for taxminalogy
+      x[x == "diatomaceous"] <- "diatomaceous earth"
+      ###
+      ###
       y <- tolower(ST_family_classes$classname)
       ldx <- grepl(' over ', x, fixed = TRUE) & !(x %in% y)
       if (sum(ldx) > 0) {
@@ -86,24 +106,24 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
         x <- c(xnew, xold)
         x <- do.call('c', x[order(as.integer(names(x)))])
       }
-      ST_family_classes[match(x, y), c("classname", "group", "name")]
+      ST_family_classes[match(x, y), c("classname", "group", "name", "DomainID")]
     })
 
   # lookup classname -> (possible) NASIS domain ID
-  nasis_family_classes <- metadata[c("ChoiceName", "DomainID")]
-  colnames(nasis_family_classes) <- c("classname", "DomainID")
+  nasis_family_classes <- metadata[c("ChoiceName", "DomainID", "ColumnPhysicalName")]
+  colnames(nasis_family_classes) <- c("classname", "DomainID", "ColumnPhysicalName")
+  nasis_family_classes <- nasis_family_classes[(nasis_family_classes$DomainID %in% names(.DOMAINS)) &
+                                                 (grepl("^tax", nasis_family_classes$ColumnPhysicalName)),]
 
   # combine KST and NASIS LUT
   res2 <- lapply(kst_lookup, function(x) {
-      ###: CHOICE LIST PATCHES
-      # mapping of "diatomaceous" mineralogy class -> "diatomaceous earth" choicename for taxminalogy
-      x$classname[x$classname == "diatomaceous"] <- "diatomaceous earth"
-      ###
-
-      res3 <- merge(x, nasis_family_classes[nasis_family_classes$classname %in% x$classname, ],
-            by = "classname", all.x = TRUE, sort = FALSE)
-      res3
-    })
+    merge(
+      x,
+      nasis_family_classes[nasis_family_classes$classname %in% x$classname, ],
+      by = c("classname", "DomainID"),
+      sort = FALSE
+    )
+  })
 
   taxsub <- as.data.frame(do.call('rbind', lapply(decompose_taxon_code(res$subgroup_code), function(x) taxon_code_to_taxon(as.character(rev(x))))),
                           stringsAsFactors = FALSE)

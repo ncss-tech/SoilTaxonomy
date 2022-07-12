@@ -5,7 +5,7 @@
 \alias{ST_family_classes}
 \title{Family-level Classes for Soil Taxonomy}
 \format{
-An object of class \code{data.frame} with 188 rows and 8 columns.
+An object of class \code{data.frame} with 193 rows and 8 columns.
 }
 \usage{
 data(ST_family_classes)

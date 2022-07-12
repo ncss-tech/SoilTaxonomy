@@ -54,7 +54,30 @@ test_that("complex or uncommon family classes", {
   x <- parse_family("MEDIAL-SKELETAL OVER LOAMY-SKELETAL, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS", flat = FALSE)
   expect_equal(x$taxminalogy, I(list(c(taxminalogy1="amorphic", taxminalogy2="isotic"))))
 
+
   # however, cases where more than one class return comma separated
   x <- parse_family("SANDY, ISOTIC, FRIGID, SHALLOW, ORTSTEIN TYPIC DURORTHODS")
   expect_equal(x$taxfamother, "shallow, ortstein")
+
+  x <- parse_family(c("FINE-SILTY, ISOTIC, ISOMESIC AQUANDIC DYSTRUDEPTS",
+                      "FINE, SMECTITIC, FRIGID LEPTIC UDIC HAPLUSTERTS",
+                      "SANDY, ISOTIC, FRIGID, SHALLOW, ORTSTEIN TYPIC DURORTHODS",
+                      "FINE, MIXED, ACTIVE, MESIC OXYAQUIC HAPLUDALFS",
+                      "MEDIAL-SKELETAL OVER LOAMY-SKELETAL, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS"),
+                    flat = TRUE)
+  expect_equal(x$taxminalogy, c("isotic", "smectitic", "isotic", "mixed", "amorphic, isotic"))
+  expect_equal(x$taxfamother, c(NA, NA, "shallow, ortstein", NA, NA))
+
+  # test flat=FALSE (many taxa)
+  x <- parse_family(c("FINE-SILTY, ISOTIC, ISOMESIC AQUANDIC DYSTRUDEPTS",
+                      "FINE, SMECTITIC, FRIGID LEPTIC UDIC HAPLUSTERTS",
+                      "SANDY, ISOTIC, FRIGID, SHALLOW, ORTSTEIN TYPIC DURORTHODS",
+                      "FINE, MIXED, ACTIVE, MESIC OXYAQUIC HAPLUDALFS",
+                      "MEDIAL-SKELETAL OVER LOAMY-SKELETAL, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS"),
+                    flat = FALSE)
+  expect_equal(x$taxminalogy, I(list(c(taxminalogy1 = "isotic", taxminalogy2 = NA),
+                                     c(taxminalogy1 = "smectitic", taxminalogy2 = NA),
+                                     c(taxminalogy1 = "isotic", taxminalogy2 = NA),
+                                     c(taxminalogy1 = "mixed", taxminalogy2 = NA),
+                                     c(taxminalogy1 = "amorphic", taxminalogy2 = "isotic"))))
 })

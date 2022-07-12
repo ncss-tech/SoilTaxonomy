@@ -1,6 +1,7 @@
 # SoilTaxonomy 0.2.0 (2022-07-12)
  * New vignette related to soil diagnostic features and characteristics `get_ST_features()`
  * New function `get_ST_family_classes()` (the `ST_family_classes` analogue of `ST_features`/`get_ST_features()`)
+ * `ST_family_classes` gains information on the `"aniso"` particle-size class modifier
  * `parse_family()` now returns additional columns reflecting NASIS physical column names corresponding to components of the family-level taxonomy
     * This routine uses the NASIS metadata that ares cached in the {soilDB} package, which has been added to Suggests
     * `parse_family()` gains `flat` argument (default `TRUE`) to toggle returning list columns for "child" table taxonomic family data such as mineralogy class and "other" taxonomic family class.

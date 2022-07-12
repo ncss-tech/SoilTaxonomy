@@ -1,11 +1,61 @@
 ## code to prepare package datasets goes here
-## 2021-04-15
+## 2022-07-12
 ## D.E. Beaudette, A.G. Brown
 ##
 ## Rebuild /data directory of SoilTaxonomy R package from flat files/products from NASIS in /misc
 
+library(soilDB)
+library(SoilTaxonomy)
+
+channel <- NASIS()
+ST.orders <- dbQueryNASIS(channel, "SELECT ChoiceName as soilorder FROM MetadataDomainDetail WHERE DomainID = 132 AND ChoiceObsolete = 0", close=FALSE)
+ST.suborders <- dbQueryNASIS(channel, "SELECT ChoiceName as suborder FROM MetadataDomainDetail WHERE DomainID = 134 AND ChoiceObsolete = 0", close=FALSE)
+ST.greatgroups <- dbQueryNASIS(channel, "SELECT ChoiceName as greatgroup FROM MetadataDomainDetail WHERE DomainID = 130 AND ChoiceObsolete = 0", close=FALSE)
+ST.subgroups <- dbQueryNASIS(channel, "SELECT ChoiceName as subgroup FROM MetadataDomainDetail WHERE DomainID = 187 AND ChoiceObsolete = 0", close=FALSE)
+ST.family.classes <- dbQueryNASIS(channel, "SELECT DomainID, ChoiceName as classname FROM MetadataDomainDetail WHERE DomainID IN ('126','127','128','131','184','185','186','188','520','521','5247') AND ChoiceObsolete = 0", close=TRUE)
+
+ST.family.classes$group <- c(
+  `126` = "mineralogy class",
+  `127` = "particle-size class",
+  `128` = "reaction class",
+  `131` = "soil moisture subclass",
+  `184` = "other family class",
+  `185` = "temperature class",
+  `186` = "moisture regime",
+  `188` = "temperature regime",
+  `520` = "activity class",
+  `521` = "particle-size modifier",
+  `5247` = "human-altered and human transported class"
+)[as.character(ST.family.classes$DomainID)]
+
+# convert to vectors
+ST.orders <- ST.orders$soilorder
+ST.suborders <- ST.suborders$suborder
+ST.greatgroups <- ST.greatgroups$greatgroup
+ST.subgroups <- ST.subgroups$subgroup
+
+# compose into single DF, populate with subgroups as starting point
+ST <- data.frame(order=NA, suborder=NA, greatgroup=NA, subgroup=ST.subgroups, stringsAsFactors = FALSE)
+
+# associate subgroup with parent greatgroup: OK
+ST$greatgroup <- getTaxonAtLevel(ST$subgroup, "greatgroup")
+
+# associate great group with parent sub order:
+ST$suborder <- getTaxonAtLevel(ST$subgroup, "suborder")
+ST$order <- getTaxonAtLevel(ST$subgroup, "order")
+
+# re-order
+ST <- ST[order(ST$order, ST$suborder, ST$greatgroup), ]
+
+# drop taxa that do not exist in lookup tables
+ST <- ST[which(complete.cases(ST)),]
+
+write.csv(ST, file='data-raw/ST-full.csv', row.names=FALSE, quote = FALSE)
+
+write.csv(ST.family.classes, file='data-raw/ST-family-classes.csv', row.names=FALSE, quote = FALSE)
+
 ## ST to the subgroup level, simple data.frame
-ST <- read.csv('misc/ST-data/ST-full.csv', stringsAsFactors = FALSE)
+ST <- read.csv('data-raw/ST-full.csv', stringsAsFactors = FALSE)
 usethis::use_data(ST, overwrite = TRUE)
 
 ## unique taxa, sorted by appearance in the 'Keys
@@ -15,7 +65,6 @@ ST_unique_list <- list()
 # requires codes / taxa list
 load('data/ST_higher_taxa_codes_12th.rda')
 load('data/ST.rda')
-
 
 # re-arrange taxa according to letter codes in the 'Keys
 .uniqueTaxaLogicalOrdering <- function(x) {
@@ -122,7 +171,7 @@ rownames(ST_features) <- NULL
 usethis::use_data(ST_features, overwrite = TRUE)
 
 ## get NASIS class names (family-level taxonomy)
-ST_family_classes <- read.csv('misc/ST-data/ST-family-classes.csv', stringsAsFactors = FALSE)
+ST_family_classes <- read.csv('data-raw/ST-family-classes.csv', stringsAsFactors = FALSE)
 
 # Join in chapter and page information from latest Keys
 #
