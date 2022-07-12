@@ -103,21 +103,22 @@
 
 
 <dt>multiline_sep</dt>
-<dd><p>default <code>"\n"</code> returns <code>criteria</code> column as a character vector concatenated with <code>"\\n"</code>. Use <code>NULL</code> for list</p></dd>
+<dd><p>default <code>"\n"</code> returns <code>multiline_col</code> column as a character vector concatenated with <code>"\n"</code>. Use <code>NULL</code> for list</p></dd>
 
 
 <dt>multiline_col</dt>
-<dd><p>character. vector of "multiline" column names to concatenate. Default: <code>"criteria"</code>; use <code>NULL</code> for no concatenation.</p></dd>
+<dd><p>character. vector of "multi-line" column names to concatenate. Default: <code>"criteria"</code>; use <code>NULL</code> for no concatenation.</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
     
 
-<p>a data.frame</p>
+<p>a <em>data.frame</em></p>
 
 
-<p>a subset of <code>ST_family_class</code></p>
+
+<p>a subset of <code>ST_family_classes</code></p>
 <p></p>
 <p><em>data.frame</em></p>
 
@@ -125,29 +126,17 @@
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>This is a wrapper method around the package data set <code>ST_features</code>.</p>
+    <p>This is a wrapper method around the package data set <code>ST_family_classes</code>.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p><code>ST_family_class</code></p></div>
+    <div class="dont-index"><p><code>ST_family_classes</code> <code>ST_features</code> <code><a href="get_ST_features.html">get_ST_features()</a></code></p></div>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># get all features</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">get_ST_family_classes</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 'data.frame':	188 obs. of  8 variables:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ DomainID   : int  126 126 126 126 126 126 126 126 126 126 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ classname  : chr  "gibbsitic" "glassy" "ferruginous" "allitic" ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ group      : chr  "Mineral Family" "Mineral Family" "Mineral Family" "Mineral Family" ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ name       : chr  "Mineralogy Classes" "Mineralogy Classes" "Mineralogy Classes" "Mineralogy Classes" ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ chapter    : int  17 17 17 17 17 17 17 17 17 17 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ page       : int  325 325 325 325 325 325 325 325 325 325 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ description: chr  "The mineralogy of soils is known to be useful in making predictions about soil behavior and responses to manage"| __truncated__ "The mineralogy of soils is known to be useful in making predictions about soil behavior and responses to manage"| __truncated__ "The mineralogy of soils is known to be useful in making predictions about soil behavior and responses to manage"| __truncated__ "The mineralogy of soils is known to be useful in making predictions about soil behavior and responses to manage"| __truncated__ ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ criteria   : chr  "" "" "" "" ...</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># get features in chapter 17</span></span></span>
+<span class="r-in"><span><span class="co"># get classes in chapter 17</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">get_ST_family_classes</span><span class="op">(</span>chapter <span class="op">=</span> <span class="fl">17</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 'data.frame':	165 obs. of  8 variables:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ DomainID   : int  126 126 126 126 126 126 126 126 126 126 ...</span>
@@ -159,8 +148,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ description: chr  "The mineralogy of soils is known to be useful in making predictions about soil behavior and responses to manage"| __truncated__ "The mineralogy of soils is known to be useful in making predictions about soil behavior and responses to manage"| __truncated__ "The mineralogy of soils is known to be useful in making predictions about soil behavior and responses to manage"| __truncated__ "The mineralogy of soils is known to be useful in making predictions about soil behavior and responses to manage"| __truncated__ ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ criteria   : chr  "" "" "" "" ...</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># get features on pages 322:323</span></span></span>
-<span class="r-in"><span><span class="fu">get_ST_family_classes</span><span class="op">(</span>page <span class="op">=</span> <span class="fl">322</span><span class="op">:</span><span class="fl">323</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># get classes on page 323</span></span></span>
+<span class="r-in"><span><span class="fu">get_ST_family_classes</span><span class="op">(</span>page <span class="op">=</span> <span class="fl">323</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     DomainID       classname          group</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 177     5247          araric Mineral Family</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 178     5247      artifactic Mineral Family</span>
@@ -214,7 +203,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 187 A. 200 cm; or\nB. The lower boundary of the deepest horizon formed in human-altered or human-transported material; or\nC. A lithic or paralithic contact.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 188 A. 200 cm; or\nB. The lower boundary of the deepest horizon formed in human-altered or human-transported material; or\nC. A lithic or paralithic contact.</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># get the required characteristics for the mollic epipedon from list column</span></span></span>
+<span class="r-in"><span><span class="co"># get the description for the mesic temperature class from list column</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">get_ST_family_classes</span><span class="op">(</span>classname <span class="op">=</span> <span class="st">"mesic"</span><span class="op">)</span><span class="op">$</span><span class="va">description</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  chr "Soil temperature classes, as named and defined here, are used as part of the family name in both mineral and or"| __truncated__</span>
 <span class="r-in"><span></span></span>
