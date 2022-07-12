@@ -51,11 +51,11 @@ parse_family <- function(family, column_metadata = TRUE) {
 
   if (!column_metadata)
     return(res)
-  cbind(res, .get_family_differentia(res))
+  cbind(res, .get_family_differentiae(res))
 }
 
 #' @import data.table
-.get_family_differentia <- function(res) {
+.get_family_differentiae <- function(res) {
 
   metadata <- NULL
   if (!requireNamespace("soilDB")) {

@@ -90,7 +90,7 @@ We can infer from the length of the four-letter codes that all of the above are 
 taxon_to_level(c("Hemic Glacistels","Sapric Glacistels","Typic Glacistels"))
 ```
 
-`taxon_to_level()` can also identify a fifth (lower-level) _family_ tier (`level="family"`). Soil family differentia are not handled in the Order to Subgroup keys. Family names are defined by concatenating comma-separated class names on to the subgroup. Classes used in family names are determined by specific keys and apply variably depending on the subgroup-level taxonomy.
+`taxon_to_level()` can also identify a fifth (lower-level) _family_ tier (`level="family"`). Soil family differentiae are not handled in the Order to Subgroup keys. Family names are defined by concatenating comma-separated class names on to the subgroup. Classes used in family names are determined by specific keys and apply variably depending on the subgroup-level taxonomy.
 
 For instance, the soil family `"Fine, mixed, semiactive, mesic Ultic Haploxeralfs"` includes a particle-size class (`"fine"`), a mineralogy class (`"mixed"`), a cation exchange capacity (CEC) activity class (`"semiactive"`) and a temperature class (`"mesic"`)
 

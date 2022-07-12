@@ -65,7 +65,7 @@ ST_feature_SKB$criteria <- lapply(ST_feature_SKB$criteria, stringi::stri_enc_toa
 # check
 sapply(ST_feature_SKB$criteria, function(x) all(stringi::stri_enc_isascii(x)))
 
-# types of soil materials and their differentia
+# types of soil materials and their differentiae
 materials <- ST_feature_SKB[1:7,]
 
 # there are headers and some explanatory sections in this chapter
@@ -187,7 +187,7 @@ smsubcl <- data.frame(group = "Mineral or Organic", name = "Soil Moisture Subcla
                       chapter = NA, page = NA, description = "Soil moisture subclasses are used to depict intragrades between Soil Moisture Regimes.", criteria = "", FeatureID = 901)
 
 fmsubcl <- data.frame(group = "Mineral or Organic", name = "Other Family Classes",
-                      chapter = NA, page = NA, description = "These are 'other' family-level differentia as described in Soil Taxonomy.", criteria = "", FeatureID = 902)
+                      chapter = NA, page = NA, description = "These are 'other' family-level differentiae as described in Soil Taxonomy.", criteria = "", FeatureID = 902)
 
 feature_data <- rbind(feature_data, smsubcl, fmsubcl)
 

@@ -64,7 +64,7 @@ data('ST_higher_taxa_codes_12th', package = 'SoilTaxonomy')
 # definitions of diagnostic features and characteristics (12th Edition Keys to Soil Taxonomy)
 data('ST_features', package = 'SoilTaxonomy')
 
-# definitions of family-level classes and differentia (12th Edition Keys to Soil Taxonomy)
+# definitions of family-level classes and differentiae (12th Edition Keys to Soil Taxonomy)
 data('ST_family_classes', package = 'SoilTaxonomy')
 ```
 
