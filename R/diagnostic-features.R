@@ -36,19 +36,8 @@ get_ST_features <- function(group = NULL,
   ST_features <- NULL
   load(system.file("data/ST_features.rda", package = "SoilTaxonomy")[1])
 
-  # get full set of features
-  res <- ST_features
-
-  filtargs <- c(
-    "group" = !is.null(group),
-    "chapter" = !is.null(chapter),
-    "name" = !is.null(name),
-    "page" = !is.null(page)
-  )
-
   .data_filter(
-    .data = res,
-    filtargs = filtargs,
+    .data = ST_features,
     group = group,
     chapter = chapter,
     name = name,

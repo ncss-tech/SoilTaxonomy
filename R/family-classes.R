@@ -184,20 +184,8 @@ get_ST_family_classes <- function(classname = NULL,
   ST_family_classes <- NULL
   load(system.file("data/ST_family_classes.rda", package = "SoilTaxonomy")[1])
 
-  # get full set of features
-  res <- ST_family_classes
-
-  filtargs <- c(
-    "classname" = !is.null(classname),
-    "group" = !is.null(group),
-    "chapter" = !is.null(chapter),
-    "name" = !is.null(name),
-    "page" = !is.null(page)
-  )
-
   .data_filter(
-    .data = res,
-    filtargs = filtargs,
+    .data = ST_family_classes,
     classname = classname,
     group = group,
     chapter = chapter,
