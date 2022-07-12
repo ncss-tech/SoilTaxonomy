@@ -9,7 +9,8 @@ get_ST_features(
   chapter = NULL,
   name = NULL,
   page = NULL,
-  multiline_sep = "\\\\n"
+  multiline_sep = "\\n",
+  multiline_col = "criteria"
 )
 }
 \arguments{
@@ -21,10 +22,12 @@ get_ST_features(
 
 \item{page}{optional filtering vector; page number (12th Edition Keys to Soil Taxonomy)}
 
-\item{multiline_sep}{default \code{"\\\\n"} returns \code{criteria} column as a character vector concatenated with \code{"\\\\n"}. Use \code{NULL} for list}
+\item{multiline_sep}{default \code{"\\n"} returns \code{multiline_col} column as a character vector concatenated with \code{"\\\\n"}. Use \code{NULL} for list}
+
+\item{multiline_col}{character. vector of "multiline" column names to concatenate. Default: \code{"criteria"}; use \code{NULL} for no concatenation.}
 }
 \value{
-a data.frame
+a subset of \code{ST_features} \emph{data.frame}
 }
 \description{
 All parameters to this function are optional (default \code{NULL}). If specified, they are used as filters.
@@ -48,5 +51,5 @@ str(get_ST_features(name = "Mollic Epipedon")$criteria)
 
 }
 \seealso{
-ST_features
+\code{ST_features}
 }

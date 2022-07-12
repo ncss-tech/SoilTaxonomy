@@ -55,6 +55,7 @@ parse_family <- function(family, column_metadata = TRUE) {
 }
 
 #' @import data.table
+#' @importFrom utils type.convert
 .get_family_differentiae <- function(res) {
 
   metadata <- NULL
@@ -133,4 +134,71 @@ parse_family <- function(family, column_metadata = TRUE) {
   res5
 }
 
+#' Get Family and Series Differentiae and Names
+#'
+#' All parameters to this function are optional (default `NULL`). If specified, they are used as filters.
+#'
+#' This is a wrapper method around the package data set `ST_features`.
+#'
+#' @param classname optional filtering vector; levels of `ChoiceName` column from NASIS metadata
+#' @param group optional filtering vector; one or more of: `"Mineral Family"`, `"Organic Family"`, `"Mineral or Organic"`
+#' @param chapter optional filtering vector for chapter number
+#' @param name optional filtering vector; one or more of: `"Mineralogy Classes"`, `"Mineralogy Classes Applied Only to Limnic Subgroups"`, `"Mineralogy Classes Applied Only to Terric Subgroups"`, `"Key to the Particle-Size and Substitute Classes of Mineral Soils"`, `"Calcareous and Reaction Classes of Mineral Soils"`, `"Reaction Classes for Organic Soils"`, `"Soil Moisture Subclasses"`, `"Other Family Classes"`, `"Soil Temperature Classes"`, `"Soil Moisture Regimes"`, `"Cation-Exchange Activity Classes"`, `"Use of Human-Altered and Human-Transported Material Classes"`
+#' @param page optional filtering vector; page number (12th Edition Keys to Soil Taxonomy)
+#' @param multiline_sep default `"\n"` returns `criteria` column as a character vector concatenated with `"\\n"`. Use `NULL` for list
+#' @param multiline_col character. vector of "multiline" column names to concatenate. Default: `"criteria"`; use `NULL` for no concatenation.
+#' @return a data.frame
+#' @export
+#' @seealso `ST_family_class`
+#'
+#' @return a subset of `ST_family_class` _data.frame_
+#' @export
+#'
+#' @examples
+#'
+#' # get all features
+#' str(get_ST_family_classes())
+#'
+#' # get features in chapter 17
+#' str(get_ST_family_classes(chapter = 17))
+#'
+#' # get features on pages 322:323
+#' get_ST_family_classes(page = 322:323)
+#'
+#' # get the required characteristics for the mollic epipedon from list column
+#' str(get_ST_family_classes(name = "mesic")$criteria)
+#'
+get_ST_family_classes <- function(classname = NULL,
+                                group = NULL,
+                                name = NULL,
+                                chapter = NULL,
+                                page = NULL,
+                                multiline_sep = "\n",
+                                multiline_col = "criteria") {
 
+  ST_family_classes <- NULL
+  load(system.file("data/ST_family_classes.rda", package = "SoilTaxonomy")[1])
+
+  # get full set of features
+  res <- ST_family_classes
+
+  filtargs <- c(
+    "classname" = !is.null(classname),
+    "group" = !is.null(group),
+    "chapter" = !is.null(chapter),
+    "name" = !is.null(name),
+    "page" = !is.null(page)
+  )
+
+  .data_filter(
+    .data = res,
+    filtargs = filtargs,
+    classname = classname,
+    group = group,
+    chapter = chapter,
+    name = name,
+    page = page,
+    multiline_sep = multiline_sep,
+    multiline_col = multiline_col
+  )
+}
