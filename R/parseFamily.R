@@ -6,7 +6,7 @@
 #' @return a `data.frame` containing column names: `"family"` (input), `"subgroup"` (parsed taxonomic subgroup), `"subgroup_code"` (letter code for subgroup), `"class_string"` (comma-separated family classes), `"classes_split"` (split class_string vector stored as `list` column).
 #'
 #' In addition, the following column names are identified and returned based on NASIS (National Soil Information System) metadata (via soilDB package):
-#'  - `"taxpartsize"`, `"taxpartsizemod"`, `"taxminalogy"`, `"taxceactcl"`, `"taxreaction"`, `"taxtempcl"`, `"taxsubgrp"`, `"taxgreatgroup"`, `"taxsuborder"`, `"taxorder"`
+#'  - `"taxpartsize"`, `"taxpartsizemod"`, `"taxminalogy"`, `"taxceactcl"`, `"taxreaction"`, `"taxtempcl"`, `"taxfamhahatmatcl"`, `"taxfamother"`, `"taxsubgrp"`, `"taxgreatgroup"`, `"taxsuborder"`, `"taxorder"`
 #'
 #' @export
 #'

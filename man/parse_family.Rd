@@ -16,7 +16,7 @@ a \code{data.frame} containing column names: \code{"family"} (input), \code{"sub
 
 In addition, the following column names are identified and returned based on NASIS (National Soil Information System) metadata (via soilDB package):
 \itemize{
-\item \code{"taxpartsize"}, \code{"taxpartsizemod"}, \code{"taxminalogy"}, \code{"taxceactcl"}, \code{"taxreaction"}, \code{"taxtempcl"}, \code{"taxsubgrp"}, \code{"taxgreatgroup"}, \code{"taxsuborder"}, \code{"taxorder"}
+\item \code{"taxpartsize"}, \code{"taxpartsizemod"}, \code{"taxminalogy"}, \code{"taxceactcl"}, \code{"taxreaction"}, \code{"taxtempcl"}, \code{"taxfamhahatmatcl"}, \code{"taxfamother"}, \code{"taxsubgrp"}, \code{"taxgreatgroup"}, \code{"taxsuborder"}, \code{"taxorder"}
 }
 }
 \description{
