@@ -144,7 +144,7 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
         ColumnPhysicalName = md$ColumnPhysicalName[match(x$classname, md$ChoiceName)],
         stringsAsFactors = FALSE
       ))
-      cbind(`colnames<-`(as.data.frame(t(res5[[1]]), stringsAsFactors = FALSE), res5[[2]]), taxsub[i, ])
+      cbind(stats::setNames(as.data.frame(t(res5[[1]]), stringsAsFactors = FALSE), res5[[2]]), taxsub[i, ])
     })
 
   allowed.names <- c("taxpartsize", "taxpartsizemod",
@@ -153,7 +153,7 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
                      "taxfamhahatmatcl", "taxfamother",
                      "taxsubgrp", "taxgrtgroup",
                      "taxsuborder", "taxorder")
-  basetbl <- as.data.frame(`names<-`(rep(list(numeric(0)), length(allowed.names)), allowed.names), stringsAsFactors = FALSE)
+  basetbl <- as.data.frame(stats::setNames(rep(list(numeric(0)), length(allowed.names)), allowed.names), stringsAsFactors = FALSE)
 
   #  many:1, since we know these were previously comma-separated we re-concatenate with comma
   #  TODO: the algorithm does not currently try to separate and re-parse " over " type logic
@@ -169,19 +169,21 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
   if (flat) {
     .FUN <- .flat_FUN
   }
-  .SD <- NULL
+
   res5[multi.names] <- lapply(multi.names, function(n) {
       res6 <- apply(data.frame(res5[names(res5) %in% n]), 1, .FUN)
       res6 <- lapply(res6, function(nn) {
         nnn <- nn[[1]]
         lr6 <- length(nnn)
-        `names<-`(nnn, paste0(rep(n, lr6), seq_len(lr6)))
+        stats::setNames(nnn, paste0(rep(n, lr6), seq_len(lr6)))
       })
       if (flat) return(as.character(res6))
       res6
     })
   out <- res5[allowed.names]
-  out <- type.convert(out[allowed.names], as.is = TRUE)
+  out <- utils::type.convert(out[allowed.names], as.is = TRUE)
+
+  # TODO: generalize if needed
   if (!flat) {
     out$taxminalogy <- I(res5$taxminalogy)
     out$taxfamother <- I(res5$taxfamother)
