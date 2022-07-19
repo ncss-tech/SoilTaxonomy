@@ -10,9 +10,15 @@
 #' @export
 #' @examples
 #' if (requireNamespace("ape")) {
-#'   mytr <- ape::read.tree(text = newick_string(level = "suborder"))
 #'   par(mar = c(0, 0, 0, 0))
-#'   plot(mytr, "f")
+#'
+#'   mytr <- ape::read.tree(text = newick_string(level = "suborder"))
+#'   plot(mytr, "c", rotate.tree=180)
+#'
+#'   mytr <- ape::read.tree(text = newick_string("durixeralfs", level = "subgroup"))
+#'   plot(mytr, "c", rotate.tree=180)
+#'
+#'   dev.off()
 #' }
 newick_string <- function(x = NULL, level = "suborder") {
   if (is.null(x)) {
@@ -36,7 +42,7 @@ newick_string <- function(x = NULL, level = "suborder") {
     z <- data.frame(
         parent = as.character(y),
         code = names(ct),
-        taxon = ct,
+        taxon = { if (level == "subgroup") sQuote(ct, q = FALSE) else ct },
         level = code_to_level(names(ct)),
         position = relative_taxon_code_position(names(ct))
       )
