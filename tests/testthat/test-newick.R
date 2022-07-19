@@ -1,0 +1,8 @@
+test_that("newick_string works", {
+  expect_equal(newick_string(level = "suborder"),
+               "((Histels:1,Turbels:2,Orthels:3):1,(Folists:1,Wassists:2,Fibrists:3,Saprists:4,Hemists:5):2,(Aquods:1,Gelods:2,Cryods:3,Humods:4,Orthods:5):3,(Aquands:1,Gelands:2,Cryands:3,Torrands:4,Xerands:5,Vitrands:6,Ustands:7,Udands:8):4,(Aquox:1,Torrox:2,Ustox:3,Perox:4,Udox:5):5,(Aquerts:1,Cryerts:2,Xererts:3,Torrerts:4,Usterts:5,Uderts:6):6,(Cryids:1,Salids:2,Durids:3,Gypsids:4,Argids:5,Calcids:6,Cambids:7):7,(Aquults:1,Humults:2,Udults:3,Ustults:4,Xerults:5):8,(Albolls:1,Aquolls:2,Rendolls:3,Gelolls:4,Cryolls:5,Xerolls:6,Ustolls:7,Udolls:8):9,(Aqualfs:1,Cryalfs:2,Ustalfs:3,Xeralfs:4,Udalfs:5):10,(Aquepts:1,Gelepts:2,Cryepts:3,Ustepts:4,Xerepts:5,Udepts:6):11,(Wassents:1,Aquents:2,Psamments:3,Fluvents:4,Orthents:5):12);")
+  expect_equal(newick_string("durixeralfs", level = "subgroup"),
+               "(('Natric Durixeralfs':1,'Vertic Durixeralfs':2,'Aquic Durixeralfs':3,'Abruptic Haplic Durixeralfs':4,'Abruptic Durixeralfs':5,'Haplic Durixeralfs':6,'Typic Durixeralfs':7):1);")
+  expect_equal(newick_string("xeralfs", level = "subgroup", what = "code"),
+               "((JDAA:1,JDAB:2,JDAC:3,JDAD:4,JDAE:5,JDAF:6,JDAG:7):1,(JDBA:1,JDBB:2,JDBC:3):2,(JDCA:1,JDCB:2,JDCC:3,JDCD:4,JDCE:5,JDCF:6):3,(JDDA:1):4,(JDEA:1,JDEB:2,JDEC:3,JDED:4,JDEE:5,JDEF:6):5,(JDFA:1,JDFB:2,JDFC:3,JDFD:4,JDFE:5,JDFF:6,JDFG:7,JDFH:8,JDFI:9,JDFJ:10,JDFK:11,JDFL:12,JDFM:13,JDFN:14,JDFO:15,JDFP:16,JDFQ:17,JDFR:18):6,(JDGA:1,JDGB:2,JDGC:3,JDGD:4,JDGE:5,JDGF:6,JDGG:7,JDGH:8,JDGI:9,JDGJ:10,JDGK:11,JDGL:12,JDGM:13,JDGN:14,JDGO:15,JDGP:16,JDGQ:17,JDGR:18,JDGS:19,JDGT:20):7);")
+})

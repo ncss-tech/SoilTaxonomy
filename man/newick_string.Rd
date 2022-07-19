@@ -4,12 +4,18 @@
 \alias{newick_string}
 \title{Generate Newick/New Hampshire Format Parenthetic Strings}
 \usage{
-newick_string(x = NULL, level = "suborder")
+newick_string(
+  x = NULL,
+  level = c("suborder", "greatgroup", "subgroup"),
+  what = c("taxon", "code")
+)
 }
 \arguments{
 \item{x}{Optional: a taxon name to get children of.}
 
 \item{level}{Level to build the tree at. One of \code{"suborder"}, \code{"greatgroup"}, \code{"subgroup"}. Defaults to \code{"suborder"} when \code{x} is not specified. When \code{x} is specified but \code{level} is not specified, \code{level} is calculated from \code{taxon_to_level(x)}.}
+
+\item{what}{Either \code{"taxon"} (default; for taxon names (quoted for subgroups)) or \code{"code"}}
 }
 \value{
 character. A single tree in parenthetical Newick or New Hampshire format.
@@ -22,8 +28,17 @@ The output from this function is a character string with parenthetical format en
 }
 \examples{
 if (requireNamespace("ape")) {
-  mytr <- ape::read.tree(text = newick_string(level = "suborder"))
   par(mar = c(0, 0, 0, 0))
-  plot(mytr, "f")
+
+  mytr <- ape::read.tree(text = newick_string(level = "suborder"))
+  plot(mytr, "f", rotate.tree=180)
+
+  mytr <- ape::read.tree(text = newick_string("durixeralfs", level = "subgroup"))
+  plot(mytr, "u", rotate.tree=180)
+
+  mytr <- ape::read.tree(text = newick_string("xeralfs", level = "subgroup", what = "code"))
+  plot(mytr, "c")
+
+  dev.off()
 }
 }
