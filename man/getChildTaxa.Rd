@@ -31,7 +31,7 @@ Get the lower (child) taxa for a taxon name or code
 # suborder children of "Mollisols"
 getChildTaxa("Mollisols", level = "suborder")
 
-# get all siblings within a great group, given a subgroup
+# get all children within a great group, given a subgroup
 getChildTaxa(getTaxonAtLevel("Ultic Haploxeralfs", "greatgroup"))
 
 }
