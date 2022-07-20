@@ -30,12 +30,15 @@ The output from this function is a character string with parenthetical format en
 if (requireNamespace("ape")) {
   par(mar = c(0, 0, 0, 0))
 
+  # "fan"
   mytr <- ape::read.tree(text = newick_string(level = "suborder"))
-  plot(mytr, "f", rotate.tree=180)
+  plot(mytr, "f", rotate.tree=180, cex=0.75)
 
+  # "cladogram"
   mytr <- ape::read.tree(text = newick_string("durixeralfs", level = "subgroup"))
-  plot(mytr, "u", rotate.tree=180)
+  plot(mytr, "c")
 
+  # "cladogram" (using taxon codes instead of subgroups)
   mytr <- ape::read.tree(text = newick_string("xeralfs", level = "subgroup", what = "code"))
   plot(mytr, "c")
 
