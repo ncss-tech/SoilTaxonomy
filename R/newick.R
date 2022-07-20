@@ -35,7 +35,11 @@ newick_string <- function(x = NULL,
     ord <- level_to_taxon(level = "order")
   } else {
     lv <- taxon_to_level(x)
-    ord <- getTaxonAtLevel(x, level = parent_level(lv))
+    if (lv == "order") {
+      ord <- getTaxonAtLevel(x, level = lv)
+    } else {
+      ord <- getTaxonAtLevel(x, level = parent_level(lv))
+    }
     if (missing(level)) {
       level <- lv
     }
