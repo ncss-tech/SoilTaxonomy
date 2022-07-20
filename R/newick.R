@@ -1,6 +1,6 @@
-#' Generate Newick/New Hampshire Format Parenthetic Strings
+#' Generate Newick Tree Format Parenthetic Strings
 #'
-#' This function generates Newick or New Hampshire format strings for a single tree. Taxa are assigned relative positions within their parent to indicate the order that they "key out."
+#' This function generates [Newick tree format](https://en.wikipedia.org/wiki/Newick_format) strings for a single tree. Taxa are assigned relative positions within their parent to indicate the order that they "key out."
 #'
 #' @details The output from this function is a character string with parenthetical format encoding a single tree suitable for input into functions such as `ape::read.tree()`. Multiple trees can be combined together in the file or text string supplied to your tree-parsing function of choice.
 #' @param x Optional: a taxon name to get children of.
@@ -55,7 +55,7 @@ newick_string <- function(x = NULL,
       ct <- getChildTaxa(x)[[1]]
     }
     if (level == "subgroup" && what == "taxon") {
-      tx <- sQuote(ct, q = FALSE)
+      tx <- paste0("'", ct, "'")
     } else tx <- ct
     z <- data.frame(
         parent = as.character(y),

@@ -2,7 +2,7 @@
 % Please edit documentation in R/newick.R
 \name{newick_string}
 \alias{newick_string}
-\title{Generate Newick/New Hampshire Format Parenthetic Strings}
+\title{Generate Newick Tree Format Parenthetic Strings}
 \usage{
 newick_string(
   x = NULL,
@@ -21,7 +21,7 @@ newick_string(
 character. A single tree in parenthetical Newick or New Hampshire format.
 }
 \description{
-This function generates Newick or New Hampshire format strings for a single tree. Taxa are assigned relative positions within their parent to indicate the order that they "key out."
+This function generates \href{https://en.wikipedia.org/wiki/Newick_format}{Newick tree format} strings for a single tree. Taxa are assigned relative positions within their parent to indicate the order that they "key out."
 }
 \details{
 The output from this function is a character string with parenthetical format encoding a single tree suitable for input into functions such as \code{ape::read.tree()}. Multiple trees can be combined together in the file or text string supplied to your tree-parsing function of choice.
