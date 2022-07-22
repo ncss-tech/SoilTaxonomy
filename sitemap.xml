@@ -76,6 +76,9 @@
     <loc>/reference/get_ST_features.html</loc>
   </url>
   <url>
+    <loc>/reference/hierarchy.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
@@ -83,6 +86,9 @@
   </url>
   <url>
     <loc>/reference/level_to_taxon.html</loc>
+  </url>
+  <url>
+    <loc>/reference/newick_string.html</loc>
   </url>
   <url>
     <loc>/reference/parse_family.html</loc>
