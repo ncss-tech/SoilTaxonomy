@@ -1,3 +1,6 @@
+# SoilTaxonomy 0.2.1 (unreleased)
+ * Add `newick_string()` a function for creating parenthetical "Newick" (or "New Hampshire") format tree string inputs to functions such as `ape::read.tree()`
+ 
 # SoilTaxonomy 0.2.0 (2022-07-12)
  * New vignette related to soil diagnostic features and characteristics `get_ST_features()`
  * New function `get_ST_family_classes()` (the `ST_family_classes` analogue of `ST_features`/`get_ST_features()`)
