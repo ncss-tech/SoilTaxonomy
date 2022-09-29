@@ -1,4 +1,7 @@
-# SoilTaxonomy 0.2.1 (unreleased)
+# SoilTaxonomy 0.2.2 (2022-09-29)
+ * The order of dataset `ST` is now based on the full subgroup level code (https://github.com/ncss-tech/SoilTaxonomy/issues/35). Partial codes corresponding to each level of the hierarchy are also included in columns: `order_code`, `suborder_code`, `greatgroup_code` and `subgroup_code`.
+
+# SoilTaxonomy 0.2.1 (2022-07-21)
  * Add `newick_string()` a function for creating parenthetical "Newick" (or "New Hampshire") format tree string inputs to functions such as `ape::read.tree()`
  
 # SoilTaxonomy 0.2.0 (2022-07-12)
