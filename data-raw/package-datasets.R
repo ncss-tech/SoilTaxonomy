@@ -37,15 +37,20 @@ ST.subgroups <- ST.subgroups$subgroup
 # compose into single DF, populate with subgroups as starting point
 ST <- data.frame(order=NA, suborder=NA, greatgroup=NA, subgroup=ST.subgroups, stringsAsFactors = FALSE)
 
-# associate subgroup with parent greatgroup: OK
+# associate subgroup with parent greatgroup
 ST$greatgroup <- getTaxonAtLevel(ST$subgroup, "greatgroup")
 
-# associate great group with parent sub order:
+# associate great group with parent sub order
 ST$suborder <- getTaxonAtLevel(ST$subgroup, "suborder")
 ST$order <- getTaxonAtLevel(ST$subgroup, "order")
+ST$code <- taxon_to_taxon_code(ST$subgroup)
 
-# re-order
-ST <- ST[order(ST$order, ST$suborder, ST$greatgroup), ]
+# re-order by code
+ST <- ST[order(ST$code), ]
+ST$order_code <- substr(ST$code, 1, 1)
+ST$suborder_code <- substr(ST$code, 2, 2)
+ST$greatgroup_code <- substr(ST$code, 3, 3)
+ST$subgroup_code <- substr(ST$code, 4, 5)
 
 # drop taxa that do not exist in lookup tables
 ST <- ST[which(complete.cases(ST)),]
@@ -57,6 +62,8 @@ write.csv(ST.family.classes, file='data-raw/ST-family-classes.csv', row.names=FA
 ## ST to the subgroup level, simple data.frame
 ST <- read.csv('data-raw/ST-full.csv', stringsAsFactors = FALSE)
 usethis::use_data(ST, overwrite = TRUE)
+
+ST_logic <- cbind(ST, )
 
 ## unique taxa, sorted by appearance in the 'Keys
 ## as a list
