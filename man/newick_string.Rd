@@ -32,7 +32,7 @@ if (requireNamespace("ape")) {
 
   # "fan"
   mytr <- ape::read.tree(text = newick_string(level = "suborder"))
-  plot(mytr, "f", rotate.tree=180, cex=0.75)
+  plot(mytr, "f", rotate.tree = 180, cex = 0.75)
 
   # "cladogram"
   mytr <- ape::read.tree(text = newick_string("durixeralfs", level = "subgroup"))
