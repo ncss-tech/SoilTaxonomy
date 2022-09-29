@@ -36,6 +36,8 @@ test_that("parse_family(..., column_metadata = TRUE) works", {
 
 test_that("complex or uncommon family classes", {
 
+  skip_if_not_installed("soilDB")
+  
   # mapping of "diatomaceous" mineralogy class -> "diatomaceous earth" choicename for taxminalogy
   x <- parse_family("DIATOMACEOUS, EUIC, FRIGID LIMNIC HAPLOHEMISTS")
   expect_true(x$taxminalogy == "diatomaceous earth" && x$taxreaction == "euic")
