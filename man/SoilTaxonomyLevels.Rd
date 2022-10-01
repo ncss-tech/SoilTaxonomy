@@ -13,7 +13,7 @@ SoilTaxonomyLevels(
 \arguments{
 \item{level}{One of: \code{"order"}, \code{"suborder"}, \code{"greatgroup"}, \code{"subgroup"}}
 
-\item{as.is}{Return just character labels rather than factor? Default: \code{FALSE}}
+\item{as.is}{Return character labels rather than an (ordered) factor? Default: \code{FALSE}}
 
 \item{ordered}{Create an ordinal factor? Default: \code{TRUE}}
 }
@@ -24,6 +24,13 @@ an (ordered) factor or character vector (when \code{as.is=TRUE})
 Get (Ordered) Factors based on Soil Taxonomy Key position
 }
 \examples{
+
 SoilTaxonomyLevels("order")
+
+SoilTaxonomyLevels("order", ordered = FALSE)
+
+SoilTaxonomyLevels("order", as.is = TRUE)
+
 SoilTaxonomyLevels("suborder")
+
 }
