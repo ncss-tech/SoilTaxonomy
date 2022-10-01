@@ -24,7 +24,6 @@ SoilTaxonomyLevels <- function(level = c("order", "suborder", "greatgroup", "sub
   ST_unique_list <- NULL
   load(system.file("data/ST_unique_list.rda", package = "SoilTaxonomy")[1])
 
-  # create ordered factors, dropping unused levels, ignore case
   res <- factor(tolower(ST_unique_list[[level]]), levels = ST_unique_list[[level]], ordered = ordered)
 
   if (as.is) {
