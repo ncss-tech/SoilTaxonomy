@@ -60,6 +60,7 @@ jobs:
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
+          sudo apt install libicu-dev
           while read -r cmd
           do
             eval sudo $cmd
