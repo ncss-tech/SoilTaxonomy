@@ -77,7 +77,11 @@
 <span></span>
 <span><span class="fu">GreatGroupFormativeElements</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">SubGroupFormativeElements</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">SubGroupFormativeElements</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">get_ST_formative_elements</span><span class="op">(</span></span>
+<span>  level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"order"</span>, <span class="st">"suborder"</span>, <span class="st">"greatgroup"</span>, <span class="st">"subgroup"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -97,6 +101,10 @@
 <p>A list containing <code>$defs</code>: a <code>data.frame</code> containing taxonomic elements, derivations, connotations and links. And <code>$char.index</code>: a numeric denoting the position where the formative element occurs in the search text <code>x</code></p>
 
 
+
+<p><code>get_ST_formative_elements()</code>: a data.frame containing descriptors of formative elements used at the specified <code>level</code></p>
+
+
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -109,11 +117,11 @@
 <span class="r-in"><span><span class="fu">FormativeElements</span><span class="op">(</span><span class="st">"acrudoxic plinthic kandiudults"</span>, level <span class="op">=</span> <span class="st">"subgroup"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $defs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     element central intergrade extragrade intragrade derivation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 acrudoxic   FALSE         NA         NA       TRUE    acrudox</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  plinthic   FALSE         NA         NA      FALSE      brick</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                       connotation simplified link</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 low apparent CEC (like acrudox)              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           presence of plinthite              NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 acrudoxic   FALSE         NA         NA       TRUE    acrudox</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  plinthic   FALSE         NA         NA      FALSE      brick</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                       connotation simplified link    level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 low apparent CEC (like acrudox)              NA subgroup</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           presence of plinthite              NA subgroup</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $char.index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1]  1 11</span>
@@ -121,11 +129,11 @@
 <span class="r-in"><span><span class="fu">SubGroupFormativeElements</span><span class="op">(</span><span class="st">"acrudoxic plinthic kandiudults"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $defs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     element central intergrade extragrade intragrade derivation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 acrudoxic   FALSE         NA         NA       TRUE    acrudox</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  plinthic   FALSE         NA         NA      FALSE      brick</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                       connotation simplified link</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 low apparent CEC (like acrudox)              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           presence of plinthite              NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 acrudoxic   FALSE         NA         NA       TRUE    acrudox</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  plinthic   FALSE         NA         NA      FALSE      brick</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                       connotation simplified link    level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 low apparent CEC (like acrudox)              NA subgroup</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           presence of plinthite              NA subgroup</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $char.index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1]  1 11</span>
@@ -135,6 +143,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> $defs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   element            derivation                  connotation simplified link</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   kandi modified from kandite presence of a kandic horizon         NA   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 greatgroup</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $char.index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 20</span>
@@ -143,6 +153,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> $defs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   element            derivation                  connotation simplified link</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   kandi modified from kandite presence of a kandic horizon         NA   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 greatgroup</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $char.index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 20</span>
@@ -150,16 +162,16 @@
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">FormativeElements</span><span class="op">(</span><span class="st">"acrudoxic plinthic kandiudults"</span>, level <span class="op">=</span> <span class="st">"suborder"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $defs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   element derivation connotation simplified link</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      ud      humid    udic SMR         NA   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   element derivation connotation simplified link    level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1      ud      humid    udic SMR         NA   NA suborder</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $char.index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 25</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="fu">SubOrderFormativeElements</span><span class="op">(</span><span class="st">"acrudoxic plinthic kandiudults"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $defs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   element derivation connotation simplified link</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      ud      humid    udic SMR         NA   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   element derivation connotation simplified link    level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1      ud      humid    udic SMR         NA   NA suborder</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $char.index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 25</span>
@@ -171,8 +183,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 ultisols    ults       last</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         connotation</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 soils with an argillic or kandic horizon and a base saturation at pH 8.2 &lt;35% at a depth of 180cm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   simplified link element_start element_end</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         NA   NA             1           3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   simplified link element_start element_end level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         NA   NA             1           3 order</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $char.index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 27</span>
@@ -183,8 +195,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 ultisols    ults       last</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                         connotation</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 soils with an argillic or kandic horizon and a base saturation at pH 8.2 &lt;35% at a depth of 180cm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   simplified link element_start element_end</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         NA   NA             1           3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   simplified link element_start element_end level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         NA   NA             1           3 order</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $char.index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 27</span>
