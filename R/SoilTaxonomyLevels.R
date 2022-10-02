@@ -24,7 +24,7 @@ SoilTaxonomyLevels <- function(level = c("order", "suborder", "greatgroup", "sub
   ST_unique_list <- NULL
   load(system.file("data/ST_unique_list.rda", package = "SoilTaxonomy")[1])
 
-  res <- factor(tolower(ST_unique_list[[level]]), levels = ST_unique_list[[level]], ordered = ordered)
+  res <- factor(ST_unique_list[[level]], levels = ST_unique_list[[level]], ordered = ordered)
 
   if (as.is) {
     return(as.character(res))
@@ -39,7 +39,7 @@ SoilMoistureRegimeLevels <- function(as.is = FALSE, ordered = TRUE) {
   # note the domain is _not_ an ordered one by default
   d <- data.frame(ChoiceName = c("aridic (torric)", "ustic", "xeric",
                                  "udic", "perudic", "aquic", "peraquic"))
-  res <- factor(tolower(d$ChoiceName), levels = d$ChoiceName, ordered = ordered)
+  res <- factor(d$ChoiceName, levels = d$ChoiceName, ordered = ordered)
   if (as.is) {
     return(as.character(res))
   }
@@ -55,7 +55,7 @@ SoilTemperatureRegimeLevels <- function(as.is = FALSE, ordered = TRUE) {
   d <- data.frame(ChoiceName = c("gelic", "cryic", "isofrigid", "frigid",
                                  "isomesic", "mesic", "thermic", "isothermic",
                                  "hyperthermic", "isohyperthermic"))
-  res <- factor(tolower(d$ChoiceName), levels = d$ChoiceName, ordered = ordered)
+  res <- factor(d$ChoiceName, levels = d$ChoiceName, ordered = ordered)
   if (as.is) {
     return(as.character(res))
   }
