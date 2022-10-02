@@ -46,4 +46,21 @@ SoilMoistureRegimeLevels <- function(as.is = FALSE, ordered = TRUE) {
   res
 }
 
+#' @export
+#' @rdname SoilTaxonomyLevels
+SoilTemperatureRegimeLevels <- function(as.is = FALSE, ordered = TRUE) {
+  # subset(soilDB::get_NASIS_column_metadata("taxtempregime"),
+  #        !ChoiceObsolete, select=c("ChoiceSequence", "ChoiceName"))
+  # note the domain is _not_ an ordered one by default
+  d <- data.frame(ChoiceName = c("gelic", "cryic", "isofrigid", "frigid",
+                                 "isomesic", "mesic", "thermic", "isothermic",
+                                 "hyperthermic", "isohyperthermic"))
+  res <- factor(tolower(d$ChoiceName), levels = d$ChoiceName, ordered = ordered)
+  if (as.is) {
+    return(as.character(res))
+  }
+  res
+}
+
+
 

@@ -3,6 +3,7 @@
 \name{SoilTaxonomyLevels}
 \alias{SoilTaxonomyLevels}
 \alias{SoilMoistureRegimeLevels}
+\alias{SoilTemperatureRegimeLevels}
 \title{Get (Ordered) Factors based on Soil Taxonomy Key position}
 \usage{
 SoilTaxonomyLevels(
@@ -12,6 +13,8 @@ SoilTaxonomyLevels(
 )
 
 SoilMoistureRegimeLevels(as.is = FALSE, ordered = TRUE)
+
+SoilTemperatureRegimeLevels(as.is = FALSE, ordered = TRUE)
 }
 \arguments{
 \item{level}{One of: \code{"order"}, \code{"suborder"}, \code{"greatgroup"}, \code{"subgroup"}}

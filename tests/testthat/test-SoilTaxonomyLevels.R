@@ -19,3 +19,13 @@ test_that("SoilMoistureRegimeLevels works", {
   expect_equal(x, c("aridic (torric)", "ustic", "xeric", "udic",
                     "perudic", "aquic", "peraquic"))
 })
+
+test_that("SoilTemperatureRegimeLevels works", {
+
+  x <- SoilTemperatureRegimeLevels()
+  expect_equal(class(x), c("ordered", "factor"))
+
+  x <- SoilTemperatureRegimeLevels(as.is = TRUE)
+  expect_equal(x, c("gelic", "cryic", "isofrigid", "frigid", "isomesic", "mesic",
+                    "thermic", "isothermic", "hyperthermic", "isohyperthermic"))
+})
