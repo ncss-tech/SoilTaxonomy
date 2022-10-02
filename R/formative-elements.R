@@ -135,7 +135,7 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
   defres <- data.table::rbindlist(lapply(res, function(x) x$defs), fill = TRUE)
   cidres <- do.call('c', lapply(res, function(x) x$char.index))
   defres[["level"]] <- do.call('c', lapply(res, function(x) x$level))
-  list(defs = defres, char.index = cidres)
+  list(defs = as.data.frame(defres), char.index = cidres)
 }
 
 #' @export
@@ -160,4 +160,22 @@ GreatGroupFormativeElements <- function(x) {
 #' @rdname FormativeElements
 SubGroupFormativeElements <- function(x) {
   FormativeElements(x, level = "subgroup")
+}
+
+#' @return `get_ST_formative_elements()`: a data.frame containing descriptors of formative elements used at the specified `level`
+#' @export
+#' @rdname FormativeElements
+get_ST_formative_elements <- function(level = c("order", "suborder", "greatgroup", "subgroup")) {
+  ST_formative_elements <- NULL
+  load(system.file("data/ST_formative_elements.rda", package = "SoilTaxonomy")[1])
+
+  level <- match.arg(level, c("order","suborder","greatgroup","subgroup"), several.ok = TRUE)
+
+  d <- data.table::rbindlist(lapply(level, function(x) {
+    y <- ST_formative_elements[[x]]
+    y[["level"]] <- x
+    y
+  }), fill = TRUE)
+
+  as.data.frame(d)
 }
