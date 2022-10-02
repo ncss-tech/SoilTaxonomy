@@ -40,5 +40,6 @@ extractSMR <- function(taxon, as.is = FALSE, droplevels = FALSE, ordered = TRUE)
   ## NB: currently there is no formative element connotation for "peraquic" soils
   data.frame(element = c("per", "ids", "aqu", "torr", "ud", "ust", "xer", "torri", "ud", "ust", "xer"),
              level = c("suborder", "order", "suborder", "suborder", "suborder", "suborder", "suborder", "greatgroup", "greatgroup", "greatgroup", "greatgroup"),
-             connotation = c("perudic", "aridic (torric)", "aquic", "aridic (torric)", "udic", "ustic", "xeric", "aridic (torric)", "udic", "ustic", "xeric"))
+             connotation = c("perudic", "aridic (torric)", "aquic", "aridic (torric)", "udic", "ustic", "xeric", "aridic (torric)", "udic", "ustic", "xeric"),
+             stringsAsFactors = FALSE)
 }
