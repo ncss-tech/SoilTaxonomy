@@ -9,3 +9,13 @@ test_that("SoilTaxonomyLevels works", {
                     "vertisols", "aridisols", "ultisols", "mollisols", "alfisols",
                     "inceptisols", "entisols"))
 })
+
+test_that("SoilMoistureRegimeLevels works", {
+
+  x <- SoilMoistureRegimeLevels()
+  expect_equal(class(x), c("ordered", "factor"))
+
+  x <- SoilMoistureRegimeLevels(as.is = TRUE)
+  expect_equal(x, c("aridic (torric)", "ustic", "xeric", "udic",
+                    "perudic", "aquic", "peraquic"))
+})

@@ -31,3 +31,19 @@ SoilTaxonomyLevels <- function(level = c("order", "suborder", "greatgroup", "sub
   }
   res
 }
+
+#' @export
+#' @rdname SoilTaxonomyLevels
+SoilMoistureRegimeLevels <- function(as.is = FALSE, ordered = TRUE) {
+  # soilDB::get_NASIS_column_metadata("taxmoistcl")[["ChoiceName"]]
+  # note the domain is _not_ an ordered one by default
+  d <- data.frame(ChoiceName = c("aridic (torric)", "ustic", "xeric",
+                                 "udic", "perudic", "aquic", "peraquic"))
+  res <- factor(tolower(d$ChoiceName), levels = d$ChoiceName, ordered = ordered)
+  if (as.is) {
+    return(as.character(res))
+  }
+  res
+}
+
+

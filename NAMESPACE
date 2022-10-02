@@ -3,6 +3,7 @@
 export(FormativeElements)
 export(GreatGroupFormativeElements)
 export(OrderFormativeElements)
+export(SoilMoistureRegimeLevels)
 export(SoilTaxonomyLevels)
 export(SubGroupFormativeElements)
 export(SubOrderFormativeElements)

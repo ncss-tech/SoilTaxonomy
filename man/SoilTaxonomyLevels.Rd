@@ -2,6 +2,7 @@
 % Please edit documentation in R/SoilTaxonomyLevels.R
 \name{SoilTaxonomyLevels}
 \alias{SoilTaxonomyLevels}
+\alias{SoilMoistureRegimeLevels}
 \title{Get (Ordered) Factors based on Soil Taxonomy Key position}
 \usage{
 SoilTaxonomyLevels(
@@ -9,6 +10,8 @@ SoilTaxonomyLevels(
   as.is = FALSE,
   ordered = TRUE
 )
+
+SoilMoistureRegimeLevels(as.is = FALSE, ordered = TRUE)
 }
 \arguments{
 \item{level}{One of: \code{"order"}, \code{"suborder"}, \code{"greatgroup"}, \code{"subgroup"}}
