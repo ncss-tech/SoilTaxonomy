@@ -48,9 +48,9 @@ ST$code <- taxon_to_taxon_code(ST$subgroup)
 # re-order by code
 ST <- ST[order(ST$code), ]
 ST$order_code <- substr(ST$code, 1, 1)
-ST$suborder_code <- substr(ST$code, 2, 2)
-ST$greatgroup_code <- substr(ST$code, 3, 3)
-ST$subgroup_code <- substr(ST$code, 4, 5)
+ST$suborder_code <- substr(ST$code, 1, 2)
+ST$greatgroup_code <- substr(ST$code, 1, 3)
+ST$subgroup_code <- substr(ST$code, 1, 5)
 
 # drop taxa that do not exist in lookup tables
 ST <- ST[which(complete.cases(ST)),]
