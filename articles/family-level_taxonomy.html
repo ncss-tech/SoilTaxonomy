@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.3</span>
       </span>
     </div>
 
@@ -81,7 +81,7 @@
 
       
 
-      </header><script src="family-level_taxonomy_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Family-level Taxonomic Classes</h1>
@@ -100,19 +100,27 @@
 <h2 id="parse_family">
 <code>parse_family()</code><a class="anchor" aria-label="anchor" href="#parse_family"></a>
 </h2>
-<p>The function <code><a href="../reference/parse_family.html">parse_family()</a></code> provides a way to separate lower taxonomic levels (“family-level classes”) from the higher taxonomic levels (Order, Suborder, Great Group, and Subgroup) in a soil taxon name.</p>
-<p>The user provides a vector of family names, and the result is a <code>data.frame</code> containing:</p>
+<p>The function <code><a href="../reference/parse_family.html">parse_family()</a></code> provides a way to separate
+lower taxonomic levels (“family-level classes”) from the higher
+taxonomic levels (Order, Suborder, Great Group, and Subgroup) in a soil
+taxon name.</p>
+<p>The user provides a vector of family names, and the result is a
+<code>data.frame</code> containing:</p>
 <ul>
 <li>
 <code>family</code> (input)</li>
 <li>
 <code>subgroup</code> (taxonomic subgroup)</li>
 <li>
-<code>subgroup_code</code> (four or five letter code for subgroup)</li>
+<code>subgroup_code</code> (four or five letter code for
+subgroup)</li>
 <li>
-<code>class_string</code> (comma-separated family-level class string in taxon name)</li>
+<code>class_string</code> (comma-separated family-level class string
+in taxon name)</li>
 <li>
-<code>classes_split</code> (list column containing <code>class_string</code>; split using <code>","</code> as delimiter)</li>
+<code>classes_split</code> (list column containing
+<code>class_string</code>; split using <code>","</code> as
+delimiter)</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parse_family.html">parse_family</a></span><span class="op">(</span><span class="st">"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span><span class="op">)</span></span>
@@ -129,23 +137,33 @@
 <h2 id="st_family_classes">
 <code>ST_family_classes</code><a class="anchor" aria-label="anchor" href="#st_family_classes"></a>
 </h2>
-<p>The <code>ST_family_classes</code> data set provides information on the lower taxonomic class names and the Keys used to determine what, if any, class to use for a particular soil.</p>
-<p>This data set is a <code>data.frame</code> with the following columns:</p>
+<p>The <code>ST_family_classes</code> data set provides information on
+the lower taxonomic class names and the Keys used to determine what, if
+any, class to use for a particular soil.</p>
+<p>This data set is a <code>data.frame</code> with the following
+columns:</p>
 <ul>
 <li>
-<code>classname</code> (class name used in Soil Taxonomy family name)</li>
+<code>classname</code> (class name used in Soil Taxonomy family
+name)</li>
 <li>
-<code>group</code> (simplified grouping of related classes/keys/criteria)</li>
+<code>group</code> (simplified grouping of related
+classes/keys/criteria)</li>
 <li>
-<code>name</code> (name of relevant section from Keys to Soil Taxonomy)</li>
+<code>name</code> (name of relevant section from Keys to Soil
+Taxonomy)</li>
 <li>
-<code>chapter</code> (chapter number from Keys to Soil Taxonomy)</li>
+<code>chapter</code> (chapter number from Keys to Soil
+Taxonomy)</li>
 <li>
-<code>page</code> ([first] page number from Keys to Soil Taxonomy)</li>
+<code>page</code> ([first] page number from Keys to Soil
+Taxonomy)</li>
 <li>
-<code>description</code> (narrative description of section; may not be present)</li>
+<code>description</code> (narrative description of section; may not
+be present)</li>
 <li>
-<code>criteria</code> (criteria listed under “Required Characteristics”; may not be present)</li>
+<code>criteria</code> (criteria listed under “Required
+Characteristics”; may not be present)</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"ST_family_classes"</span><span class="op">)</span></span>
@@ -171,7 +189,13 @@
 <span><span class="co">#&gt; 4         </span></span>
 <span><span class="co">#&gt; 5         </span></span>
 <span><span class="co">#&gt; 6</span></span></code></pre></div>
-<p>Here we determine the family-level classes for a single taxonomic family and match them to the class descriptions stored in <code>ST_family_classes</code> using <code><a href="../reference/get_ST_family_classes.html">get_ST_family_classes()</a></code>. We set <code>parse_family(..., column_metadata=FALSE)</code> to <em>not</em> parse family components into corresponding NASIS domains (requires soilDB).</p>
+<p>Here we determine the family-level classes for a single taxonomic
+family and match them to the class descriptions stored in
+<code>ST_family_classes</code> using
+<code><a href="../reference/get_ST_family_classes.html">get_ST_family_classes()</a></code>. We set
+<code>parse_family(..., column_metadata=FALSE)</code> to <em>not</em>
+parse family components into corresponding NASIS domains (requires
+soilDB).</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="st">"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span></span>
 <span><span class="va">family_classes</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/parse_family.html">parse_family</a></span><span class="op">(</span><span class="va">f</span>, column_metadata <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">$</span><span class="va">classes_split</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
@@ -222,7 +246,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

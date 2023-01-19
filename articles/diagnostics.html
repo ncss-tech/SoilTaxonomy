@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.3</span>
       </span>
     </div>
 
@@ -81,10 +81,11 @@
 
       
 
-      </header><script src="diagnostics_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Soil Diagnostic Features &amp; Characteristics</h1>
+      <h1 data-toc-skip>Soil Diagnostic Features &amp;
+Characteristics</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/ncss-tech/SoilTaxonomy/blob/HEAD/vignettes/diagnostics.Rmd" class="external-link"><code>vignettes/diagnostics.Rmd</code></a></small>
@@ -96,13 +97,19 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ncss-tech/SoilTaxonomy" class="external-link">SoilTaxonomy</a></span><span class="op">)</span></span></code></pre></div>
-<p>Data from the latest version of the Keys to Soil Taxonomy related to diagnostic features and characteristics are stored in the package dataset <code>ST_features</code>.</p>
+<p>Data from the latest version of the Keys to Soil Taxonomy related to
+diagnostic features and characteristics are stored in the package
+dataset <code>ST_features</code>.</p>
 <p>You can load the full supporting data directly with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">ST_features</span>, package <span class="op">=</span> <span class="st">"SoilTaxonomy"</span><span class="op">)</span></span></code></pre></div>
-<p>A wrapper function, <code><a href="../reference/get_ST_features.html">get_ST_features()</a></code>, is provided to help with obtaining information of interest to specific features or groups of features.</p>
-<p>We will inspect the “Mollic Epipedon” information to see the structure of the <code>ST_features</code> <em>data.frame</em>.</p>
-<p>We can use <code>get_ST_features(name=...)</code> to get features by name (case-insensitive)</p>
+<p>A wrapper function, <code><a href="../reference/get_ST_features.html">get_ST_features()</a></code>, is provided to
+help with obtaining information of interest to specific features or
+groups of features.</p>
+<p>We will inspect the “Mollic Epipedon” information to see the
+structure of the <code>ST_features</code> <em>data.frame</em>.</p>
+<p>We can use <code>get_ST_features(name=...)</code> to get features by
+name (case-insensitive)</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu"><a href="../reference/get_ST_features.html">get_ST_features</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"mollic epipedon"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; 'data.frame':    1 obs. of  6 variables:</span></span>
@@ -112,23 +119,31 @@
 <span><span class="co">#&gt;  $ page       : int 9</span></span>
 <span><span class="co">#&gt;  $ description: chr ""</span></span>
 <span><span class="co">#&gt;  $ criteria   : chr "Required Characteristics The mollic epipedon consists of mineral soil material and, after mixing of the upper 1"| __truncated__</span></span></code></pre></div>
-<p>Columns included in the <code>ST_features</code>, and usable for filtering as arguments to <code><a href="../reference/get_ST_features.html">get_ST_features()</a></code> include:</p>
+<p>Columns included in the <code>ST_features</code>, and usable for
+filtering as arguments to <code><a href="../reference/get_ST_features.html">get_ST_features()</a></code> include:</p>
 <ul>
 <li>
-<code>group</code> - Diagnostic feature or characteristic group name</li>
+<code>group</code> - Diagnostic feature or characteristic group
+name</li>
 <li>
 <code>name</code> - Diagnostic feature or characteristic name</li>
 <li>
-<code>chapter</code> - Chapter number in Keys to Soil Taxonomy (latest edition)</li>
+<code>chapter</code> - Chapter number in Keys to Soil Taxonomy
+(latest edition)</li>
 <li>
-<code>page</code> - Page number in Keys to Soil Taxonomy (latest edition)</li>
+<code>page</code> - Page number in Keys to Soil Taxonomy (latest
+edition)</li>
 <li>
-<code>description</code> - Narrative description (may not be present for all features)</li>
+<code>description</code> - Narrative description (may not be present
+for all features)</li>
 <li>
-<code>criteria</code> - “Key” to identifying the feature; logical criteria separated by AND/Or</li>
+<code>criteria</code> - “Key” to identifying the feature; logical
+criteria separated by AND/Or</li>
 </ul>
-<p>Say we are interested in finding criteria to distinguish the epipedons (surface diagnostic horizons).</p>
-<p>We can use the <code>group=...</code> argument to get all of the “surface” features as a <em>data.frame</em>.</p>
+<p>Say we are interested in finding criteria to distinguish the
+epipedons (surface diagnostic horizons).</p>
+<p>We can use the <code>group=...</code> argument to get all of the
+“surface” features as a <em>data.frame</em>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">epipedons</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_ST_features.html">get_ST_features</a></span><span class="op">(</span>group <span class="op">=</span> <span class="st">"surface"</span><span class="op">)</span></span></code></pre></div>
 <p>There are 8 features in this result set.</p>
@@ -141,14 +156,17 @@
 <span><span class="co">#&gt;  $ page       : int  7 8 8 8 9 9 10 10</span></span>
 <span><span class="co">#&gt;  $ description: chr  "The anthropic epipedon forms in human-altered or human- transported material (defined below). These epipedons f"| __truncated__ "" "" "" ...</span></span>
 <span><span class="co">#&gt;  $ criteria   : chr  "Required Characteristics The anthropic epipedon consists of mineral soil material that shows evidence of the pu"| __truncated__ "Required Characteristics The folistic epipedon is a layer (one or more horizons) that is saturated for less tha"| __truncated__ "Required Characteristics The histic epipedon is a layer (one or more horizons) that is characterized by saturat"| __truncated__ "Required Characteristics The melanic epipedon has both of the following:\n1. An upper boundary at, or within 30"| __truncated__ ...</span></span></code></pre></div>
-<p>We can then select specific items by name, such as the <code>"description"</code> and <code>"criteria"</code>:</p>
+<p>We can then select specific items by name, such as the
+<code>"description"</code> and <code>"criteria"</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">epipedons</span>, <span class="va">name</span> <span class="op">==</span> <span class="st">"Anthropic Epipedon"</span><span class="op">)</span><span class="op">$</span><span class="va">description</span></span>
 <span><span class="co">#&gt; [1] "The anthropic epipedon forms in human-altered or human- transported material (defined below). These epipedons form in soils which occur on anthropogenic landforms and microfeatures or which are higher than the adjacent soils by as much as or more than the thickness of the anthropic epipedon. They may also occur in excavated areas. Most anthropic epipedons contain artifacts other than those associated with agricultural practices (e.g., quicklime) and litter discarded by humans (e.g., aluminum cans). Anthropic epipedons may have an elevated phosphorus content from human additions of food debris (e.g., bones), compost, or manure, although a precise value is not required. Although anthropic epipedons formed at the soil surface, they may now be buried. Most anthropic epipedons occur in soils of gardens, middens (Hester et al., 1975), and urban areas, and most also meet the definition of another diagnostic mineral epipedon or subsurface horizon."</span></span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">epipedons</span>, <span class="va">name</span> <span class="op">==</span> <span class="st">"Anthropic Epipedon"</span><span class="op">)</span><span class="op">$</span><span class="va">criteria</span></span>
 <span><span class="co">#&gt; [1] "Required Characteristics The anthropic epipedon consists of mineral soil material that shows evidence of the purposeful alteration of soil properties or of earth-surface features by human activity. The field evidence of alteration is significant and excludes agricultural practices such as shallow plowing or addition of amendments, such as lime or fertilizer.\nThe anthropic epipedon includes eluvial horizons that are at or near the soil surface, and it extends to the base of horizons that meet all the criteria shown below or it extends to the top of the first underlying diagnostic illuvial horizon (defined below as an argillic, kandic, natric, or spodic horizon). The anthropic epipedon meets all of the following:\n1. When dry, has structural units with a diameter of 30 cm or less; and\n2. Has rock structure, including fine stratifications (5 mm or less thick), in less than one-half of the volume of all parts; and\n3. Formed in human-altered or human-transported material (defined below) on an anthropogenic landform or microfeature (defined below); and either:\na. Directly overlies mine or dredged spoil material which has rock structure, a root-limiting layer, or a lithologic discontinuity with horizons that are not derived from human- altered or human-transported material (defined below); or\nb. Has one or more of the following throughout:\n(1) Artifacts, other than agricultural amendments (e.g., quicklime) and litter discarded by humans (e.g., aluminum cans); or\n(2) Midden material (i.e., eating and cooking waste and associated charred products); or\n(3) Anthraquic conditions; and\n4. Has a minimum thickness that is either:\na. The entire thickness of the soil above a root-limiting layer (defined in chapter 17) if one occurs within 25 cm of the soil surface; or\nb. 25 cm; and\n5. Has an n value (defined below) of less than 0.7."</span></span></code></pre></div>
-<p>If we want to compare the basic definitions in Chapter 2 with the features in Chapter 3, we can subset <code>ST_features</code> using the <code>chapter</code> or <code>page</code> number (or range).</p>
+<p>If we want to compare the basic definitions in Chapter 2 with the
+features in Chapter 3, we can subset <code>ST_features</code> using the
+<code>chapter</code> or <code>page</code> number (or range).</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_ST_features.html">get_ST_features</a></span><span class="op">(</span>chapter <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">$</span><span class="va">name</span></span>
 <span><span class="co">#&gt; [1] "Mineral Soil Material"                        </span></span>
@@ -237,7 +255,9 @@
 <span><span class="co">#&gt; [75] "Human-Altered Material"                    </span></span>
 <span><span class="co">#&gt; [76] "Human-Transported Material"                </span></span>
 <span><span class="co">#&gt; [77] "Manufactured Layer"</span></span></code></pre></div>
-<p>If we want to get the definitions found on pages 18 to 20 (latest Keys to Soil Taxonomy), we can specify a vector containing desired levels of <code>page</code>:</p>
+<p>If we want to get the definitions found on pages 18 to 20 (latest
+Keys to Soil Taxonomy), we can specify a vector containing desired
+levels of <code>page</code>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_ST_features.html">get_ST_features</a></span><span class="op">(</span>page <span class="op">=</span> <span class="fl">18</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">$</span><span class="va">name</span></span>
 <span><span class="co">#&gt; [1] "Anhydrous Conditions"                      </span></span>
@@ -264,7 +284,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
