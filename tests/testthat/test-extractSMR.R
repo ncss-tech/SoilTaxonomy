@@ -1,4 +1,9 @@
 test_that("extractSMR works", {
+  # test below subgroup level/case insensitivity/no factor
+  expect_equal(extractSMR("Aquolls", as.is = TRUE), c(Aquolls = "aquic"))
+
+  # test with multiple subgroup level taxa,
+  # including one w/ more formative elements than usual (humic inceptic eutroperox)
   expect_equal(extractSMR(c("aquic haploxeralfs",
                             "typic epiaqualfs",
                             "humic inceptic eutroperox")),

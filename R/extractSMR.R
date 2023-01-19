@@ -30,7 +30,7 @@ extractSMR <- function(taxon, as.is = FALSE, droplevels = FALSE, ordered = TRUE)
                el$defs$level %in% co$level, ][c("element", "level")]
   if (nrow(x) > 0) {
     # todo handle per+aqu and per+ud
-    co[x$element == co$element & x$level == co$level, ]$connotation
+    co[co$element %in% x$element & co$level %in% x$level, ]$connotation
   } else NA_character_
 }
 
