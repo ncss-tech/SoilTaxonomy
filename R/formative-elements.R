@@ -32,6 +32,8 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
   # load local copy of formative elements
   load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
 
+  x <- tolower(x)
+
   res <- lapply(level, function(ll) {
     # load dictionary
     lut <- ST_formative_elements[[ll]]

@@ -1,3 +1,6 @@
+# SoilTaxonomy 0.2.3 (2023-01-18)
+ - Fix unintended case-sensitivity of `FormativeElements()`; thanks to @swsalley
+
 # SoilTaxonomy 0.2.2 (2022-10-01)
  * The order of dataset `ST` is now based on the full subgroup level code (https://github.com/ncss-tech/SoilTaxonomy/issues/35). Partial codes corresponding to each level of the hierarchy are also included in columns: `order_code`, `suborder_code`, `greatgroup_code` and `subgroup_code`.
  * New function `SoilTaxonomyLevels()`: used for creating ordinal and nominal factors corresponding to taxonomic levels `"order"`, `"suborder"`, `"greatgroup"`, and `"subgroup"` (https://github.com/ncss-tech/SoilTaxonomy/issues/39).
