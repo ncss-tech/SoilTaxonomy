@@ -264,3 +264,10 @@ ST_family_classes <- subset(ST_family_classes, DomainID != 188)
 ST_family_classes$FeatureID <- NULL
 
 usethis::use_data(ST_family_classes, overwrite = TRUE)
+
+## create SMR data frame
+# st <- unlist(ST_unique_list)
+# x <- extractSMR(st)
+# head(x)
+# ST_SMR_12th <- data.frame(code = taxon_to_taxon_code(st), taxmoistclass = x)
+# usethis::use_data(ST_SMR_12th, overwrite = TRUE)

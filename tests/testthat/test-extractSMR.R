@@ -6,11 +6,15 @@ test_that("extractSMR works", {
   # including one w/ more formative elements than usual (humic inceptic eutroperox)
   expect_equal(extractSMR(c("aquic haploxeralfs",
                             "typic epiaqualfs",
-                            "humic inceptic eutroperox")),
+                            "humic inceptic eutroperox",
+                            "aquisalids",
+                            "aquiturbels")),
                factor(
                  c(`aquic haploxeralfs` = "xeric",
                    `typic epiaqualfs` = "aquic",
-                   `humic inceptic eutroperox` = "perudic"
+                   `humic inceptic eutroperox` = "perudic",
+                   `aquisalids` = "aridic (torric)",
+                   `aquiturbels` = "aquic"
                  ),
                  levels = c(
                    "aridic (torric)",
