@@ -16,7 +16,6 @@ BugReports: https://github.com/ncss-tech/SoilTaxonomy/issues
 Imports: stats, utils, stringr, data.table
 Suggests: 
     testthat,
-    covr,
     knitr,
     rmarkdown,
     markdown,
