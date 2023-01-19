@@ -91,7 +91,8 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
     if (length(idx) == 0)
       return(list(defs = data.frame(element = "", derivation = "",
                                     connotation = "", simplified = NA, link = NA),
-                  char.index = 0))
+                  level = NA_character_,
+                  char.index = NA_integer_))
     m <- m[idx]
 
     # order by number of characters
@@ -131,12 +132,14 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
     if(any(is.nan(cidx))) {
       cidx[is.nan(cidx)] <- NA
     }
+
     list(defs = defs, char.index = cidx, level = rep(ll, nrow(defs)))
   })
 
   defres <- data.table::rbindlist(lapply(res, function(x) x$defs), fill = TRUE)
   cidres <- do.call('c', lapply(res, function(x) x$char.index))
   defres[["level"]] <- do.call('c', lapply(res, function(x) x$level))
+  defres <- defres[which(defres$element != "",)]
   list(defs = as.data.frame(defres), char.index = cidres)
 }
 
