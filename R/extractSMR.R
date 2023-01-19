@@ -30,8 +30,8 @@ extractSMR <- function(taxon, as.is = FALSE, droplevels = FALSE, ordered = TRUE)
   el <- FormativeElements(taxon)
 
   # determine taxon level and position
-  lv <- taxon_to_level(taxon)
-  th <- level_hierarchy(lv)
+  el$defs$hierarchy <- level_hierarchy(el$defs$level)
+  th <- min(el$defs$hierarchy, na.rm = TRUE)
 
   # get SMR formative element connotation LUT
   co <- .get_SMR_element_connotation()
@@ -42,7 +42,7 @@ extractSMR <- function(taxon, as.is = FALSE, droplevels = FALSE, ordered = TRUE)
   # THEN get highest level taxon SMR connotation
   co <- co[co$element %in% el$defs$element &
              co$level %in% el$defs$level &
-             co$level == suppressWarnings(max(level_hierarchy(el$defs$level), na.rm = TRUE)), ]
+             co$level == suppressWarnings(max(el$defs$hierarchy, na.rm = TRUE)), ]
   nrx <- nrow(co)
   if (nrx == 1) {
     # todo handle per+aqu and per+ud

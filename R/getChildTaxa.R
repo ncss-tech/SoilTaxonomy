@@ -26,11 +26,7 @@ getChildTaxa <- function(taxon = NULL, code = NULL, convert = TRUE,
     code <- taxon_to_taxon_code(taxon)
   }
 
-  # for R CMD check
-  ST_higher_taxa_codes_12th <- NULL
-
-  # load local copy of taxon code lookup table
-  load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
+  ST_higher_taxa_codes_12th <- .get_ST_higher_taxa_codes()
 
   out <- lapply(code, function(x) {
     idx <- grep(paste0("^", x, "."), ST_higher_taxa_codes_12th$code)

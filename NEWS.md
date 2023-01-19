@@ -1,7 +1,8 @@
 # SoilTaxonomy 0.2.3 (2023-01-18)
  - Fix unintended case-sensitivity of `FormativeElements()`; thanks to Shawn Salley (@swsalley)
- - Fix for `extractSMR()` via fix for `FormativeElements()` applied at multiple levels (affcts taxa above subgroup level)
+ - Fix for `extractSMR()` via fix for `FormativeElements()` applied at multiple levels (affects taxa above subgroup level)
  - Add `level_hierarchy()` a helper function for creating ordered factors related to the levels: "order", "suborder", "greatgroup", "subgroup", "family".
+ - Taxon code lookup tables are now cached in the package environment (`SoilTaxonomy.env`) after the first time they are used for a moderate boost in performance in scenarios calling `taxon_code_to_taxon()` or `taxon_to_taxon_code()` many times
 
 # SoilTaxonomy 0.2.2 (2022-10-01)
  * The order of dataset `ST` is now based on the full subgroup level code (https://github.com/ncss-tech/SoilTaxonomy/issues/35). Partial codes corresponding to each level of the hierarchy are also included in columns: `order_code`, `suborder_code`, `greatgroup_code` and `subgroup_code`.

@@ -26,11 +26,7 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
 
   level <- match.arg(level, choices = c("order","suborder","greatgroup","subgroup"), several.ok = TRUE)
 
-  # for R CMD check
-  ST_formative_elements <- NULL
-
-  # load local copy of formative elements
-  load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
+  ST_formative_elements <- .get_ST_formative_elements()
 
   x <- tolower(x)
 
@@ -87,7 +83,7 @@ FormativeElements <- function(x, level = c("order","suborder","greatgroup","subg
     m <- m[which(!is.na(m))]
 
     # remove any that do not exist in input x; e.g. folistels are histels, but only contain "ist" not "hist"
-    idx <- sapply(m, function(mm) length(grep(mm, x)) > 0)
+    idx <- sapply(m, function(mm) length(grep(mm, x, fixed = TRUE)) > 0)
     if (length(idx) == 0)
       return(list(defs = data.frame(element = "", derivation = "",
                                     connotation = "", simplified = NA, link = NA),
@@ -171,9 +167,7 @@ SubGroupFormativeElements <- function(x) {
 #' @export
 #' @rdname FormativeElements
 get_ST_formative_elements <- function(level = c("order", "suborder", "greatgroup", "subgroup")) {
-  ST_formative_elements <- NULL
-  load(system.file("data/ST_formative_elements.rda", package = "SoilTaxonomy")[1])
-
+  ST_formative_elements <- .get_ST_formative_elements()
   level <- match.arg(level, c("order","suborder","greatgroup","subgroup"), several.ok = TRUE)
 
   d <- data.table::rbindlist(lapply(level, function(x) {
@@ -184,3 +178,20 @@ get_ST_formative_elements <- function(level = c("order", "suborder", "greatgroup
 
   as.data.frame(d)
 }
+
+#' Return `ST_formative_elements` dataset efficiently
+#'
+#' Provides mechanism for caching rather than repeatedly re-reading .rda files for heavily used functions involving code lookup tables.
+#' @return a list containing four data.frames, one for each: `"order"`, `"suborder"`, `"greatgroup"`, `"subgroup"`
+#' @noRd
+.get_ST_formative_elements <- function() {
+  if (!exists("ST_formative_elements", envir = SoilTaxonomy.env)) {
+    ST_formative_elements <- NULL
+    load(system.file("data/ST_formative_elements.rda", package = "SoilTaxonomy")[1])
+    assign("ST_formative_elements", ST_formative_elements, envir = SoilTaxonomy.env)
+  } else {
+    ST_formative_elements <- get("ST_formative_elements", SoilTaxonomy.env)
+  }
+  ST_formative_elements
+}
+

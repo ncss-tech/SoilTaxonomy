@@ -1,6 +1,3 @@
-#'
-NULL
-
 #' Determine soilDB version with public-facing NASIS metadata methods is available
 #'
 #' Returns `TRUE` if soilDB package version is greater than or equal to "2.7.3"
