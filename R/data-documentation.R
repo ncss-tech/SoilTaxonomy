@@ -2,7 +2,7 @@
 #' @title Soil Taxonomy Hierarchy
 #'
 #' @description The first 4 levels of the US Soil Taxonomy hierarchy (soil order, suborder, greatgroup, subgroup), presented as a \code{data.frame} (denormalized) and a \code{list} of unique taxa.
-#'
+#' @details Ordered based on the unique letter codes denoting taxa from the 13th edition of the Keys to Soil Taxonomy.
 #' @usage data(ST)
 #'
 #' @references
@@ -81,3 +81,17 @@
 #'
 "ST_higher_taxa_codes_12th"
 
+#' @title Letter Code Lookup Table for Position of Taxa within the Keys to Soil Taxonomy (13th Edition)
+#'
+#' @description A lookup table mapping unique taxonomic Order, Suborder, Great Group and Subgroups to letter codes that denote their logical position within the Keys.
+#'
+#' @references
+#'
+#' Soil Survey Staff. 2022. Keys to Soil Taxonomy, 13th ed. USDA-Natural Resources Conservation Service.
+#' \url{https://www.nrcs.usda.gov/resources/guides-and-instructions/keys-to-soil-taxonomy}
+#'
+#' @usage data(ST_higher_taxa_codes_13th)
+#'
+#' @keywords datasets
+#'
+"ST_higher_taxa_codes_13th"
