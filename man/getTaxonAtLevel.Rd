@@ -4,22 +4,24 @@
 \alias{getTaxonAtLevel}
 \title{Get the taxon name at the Soil Order, Suborder, Great Group or Subgroup level}
 \usage{
-getTaxonAtLevel(x, level = c("order", "suborder", "greatgroup", "subgroup"))
+getTaxonAtLevel(x, level = "order", simplify = TRUE)
 }
 \arguments{
 \item{x}{A character vector containing subgroup-level taxonomic names}
 
 \item{level}{one of \code{c("order","suborder","greatgroup","subgroup")}}
+
+\item{simplify}{Return a vector when \code{level} has length \code{1}? Default: \code{TRUE}. Otherwise, a data.frame is returned.}
 }
 \value{
-A named character vector of taxa at specified level, where names are the internal Soil Taxonomy letter codes.
+A named character vector of taxa at specified level, where names are the internal Soil Taxonomy letter codes.  When \code{length(level) > 1}?  a data.frame is returned with column names for each \code{level}.
 }
 \description{
 Get the taxon name at the Soil Order, Suborder, Great Group or Subgroup level
 }
 \examples{
 
-# default gets the soil order 
+# default gets the soil order
 getTaxonAtLevel(c("typic haplargids", "typic glacistels")) #, level = "order")
 
 # specify alternate levels
@@ -31,4 +33,6 @@ getTaxonAtLevel("udifolists", level = "subgroup")
 # but can do parents of children
 getTaxonAtLevel("udifolists", level = "suborder")
 
+# specify multiple levels (returns a list element for each level)
+getTaxonAtLevel("hapludolls", c("order", "suborder", "greatgroup", "subgroup"))
 }
