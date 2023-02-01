@@ -69,7 +69,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getTaxonAtLevel</span><span class="op">(</span><span class="va">x</span>, level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"order"</span>, <span class="st">"suborder"</span>, <span class="st">"greatgroup"</span>, <span class="st">"subgroup"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getTaxonAtLevel</span><span class="op">(</span><span class="va">x</span>, level <span class="op">=</span> <span class="st">"order"</span>, simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -81,18 +81,22 @@
 <dt>level</dt>
 <dd><p>one of <code>c("order","suborder","greatgroup","subgroup")</code></p></dd>
 
+
+<dt>simplify</dt>
+<dd><p>Return a vector when <code>level</code> has length <code>1</code>? Default: <code>TRUE</code>. Otherwise, a data.frame is returned.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
     
 
-<p>A named character vector of taxa at specified level, where names are the internal Soil Taxonomy letter codes.</p>
+<p>A named character vector of taxa at specified level, where names are the internal Soil Taxonomy letter codes.  When <code>length(level) &gt; 1</code>?  a data.frame is returned with column names for each <code>level</code>.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># default gets the soil order </span></span></span>
+<span class="r-in"><span><span class="co"># default gets the soil order</span></span></span>
 <span class="r-in"><span><span class="fu">getTaxonAtLevel</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"typic haplargids"</span>, <span class="st">"typic glacistels"</span><span class="op">)</span><span class="op">)</span> <span class="co">#, level = "order")</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> typic haplargids typic glacistels </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      "aridisols"       "gelisols" </span>
@@ -112,6 +116,10 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> udifolists </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  "folists" </span>
 <span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># specify multiple levels (returns a list element for each level)</span></span></span>
+<span class="r-in"><span><span class="fu">getTaxonAtLevel</span><span class="op">(</span><span class="st">"hapludolls"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"order"</span>, <span class="st">"suborder"</span>, <span class="st">"greatgroup"</span>, <span class="st">"subgroup"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                order suborder greatgroup subgroup</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hapludolls mollisols   udolls hapludolls     &lt;NA&gt;</span>
 </code></pre></div>
     </div>
   </div>
