@@ -15,6 +15,6 @@ A \code{data.frame} with columns "group", "name", "chapter", "page", "descriptio
 }
 \references{
 Soil Survey Staff. 2014. Keys to Soil Taxonomy, 12th ed. USDA-Natural Resources Conservation Service, Washington, DC.
-\url{https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/class/taxonomy/?cid=nrcs142p2_053580}
+\url{https://www.nrcs.usda.gov/resources/guides-and-instructions/keys-to-soil-taxonomy}
 }
 \keyword{datasets}

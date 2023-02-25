@@ -18,7 +18,7 @@ The lookup table has been corrected to reflect errata that were posted after the
 }
 \references{
 Soil Survey Staff. 2014. Keys to Soil Taxonomy, 12th ed. USDA-Natural Resources Conservation Service, Washington, DC.
-\url{https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/class/taxonomy/?cid=nrcs142p2_053580}
+\url{https://www.nrcs.usda.gov/resources/guides-and-instructions/keys-to-soil-taxonomy}
 
 Soil Survey Staff. 2014. Claves para la Taxonomía de Suelos, 12th ed. USDA-Natural Resources Conservation Service, Washington, DC.
 \url{https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/nrcs142p2_051546.pdf}
