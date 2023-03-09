@@ -4,10 +4,18 @@
 \alias{taxonTree}
 \title{Create a \code{data.tree} Object from Taxon Names}
 \usage{
-taxonTree(taxon, root = "Soil Taxonomy", verbose = TRUE, ...)
+taxonTree(
+  taxon,
+  level = c("order", "suborder", "greatgroup", "subgroup"),
+  root = "Soil Taxonomy",
+  verbose = TRUE,
+  ...
+)
 }
 \arguments{
 \item{taxon}{A vector of taxon names}
+
+\item{level}{One or more of: \code{"order"}, \code{"suborder"}, \code{"greatgroup"}, \code{"subgroup"}. The lowest level is passed to \code{getChildLevel()} to generate the leaf nodes.}
 
 \item{root}{Label for root node. Default: \code{"Soil Taxonomy"}; \code{NULL} for "unrooted" tree.}
 
@@ -16,7 +24,7 @@ taxonTree(taxon, root = "Soil Taxonomy", verbose = TRUE, ...)
 \item{...}{Additional arguments to \code{data.tree::as.Node.data.frame()}}
 }
 \value{
-A data.tree object (invisibly). A text representation of the tree is printed when \code{verbose=TRUE}.
+A \code{data.tree} object (invisibly). A text representation of the tree is printed when \code{verbose=TRUE}.
 }
 \description{
 Create a \code{data.tree} Object from Taxon Names
@@ -24,5 +32,10 @@ Create a \code{data.tree} Object from Taxon Names
 \examples{
 \dontshow{if (!inherits(requireNamespace("data.tree", quietly = TRUE), 'try-error')) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 \dontshow{\}) # examplesIf}
+
+# hapludults and hapludalfs (to subgroup level)
 taxonTree(c("hapludults", "hapludalfs"))
+
+# alfisols suborders and great groups
+taxonTree("alfisols", root = "Alfisols", level = c("suborder", "greatgroup"))
 }
