@@ -14,15 +14,12 @@ library(data.tree)
 
 data("ST")
 
-# just in case
-x <- ST[order(ST$code), ]
-
 sc <- get_soilseries_from_NASIS()
 
 sc <- sc[, c('soilseriesname', 'taxclname', 'taxsubgrp')]
 names(sc) <- c('series', 'family', 'subgroup')
 
-z <- merge(x, sc, by.x = 'subgroup', all.x = TRUE, sort = FALSE)
+z <- merge(ST, sc, by.x = 'subgroup', all.x = TRUE, sort = FALSE)
 head(z)
 
 z$family <- tolower(z$family)
@@ -37,18 +34,28 @@ z$f <- trimws(z$f, which = 'both')
 
 head(z)
 
-z <- z[, c('order', 'suborder', 'greatgroup', 'subgroup', 'f', 'series')]
 
-head(z)
-
+# ordering used by 'Keys
+z <- z[order(z$code, method = 'radix'), ]
 
 
 td <- tempdir()
 unlink(file.path(td, 'ST'), recursive = TRUE)
 
-for(i in 1:nrow(x)) {
-  dir.create(
-    file.path(
+for(i in 1:nrow(z)) {
+  
+  # account for subgroups without series
+  if(is.na(z$series[i])) {
+    fp <- file.path(
+      td, 
+      'ST', 
+      z$order[i], 
+      z$suborder[i], 
+      z$greatgroup[i], 
+      z$subgroup[i]
+    )
+  } else {
+    fp <- file.path(
       td, 
       'ST', 
       z$order[i], 
@@ -57,9 +64,10 @@ for(i in 1:nrow(x)) {
       z$subgroup[i], 
       z$f[i], 
       z$series[i]
-    ), 
-    recursive = TRUE
-  )
+    ) 
+  }
+  
+  dir.create(path = fp, recursive = TRUE)
 }
 
 setwd(td)
@@ -71,8 +79,51 @@ sink()
 unlink(file.path(td, 'ST'), recursive = TRUE)
 
 
+
+for(i in 1:nrow(z)) {
+  
+  # account for subgroups without series
+  if(is.na(z$series[i])) {
+    fp <- file.path(
+      td, 
+      'ST', 
+      sprintf("%s-%s", z$order_code[i], z$order[i]), 
+      sprintf("%s-%s", z$suborder_code[i], z$suborder[i]), 
+      sprintf("%s-%s", z$greatgroup_code[i], z$greatgroup[i]), 
+      sprintf("%s-%s", z$subgroup_code[i], z$subgroup[i])
+    )
+    
+  } else {
+    fp <- file.path(
+      td, 
+      'ST', 
+      sprintf("%s-%s", z$order_code[i], z$order[i]), 
+      sprintf("%s-%s", z$suborder_code[i], z$suborder[i]), 
+      sprintf("%s-%s", z$greatgroup_code[i], z$greatgroup[i]), 
+      sprintf("%s-%s", z$subgroup_code[i], z$subgroup[i]), 
+      z$f[i], 
+      z$series[i]
+    )
+  }
+  
+  
+  dir.create(path = fp, recursive = TRUE)
+}
+
+setwd(td)
+
+sink('e:/temp/st12-codes.txt')
+dir_tree(file.path('ST'))
+sink()
+
+unlink(file.path(td, 'ST'), recursive = TRUE)
+
+
+
+
+v <- c('order', 'suborder', 'greatgroup', 'subgroup', 'f', 'series', 'path')
 z$path <- sprintf("ST/%s/%s/%s/%s/%s/%s", z$order, z$suborder, z$greatgroup, z$subgroup, z$f, z$series)
-n <- as.Node(z, pathName = 'path')
+n <- as.Node(z[, v], pathName = 'path')
 
 
 # prune missing family / series
