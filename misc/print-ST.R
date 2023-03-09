@@ -10,6 +10,7 @@ library(data.tree)
 # * add subgroup acreage
 # * 13th ed.
 # * compact style of dir_tree(), but in proper order
+# * add series count to subgroups
 
 data("ST")
 
