@@ -20,7 +20,8 @@ Suggests:
     rmarkdown,
     markdown,
     soilDB,
-    ape
+    ape,
+    data.tree
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr
