@@ -63,20 +63,23 @@ write.csv(ST.family.classes, file='data-raw/ST-family-classes.csv', row.names=FA
 ST <- read.csv('data-raw/ST-full.csv', stringsAsFactors = FALSE)
 usethis::use_data(ST, overwrite = TRUE)
 
-ST_logic <- cbind(ST, )
-
 ## unique taxa, sorted by appearance in the 'Keys
 ## as a list
 ST_unique_list <- list()
 
-# requires codes / taxa list
-load('data/ST_higher_taxa_codes_12th.rda')
 load('data/ST.rda')
+
+# requires codes / taxa list
+ST_higher_taxa_codes_13th <- jsonlite::fromJSON("https://raw.githubusercontent.com/ncss-tech/SoilKnowledgeBase/main/inst/extdata/KST/2022_KST_codes.json")
+colnames(ST_higher_taxa_codes_13th) <- c("code", "taxon")
+usethis::use_data(ST_higher_taxa_codes_13th, overwrite = TRUE)
+
+latest_taxa <- ST_higher_taxa_codes_13th
 
 # re-arrange taxa according to letter codes in the 'Keys
 .uniqueTaxaLogicalOrdering <- function(x) {
   # find taxa in the letter code LUT
-  idx <- match(tolower(x), tolower(ST_higher_taxa_codes_12th$taxon))
+  idx <- match(tolower(x), tolower(latest_taxa$taxon))
 
   # missing taxa
   if (any(is.na(idx))) {
@@ -84,7 +87,7 @@ load('data/ST.rda')
   }
 
   # sort taxa based on letter codes
-  res <- ST_higher_taxa_codes_12th$taxon[idx][order(ST_higher_taxa_codes_12th$code[idx])]
+  res <- latest_taxa$taxon[idx][order(latest_taxa$code[idx])]
 
   return(tolower(res))
 }
