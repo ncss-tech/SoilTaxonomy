@@ -20,7 +20,7 @@
 taxonTree <- function(taxon,
                       level = c("order", "suborder", "greatgroup", "subgroup"),
                       root = "Soil Taxonomy",
-                      verbose = TRUE,
+                      verbose = FALSE,
                       ...) {
   if (!requireNamespace("data.tree")) {
     stop("package 'data.tree' is required", call. = FALSE)
@@ -50,7 +50,7 @@ taxonTree <- function(taxon,
   attr(n, "class") <- c("SoilTaxonNode", attr(n, "class"))
 
   if (isTRUE(verbose)) {
-    print(n, limit = NULL)
+    print(n)
   }
 
   invisible(n)
@@ -59,30 +59,18 @@ taxonTree <- function(taxon,
 #' @export
 print.SoilTaxonNode <- function(x,
                                 special.chars = "|",
-                                optional = FALSE,
-                                traversal = c("pre-order", "post-order", "in-order", "level", "ancestor"),
-                                pruneFun = NULL,
-                                filterFun = NULL,
-                                format = FALSE,
-                                inheritFromAncestors = FALSE,
                                 ...) {
-  res <- as.data.frame(x,
-                       optional = optional,
-                       traversal = traversal,
-                       pruneFun = pruneFun,
-                       filterFun = filterFun,
-                       format = format,
-                       inheritFromAncestors = inheritFromAncestors)
+  res <- as.data.frame(x, ...)
 
   # replace unicode markup
-  special.chars.default <- c("\u00a6", "\u00b0")
+  special.chars.default <- c("\u00a6", "\u00b0", "--")
   if (is.null(special.chars) || length(special.chars) == 0) {
     special.chars <- "|"
   }
 
-  special.chars <- rep(special.chars, 2)[1:2]
-  for (i in 1:2) {
-    res$levelName <- gsub(special.chars.default[i], special.chars[i], res$levelName)
+  special.chars <- rep(special.chars, 3)[1:3]
+  for (i in 1:3) {
+    res$levelName <- gsub(special.chars.default[i], special.chars[i], res$levelName, fixed = TRUE)
   }
 
   cat(res$levelName, sep = "\n")
