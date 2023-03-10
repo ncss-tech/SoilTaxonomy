@@ -4,6 +4,7 @@
 #' @param level One or more of: `"order"`, `"suborder"`, `"greatgroup"`, `"subgroup"`. The lowest level is passed to `getChildLevel()` to generate the leaf nodes.
 #' @param root Label for root node. Default: `"Soil Taxonomy"`; `NULL` for "unrooted" tree.
 #' @param verbose Print tree output? Default: `TRUE`
+#' @param special.chars Characters used to print the tree to console? Default: `c("|", "|", "--")`. For fancy markup try: `c("\\u251c", "\\u2514", "\\u2500 ")`
 #' @param ... Additional arguments to `data.tree::as.Node.data.frame()`
 #'
 #' @return A `SoilTaxonNode` (subclass of `data.tree` `Node`) object (invisibly). A text representation of the tree is printed when `verbose=TRUE`.
@@ -20,7 +21,8 @@
 taxonTree <- function(taxon,
                       level = c("order", "suborder", "greatgroup", "subgroup"),
                       root = "Soil Taxonomy",
-                      verbose = FALSE,
+                      verbose = TRUE,
+                      special.chars = c("|", "|", "--"),
                       ...) {
   if (!requireNamespace("data.tree")) {
     stop("package 'data.tree' is required", call. = FALSE)
@@ -50,7 +52,7 @@ taxonTree <- function(taxon,
   attr(n, "class") <- c("SoilTaxonNode", attr(n, "class"))
 
   if (isTRUE(verbose)) {
-    print(n)
+    print(n, special.chars = special.chars)
   }
 
   invisible(n)

@@ -9,6 +9,7 @@ taxonTree(
   level = c("order", "suborder", "greatgroup", "subgroup"),
   root = "Soil Taxonomy",
   verbose = TRUE,
+  special.chars = c("|", "|", "--"),
   ...
 )
 }
@@ -20,6 +21,8 @@ taxonTree(
 \item{root}{Label for root node. Default: \code{"Soil Taxonomy"}; \code{NULL} for "unrooted" tree.}
 
 \item{verbose}{Print tree output? Default: \code{TRUE}}
+
+\item{special.chars}{Characters used to print the tree to console? Default: \code{c("|", "|", "--")}. For fancy markup try: \code{c("\\\\u251c", "\\\\u2514", "\\\\u2500 ")}}
 
 \item{...}{Additional arguments to \code{data.tree::as.Node.data.frame()}}
 }
