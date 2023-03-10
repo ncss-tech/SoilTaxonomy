@@ -1,5 +1,7 @@
 test_that("taxonTree works", {
 
+  skip_if_not_installed("data.tree")
+
   tf <- tempfile()
   sink(file = tf)
   x <- taxonTree(c("hapludults", "hapludalfs"))
