@@ -74,6 +74,7 @@
 <li>Added <code><a href="../reference/taxonTree.html">taxonTree()</a></code> a method for creating <code>data.tree</code> objects (added to Suggests). This function returns a custom SoilTaxonomy-specific subclass of data.<code>tree</code> <code>Node</code> called <code>SoilTaxonNode</code>.
 <ul><li>This new class has a custom print method, and in the future there may be more dedicated functions for viewing and traversing the taxonomic hierarchy.</li>
 </ul></li>
+<li>Added <code>ST_higher_taxa_codes_13th</code> the 13th edition analog of <code>ST_higher_taxa_codes_12th</code>, which is the Keys to Soil Taxonomy taxon list and corresponding letter codes. This lookup table is used internally for many things related to the hierarchy of taxonomy. It has not been integrated into other datasets (pending next NASIS data model update in several months). Incorporating the edition of taxonomy will be a significant change when implemented (and may contain breaking changes to code-lookup tools).</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.2" id="soiltaxonomy-022-2022-10-01">SoilTaxonomy 0.2.2 (2022-10-01)<small>2022-10-17</small><a class="anchor" aria-label="anchor" href="#soiltaxonomy-022-2022-10-01"></a></h2>
