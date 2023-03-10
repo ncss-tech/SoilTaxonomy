@@ -6,7 +6,8 @@
  - `getTaxonAtLevel()` now supports multiple `level` values. In this case, a data.frame with column for each `level` is returned. Thanks to Meyer Bohn (@MollicMeyer) in #42 for suggestion.
  - Added `taxonTree()` a method for creating `data.tree` objects (added to Suggests). This function returns a custom SoilTaxonomy-specific subclass of data.`tree` `Node` called `SoilTaxonNode`. 
    - This new class has a custom print method, and in the future there may be more dedicated functions for viewing and traversing the taxonomic hierarchy.
-
+ - Added `ST_higher_taxa_codes_13th` the 13th edition analog of `ST_higher_taxa_codes_12th`, which is the Keys to Soil Taxonomy taxon list and corresponding letter codes. This lookup table is used internally for many things related to the hierarchy of taxonomy. It has not been integrated into other datasets (pending next NASIS data model update in several months). Incorporating the edition of taxonomy will be a significant change when implemented (and may contain breaking changes to code-lookup tools).
+ 
 # SoilTaxonomy 0.2.2 (2022-10-01)
  * The order of dataset `ST` is now based on the full subgroup level code (https://github.com/ncss-tech/SoilTaxonomy/issues/35). Partial codes corresponding to each level of the hierarchy are also included in columns: `order_code`, `suborder_code`, `greatgroup_code` and `subgroup_code`.
  * New function `SoilTaxonomyLevels()`: used for creating ordinal and nominal factors corresponding to taxonomic levels `"order"`, `"suborder"`, `"greatgroup"`, and `"subgroup"` (https://github.com/ncss-tech/SoilTaxonomy/issues/39).
