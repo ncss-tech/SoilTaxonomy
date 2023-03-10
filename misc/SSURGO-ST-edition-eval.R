@@ -1,5 +1,6 @@
 library(soilDB)
 library(lattice)
+library(latticeExtra)
 library(tactile)
 
 # let SDA do the work
