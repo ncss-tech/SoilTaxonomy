@@ -111,22 +111,22 @@
 </h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># hierarchy: order to subgroup</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'ST'</span>, package <span class="op">=</span> <span class="st">'SoilTaxonomy'</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># unique taxa: just the taxon names (in order that they "key out" in the keys)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'ST_unique_list'</span>, package <span class="op">=</span> <span class="st">'SoilTaxonomy'</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># formative element dictionary</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'ST_formative_elements'</span>, package <span class="op">=</span> <span class="st">'SoilTaxonomy'</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># codes denoting higher taxonomic parent-child relationships (12th Edition Keys to Soil Taxonomy)</span></span>
+<span><span class="co"># data('ST', package = 'SoilTaxonomy')</span></span>
+<span><span class="co"># </span></span>
+<span><span class="co"># # unique taxa: just the taxon names (in order that they "key out" in the keys)</span></span>
+<span><span class="co"># data('ST_unique_list', package = 'SoilTaxonomy')</span></span>
+<span><span class="co"># </span></span>
+<span><span class="co"># # formative element dictionary</span></span>
+<span><span class="co"># data('ST_formative_elements', package = 'SoilTaxonomy')</span></span>
+<span><span class="co"># </span></span>
+<span><span class="co"># # codes denoting higher taxonomic parent-child relationships (12th Edition Keys to Soil Taxonomy)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'ST_higher_taxa_codes_12th'</span>, package <span class="op">=</span> <span class="st">'SoilTaxonomy'</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># definitions of diagnostic features and characteristics (12th Edition Keys to Soil Taxonomy)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'ST_features'</span>, package <span class="op">=</span> <span class="st">'SoilTaxonomy'</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># definitions of family-level classes and differentiae (12th Edition Keys to Soil Taxonomy)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'ST_family_classes'</span>, package <span class="op">=</span> <span class="st">'SoilTaxonomy'</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co"># </span></span>
+<span><span class="co"># # definitions of diagnostic features and characteristics (12th Edition Keys to Soil Taxonomy)</span></span>
+<span><span class="co"># data('ST_features', package = 'SoilTaxonomy')</span></span>
+<span><span class="co"># </span></span>
+<span><span class="co"># # definitions of family-level classes and differentiae (12th Edition Keys to Soil Taxonomy)</span></span>
+<span><span class="co"># data('ST_family_classes', package = 'SoilTaxonomy')</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="vignettes">Vignettes<a class="anchor" aria-label="anchor" href="#vignettes"></a>
@@ -141,10 +141,10 @@
 <div class="section level3">
 <h3 id="featured-functions">Featured Functions<a class="anchor" aria-label="anchor" href="#featured-functions"></a>
 </h3>
-<p>Two helpful functions that make use of the internal lookup tables are <code><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel()</a></code> and <code><a href="reference/explainST.html">explainST()</a></code></p>
+<p>Two helpful functions that make use of the internal lookup tables are <code><a href="reference/getTaxonAtLevel.html">getTaxonAtLevel()</a></code>, <code><a href="reference/taxonTree.html">taxonTree()</a></code>, and <code><a href="reference/explainST.html">explainST()</a></code></p>
 <div class="section level4">
 <h4 id="gettaxonatlevel-get-taxonomic-levels-within-higher-taxonomic-groups">
-<code>getTaxonAtLevel</code>: Get taxonomic levels within higher taxonomic groups<a class="anchor" aria-label="anchor" href="#gettaxonatlevel-get-taxonomic-levels-within-higher-taxonomic-groups"></a>
+<code>getTaxonAtLevel()</code>: Get taxonomic levels within higher taxonomic groups<a class="anchor" aria-label="anchor" href="#gettaxonatlevel-get-taxonomic-levels-within-higher-taxonomic-groups"></a>
 </h4>
 <div class="section level5">
 <h5 id="hhch--acrudoxic-plinthic-kandiudults">HHCH = <em>Acrudoxic Plinthic Kandiudults</em>
@@ -190,11 +190,120 @@
 </div>
 </div>
 <div class="section level4">
-<h4 id="explainst-label-formative-elements-with-brief-explanations">
-<code>explainST</code>: Label formative elements with brief explanations<a class="anchor" aria-label="anchor" href="#explainst-label-formative-elements-with-brief-explanations"></a>
+<h4 id="taxontree-create-datatree-representation-of-soil-taxonomy-hierarchy">
+<code>taxonTree()</code>: Create <code>data.tree</code> representation of Soil Taxonomy Hierarchy<a class="anchor" aria-label="anchor" href="#taxontree-create-datatree-representation-of-soil-taxonomy-hierarchy"></a>
 </h4>
-<p><code>explainST</code> provides simple narrative explanations of the formative elements of taxa at the Order, Suborder, Great Group or Subgroup levels.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># all hapludults and hapludalfs (to subgroup level)</span></span>
+<span><span class="fu"><a href="reference/taxonTree.html">taxonTree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"hapludults"</span>, <span class="st">"hapludalfs"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required namespace: data.tree</span></span>
+<span><span class="co">#&gt; Soil Taxonomy                                 </span></span>
+<span><span class="co">#&gt;  |--ultisols                                  </span></span>
+<span><span class="co">#&gt;  |   |--udults                                </span></span>
+<span><span class="co">#&gt;  |       |--hapludults                        </span></span>
+<span><span class="co">#&gt;  |           |--lithic-ruptic-entic hapludults</span></span>
+<span><span class="co">#&gt;  |           |--lithic hapludults             </span></span>
+<span><span class="co">#&gt;  |           |--vertic hapludults             </span></span>
+<span><span class="co">#&gt;  |           |--fragiaquic hapludults         </span></span>
+<span><span class="co">#&gt;  |           |--aquic arenic hapludults       </span></span>
+<span><span class="co">#&gt;  |           |--aquic hapludults              </span></span>
+<span><span class="co">#&gt;  |           |--fragic hapludults             </span></span>
+<span><span class="co">#&gt;  |           |--oxyaquic hapludults           </span></span>
+<span><span class="co">#&gt;  |           |--lamellic hapludults           </span></span>
+<span><span class="co">#&gt;  |           |--psammentic hapludults         </span></span>
+<span><span class="co">#&gt;  |           |--arenic hapludults             </span></span>
+<span><span class="co">#&gt;  |           |--grossarenic hapludults        </span></span>
+<span><span class="co">#&gt;  |           |--inceptic hapludults           </span></span>
+<span><span class="co">#&gt;  |           |--humic hapludults              </span></span>
+<span><span class="co">#&gt;  |           |--typic hapludults              </span></span>
+<span><span class="co">#&gt;  |--alfisols                                  </span></span>
+<span><span class="co">#&gt;      |--udalfs                                </span></span>
+<span><span class="co">#&gt;          |--hapludalfs                        </span></span>
+<span><span class="co">#&gt;              |--lithic hapludalfs             </span></span>
+<span><span class="co">#&gt;              |--aquertic chromic hapludalfs   </span></span>
+<span><span class="co">#&gt;              |--aquertic hapludalfs           </span></span>
+<span><span class="co">#&gt;              |--oxyaquic vertic hapludalfs    </span></span>
+<span><span class="co">#&gt;              |--chromic vertic hapludalfs     </span></span>
+<span><span class="co">#&gt;              |--vertic hapludalfs             </span></span>
+<span><span class="co">#&gt;              |--andic hapludalfs              </span></span>
+<span><span class="co">#&gt;              |--vitrandic hapludalfs          </span></span>
+<span><span class="co">#&gt;              |--fragiaquic hapludalfs         </span></span>
+<span><span class="co">#&gt;              |--fragic oxyaquic hapludalfs    </span></span>
+<span><span class="co">#&gt;              |--aquic arenic hapludalfs       </span></span>
+<span><span class="co">#&gt;              |--arenic oxyaquic hapludalfs    </span></span>
+<span><span class="co">#&gt;              |--anthraquic hapludalfs         </span></span>
+<span><span class="co">#&gt;              |--albaquultic hapludalfs        </span></span>
+<span><span class="co">#&gt;              |--albaquic hapludalfs           </span></span>
+<span><span class="co">#&gt;              |--glossaquic hapludalfs         </span></span>
+<span><span class="co">#&gt;              |--aquultic hapludalfs           </span></span>
+<span><span class="co">#&gt;              |--aquollic hapludalfs           </span></span>
+<span><span class="co">#&gt;              |--aquic hapludalfs              </span></span>
+<span><span class="co">#&gt;              |--mollic oxyaquic hapludalfs    </span></span>
+<span><span class="co">#&gt;              |--oxyaquic hapludalfs           </span></span>
+<span><span class="co">#&gt;              |--fragic hapludalfs             </span></span>
+<span><span class="co">#&gt;              |--lamellic hapludalfs           </span></span>
+<span><span class="co">#&gt;              |--psammentic hapludalfs         </span></span>
+<span><span class="co">#&gt;              |--arenic hapludalfs             </span></span>
+<span><span class="co">#&gt;              |--glossic hapludalfs            </span></span>
+<span><span class="co">#&gt;              |--inceptic hapludalfs           </span></span>
+<span><span class="co">#&gt;              |--ultic hapludalfs              </span></span>
+<span><span class="co">#&gt;              |--mollic hapludalfs             </span></span>
+<span><span class="co">#&gt;              |--typic hapludalfs</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># suborders and great groups of alfisols </span></span>
+<span><span class="fu"><a href="reference/taxonTree.html">taxonTree</a></span><span class="op">(</span><span class="st">"alfisols"</span>, root <span class="op">=</span> <span class="st">"Alfisols"</span>, level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"suborder"</span>, <span class="st">"greatgroup"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Alfisols              </span></span>
+<span><span class="co">#&gt;  |--aqualfs           </span></span>
+<span><span class="co">#&gt;  |   |--cryaqualfs    </span></span>
+<span><span class="co">#&gt;  |   |--plinthaqualfs </span></span>
+<span><span class="co">#&gt;  |   |--duraqualfs    </span></span>
+<span><span class="co">#&gt;  |   |--natraqualfs   </span></span>
+<span><span class="co">#&gt;  |   |--fragiaqualfs  </span></span>
+<span><span class="co">#&gt;  |   |--kandiaqualfs  </span></span>
+<span><span class="co">#&gt;  |   |--vermaqualfs   </span></span>
+<span><span class="co">#&gt;  |   |--albaqualfs    </span></span>
+<span><span class="co">#&gt;  |   |--glossaqualfs  </span></span>
+<span><span class="co">#&gt;  |   |--epiaqualfs    </span></span>
+<span><span class="co">#&gt;  |   |--endoaqualfs   </span></span>
+<span><span class="co">#&gt;  |--cryalfs           </span></span>
+<span><span class="co">#&gt;  |   |--palecryalfs   </span></span>
+<span><span class="co">#&gt;  |   |--glossocryalfs </span></span>
+<span><span class="co">#&gt;  |   |--haplocryalfs  </span></span>
+<span><span class="co">#&gt;  |--ustalfs           </span></span>
+<span><span class="co">#&gt;  |   |--durustalfs    </span></span>
+<span><span class="co">#&gt;  |   |--plinthustalfs </span></span>
+<span><span class="co">#&gt;  |   |--natrustalfs   </span></span>
+<span><span class="co">#&gt;  |   |--kandiustalfs  </span></span>
+<span><span class="co">#&gt;  |   |--kanhaplustalfs</span></span>
+<span><span class="co">#&gt;  |   |--paleustalfs   </span></span>
+<span><span class="co">#&gt;  |   |--rhodustalfs   </span></span>
+<span><span class="co">#&gt;  |   |--haplustalfs   </span></span>
+<span><span class="co">#&gt;  |--xeralfs           </span></span>
+<span><span class="co">#&gt;  |   |--durixeralfs   </span></span>
+<span><span class="co">#&gt;  |   |--natrixeralfs  </span></span>
+<span><span class="co">#&gt;  |   |--fragixeralfs  </span></span>
+<span><span class="co">#&gt;  |   |--plinthoxeralfs</span></span>
+<span><span class="co">#&gt;  |   |--rhodoxeralfs  </span></span>
+<span><span class="co">#&gt;  |   |--palexeralfs   </span></span>
+<span><span class="co">#&gt;  |   |--haploxeralfs  </span></span>
+<span><span class="co">#&gt;  |--udalfs            </span></span>
+<span><span class="co">#&gt;      |--natrudalfs    </span></span>
+<span><span class="co">#&gt;      |--ferrudalfs    </span></span>
+<span><span class="co">#&gt;      |--fraglossudalfs</span></span>
+<span><span class="co">#&gt;      |--fragiudalfs   </span></span>
+<span><span class="co">#&gt;      |--kandiudalfs   </span></span>
+<span><span class="co">#&gt;      |--kanhapludalfs </span></span>
+<span><span class="co">#&gt;      |--paleudalfs    </span></span>
+<span><span class="co">#&gt;      |--rhodudalfs    </span></span>
+<span><span class="co">#&gt;      |--glossudalfs   </span></span>
+<span><span class="co">#&gt;      |--hapludalfs</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="explainst-label-formative-elements-with-brief-explanations">
+<code>explainST()</code>: Label formative elements with brief explanations<a class="anchor" aria-label="anchor" href="#explainst-label-formative-elements-with-brief-explanations"></a>
+</h4>
+<p><code><a href="reference/explainST.html">explainST()</a></code> provides simple narrative explanations of the formative elements of taxa at the Order, Suborder, Great Group or Subgroup levels.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="reference/explainST.html">explainST</a></span><span class="op">(</span><span class="st">'folistels'</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; folistels</span></span>
 <span><span class="co">#&gt; |  |  |                                                                                             </span></span>
