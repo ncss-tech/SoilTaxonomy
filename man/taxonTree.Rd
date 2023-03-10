@@ -24,7 +24,7 @@ taxonTree(
 \item{...}{Additional arguments to \code{data.tree::as.Node.data.frame()}}
 }
 \value{
-A \code{data.tree} object (invisibly). A text representation of the tree is printed when \code{verbose=TRUE}.
+A \code{SoilTaxonNode} (subclass of \code{data.tree} \code{Node}) object (invisibly). A text representation of the tree is printed when \code{verbose=TRUE}.
 }
 \description{
 Create a \code{data.tree} Object from Taxon Names

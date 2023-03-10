@@ -1,4 +1,3 @@
-
 #' Create a `data.tree` Object from Taxon Names
 #'
 #' @param taxon A vector of taxon names
@@ -7,7 +6,7 @@
 #' @param verbose Print tree output? Default: `TRUE`
 #' @param ... Additional arguments to `data.tree::as.Node.data.frame()`
 #'
-#' @return A `data.tree` object (invisibly). A text representation of the tree is printed when `verbose=TRUE`.
+#' @return A `SoilTaxonNode` (subclass of `data.tree` `Node`) object (invisibly). A text representation of the tree is printed when `verbose=TRUE`.
 #' @export
 #' @importFrom stats complete.cases
 #' @examplesIf !inherits(requireNamespace("data.tree", quietly = TRUE), 'try-error')
@@ -28,19 +27,63 @@ taxonTree <- function(taxon,
   }
 
   level <- tolower(trimws(level))
-  lowest_level <- max(match(level, level_hierarchy(family = FALSE)))
-  x <- unique(do.call('c', getChildTaxa(taxon, level = level[length(level)])))
+
+  # get child taxa at most detailed `level`
+  lh <- level_hierarchy(family = FALSE)
+  lowest_level <- max(match(level, lh))
+  x <- unique(do.call('c', getChildTaxa(taxon,
+                                        level = as.character(lh[lowest_level]))))
   y <- getTaxonAtLevel(x, level = level)
+
+  # we build the tree from the terminal/leaf node information
+  #  parent taxa are included based on `level`
   y <- y[order(taxon_to_taxon_code(x)),]
   y <- y[stats::complete.cases(y),]
 
+  # create data.tree node
   y$pathString <- apply(data.frame(root, as.data.frame(lapply(level, function(z) {
     paste0("/", y[[z]])
   }))), MARGIN = 1, FUN = paste0, collapse = "")
-
   n <- data.tree::as.Node(y, ...)
+
+  # allow for S3 dispatch for "soil  taxonomic data.tree objects" SoilTaxonNode
+  attr(n, "class") <- c("SoilTaxonNode", attr(n, "class"))
+
   if (isTRUE(verbose)) {
     print(n, limit = NULL)
   }
+
   invisible(n)
+}
+
+#' @export
+print.SoilTaxonNode <- function(x,
+                                special.chars = "|",
+                                optional = FALSE,
+                                traversal = c("pre-order", "post-order", "in-order", "level", "ancestor"),
+                                pruneFun = NULL,
+                                filterFun = NULL,
+                                format = FALSE,
+                                inheritFromAncestors = FALSE,
+                                ...) {
+  res <- as.data.frame(x,
+                       optional = optional,
+                       traversal = traversal,
+                       pruneFun = pruneFun,
+                       filterFun = filterFun,
+                       format = format,
+                       inheritFromAncestors = inheritFromAncestors)
+
+  # replace unicode markup
+  special.chars.default <- c("\u00a6", "\u00b0")
+  if (is.null(special.chars) || length(special.chars) == 0) {
+    special.chars <- "|"
+  }
+
+  special.chars <- rep(special.chars, 2)[1:2]
+  for (i in 1:2) {
+    res$levelName <- gsub(special.chars.default[i], special.chars[i], res$levelName)
+  }
+
+  cat(res$levelName, sep = "\n")
 }
