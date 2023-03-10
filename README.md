@@ -50,22 +50,22 @@ library(SoilTaxonomy)
 
 ``` r
 # hierarchy: order to subgroup
-# data('ST', package = 'SoilTaxonomy')
-# 
-# # unique taxa: just the taxon names (in order that they "key out" in the keys)
-# data('ST_unique_list', package = 'SoilTaxonomy')
-# 
-# # formative element dictionary
-# data('ST_formative_elements', package = 'SoilTaxonomy')
-# 
-# # codes denoting higher taxonomic parent-child relationships (12th Edition Keys to Soil Taxonomy)
+data('ST', package = 'SoilTaxonomy')
+
+# unique taxa: just the taxon names (in order that they "key out" in the keys)
+data('ST_unique_list', package = 'SoilTaxonomy')
+
+# formative element dictionary
+data('ST_formative_elements', package = 'SoilTaxonomy')
+
+# codes denoting higher taxonomic parent-child relationships (12th Edition Keys to Soil Taxonomy)
 data('ST_higher_taxa_codes_12th', package = 'SoilTaxonomy')
-# 
-# # definitions of diagnostic features and characteristics (12th Edition Keys to Soil Taxonomy)
-# data('ST_features', package = 'SoilTaxonomy')
-# 
-# # definitions of family-level classes and differentiae (12th Edition Keys to Soil Taxonomy)
-# data('ST_family_classes', package = 'SoilTaxonomy')
+
+# definitions of diagnostic features and characteristics (12th Edition Keys to Soil Taxonomy)
+data('ST_features', package = 'SoilTaxonomy')
+
+# definitions of family-level classes and differentiae (12th Edition Keys to Soil Taxonomy)
+data('ST_family_classes', package = 'SoilTaxonomy')
 ```
 
 ### Vignettes
