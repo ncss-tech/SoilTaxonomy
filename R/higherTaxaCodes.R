@@ -164,10 +164,17 @@ taxon_to_taxon_code <- function(taxon) {
   # return matches
   ltaxon <- tolower(taxon)
 
+  # for efficiency the lowercase taxon names are calculated only if needed
+  # the ST_higher_taxa_codes loading function does this
+  if (!"taxonlow" %in% colnames(ST_higher_taxa_codes_12th)) {
+    ST_higher_taxa_codes_12th$taxonlow <- tolower(ST_higher_taxa_codes_12th$taxon)
+  }
+
   # LEFT JOIN on lowercase taxon name
   res <- merge(data.frame(taxonlow = ltaxon, row.names = NULL),
                ST_higher_taxa_codes_12th[ST_higher_taxa_codes_12th$taxonlow %in% ltaxon,],
                by = "taxonlow", all.x = TRUE, incomparables = NA, sort = FALSE)
+
 
   # re-arrange if NA-containing input
   code <- res$code[match(ltaxon, res$taxonlow)]
@@ -200,7 +207,7 @@ taxon_to_taxon_code <- function(taxon) {
 #'
 relative_taxon_code_position <- function(code) {
 
-  if(length(code) == 0)
+  if (length(code) == 0)
     return(numeric(0))
 
   # calculate theoretical positions for each code
@@ -212,7 +219,7 @@ relative_taxon_code_position <- function(code) {
   tst <- vapply(taxon_code_to_taxon(code), FUN.VALUE = logical(1), is.na)
   bad_idx <- which(tst)
 
-  if(length(bad_idx) > 0) {
+  if (length(bad_idx) > 0) {
     res[bad_idx] <- NA
   }
 
@@ -226,19 +233,23 @@ relative_taxon_code_position <- function(code) {
 #' @noRd
 .get_ST_higher_taxa_codes <- function() {
 
-  if (!exists("ST_higher_taxa_codes_12th", envir = SoilTaxonomy.env)) {
-
-    ST_higher_taxa_codes_12th <- NULL
-    load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
-
-    # calculate lowercase taxonname in cache for faster lookups
-    ST_higher_taxa_codes_12th$taxonlow <- tolower(ST_higher_taxa_codes_12th$taxon)
-
-    assign("ST_higher_taxa_codes_12th", ST_higher_taxa_codes_12th, envir = SoilTaxonomy.env)
-  } else {
-
-    ST_higher_taxa_codes_12th <- get("ST_higher_taxa_codes_12th", SoilTaxonomy.env)
-
+  if (exists("ST_higher_taxa_codes_12th", envir = SoilTaxonomy.env)) {
+    return(get("ST_higher_taxa_codes_12th", SoilTaxonomy.env))
   }
+
+  ST_higher_taxa_codes_12th <- NULL
+  load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
+
+  # for efficiency the lowercase taxon names are calculated only if needed
+  # the ST_higher_taxa_codes loading function does this
+  if (!"taxonlow" %in% colnames(ST_higher_taxa_codes_12th)) {
+    ST_higher_taxa_codes_12th$taxonlow <-
+      tolower(ST_higher_taxa_codes_12th$taxon)
+  }
+
+  assign("ST_higher_taxa_codes_12th",
+         ST_higher_taxa_codes_12th,
+         envir = SoilTaxonomy.env)
+
   ST_higher_taxa_codes_12th
 }
