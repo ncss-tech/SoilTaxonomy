@@ -1,13 +1,17 @@
 #' Create a `data.tree` Object from Taxon Names
 #'
+#' This function takes one or more taxon names and taxonomic levels as input.
+#'
+#' A subclass of data.tree `Node` object is returned. This object has a custom `print()` method
+#'
 #' @param taxon A vector of taxon names
 #' @param level One or more of: `"order"`, `"suborder"`, `"greatgroup"`, `"subgroup"`. The lowest level is passed to `getChildLevel()` to generate the leaf nodes.
 #' @param root Label for root node. Default: `"Soil Taxonomy"`; `NULL` for "unrooted" tree.
 #' @param verbose Print tree output? Default: `TRUE`
-#' @param special.chars Characters used to print the tree to console? Default: `c("|", "|", "--")`. For fancy markup try: `c("\\u251c", "\\u2514", "\\u2500 ")`
+#' @param special.chars Characters used to print the tree to console. Default: `c("|", "|", "--")`. For fancy markup try: `c("\u251c", "\u2514", "\u2500 ")`
 #' @param ... Additional arguments to `data.tree::as.Node.data.frame()`
 #'
-#' @return A `SoilTaxonNode` (subclass of `data.tree` `Node`) object (invisibly). A text representation of the tree is printed when `verbose=TRUE`.
+#' @return A `SoilTaxonNode` (subclass of `data.tree` `Node`) object (invisibly). A text representation of the tree is printed to stdout when `verbose=TRUE`.
 #' @export
 #' @importFrom stats complete.cases
 #' @examplesIf !inherits(requireNamespace("data.tree", quietly = TRUE), 'try-error')

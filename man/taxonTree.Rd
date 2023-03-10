@@ -22,15 +22,18 @@ taxonTree(
 
 \item{verbose}{Print tree output? Default: \code{TRUE}}
 
-\item{special.chars}{Characters used to print the tree to console? Default: \code{c("|", "|", "--")}. For fancy markup try: \code{c("\\\\u251c", "\\\\u2514", "\\\\u2500 ")}}
+\item{special.chars}{Characters used to print the tree to console. Default: \code{c("|", "|", "--")}. For fancy markup try: \code{c("\\u251c", "\\u2514", "\\u2500 ")}}
 
 \item{...}{Additional arguments to \code{data.tree::as.Node.data.frame()}}
 }
 \value{
-A \code{SoilTaxonNode} (subclass of \code{data.tree} \code{Node}) object (invisibly). A text representation of the tree is printed when \code{verbose=TRUE}.
+A \code{SoilTaxonNode} (subclass of \code{data.tree} \code{Node}) object (invisibly). A text representation of the tree is printed to stdout when \code{verbose=TRUE}.
 }
 \description{
-Create a \code{data.tree} Object from Taxon Names
+This function takes one or more taxon names and taxonomic levels as input.
+}
+\details{
+A subclass of data.tree \code{Node} object is returned. This object has a custom \code{print()} method
 }
 \examples{
 \dontshow{if (!inherits(requireNamespace("data.tree", quietly = TRUE), 'try-error')) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
