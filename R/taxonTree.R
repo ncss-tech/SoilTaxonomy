@@ -9,6 +9,7 @@
 #' @param root Label for root node. Default: `"Soil Taxonomy"`; `NULL` for "unrooted" tree.
 #' @param verbose Print tree output? Default: `TRUE`
 #' @param special.chars Characters used to print the tree to console. Default: `c("|", "|", "--")`. For fancy markup try: `c("\u251c", "\u2514", "\u2500 ")`
+#' @param file Optional: path to output file. Default: `""` prints to standard output connection (unless redirected by `sink()`)
 #' @param ... Additional arguments to `data.tree::as.Node.data.frame()`
 #'
 #' @return A `SoilTaxonNode` (subclass of `data.tree` `Node`) object (invisibly). A text representation of the tree is printed to stdout when `verbose=TRUE`.
@@ -27,6 +28,7 @@ taxonTree <- function(taxon,
                       root = "Soil Taxonomy",
                       verbose = TRUE,
                       special.chars = c("|", "|", "--"),
+                      file = "",
                       ...) {
   if (!requireNamespace("data.tree")) {
     stop("package 'data.tree' is required", call. = FALSE)
@@ -56,7 +58,7 @@ taxonTree <- function(taxon,
   attr(n, "class") <- c("SoilTaxonNode", attr(n, "class"))
 
   if (isTRUE(verbose)) {
-    print(n, special.chars = special.chars)
+    print(n, special.chars = special.chars, file = file)
   }
 
   invisible(n)
@@ -65,6 +67,7 @@ taxonTree <- function(taxon,
 #' @export
 print.SoilTaxonNode <- function(x,
                                 special.chars = "|",
+                                file = "",
                                 ...) {
   res <- as.data.frame(x, ...)
 
@@ -79,5 +82,5 @@ print.SoilTaxonNode <- function(x,
     res$levelName <- gsub(special.chars.default[i], special.chars[i], res$levelName, fixed = TRUE)
   }
 
-  cat(res$levelName, sep = "\n")
+  cat(res$levelName, sep = "\n", file = file)
 }
