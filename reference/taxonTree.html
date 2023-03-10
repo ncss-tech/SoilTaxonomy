@@ -75,6 +75,7 @@
 <span>  root <span class="op">=</span> <span class="st">"Soil Taxonomy"</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  special.chars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"|"</span>, <span class="st">"|"</span>, <span class="st">"--"</span><span class="op">)</span>,</span>
+<span>  file <span class="op">=</span> <span class="st">""</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -99,6 +100,10 @@
 
 <dt>special.chars</dt>
 <dd><p>Characters used to print the tree to console. Default: <code>c("|", "|", "--")</code>. For fancy markup try: <code>c("\u251c", "\u2514", "\u2500 ")</code></p></dd>
+
+
+<dt>file</dt>
+<dd><p>Optional: path to output file. Default: <code>""</code> prints to standard output connection (unless redirected by <code><a href="https://rdrr.io/r/base/sink.html" class="external-link">sink()</a></code>)</p></dd>
 
 
 <dt>...</dt>
