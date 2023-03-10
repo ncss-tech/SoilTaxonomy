@@ -51,22 +51,22 @@ library(SoilTaxonomy)
 
 ```{r}
 # hierarchy: order to subgroup
-data('ST', package = 'SoilTaxonomy')
-
-# unique taxa: just the taxon names (in order that they "key out" in the keys)
-data('ST_unique_list', package = 'SoilTaxonomy')
-
-# formative element dictionary
-data('ST_formative_elements', package = 'SoilTaxonomy')
-
-# codes denoting higher taxonomic parent-child relationships (12th Edition Keys to Soil Taxonomy)
+# data('ST', package = 'SoilTaxonomy')
+# 
+# # unique taxa: just the taxon names (in order that they "key out" in the keys)
+# data('ST_unique_list', package = 'SoilTaxonomy')
+# 
+# # formative element dictionary
+# data('ST_formative_elements', package = 'SoilTaxonomy')
+# 
+# # codes denoting higher taxonomic parent-child relationships (12th Edition Keys to Soil Taxonomy)
 data('ST_higher_taxa_codes_12th', package = 'SoilTaxonomy')
-
-# definitions of diagnostic features and characteristics (12th Edition Keys to Soil Taxonomy)
-data('ST_features', package = 'SoilTaxonomy')
-
-# definitions of family-level classes and differentiae (12th Edition Keys to Soil Taxonomy)
-data('ST_family_classes', package = 'SoilTaxonomy')
+# 
+# # definitions of diagnostic features and characteristics (12th Edition Keys to Soil Taxonomy)
+# data('ST_features', package = 'SoilTaxonomy')
+# 
+# # definitions of family-level classes and differentiae (12th Edition Keys to Soil Taxonomy)
+# data('ST_family_classes', package = 'SoilTaxonomy')
 ```
 
 ### Vignettes
@@ -83,9 +83,9 @@ Several vignettes are included with the package to demonstrate basic functionali
  
 ### Featured Functions
 
-Two helpful functions that make use of the internal lookup tables are `getTaxonAtLevel()` and `explainST()`
+Two helpful functions that make use of the internal lookup tables are `getTaxonAtLevel()`, `taxonTree()`, and `explainST()`
 
-#### `getTaxonAtLevel`: Get taxonomic levels within higher taxonomic groups
+#### `getTaxonAtLevel()`: Get taxonomic levels within higher taxonomic groups
 
 ##### HHCH = _Acrudoxic Plinthic Kandiudults_
 
@@ -111,9 +111,21 @@ getTaxonAtLevel('folists', level = "greatgroup")
 getTaxonAtLevel('folists', level = "subgroup")
 ```
 
-#### `explainST`: Label formative elements with brief explanations
+#### `taxonTree()`: Create `data.tree` representation of Soil Taxonomy Hierarchy
 
-`explainST` provides simple narrative explanations of the formative elements of taxa at the Order, Suborder, Great Group or Subgroup levels.
+```{r}
+# all hapludults and hapludalfs (to subgroup level)
+taxonTree(c("hapludults", "hapludalfs"))
+```
+
+```{r}
+# suborders and great groups of alfisols 
+taxonTree("alfisols", root = "Alfisols", level = c("suborder", "greatgroup"))
+```
+
+#### `explainST()`: Label formative elements with brief explanations
+
+`explainST()` provides simple narrative explanations of the formative elements of taxa at the Order, Suborder, Great Group or Subgroup levels.
 
 ```{r}
 cat(explainST('folistels'))

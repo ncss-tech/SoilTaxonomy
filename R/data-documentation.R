@@ -73,7 +73,7 @@
 #' \url{https://www.nrcs.usda.gov/resources/guides-and-instructions/keys-to-soil-taxonomy}
 #'
 #' Soil Survey Staff. 2014. Claves para la Taxonomía de Suelos, 12th ed. USDA-Natural Resources Conservation Service, Washington, DC.
-#' \url{https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/nrcs142p2_051546.pdf}
+#' \url{https://www.nrcs.usda.gov/resources/guides-and-instructions/keys-to-soil-taxonomy}
 #'
 #' @usage data(ST_higher_taxa_codes_12th)
 #'
