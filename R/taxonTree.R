@@ -8,7 +8,7 @@
 #' @param level One or more of: `"order"`, `"suborder"`, `"greatgroup"`, `"subgroup"`. The lowest level is passed to `getChildLevel()` to generate the leaf nodes.
 #' @param root Label for root node. Default: `"Soil Taxonomy"`; `NULL` for "unrooted" tree.
 #' @param verbose Print tree output? Default: `TRUE`
-#' @param special.chars Characters used to print the tree to console. Default: `c("|--", "|", "|", "-")`. For fancy markup try: `c("\u251c", "\u2514", "\u2500 ")`
+#' @param special.chars Characters used to print the tree to console. Default: `c("|--", "|", "|", "-")`. For fancy markup try: `c("\u251c","\u2502", "\u2514", "\u2500 ")`
 #' @param file Optional: path to output file. Default: `""` prints to standard output connection (unless redirected by `sink()`)
 #' @param ... Additional arguments to `data.tree::as.Node.data.frame()`
 #'

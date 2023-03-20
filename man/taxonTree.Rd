@@ -23,7 +23,7 @@ taxonTree(
 
 \item{verbose}{Print tree output? Default: \code{TRUE}}
 
-\item{special.chars}{Characters used to print the tree to console. Default: \code{c("|--", "|", "|", "-")}. For fancy markup try: \code{c("\\u251c", "\\u2514", "\\u2500 ")}}
+\item{special.chars}{Characters used to print the tree to console. Default: \code{c("|--", "|", "|", "-")}. For fancy markup try: \code{c("\\u251c","\\u2502", "\\u2514", "\\u2500 ")}}
 
 \item{file}{Optional: path to output file. Default: \code{""} prints to standard output connection (unless redirected by \code{sink()})}
 
