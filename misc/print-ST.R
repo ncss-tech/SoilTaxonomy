@@ -4,6 +4,14 @@ library(soilDB)
 library(data.tree)
 
 
+## 2023-03-20: latest SoilTaxonomy provides:
+taxonTree(
+  c('xerorthents', 'rhodoxeralfs', 'endoaqualfs'), 
+  special.chars = c("\u251c","\u2502", "\u2570", "\u2500 ")
+)
+
+
+
 ## 2023-03-08: new take on ST-tree.R code from many years ago
 
 ## TODO:
