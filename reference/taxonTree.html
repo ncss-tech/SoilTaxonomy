@@ -74,7 +74,7 @@
 <span>  level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"order"</span>, <span class="st">"suborder"</span>, <span class="st">"greatgroup"</span>, <span class="st">"subgroup"</span><span class="op">)</span>,</span>
 <span>  root <span class="op">=</span> <span class="st">"Soil Taxonomy"</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  special.chars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"|"</span>, <span class="st">"|"</span>, <span class="st">"--"</span><span class="op">)</span>,</span>
+<span>  special.chars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"|--"</span>, <span class="st">"|"</span>, <span class="st">"|"</span>, <span class="st">"-"</span><span class="op">)</span>,</span>
 <span>  file <span class="op">=</span> <span class="st">""</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -99,7 +99,7 @@
 
 
 <dt>special.chars</dt>
-<dd><p>Characters used to print the tree to console. Default: <code>c("|", "|", "--")</code>. For fancy markup try: <code>c("\u251c", "\u2514", "\u2500 ")</code></p></dd>
+<dd><p>Characters used to print the tree to console. Default: <code>c("|--", "|", "|", "-")</code>. For fancy markup try: <code>c("\u251c", "\u2514", "\u2500 ")</code></p></dd>
 
 
 <dt>file</dt>
@@ -129,105 +129,105 @@
 <span class="r-in"><span><span class="co"># hapludults and hapludalfs (to subgroup level)</span></span></span>
 <span class="r-in"><span><span class="fu">taxonTree</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"hapludults"</span>, <span class="st">"hapludalfs"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Soil Taxonomy                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |--ultisols                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--udults                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |       |--hapludults                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--lithic-ruptic-entic hapludults</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--lithic hapludults             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--vertic hapludults             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--fragiaquic hapludults         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--aquic arenic hapludults       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--aquic hapludults              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--fragic hapludults             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--oxyaquic hapludults           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--lamellic hapludults           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--psammentic hapludults         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--arenic hapludults             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--grossarenic hapludults        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--inceptic hapludults           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--humic hapludults              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |--typic hapludults              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |--alfisols                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--udalfs                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          |--hapludalfs                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--lithic hapludalfs             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--aquertic chromic hapludalfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--aquertic hapludalfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--oxyaquic vertic hapludalfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--chromic vertic hapludalfs     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--vertic hapludalfs             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--andic hapludalfs              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--vitrandic hapludalfs          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--fragiaquic hapludalfs         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--fragic oxyaquic hapludalfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--aquic arenic hapludalfs       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--arenic oxyaquic hapludalfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--anthraquic hapludalfs         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--albaquultic hapludalfs        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--albaquic hapludalfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--glossaquic hapludalfs         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--aquultic hapludalfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--aquollic hapludalfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--aquic hapludalfs              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--mollic oxyaquic hapludalfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--oxyaquic hapludalfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--fragic hapludalfs             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--lamellic hapludalfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--psammentic hapludalfs         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--arenic hapludalfs             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--glossic hapludalfs            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--inceptic hapludalfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--ultic hapludalfs              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--mollic hapludalfs             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              |--typic hapludalfs              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |-ultisols                                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-udults                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |       |-hapludults                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-lithic-ruptic-entic hapludults</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-lithic hapludults             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-vertic hapludults             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-fragiaquic hapludults         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-aquic arenic hapludults       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-aquic hapludults              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-fragic hapludults             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-oxyaquic hapludults           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-lamellic hapludults           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-psammentic hapludults         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-arenic hapludults             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-grossarenic hapludults        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-inceptic hapludults           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-humic hapludults              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |           |-typic hapludults              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |-alfisols                                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-udalfs                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          |-hapludalfs                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-lithic hapludalfs             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-aquertic chromic hapludalfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-aquertic hapludalfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-oxyaquic vertic hapludalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-chromic vertic hapludalfs     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-vertic hapludalfs             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-andic hapludalfs              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-vitrandic hapludalfs          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-fragiaquic hapludalfs         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-fragic oxyaquic hapludalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-aquic arenic hapludalfs       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-arenic oxyaquic hapludalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-anthraquic hapludalfs         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-albaquultic hapludalfs        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-albaquic hapludalfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-glossaquic hapludalfs         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-aquultic hapludalfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-aquollic hapludalfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-aquic hapludalfs              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-mollic oxyaquic hapludalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-oxyaquic hapludalfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-fragic hapludalfs             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-lamellic hapludalfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-psammentic hapludalfs         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-arenic hapludalfs             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-glossic hapludalfs            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-inceptic hapludalfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-ultic hapludalfs              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-mollic hapludalfs             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              |-typic hapludalfs              </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># alfisols suborders and great groups</span></span></span>
 <span class="r-in"><span><span class="fu">taxonTree</span><span class="op">(</span><span class="st">"alfisols"</span>, root <span class="op">=</span> <span class="st">"Alfisols"</span>, level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"suborder"</span>, <span class="st">"greatgroup"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Alfisols              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |--aqualfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--cryaqualfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--plinthaqualfs </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--duraqualfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--natraqualfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--fragiaqualfs  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--kandiaqualfs  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--vermaqualfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--albaqualfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--glossaqualfs  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--epiaqualfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--endoaqualfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |--cryalfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--palecryalfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--glossocryalfs </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--haplocryalfs  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |--ustalfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--durustalfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--plinthustalfs </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--natrustalfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--kandiustalfs  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--kanhaplustalfs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--paleustalfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--rhodustalfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--haplustalfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |--xeralfs           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--durixeralfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--natrixeralfs  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--fragixeralfs  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--plinthoxeralfs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--rhodoxeralfs  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--palexeralfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |--haploxeralfs  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  |--udalfs            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--natrudalfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--ferrudalfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--fraglossudalfs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--fragiudalfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--kandiudalfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--kanhapludalfs </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--paleudalfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--rhodudalfs    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--glossudalfs   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      |--hapludalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |-aqualfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-cryaqualfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-plinthaqualfs </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-duraqualfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-natraqualfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-fragiaqualfs  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-kandiaqualfs  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-vermaqualfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-albaqualfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-glossaqualfs  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-epiaqualfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-endoaqualfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |-cryalfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-palecryalfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-glossocryalfs </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-haplocryalfs  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |-ustalfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-durustalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-plinthustalfs </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-natrustalfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-kandiustalfs  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-kanhaplustalfs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-paleustalfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-rhodustalfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-haplustalfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |-xeralfs           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-durixeralfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-natrixeralfs  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-fragixeralfs  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-plinthoxeralfs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-rhodoxeralfs  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-palexeralfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |   |-haploxeralfs  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  |-udalfs            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-natrudalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-ferrudalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-fraglossudalfs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-fragiudalfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-kandiudalfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-kanhapludalfs </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-paleudalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-rhodudalfs    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-glossudalfs   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      |-hapludalfs    </span>
 </code></pre></div>
     </div>
   </div>
