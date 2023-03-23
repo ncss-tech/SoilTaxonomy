@@ -39,8 +39,9 @@ taxonTree <- function(taxon,
   # get child taxa at most detailed `level`
   lh <- level_hierarchy(family = FALSE)
   lowest_level <- max(match(level, lh))
-  x <- unique(do.call('c', getChildTaxa(taxon,
-                                        level = as.character(lh[lowest_level]))))
+  x <- unique(c(taxon, do.call('c', 
+                  getChildTaxa(taxon,  level = as.character(lh[lowest_level]))
+                )))
   y <- getTaxonAtLevel(x, level = level)
 
   # we build the tree from the terminal/leaf node information
