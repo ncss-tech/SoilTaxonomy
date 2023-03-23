@@ -25,12 +25,12 @@ data("ST")
 # latest SC DB
 sc <- get_soilseries_from_NASIS()
 
-# susbet / rename columns for simpler joining
+# subset / rename columns for simpler joining
 sc <- sc[, c('soilseriesname', 'taxclname', 'taxsubgrp')]
 names(sc) <- c('series', 'family', 'subgroup')
 
 # combine ST hierarchy + series by subgroup
-# this will introduct family details
+# this will include family details
 z <- merge(ST, sc, by.x = 'subgroup', all.x = TRUE, sort = FALSE)
 head(z)
 
