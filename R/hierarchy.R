@@ -1,5 +1,5 @@
 
-.st_levels <- function() c("order", "suborder", "greatgroup", "subgroup", "family")
+.st_levels <- function() c("order", "suborder", "greatgroup", "subgroup", "family", "series")
 
 #' Order of Hierarchical Levels in Soil Taxonomy
 #'
@@ -11,7 +11,7 @@
 #' @param family Allow `"family"` as input in `x`? Used for validating inputs that must be a "taxon above family".
 #' @param as.is Return `x` "as is" (after validation)? Shorthand for `unclass(taxon_hierarchy())` to return simple character vector.
 #'
-#' @return An ordered factor with the values "order", "suborder", "greatgroup", "subgroup". or character when `as.is=TRUE`.
+#' @return An ordered factor with the values `"order"`, `"suborder"`, `"greatgroup"`, `"subgroup"`, and optionally `"family"` and `"series"` depending on arguments. Result is character when `as.is=TRUE`.
 #' @export
 #'
 #' @examples
@@ -28,12 +28,17 @@
 #'
 #' ## this produces an error (used for checking for taxa above family)
 #' # level_hierarchy("family", family = FALSE)
-level_hierarchy <- function(x = c("order", "suborder", "greatgroup", "subgroup", "family"),
+level_hierarchy <- function(x = c("order", "suborder", "greatgroup", "subgroup", "family", "series"),
                             family = TRUE,
+                            series = FALSE,
                             as.is = FALSE) {
   lvls <- rev(.st_levels())
-  if (!family)
+  
+  if (!series)
     lvls <- lvls[-1]
+  
+  if (!family)
+    lvls <- lvls[-which(lvls == "family")]
 
   # check allowed level
   if (length(x) > 0) {
