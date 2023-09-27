@@ -3,8 +3,56 @@ library(lattice)
 library(latticeExtra)
 library(tactile)
 
+
 SDA_query("SELECT 
-SUM((CAST(comppct_r AS NUMERIC) / 100.0) * CAST(muacres AS numeric)) / 1000000 AS ac 
+SUM(muacres) AS ac 
+FROM legend
+INNER JOIN mapunit mu ON mu.lkey = legend.lkey
+WHERE legend.areasymbol != 'US' ;")
+
+SDA_query("SELECT 
+SUM(CAST(muacres AS numeric)) AS ac 
+FROM legend
+INNER JOIN mapunit mu ON mu.lkey = legend.lkey
+WHERE legend.areasymbol != 'US' ;")
+
+
+SDA_query("SELECT 
+SUM(muacres) / 1000000 AS ac 
+FROM legend
+INNER JOIN mapunit mu ON mu.lkey = legend.lkey
+WHERE legend.areasymbol != 'US' ;")
+
+SDA_query("SELECT 
+SUM(muacres / 1000000.0) AS ac 
+FROM legend
+INNER JOIN mapunit mu ON mu.lkey = legend.lkey
+WHERE legend.areasymbol != 'US' ;")
+
+SDA_query("SELECT 
+SUM(muacres / 1000000) AS ac 
+FROM legend
+INNER JOIN mapunit mu ON mu.lkey = legend.lkey
+WHERE legend.areasymbol != 'US' ;")
+
+SDA_query("SELECT 
+SUM(CAST(muacres AS numeric) / 1000000) AS ac 
+FROM legend
+INNER JOIN mapunit mu ON mu.lkey = legend.lkey
+WHERE legend.areasymbol != 'US' ;")
+
+
+
+SDA_query("SELECT 
+SUM((comppct_r / 100) * muacres) / 1000000 AS ac 
+FROM legend
+INNER JOIN mapunit mu ON mu.lkey = legend.lkey
+INNER JOIN component AS co ON mu.mukey = co.mukey 
+WHERE legend.areasymbol != 'US' ;")
+
+
+SDA_query("SELECT 
+SUM((CAST(comppct_r AS NUMERIC) / 100) * CAST(muacres AS numeric)) / 1000000 AS ac 
 FROM legend
 INNER JOIN mapunit mu ON mu.lkey = legend.lkey
 INNER JOIN component AS co ON mu.mukey = co.mukey 
