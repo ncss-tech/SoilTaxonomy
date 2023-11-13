@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SoilTaxonomy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.4</span>
       </span>
     </div>
 
@@ -124,14 +124,18 @@ delimiter)</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/parse_family.html">parse_family</a></span><span class="op">(</span><span class="st">"fine-loamy, mixed, semiactive, mesic ultic haploxeralfs"</span><span class="op">)</span></span>
-<span><span class="co">#&gt;                                                    family           subgroup</span></span>
+<span><span class="co">#&gt;                                                    family</span></span>
+<span><span class="co">#&gt; 1 fine-loamy, mixed, semiactive, mesic ultic haploxeralfs</span></span>
+<span><span class="co">#&gt;                                                 taxclname          taxonname</span></span>
 <span><span class="co">#&gt; 1 fine-loamy, mixed, semiactive, mesic ultic haploxeralfs ultic haploxeralfs</span></span>
-<span><span class="co">#&gt;   subgroup_code                         class_string classes_split taxpartsize</span></span>
-<span><span class="co">#&gt; 1          JDGR fine-loamy, mixed, semiactive, mesic  fine-loa....  fine-loamy</span></span>
-<span><span class="co">#&gt;   taxpartsizemod taxminalogy taxceactcl taxreaction taxtempcl taxfamhahatmatcl</span></span>
-<span><span class="co">#&gt; 1             NA       mixed semiactive          NA     mesic               NA</span></span>
-<span><span class="co">#&gt;   taxfamother          taxsubgrp  taxgrtgroup taxsuborder taxorder</span></span>
-<span><span class="co">#&gt; 1        &lt;NA&gt; Ultic Haploxeralfs Haploxeralfs     Xeralfs Alfisols</span></span></code></pre></div>
+<span><span class="co">#&gt;   subgroup_code code                         class_string classes_split</span></span>
+<span><span class="co">#&gt; 1          JDGR JDGR fine-loamy, mixed, semiactive, mesic  fine-loa....</span></span>
+<span><span class="co">#&gt;   taxpartsize taxpartsizemod taxminalogy taxceactcl taxreaction taxtempcl</span></span>
+<span><span class="co">#&gt; 1  fine-loamy             NA       mixed semiactive          NA     mesic</span></span>
+<span><span class="co">#&gt;   taxfamhahatmatcl taxfamother          taxsubgrp  taxgrtgroup taxsuborder</span></span>
+<span><span class="co">#&gt; 1               NA        &lt;NA&gt; Ultic Haploxeralfs Haploxeralfs     Xeralfs</span></span>
+<span><span class="co">#&gt;   taxorder</span></span>
+<span><span class="co">#&gt; 1 Alfisols</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="st_family_classes">
