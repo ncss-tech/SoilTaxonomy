@@ -30,7 +30,7 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
   # load local copy of taxon code lookup table
   load(system.file("data/ST_unique_list.rda", package = "SoilTaxonomy")[1])
 
-  lut <- ST_unique_list[["subgroup"]]
+  lut <- do.call('c', ST_unique_list)
 
   # lookup table sorted from largest to smallest (most specific to least)
   lut <- lut[order(nchar(lut), decreasing = TRUE)]
@@ -40,13 +40,16 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
   subgroup.idx <- sapply(res, function(x) which(!is.na(x[,1]))[1])
   subgroup.pos <- sapply(seq_along(subgroup.idx), function(i) res[[i]][subgroup.idx[i], 'start'])
 
-  subgroups <- lut[subgroup.idx]
+  taxname <- lut[subgroup.idx]
+  lowest_level <- taxon_to_level(taxname)
   family_classes <- trimws(substr(family, 0, subgroup.pos - 1))
-
+  taxon_codes <- taxon_to_taxon_code(taxname)
   res <- data.frame(row.names = NULL, stringsAsFactors = FALSE,
-    family = family,
-    subgroup = subgroups,
-    subgroup_code = taxon_to_taxon_code(subgroups),
+    family = ifelse(nchar(family_classes) > 0, family, NA_character_),
+    taxclname = family,
+    taxonname = taxname,
+    subgroup_code = ifelse(lowest_level == "subgroup", taxon_codes, NA_character_),
+    code = taxon_codes,
     class_string = family_classes,
     classes_split = I(lapply(strsplit(family_classes, ","), trimws)))
 
@@ -56,7 +59,7 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
 }
 
 #' @import data.table
-#' @importFrom utils type.convert
+#' @importFrom utils type.convert tail
 #' @importFrom stats setNames na.omit
 .get_family_differentiae <- function(res, flat = TRUE) {
 
@@ -125,10 +128,13 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
     )
   })
 
-  taxsub <- as.data.frame(do.call('rbind', lapply(decompose_taxon_code(res$subgroup_code), function(x) taxon_code_to_taxon(as.character(rev(x))))),
-                          stringsAsFactors = FALSE)
-  colnames(taxsub) <- rev(c("taxorder", "taxsuborder", "taxgrtgroup", "taxsubgrp"))
-  rownames(taxsub) <- NULL
+  taxsub <- as.data.frame(data.table::rbindlist(lapply(decompose_taxon_code(res$code), function(x) {
+    y <- taxon_code_to_taxon(as.character(rev(x)))
+    z <- data.frame(taxsubgrp = NA_character_, taxgrtgroup = NA_character_,
+                    taxsuborder = NA_character_, taxorder = NA_character_)
+    z[1, ] <- tail(c(rep(NA_character_, 4), y), 4)
+    z
+  })), stringsAsFactors = FALSE)
 
   res4 <- lapply(seq_along(res2), function(i) {
       x <- res2[[i]]
@@ -160,9 +166,9 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
 
   res5 <- as.list(data.table::rbindlist(c(list(basetbl), res4), fill = TRUE))
   multi.names <- c("taxminalogy", "taxfamother")
-  .FUN <- function(x) list(x)
-  .flat_FUN <- function(x) {
-    y <- paste0(na.omit(x), collapse = ", ")
+  .FUN <- function(x, sep = NULL) list(x)
+  .flat_FUN <- function(x, sep = ", ") {
+    y <- paste0(na.omit(x), collapse = sep)
     if (nchar(y) == 0) return(NA_character_)
     y
   }
@@ -171,7 +177,8 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
   }
 
   res5[multi.names] <- lapply(multi.names, function(n) {
-      res6 <- apply(data.frame(res5[names(res5) %in% n]), 1, .FUN)
+      res6 <- apply(data.frame(res5[names(res5) %in% n]), 1, .FUN,
+                    sep = ifelse(n == "taxminalogy", " over ", ", "))
       res6 <- lapply(res6, function(nn) {
         nnn <- nn[[1]]
         lr6 <- length(nnn)

@@ -11,7 +11,7 @@ test_that("parse_family(..., column_metadata = FALSE) works", {
 
   res <- parse_family(families, column_metadata = FALSE)
 
-  expect_equal(res$subgroup_code,
+  expect_equal(res$code,
                c("HCDN", "JDGR", "BDDH", "KFFK",
                  "HCDN", "JDGR", "BDDH", "KFFK"))
 })
@@ -29,7 +29,7 @@ test_that("parse_family(..., column_metadata = TRUE) works", {
 
   res <- parse_family(families, column_metadata = TRUE)
 
-  expect_equal(res$subgroup_code,
+  expect_equal(res$code,
                c("HCDN", "JDGR", "BDDH", "KFFK",
                  "HCDN", "JDGR", "BDDH", "KFFK"))
 })
@@ -37,7 +37,7 @@ test_that("parse_family(..., column_metadata = TRUE) works", {
 test_that("complex or uncommon family classes", {
 
   skip_if_not_installed("soilDB")
-  
+
   # mapping of "diatomaceous" mineralogy class -> "diatomaceous earth" choicename for taxminalogy
   x <- parse_family("DIATOMACEOUS, EUIC, FRIGID LIMNIC HAPLOHEMISTS")
   expect_true(x$taxminalogy == "diatomaceous earth" && x$taxreaction == "euic")
@@ -48,7 +48,7 @@ test_that("complex or uncommon family classes", {
 
   # compound family classes such as "amorphic over isotic" for strongly contrasting control section
   x <- parse_family("MEDIAL-SKELETAL OVER LOAMY-SKELETAL, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS")
-  expect_true(x$taxminalogy == "amorphic, isotic" &&
+  expect_true(x$taxminalogy == "amorphic over isotic" &&
                 x$taxpartsize == "medial-skeletal over loamy-skeletal",
                 x$classes_split[[1]][2] == "AMORPHIC OVER ISOTIC")
 
@@ -67,7 +67,7 @@ test_that("complex or uncommon family classes", {
                       "FINE, MIXED, ACTIVE, MESIC OXYAQUIC HAPLUDALFS",
                       "MEDIAL-SKELETAL OVER LOAMY-SKELETAL, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS"),
                     flat = TRUE)
-  expect_equal(x$taxminalogy, c("isotic", "smectitic", "isotic", "mixed", "amorphic, isotic"))
+  expect_equal(x$taxminalogy, c("isotic", "smectitic", "isotic", "mixed", "amorphic over isotic"))
   expect_equal(x$taxfamother, c(NA, NA, "shallow, ortstein", NA, NA))
 
   # test flat=FALSE (many taxa)
@@ -82,4 +82,20 @@ test_that("complex or uncommon family classes", {
                                      c(taxminalogy1 = "isotic", taxminalogy2 = NA),
                                      c(taxminalogy1 = "mixed", taxminalogy2 = NA),
                                      c(taxminalogy1 = "amorphic", taxminalogy2 = "isotic"))))
+})
+
+test_that("taxa above family and incomplete family names", {
+  x <- data.frame(
+    taxonname = c("Alberti", "Aquents", "Lithic Xeric Torriorthents", "Stagy Family", "Haplodurids"),
+    taxonkind = c("series", "taxon above family", "taxon above family", "family", "taxon above family"),
+    taxclname = c(
+      "Clayey, smectitic, thermic, shallow Vertic Rhodoxeralfs", # Full family name
+      "Aquents",                                              # Taxon above subgroup
+      "Lithic Xeric Torriorthents",                           # Subgroup
+      "Coarse-loamy, mixed, mesic Duric Haploxerolls",        # Family name missing activity class
+      "Mixed, superactive, thermic Haplodurids"               # Taxon above family (family classes + great group)
+    ))
+  res <- parse_family(x$taxclname)
+  expect_equal(res$taxsuborder, c("Xeralfs", "Aquents", "Orthents", "Xerolls", "Durids"))
+  expect_equal(res$taxgrtgroup, c("Rhodoxeralfs", NA_character_, "Torriorthents", "Haploxerolls", "Haplodurids"))
 })
