@@ -11,7 +11,7 @@ test_that("parse_family(..., column_metadata = FALSE) works", {
 
   res <- parse_family(families, column_metadata = FALSE)
 
-  expect_equal(res$subgroup_code,
+  expect_equal(res$code,
                c("HCDN", "JDGR", "BDDH", "KFFK",
                  "HCDN", "JDGR", "BDDH", "KFFK"))
 })
@@ -29,7 +29,7 @@ test_that("parse_family(..., column_metadata = TRUE) works", {
 
   res <- parse_family(families, column_metadata = TRUE)
 
-  expect_equal(res$subgroup_code,
+  expect_equal(res$code,
                c("HCDN", "JDGR", "BDDH", "KFFK",
                  "HCDN", "JDGR", "BDDH", "KFFK"))
 })
@@ -37,7 +37,7 @@ test_that("parse_family(..., column_metadata = TRUE) works", {
 test_that("complex or uncommon family classes", {
 
   skip_if_not_installed("soilDB")
-  
+
   # mapping of "diatomaceous" mineralogy class -> "diatomaceous earth" choicename for taxminalogy
   x <- parse_family("DIATOMACEOUS, EUIC, FRIGID LIMNIC HAPLOHEMISTS")
   expect_true(x$taxminalogy == "diatomaceous earth" && x$taxreaction == "euic")
@@ -82,4 +82,20 @@ test_that("complex or uncommon family classes", {
                                      c(taxminalogy1 = "isotic", taxminalogy2 = NA),
                                      c(taxminalogy1 = "mixed", taxminalogy2 = NA),
                                      c(taxminalogy1 = "amorphic", taxminalogy2 = "isotic"))))
+})
+
+test_that("taxa above family and incomplete family names", {
+  x <- data.frame(
+    taxonname = c("Alberti", "Aquents", "Lithic Xeric Torriorthents", "Stagy Family", "Haplodurids"),
+    taxonkind = c("series", "taxon above family", "taxon above family", "family", "taxon above family"),
+    taxclname = c(
+      "Clayey, clayey, thermic, shallow Vertic Rhodoxeralfs", # Full family name
+      "Aquents",                                              # Taxon above subgroup
+      "Lithic Xeric Torriorthents",                           # Subgroup
+      "Coarse-loamy, mixed, mesic Duric Haploxerolls",        # Family name missing activity class
+      "Mixed, superactive, thermic Haplodurids"               # Taxon above family (family classes + great group)
+    ))
+  res <- parse_family(x$taxclname)
+  expect_equal(res$taxsuborder, c("Xeralfs", "Aquents", "Orthents", "Xerolls", "Durids"))
+  expect_equal(res$taxgrtgroup, c("Rhodoxeralfs", NA_character_, "Torriorthents", "Haploxerolls", "Haplodurids"))
 })
