@@ -89,7 +89,7 @@ test_that("taxa above family and incomplete family names", {
     taxonname = c("Alberti", "Aquents", "Lithic Xeric Torriorthents", "Stagy Family", "Haplodurids"),
     taxonkind = c("series", "taxon above family", "taxon above family", "family", "taxon above family"),
     taxclname = c(
-      "Clayey, clayey, thermic, shallow Vertic Rhodoxeralfs", # Full family name
+      "Clayey, smectitic, thermic, shallow Vertic Rhodoxeralfs", # Full family name
       "Aquents",                                              # Taxon above subgroup
       "Lithic Xeric Torriorthents",                           # Subgroup
       "Coarse-loamy, mixed, mesic Duric Haploxerolls",        # Family name missing activity class
