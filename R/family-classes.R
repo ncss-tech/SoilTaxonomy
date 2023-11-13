@@ -166,9 +166,9 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
 
   res5 <- as.list(data.table::rbindlist(c(list(basetbl), res4), fill = TRUE))
   multi.names <- c("taxminalogy", "taxfamother")
-  .FUN <- function(x) list(x)
-  .flat_FUN <- function(x) {
-    y <- paste0(na.omit(x), collapse = ", ")
+  .FUN <- function(x, sep = NULL) list(x)
+  .flat_FUN <- function(x, sep = ", ") {
+    y <- paste0(na.omit(x), collapse = sep)
     if (nchar(y) == 0) return(NA_character_)
     y
   }
@@ -177,7 +177,8 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
   }
 
   res5[multi.names] <- lapply(multi.names, function(n) {
-      res6 <- apply(data.frame(res5[names(res5) %in% n]), 1, .FUN)
+      res6 <- apply(data.frame(res5[names(res5) %in% n]), 1, .FUN,
+                    sep = ifelse(n == "taxminalogy", " over ", ", "))
       res6 <- lapply(res6, function(nn) {
         nnn <- nn[[1]]
         lr6 <- length(nnn)

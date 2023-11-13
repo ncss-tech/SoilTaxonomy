@@ -48,7 +48,7 @@ test_that("complex or uncommon family classes", {
 
   # compound family classes such as "amorphic over isotic" for strongly contrasting control section
   x <- parse_family("MEDIAL-SKELETAL OVER LOAMY-SKELETAL, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS")
-  expect_true(x$taxminalogy == "amorphic, isotic" &&
+  expect_true(x$taxminalogy == "amorphic over isotic" &&
                 x$taxpartsize == "medial-skeletal over loamy-skeletal",
                 x$classes_split[[1]][2] == "AMORPHIC OVER ISOTIC")
 
@@ -67,7 +67,7 @@ test_that("complex or uncommon family classes", {
                       "FINE, MIXED, ACTIVE, MESIC OXYAQUIC HAPLUDALFS",
                       "MEDIAL-SKELETAL OVER LOAMY-SKELETAL, AMORPHIC OVER ISOTIC, FRIGID ANDIC HAPLORTHODS"),
                     flat = TRUE)
-  expect_equal(x$taxminalogy, c("isotic", "smectitic", "isotic", "mixed", "amorphic, isotic"))
+  expect_equal(x$taxminalogy, c("isotic", "smectitic", "isotic", "mixed", "amorphic over isotic"))
   expect_equal(x$taxfamother, c(NA, NA, "shallow, ortstein", NA, NA))
 
   # test flat=FALSE (many taxa)
