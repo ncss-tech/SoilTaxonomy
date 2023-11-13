@@ -1,3 +1,7 @@
+# SoilTaxonomy 0.2.4
+ - `taxonTree()` default markup via `special.chars` argument emulates `fs::dir_tree()` output
+ - `parse_family()` now returns more complete information for taxa above family
+ 
 # SoilTaxonomy 0.2.3 (2023-02-01)
  - Fix unintended case-sensitivity of `FormativeElements()`; thanks to Shawn Salley (@swsalley)
  - Fix for `extractSMR()` via fix for `FormativeElements()` applied at multiple levels (affects taxa above subgroup level)
