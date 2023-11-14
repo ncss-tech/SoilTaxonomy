@@ -131,7 +131,8 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
   taxsub <- as.data.frame(data.table::rbindlist(lapply(decompose_taxon_code(res$code), function(x) {
     y <- taxon_code_to_taxon(as.character(rev(x)))
     z <- data.frame(taxsubgrp = NA_character_, taxgrtgroup = NA_character_,
-                    taxsuborder = NA_character_, taxorder = NA_character_)
+                    taxsuborder = NA_character_, taxorder = NA_character_,
+                    stringsAsFactors = FALSE)
     z[1, ] <- tail(c(rep(NA_character_, 4), y), 4)
     z
   })), stringsAsFactors = FALSE)
