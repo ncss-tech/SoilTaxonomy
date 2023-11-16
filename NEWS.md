@@ -1,4 +1,4 @@
-# SoilTaxonomy 0.2.4
+# SoilTaxonomy 0.2.4 (2023-11-16)
  - `taxonTree()` default markup via `special.chars` argument emulates `fs::dir_tree()` output
  - `parse_family()` now returns more complete information for taxa above family
    - `taxminalogy` column for taxa with strongly contrasting control sections now use `" over "` as the separator between class names. 
