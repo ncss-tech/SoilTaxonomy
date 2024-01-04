@@ -74,7 +74,11 @@ ST_higher_taxa_codes_13th <- jsonlite::fromJSON("https://raw.githubusercontent.c
 colnames(ST_higher_taxa_codes_13th) <- c("code", "taxon")
 usethis::use_data(ST_higher_taxa_codes_13th, overwrite = TRUE)
 
-latest_taxa <- ST_higher_taxa_codes_13th
+ST_higher_taxa_codes_12th <- jsonlite::fromJSON("https://raw.githubusercontent.com/ncss-tech/SoilKnowledgeBase/main/inst/extdata/KST/2014_KST_codes.json")
+colnames(ST_higher_taxa_codes_12th) <- c("code", "taxon")
+usethis::use_data(ST_higher_taxa_codes_12th, overwrite = TRUE)
+
+latest_taxa <- ST_higher_taxa_codes_12th
 
 # re-arrange taxa according to letter codes in the 'Keys
 .uniqueTaxaLogicalOrdering <- function(x) {
