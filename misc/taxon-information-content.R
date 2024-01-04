@@ -37,8 +37,23 @@ for(i in 1:nrow(ST)) {
   ST$information[i] <- .z
 }
 
-bwplot(order ~ information, data = ST, par.settings = tactile.theme())
+# check out very low I
+ST[which(ST$information < 10), ]
+
+## TODO: taxon "LAAA" missing subgroup label
+##  ---> missing from ST_unique_list
+
+
+
+
+
+bwplot(order ~ information, data = ST, par.settings = tactile.theme(), scales = list(x = list(tick.number = 15)), xlab = 'Formative Element Information Content (bytes)', panel = function(...) {
+  panel.grid(-1, -1)
+  panel.bwplot(...)
+})
+
 bwplot(suborder ~ information, data = ST, par.settings = tactile.theme())
+
 bwplot(suborder ~ information | order, data = ST, par.settings = tactile.theme(), scales = list(y = list(relation = 'free'), x = list(alternating = 1)), as.table = TRUE)
 
 
