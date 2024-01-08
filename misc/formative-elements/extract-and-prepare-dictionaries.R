@@ -20,10 +20,10 @@ str(subgroup)
 
 # pack into a list
 ST.formative_elements <- list(
-  soilorder=soilorder,
-  suborder=suborder,
-  greatgroup=greatgroup,
-  subgroup=subgroup
+  soilorder = soilorder,
+  suborder = suborder,
+  greatgroup = greatgroup,
+  subgroup = subgroup
 )
 
 # try saving as JSON
