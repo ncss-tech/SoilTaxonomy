@@ -15,6 +15,7 @@ ST$greatgroup <- factor(ST$greatgroup, levels = ST_unique_list$greatgroup)
 ST$subgroup <- factor(ST$subgroup, levels = ST_unique_list$subgroup)
 
 x <- 'abruptic haplic durixeralfs'
+cat(explainST(x))
 
 x <- ST$subgroup[1]
 cat(explainST(x))
@@ -37,20 +38,39 @@ for(i in 1:nrow(ST)) {
   ST$information[i] <- .z
 }
 
-# check out very low I
-ST[which(ST$information < 10), ]
 
-## TODO: taxon "LAAA" missing subgroup label
-##  ---> missing from ST_unique_list
+taxonTree('oxisols', special.chars = c("\u251c","\u2502", "\u2514", "\u2500 "))
+taxonTree('entisols', special.chars = c("\u251c","\u2502", "\u2514", "\u2500 "))
 
 
+taxonTree('rhodic eutrudox', special.chars = c("\u251c","\u2502", "\u2514", "\u2500 "))
+FormativeElements('rhodic eutrudox')$defs$connotation
+cat(explainST('rhodic eutrudox'))
 
 
+taxonTree('aquic udipsamments', special.chars = c("\u251c","\u2502", "\u2514", "\u2500 "))
+FormativeElements('aquic udipsamments')$defs$connotation
+cat(explainST('aquic udipsamments'))
 
-bwplot(order ~ information, data = ST, par.settings = tactile.theme(), scales = list(x = list(tick.number = 15)), xlab = 'Formative Element Information Content (bytes)', panel = function(...) {
-  panel.grid(-1, -1)
-  panel.bwplot(...)
-})
+knitr::kable(
+  ST[ST$subgroup %in% c('rhodic eutrudox', 'aquic udipsamments'), c('subgroup', 'information')],
+  row.names = FALSE, 
+  col.names = c('Subgroup', 'Total Formative Element Gzip Size (bytes)')
+)
+
+
+bwplot(
+  order ~ information, 
+  data = ST, 
+  varwidth = TRUE,
+  par.settings = tactile.theme(), 
+  scales = list(x = list(tick.number = 15)), 
+  xlab = 'Formative Element Information Content (bytes)', 
+  panel = function(...) {
+    panel.grid(-1, -1)
+    panel.bwplot(...)
+  }
+)
 
 bwplot(suborder ~ information, data = ST, par.settings = tactile.theme())
 
@@ -69,7 +89,7 @@ treemap(
   ST, 
   index = c('order', 'suborder', 'greatgroup'), 
   vSize = 'information', 
-  fontsize.labels = c(0, 0, 8), 
+  fontsize.labels = c(8, 0, 0), 
   type = 'index', 
   title = 'I'
 )
@@ -78,12 +98,12 @@ treemap(
 
 
 
-treemap(
-  ST[which(ST$order == 'mollisols'), ], 
-  index = c('order', 'greatgroup', 'subgroup'), 
-  vSize = 'information', 
-  fontsize.labels = c(0, 0, 12), 
-  type = 'index', 
-  title = 'I'
-)
+# treemap(
+#   ST[which(ST$order == 'mollisols'), ], 
+#   index = c('order', 'greatgroup', 'subgroup'), 
+#   vSize = 'information', 
+#   fontsize.labels = c(0, 0, 12), 
+#   type = 'index', 
+#   title = 'I'
+# )
 
