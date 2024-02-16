@@ -517,6 +517,31 @@ Supplementary qualifiers
 Arenic/ Clayic/ Loamic/
 Siltic
 Andic
+Aric
+Densic
+Fluvic
+Fractic
+Humic
+Novic
+Oxyaquic
+Pachic
+Pyric
+Raptic
+Salic
+Sodic
+Solimovic
+Sombric
+Stagnic
+Technic/ Kalaic
+Tephric
+Transportic
+Turbic
+Vitric
+CHERNOZEMS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Andic
 Anthric
 Aric
 Chromic
@@ -666,6 +691,36 @@ Transportic
 Turbic
 Vertic
 GYPSISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Abruptic
+Aeolic
+Aric
+Biocrustic
+Hypercalcic
+Densic
+Epic/ Endic
+Fluvic
+Gelic
+Protogypsic
+Humic/ Ochric
+Isopteric
+Magnesic
+Naramic
+Novic
+Panpaic/ Raptic
+Pyric
+Rhodic/ Chromic
+Salic
+Sodic
+Solimovic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+Vertic
+CALCISOLS
 Supplementary qualifiers
 Arenic/ Clayic/ Loamic/
 Siltic

@@ -90,4 +90,6 @@ wrb_4th_2022 <- list(
   sq  = wrb_sq
 )
 
+stopifnot(all(sapply(wrb_4th_2022, function(x) max(x$code)) == 32))
+
 usethis::use_data(wrb_4th_2022, overwrite = TRUE)

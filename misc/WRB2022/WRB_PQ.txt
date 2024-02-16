@@ -179,6 +179,7 @@ Glossic/ Retic
 Acric/ Alic
 Coarsic
 Skeletic
+PODZOLS
 Principal qualifiers 
 Petric
 Pisoplinthic
@@ -214,6 +215,7 @@ Calcic
 Dolomitic/ Calcaric
 Dystric/ Eutric
 PLANOSOLS
+Principal qualifiers
 Reductic
 Thionic
 Leptic
