@@ -1,0 +1,561 @@
+Principal qualifiers 
+Muusic/ Rockic/ Mawic
+Cryic
+Thionic
+Folic
+Floatic
+Subaquatic/ Tidalic
+Fibric/ Hemic/ Sapric
+Leptic/ Thyric
+Murshic/ Drainic
+Ombric/ Rheic
+Coarsic
+Skeletic
+Andic
+Vitric
+HISTOSOLS
+Principal qualifiers 
+Hydragric/ Irragric/
+Hortic/ Plaggic/
+Pretic/Terric
+Gleyic
+Stagnic
+Ferralic/ Sideralic
+Andic
+ANTHROSOLS
+Principal qualifiers 
+Ekranic/ Thyric
+Linic
+Urbic
+Spolic
+Garbic
+Cryic
+Isolatic
+Leptic
+Subaquatic/ Tidalic
+Reductic
+Coarsic
+Gleyic
+Stagnic
+Andic
+TECHNOSOLS
+Principal qualifiers 
+Glacic
+Turbic
+Subaquatic/ Tidalic/
+Reductaquic/ Oxyaquic
+Leptic
+Histic
+Andic
+Mollic/ Umbric
+Natric
+Salic
+Spodic
+Retic
+Alic/ Luvic
+Calcic/ Wapnic
+Yermic
+Protic
+Cambic
+Coarsic
+Skeletic
+Haplic
+CRYOSOLS
+Principal qualifiers 
+Nudilithic/ Lithic
+Coarsic
+Skeletic
+Subaquatic/ Tidalic
+Histic
+Andic
+Rendzic/ Mollic/ Umbric
+Gypsic
+Calcic
+Cambic/ Brunic
+Yermic/ Takyric
+Folic
+Gypsiric
+Dolomitic/ Calcaric
+Dystric/ Eutric
+LEPTOSOLS
+Principal qualifiers 
+Abruptic
+Gleyic
+Stagnic
+Mollic
+Salic
+Gypsic
+Petrocalcic
+Calcic
+Vertic
+Yermic/ Takyric
+Nudinatric
+Albic
+Haplic
+SOLONETZ
+Principal qualifiers 
+Salic
+Sodic
+Leptic
+Petroduric/ Duric
+Gypsic
+Petrocalcic
+Calcic
+Hydragric/ Anthraquic/
+Irragric
+Pellic
+Chromic
+Haplic
+VERTISOLS
+Principal qualifiers 
+etrosalic
+Gleyic
+Stagnic
+Sodic
+Petrogypsic
+Gypsic
+Petrocalcic
+Calcic
+Leptic
+Mollic
+Fluvic
+Yermic/ Takyric
+Haplic
+SOLONCHAKS
+Principal qualifiers 
+Thionic
+Reductic
+Subaquatic/ Tidalic
+Hydragric/ Anthraquic/
+Irragric/ Hortic/ Plaggic/
+Pretic/ Terric
+Histic
+Andic
+Vitric
+Chernic/ Mollic/ Umbric
+Pisoplinthic/ Plinthic
+Stagnic
+Oxyaquic
+Oxygleyic/ Reductigleyic
+Gypsic
+Calcic/ Wapnic
+Spodic
+Fluvic
+Gypsiric
+Dolomitic/ Calcaric
+Dystric/ Eutric
+GLEYSOLS
+Principal qualifiers 
+Aluandic/ Silandic
+Vitric
+Leptic
+Hydragric/ Anthraquic
+Gleyic
+Hydric
+Histic
+Chernic/ Mollic/ Umbric
+Petroduric/ Duric
+Gypsic
+Calcic
+Tephric
+Aeolic
+Skeletic
+Dystric/ Eutric
+ANDOSOLS
+Principal qualifiers 
+Ortsteinic
+Carbic/ Rustic
+Albic/ Entic
+Leptic
+Hortic/ Plaggic/ Pretic/
+Terric
+Histic
+Gleyic
+Andic
+Vitric
+Stagnic
+Anthromollic/ Umbric
+Glossic/ Retic
+Acric/ Alic
+Coarsic
+Skeletic
+Principal qualifiers 
+Petric
+Pisoplinthic
+Gibbsic
+Stagnic
+Geric
+Nitic
+Histic
+Mollic/ Umbric
+Albic
+Leptic
+Coarsic
+Skeletic
+Haplic
+PLINTHOSOLS
+Principal qualifiers 
+Reductic
+Thionic
+Leptic
+Hydragric/ Anthraquic/
+Irragric/ Hortic/ Plaggic/
+Pretic/ Terric
+Histic
+Gleyic
+Chernic/ Mollic/ Umbric
+Albic
+Fluvic
+Vertic
+Glossic/ Retic
+Acric/ Lixic/ Alic/ Luvic
+Petroduric/ Duric
+Calcic
+Dolomitic/ Calcaric
+Dystric/ Eutric
+PLANOSOLS
+Reductic
+Thionic
+Leptic
+Hydragric/ Anthraquic/
+Irragric/ Hortic/ Plaggic/
+Pretic/ Terric
+Histic
+Gleyic
+Chernic/ Mollic/ Umbric
+Albic
+Fluvic
+Vertic
+Glossic/ Retic
+Acric/ Lixic/ Alic/ Luvic
+Calcic
+Dolomitic/ Calcaric
+Dystric/ Eutric
+STAGNOSOLS
+Principal qualifiers 
+Ferralic/ Sideralic
+Ferritic
+Leptic
+Rhodic/ Xanthic
+Geric
+Hydragric/ Anthraquic/
+Pretic
+Profundihumic
+Mollic/ Umbric
+Acric/ Lixic/ Alic/ Luvic
+Dystric/ Eutric
+NITISOLS
+Principal qualifiers 
+Ferritic
+Gibbsic
+Rhodic/ Xanthic
+Geric
+Nitic
+Pretic
+Gleyic
+Stagnic
+Profundihumic
+Mollic/ Umbric
+Acric/ Lixic
+Skeletic
+Haplic
+FERRALSOLS
+Principal qualifiers 
+Petroduric/ Duric
+Petrocalcic
+Leptic
+Hortic
+Gleyic
+Vertic
+Greyzemic
+Luvic
+Calcic
+Cambic
+Skeletic
+Vermic
+Tonguic
+Haplic
+CHERNOZEMS
+Principal qualifiers 
+Someric
+Petroduric/ Duric
+Petrogypsic
+Gypsic
+Petrocalcic
+Leptic
+Hortic/ Terric
+Gleyic
+Fluvic
+Vertic
+Luvic
+Calcic
+Cambic/ Brunic
+Skeletic
+Tonguic
+Haplic
+KASTANOZEMS
+Principal qualifiers 
+Rendzic
+Chernic/ Someric
+Mulmic
+Petroduric/ Duric
+Petrocalcic
+Endocalcic
+Leptic
+Irragric/ Hortic/ Pretic/
+Terric
+Gleyic
+Stagnic
+Fluvic
+Vertic
+Greyzemic
+Glossic/ Retic
+Lixic/ Luvic
+Cambic/ Brunic
+Skeletic
+Vermic
+Tonguic
+Gypsiric
+Dolomitic/ Calcaric
+Haplic
+PHAEOZEMS
+Principal qualifiers 
+Hortic/ Plaggic/ Pretic/
+Terric
+Chernic/ Mollic/ Someric
+Mulmic
+Fragic
+Leptic
+Gleyic
+Stagnic
+Fluvic
+Greyzemic
+Glossic/ Retic
+Acric/ Lixic/ Alic/ Luvic
+Cambic/ Brunic
+Skeletic
+Tonguic
+Endodolomitic/
+Endocalcaric
+Haplic
+UMBRISOLS
+Principal qualifiers 
+Petric
+Petrogypsic
+Gypsic
+Petrocalcic
+Calcic
+Leptic
+Acric/ Lixic/ Alic/ Luvic
+Cambic
+Coarsic
+Fractic
+Skeletic
+Yermic/ Takyric
+Andic
+Gypsiric
+Calcaric
+Dystric/ Eutric
+DURISOLS
+Principal qualifiers 
+Petric
+Petrocalcic
+Calcic
+Leptic
+Gleyic
+Stagnic
+Lixic/ Luvic
+Cambic
+Coarsic
+Fractic
+Skeletic
+Yermic/ Takyric
+Calcaric
+Haplic
+GYPSISOLS
+Principal qualifiers 
+Petric
+Leptic
+Gleyic
+Stagnic
+Lixic/ Luvic
+Cambic
+Coarsic
+Fractic
+Skeletic
+Yermic/ Takyric
+Gypsiric
+Haplic
+CALCISOLS
+Principal qualifiers 
+Abruptic
+Fragic
+Glossic
+Leptic
+Plaggic/ Pretic/ Terric
+Histic
+Gleyic
+Stagnic
+Sideralic
+Nudiargic
+Neocambic/ Neobrunic
+Albic
+Calcic
+Skeletic
+Endodolomitic/
+Endocalcaric
+Dystric/ Eutric
+RETISOLS
+Principal qualifiers 
+Abruptic
+Fragic
+Leptic
+Hydragric/ Anthraquic/
+Pretic/ Terric
+Gleyic
+Stagnic
+Ferralic
+Rhodic/ Chromic/ Xanthic
+Nudiargic
+Lamellic
+Albic
+Ferric
+Skeletic
+Haplic
+ACRISOLS
+Principal qualifiers 
+Abruptic
+Fragic
+Petrocalcic
+Leptic
+Hydragric/ Anthraquic/
+Pretic/ Terric
+Gleyic
+Stagnic
+Ferralic
+Rhodic/ Chromic/ Xanthic
+Nudiargic
+Lamellic
+Albic
+Ferric
+Gypsic
+Calcic
+Yermic/ Takyric
+Skeletic
+Haplic
+LIXISOLS
+Principal qualifiers 
+Abruptic
+Fragic
+Leptic
+Hydragric/ Anthraquic/
+Plaggic/ Pretic/ Terric
+Gleyic
+Stagnic
+Vertic
+Rhodic/ Chromic
+Nudiargic
+Lamellic
+Albic
+Ferric
+Skeletic
+Haplic
+ALISOLS
+Principal qualifiers 
+Abruptic
+Fragic
+Petrocalcic
+Leptic
+Hydragric/ Anthraquic/
+Irragric/ Pretic/ Terric
+Gleyic
+Stagnic
+Vertic
+Rhodic/ Chromic
+Nudiargic
+Lamellic
+Albic
+Ferric
+Gypsic
+Calcic
+Yermic/ Takyric
+Skeletic
+Dolomitic/ Calcaric
+Haplic
+LUVISOLS
+Principal qualifiers 
+Fragic
+Thionic
+Hydragric/ Anthraquic/
+Irragric/ Plaggic/ Pretic/
+Terric
+Tsitelic
+Vertic
+Andic
+Vitric
+Leptic
+Histic
+Gleyic
+Stagnic
+Solimovic
+Fluvic
+Sideralic
+Rhodic/ Chromic
+Skeletic
+Yermic/ Takyric
+Gypsiric
+Dolomitic/ Calcaric
+Dystric/ Eutric
+CAMBISOLS
+Principal qualifiers 
+Tidalic
+Pantofluvic/ Anofluvic/
+Orthofluvic
+Leptic
+Histic
+Gleyic
+Stagnic
+Skeletic
+Tephric
+Yermic/ Takyric
+Protic
+Gypsiric
+Dolomitic/ Calcaric
+Dystric/ Eutric
+FLUVISOLS
+Principal qualifiers 
+Tidalic
+Aeolic
+Solimovic
+Tephric
+Tsitelic
+Brunic
+Gleyic
+Sideralic
+Yermic
+Protic
+Transportic
+Relocatic
+Gypsiric
+Dolomitic/ Calcaric
+Dystric/ Eutric
+ARENOSOLS
+Principal qualifiers 
+Tidalic
+Leptic
+Solimovic
+Aeolic
+Tephric
+Brunic
+Gleyic
+Stagnic
+Skeletic
+Vermic
+Yermic/ Takyric
+Protic
+Transportic
+Relocatic
+Gypsiric
+Dolomitic/ Calcaric
+Dystric/ Eutric
+REGOSOLS

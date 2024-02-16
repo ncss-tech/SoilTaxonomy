@@ -1,0 +1,290 @@
+Soils having one or more of the following:
+1. organic material starting ≤ 40 cm from the soil surface and
+having within 100 cm of the soil surface a combined thickness
+of:
+a. ≥ 40 cm if < 75% (by volume, related to the
+fine earth plus all dead plant residues) consists of moss fibres; or
+b. ≥ 60 cm; or
+2. organic material starting at the soil surface, having a
+thickness of ≥ 10 cm and directly overlying ice,
+continuous rock or technic hard material; or
+3. a layer of coarse fragments that, together with overlying
+organic material, if present, starts at the soil surface and has
+a thickness of
+a. ≥ 10 cm if overlying continuous rock or technic hard
+material; or
+b. ≥ 40 cm; and 
+the major part of the interstices between the coarse
+fragments is filled with organic material and the remaining
+interstices, if present, are void.
+HISTOSOLS
+Other soils having:
+1. a hortic, irragric, plaggic or terric horizon, ≥ 50 cm thick; or
+2. an anthraquic horizon and an underlying hydragric horizon
+with a combined thickness of ≥ 50 cm; or
+3. a pretic horizon, the layers of which have a combined
+thickness of ≥ 50 cm, within 100 cm of the mineral soil
+surface.
+ANTHROSOLS
+Other soils:
+1. with all of the following:
+a. one or both of the following:
+i. having ≥ 20% (by volume, weighted 
+average, related to the whole soil)
+artefacts in the upper 100 cm from
+the soil surface or to a limiting layer,
+whichever is shallower; or
+ii. having a layer, ≥ 10 cm thick and
+starting ≤ 50 cm from the soil surface,
+with ≥ 80% (by volume, weighted average, related to the whole soil) artefacts; and
+b. not having a layer containing artefacts
+that qualifies as an argic, duric, ferralic,
+ferric, fragic, hydragric, natric, nitic,
+petrocalcic, petroduric, petrogypsic,
+petroplinthic, pisoplinthic, plinthic,
+spodic or vertic horizon starting
+≤ 100 cm from the soil surface, unless
+buried; and
+c. not having a limiting layer, unless
+consisting of artefacts, starting ≤ 10 cm
+from the soil surface; or
+2. having a continuous, very slowly permeable
+to impermeable, constructed geomembrane
+of any thickness or technic hard material
+starting ≤ 100 cm from the soil surface.
+TECHNOSOLS
+Other soils having:
+1. a cryic horizon starting ≤ 100 cm from the soil surface; or
+2. a cryic horizon starting ≤ 200 cm from the soil surface and evidence of cryogenic alteration (cryoturbation, frost heave, cryogenic sorting, thermal cracking, ice segregation, patterned ground, etc.) in some layer within 100 cm of the soil surface.
+CRYOSOLS
+Other soils having:
+1. one of the following:
+a. continuous rock starting ≤ 25 cm from the soil surface; or
+b. < 20% (by volume, related to the whole soil) fine earth
+plus dead plant residues of any size2, averaged over a depth
+of 75 cm from the soil surface or to continuous rock,
+whichever is shallower; and
+2. no duric, petrocalcic, petroduric, petrogypsic, pisoplinthic or
+spodic horizon.
+LEPTOSOLS
+Other soils having a natric horizon starting ≤ 100 cm from the
+mineral soil surface.
+SOLONETZ
+Other soils having:
+1. a vertic horizon starting ≤ 100 cm from the mineral soil
+surface; and
+2. ≥ 30% clay between the mineral soil surface and the vertic
+horizon throughout; and
+3. shrink-swell cracks that start:
+a. at the mineral soil surface; or
+b. at the base of a plough layer; or
+c. directly below a layer with strong granular structure or
+strong angular or subangular blocky structure with an
+aggregate size of ≤ 1 cm (self-mulching surface); or
+d. directly below a surface crust;
+and extend to the vertic horizon.
+VERTISOLS
+Other soils:
+1. having a salic horizon starting ≤ 50 cm from the soil surface; and
+2. not having a thionic horizon starting ≤ 50 cm from the soil surface; and
+3. not being permanently submerged by water and not located
+below the line affected by tidal water (i.e. not located below
+the line of mean high water springs).
+SOLONCHAKS
+Other soils having one or more of the following:
+1. a layer, ≥ 25 cm thick and starting ≤ 40 cm from the mineral
+soil surface, that has
+a. gleyic properties throughout; and
+b. reducing conditions in some parts of every sublayer; or
+2. both of the following:
+a. a mollic or umbric horizon, > 40 cm thick, that has
+reducing conditions in some parts of every sublayer, from
+40 cm below the mineral soil surface to the lower limit of
+the mollic or umbric horizon; and
+b. directly underneath the mollic/umbric horizon, a layer,
+≥ 10 cm thick, that has its lower limit ≥ 65 cm below the
+mineral soil surface, and that has:
+i. gleyic properties throughout; and
+ii. reducing conditions in some parts of every sublayer; or
+3. permanent saturation by water starting ≤ 40 cm from the
+mineral soil surface.
+GLEYSOLS
+Other soils having:
+1. one or more layers with andic or vitric properties with a
+combined thickness of:
+a. ≥ 30 cm, within 100 cm of the soil surface and starting
+≤ 25 cm from the soil surface; or
+b. ≥ 60% of the entire thickness of the soil, if a limiting layer
+starts > 25 and ≤ 50 cm from the soil surface; and
+2. no argic, ferralic, petroplinthic, pisoplinthic, plinthic or spodic
+horizon starting ≤ 100 cm of the soil surface, unless buried
+deeper than 50 cm from the mineral soil surface.
+ANDOSOLS
+Other soils having a spodic horizon starting ≤ 200 cm from the
+mineral soil surface.
+PODZOLS
+Other soils having a plinthic, pisoplinthic or petroplinthic horizon
+starting ≤ 100 cm from the mineral soil surface.
+PLINTHOSOLS
+Other soils having an abrupt textural difference ≤ 75 cm from the
+mineral soil surface and having within the range of 5 cm directly
+above or below the abrupt textural difference:
+1. stagnic properties, in which the area of reductimorphic
+features plus the area of oximorphic features is ≥ 50%
+(weighted average, related to the fine earth plus oximorphic
+ features of any size and any cementation class) of the total
+area; and
+2. reducing conditions for some time during the year in some
+parts of the soil volume that has the reductimorphic features.
+PLANOSOLS
+Other soils having:
+1. stagnic properties, in which the area of reductimorphic
+features plus the area of oximorphic features is ≥ one third
+(weighted average, related to the fine earth plus oximorphic
+features of any size and any cementation class) of the area
+from the mineral soil surface to a depth of 60 cm or to
+continuous rock, whichever is shallower; and
+2. reducing conditions for some time during the year in some
+parts of the soil volume that has the reductimorphic features
+within 60 cm from the mineral soil surface or to continuous
+rock, whichever is shallower.
+STAGNOSOLS
+Other soils having:
+1. a nitic horizon starting ≤ 100 cm from the mineral soil surface; and
+2. from the mineral soil surface to the nitic horizon, a clay
+content that is at least half of the weighted average clay
+content of the nitic horizon; and
+3. no vertic horizon starting above or at the upper limit of the
+nitic horizon.
+NITISOLS
+Other soils having:
+1. a ferralic horizon starting ≤ 150 cm from the mineral soil
+surface; and
+2. no argic horizon starting above or at the upper limit of the
+ferralic horizon, unless the argic horizon has, in its upper
+30 cm or throughout, whichever is shallower, one or more of
+the following:
+a. < 10% water-dispersible clay; or
+b. a ΔpH (pHKCl - pHwater) ≥ 0 (both in 1:1 solution); or
+c. ≥ 1.4% soil organic carbon.
+FERRALSOLS
+Other soils having:
+1. a chernic horizon; and
+2. starting ≤ 50 cm below the lower limit of the mollic4 horizon
+and, if present, above a petrocalcic horizon, a layer with
+protocalcic properties, ≥ 5 cm thick, or a calcic horizon; and
+3. a base saturation (by 1 M NH4OAc, pH 7)5 of ≥ 50% from the
+mineral soil surface to the layer with protocalcic properties or
+to the calcic horizon, throughout.
+CHERNOZEMS
+Other soils having:
+1. a mollic horizon; and
+2. starting ≤ 70 cm of the mineral soil surface and, if present,
+above a petrocalcic horizon, a layer with protocalcic
+properties, ≥ 5 cm thick, or a calcic horizon; and
+3. a base saturation (by 1 M NH4OAc, pH 7)6 of ≥ 50% from the
+mineral soil surface to the layer with protocalcic properties or
+to the calcic horizon, throughout.
+KASTANOZEMS
+Other soils having:
+1. a mollic horizon; and
+2. a base saturation (by 1 M NH4OAc, pH 7)7 of ≥ 50%
+throughout to a depth of 100 cm from the mineral soil surface
+or to a limiting layer, whichever is shallower.
+PHAEOZEMS
+Other soils having an umbric or mollic or hortic horizon.
+UMBRISOLS
+Other soils having a petroduric or duric horizon starting ≤ 100 cm
+from the mineral soil surface.
+DURISOLS
+Other soils having:
+1. a gypsic or petrogypsic horizon starting ≤ 100 cm from the
+mineral soil surface; and
+2. no argic horizon starting above or at the upper limit of the
+gypsic or petrogypsic horizon, unless the argic horizon
+contains secondary gypsum or secondary carbonates,
+throughout.
+GYPSISOLS
+Other soils having:
+1. a calcic or petrocalcic horizon starting ≤ 100 cm from the
+mineral soil surface; and
+2. no argic horizon starting above or at the upper limit of the
+calcic or petrocalcic horizon unless the argic horizon contains
+secondary carbonates, throughout.
+CALCISOLS
+Other soils having an argic horizon starting ≤ 100 cm from the
+mineral soil surface and having retic properties at its upper
+boundary.
+RETISOLS
+119 18 December 2022
+Key to the Reference Soil Groups Principal qualifiers Supplementary
+qualifiers
+Other soils having:
+1. an argic horizon starting ≤ 100 cm from the mineral soil
+surface;
+and
+2. a CEC (by 1 M NH4OAc, pH 7) of < 24 cmolc kg-1 clay in
+some subhorizon of the argic horizon within 150 cm of the
+mineral soil surface;
+and
+3. exchangeable Al > exchangeable (Ca+Mg+K+Na)8 in half or
+more of:
+a. the depth range between 50 and 100 cm of the mineral soil
+surface; or
+b. the lower half of the mineral soil above a limiting layer
+starting ≤ 100 cm from the mineral soil surface,
+whichever is shallower.
+ACRISOLS
+Other soils having:
+1. an argic horizon starting ≤ 100 cm from the mineral soil
+surface; and
+2. a CEC (by 1 M NH4OAc, pH 7) of < 24 cmolc kg-1 clay in
+some subhorizon of the argic horizon within 150 cm of the
+mineral soil surface.
+LIXISOLS
+Other soils having:
+1. an argic horizon starting ≤ 100 cm from the mineral soil
+surface;
+and
+2. exchangeable Al > exchangeable (Ca+Mg+K+Na)9 in half or
+more of:
+a. the depth range between 50 and 100 cm of the mineral soil
+surface; or
+b. the lower half of the mineral soil above a limiting layer
+starting ≤ 100 cm from the mineral soil surface
+whichever is shallower.
+ALISOLS
+Other soils having an argic horizon starting ≤ 100 cm from the
+mineral soil surface.
+LUVISOLS
+Other soils having:
+1. a cambic horizon
+a. starting ≤ 50 cm from the mineral soil surface; and
+b. having its lower limit ≥ 25 cm from the mineral soil
+surface; or
+2. an anthraquic, hydragric, irragric, plaggic, pretic or terric
+horizon; or
+3. a fragic, thionic or vertic horizon starting ≤ 100 cm from the
+mineral soil surface; or
+4. a tsitelic horizon with a texture class of sandy loam or finer,
+starting ≤ 50 cm from the mineral soil surface; or
+5. one or more layers with andic or vitric properties with a
+combined thickness of ≥ 15 cm within 100 cm of the soil
+surface.
+CAMBISOLS
+Other soils having fluvic material:
+1. ≥ 25 cm thick and starting ≤ 25 cm from the mineral soil
+surface; or
+2. from the lower limit of a plough layer, ≤ 40 cm thick, to a
+depth of ≥ 50 cm from the mineral soil surface.
+FLUVISOLS
+Other soils having within 100 cm of the mineral soil surface:
+1. a weighted average texture class of loamy sand or sand; and
+2. layers of finer texture, if present, with a combined thickness of
+< 15 cm; and
+3. layers with ≥ 40% (by volume, related to the whole soil)
+coarse fragments, if present, with a combined thickness of
+< 15 cm.
+ARENOSOLS
+Other soils:
+REGOSOLS
