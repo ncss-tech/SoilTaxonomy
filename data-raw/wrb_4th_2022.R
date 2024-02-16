@@ -21,6 +21,7 @@ library(pdftools)
 # 
 
 x <- readLines("misc/WRB2022/WRB_RSG.txt")
+x <- gsub("\u003c", "<", gsub("\u003E", ">", gsub("\u2264", "<=", gsub("\u2265", ">=", x))))
 n <- grep("^[A-Z]+$", x)
 z.names <- x[n]
 x <- x[-n]
