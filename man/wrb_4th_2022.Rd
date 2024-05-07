@@ -17,7 +17,7 @@ A \emph{list} containing three \emph{data.frame} elements \code{"rsg"}, \code{"p
 Each element has the column \code{"code"} which is a number (1-32) referring to the position in the Reference Soil Groups, and the column \code{"reference_soil_group"} which is the corresponding group name.
 \itemize{
 \item The \emph{data.frame} \code{"rsg"} has column \code{"criteria"}, describing the logical criteria for each Reference Soil Group.
-\item The \emph{data.frame} \code{"pq"} has qualifier names in column \code{"principal_qualifier"} and \code{"sq"} has column \code{"supplementary_qualifier"}. The \code{"pq"} and \code{"sq"} qualifier names may be single qualifiers, or several related qualifiers separated with a forward slash \code{" / "}
+\item The \emph{data.frame} \code{"pq"} has qualifier names in column \code{"principal_qualifier"} and \code{"sq"} has column \code{"supplementary_qualifier"}. The \code{"pq"} and \code{"sq"} qualifier name columns (\code{primary_qualifier} and \code{supplementary_qualifier}) contain individual qualifier terms. Related qualifiers can be identified using \code{qualifier_group} column which is derived from qualifier names separated with a forward slash \code{" / "}
 }
 }
 \references{

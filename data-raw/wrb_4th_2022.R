@@ -2,7 +2,7 @@
 library(pdftools)
 
 ## SETUP
-## 
+##
 # dir.create("misc/WRB2022")
 # download.file("https://wrb.isric.org/files/WRB_fourth_edition_2022-12-18.pdf",
 #               destfile = "misc/WRB2022/WRB_fourth_edition_2022-12-18.pdf")
@@ -18,7 +18,7 @@ library(pdftools)
 ## nope
 # x <- pdf_data("misc/WRB2022/WRB_fourth_edition_2022-12-18.pdf")
 # y <- do.call('rbind', x)
-# 
+#
 
 x <- readLines("misc/WRB2022/WRB_RSG.txt")
 x <- gsub("\u003c", "<", gsub("\u003E", ">", gsub("\u2264", "<=", gsub("\u2265", ">=", x))))
@@ -59,7 +59,12 @@ z <- lapply(xx, function(y) {
 names(z) <- z.names
 
 wrb_pq <- do.call('rbind', lapply(seq(z), function(i) {
-  data.frame(code = i, reference_soil_group = z.names[i], principal_qualifiers = z[[z.names[i]]])
+  pq <- lapply(strsplit(z[[z.names[i]]], "/"), trimws)
+  pg <- lapply(seq(pq), function(j) rep(z[[z.names[i]]][j], length(pq[[j]])))
+  data.frame(code = i,
+             reference_soil_group = z.names[i],
+             qualifier_group = unlist(pg),
+             principal_qualifiers = unlist(pq))
 }))
 rownames(wrb_pq) <- NULL
 # View(wrb_pq)
@@ -79,7 +84,12 @@ z <- lapply(xx, function(y) {
 names(z) <- z.names
 
 wrb_sq <- do.call('rbind', lapply(seq(z), function(i) {
-  data.frame(code = i, reference_soil_group = z.names[i], supplementary_qualifiers = z[[z.names[i]]])
+  sq <- lapply(strsplit(z[[z.names[i]]], "/"), trimws)
+  sg <- lapply(seq(sq), function(j) rep(z[[z.names[i]]][j], length(sq[[j]])))
+  data.frame(code = i,
+             reference_soil_group = z.names[i],
+             qualifier_group = unlist(sg),
+             supplementary_qualifiers = unlist(sq))
 }))
 rownames(wrb_sq) <- NULL
 # View(wrb_sq)

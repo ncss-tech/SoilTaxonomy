@@ -99,12 +99,12 @@
 #' World Reference Base for Soil Resources (4th Edition, 2022)
 #'
 #' A _list_ containing three _data.frame_ elements `"rsg"`, `"pq"`, and `"sq"` providing information on the 'Representative Soil Groups', 'Principal Qualifiers,' and 'Supplementary Qualifiers,' respectively.
-#' 
+#'
 #' @details
-#' 
-#' Each element has the column `"code"` which is a number (1-32) referring to the position in the Reference Soil Groups, and the column `"reference_soil_group"` which is the corresponding group name. 
-#'  - The _data.frame_ `"rsg"` has column `"criteria"`, describing the logical criteria for each Reference Soil Group. 
-#'  - The _data.frame_ `"pq"` has qualifier names in column `"principal_qualifier"` and `"sq"` has column `"supplementary_qualifier"`. The `"pq"` and `"sq"` qualifier names may be single qualifiers, or several related qualifiers separated with a forward slash `" / "`
+#'
+#' Each element has the column `"code"` which is a number (1-32) referring to the position in the Reference Soil Groups, and the column `"reference_soil_group"` which is the corresponding group name.
+#'  - The _data.frame_ `"rsg"` has column `"criteria"`, describing the logical criteria for each Reference Soil Group.
+#'  - The _data.frame_ `"pq"` has qualifier names in column `"principal_qualifier"` and `"sq"` has column `"supplementary_qualifier"`. The `"pq"` and `"sq"` qualifier name columns (`primary_qualifier` and `supplementary_qualifier`) contain individual qualifier terms. Related qualifiers can be identified using `qualifier_group` column which is derived from qualifier names separated with a forward slash `" / "`
 #'
 #' @references
 #'
