@@ -2,8 +2,8 @@
 % Please edit documentation in R/SoilTaxonomy-package.R
 \docType{package}
 \name{SoilTaxonomy-package}
+\alias{SoilTaxonomy}
 \alias{SoilTaxonomy-package}
-\alias{_PACKAGE}
 \alias{SoilTaxonomy.env}
 \title{SoilTaxonomy: A System of Soil Classification for Making and Interpreting Soil Surveys}
 \description{
