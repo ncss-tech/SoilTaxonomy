@@ -1,4 +1,4 @@
-## code to prepare `wrb_4th_2022` dataset goes here
+## code to prepare `WRBs_4th_2022` dataset goes here
 library(pdftools)
 
 ## SETUP
@@ -94,12 +94,12 @@ wrb_sq <- do.call('rbind', lapply(seq(z), function(i) {
 rownames(wrb_sq) <- NULL
 # View(wrb_sq)
 
-wrb_4th_2022 <- list(
+WRB_4th_2022 <- list(
   rsg = wrb_rsg,
   pq  = wrb_pq,
   sq  = wrb_sq
 )
 
-stopifnot(all(sapply(wrb_4th_2022, function(x) max(x$code)) == 32))
+stopifnot(all(sapply(WRB_4th_2022, function(x) max(x$code)) == 32))
 
-usethis::use_data(wrb_4th_2022, overwrite = TRUE)
+usethis::use_data(WRB_4th_2022, overwrite = TRUE)

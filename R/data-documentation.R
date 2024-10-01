@@ -102,16 +102,18 @@
 #'
 #' @details
 #'
-#' Each element has the column `"code"` which is a number (1-32) referring to the position in the Reference Soil Groups, and the column `"reference_soil_group"` which is the corresponding group name.
+#' Each element has the column `"code"` which is a number (1-32) referring to the position in the Reference Soil Groups, and the column `"reference_soil_group"` which is the corresponding group name. The `"pq"` and `"sq"` qualifier name columns (`primary_qualifier` and `supplementary_qualifier`) contain individual qualifier terms. Related qualifiers are identified using `qualifier_group` column derived from qualifier names separated with a forward slash `" / "`
+#'
 #'  - The _data.frame_ `"rsg"` has column `"criteria"`, describing the logical criteria for each Reference Soil Group.
-#'  - The _data.frame_ `"pq"` has qualifier names in column `"principal_qualifier"` and `"sq"` has column `"supplementary_qualifier"`. The `"pq"` and `"sq"` qualifier name columns (`primary_qualifier` and `supplementary_qualifier`) contain individual qualifier terms. Related qualifiers can be identified using `qualifier_group` column which is derived from qualifier names separated with a forward slash `" / "`
+#'  - The _data.frame_ `"pq"` has qualifier names in column `"principal_qualifier"`
+#'  - The _data.frame_ `"sq"` has column `"supplementary_qualifier"`.
 #'
 #' @references
 #'
 #' IUSS Working Group WRB. 2022. World Reference Base for Soil Resources. International soil classification system for naming soils and creating legends for soil maps. 4th edition. International Union of Soil Sciences (IUSS), Vienna, Austria.
 #'
-#' @usage data(wrb_4th_2022)
+#' @usage data(WRB_4th_2022)
 #'
 #' @keywords datasets
 #'
-"wrb_4th_2022"
+"WRB_4th_2022"
