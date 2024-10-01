@@ -85,6 +85,9 @@ test_that("complex or uncommon family classes", {
 })
 
 test_that("taxa above family and incomplete family names", {
+
+  skip_if_not_installed("soilDB")
+
   x <- data.frame(
     taxonname = c("Alberti", "Aquents", "Lithic Xeric Torriorthents", "Stagy Family", "Haplodurids"),
     taxonkind = c("series", "taxon above family", "taxon above family", "family", "taxon above family"),
