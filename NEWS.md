@@ -1,8 +1,16 @@
+# SoilTaxonomy 0.2.6 (2024-10-01)
+
+ - Added `WRB_4th_2022` data set containing World Reference Base for Soil Resources (4th Edition, 2022) reference soil groups with primary and supplementary qualifiers.
+
+# SoilTaxonomy 0.2.5 (2024-01-08)
+ - Data set `ST_unique_list$subgroup`: fix for 12th edition "Hydric Frasiwassents" v.s. 13th edition "Humic Fluic Frasiwassents" 
+ - `explainST()` expanded acronyms in explanations
+ 
 # SoilTaxonomy 0.2.4 (2023-11-16)
  - `taxonTree()` default markup via `special.chars` argument emulates `fs::dir_tree()` output
  - `parse_family()` now returns more complete information for taxa above family
    - `taxminalogy` column for taxa with strongly contrasting control sections now use `" over "` as the separator between class names. 
-   
+
 # SoilTaxonomy 0.2.3 (2023-02-01)
  - Fix unintended case-sensitivity of `FormativeElements()`; thanks to Shawn Salley (@swsalley)
  - Fix for `extractSMR()` via fix for `FormativeElements()` applied at multiple levels (affects taxa above subgroup level)
