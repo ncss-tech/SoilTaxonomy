@@ -1,0 +1,1027 @@
+Supplementary qualifiers
+Alcalic/ Dystric/ Eutric
+Aric
+Bryic
+Dolomitic/ Calcaric
+Fluvic
+Gelic
+Hyperorganic
+Isolatic
+Lignic
+Limnic
+Limonic
+Mineralic
+Mulmic
+Ornithic
+Placic
+Pyric
+Relocatic
+Salic
+Sulfidic
+Technic/ Kalaic
+Tephric
+Toxic
+Transportic
+Turbic
+Wapnic
+HISTOSOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Acric/ Lixic/ Alic/ Luvic
+Alcalic/ Dystric/ Eutric
+Calcic
+Carbonic
+Dolomitic/ Calcaric
+Drainic
+Escalic
+Fluvic
+Glossic/ Retic
+Endoleptic/ Endothyric
+Novic
+Oxyaquic
+Panpaic
+Pyric
+Salic
+Skeletic
+Sodic
+Spodic
+Technic/ Kalaic
+Toxic
+Vertic
+Vitric
+ANTHROSOLS
+Supplementary qualifiers
+Arenic/ Clayic/
+Loamic/ Siltic
+Geoabruptic
+Alcalic/ Dystric/ Eutric
+Anthraquic/ Irragric/
+Hortic/ Plaggic/ Pretic/
+Terric
+Archaic
+Calcic
+Cambic
+Carbonic
+Chernic/ Mollic/
+Umbric
+Densic
+Dolomitic/ Calcaric
+Drainic
+Ferritic
+Fluvic
+Folic/ Histic
+Fractic
+Gelic
+Gypsic
+Gypsiric
+Humic/ Ochric
+Hyperartefactic
+Immissic
+Laxic
+Lignic
+Limnic
+Magnesic
+Mahic
+Novic
+Oxyaquic
+Panpaic/ Raptic
+Protic
+Pyric
+Relocatic
+Salic
+Sideralic
+Skeletic
+Sodic
+Solimovic
+Protospodic
+Sulfidic
+Tephric
+Thionic
+Toxic
+Transportic
+Vitric
+TECHNOSOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Abruptic
+Albic
+Alcalic/ Dystric/ Eutric
+Biocrustic
+Dolomitic/ Calcaric
+Drainic
+Epic/ Endic/ Dorsic
+Evapocrustic/ Puffic
+Fluvic
+Folic
+Gypsiric
+Humic/ Ochric
+Limnic
+Magnesic
+Nechic
+Novic
+Ornithic
+Pyric
+Raptic
+Sodic
+Sulfidic
+Technic/ Kalaic
+Tephric
+Thixotropic
+Toxic
+Transportic
+Vitric
+CRYOSOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Aeolic
+Aric
+Biocrustic
+Drainic
+Fluvic
+Gelic
+Gleyic
+Humic/ Ochric
+Isolatic
+Lapiadic
+Magnesic
+Nechic
+Novic
+Ornithic
+Oxyaquic
+Panpaic/ Raptic
+Placic
+Protic
+Pyric
+Salic
+Sodic
+Solimovic
+Protospodic
+Stagnic
+Sulfidic
+Technic/ Kalaic
+Tephric
+Toxic
+Transportic
+Turbic
+Protovertic
+Vitric
+LEPTOSOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Aeolic
+Biocrustic
+Neocambic/ Neobrunic
+Chromic
+Columnic
+Cutanic
+Differentic
+Duric
+Epic/ Endic
+Ferric
+Fluvic
+Fractic
+Humic/ Ochric
+Magnesic
+Hypernatric
+Novic
+Oxyaquic
+Petroplinthic
+Pyric
+Raptic
+Retic
+Skeletic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+SOLONETZ
+Supplementary qualifiers
+Alcalic/ Endodystric
+Aric
+Chernic/ Mollic
+Dolomitic/ Calcaric
+Drainic
+Hypereutric
+Epic/ Endic
+Ferric
+Fractic
+Gilgaic
+Gleyic
+Grumic/ Mazic/ Pelocrustic
+Gypsiric
+Humic/ Ochric
+Magnesic
+Novic
+Oxyaquic
+Pyric
+Raptic
+Skeletic
+Stagnic
+Sulfidic
+Takyric
+Technic/ Kalaic
+Thionic
+Toxic
+Transportic
+VERTISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Aceric
+Aeolic
+Alcalic
+Biocrustic
+Carbonatic/ Chloridic/
+Sulfatic
+Densic
+Dolomitic/ Calcaric
+Drainic
+Duric
+Evapocrustic/ Puffic
+Folic/ Histic
+Fractic
+Gelic
+Gypsiric
+Humic/ Ochric
+Magnesic
+Novic
+Oxyaquic
+Panpaic/ Raptic
+Pyric
+Hypersalic
+Skeletic
+Solimovic
+Sulfidic
+Technic/ Kalaic
+Endothionic
+Toxic
+Transportic
+Turbic
+Vertic
+SOLONCHAKS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Abruptic
+Acric/ Lixic/ Alic/ Luvic
+Alcalic
+Arenicolic
+Aric
+Drainic
+Ferralic/ Sideralic
+Folic
+Fractic
+Gelic
+Humic/ Ochric
+Inclinic
+Laxic
+Limnic
+Limonic
+Magnesic
+Mulmic
+Nechic
+Novic
+Placic
+Pyric
+Raptic
+Relocatic
+Salic
+Skeletic
+Sodic
+Solimovic
+Sulfidic
+Takyric
+Technic/ Kalaic
+Tephric
+Toxic
+Transportic
+Turbic
+Uterquic
+Vertic
+GLEYSOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Protoandic
+Aric
+Dolomitic/ Calcaric
+Drainic
+Eutrosilic/ Acroxic
+Fluvic
+Folic
+Fragic
+Gelic
+Humic/ Ochric
+Mulmic
+Nechic
+Novic
+Oxyaquic
+Panpaic
+Placic
+Posic
+Pyric
+Reductic
+Sideralic
+Sodic
+Solimovic
+Protospodic
+Technic/ Kalaic
+Thixotropic
+Toxic
+Transportic
+Turbic
+ANDOSOLS
+Supplementary qualifiers
+Arenic/ Loamic/ Siltic
+Abruptic
+Aric
+Neocambic/ Neobrunic
+Cordic
+Densic
+Drainic
+Epic/ Endic/ Dorsic
+Eutric
+Folic
+Fragic
+Gelic
+Limonic
+Novic
+Ornithic
+Oxyaquic
+Placic
+Pyric
+Raptic
+Sideralic
+Hyperspodic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+PODZOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Abruptic
+Acric/ Lixic
+Aric
+Cohesic
+Drainic
+Duric
+Dystric/ Eutric
+Epic/ Endic
+Folic
+Humic/ Ochric
+Isopteric
+Magnesic
+Novic
+Oxyaquic
+Posic
+Pyric
+Raptic
+Saprolithic
+Technic/ Kalaic
+Toxic
+Transportic
+PLINTHOSOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Alcalic
+Andic
+Aric
+Cambic
+Capillaric
+Chromic
+Cohesic
+Columnic
+Densic
+Drainic
+Ferralic/ Sideralic
+Ferric
+Folic
+Fragic
+Gelic
+Gelistagnic
+Geric
+Humic/ Ochric
+Inclinic
+Magnesic
+Mochipic
+Nechic
+Novic
+Pyric
+Raptic
+Skeletic
+Sodic
+Solimovic
+Sulfidic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+Uterquic
+PLANOSOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Endoabruptic
+Alcalic
+Aric
+Cambic
+Capillaric
+Cohesic
+Drainic
+Ferralic/ Sideralic
+Ferric
+Folic
+Fragic
+Gelic
+Gelistagnic
+Geric
+Humic/ Ochric
+Inclinic
+Magnesic
+Mochipic
+Nechic
+Nitic
+Novic
+Ornithic
+Pyric
+Raptic
+Rhodic/ Chromic
+Skeletic
+Sodic
+Solimovic
+Protospodic
+Sulfidic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+Uterquic
+STAGNOSOLS
+Supplementary qualifiers
+Andic
+Aric
+Densic
+Epic/ Endic
+Ferric
+Endogleyic
+Humic/ Ochric
+Magnesic
+Novic
+Oxyaquic
+Posic
+Pyric
+Raptic
+Sodic
+Endostagnic
+Technic/ Kalaic
+Toxic
+Transportic
+NITISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Abruptic
+Activic
+Andic
+Aric
+Cohesic
+Densic
+Dystric/ Eutric
+Epic/ Endic/ Dorsic
+Ferric
+Fluvic
+Folic
+Humic/ Ochric
+Isopteric
+Litholinic
+Novic
+Oxyaquic
+Posic
+Pyric
+Raptic
+Saprolithic
+Solimovic
+Sombric
+Technic/ Kalaic
+Toxic
+Transportic
+FERRALSOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Andic
+Aric
+Densic
+Fluvic
+Fractic
+Humic
+Novic
+Oxyaquic
+Pachic
+Pyric
+Raptic
+Salic
+Sodic
+Solimovic
+Sombric
+Stagnic
+Technic/ Kalaic
+Tephric
+Transportic
+Turbic
+Vitric
+CHERNOZEMS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Andic
+Anthric
+Aric
+Chromic
+Densic
+Fractic
+Gelic
+Humic
+Laxic
+Magnesic
+Novic
+Oxyaquic
+Pachic
+Panpaic/ Raptic
+Pyric
+Salic
+Sodic
+Solimovic
+Sombric
+Stagnic
+Technic/ Kalaic
+Tephric
+Transportic
+Turbic
+Vitric
+KASTANOZEMS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Abruptic
+Albic
+Andic
+Anthric
+Aric
+Columnic
+Densic
+Ferralic/ Sideralic
+Folic
+Fractic
+Humic
+Isolatic
+Laxic
+Limonic
+Magnesic
+Nechic
+Novic
+Oxyaquic
+Pachic
+Panpaic/ Raptic
+Pyric
+Relocatic
+Rhodic/ Chromic
+Salic
+Sodic
+Solimovic
+Sombric
+Technic/ Kalaic
+Tephric
+Transportic
+Turbic
+Vitric
+PHAEOZEMS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Abruptic
+Albic
+Andic
+Anthric
+Aric
+Densic
+Drainic
+Hyperdystric/ Eutric
+Ferralic/ Sideralic
+Folic
+Gelic
+Humic
+Isolatic
+Laxic
+Limonic
+Nechic
+Novic
+Ornithic
+Oxyaquic
+Pachic
+Panpaic/ Raptic
+Placic
+Pyric
+Relocatic
+Rhodic/ Chromic
+Solimovic
+Sombric
+Protospodic
+Sulfidic
+Technic/ Kalaic
+Thionic
+Toxic
+Transportic
+Turbic
+Vitric
+UMBRISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Aeolic
+Aric
+Biocrustic
+Chromic
+Cohesic
+Epic/ Endic
+Gleyic
+Humic/ Ochric
+Isopteric
+Magnesic
+Novic
+Pyric
+Raptic
+Salic
+Sideralic
+Sodic
+Stagnic
+Technic/ Kalaic
+Toxic
+Transportic
+Vertic
+DURISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Abruptic
+Aeolic
+Aric
+Biocrustic
+Epic/ Endic
+Fluvic
+Hypergypsic
+Humic/ Ochric
+Isopteric
+Naramic
+Novic
+Panpaic/ Raptic
+Pyric
+Salic
+Sodic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+Vertic
+GYPSISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Abruptic
+Aeolic
+Aric
+Biocrustic
+Hypercalcic
+Densic
+Epic/ Endic
+Fluvic
+Gelic
+Protogypsic
+Humic/ Ochric
+Isopteric
+Magnesic
+Naramic
+Novic
+Panpaic/ Raptic
+Pyric
+Rhodic/ Chromic
+Salic
+Sodic
+Solimovic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+Vertic
+CALCISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Aric
+Cutanic
+Densic
+Differentic
+Drainic
+Epic/ Endic
+Folic
+Gelic
+Humic/ Ochric
+Lamellic
+Nechic
+Novic
+Oxyaquic
+Profondic
+Pyric
+Raptic
+Solimovic
+Protospodic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+RETISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Andic
+Aric
+Neocambic/ Neobrunic
+Cohesic
+Cutanic
+Densic
+Differentic
+Hyperdystric/ Epieutric
+Epic/ Endic
+Geric
+Gibbsic
+Humic/ Ochric
+Magnesic
+Nechic
+Nitic
+Novic
+Oxyaquic
+Posic
+Profondic
+Pyric
+Raptic
+Saprolithic
+Sodic
+Solimovic
+Sombric
+Technic/ Kalaic
+Toxic
+Transportic
+Vitric
+ACRISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Andic
+Aric
+Neocambic/ Neobrunic
+Cohesic
+Columnic
+Cutanic
+Densic
+Differentic
+Epidystric/ Hypereutric
+Epic/ Endic
+Fractic
+Geric
+Gibbsic
+Humic/ Ochric
+Magnesic
+Nechic
+Nitic
+Novic
+Oxyaquic
+Profondic
+Pyric
+Raptic
+Saprolithic
+Sodic
+Solimovic
+Technic/ Kalaic
+Toxic
+Transportic
+Vitric
+LIXISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Andic
+Aric
+Neocambic/ Neobrunic
+Cutanic
+Densic
+Differentic
+Hyperdystric/ Epieutric
+Epic/ Endic
+Fluvic
+Folic
+Gelic
+Humic/ Ochric
+Hyperalic
+Magnesic
+Nechic
+Nitic
+Novic
+Oxyaquic
+Profondic
+Pyric
+Raptic
+Sodic
+Solimovic
+Protospodic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+Vitric
+ALISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Andic
+Aric
+Neocambic /Neobrunic
+Columnic
+Cutanic
+Densic
+Differentic
+Epidystric/ Hypereutric
+Epic/ Endic
+Escalic
+Fluvic
+Fractic
+Gelic
+Humic/ Ochric
+Magnesic
+Nechic
+Nitic
+Novic
+Oxyaquic
+Profondic
+Pyric
+Raptic
+Sodic
+Solimovic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+Vitric
+LUVISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Geoabruptic
+Aeolic
+Alcalic
+Aric
+Biocrustic
+Protocalcic
+Carbonic
+Cohesic
+Columnic
+Densic
+Drainic
+Escalic
+Ferric
+Folic
+Fractic
+Gelic
+Gelistagnic
+Protogypsic
+Humic/ Ochric
+Isopteric
+Laxic
+Limonic
+Litholinic
+Magnesic
+Nechic
+Novic
+Ornithic
+Oxyaquic
+Panpaic/ Raptic
+Pyric
+Salic
+Saprolithic
+Sodic
+Protospodic
+Sulfidic
+Technic/ Kalaic
+Tephric
+Toxic
+Transportic
+Turbic
+CAMBISOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Geoabruptic
+Alcalic
+Arenicolic
+Aric
+Protocalcic
+Densic
+Drainic
+Folic
+Gelic
+Humic/ Ochric
+Limnic
+Limonic
+Magnesic
+Nechic
+Oxyaquic
+Panpaic
+Placic
+Pyric
+Salic
+Sideralic
+Sodic
+Sulfidic
+Technic/ Kalaic
+Toxic
+Transportic
+Turbic
+Protovertic
+FLUVISOLS
+Supplementary qualifiers
+Geoabruptic
+Alcalic
+Arenicolic
+Aric
+Biocrustic
+Protocalcic
+Carbonic
+Cordic
+Folic
+Gelic
+Protogypsic
+Humic/ Ochric
+Hydrophobic
+Isopteric
+Lamellic/ Protoargic
+Limonic
+Nechic
+Novic
+Ornithic
+Oxyaquic
+Panpaic/ Raptic
+Placic
+Pyric
+Rhodic/ Chromic/ Rubic/
+Claric
+Salic
+Sodic
+Bathyspodic
+Protospodic
+Stagnic
+Sulfidic
+Technic/ Kalaic
+Toxic
+Turbic
+ARENOSOLS
+Supplementary qualifiers
+Arenic/ Clayic/ Loamic/
+Siltic
+Geoabruptic
+Alcalic
+Aric
+Biocrustic
+Protocalcic
+Carbonic
+Cordic
+Densic
+Drainic
+Escalic
+Fluvic
+Folic
+Gelic
+Gelistagnic
+Protogypsic
+Humic/ Ochric
+Isolatic
+Isopteric
+Magnesic
+Nechic
+Ornithic
+Oxyaquic
+Panpaic/ Raptic
+Pyric
+Salic
+Saprolithic
+Sodic
+Technic/ Kalaic
+Toxic
+Turbic
+Protovertic
+REGOSOLS
