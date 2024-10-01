@@ -14,14 +14,14 @@ data('ST', package = 'SoilTaxonomy')
 
 ## this is the most detailed acreage accounting
 # subgroup acreages from SoilWeb / SSURGO
-sg.ac <- read.table(file='databases/taxsubgrp-stats.txt.gz', header = FALSE, sep="|")
+sg.ac <- read.table(file = '../SoilWeb-data/files/taxsubgrp-stats.txt.gz', header = FALSE, sep="|")
 names(sg.ac) <- c('subgroup', 'ac', 'n_polygons')
 
 # normalize names
 sg.ac$subgroup <- tolower(sg.ac$subgroup)
 
 # LEFT JOIN to acreage
-ST <- merge(ST, sg.ac, by='subgroup', all.x=TRUE)
+ST <- merge(ST, sg.ac, by = 'subgroup', all.x = TRUE)
 
 # set NA acreage to 0
 ST$ac[which(is.na(ST$ac))] <- 0
