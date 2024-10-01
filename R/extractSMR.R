@@ -17,7 +17,7 @@ extractSMR <- function(taxon, as.is = FALSE, droplevels = FALSE, ordered = TRUE)
     data.frame(element = c("ids",
                            "per", "aqu", "torr", "ud", "ust", "xer", "sapr", "hem", "fibr", "wass",
                            "torri", "ud", "ust", "xer", "aqu",
-                           "udic", "ustic", "xeric"),
+                           "ud", "ust", "xer"),
                level = c("order",
                          "suborder", "suborder", "suborder", "suborder", "suborder", "suborder", "suborder", "suborder", "suborder", "suborder",
                          "greatgroup", "greatgroup", "greatgroup", "greatgroup", "greatgroup",
@@ -42,15 +42,17 @@ extractSMR <- function(taxon, as.is = FALSE, droplevels = FALSE, ordered = TRUE)
     th <- min(el$defs$hierarchy, na.rm = TRUE)
 
     # only consider SMR formative elements at or below taxon level
-    el$defs <- el$defs[el$defs$element %in% co$element & th <= el$defs$level, ]
+    el$defs <- el$defs[grepl(paste0(co$element, collapse = "|"), el$defs$element) & th <= el$defs$level, ]
+    maxlevel <- suppressWarnings(max(el$defs$hierarchy, na.rm = TRUE))
+    el$defs <- el$defs[el$defs$hierarchy == maxlevel, ]
 
     # THEN get highest level taxon SMR connotation
-    co <- co[co$element %in% el$defs$element &
-               co$level %in% el$defs$level &
-               co$level == suppressWarnings(max(el$defs$hierarchy, na.rm = TRUE)), ]
-    nrx <- nrow(co)
+    co2 <- co[!is.na(pmatch(co$element, el$defs$element, duplicates.ok = TRUE)) &
+                co$level %in% el$defs$level &
+                co$level == maxlevel, ]
+    nrx <- nrow(co2)
     if (nrx == 1) {
-      co$connotation
+      co2$connotation
     } else NA_character_
   }, character(1))
 

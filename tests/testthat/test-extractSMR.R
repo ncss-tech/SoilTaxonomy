@@ -16,15 +16,17 @@ test_that("extractSMR works", {
                    `aquisalids` = "aridic (torric)",
                    `aquiturbels` = "aquic"
                  ),
-                 levels = c(
-                   "aridic (torric)",
-                   "ustic",
-                   "xeric",
-                   "udic",
-                   "perudic",
-                   "aquic",
-                   "peraquic"
-                 ),
+                 levels = SoilMoistureRegimeLevels(as.is = TRUE),
                  ordered = TRUE)
               )
+
+  expect_equal(extractSMR(c('xerollic glossocryalfs', 'ustic haplocambids')),
+               factor(
+                 c(
+                   `xerollic glossocryalfs` = "xeric",
+                   `ustic haplocambids` = "aridic (torric)"
+                 ),
+                 levels = SoilMoistureRegimeLevels(as.is = TRUE),
+                 ordered = TRUE
+               ))
 })
