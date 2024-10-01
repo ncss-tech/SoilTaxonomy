@@ -1,9 +1,8 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   diagnostics: diagnostics.html
   family-level_taxonomy: family-level_taxonomy.html
   taxon-letter-codes: taxon-letter-codes.html
-last_built: 2023-11-16T19:23Z
-
+last_built: 2024-10-01T15:56Z

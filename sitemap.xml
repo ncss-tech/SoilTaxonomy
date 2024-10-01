@@ -1,126 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/articles/diagnostics.html</loc>
-  </url>
-  <url>
-    <loc>/articles/family-level_taxonomy.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/taxon-letter-codes.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/FormativeElements.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ST.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ST_family_classes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ST_features.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ST_formative_elements.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ST_higher_taxa_codes_12th.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ST_higher_taxa_codes_13th.html</loc>
-  </url>
-  <url>
-    <loc>/reference/SoilTaxonomy-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/SoilTaxonomyLevels.html</loc>
-  </url>
-  <url>
-    <loc>/reference/code_to_level.html</loc>
-  </url>
-  <url>
-    <loc>/reference/decompose_taxon_code.html</loc>
-  </url>
-  <url>
-    <loc>/reference/explainST.html</loc>
-  </url>
-  <url>
-    <loc>/reference/extractSMR.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getChildTaxa.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getLastChildTaxon.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getParentTaxa.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getTaxonAtLevel.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_ST_family_classes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_ST_features.html</loc>
-  </url>
-  <url>
-    <loc>/reference/hierarchy.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/isValidST.html</loc>
-  </url>
-  <url>
-    <loc>/reference/level_hierarchy.html</loc>
-  </url>
-  <url>
-    <loc>/reference/level_to_taxon.html</loc>
-  </url>
-  <url>
-    <loc>/reference/newick_string.html</loc>
-  </url>
-  <url>
-    <loc>/reference/parse_family.html</loc>
-  </url>
-  <url>
-    <loc>/reference/preceding_taxon_codes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/relative_taxon_code_position.html</loc>
-  </url>
-  <url>
-    <loc>/reference/taxonTree.html</loc>
-  </url>
-  <url>
-    <loc>/reference/taxon_code_to_taxon.html</loc>
-  </url>
-  <url>
-    <loc>/reference/taxon_to_level.html</loc>
-  </url>
-  <url>
-    <loc>/reference/taxon_to_taxon_code.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/articles/diagnostics.html</loc></url>
+<url><loc>/articles/family-level_taxonomy.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/taxon-letter-codes.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/news/index.html</loc></url>
+<url><loc>/reference/FormativeElements.html</loc></url>
+<url><loc>/reference/ST.html</loc></url>
+<url><loc>/reference/ST_family_classes.html</loc></url>
+<url><loc>/reference/ST_features.html</loc></url>
+<url><loc>/reference/ST_formative_elements.html</loc></url>
+<url><loc>/reference/ST_higher_taxa_codes_12th.html</loc></url>
+<url><loc>/reference/ST_higher_taxa_codes_13th.html</loc></url>
+<url><loc>/reference/SoilTaxonomy-package.html</loc></url>
+<url><loc>/reference/SoilTaxonomyLevels.html</loc></url>
+<url><loc>/reference/WRB_4th_2022.html</loc></url>
+<url><loc>/reference/code_to_level.html</loc></url>
+<url><loc>/reference/decompose_taxon_code.html</loc></url>
+<url><loc>/reference/explainST.html</loc></url>
+<url><loc>/reference/extractSMR.html</loc></url>
+<url><loc>/reference/getChildTaxa.html</loc></url>
+<url><loc>/reference/getLastChildTaxon.html</loc></url>
+<url><loc>/reference/getParentTaxa.html</loc></url>
+<url><loc>/reference/getTaxonAtLevel.html</loc></url>
+<url><loc>/reference/get_ST_family_classes.html</loc></url>
+<url><loc>/reference/get_ST_features.html</loc></url>
+<url><loc>/reference/hierarchy.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/isValidST.html</loc></url>
+<url><loc>/reference/level_hierarchy.html</loc></url>
+<url><loc>/reference/level_to_taxon.html</loc></url>
+<url><loc>/reference/newick_string.html</loc></url>
+<url><loc>/reference/parse_family.html</loc></url>
+<url><loc>/reference/preceding_taxon_codes.html</loc></url>
+<url><loc>/reference/relative_taxon_code_position.html</loc></url>
+<url><loc>/reference/taxonTree.html</loc></url>
+<url><loc>/reference/taxon_code_to_taxon.html</loc></url>
+<url><loc>/reference/taxon_to_level.html</loc></url>
+<url><loc>/reference/taxon_to_taxon_code.html</loc></url>
 </urlset>
+
