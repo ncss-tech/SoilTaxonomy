@@ -2,7 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ncss-tech/SoilTaxonomy/workflows/R-CMD-check/badge.svg)](https://github.com/ncss-tech/SoilTaxonomy/actions/workflows/R-CMD-check.yml)
+[![R-CMD-check](https://github.com/ncss-tech/SoilTaxonomy/actions/workflows/R-CMD-check.yml/badge.svg)](https://github.com/ncss-tech/SoilTaxonomy/actions/workflows/R-CMD-check.yml)
 [![Codecov test
 coverage](https://codecov.io/gh/ncss-tech/SoilTaxonomy/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ncss-tech/SoilTaxonomy?branch=master)
 [![CRAN
@@ -17,16 +17,16 @@ Manual](https://img.shields.io/badge/docs-HTML-informational)](https://ncss-tech
 Taxonomic dictionaries, formative element lists, and functions related
 to the maintenance, development and application of U.S. Soil Taxonomy.
 
--   Data and functionality are based on official U.S. Department of
-    Agriculture sources including the latest edition of the Keys to Soil
-    Taxonomy. Descriptions and metadata are obtained from the National
-    Soil Information System or Soil Survey Geographic databases. Other
-    sources are referenced in the data documentation.
+- Data and functionality are based on official U.S. Department of
+  Agriculture sources including the latest edition of the Keys to Soil
+  Taxonomy. Descriptions and metadata are obtained from the National
+  Soil Information System or Soil Survey Geographic databases. Other
+  sources are referenced in the data documentation.
 
--   Provides tools for understanding and interacting with concepts in
-    the U.S. Soil Taxonomic System. Most of the current utilities are
-    for working with taxonomic concepts at the “higher” taxonomic
-    levels: **Order**, **Suborder**, **Great Group**, and **Subgroup**.
+- Provides tools for understanding and interacting with concepts in the
+  U.S. Soil Taxonomic System. Most of the current utilities are for
+  working with taxonomic concepts at the “higher” taxonomic levels:
+  **Order**, **Suborder**, **Great Group**, and **Subgroup**.
 
 ## Installation
 
@@ -73,14 +73,14 @@ data('ST_family_classes', package = 'SoilTaxonomy')
 Several vignettes are included with the package to demonstrate basic
 functionality:
 
--   [Taxon Letter Codes in Soil
-    Taxonomy](https://ncss-tech.github.io/SoilTaxonomy/articles/taxon-letter-codes.html)
+- [Taxon Letter Codes in Soil
+  Taxonomy](https://ncss-tech.github.io/SoilTaxonomy/articles/taxon-letter-codes.html)
 
--   [Diagnostic Features &
-    Characteristics](https://ncss-tech.github.io/SoilTaxonomy/articles/diagnostics.html)
+- [Diagnostic Features &
+  Characteristics](https://ncss-tech.github.io/SoilTaxonomy/articles/diagnostics.html)
 
--   [Family-level Taxonomic
-    Classes](https://ncss-tech.github.io/SoilTaxonomy/articles/family-level_taxonomy.html)
+- [Family-level Taxonomic
+  Classes](https://ncss-tech.github.io/SoilTaxonomy/articles/family-level_taxonomy.html)
 
 ### Featured Functions
 
@@ -136,107 +136,107 @@ getTaxonAtLevel('folists', level = "subgroup")
 taxonTree(c("hapludults", "hapludalfs"))
 #> Loading required namespace: data.tree
 #> Soil Taxonomy                                 
-#>  |--ultisols                                  
-#>  |   |--udults                                
-#>  |       |--hapludults                        
-#>  |           |--lithic-ruptic-entic hapludults
-#>  |           |--lithic hapludults             
-#>  |           |--vertic hapludults             
-#>  |           |--fragiaquic hapludults         
-#>  |           |--aquic arenic hapludults       
-#>  |           |--aquic hapludults              
-#>  |           |--fragic hapludults             
-#>  |           |--oxyaquic hapludults           
-#>  |           |--lamellic hapludults           
-#>  |           |--psammentic hapludults         
-#>  |           |--arenic hapludults             
-#>  |           |--grossarenic hapludults        
-#>  |           |--inceptic hapludults           
-#>  |           |--humic hapludults              
-#>  |           |--typic hapludults              
-#>  |--alfisols                                  
-#>      |--udalfs                                
-#>          |--hapludalfs                        
-#>              |--lithic hapludalfs             
-#>              |--aquertic chromic hapludalfs   
-#>              |--aquertic hapludalfs           
-#>              |--oxyaquic vertic hapludalfs    
-#>              |--chromic vertic hapludalfs     
-#>              |--vertic hapludalfs             
-#>              |--andic hapludalfs              
-#>              |--vitrandic hapludalfs          
-#>              |--fragiaquic hapludalfs         
-#>              |--fragic oxyaquic hapludalfs    
-#>              |--aquic arenic hapludalfs       
-#>              |--arenic oxyaquic hapludalfs    
-#>              |--anthraquic hapludalfs         
-#>              |--albaquultic hapludalfs        
-#>              |--albaquic hapludalfs           
-#>              |--glossaquic hapludalfs         
-#>              |--aquultic hapludalfs           
-#>              |--aquollic hapludalfs           
-#>              |--aquic hapludalfs              
-#>              |--mollic oxyaquic hapludalfs    
-#>              |--oxyaquic hapludalfs           
-#>              |--fragic hapludalfs             
-#>              |--lamellic hapludalfs           
-#>              |--psammentic hapludalfs         
-#>              |--arenic hapludalfs             
-#>              |--glossic hapludalfs            
-#>              |--inceptic hapludalfs           
-#>              |--ultic hapludalfs              
-#>              |--mollic hapludalfs             
-#>              |--typic hapludalfs
+#>  |-ultisols                                  
+#>  |   |-udults                                
+#>  |       |-hapludults                        
+#>  |           |-lithic-ruptic-entic hapludults
+#>  |           |-lithic hapludults             
+#>  |           |-vertic hapludults             
+#>  |           |-fragiaquic hapludults         
+#>  |           |-aquic arenic hapludults       
+#>  |           |-aquic hapludults              
+#>  |           |-fragic hapludults             
+#>  |           |-oxyaquic hapludults           
+#>  |           |-lamellic hapludults           
+#>  |           |-psammentic hapludults         
+#>  |           |-arenic hapludults             
+#>  |           |-grossarenic hapludults        
+#>  |           |-inceptic hapludults           
+#>  |           |-humic hapludults              
+#>  |           |-typic hapludults              
+#>  |-alfisols                                  
+#>      |-udalfs                                
+#>          |-hapludalfs                        
+#>              |-lithic hapludalfs             
+#>              |-aquertic chromic hapludalfs   
+#>              |-aquertic hapludalfs           
+#>              |-oxyaquic vertic hapludalfs    
+#>              |-chromic vertic hapludalfs     
+#>              |-vertic hapludalfs             
+#>              |-andic hapludalfs              
+#>              |-vitrandic hapludalfs          
+#>              |-fragiaquic hapludalfs         
+#>              |-fragic oxyaquic hapludalfs    
+#>              |-aquic arenic hapludalfs       
+#>              |-arenic oxyaquic hapludalfs    
+#>              |-anthraquic hapludalfs         
+#>              |-albaquultic hapludalfs        
+#>              |-albaquic hapludalfs           
+#>              |-glossaquic hapludalfs         
+#>              |-aquultic hapludalfs           
+#>              |-aquollic hapludalfs           
+#>              |-aquic hapludalfs              
+#>              |-mollic oxyaquic hapludalfs    
+#>              |-oxyaquic hapludalfs           
+#>              |-fragic hapludalfs             
+#>              |-lamellic hapludalfs           
+#>              |-psammentic hapludalfs         
+#>              |-arenic hapludalfs             
+#>              |-glossic hapludalfs            
+#>              |-inceptic hapludalfs           
+#>              |-ultic hapludalfs              
+#>              |-mollic hapludalfs             
+#>              |-typic hapludalfs
 ```
 
 ``` r
 # suborders and great groups of alfisols 
 taxonTree("alfisols", root = "Alfisols", level = c("suborder", "greatgroup"))
 #> Alfisols              
-#>  |--aqualfs           
-#>  |   |--cryaqualfs    
-#>  |   |--plinthaqualfs 
-#>  |   |--duraqualfs    
-#>  |   |--natraqualfs   
-#>  |   |--fragiaqualfs  
-#>  |   |--kandiaqualfs  
-#>  |   |--vermaqualfs   
-#>  |   |--albaqualfs    
-#>  |   |--glossaqualfs  
-#>  |   |--epiaqualfs    
-#>  |   |--endoaqualfs   
-#>  |--cryalfs           
-#>  |   |--palecryalfs   
-#>  |   |--glossocryalfs 
-#>  |   |--haplocryalfs  
-#>  |--ustalfs           
-#>  |   |--durustalfs    
-#>  |   |--plinthustalfs 
-#>  |   |--natrustalfs   
-#>  |   |--kandiustalfs  
-#>  |   |--kanhaplustalfs
-#>  |   |--paleustalfs   
-#>  |   |--rhodustalfs   
-#>  |   |--haplustalfs   
-#>  |--xeralfs           
-#>  |   |--durixeralfs   
-#>  |   |--natrixeralfs  
-#>  |   |--fragixeralfs  
-#>  |   |--plinthoxeralfs
-#>  |   |--rhodoxeralfs  
-#>  |   |--palexeralfs   
-#>  |   |--haploxeralfs  
-#>  |--udalfs            
-#>      |--natrudalfs    
-#>      |--ferrudalfs    
-#>      |--fraglossudalfs
-#>      |--fragiudalfs   
-#>      |--kandiudalfs   
-#>      |--kanhapludalfs 
-#>      |--paleudalfs    
-#>      |--rhodudalfs    
-#>      |--glossudalfs   
-#>      |--hapludalfs
+#>  |-aqualfs           
+#>  |   |-cryaqualfs    
+#>  |   |-plinthaqualfs 
+#>  |   |-duraqualfs    
+#>  |   |-natraqualfs   
+#>  |   |-fragiaqualfs  
+#>  |   |-kandiaqualfs  
+#>  |   |-vermaqualfs   
+#>  |   |-albaqualfs    
+#>  |   |-glossaqualfs  
+#>  |   |-epiaqualfs    
+#>  |   |-endoaqualfs   
+#>  |-cryalfs           
+#>  |   |-palecryalfs   
+#>  |   |-glossocryalfs 
+#>  |   |-haplocryalfs  
+#>  |-ustalfs           
+#>  |   |-durustalfs    
+#>  |   |-plinthustalfs 
+#>  |   |-natrustalfs   
+#>  |   |-kandiustalfs  
+#>  |   |-kanhaplustalfs
+#>  |   |-paleustalfs   
+#>  |   |-rhodustalfs   
+#>  |   |-haplustalfs   
+#>  |-xeralfs           
+#>  |   |-durixeralfs   
+#>  |   |-natrixeralfs  
+#>  |   |-fragixeralfs  
+#>  |   |-plinthoxeralfs
+#>  |   |-rhodoxeralfs  
+#>  |   |-palexeralfs   
+#>  |   |-haploxeralfs  
+#>  |-udalfs            
+#>      |-natrudalfs    
+#>      |-ferrudalfs    
+#>      |-fraglossudalfs
+#>      |-fragiudalfs   
+#>      |-kandiudalfs   
+#>      |-kanhapludalfs 
+#>      |-paleudalfs    
+#>      |-rhodudalfs    
+#>      |-glossudalfs   
+#>      |-hapludalfs
 ```
 
 #### `explainST()`: Label formative elements with brief explanations
@@ -274,7 +274,7 @@ cat(explainST('abruptic haplic durixeralfs'))
 #>                 |   |  |                                                                            
 #>                 presence of a duripan                                                               
 #>                     |  |                                                                            
-#>                     xeric SMR                                                                       
+#>                     xeric soil moisture regime                                                      
 #>                        |                                                                            
 #>                        soils with an argillic, kandic, or natric horizon
 
@@ -318,7 +318,7 @@ res <- lapply(LETTERS[1:12], function(l) cat(explainST(taxon_code_to_taxon(l)), 
 #> 
 #> aridisols
 #>   |                                                                                                 
-#>   soils with some diagnostic horizons and an aridic SMR                                              
+#>   soils with some diagnostic horizons and an aridic soil moisture regime                             
 #> 
 #> ultisols
 #> |                                                                                                   
@@ -349,14 +349,14 @@ unit concepts within the U.S. Soil Survey Geographic Database (SSURGO).
 
 These databases included:
 
--   Statistics on taxonomic subgroups, family-level components, and soil
-    series.
+- Statistics on taxonomic subgroups, family-level components, and soil
+  series.
 
--   MLRA Overlap tables for series, national map unit symbols and map
-    unit keys.
+- MLRA Overlap tables for series, national map unit symbols and map unit
+  keys.
 
--   Summaries of KSSL records per series as well as geomorphic position,
-    parent material origin and kind.
+- Summaries of KSSL records per series as well as geomorphic position,
+  parent material origin and kind.
 
 These tables have been moved to a dedicated repository called
 [SoilWeb-data](https://github.com/ncss-tech/SoilWeb-data).
