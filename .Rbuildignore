@@ -13,3 +13,5 @@
 ^README\.Rmd$
 ^data-raw$
 ^CRAN-SUBMISSION$
+^_pkgdown\.yml$
+^pkgdown$
