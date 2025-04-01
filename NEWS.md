@@ -1,5 +1,5 @@
 # SoilTaxonomy 0.2.6 (2024-10-01)
-
+ - Updates to `extractSMR()` for suborders of Histels and subgroups that have no moisture regime information at higher levels
  - Added `WRB_4th_2022` data set containing World Reference Base for Soil Resources (4th Edition, 2022) reference soil groups with primary and supplementary qualifiers.
 
 # SoilTaxonomy 0.2.5 (2024-01-08)
