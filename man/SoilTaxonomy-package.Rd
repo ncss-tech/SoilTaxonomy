@@ -14,6 +14,7 @@ Useful links:
 \itemize{
   \item \url{https://github.com/ncss-tech/SoilTaxonomy}
   \item \url{https://ncss-tech.github.io/SoilTaxonomy/}
+  \item \url{http://ncss-tech.github.io/SoilTaxonomy/}
   \item Report bugs at \url{https://github.com/ncss-tech/SoilTaxonomy/issues}
 }
 
