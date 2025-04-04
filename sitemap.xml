@@ -10,6 +10,7 @@
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/news/index.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/FormativeElements.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/ST.html</loc></url>
+<url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/ST_criteria_13th.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/ST_family_classes.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/ST_features.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/ST_formative_elements.html</loc></url>
@@ -26,6 +27,7 @@
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/getLastChildTaxon.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/getParentTaxa.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/getTaxonAtLevel.html</loc></url>
+<url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/getTaxonCriteria.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/get_ST_family_classes.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/get_ST_features.html</loc></url>
 <url><loc>http://ncss-tech.github.io/SoilTaxonomy/reference/hierarchy.html</loc></url>
