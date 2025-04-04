@@ -1,6 +1,7 @@
 # SoilTaxonomy 0.2.7 (2025-04-01)
  - Added `ST_criteria_13th` data set relating taxon codes to specific criteria from the Keys to Soil Taxonomy (13th Edition)
-
+ - Added `getTaxonCriteria()`: a helper method for extracting values from `ST_criteria_13th`
+ 
 # SoilTaxonomy 0.2.6 (2024-10-01)
  - Updates to `extractSMR()` for suborders of Histels and subgroups that have no moisture regime information at higher levels
  - Added `WRB_4th_2022` data set containing World Reference Base for Soil Resources (4th Edition, 2022) reference soil groups with primary and supplementary qualifiers.
