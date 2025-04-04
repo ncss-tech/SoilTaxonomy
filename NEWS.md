@@ -1,4 +1,4 @@
-# SoilTaxonomy 0.2.7 (2025-04-01)
+# SoilTaxonomy 0.2.7 (2025-04-04)
  - Added `ST_criteria_13th` data set relating taxon codes to specific criteria from the Keys to Soil Taxonomy (13th Edition)
  - Added `getTaxonCriteria()`: a helper method for extracting values from `ST_criteria_13th`
  
