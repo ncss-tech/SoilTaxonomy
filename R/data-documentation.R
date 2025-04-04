@@ -96,13 +96,62 @@
 #'
 "ST_higher_taxa_codes_13th"
 
-#' World Reference Base for Soil Resources (4th Edition, 2022)
+
+#' Keys to Soil Taxonomy Criteria (13th Edition)
 #'
-#' A _list_ containing three _data.frame_ elements `"rsg"`, `"pq"`, and `"sq"` providing information on the 'Representative Soil Groups', 'Principal Qualifiers,' and 'Supplementary Qualifiers,' respectively.
+#' A lookup table relating taxon codes to specific criteria from the Keys to
+#' Soil Taxonomy (13th Edition)
 #'
 #' @details
 #'
-#' Each element has the column `"code"` which is a number (1-32) referring to the position in the Reference Soil Groups, and the column `"reference_soil_group"` which is the corresponding group name. The `"pq"` and `"sq"` qualifier name columns (`primary_qualifier` and `supplementary_qualifier`) contain individual qualifier terms. Related qualifiers are identified using `qualifier_group` column derived from qualifier names separated with a forward slash `" / "`
+#' A `list` containing one element per taxon code at order to subgroup level.
+#' Each element contains a `data.frame` with 1 row per criterion, and 8 columns:
+#'
+#' Each `data.frame` contains the following columns:
+#'  - `content` (text content of criterion)
+#'  - `chapter` (chapter number)
+#'  - `page` (page number)
+#'  - `key` (key name or level)
+#'  - `taxon` (taxon name)
+#'  - `code` (taxon code)
+#'  - `clause` (sequence number of criterion within taxon)
+#'  - `logic` (logical meaning of criterion)
+#'    - One of:
+#'      - `FIRST` (first)
+#'      - `OR` (either this criterion OR the next criterion at same level)
+#'      - `END` (end of hierarchical key)
+#'      - `NEW` (go to new page/taxon specified)
+#'      - `AND` (this criterion AND the next criterion at same level)
+#'      - `HAVE` (criteria that must be met)
+#'      - `LAST` (end of subgroup key)
+#'
+#' @references
+#'
+#' Soil Survey Staff. 2022. Keys to Soil Taxonomy, 13th ed. USDA-Natural
+#' Resources Conservation Service.
+#' \url{https://www.nrcs.usda.gov/resources/guides-and-instructions/keys-to-soil-taxonomy}
+#'
+#' @usage data(ST_criteria_13th)
+#'
+#' @keywords datasets
+#'
+"ST_criteria_13th"
+
+#' World Reference Base for Soil Resources (4th Edition, 2022)
+#'
+#' @details
+#'
+#' A _list_ containing three _data.frame_ elements `"rsg"`, `"pq"`, and `"sq"`
+#' providing information on the 'Representative Soil Groups', 'Principal
+#' Qualifiers,' and 'Supplementary Qualifiers,' respectively.
+#'
+#' Each element has the column `"code"` which is a number (1-32) referring to
+#' the position in the Reference Soil Groups, and the column
+#' `"reference_soil_group"` which is the corresponding group name. The `"pq"`
+#' and `"sq"` qualifier name columns (`primary_qualifier` and
+#' `supplementary_qualifier`) contain individual qualifier terms. Related
+#' qualifiers are identified using `qualifier_group` column derived from
+#' qualifier names separated with a forward slash `" / "`
 #'
 #'  - The _data.frame_ `"rsg"` has column `"criteria"`, describing the logical criteria for each Reference Soil Group.
 #'  - The _data.frame_ `"pq"` has qualifier names in column `"principal_qualifier"`
@@ -110,7 +159,10 @@
 #'
 #' @references
 #'
-#' IUSS Working Group WRB. 2022. World Reference Base for Soil Resources. International soil classification system for naming soils and creating legends for soil maps. 4th edition. International Union of Soil Sciences (IUSS), Vienna, Austria.
+#' IUSS Working Group WRB. 2022. World Reference Base for Soil Resources.
+#' International soil classification system for naming soils and creating
+#' legends for soil maps. 4th edition. International Union of Soil Sciences
+#' (IUSS), Vienna, Austria.
 #'
 #' @usage data(WRB_4th_2022)
 #'
