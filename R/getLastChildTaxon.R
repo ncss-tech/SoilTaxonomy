@@ -19,7 +19,7 @@ getLastChildTaxon <- function(level = c("order","suborder","greatgroup")) {
   
   level.idx <- match(level, lvls)
   ST_unique_list <- NULL
-  load(system.file("data/ST_unique_list.rda", package = "SoilTaxonomy")[1])
+  load(system.file("data", "ST_unique_list.rda", package = "SoilTaxonomy")[1])
   
   suborders <- taxon_to_taxon_code(ST_unique_list[[level]])
   ggposition <- relative_taxon_code_position(taxon_to_taxon_code(ST_unique_list[[lvls[level.idx + 1]]]))

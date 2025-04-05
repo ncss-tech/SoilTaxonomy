@@ -22,7 +22,7 @@ SoilTaxonomyLevels <- function(level = c("order", "suborder", "greatgroup", "sub
 
   level <- match.arg(level, c("order", "suborder", "greatgroup", "subgroup"))
   ST_unique_list <- NULL
-  load(system.file("data/ST_unique_list.rda", package = "SoilTaxonomy")[1])
+  load(system.file("data", "ST_unique_list.rda", package = "SoilTaxonomy")[1])
 
   res <- factor(ST_unique_list[[level]], levels = ST_unique_list[[level]], ordered = ordered)
 

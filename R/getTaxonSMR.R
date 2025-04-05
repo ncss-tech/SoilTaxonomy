@@ -38,7 +38,7 @@ getTaxonSMR <- function(taxon = NULL, code = NULL, as.is = FALSE, droplevels = F
     out <- factor(out, levels = SoilMoistureRegimeLevels(as.is = TRUE), ordered = ordered)
 
     if (droplevels) {
-      return(droplevels(res))
+      return(droplevels(out))
     }
   }
 

@@ -187,7 +187,7 @@ get_ST_formative_elements <- function(level = c("order", "suborder", "greatgroup
 .get_ST_formative_elements <- function() {
   if (!exists("ST_formative_elements", envir = SoilTaxonomy.env)) {
     ST_formative_elements <- NULL
-    load(system.file("data/ST_formative_elements.rda", package = "SoilTaxonomy")[1])
+    load(system.file("data", "ST_formative_elements.rda", package = "SoilTaxonomy")[1])
     assign("ST_formative_elements", ST_formative_elements, envir = SoilTaxonomy.env)
   } else {
     ST_formative_elements <- get("ST_formative_elements", SoilTaxonomy.env)

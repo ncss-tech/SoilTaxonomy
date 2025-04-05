@@ -28,7 +28,7 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
   ST_unique_list <- NULL
 
   # load local copy of taxon code lookup table
-  load(system.file("data/ST_unique_list.rda", package = "SoilTaxonomy")[1])
+  load(system.file("data", "ST_unique_list.rda", package = "SoilTaxonomy")[1])
 
   lut <- do.call('c', ST_unique_list)
 
@@ -83,11 +83,11 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
     return(res[, 0, drop = FALSE])
   } else {
     # soilDB::get_NASIS_metadata() # 2.7.3+
-    load(system.file("data/metadata.rda", package = "soilDB")[1])
+    load(system.file("data", "metadata.rda", package = "soilDB")[1])
   }
 
   ST_family_classes <- NULL
-  load(system.file("data/ST_family_classes.rda", package = "SoilTaxonomy")[1])
+  load(system.file("data", "ST_family_classes.rda", package = "SoilTaxonomy")[1])
 
   # lookup classes in KST definitions
   kst_lookup <- lapply(res$classes_split, function(x) {
@@ -242,7 +242,7 @@ get_ST_family_classes <- function(classname = NULL,
                                 multiline_col = "criteria") {
 
   ST_family_classes <- NULL
-  load(system.file("data/ST_family_classes.rda", package = "SoilTaxonomy")[1])
+  load(system.file("data", "ST_family_classes.rda", package = "SoilTaxonomy")[1])
 
   .data_filter(
     .data = ST_family_classes,

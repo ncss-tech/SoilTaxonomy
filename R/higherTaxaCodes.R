@@ -238,7 +238,7 @@ relative_taxon_code_position <- function(code) {
   }
 
   ST_higher_taxa_codes_12th <- NULL
-  load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
+  load(system.file("data", "ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
 
   # for efficiency the lowercase taxon names are calculated only if needed
   # the ST_higher_taxa_codes loading function does this

@@ -41,7 +41,7 @@ explainST <- function(x, format = c('text', 'html'), viewer = TRUE) {
   if (!is.na(x.lvl) && x.lvl == "order") {
     # handle input of full order name e.g. "aridisols"
     ST_formative_elements <- NULL
-    load(system.file("data/ST_formative_elements.rda", package="SoilTaxonomy")[1])
+    load(system.file("data", "ST_formative_elements.rda", package="SoilTaxonomy")[1])
     
     y <- ST_formative_elements[["order"]]
     idx <- which(x == y$order)

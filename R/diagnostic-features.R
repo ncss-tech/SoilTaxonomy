@@ -34,7 +34,7 @@ get_ST_features <- function(group = NULL,
                             multiline_sep = "\n",
                             multiline_col = "criteria") {
   ST_features <- NULL
-  load(system.file("data/ST_features.rda", package = "SoilTaxonomy")[1])
+  load(system.file("data", "ST_features.rda", package = "SoilTaxonomy")[1])
 
   .data_filter(
     .data = ST_features,

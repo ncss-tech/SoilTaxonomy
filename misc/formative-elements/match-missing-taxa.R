@@ -6,7 +6,7 @@
   ST_higher_taxa_codes_12th <- NULL
   
   # load local copy of taxon code lookup table
-  load(system.file("data/ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
+  load(system.file("data", "ST_higher_taxa_codes_12th.rda", package = "SoilTaxonomy")[1])
   
   # subset by pattern
   ST_higher_taxa_codes_12th[grep(pattern, ST_higher_taxa_codes_12th$taxon, ignore.case = TRUE),]

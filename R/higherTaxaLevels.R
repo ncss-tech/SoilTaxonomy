@@ -83,7 +83,7 @@ code_to_level <-  function(code) {
 level_to_taxon <- function(level = c("order","suborder","greatgroup","subgroup")) {
   ST_unique_list <- NULL
   
-  load(system.file("data/ST_unique_list.rda", package = "SoilTaxonomy")[1])
+  load(system.file("data", "ST_unique_list.rda", package = "SoilTaxonomy")[1])
   
   level <- match.arg(level, names(ST_unique_list), several.ok = TRUE)
   

@@ -21,7 +21,7 @@ isValidST <- function(needle, level = c('order', 'suborder', 'greatgroup', 'subg
   ST_unique_list <- NULL
   
   # load local copy of unique taxa
-  load(system.file("data/ST_unique_list.rda", package="SoilTaxonomy")[1])
+  load(system.file("data", "ST_unique_list.rda", package="SoilTaxonomy")[1])
   
   # load required elements
   haystack <- ST_unique_list[[level]]
