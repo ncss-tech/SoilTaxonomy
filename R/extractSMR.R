@@ -14,15 +14,15 @@
 extractSMR <- function(taxon, as.is = FALSE, droplevels = FALSE, ordered = TRUE) {
 
   .get_SMR_element_connotation <- function() {
-    data.frame(element = c("ids",
+    data.frame(element = c("ids", "aridisols",
                            "per", "aqu", "torr", "ud", "ust", "xer", "sapr", "hem", "fibr", "wass",
                            "torri", "ud", "ust", "xer", "aqu",
                            "ud", "ust", "xer"),
-               level = c("order",
+               level = c("order", "order",
                          "suborder", "suborder", "suborder", "suborder", "suborder", "suborder", "suborder", "suborder", "suborder", "suborder",
                          "greatgroup", "greatgroup", "greatgroup", "greatgroup", "greatgroup",
                          "subgroup", "subgroup", "subgroup"),
-               connotation = c("aridic (torric)",
+               connotation = c("aridic (torric)", "aridic (torric)",
                                "perudic", "aquic", "aridic (torric)", "udic", "ustic", "xeric", "aquic", "aquic", "aquic", "peraquic",
                                "aridic (torric)", "udic", "ustic", "xeric", "aquic",
                                "udic", "ustic", "xeric"),
@@ -39,7 +39,7 @@ extractSMR <- function(taxon, as.is = FALSE, droplevels = FALSE, ordered = TRUE)
 
     # determine taxon level and position
     el$defs$hierarchy <- level_hierarchy(el$defs$level)
-    th <- min(el$defs$hierarchy, na.rm = TRUE)
+    th <- suppressWarnings(min(el$defs$hierarchy, na.rm = TRUE))
 
     # only consider SMR formative elements at or below taxon level
     el$defs <- el$defs[grepl(paste0(co$element, collapse = "|"), el$defs$element) & th <= el$defs$level, ]
@@ -53,6 +53,8 @@ extractSMR <- function(taxon, as.is = FALSE, droplevels = FALSE, ordered = TRUE)
     nrx <- nrow(co2)
     if (nrx == 1) {
       co2$connotation
+    } else if (tolower(taxon) == "aridisols") {
+      "aridic (torric)"
     } else NA_character_
   }, character(1))
 
