@@ -96,6 +96,21 @@
 #'
 "ST_higher_taxa_codes_13th"
 
+#' Soil Moisture Regimes used in the Keys to Soil Taxonomy (13th Edition)
+#'
+#' A data.frame containing taxon codes and the Soil Moisture Regime associated with that taxon.
+#'
+#' Future revisions of this data set may additionally include the Soil Moisture Subclass.
+#'
+#' @references
+#' S. W. Buol and R. C. Graham and P. A. McDaniel and R. J. Southard. Soil Genesis and Classification, 5th edition. Iowa State Press, 2003.
+#'
+#' @usage data(ST_SMR_13th)
+#'
+#' @keywords datasets
+#'
+"ST_SMR_13th"
+
 
 #' Keys to Soil Taxonomy Criteria (13th Edition)
 #'
