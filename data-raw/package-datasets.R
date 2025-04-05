@@ -272,13 +272,13 @@ ST_family_classes$FeatureID <- NULL
 usethis::use_data(ST_family_classes, overwrite = TRUE)
 
 # ## create SMR data frame
-# st <- unlist(ST_unique_list)
-# x <- extractSMR(st)
-# head(x, 20)
-# ST_SMR_13th <- data.frame(code = taxon_to_taxon_code(st), taxmoistclass = x)
-# rownames(ST_SMR_13th) <- NULL
-# View(ST_SMR_13th)
-# usethis::use_data(ST_SMR_13th, overwrite = TRUE)
+st <- unlist(ST_unique_list)
+x <- extractSMR(st, as.is = TRUE)
+head(x, 20)
+ST_SMR_13th <- data.frame(code = taxon_to_taxon_code(st), taxmoistclass = x)
+rownames(ST_SMR_13th) <- NULL
+View(ST_SMR_13th)
+usethis::use_data(ST_SMR_13th, overwrite = TRUE)
 
 ST_criteria_13th <- jsonlite::read_json(
   "https://github.com/ncss-tech/SoilKnowledgeBase/raw/refs/heads/main/inst/extdata/KST/2022_KST_criteria_EN.json",
