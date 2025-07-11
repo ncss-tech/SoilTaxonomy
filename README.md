@@ -341,22 +341,23 @@ res <- lapply(LETTERS[1:12], function(l) cat(explainST(taxon_code_to_taxon(l)), 
 #> other soils
 ```
 
-## Static Databases
+# Citation
 
-The `./inst/extdata` folder (formerly `./databases`) of the GitHub
-repository formerly contained data tables related to taxonomic and map
-unit concepts within the U.S. Soil Survey Geographic Database (SSURGO).
-
-These databases included:
-
-- Statistics on taxonomic subgroups, family-level components, and soil
-  series.
-
-- MLRA Overlap tables for series, national map unit symbols and map unit
-  keys.
-
-- Summaries of KSSL records per series as well as geomorphic position,
-  parent material origin and kind.
-
-These tables have been moved to a dedicated repository called
-[SoilWeb-data](https://github.com/ncss-tech/SoilWeb-data).
+``` r
+citation("SoilTaxonomy")
+#> To cite SoilTaxonomy in publications use:
+#> 
+#>   Brown A, Beaudette D (2025). _SoilTaxonomy: A System of Soil
+#>   Classification for Making and Interpreting Soil Surveys_. R package
+#>   version 0.2.8, <https://CRAN.R-project.org/package=SoilTaxonomy>.
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {SoilTaxonomy: A System of Soil Classification for Making and Interpreting Soil Surveys},
+#>     author = {Andrew Brown and Dylan Beaudette},
+#>     note = {R package version 0.2.8},
+#>     url = {https://CRAN.R-project.org/package=SoilTaxonomy},
+#>     year = {2025},
+#>   }
+```

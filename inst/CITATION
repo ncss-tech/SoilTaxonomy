@@ -3,9 +3,8 @@ citHeader("To cite SoilTaxonomy in publications use:")
 bibentry(
   bibtype = "Manual",
   title = "SoilTaxonomy: A System of Soil Classification for Making and Interpreting Soil Surveys",
-  author = "Andrew Brown and Dylan Beaudette",
-  note = "R package version 0.2.3",
+  author = c(person(given="Andrew", family="Brown"), person(given="Dylan", family="Beaudette")),
+  note = "R package version 0.2.8",
   url = "https://CRAN.R-project.org/package=SoilTaxonomy",
-  year = "2023",
-  textVersion = "Brown, A., Beaudette, D. (2023). SoilTaxonomy: A System of Soil Classification for Making and Interpreting Soil Surveys. R package version 0.2.3. <https://CRAN.R-project.org/package=SoilTaxonomy>"
+  year = "2025"
 )
