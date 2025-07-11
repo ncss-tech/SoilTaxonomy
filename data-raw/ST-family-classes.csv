@@ -3,7 +3,7 @@ DomainID,classname,group
 126,amorphic,mineralogy class
 126,carbonatic,mineralogy class
 126,coprogenous,mineralogy class
-126,diatomaceous earth,mineralogy class
+126,diatomaceous,mineralogy class
 126,ferrihumic,mineralogy class
 126,ferrihydritic,mineralogy class
 126,ferritic,mineralogy class
@@ -129,6 +129,7 @@ DomainID,classname,group
 127,sandy-skeletal,particle-size class
 127,sandy-skeletal over loamy,particle-size class
 127,very-fine,particle-size class
+127,diatomaceous,particle-size class
 128,acid,reaction class
 128,allic,reaction class
 128,calcareous,reaction class

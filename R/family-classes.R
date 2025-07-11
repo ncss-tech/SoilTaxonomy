@@ -92,12 +92,6 @@ parse_family <- function(family, column_metadata = TRUE, flat = TRUE) {
   # lookup classes in KST definitions
   kst_lookup <- lapply(res$classes_split, function(x) {
       x <- tolower(x)
-
-      ###: CHOICE LIST PATCHES
-      # mapping of "diatomaceous" mineralogy class -> "diatomaceous earth" choicename for taxminalogy
-      x[x == "diatomaceous"] <- "diatomaceous earth"
-      ###
-      ###
       y <- tolower(ST_family_classes$classname)
       ldx <- grepl(' over ', x, fixed = TRUE) & !(x %in% y)
       if (sum(ldx) > 0) {

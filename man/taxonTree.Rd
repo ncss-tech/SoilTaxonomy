@@ -39,12 +39,12 @@ This function takes one or more taxon names and taxonomic levels as input.
 A subclass of data.tree \code{Node} object is returned. This object has a custom \code{print()} method
 }
 \examples{
-\dontshow{if (!inherits(requireNamespace("data.tree", quietly = TRUE), 'try-error')) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-\dontshow{\}) # examplesIf}
+\dontshow{if (requireNamespace("data.tree")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 
 # hapludults and hapludalfs (to subgroup level)
 taxonTree(c("hapludults", "hapludalfs"))
 
 # alfisols suborders and great groups
 taxonTree("alfisols", root = "Alfisols", level = c("suborder", "greatgroup"))
+\dontshow{\}) # examplesIf}
 }

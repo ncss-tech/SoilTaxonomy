@@ -1,3 +1,7 @@
+# SoilTaxonomy 0.2.8 (2025-07-10)
+ - Update data sets for soilDB 2.8.11 and NASIS data model 7.4.3
+ - `parse_family()`: Remove patch for `"diatomaceous"` mineralogy class in NASIS metadata
+
 # SoilTaxonomy 0.2.7 (2025-04-04)
  - Added `ST_criteria_13th` data set relating taxon codes to specific criteria from the Keys to Soil Taxonomy (13th Edition)
  - Added `getTaxonCriteria()`: a helper method for extracting values from `ST_criteria_13th`

@@ -15,8 +15,7 @@
 #' @return A `SoilTaxonNode` (subclass of `data.tree` `Node`) object (invisibly). A text representation of the tree is printed to stdout when `verbose=TRUE`.
 #' @export
 #' @importFrom stats complete.cases
-#' @examplesIf !inherits(requireNamespace("data.tree", quietly = TRUE), 'try-error')
-#' @examples
+#' @examplesIf requireNamespace("data.tree")
 #'
 #' # hapludults and hapludalfs (to subgroup level)
 #' taxonTree(c("hapludults", "hapludalfs"))
@@ -39,7 +38,7 @@ taxonTree <- function(taxon,
   # get child taxa at most detailed `level`
   lh <- level_hierarchy(family = FALSE)
   lowest_level <- max(match(level, lh))
-  x <- unique(c(taxon, do.call('c', 
+  x <- unique(c(taxon, do.call('c',
                   getChildTaxa(taxon,  level = as.character(lh[lowest_level]))
                 )))
   y <- getTaxonAtLevel(x, level = level)
