@@ -1,11 +1,11 @@
 pandoc: 3.1.11
-pkgdown: 2.1.1
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   diagnostics: diagnostics.html
   family-level_taxonomy: family-level_taxonomy.html
   taxon-letter-codes: taxon-letter-codes.html
-last_built: 2025-04-05T04:41Z
+last_built: 2025-07-11T03:54Z
 urls:
   reference: http://ncss-tech.github.io/SoilTaxonomy/reference
   article: http://ncss-tech.github.io/SoilTaxonomy/articles
