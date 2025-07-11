@@ -38,9 +38,11 @@ test_that("complex or uncommon family classes", {
 
   skip_if_not_installed("soilDB")
 
-  # mapping of "diatomaceous" mineralogy class -> "diatomaceous earth" choicename for taxminalogy
-  x <- parse_family("DIATOMACEOUS, EUIC, FRIGID LIMNIC HAPLOHEMISTS")
-  expect_true(x$taxminalogy == "diatomaceous" && x$taxreaction == "euic")
+  if (packageVersion("soilDB") >= "2.8.11") {
+    # mapping of "diatomaceous" mineralogy class -> "diatomaceous earth" choicename for taxminalogy
+    x <- parse_family("DIATOMACEOUS, EUIC, FRIGID LIMNIC HAPLOHEMISTS")
+    expect_true(x$taxminalogy == "diatomaceous" && x$taxreaction == "euic")
+  }
 
   # in domain order ortstein is a featkind and reskind (and several other things) before it is taxfamother
   x <- parse_family("MEDIAL-SKELETAL, AMORPHIC, FRIGID, ORTSTEIN ANDIC DURIHUMODS")
