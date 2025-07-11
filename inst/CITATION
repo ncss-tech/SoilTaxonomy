@@ -4,7 +4,7 @@ bibentry(
   bibtype = "Manual",
   title = "SoilTaxonomy: A System of Soil Classification for Making and Interpreting Soil Surveys",
   author = c(person(given="Andrew", family="Brown"), person(given="Dylan", family="Beaudette")),
-  note = "R package version 0.2.8",
+  note = paste("R package version", packageVersion("SoilTaxonomy")),
   url = "https://CRAN.R-project.org/package=SoilTaxonomy",
-  year = "2025"
+  year = format(packageDate("SoilTaxonomy"), "%Y")
 )
