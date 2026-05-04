@@ -171,7 +171,7 @@ taxon_to_taxon_code <- function(taxon) {
   }
 
   # LEFT JOIN on lowercase taxon name
-  res <- merge(data.frame(taxonlow = ltaxon, row.names = NULL),
+  res <- merge(data.frame(taxonlow = unname(ltaxon)),
                ST_higher_taxa_codes_12th[ST_higher_taxa_codes_12th$taxonlow %in% ltaxon,],
                by = "taxonlow", all.x = TRUE, incomparables = NA, sort = FALSE)
 
