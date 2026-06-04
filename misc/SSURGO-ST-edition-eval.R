@@ -108,7 +108,7 @@ p <- c(p1, p2, x.same = TRUE)
 p <- update(
   p, 
   scales = list(alternating = 3), 
-  main = 'Editions of KST\nFY23 SSURGO',
+  main = 'Editions of KST\nFY26 SSURGO',
   sub = .txt
 )
 
