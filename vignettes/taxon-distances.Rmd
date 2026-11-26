@@ -1,0 +1,170 @@
+---
+title: "Taxonomic Distances in USDA Soil Taxonomy"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Taxonomic Distances in USDA Soil Taxonomy}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SoilTaxonomy)
+```
+
+This vignette demonstrates how to compute taxonomic distances between soil taxa using the USDA Soil Taxonomy hierarchy. These functions mirror the interface from the `taxodist` package (which computes distances for biological taxonomy) but use your taxonomy data as the source.
+
+## The Concept: Distance as Shared Hierarchy Depth
+
+In USDA Soil Taxonomy, each taxon has a position in a nested hierarchy:
+
+```
+Soil → Order → Suborder → Great Group → Subgroup
+```
+
+The **distance** between two taxa is determined by how deep their shared classification goes. Two soils that share the same great group are more closely related than two soils that only share an order.
+
+The core quantity is the **shared depth**: the number of levels from the root down to the most recent common ancestor (MRCA). Distance metrics then transform this depth into a numeric value:
+
+| Metric | Formula | Use case |
+|--------|---------|----------|
+| `reciprocal` | d = 1 / depth(MRCA) | Ultrametric; best for clustering |
+| `path` | d = depth(A) + depth(B) − 2 × depth(MRCA) | Edge count through hierarchy |
+| `wu_palmer` | d = 1 − 2h/(depth(A)+depth(B)) | Normalized [0,1]; corrects for uneven resolution |
+
+## Getting Taxon Lineages
+
+The `taxon_lineage()` function returns the full path from root to a taxon:
+
+```{r}
+# Single taxon lineage
+taxon_lineage("Haploxeralfs")
+#>       Soil        Order      Suborder   Great Group
+#>    "Soils"    "Alfisols"     "Xeralfs" "Haploxeralfs"
+
+# By code
+taxon_lineage("JDG")
+```
+
+You can also restrict to a specific level:
+
+```{r}
+# Only up to great group level
+taxon_lineage("Lithic Mollic Haploxeralfs", level = "greatgroup")
+```
+
+## Computing Distances
+
+### Single Pair
+
+```{r}
+# Two soils in the same great group (depth 4 → distance = 0.25)
+taxon_distance("Haploxeralfs", "Lithic Mollic Haploxeralfs")
+#> [1] 0.25
+
+# Identical taxa have distance 0
+taxon_distance("Haploxeralfs", "Haploxeralfs")
+#> [1] 0
+
+# Soils in different orders are more distant
+taxon_distance("Haploxeralfs", "Argiustoll")
+```
+
+### All-Pairs Matrix
+
+For a set of taxa, compute the full pairwise distance matrix:
+
+```{r}
+taxa <- c(
+  "Haploxeralfs",
+  "Lithic Mollic Haploxeralfs",
+  "Argiustoll",
+  "Typic Hapludult"
+)
+
+d <- taxon_distance_matrix(taxa)
+d
+```
+
+The result is a base R `dist` object, so it works directly with clustering and ordination:
+
+```{r}
+# Hierarchical clustering
+hc <- hclust(d)
+plot(hc, main = "Soil Taxonomy Clustering")
+
+# Principal coordinates analysis (if ape is available)
+if (requireNamespace("stats", quietly = TRUE)) {
+  cmd <- cmdscale(d)
+  plot(cmd[,1], cmd[,2], pch = 19, col = 2:5,
+       xlab = "PC1", ylab = "PC2",
+       main = "Soil Taxa in Ordination Space")
+  text(cmd[,1], cmd[,2], labels = taxa, pos = 3)
+}
+```
+
+### Different Metrics
+
+The `wu_palmer` metric normalizes distances to [0, 1] and corrects for uneven resolution:
+
+```{r}
+taxon_distance("Haploxeralfs", "Argiustoll", metric = "wu_palmer")
+```
+
+## Classification Trees
+
+The `taxon_tree()` function builds an `ape::phylo` object representing the minimal subtree connecting your taxa, with internal nodes labeled by their MRCA names:
+
+```{r, eval = requireNamespace("ape", quietly = TRUE)}
+if (requireNamespace("ape", quietly = TRUE)) {
+  tree <- taxon_tree(taxa)
+  plot(tree, show.node.label = TRUE, main = "Soil Taxonomy Tree")
+}
+```
+
+## Comparison with Biological Taxonomy Distances
+
+If you also use `taxodist` for biological taxonomy, the interface is intentionally similar:
+
+| Your package | taxodist (biological) | What it does |
+|---|---|---|
+| `taxon_lineage()` | `get_lineage()` | Build lineage vector from root to taxon |
+| `shared_taxon_depth()` | — | How many levels two taxa share |
+| `taxon_distance()` | `taxo_distance()` | Compute distance (1/depth(MRCA)) |
+| `taxon_distance_matrix()` | `distance_matrix()` | Pairwise distance matrix |
+
+To use both in the same session, namespace-qualify:
+
+```{r}
+# Soil taxa
+SoilTaxonomy::taxon_distance("Haploxeralfs", "Argiustoll")
+
+# Biological taxa (requires taxodist)
+# taxodist::taxo_distance("Tyrannosaurus", "Velociraptor")
+```
+
+## Applications
+
+### Soil Community Analysis
+
+These distances enable taxonomic diversity metrics for soil communities. Given a site-by-soil-taxa matrix (sites in rows, taxa in columns with presence/abundance values), you can compute:
+
+- **Taxonomic distinctness** (Δ): average pairwise distance within a sample
+- **Taxonomic dissimilarity** (Γ+): between-sample dissimilarity based on taxonomy
+- **Standardized effect sizes** (NRI, NTI): testing against null models
+
+This mirrors the community analysis functions in `taxodist` but applied to soil classification instead of biological taxonomy.
+
+### Cross-System Correlation
+
+When working with multiple soil classification systems (USDA Soil Taxonomy, WRB, SiBCS), distances help quantify how equivalent taxa map across systems. Two soils classified differently in two systems but close in taxonomic distance share more diagnostic properties.
+
+## Summary
+
+The taxonomic distance functions provide a principled way to quantify "how similar" two soil taxa are based on their position in the USDA Soil Taxonomy hierarchy. The key insight is that **shared classification depth = relatedness**: soils that share deeper levels of the hierarchy (same great group, same subgroup) are more closely related than those that only share broader categories (same order).
